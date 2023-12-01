@@ -1,0 +1,127 @@
+.header {
+	display: flex;
+	align-items: flex-end; /* Aligns items vertically at the bottom */
+}
+
+.logo {
+	/* Adjust as necessary for your specific image */
+	width: 100px; /* Example width */
+	height: auto;
+	margin-right: 10px; /* Space between logo and text */
+}
+
+.header-text h1, .header-text p {
+	margin: 0; /* Removes default margin */
+}
+
+table#leaderboard td, table#leaderboard th {
+	padding: 2px 4px; /* Adjust the padding as needed */
+}
+
+/* Dark/Light Mode Toggle Styles */
+.mode-toggle {
+	display: flex;
+	align-items: center;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	z-index: 1000;
+}
+
+/* Label text next to the toggle */
+#toggleLabel {
+	margin-right: 8px;
+}
+
+/* Position the toggle switch in the top-right corner */
+.form-check {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	z-index: 1000;
+ }
+
+/* Dark Mode Styles */
+body.dark-mode {
+	background-color: #222;
+	color: #fff;
+}
+
+body.dark-mode .container {
+	background-color: #222;
+}
+
+body.dark-mode a {
+	color: #aad;
+}
+
+/* Style adjustments for DataTables in dark mode */
+body.dark-mode .table {
+	color: #fff;
+	background-color: #333;
+}
+
+body.dark-mode .table th, 
+body.dark-mode .table td {
+	border-color: #666;
+	color: #fff; /* Ensures text is white */
+}
+
+body.dark-mode .table-striped > tbody > tr:nth-of-type(odd) {
+	background-color: #484848; /* Slightly lighter than the table background for contrast */
+}
+
+body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
+	background-color: #3A3A3A; /* Same as table background */
+}
+
+/* DataTables container */
+.dataTables_wrapper {
+	display: block;
+}
+
+/* Flex container for the length and filter elements */
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter {
+    flex: 1;
+}
+
+/* Adjust the length of the search input for desktop screens */
+.dataTables_filter input {
+	width: 100%;
+	max-width: 140px; /* Adjust the max-width as needed */
+}
+
+/* On larger screens, ensure they are spaced out */
+@media (min-width: 992px) {
+    .dataTables_wrapper .d-flex {
+        justify-content: space-between;
+    }
+}
+
+/* On smaller screens, adjust the layout */
+@media (max-width: 991px) {
+    .dataTables_wrapper .d-flex {
+        flex-direction: row;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter {
+        flex: 1 0 50%;
+    }
+
+    .dataTables_wrapper .dataTables_filter {
+        padding-left: 0.5rem; /* Adjust as needed */
+    }
+}
+
+/* For the smallest screens */
+@media (max-width: 575px) {
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter {
+        flex: 1 0 100%;
+    }
+}
+
+
+
