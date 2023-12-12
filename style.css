@@ -124,4 +124,35 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
 }
 
 
+/* Make table responsive */
+@media (max-width: 767px) {
+	.table-responsive {
+		 display: block;
+		 width: 100%;
+		 overflow-x: auto;
+		 -webkit-overflow-scrolling: touch;
+	}
+	.table-responsive > .table {
+		 margin-bottom: 0;
+	}
 
+	.container {
+		width: 100%;
+		max-width: none;
+  }
+}
+
+/* Larger fonts for small screens */
+@media (max-width: 767px) {
+	body {
+		 font-size: 16px; /* Increase the base font size */
+	}
+
+	.header-text h1 {
+		 font-size: 24px; /* Larger header font */
+	}
+
+	table#leaderboard td, table#leaderboard th {
+		 font-size: 20px; /* Larger table font */
+	}
+}
