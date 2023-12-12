@@ -14,12 +14,15 @@ fblgit/una-cybertron-7b-v2-bf16,33.77
 gpt-3.5-turbo-instruct-0914,34.93
 lmsys/vicuna-33b-v1.3,36.52
 openchat/openchat_3.5,37.08
+huggingfaceh4/zephyr-7b-beta,38.71
+huggingfaceh4/zephyr-7b-alpha,38.79
 text-davinci-002,39.44
 Intel/neural-chat-7b-v3-1,43.61
 text-davinci-003,43.73
 Qwen/Qwen-14B-Chat,43.76
 Open-Orca/Mistral-7B-OpenOrca,44.4
 gpt-3.5-turbo-0301,47.61
+mistralai/Mistral-7B-Instruct-v0.2,47.9
 gpt-3.5-0613,49.17
 migtissera/synthia-70b-v1.2b,49.99
 gpt-3.5-turbo-16k-0613,50.28
@@ -29,9 +32,7 @@ fblgit/una-xaberius-34b-v1beta,52.1
 Anthropic Claude2,52.14
 Qwen/Qwen-72B-Chat-Int4,52.44
 gpt-4-0314,53.39
-migtissera/SynthIA-70B-v1.5,54.83
-gpt-4-0613,62.52
-huggingfaceh4/zephyr-7b-beta,38.71
-huggingfaceh4/zephyr-7b-alpha,38.79
 ehartford/dolphin-2_2-yi-34b,54.11
+migtissera/SynthIA-70B-v1.5,54.83
 ehartford/dolphin-2.2-70b,55.22
+gpt-4-0613,62.52
