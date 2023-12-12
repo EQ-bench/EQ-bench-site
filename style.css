@@ -120,6 +120,7 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
     .dataTables_wrapper .dataTables_length,
     .dataTables_wrapper .dataTables_filter {
         flex: 1 0 100%;
+		  text-align: right;
     }
 }
 
@@ -140,6 +141,12 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
 		width: 100%;
 		max-width: none;
   }
+
+  .dataTables_wrapper .d-flex .dataTables_length,
+    .dataTables_wrapper .d-flex .dataTables_filter {
+        text-align: right;
+        justify-content: flex-end;
+    }
 }
 
 /* Larger fonts for small screens */
