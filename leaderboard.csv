@@ -17,6 +17,10 @@ openchat/openchat_3.5,37.08
 huggingfaceh4/zephyr-7b-beta,38.71
 huggingfaceh4/zephyr-7b-alpha,38.79
 text-davinci-002,39.44
+xDAN-AI/xDAN-L1-Chat-RL-v1,40.12
+Weyaxi/SauerkrautLM-UNA-SOLAR-Instruct,41.01
+upstage/SOLAR-10.7B-Instruct-v1.0,41.72
+openchat/openchat-3.5-1210,43.29
 Intel/neural-chat-7b-v3-1,43.61
 text-davinci-003,43.73
 Qwen/Qwen-14B-Chat,43.76
