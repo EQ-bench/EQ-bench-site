@@ -12,22 +12,29 @@ lmsys/vicuna-13b-v1.1,32.85
 meta-llama/Llama-2-13b-chat-hf,33.02
 fblgit/una-cybertron-7b-v2-bf16,33.77
 gpt-3.5-turbo-instruct-0914,34.93
+Toten5/Marcoroni-neural-chat-7B-v2,35.26
 lmsys/vicuna-33b-v1.3,36.52
 openchat/openchat_3.5,37.08
 huggingfaceh4/zephyr-7b-beta,38.71
 huggingfaceh4/zephyr-7b-alpha,38.79
 text-davinci-002,39.44
 xDAN-AI/xDAN-L1-Chat-RL-v1,40.12
+AIDC-ai-business/Marcoroni-7B-v3,40.19
+cookinai/CatMacaroni-Slerp,40.91
 Weyaxi/SauerkrautLM-UNA-SOLAR-Instruct,41.01
+zyh3826/GML-Mistral-merged-v1,41.31
 upstage/SOLAR-10.7B-Instruct-v1.0,41.72
 openchat/openchat-3.5-1210,43.29
 Intel/neural-chat-7b-v3-1,43.61
 text-davinci-003,43.73
 Qwen/Qwen-14B-Chat,43.76
+Yhyu13/LMCocktail-10.7B-v1,44.16
 Open-Orca/Mistral-7B-OpenOrca,44.4
+rishiraj/meow,44.41
 gpt-3.5-turbo-0301,47.61
 mistralai/Mistral-7B-Instruct-v0.2,47.9
 gpt-3.5-0613,49.17
+SUSTech/SUS-Chat-34B,49.39
 migtissera/synthia-70b-v1.2b,49.99
 NousResearch/Nous-Hermes-2-Yi-34B,50.27
 gpt-3.5-turbo-16k-0613,50.28
@@ -36,6 +43,7 @@ meta-llama/Llama-2-70b-chat-hf,51.56
 fblgit/una-xaberius-34b-v1beta,52.1
 Anthropic Claude2,52.14
 Qwen/Qwen-72B-Chat-Int4,52.44
+ValiantLabs/ShiningValiant,53.34
 gpt-4-0314,53.39
 ehartford/dolphin-2_2-yi-34b,54.11
 migtissera/SynthIA-70B-v1.5,54.83
