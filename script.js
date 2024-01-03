@@ -65,7 +65,7 @@ function loadLeaderboardData() {
 
 function initializeDataTable() {
 	$('#leaderboard').DataTable({
-		 "order": [[1, "desc"]],
+		 "order": [[2, "desc"]],
 		 "pageLength": 25,
 		 "language": {
 			  "lengthMenu": "Show _MENU_"
