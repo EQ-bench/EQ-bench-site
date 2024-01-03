@@ -52,15 +52,15 @@ function loadLeaderboardData() {
 		.then(text => {
 			let rows = text.split('\n').filter(row => row.trim() !== '').slice(1);
 			let html = rows.map(row => {
-				let [modelName, score] = row.split(',');
+				let [modelName, score, parameters] = row.split(',');
 				let modelNameDisplay = modelName.includes('/') 
-							? `<a href="https://huggingface.co/${modelName}" target="_blank">${modelName}</a>` 
-							: modelName;
-						return `<tr><td>${modelNameDisplay}</td><td>${score}</td></tr>`;
+								? `<a href="https://huggingface.co/${modelName}" target="_blank">${modelName}</a>` 
+								: modelName;
+				return `<tr><td>${modelNameDisplay}</td><td>${parameters}</td><td>${score}</td></tr>`;
 			}).join('');
 			document.getElementById('leaderboardBody').innerHTML = html;
-			initializeDataTable();			  
-		 });
+			initializeDataTable();              
+		});
 }
 
 function initializeDataTable() {
