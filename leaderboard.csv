@@ -53,3 +53,7 @@ migtissera/SynthIA-70B-v1.5,54.83,70
 ehartford/dolphin-2.2-70b,55.22,70
 gpt-4-0613,62.52,
 mistralai/Mixtral-8x7B-Instruct-v0.1,44.81,8x7 MoE
+cloudyu/Mixtral_34Bx2_MoE_60B,52.16,34x2 MoE
+cloudyu/Mixtral_11Bx2_MoE_19B,43,26,11x2 MoE
+jondurbin/bagel-34b-v0.2,43.94,34
+jondurbin/nontoxic-bagel-34b-v0.2,46.46,34
