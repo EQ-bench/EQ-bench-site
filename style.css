@@ -139,7 +139,8 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
 	
 	/* Specific styles for the first column */
 	table#leaderboard td:first-child {
-		max-width: 0; /* Allows the width to shrink as needed */
+		max-width: 100px; /* Allows the width to shrink as needed */
+		min-width: 100px;
 
 	}
 
