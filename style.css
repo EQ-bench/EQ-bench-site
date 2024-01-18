@@ -41,6 +41,14 @@ table#leaderboard td, table#leaderboard th {
 	z-index: 1000;
  }
 
+body {
+	background-color: #e8e8e8;
+}
+
+body .container {
+	background-color: #ffffff;
+}
+
 /* Dark Mode Styles */
 body.dark-mode {
 	background-color: #222;
@@ -163,3 +171,43 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
 		 font-size: 20px; /* Larger table font */
 	}
 }
+
+.score-bar-container {
+	position: relative;
+	height: 20px; /* Adjust height as needed */
+	background: #e0e0e0; /* Light grey background */
+	border-radius: 5px; /* Optional: rounded corners */
+	overflow: hidden;
+ }
+ 
+ .score-bar {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: linear-gradient(to right, #e9d4f8, #b7a6c3);
+	border-radius: 5px;
+	transition: width 0.5s ease;
+	z-index: 1;
+ }
+ 
+ .score-text {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	line-height: 20px;
+	z-index: 2;
+ }
+ 
+ /* Dark Mode additional styles for the score bar */
+ body.dark-mode .score-bar-container {
+	background: #555;
+ }
+ 
+ body.dark-mode .score-bar {
+	background: linear-gradient(to right, #7d2eb5, #471a67);
+ }
+ 
+ body.dark-mode .score-text {
+	color: #fff;
+ }

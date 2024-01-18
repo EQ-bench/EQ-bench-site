@@ -51,12 +51,18 @@ function loadLeaderboardData() {
 		.then(response => response.text())
 		.then(text => {
 			let rows = text.split('\n').filter(row => row.trim() !== '').slice(1);
+			let maxScore = Math.max(...rows.map(row => parseFloat(row.split(',')[1]))); // Get the highest score for reference
 			let html = rows.map(row => {
 				let [modelName, score, parameters] = row.split(',');
+				let scorePercentage = (parseFloat(score) / maxScore) * 100; // Calculate score as a percentage of maxScore
 				let modelNameDisplay = modelName.includes('/') 
 								? `<a href="https://huggingface.co/${modelName}" target="_blank">${modelName}</a>` 
 								: modelName;
-				return `<tr><td>${modelNameDisplay}</td><td>${parameters}</td><td>${score}</td></tr>`;
+				let scoreBar = `<div class="score-bar-container">
+								<div class="score-bar" style="width: ${scorePercentage}%"></div>
+								<div class="score-text">${score}</div>
+							 </div>`;
+							 return `<tr><td>${modelNameDisplay}</td><td>${parameters}</td><td>${scoreBar}</td></tr>`;
 			}).join('');
 			document.getElementById('leaderboardBody').innerHTML = html;
 			initializeDataTable();              
@@ -66,7 +72,8 @@ function loadLeaderboardData() {
 function initializeDataTable() {
 	$('#leaderboard').DataTable({
 		 "order": [[2, "desc"]],
-		 "pageLength": 25,
+		 "pageLength": 50,
+		 "lengthMenu": [50, 100, 200, 1000],
 		 "language": {
 			  "lengthMenu": "Show _MENU_"
 		 },
