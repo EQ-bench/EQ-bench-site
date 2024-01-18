@@ -213,3 +213,16 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
  body.dark-mode .score-text {
 	color: #fff;
  }
+
+
+ /* Ensure that table data can wrap */
+table#leaderboard td {
+	white-space: normal; /* Overrides DataTables default of nowrap */
+	word-wrap: break-word; /* Wraps long words */
+ }
+ 
+ /* Specific styles for the first column */
+ table#leaderboard td:first-child {
+	max-width: 0; /* Allows the width to shrink as needed */
+
+ }
