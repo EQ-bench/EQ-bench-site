@@ -160,15 +160,15 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
 /* Larger fonts for small screens */
 @media (max-width: 767px) {
 	body {
-		 font-size: 16px; /* Increase the base font size */
+		 font-size: 14px; /* Increase the base font size */
 	}
 
 	.header-text h1 {
-		 font-size: 24px; /* Larger header font */
+		 font-size: 22px; /* Larger header font */
 	}
 
 	table#leaderboard td, table#leaderboard th {
-		 font-size: 20px; /* Larger table font */
+		 font-size: 18px; /* Larger table font */
 	}
 }
 
