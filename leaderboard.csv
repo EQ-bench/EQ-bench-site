@@ -1,59 +1,53 @@
-﻿Model,Score,Params (B)
-text-ada-001,2.25,0.35
-OpenAssistant/oasst-sft-1-pythia-12b,7.69,12
-text-curie-001,9.28,6.7
-text-davinci-001,15.19,175
-lmsys/vicuna-7b-v1.1,22.24,7
-nousresearch/nous-capybara-7b,24.85,7
-TheBloke/koala-13B-HF,24.92,13
-meta-llama/Llama-2-7b-chat-hf,25.43,7
-mistralai/mistral-7b-instruct-v0.1,32.19,7
-lmsys/vicuna-13b-v1.1,32.85,13
-meta-llama/Llama-2-13b-chat-hf,33.02,13
-fblgit/una-cybertron-7b-v2-bf16,33.77,7
-gpt-3.5-turbo-instruct-0914,34.93,
-Toten5/Marcoroni-neural-chat-7B-v2,35.26,7
-lmsys/vicuna-33b-v1.3,36.52,33
-openchat/openchat_3.5,37.08,7
-huggingfaceh4/zephyr-7b-beta,38.71,7
-huggingfaceh4/zephyr-7b-alpha,38.79,7
-text-davinci-002,39.44,175
-xDAN-AI/xDAN-L1-Chat-RL-v1,40.12,7
-AIDC-ai-business/Marcoroni-7B-v3,40.19,7
-cookinai/CatMacaroni-Slerp,40.91,7
-Weyaxi/SauerkrautLM-UNA-SOLAR-Instruct,41.01,10.7
-zyh3826/GML-Mistral-merged-v1,41.31,7
-upstage/SOLAR-10.7B-Instruct-v1.0,41.72,10.7
-openchat/openchat-3.5-1210,43.29,7
-Intel/neural-chat-7b-v3-1,43.61,7
-text-davinci-003,43.73,
-Qwen/Qwen-14B-Chat,43.76,14
-Yhyu13/LMCocktail-10.7B-v1,44.16,10.7
-Open-Orca/Mistral-7B-OpenOrca,44.4,7
-rishiraj/meow,44.41,10.7
-NousResearch/Nous-Capybara-34B,46.11,34
-gpt-3.5-turbo-0301,47.61,
-mistralai/Mistral-7B-Instruct-v0.2,47.9,7
-gpt-3.5-0613,49.17,
-SUSTech/SUS-Chat-34B,49.39,34
-migtissera/synthia-70b-v1.2b,49.99,70
-alpindale/goliath-120b,50.19,120
-NousResearch/Nous-Hermes-2-Yi-34B,50.27,34
-gpt-3.5-turbo-16k-0613,50.28,
-01-ai/Yi-34B-Chat,51.03,34
-migtissera/Tess-XL-v1.0,51.3,120
-meta-llama/Llama-2-70b-chat-hf,51.56,70
-fblgit/una-xaberius-34b-v1beta,52.1,34
-Anthropic Claude2,52.14,
-Qwen/Qwen-72B-Chat-Int4,52.44,72
-ValiantLabs/ShiningValiant,53.34,70
-gpt-4-0314,53.39,
-ehartford/dolphin-2_2-yi-34b,54.11,34
-migtissera/SynthIA-70B-v1.5,54.83,70
-ehartford/dolphin-2.2-70b,55.22,70
-gpt-4-0613,62.52,
-mistralai/Mixtral-8x7B-Instruct-v0.1,44.81,8x7 MoE
-cloudyu/Mixtral_34Bx2_MoE_60B,52.16,34x2 MoE
-cloudyu/Mixtral_11Bx2_MoE_19B,43,26,11x2 MoE
-jondurbin/bagel-34b-v0.2,43.94,34
-jondurbin/nontoxic-bagel-34b-v0.2,46.46,34
+﻿TheBloke/Nous-Capybara-34B-GGUF,68.47,34
+TheBloke/bagel-34b-v0.2-GGUF,66.07,34
+internlm/internlm2-chat-7b,62.61,7
+NousResearch/Nous-Hermes-2-Yi-34B-GGUF,72.68,34
+Yhyu13/LMCocktail-10.7B-v1,73.67,10.7
+TheBloke/Yi-34B-Chat-GGUF,71.62,34
+Open-Orca/Mistral-7B-OpenOrca,66.55,7
+fblgit/una-cybertron-7b-v2-bf16,62.83,7
+TheBloke/ShiningValiant-1.3-GGUF,64.21,70
+Intel/neural-chat-7b-v3-1,64.77,7
+Toten5/Marcoroni-neural-chat-7B-v2,68.54,7
+xDAN-AI/xDAN-L1-Chat-RL-v1,59.51,7
+huggingfaceh4/zephyr-7b-beta,58.33,7
+madatnlp/marcoroni-7b-v3-safetensor,71.68,7
+mistralai/mistral-7b-instruct-v0.1,52.15,7
+Weyaxi/SauerkrautLM-UNA-SOLAR-Instruct,73.56,10.7
+huggingfaceh4/zephyr-7b-alpha,56.82,7
+TheBloke/Llama-2-13B-chat-AWQ,49.12,13
+zyh3826/GML-Mistral-merged-v1,74.01,7
+upstage/SOLAR-10.7B-Instruct-v1.0,73.53,10.7
+TheBloke/dolphin-2_2-yi-34b-GGUF,75.52,34
+TheBloke/dolphin-2.2-70B-GGUF,79.6,70
+gpt-4-0314,85.73,
+gpt-4-0613,84.79,
+gpt-4-1106-preview,86.05,
+TheBloke/koala-7B-HF,21.54,7
+TheBloke/Llama-2-70B-Chat-GGUF,73.59,70
+lmsys/vicuna-7b-v1.1,26.12,7
+NousResearch/Nous-Capybara-7B-V1,34.37,7
+mistral-medium,82.57,
+NousResearch/Llama-2-7b-chat-hf,36.32,7
+gemini-pro,75.08,
+TheBloke/SynthIA-70B-v1.5-GGUF,73.71,70
+openchat/openchat-3.5-1210,72.52,7
+openchat/openchat_3.5,72.18,7
+mlabonne/Beagle14-7B,74.45,7
+mlabonne/NeuralMarcoro14-7B,74.15,7
+TheBloke/firefly-mixtral-8x7b-GGUF,64.36,8x7 MoE
+mlabonne/NeuralHermes-2.5-Mistral-7B,65.86,7
+cloudyu/Mixtral_34Bx2_MoE_60B,72.69,34x2 MoE
+TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF,72.37,8x7 MoE
+TheBloke/Mistral-7B-Instruct-v0.2-GGUF,68.18,7
+lxuechen/phi-2-dpo,54.42,2.7
+rhysjones/phi-2-orange,56.94,2.7
+mlabonne/phixtral-2x2_8,54.58,2x2.7 MoE
+microsoft/phi-2,27.6,2.7
+TheBloke/Beyonder-4x7B-v2-GGUF,69.23,4x7 MoE
+gpt-3.5-turbo-1106,71.74,
+gpt-3.5-turbo-0613,69.35,
+mlabonne/phixtral-2x2_8,51.51,
+gpt-3.5-turbo-0301,70.67,
+rishiraj/meow,73.94,10.7
+TheBloke/nontoxic-bagel-34b-v0.2-GGUF,70.21,34
