@@ -55,3 +55,5 @@ migtissera/Tess-XL-v1.0,78.46,120
 mlabonne/NeuralBeagle14-7B,74.79,7
 NousResearch/Nous-Hermes-2-Mixtral-8x7B-SFT,72.91,8x7 MoE
 vince62s/phi-2-psy,56.44,2.7
+stabilityai/stablelm-2-zephyr-1_6b,13.85,1.6
+cognitivecomputations/MegaDolphin-120b,79.93,120
