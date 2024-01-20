@@ -72,7 +72,7 @@ function loadLeaderboardData() {
 function initializeDataTable() {
 	$('#leaderboard').DataTable({
 		 "order": [[2, "desc"]],
-		 "pageLength": 50,
+		 "pageLength": 100,
 		 "lengthMenu": [50, 100, 200, 1000],
 		 "language": {
 			  "lengthMenu": "Show _MENU_"
