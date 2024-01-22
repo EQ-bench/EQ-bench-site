@@ -47,7 +47,7 @@ function decodeHtmlEntities(encodedString) {
 
 
 function loadLeaderboardData() {
-	fetch('leaderboard.csv')
+	fetch('leaderboard.csv?time=' + new Date().getTime())
 		.then(response => response.text())
 		.then(text => {
 			let rows = text.split('\n').filter(row => row.trim() !== '').slice(1);
