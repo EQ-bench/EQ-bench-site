@@ -59,3 +59,4 @@ stabilityai/stablelm-2-zephyr-1_6b,13.85,1.6
 cognitivecomputations/MegaDolphin-120b,79.93,120
 OrionStarAI/Orion-14B-Chat,59.71,14
 cognitivecomputations/laserxtral,71.96,4x7 MoE
+deepseek-ai/deepseek-llm-67b-chat,75.84,67
