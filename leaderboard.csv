@@ -55,8 +55,11 @@ migtissera/Tess-XL-v1.0,78.46,120
 mlabonne/NeuralBeagle14-7B,74.79,7
 NousResearch/Nous-Hermes-2-Mixtral-8x7B-SFT,72.91,8x7 MoE
 vince62s/phi-2-psy,56.44,2.7
-stabilityai/stablelm-2-zephyr-1_6b,13.85,1.6
-cognitivecomputations/MegaDolphin-120b,79.93,120
+stabilityai/stablelm-2-zephyr-1_6b,15.04,1.6
+cognitivecomputations/MegaDolphin-120b,80.21,120
 OrionStarAI/Orion-14B-Chat,59.71,14
 cognitivecomputations/laserxtral,71.96,4x7 MoE
-deepseek-ai/deepseek-llm-67b-chat,75.84,67
+deepseek-ai/deepseek-llm-67b-chat,77.53,67
+macadeliccc/laser-dolphin-mixtral-2x7b-GGUF,72.72,2x7 MoE
+macadeliccc/SOLAR-10.7b-Instruct-dpo,73.21,10.7
+tiiuae/falcon-180B-chat,56.82,180
