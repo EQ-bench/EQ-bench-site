@@ -63,3 +63,9 @@ deepseek-ai/deepseek-llm-67b-chat,77.53,67
 macadeliccc/laser-dolphin-mixtral-2x7b-GGUF,72.72,2x7 MoE
 macadeliccc/SOLAR-10.7b-Instruct-dpo,73.21,10.7
 tiiuae/falcon-180B-chat,56.82,180
+Qwen/Qwen-1_8B-Chat,30,1.8
+Qwen/Qwen-14B-Chat,63.47,14
+Qwen/Qwen-7B-Chat,50.11,7
+01-ai/Yi-6B-Chat,61.79,6
+miqudev/miqu-1-70b,82.91,70
+DiscoResearch/DiscoLM-120b,78.48,120
