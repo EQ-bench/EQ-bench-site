@@ -1,4 +1,5 @@
-﻿NousResearch/Nous-Capybara-34B,68.47,34
+﻿model,score,params
+NousResearch/Nous-Capybara-34B,68.47,34
 jondurbin/bagel-34b-v0.2,66.07,34
 internlm/internlm2-chat-7b,62.61,7
 NousResearch/Nous-Hermes-2-Yi-34B-GGUF,72.68,34
