@@ -72,3 +72,12 @@ miqudev/miqu-1-70b,82.91,70
 DiscoResearch/DiscoLM-120b,78.48,120
 Qwen/Qwen-72B-Chat,80.7,72
 moreh/MoMo-72B-lora-1.8.7-DPO,78.75,72
+WizardLM/WizardLM-70B-V1.0,71.28,70
+lmsys/vicuna-13b-v1.5,67.39,13
+allenai/tulu-2-dpo-70b,76.63,70
+WizardLM/WizardLM-13B-V1.2,63.71,13
+cognitivecomputations/dolphin-2.2.1-mistral-7b,69.92,7
+timdettmers/guanaco-33b-merged,36.11,33
+teknium/OpenHermes-2.5-Mistral-7B,66.89,7
+berkeley-nest/Starling-LM-7B-alpha,73.9,7
+lmsys/vicuna-33b-v1.3,67.07,33
