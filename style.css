@@ -1,21 +1,20 @@
 .header {
 	display: flex;
-	align-items: flex-end; /* Aligns items vertically at the bottom */
+	align-items: flex-end;
 }
 
 .logo {
-	/* Adjust as necessary for your specific image */
-	width: 100px; /* Example width */
+	width: 100px;
 	height: auto;
-	margin-right: 10px; /* Space between logo and text */
+	margin-right: 10px;
 }
 
 .header-text h1, .header-text p {
-	margin: 0; /* Removes default margin */
+	margin: 0;
 }
 
 table#leaderboard td, table#leaderboard th {
-	padding: 2px 4px; /* Adjust the padding as needed */
+	padding: 2px 4px;
 }
 
 /* Dark/Light Mode Toggle Styles */
@@ -72,7 +71,7 @@ body.dark-mode .table {
 body.dark-mode .table th, 
 body.dark-mode .table td {
 	border-color: #666;
-	color: #fff; /* Ensures text is white */
+	color: #fff;
 }
 
 body.dark-mode .table-striped > tbody > tr:nth-of-type(odd) {
@@ -97,7 +96,7 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
 /* Adjust the length of the search input for desktop screens */
 .dataTables_filter input {
 	width: 100%;
-	max-width: 140px; /* Adjust the max-width as needed */
+	max-width: 140px;
 }
 
 /* On larger screens, ensure they are spaced out */
@@ -119,7 +118,7 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
     }
 
     .dataTables_wrapper .dataTables_filter {
-        padding-left: 0.5rem; /* Adjust as needed */
+        padding-left: 0.5rem;
     }
 }
 
@@ -131,15 +130,13 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
 		  text-align: right;
     }
 
-	/* Ensure that table data can wrap */
 	table#leaderboard td {
-		white-space: normal; /* Overrides DataTables default of nowrap */
-		word-wrap: break-word; /* Wraps long words */
+		white-space: normal;
+		word-wrap: break-word;
 	}
 	
-	/* Specific styles for the first column */
 	table#leaderboard td:first-child {
-		max-width: 100px; /* Allows the width to shrink as needed */
+		max-width: 100px;
 		min-width: 100px;
 
 	}
@@ -171,32 +168,23 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
     }
 }
 
-/* Larger fonts for small screens */
-/*
-@media (max-width: 767px) {
-	body {
-		 font-size: 14px;
-	}
 
-	.header-text h1 {
-		 font-size: 22px;
-	}
-
-	table#leaderboard td, table#leaderboard th {
-		 font-size: 18px;
-	}
+#leaderboard th {
+	white-space: nowrap;
+	min-width: 30px;
 }
-*/
 
 .score-bar-container {
 	position: relative;
-	height: 20px; /* Adjust height as needed */
-	background: #e0e0e0; /* Light grey background */
-	border-radius: 5px; /* Optional: rounded corners */
+	height: 20px;
+	background: transparent; 
+	border-radius: 5px;
 	overflow: hidden;
- }
- 
- .score-bar {
+	z-index: 1;
+}
+
+.score-bar {
+	display: none;
 	position: absolute;
 	height: 100%;
 	left: 0;
@@ -205,15 +193,16 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
 	border-radius: 5px;
 	transition: width 0.5s ease;
 	z-index: 1;
- }
- 
- .score-text {
+}
+
+.score-text {
+	display: block;
 	position: absolute;
 	width: 100%;
 	text-align: center;
 	line-height: 20px;
-	z-index: 2;
- }
+	z-index: 99;
+}
  
  /* Dark Mode additional styles for the score bar */
  body.dark-mode .score-bar-container {
@@ -229,3 +218,6 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
  }
 
 
+ .expando-content {
+	display: none;
+}

@@ -33,18 +33,109 @@
 			<table id="leaderboard" class="table table-striped table-bordered">
 				<thead>
 					<tr>
-						<th>Model</th>
-						<th>Params (B)</th>
-						<th>EQ-Bench v2 Score*</th>
+						 <th>Model</th>
+						 <th>Params</th>
+						 <th>EQ-Bench*</th>
+						 <th>MAGI†</th>
+						 <th>Combined</th>
 					</tr>
-				</thead>
+			  </thead>
 				<tbody id="leaderboardBody">
 						<!-- Data rows will be added here -->
 				</tbody>
 			</table>
 		</div>
 		<br>
-		<p>* EQ-Bench v2 scoring system has superseded v1. Scores are not directly comparable between v1 and v2. <a href="https://github.com/EQ-bench/EQ-Bench">More info.</a>
+		<p><b>* EQ-Bench v2</b> scoring system has superseded v1. Scores are not directly comparable between v1 and v2. <a href="https://github.com/EQ-bench/EQ-Bench">More info.</a>			
+		<p><b>† MAGI</b> is a custom subset of MMLU and AGIEval which is highly discriminative amongst the top models (and weakly discriminative lower down). A full description of the process that was used to generate this test set is currently being documented.</p>
+		<hr>
+		<h5>Cite EQ-Bench:</h5>
+		<pre><code>
+@misc{paech2023eqbench,
+	title={EQ-Bench: An Emotional Intelligence Benchmark for Large Language Models}, 
+	author={Samuel J. Paech},
+	year={2023},
+	eprint={2312.06281},
+	archivePrefix={arXiv},
+	primaryClass={cs.CL}
+}
+		</code></pre>	
+		MAGI draws from the MMLU and AGIEval tests. <span class="clickable-text" id="expando-btn" style="cursor: pointer; text-decoration: underline; color: blue;">Click to show citations</span>
+		<div class="expando-content mt-3" style="overflow-x: auto;">
+			 <pre><code>
+@article{hendryckstest2021,
+		title={Measuring Massive Multitask Language Understanding},
+		author={Dan Hendrycks and Collin Burns and Steven Basart and Andy Zou and Mantas Mazeika and Dawn Song and Jacob Steinhardt},
+		journal={Proceedings of the International Conference on Learning Representations (ICLR)},
+		year={2021}
+}
+
+@article{hendrycks2021ethics,
+		title={Aligning AI With Shared Human Values},
+		author={Dan Hendrycks and Collin Burns and Steven Basart and Andrew Critch and Jerry Li and Dawn Song and Jacob Steinhardt},
+		journal={Proceedings of the International Conference on Learning Representations (ICLR)},
+		year={2021}
+}
+
+@misc{zhong2023agieval,
+		title={AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models},
+		author={Wanjun Zhong and Ruixiang Cui and Yiduo Guo and Yaobo Liang and Shuai Lu and Yanlin Wang and Amin Saied and Weizhu Chen and Nan Duan},
+		year={2023},
+		eprint={2304.06364},
+		archivePrefix={arXiv},
+		primaryClass={cs.CL}
+}
+
+@inproceedings{ling-etal-2017-program,
+		title = "Program Induction by Rationale Generation: Learning to Solve and Explain Algebraic Word Problems",
+		author = "Ling, Wang  and
+		Yogatama, Dani  and
+		Dyer, Chris  and
+		Blunsom, Phil",
+		booktitle = "Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+		month = jul,
+		year = "2017",
+		address = "Vancouver, Canada",
+		publisher = "Association for Computational Linguistics",
+		url = "https://aclanthology.org/P17-1015",
+		doi = "10.18653/v1/P17-1015",
+		pages = "158--167",
+}
+
+@inproceedings{hendrycksmath2021,
+		title={Measuring Mathematical Problem Solving With the MATH Dataset},
+		author={Dan Hendrycks and Collin Burns and Saurav Kadavath and Akul Arora and Steven Basart and Eric Tang and Dawn Song and Jacob Steinhardt},
+		journal={NeurIPS},
+		year={2021}
+}
+
+@inproceedings{Liu2020LogiQAAC,
+		title={LogiQA: A Challenge Dataset for Machine Reading Comprehension with Logical Reasoning},
+		author={Jian Liu and Leyang Cui and Hanmeng Liu and Dandan Huang and Yile Wang and Yue Zhang},
+		booktitle={International Joint Conference on Artificial Intelligence},
+		year={2020}
+}
+
+@inproceedings{zhong2019jec,
+		title={JEC-QA: A Legal-Domain Question Answering Dataset},
+		author={Zhong, Haoxi and Xiao, Chaojun and Tu, Cunchao and Zhang, Tianyang and Liu, Zhiyuan and Sun, Maosong},
+		booktitle={Proceedings of AAAI},
+		year={2020},
+}
+
+@article{Wang2021FromLT,
+		title={From LSAT: The Progress and Challenges of Complex Reasoning},
+		author={Siyuan Wang and Zhongkun Liu and Wanjun Zhong and Ming Zhou and Zhongyu Wei and Zhumin Chen and Nan Duan},
+		journal={IEEE/ACM Transactions on Audio, Speech, and Language Processing},
+		year={2021},
+		volume={30},
+		pages={2201-2216}
+}
+			 </code></pre>
+		</div>
+
+		<br>
+		<hr>
 	</div>
 
 	<!-- jQuery and Bootstrap JS -->
