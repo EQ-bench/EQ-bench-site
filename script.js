@@ -91,7 +91,13 @@ Qwen/Qwen1.5-1.8B-Chat,24.12,1.8
 Qwen/Qwen1.5-72B-Chat,82.81,72
 Qwen/Qwen1.5-7B-Chat,54.41,7
 vilm/Quyen-Pro-Max-v0.1,77.16,72
-ShinojiResearch/Senku-70B-Full,84.89,70`;
+ShinojiResearch/Senku-70B-Full,84.89,70
+claude-instant-1.2,69.04,
+claude-2.1,73.96,
+claude-1,76.83,
+claude-2.0,72.89,
+pplx-70b-online,62.79,70
+pplx-7b-online,48.91,7`;
 
 const leaderboardDataMagi = `model,score
 YeungNLP/firefly-mixtral-8x7b,45.41
