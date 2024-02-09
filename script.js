@@ -97,7 +97,8 @@ claude-2.1,73.96,
 claude-1,76.83,
 claude-2.0,72.89,
 pplx-70b-online,62.79,70
-pplx-7b-online,48.91,7`;
+pplx-7b-online,48.91,7
+snorkelai/Snorkel-Mistral-PairRM-DPO,65.83,7`;
 
 const leaderboardDataMagi = `model,score
 YeungNLP/firefly-mixtral-8x7b,45.41
