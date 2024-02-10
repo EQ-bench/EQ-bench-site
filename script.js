@@ -293,7 +293,7 @@ function loadLeaderboardData() {
 
 function initializeDataTable() {
 	let table = $('#leaderboard').DataTable({
-		 "order": [[4, "desc"]], // Default sorting
+		 "order": [[2, "desc"]], // Default sorting
 		 "pageLength": 100,
 		 "lengthMenu": [50, 100, 200, 1000],
 		 "language": {
