@@ -221,3 +221,40 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
  .expando-content {
 	display: none;
 }
+
+
+/* Highlight for new models in light mode */
+#leaderboard .new-model {
+	background-color: #d1e7dd; /* light green for light mode */
+}
+
+/* Ensuring dark mode styles have enough specificity */
+body.dark-mode #leaderboard .new-model {
+	background-color: #276e576b; /* dark green for dark mode */
+}
+
+/* Legend styles */
+.legend-container {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.legend-color-box {
+	width: 20px;
+	height: 20px;
+	margin-right: 0.5rem;
+}
+
+/* Light/Dark mode specific colors for legend */
+.legend-light-mode {
+	background-color: #d1e7dd; /* same as .new-model */
+}
+
+.legend-dark-mode {
+	background-color: #276e57b0; /* same as body.dark-mode .new-model */
+}
+
+.legend-text {
+	font-size: 0.9rem;
+}

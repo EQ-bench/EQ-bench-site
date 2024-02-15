@@ -98,7 +98,11 @@ claude-1,76.83,
 claude-2.0,72.89,
 pplx-70b-online,62.79,70
 pplx-7b-online,48.91,7
-snorkelai/Snorkel-Mistral-PairRM-DPO,65.83,7`;
+snorkelai/Snorkel-Mistral-PairRM-DPO,65.83,7
+*alpindale/miquella-120b,82.15,120
+*wolfram/miquliz-120b-v2.0,82.21,120
+*migtissera/Tess-72B-v1.5b,81.78,72
+*vilm/Quyen-Pro-v0.1,70.75,14`;
 
 const leaderboardDataMagi = `model,score
 YeungNLP/firefly-mixtral-8x7b,45.41
@@ -190,10 +194,12 @@ function setupDarkModeToggle() {
 	var label = document.getElementById('toggleLabel');
 	
 	toggle.addEventListener('change', function() {
-		 document.body.classList.toggle('dark-mode', this.checked);
+		 document.body.classList.toggle('dark-mode', this.checked);		 
 		 label.textContent = this.checked ? 'Dark' : 'Light';
+		 updateLegendColor(); // Call this inside the change event listener
 	});
 }
+
 
 function applySystemTheme() {
 	const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -238,52 +244,55 @@ function loadLeaderboardData() {
 	const maxScoreMagi = Math.max(...magiRows.map(row => row.score));
 
 	let html = eqbenchRows.map(eqbenchRow => {
-		 const [modelName, score, parameters] = eqbenchRow.split(',');
-		 const magiEntry = magiRows.find(magiRow => magiRow.model === modelName);
-		 const magiScore = magiEntry ? magiEntry.score : 0; // Use 0 if MAGI score is missing
-		 const scoreNum = parseFloat(score);
-		 const combined = magiScore ? ((scoreNum + magiScore) / 2).toFixed(2) : 0;
-		 
-		 // Calculate score percentages based on their respective max scores
-		 let scorePercentageEQ = (scoreNum / maxScoreEQBench) * 100;
-		 let scorePercentageMagi = magiEntry ? (magiScore / maxScoreMagi) * 100 : 0;
+	const [modelName, score, parameters] = eqbenchRow.split(',');
+	const cleanModelName = modelName.replace(/^\*/, ''); // Remove leading asterisk
+	const isNewModel = modelName.startsWith('*'); // Check if the model is new
+	const magiEntry = magiRows.find(magiRow => magiRow.model === modelName);
+	
+	const magiScore = magiEntry ? magiEntry.score : 0; // Use 0 if MAGI score is missing
+	const scoreNum = parseFloat(score);
+	const combined = magiScore ? ((scoreNum + magiScore) / 2).toFixed(2) : 0;
+	
+	// Calculate score percentages based on their respective max scores
+	let scorePercentageEQ = (scoreNum / maxScoreEQBench) * 100;
+	let scorePercentageMagi = magiEntry ? (magiScore / maxScoreMagi) * 100 : 0;
 
-		 let maxScoreCombined = Math.max(...eqbenchRows.map(row => {
-			  let score = parseFloat(row.split(',')[1]);
-			  let magiScore = magiRows.find(magiRow => magiRow.model === row.split(',')[0])?.score || 0;
-			  return magiScore ? ((score + magiScore) / 2) : 0;
-		 }));
-		 let scorePercentageCombined = ((parseFloat(combined) / maxScoreCombined) * 100) || 0;
-		 const modelNameDisplay = modelName.includes('/') 
-                        ? `<a href="https://huggingface.co/${modelName}" target="_blank">${modelName}</a>` 
-                        : modelName;
-		 
-		 let scoreBarEQ = `
-			<div class="score-bar-container">
-				<div class="score-bar" style="width: ${scorePercentageEQ}%"></div>
-				<span class="score-text">${score}</span>
-			</div>
-			`;		 
-		
-		let scoreBarMagi = magiEntry ? `<div class="score-bar-container">
-				<div class="score-bar" style="width: ${scorePercentageMagi}%"></div>		
-				<span class="score-text">${magiScore}</span>		
-		</div>
-		` : `<span class="score-text"></span>`;
+	let maxScoreCombined = Math.max(...eqbenchRows.map(row => {
+		let score = parseFloat(row.split(',')[1]);
+		let magiScore = magiRows.find(magiRow => magiRow.model === row.split(',')[0])?.score || 0;
+		return magiScore ? ((score + magiScore) / 2) : 0;
+	}));
+	let scorePercentageCombined = ((parseFloat(combined) / maxScoreCombined) * 100) || 0;
+	const modelNameDisplay = cleanModelName.includes('/') 
+						? `<a href="https://huggingface.co/${cleanModelName}" target="_blank">${cleanModelName}</a>` 
+						: cleanModelName;
+	
+	let scoreBarEQ = `
+	<div class="score-bar-container">
+		<div class="score-bar" style="width: ${scorePercentageEQ}%"></div>
+		<span class="score-text">${score}</span>
+	</div>
+	`;		 
 
-		let scoreBarCombined = combined ? `<div class="score-bar-container">
-		<div class="score-bar" style="width: ${scorePercentageCombined}%"></div>		
-		<span class="score-text">${combined}</span>
-		</div>
-		` : `<span class="score-text"></span>`;
+	let scoreBarMagi = magiEntry ? `<div class="score-bar-container">
+			<div class="score-bar" style="width: ${scorePercentageMagi}%"></div>		
+			<span class="score-text">${magiScore}</span>		
+	</div>
+	` : `<span class="score-text"></span>`;
 
-		 return `<tr>
-						 <td>${modelNameDisplay}</td>
-						 <td>${parameters}</td>
-						 <td data-order="${score}">${scoreBarEQ}</td>
-						 <td data-order="${magiScore}">${scoreBarMagi}</td>
-						 <td data-order="${combined}">${scoreBarCombined}</td>
-					</tr>`;
+	let scoreBarCombined = combined ? `<div class="score-bar-container">
+	<div class="score-bar" style="width: ${scorePercentageCombined}%"></div>		
+	<span class="score-text">${combined}</span>
+	</div>
+	` : `<span class="score-text"></span>`;
+
+	return `<tr class="${isNewModel ? 'new-model' : ''}">
+		<td>${modelNameDisplay}</td>
+		<td>${parameters}</td>
+		<td data-order="${score}">${scoreBarEQ}</td>
+		<td data-order="${magiScore}">${scoreBarMagi}</td>
+		<td data-order="${combined}">${scoreBarCombined}</td>
+		</tr>`;
 	}).join('');
 	
 	document.getElementById('leaderboardBody').innerHTML = html;
@@ -402,4 +411,18 @@ document.addEventListener('DOMContentLoaded', function() {
 			 expandoBtn.textContent = 'Click to show citations';
 		}
   });
+
+  updateLegendColor();
 });
+
+
+function updateLegendColor() {
+	var legendBox = document.querySelector('.legend-color-box');
+	if (document.body.classList.contains('dark-mode')) {
+		 legendBox.classList.remove('legend-light-mode');
+		 legendBox.classList.add('legend-dark-mode');
+	} else {
+		 legendBox.classList.remove('legend-dark-mode');
+		 legendBox.classList.add('legend-light-mode');
+	}
+}
