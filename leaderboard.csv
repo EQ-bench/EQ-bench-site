@@ -89,3 +89,7 @@ Qwen/Qwen1.5-72B-Chat,82.81,72
 Qwen/Qwen1.5-7B-Chat,54.41,7
 vilm/Quyen-Pro-Max-v0.1,77.16,72
 ShinojiResearch/Senku-70B-Full,84.89,70
+alpindale/miquella-120b,82.15,120
+wolfram/miquliz-120b-v2.0,82.21,120
+migtissera/Tess-72B-v1.5b,81.78,72
+vilm/Quyen-Pro-v0.1,70.75,14
