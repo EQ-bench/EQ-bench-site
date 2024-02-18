@@ -102,7 +102,10 @@ snorkelai/Snorkel-Mistral-PairRM-DPO,65.83,7
 *alpindale/miquella-120b,82.15,120
 *wolfram/miquliz-120b-v2.0,82.21,120
 *migtissera/Tess-72B-v1.5b,81.78,72
-*vilm/Quyen-Pro-v0.1,70.75,14`;
+*vilm/Quyen-Pro-v0.1,70.75,14
+*mlabonne/Monarch-7B,75.8,7
+*mlabonne/NeuralMonarch-7B,76.26,7
+*mlabonne/AlphaMonarch-7B,76.08,7`;
 
 const leaderboardDataMagi = `model,score
 YeungNLP/firefly-mixtral-8x7b,45.41
