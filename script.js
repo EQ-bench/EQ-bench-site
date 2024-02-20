@@ -268,9 +268,12 @@ function loadLeaderboardData() {
 		return magiScore ? ((score + magiScore) / 2) : 0;
 	}));
 	let scorePercentageCombined = ((parseFloat(combined) / maxScoreCombined) * 100) || 0;
-	const modelNameDisplay = cleanModelName.includes('/') 
+	let modelNameDisplay = cleanModelName.includes('/') 
 						? `<a href="https://huggingface.co/${cleanModelName}" target="_blank">${cleanModelName}</a>` 
 						: cleanModelName;
+	if (isNewModel) {
+		modelNameDisplay = '🆕' + modelNameDisplay
+	}
 	
 	let scoreBarEQ = `
 	<div class="score-bar-container">
@@ -291,7 +294,7 @@ function loadLeaderboardData() {
 	</div>
 	` : `<span class="score-text"></span>`;
 
-	return `<tr class="${isNewModel ? 'new-model' : ''}">
+	return `<tr class="${''}">
 		<td>${modelNameDisplay}</td>
 		<td>${parameters}</td>
 		<td data-order="${score}">${scoreBarEQ}</td>
