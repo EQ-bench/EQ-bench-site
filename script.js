@@ -1,10 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-	loadLeaderboardData();
-	displayEncodedEmail();
-	setupDarkModeToggle();
-	applySystemTheme();
-});
-
 const leaderboardDataEqbench = `model,score,params
 NousResearch/Nous-Capybara-34B,68.47,34
 jondurbin/bagel-34b-v0.2,66.07,34
@@ -200,8 +193,7 @@ function setupDarkModeToggle() {
 	
 	toggle.addEventListener('change', function() {
 		 document.body.classList.toggle('dark-mode', this.checked);		 
-		 label.textContent = this.checked ? 'Dark' : 'Light';
-		 updateLegendColor(); // Call this inside the change event listener
+		 label.textContent = this.checked ? 'Dark' : 'Light';		
 	});
 }
 
@@ -402,35 +394,44 @@ $.fn.dataTable.ext.type.order['your-custom-sort'] = function (data) {
 };
 
 
+
 document.addEventListener('DOMContentLoaded', function() {
+	// Always execute
+	displayEncodedEmail();
+	setupDarkModeToggle();
+	applySystemTheme();
+
+	// Conditional execution based on the presence of elements
+	if (document.getElementById('leaderboard')) {
+		 loadLeaderboardData(); // Only load leaderboard data if the leaderboard element exists
+	}
+
+	// This part manages the dark mode toggle and should work on both pages as long as the toggle exists
+	const toggle = document.getElementById('darkModeToggle');
+	if (toggle) {
+		 setupDarkModeToggle();
+	}
+
+	// This checks if the system theme preference should be applied, which is common functionality
+	applySystemTheme();
+
+	// Handle expandable citations in the about page
 	const expandoBtn = document.getElementById('expando-btn');
-	const expandoContent = document.querySelector('.expando-content');
-	expandoContent.style.display = 'none';
-	expandoBtn.textContent = 'Click to show citations';
+	if (expandoBtn) {
+		 const expandoContent = document.querySelector('.expando-content');
+		 expandoContent.style.display = 'none';
+		 expandoBtn.textContent = 'Click to show citations';
 
-	expandoBtn.addEventListener('click', function() {
-		if (expandoContent.style.display === 'none' || expandoContent.style.display === '') {
-			 expandoContent.style.display = 'block';
-			 expandoBtn.textContent = 'Click to hide citations';
-			 // Scroll the expandoContent into view
-			 expandoContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-		} else {
-			 expandoContent.style.display = 'none';
-			 expandoBtn.textContent = 'Click to show citations';
-		}
-  });
-
-  updateLegendColor();
+		 expandoBtn.addEventListener('click', function() {
+			  if (expandoContent.style.display === 'none' || expandoContent.style.display === '') {
+					expandoContent.style.display = 'block';
+					expandoBtn.textContent = 'Click to hide citations';
+					expandoContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			  } else {
+					expandoContent.style.display = 'none';
+					expandoBtn.textContent = 'Click to show citations';
+			  }
+		 });
+	}
 });
 
-
-function updateLegendColor() {
-	var legendBox = document.querySelector('.legend-color-box');
-	if (document.body.classList.contains('dark-mode')) {
-		 legendBox.classList.remove('legend-light-mode');
-		 legendBox.classList.add('legend-dark-mode');
-	} else {
-		 legendBox.classList.remove('legend-dark-mode');
-		 legendBox.classList.add('legend-light-mode');
-	}
-}

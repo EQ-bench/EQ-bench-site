@@ -26,28 +26,16 @@
 		</div>
 	  <p>Emotional Intelligence Benchmark for LLMs</p>
 		
-		<p><a href="https://github.com/EQ-bench/EQ-Bench" target="_blank">Github</a> | <a href="https://arxiv.org/abs/2312.06281" target="_blank">Paper</a> | <span id="email"></span> | <a href="https://twitter.com/sam_paech" target="_blank">Twitter</a> | <a href="about.html">About</a></p>
+		<p><a href="https://github.com/EQ-bench/EQ-Bench" target="_blank">Github</a> | <a href="https://arxiv.org/abs/2312.06281" target="_blank">Paper</a> | <span id="email"></span> | <a href="https://twitter.com/sam_paech" target="_blank">Twitter</a> | <a href="index.html">Leaderboard</a></p>
 
-		<h3>Leaderboard</h3>
-		<div class="table-responsive">
-			<table id="leaderboard" class="table table-striped table-bordered">
-				<thead>
-					<tr>
-						 <th>Model</th>
-						 <th>Params</th>
-						 <th>EQ-Bench*</th>
-						 <th>MAGI†</th>
-						 <th>Combined</th>
-					</tr>
-			  </thead>
-				<tbody id="leaderboardBody">
-						<!-- Data rows will be added here -->
-				</tbody>
-			</table>
-		</div>
+		<h3>About</h3>
+		<p>EQ-Bench is a benchmark for language models designed to assess emotional intelligence.</p>
+		<p>Why emotional intelligence? One reason is that it represents a subset of abilities that are important for the user experience, and which isn't explicitly tested by other benchmarks. Another reason is that it's not trivial to improve scores by fine tuning for the benchmark, which makes it harder to "game" the leaderboard.</p>
+		<p>EQ-Bench is a little different from traditional psychometric tests. It uses a specific question format, in which the subject has to read a dialogue then rate the intensity of possible emotional responses of one of the characters. Every question is interpretative and assesses the ability to predict the magnitude of the 4 presented emotions. The test is graded without the need for a judge (so there is no length bias). It's cheap to run (only 171 questions), and produces results that correlate strongly with human preference (Arena ELO) and multi-domain benchmarks like MMLU.</p>
+		<p>You can run the benchmark on your own models or validate the leaderboard scores using the code in the github repo above.</p>
+		<p>If you would like to see a model on the leaderboard, get in touch and suggest it!</p>
 		<br>
-		<p><b>* EQ-Bench v2</b> scoring system has superseded v1. Scores are not directly comparable between v1 and v2. <a href="https://github.com/EQ-bench/EQ-Bench" target="_blank">More info.</a>			
-		<p><b>† MAGI</b> is a custom subset of MMLU and AGIEval which is highly discriminative amongst the top models (and weakly discriminative lower down). A full description of the process that was used to generate this test set is currently being documented.</p>
+		<p><b>MAGI</b> is a recently added metric to the leaderboard. It is a custom subset of MMLU and AGIEval, selected to have strong discriminatory power amongst the top models. It's still in development, but the test set and selection methodology will be released publicly soon (TM).</p>
 		<hr>
 		<h5>Cite EQ-Bench:</h5>
 		<pre><code>
