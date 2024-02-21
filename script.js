@@ -100,7 +100,8 @@ snorkelai/Snorkel-Mistral-PairRM-DPO,65.83,7
 *mlabonne/NeuralMonarch-7B,76.26,7
 *mlabonne/AlphaMonarch-7B,76.08,7
 *gpt-3.5-turbo-0125,64.97,
-*gpt-4-0125-preview,83.87,`;
+*gpt-4-0125-preview,83.87,
+*google/gemma-7b-it,61.72,7`;
 
 const leaderboardDataMagi = `model,score
 YeungNLP/firefly-mixtral-8x7b,45.41
