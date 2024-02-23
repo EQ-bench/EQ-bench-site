@@ -92,16 +92,17 @@ claude-2.0,72.89,
 pplx-70b-online,62.79,70
 pplx-7b-online,48.91,7
 snorkelai/Snorkel-Mistral-PairRM-DPO,65.83,7
-*alpindale/miquella-120b,82.15,120
-*wolfram/miquliz-120b-v2.0,82.21,120
-*migtissera/Tess-72B-v1.5b,81.78,72
-*vilm/Quyen-Pro-v0.1,70.75,14
+alpindale/miquella-120b,82.15,120
+wolfram/miquliz-120b-v2.0,82.21,120
+migtissera/Tess-72B-v1.5b,81.78,72
+vilm/Quyen-Pro-v0.1,70.75,14
 *mlabonne/Monarch-7B,75.8,7
 *mlabonne/NeuralMonarch-7B,76.26,7
 *mlabonne/AlphaMonarch-7B,76.08,7
 *gpt-3.5-turbo-0125,64.97,
 *gpt-4-0125-preview,83.87,
-*google/gemma-7b-it,61.72,7`;
+*google/gemma-7b-it,61.72,7
+*google/gemma-2b-it,23.26,2`;
 
 const leaderboardDataMagi = `model,score
 YeungNLP/firefly-mixtral-8x7b,45.41
