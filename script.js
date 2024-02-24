@@ -104,7 +104,8 @@ vilm/Quyen-Pro-v0.1,70.75,14
 *google/gemma-7b-it,61.72,7
 *google/gemma-2b-it,23.26,2
 *senseable/WestLake-7B-v2,78.7,7
-*abacusai/Smaug-72B-v0.1,70.96,72`;
+*abacusai/Smaug-72B-v0.1,70.96,72
+*abacusai/TheProfessor-155b,78.82,155`;
 
 const leaderboardDataMagi = `model,score
 YeungNLP/firefly-mixtral-8x7b,45.41
