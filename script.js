@@ -96,16 +96,18 @@ alpindale/miquella-120b,82.15,120
 wolfram/miquliz-120b-v2.0,82.21,120
 migtissera/Tess-72B-v1.5b,81.78,72
 vilm/Quyen-Pro-v0.1,70.75,14
-*mlabonne/Monarch-7B,75.8,7
-*mlabonne/NeuralMonarch-7B,76.26,7
-*mlabonne/AlphaMonarch-7B,76.08,7
-*gpt-3.5-turbo-0125,64.97,
-*gpt-4-0125-preview,83.87,
+mlabonne/Monarch-7B,75.8,7
+mlabonne/NeuralMonarch-7B,76.26,7
+mlabonne/AlphaMonarch-7B,76.08,7
+gpt-3.5-turbo-0125,64.97,
+gpt-4-0125-preview,83.87,
 *google/gemma-7b-it,61.72,7
 *google/gemma-2b-it,23.26,2
 *senseable/WestLake-7B-v2,78.7,7
 *abacusai/Smaug-72B-v0.1,79.75,72
-*abacusai/TheProfessor-155b,78.82,155`;
+*abacusai/TheProfessor-155b,78.82,155
+*mistral-small-2402,80.36,
+*mistral-large-2402,85.17,`;
 
 const leaderboardDataMagi = `model,score
 YeungNLP/firefly-mixtral-8x7b,45.41
