@@ -108,7 +108,9 @@ gpt-4-0125-preview,83.87,
 *abacusai/TheProfessor-155b,78.82,155
 *mistral-small-2402,80.36,
 *mistral-large-2402,85.17,
-*yam-peleg/Experiment26-7B,77.21,7`;
+*yam-peleg/Experiment26-7B,77.21,7
+*cognitivecomputations/Samantha-120b,76.44,120
+*sophosympatheia/Midnight-Miqu-70B-v1.0,75.9,70`;
 
 const leaderboardDataMagi = `model,score
 YeungNLP/firefly-mixtral-8x7b,45.41
