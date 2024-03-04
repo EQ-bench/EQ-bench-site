@@ -101,11 +101,11 @@ mlabonne/NeuralMonarch-7B,76.26,7
 mlabonne/AlphaMonarch-7B,76.08,7
 gpt-3.5-turbo-0125,64.97,
 gpt-4-0125-preview,83.87,
-*google/gemma-7b-it,61.72,7
-*google/gemma-2b-it,23.26,2
-*senseable/WestLake-7B-v2,78.7,7
-*abacusai/Smaug-72B-v0.1,79.75,72
-*abacusai/TheProfessor-155b,78.82,155
+google/gemma-7b-it,61.72,7
+google/gemma-2b-it,23.26,2
+senseable/WestLake-7B-v2,78.7,7
+abacusai/Smaug-72B-v0.1,79.75,72
+abacusai/TheProfessor-155b,78.82,155
 *mistral-small-2402,80.36,
 *mistral-large-2402,85.17,
 *yam-peleg/Experiment26-7B,77.21,7
