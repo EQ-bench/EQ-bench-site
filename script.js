@@ -241,6 +241,29 @@ function decodeHtmlEntities(encodedString) {
 }
 
 
+$.fn.dataTable.ext.type.order['scores-pre'] = function (data) {
+	// Handle missing or null values;
+	if (!data || data === '-') {
+		 return -1; // Always sort these values last
+	}
+
+	return parseFloat(data) || 0;
+};
+
+$.fn.dataTable.ext.type.order['params-pre'] = function (data) {
+	if (!data || data === '-') {
+		return 9999; // Sort missing or null values last
+  }
+  if (data.includes('x')) {
+		const parts = data.split('x').map(Number);
+		return parts.reduce((acc, val) => acc * val, 1); // Multiply if in 'x' format
+  }
+  return parseFloat(data) || 0; // Default to float conversion
+};
+
+
+
+
 function loadLeaderboardData() {
 	const eqbenchRows = leaderboardDataEqbench.split('\n').slice(1); // Skip header for EQ-Bench data
 	const magiRows = leaderboardDataMagi.split('\n').slice(1).map(row => {
@@ -323,8 +346,12 @@ function initializeDataTable() {
 		 "columnDefs": [
 				{ "targets": [2, 3, 4], "orderSequence": ["desc", "asc"] }, // For score columns: sort desc first
 				{
+					"targets": [1], // Adjust this index based on your table's structure
+            	"type": "params" // Use the custom sorting type defined above
+				},
+				{
 					"targets": [3,4], // Index of the MAGI & Combined columns
-					"type": "your-custom-sort"
+					"type": "scores"
 				},
 		],
 		 "dom": "<'d-flex flex-column flex-md-row justify-content-between'<'dataTables_length'l><'dataTables_filter'f>>" +
@@ -397,13 +424,6 @@ function adjustScoreBarsAndColumnWidth(table, sortedColumnIndex) {
 }
 
 
-$.fn.dataTable.ext.type.order['your-custom-sort'] = function (data) {
-	// Handle missing or null values;
-	if (!data || data === '-') {
-		 return -1; // Always sort these values last
-	}
-	return parseFloat(data) || 0; // Convert to float for sorting, defaulting to 0
-};
 
 
 
