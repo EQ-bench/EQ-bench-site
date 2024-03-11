@@ -1,6 +1,4 @@
 const leaderboardDataEqbench = `model,score,params
-NousResearch/Nous-Capybara-34B,68.47,34
-jondurbin/bagel-34b-v0.2,66.07,34
 internlm/internlm2-chat-7b,62.61,7
 NousResearch/Nous-Hermes-2-Yi-34B,72.68,34
 Yhyu13/LMCocktail-10.7B-v1,73.67,10.7
@@ -48,7 +46,6 @@ gpt-3.5-turbo-1106,71.74,
 gpt-3.5-turbo-0613,69.35,
 gpt-3.5-turbo-0301,70.67,
 rishiraj/meow,73.94,10.7
-jondurbin/nontoxic-bagel-34b-v0.2,70.21,34
 alpindale/goliath-120b,76.09,120
 migtissera/Tess-XL-v1.0,78.46,120
 mlabonne/NeuralBeagle14-7B,74.79,7
@@ -58,7 +55,6 @@ stabilityai/stablelm-2-zephyr-1_6b,15.04,1.6
 cognitivecomputations/MegaDolphin-120b,80.21,120
 OrionStarAI/Orion-14B-Chat,59.71,14
 cognitivecomputations/laserxtral,71.96,4x7
-deepseek-ai/deepseek-llm-67b-chat,77.53,67
 macadeliccc/SOLAR-10.7b-Instruct-dpo,73.21,10.7
 tiiuae/falcon-180B-chat,56.82,180
 Qwen/Qwen-1_8B-Chat,30,1.8
@@ -115,89 +111,108 @@ abacusai/TheProfessor-155b,78.82,155
 *claude-3-opus-20240229,82.19,`;
 
 const leaderboardDataMagi = `model,score
-YeungNLP/firefly-mixtral-8x7b,45.41
-macadeliccc/SOLAR-10.7b-Instruct-dpo,46.77
-meta-llama/Llama-2-70b-chat-hf,39.9
-mistralai/mistral-7b-instruct-v0.1,37.04
-Open-Orca/Mistral-7B-OpenOrca,39.18
-mlabonne/NeuralHermes-2.5-Mistral-7B,42.59
-WizardLM/WizardLM-13B-V1.2,36.78
-Yhyu13/LMCocktail-10.7B-v1,47.1
-Qwen/Qwen-1_8B-Chat,37.11
-Qwen/Qwen-72B-Chat,60.27
-Qwen/Qwen1.5-4B-Chat,38.92
-openchat/openchat-3.5-1210,43.46
-alpindale/goliath-120b,53.03
-ShinojiResearch/Senku-70B-Full,65.49
-Qwen/Qwen1.5-72B-Chat,63.35
-Qwen/Qwen-14B-Chat,45.35
-deepseek-ai/deepseek-llm-67b-chat,59.46
-OrionStarAI/Orion-14B-Chat,45.12
-meta-llama/Llama-2-7b-chat-hf,35.97
-NousResearch/Nous-Capybara-7B-V1,37.27
-01-ai/Yi-34B-Chat,58.22
-teknium/OpenHermes-2.5-Mistral-7B,42.36
-01-ai/Yi-6B-Chat,43.07
-miqudev/miqu-1-70b,66.72
-migtissera/Tess-XL-v1.0,50.63
-huggingfaceh4/zephyr-7b-alpha,39.9
-NousResearch/Nous-Hermes-2-Mixtral-8x7B-SFT,48.69
-allenai/tulu-2-dpo-70b,52.12
-madatnlp/marcoroni-7b-v3-safetensor,42.26
-cognitivecomputations/dolphin-2_2-yi-34b,60.88
-mlabonne/Beagle14-7B,44.05
-Toten5/Marcoroni-neural-chat-7B-v2,41.65
-berkeley-nest/Starling-LM-7B-alpha,43.04
-zyh3826/GML-Mistral-merged-v1,44.57
-Qwen/Qwen-7B-Chat,38.73
-lmsys/vicuna-13b-v1.5,36.56
-cognitivecomputations/dolphin-2.2-70b,51.77
-WizardLM/WizardLM-70B-V1.0,44.76
-stabilityai/stablelm-2-zephyr-1_6b,38.14
-cognitivecomputations/laserxtral,42.2
-mlabonne/NeuralMarcoro14-7B,42.95
-jondurbin/bagel-34b-v0.2,62.37
-lxuechen/phi-2-dpo,38.14
-Intel/neural-chat-7b-v3-1,41.42
-huggingfaceh4/zephyr-7b-beta,40.42
-jondurbin/nontoxic-bagel-34b-v0.2,65.97
-rhysjones/phi-2-orange,37.53
-timdettmers/guanaco-33b-merged,38.66
-DiscoResearch/DiscoLM-120b,55.08
-serpdotai/sparsetral-16x7B-v2,38.6
-NousResearch/Nous-Capybara-34B,61.47
-upstage/SOLAR-10.7B-Instruct-v1.0,46.93
-mistralai/Mistral-7B-Instruct-v0.2,39.9
-cloudyu/Mixtral_34Bx2_MoE_60B,63.31
-vilm/Quyen-Pro-Max-v0.1,60.4
-fblgit/una-cybertron-7b-v2-bf16,43.27
-Weyaxi/SauerkrautLM-UNA-SOLAR-Instruct,46.55
-lmsys/vicuna-7b-v1.1,41.36
-Qwen/Qwen1.5-1.8B-Chat,37.53
-lmsys/vicuna-33b-v1.3,38.37
-rishiraj/meow,46.71
-migtissera/SynthIA-70B-v1.5,50.86
-microsoft/phi-2,36.88
-openchat/openchat_3.5,42.2
-vince62s/phi-2-psy,37.24
-TheBloke/koala-7B-HF,20.08
-Qwen/Qwen1.5-14B-Chat,53.84
-mlabonne/Beyonder-4x7B-v2,43.04
-meta-llama/Llama-2-13b-chat-hf,37.17
-internlm/internlm2-chat-7b,41.94
-cognitivecomputations/MegaDolphin-120b,56.34
-mistralai/Mixtral-8x7B-Instruct-v0.1,49.56
-alpindale/miquella-120b,63.38
-mlabonne/phixtral-2x2_8,37.46
-Qwen/Qwen1.5-7B-Chat,48.17
-mlabonne/NeuralBeagle14-7B,44.21
-NousResearch/Nous-Hermes-2-Yi-34B,64.64
-cognitivecomputations/dolphin-2.2.1-mistral-7b,37.82
-gpt-3.5-turbo-0613,45.5
-gpt-3.5-turbo-1106,46.2
-gpt-3.5-turbo-0301,51.2
-gemini-pro,52.8
-mistral-medium,65.4`;
+TheBloke/koala-7B-HF,23.7
+lmsys/vicuna-7b-v1.1,27.38
+stabilityai/stablelm-2-zephyr-1_6b,27.54
+lmsys/vicuna-13b-v1.5,28.75
+Qwen/Qwen-1_8B-Chat,29.19
+NousResearch/Nous-Capybara-7B-V1,30.16
+mlabonne/phixtral-2x2_8,30.44
+microsoft/phi-2,30.57
+mistralai/mistral-7b-instruct-v0.1,30.69
+Qwen/Qwen1.5-1.8B-Chat,31.56
+lmsys/vicuna-33b-v1.3,31.66
+timdettmers/guanaco-33b-merged,31.78
+lxuechen/phi-2-dpo,31.85
+rhysjones/phi-2-orange,32.03
+vince62s/phi-2-psy,32.03
+Qwen/Qwen1.5-4B-Chat,32.66
+cognitivecomputations/dolphin-2.2.1-mistral-7b,33.16
+Qwen/Qwen-7B-Chat,33.44
+mistralai/Mistral-7B-Instruct-v0.2,34.69
+serpdotai/sparsetral-16x7B-v2,34.97
+huggingfaceh4/zephyr-7b-alpha,35.15
+Open-Orca/Mistral-7B-OpenOrca,35.78
+huggingfaceh4/zephyr-7b-beta,35.97
+Toten5/Marcoroni-neural-chat-7B-v2,36.31
+senseable/WestLake-7B-v2,36.59
+Intel/neural-chat-7b-v3-1,36.65
+berkeley-nest/Starling-LM-7B-alpha,37.06
+mlabonne/NeuralMarcoro14-7B,37.12
+teknium/OpenHermes-2.5-Mistral-7B,37.31
+openchat/openchat_3.5,37.34
+cognitivecomputations/laserxtral,37.46
+fblgit/una-cybertron-7b-v2-bf16,37.5
+snorkelai/Snorkel-Mistral-PairRM-DPO,37.53
+mlabonne/NeuralHermes-2.5-Mistral-7B,37.56
+mlabonne/Beyonder-4x7B-v2,38.03
+internlm/internlm2-chat-7b,38.43
+01-ai/Yi-6B-Chat,38.74
+openchat/openchat-3.5-1210,38.81
+mlabonne/AlphaMonarch-7B,39.12
+mlabonne/Monarch-7B,39.56
+mlabonne/NeuralMonarch-7B,39.59
+upstage/SOLAR-10.7B-Instruct-v1.0,39.62
+Qwen/Qwen-14B-Chat,39.74
+WizardLM/WizardLM-70B-V1.0,39.87
+gpt-3.5-turbo-0613,40.55
+mlabonne/Beagle14-7B,41.02
+mlabonne/NeuralBeagle14-7B,41.06
+zyh3826/GML-Mistral-merged-v1,41.18
+Qwen/Qwen1.5-7B-Chat,41.59
+Weyaxi/SauerkrautLM-UNA-SOLAR-Instruct,42.43
+YeungNLP/firefly-mixtral-8x7b,42.46
+Yhyu13/LMCocktail-10.7B-v1,42.65
+gpt-3.5-turbo-0125,42.65
+rishiraj/meow,42.68
+gpt-3.5-turbo-1106,43.17
+mistralai/Mixtral-8x7B-Instruct-v0.1,45.74
+gpt-3.5-turbo-0301,46.66
+gemini-pro,46.87
+migtissera/Tess-XL-v1.0,48.08
+migtissera/SynthIA-70B-v1.5,48.92
+cognitivecomputations/dolphin-2.2-70b,49.73
+allenai/tulu-2-dpo-70b,50.23
+NousResearch/Nous-Hermes-2-Mixtral-8x7B-SFT,51.83
+mistral-small-2402,51.9
+cognitivecomputations/MegaDolphin-120b,54.45
+01-ai/Yi-34B-Chat,57.1
+Qwen/Qwen-72B-Chat,60.38
+cognitivecomputations/dolphin-2_2-yi-34b,60.66
+mistral-medium,62.15
+NousResearch/Nous-Hermes-2-Yi-34B,63.03
+cloudyu/Mixtral_34Bx2_MoE_60B,65.06
+mistral-large-2402,67.69
+gpt-4-1106-preview,74.96
+gpt-4-0314,75.67
+claude-3-opus-20240229,76.55
+gpt-4-0125-preview,76.83
+gpt-4-0613,77.85
+madatnlp/marcoroni-7b-v3-safetensor,37.06
+meta-llama/Llama-2-13b-chat-hf,28.2
+meta-llama/Llama-2-70b-chat-hf,35.4
+meta-llama/Llama-2-7b-chat-hf,27.5
+alpindale/goliath-120b,50.36
+OrionStarAI/Orion-14B-Chat,40.74
+macadeliccc/SOLAR-10.7b-Instruct-dpo,42.37
+miqudev/miqu-1-70b,63.22
+DiscoResearch/DiscoLM-120b,54.01
+WizardLM/WizardLM-13B-V1.2,29.1
+Qwen/Qwen1.5-14B-Chat,49.27
+Qwen/Qwen1.5-72B-Chat,63.47
+vilm/Quyen-Pro-Max-v0.1,59.29
+ShinojiResearch/Senku-70B-Full,63.94
+alpindale/miquella-120b,60.69
+wolfram/miquliz-120b-v2.0,54.57
+migtissera/Tess-72B-v1.5b,59.57
+vilm/Quyen-Pro-v0.1,47.3
+google/gemma-7b-it,24.85
+google/gemma-2b-it,24.16
+abacusai/Smaug-72B-v0.1,60.22
+yam-peleg/Experiment26-7B,38.93
+cognitivecomputations/Samantha-120b,48.58
+sophosympatheia/Midnight-Miqu-70B-v1.0,40.74
+claude-3-sonnet-20240229,61.01`;
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
@@ -279,7 +294,8 @@ function loadLeaderboardData() {
 	const [modelName, score, parameters] = eqbenchRow.split(',');
 	const cleanModelName = modelName.replace(/^\*/, ''); // Remove leading asterisk
 	const isNewModel = modelName.startsWith('*'); // Check if the model is new
-	const magiEntry = magiRows.find(magiRow => magiRow.model === modelName);
+	const magiEntry = magiRows.find(magiRow => magiRow.model === cleanModelName);
+
 	
 	const magiScore = magiEntry ? magiEntry.score : 0; // Use 0 if MAGI score is missing
 	const scoreNum = parseFloat(score);
@@ -337,7 +353,7 @@ function loadLeaderboardData() {
 
 function initializeDataTable() {
 	let table = $('#leaderboard').DataTable({
-		 "order": [[2, "desc"]], // Default sorting
+		 "order": [[4, "desc"]], // Default sorting
 		 "pageLength": 100,
 		 "lengthMenu": [50, 100, 200, 1000],
 		 "language": {
