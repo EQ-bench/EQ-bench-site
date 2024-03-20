@@ -111,9 +111,11 @@ function loadLeaderboardData() {
 		// Calculate score percentage based on max score
 		let scorePercentageCreativeWriting = (scoreNum / maxScoreCreativeWriting) * 100;
 
+		// Extract model name without creator
+		let displayModelName = modelName.split('/').pop();
 		let modelNameDisplay = modelName.includes('/')
-			? `<a href="https://huggingface.co/${modelName}" target="_blank">${modelName}</a>`
-			: modelName;
+			? `<a href="https://huggingface.co/${modelName}" target="_blank">${displayModelName}</a>`
+			: displayModelName;
 
 		let modelResultsFn = 'results/creative-writing/' + modelName.replace('/','__')+'.txt'
 

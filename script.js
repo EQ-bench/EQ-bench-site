@@ -308,59 +308,61 @@ function loadLeaderboardData() {
 	const maxScoreMagi = Math.max(...magiRows.map(row => row.score));
 
 	let html = eqbenchRows.map(eqbenchRow => {
-	const [modelName, score, parameters] = eqbenchRow.split(',');
-	const cleanModelName = modelName.replace(/^\*/, ''); // Remove leading asterisk
-	const isNewModel = modelName.startsWith('*'); // Check if the model is new
-	const magiEntry = magiRows.find(magiRow => magiRow.model === cleanModelName);
+		const [modelName, score, parameters] = eqbenchRow.split(',');
+		const cleanModelName = modelName.replace(/^\*/, ''); // Remove leading asterisk
+		const isNewModel = modelName.startsWith('*'); // Check if the model is new
+		const magiEntry = magiRows.find(magiRow => magiRow.model === cleanModelName);
 
-	
-	const magiScore = magiEntry ? magiEntry.score : 0; // Use 0 if MAGI score is missing
-	const scoreNum = parseFloat(score);
-	const combined = magiScore ? ((scoreNum + magiScore) / 2).toFixed(2) : 0;
-	
-	// Calculate score percentages based on their respective max scores
-	let scorePercentageEQ = (scoreNum / maxScoreEQBench) * 100;
-	let scorePercentageMagi = magiEntry ? (magiScore / maxScoreMagi) * 100 : 0;
+		const magiScore = magiEntry ? magiEntry.score : 0; // Use 0 if MAGI score is missing
+		const scoreNum = parseFloat(score);
+		const combined = magiScore ? ((scoreNum + magiScore) / 2).toFixed(2) : 0;
+		
+		// Calculate score percentages based on their respective max scores
+		let scorePercentageEQ = (scoreNum / maxScoreEQBench) * 100;
+		let scorePercentageMagi = magiEntry ? (magiScore / maxScoreMagi) * 100 : 0;
 
-	let maxScoreCombined = Math.max(...eqbenchRows.map(row => {
-		let score = parseFloat(row.split(',')[1]);
-		let magiScore = magiRows.find(magiRow => magiRow.model === row.split(',')[0])?.score || 0;
-		return magiScore ? ((score + magiScore) / 2) : 0;
-	}));
-	let scorePercentageCombined = ((parseFloat(combined) / maxScoreCombined) * 100) || 0;
-	let modelNameDisplay = cleanModelName.includes('/') 
-						? `<a href="https://huggingface.co/${cleanModelName}" target="_blank">${cleanModelName}</a>` 
-						: cleanModelName;
-	if (isNewModel) {
-		modelNameDisplay = '🆕' + modelNameDisplay
-	}
-	
-	let scoreBarEQ = `
-	<div class="score-bar-container">
-		<div class="score-bar" style="width: ${scorePercentageEQ}%"></div>
-		<span class="score-text">${score}</span>
-	</div>
-	`;		 
+		let maxScoreCombined = Math.max(...eqbenchRows.map(row => {
+			let score = parseFloat(row.split(',')[1]);
+			let magiScore = magiRows.find(magiRow => magiRow.model === row.split(',')[0])?.score || 0;
+			return magiScore ? ((score + magiScore) / 2) : 0;
+		}));
+		let scorePercentageCombined = ((parseFloat(combined) / maxScoreCombined) * 100) || 0;
 
-	let scoreBarMagi = magiEntry ? `<div class="score-bar-container">
-			<div class="score-bar" style="width: ${scorePercentageMagi}%"></div>		
-			<span class="score-text">${magiScore}</span>		
-	</div>
-	` : `<span class="score-text"></span>`;
+		// Extract model name without creator
+		let displayModelName = cleanModelName.split('/').pop();
+		let modelNameDisplay = cleanModelName.includes('/') 
+							? `<a href="https://huggingface.co/${cleanModelName}" target="_blank">${displayModelName}</a>` 
+							: displayModelName;
+		if (isNewModel) {
+			modelNameDisplay = '🆕' + modelNameDisplay
+		}
+		
+		let scoreBarEQ = `
+		<div class="score-bar-container">
+			<div class="score-bar" style="width: ${scorePercentageEQ}%"></div>
+			<span class="score-text">${score}</span>
+		</div>
+		`;		 
 
-	let scoreBarCombined = combined ? `<div class="score-bar-container">
-	<div class="score-bar" style="width: ${scorePercentageCombined}%"></div>		
-	<span class="score-text">${combined}</span>
-	</div>
-	` : `<span class="score-text"></span>`;
+		let scoreBarMagi = magiEntry ? `<div class="score-bar-container">
+				<div class="score-bar" style="width: ${scorePercentageMagi}%"></div>		
+				<span class="score-text">${magiScore}</span>		
+		</div>
+		` : `<span class="score-text"></span>`;
 
-	return `<tr class="${''}">
-		<td>${modelNameDisplay}</td>
-		<td>${parameters}</td>
-		<td data-order="${score}">${scoreBarEQ}</td>
-		<td data-order="${magiScore}">${scoreBarMagi}</td>
-		<td data-order="${combined}">${scoreBarCombined}</td>
-		</tr>`;
+		let scoreBarCombined = combined ? `<div class="score-bar-container">
+		<div class="score-bar" style="width: ${scorePercentageCombined}%"></div>		
+		<span class="score-text">${combined}</span>
+		</div>
+		` : `<span class="score-text"></span>`;
+
+		return `<tr class="${''}">
+			<td>${modelNameDisplay}</td>
+			<td>${parameters}</td>
+			<td data-order="${score}">${scoreBarEQ}</td>
+			<td data-order="${magiScore}">${scoreBarMagi}</td>
+			<td data-order="${combined}">${scoreBarCombined}</td>
+			</tr>`;
 	}).join('');
 	
 	document.getElementById('leaderboardBody').innerHTML = html;
