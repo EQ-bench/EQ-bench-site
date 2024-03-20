@@ -220,26 +220,41 @@ function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
 	var label = document.getElementById('toggleLabel');
 	
+	// Check if a preference is saved in localStorage and apply it
+	const savedMode = localStorage.getItem('darkModeEnabled');
+	if (savedMode !== null) {
+		const isDarkMode = savedMode === 'true';
+		document.body.classList.toggle('dark-mode', isDarkMode);
+		toggle.checked = isDarkMode;
+		label.textContent = isDarkMode ? 'Dark' : 'Light';
+	}
+
 	toggle.addEventListener('change', function() {
-		 document.body.classList.toggle('dark-mode', this.checked);		 
-		 label.textContent = this.checked ? 'Dark' : 'Light';		
+		document.body.classList.toggle('dark-mode', this.checked);		 
+		label.textContent = this.checked ? 'Dark' : 'Light';
+		localStorage.setItem('darkModeEnabled', this.checked); // Save the current preference
 	});
 }
 
-
 function applySystemTheme() {
-	const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 	const toggle = document.getElementById('darkModeToggle');
 	const label = document.getElementById('toggleLabel');
 
-	if (prefersDarkMode) {
-		 document.body.classList.add('dark-mode');
-		 toggle.checked = true;
-		 label.textContent = 'Dark';
+	// Apply system theme only if no saved preference
+	if (localStorage.getItem('darkModeEnabled') === null) {
+		const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		document.body.classList.toggle('dark-mode', prefersDarkMode);
+		toggle.checked = prefersDarkMode;
+		label.textContent = prefersDarkMode ? 'Dark' : 'Light';
 	} else {
-		 label.textContent = 'Light';
+		// If there is a saved preference, ensure it's applied correctly
+		const isDarkMode = localStorage.getItem('darkModeEnabled') === 'true';
+		document.body.classList.toggle('dark-mode', isDarkMode);
+		toggle.checked = isDarkMode;
+		label.textContent = isDarkMode ? 'Dark' : 'Light';
 	}
 }
+
 
 function displayEncodedEmail() {
 	var encodedUser = '&#99;&#111;&#110;&#116;&#97;&#99;&#116;';
@@ -448,22 +463,20 @@ function adjustScoreBarsAndColumnWidth(table, sortedColumnIndex) {
 document.addEventListener('DOMContentLoaded', function() {
 	// Always execute
 	displayEncodedEmail();
-	setupDarkModeToggle();
-	applySystemTheme();
+	//setupDarkModeToggle();
+	//applySystemTheme();
 
 	// Conditional execution based on the presence of elements
 	if (document.getElementById('leaderboard')) {
 		 loadLeaderboardData(); // Only load leaderboard data if the leaderboard element exists
 	}
 
-	// This part manages the dark mode toggle and should work on both pages as long as the toggle exists
-	const toggle = document.getElementById('darkModeToggle');
-	if (toggle) {
-		 setupDarkModeToggle();
-	}
+	
 
 	// This checks if the system theme preference should be applied, which is common functionality
 	applySystemTheme();
+
+	setupDarkModeToggle();
 
 	// Handle expandable citations in the about page
 	const expandoBtn = document.getElementById('expando-btn');
@@ -485,3 +498,14 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 });
 
+$(document).ready(function() {
+	$('#darkModeToggle').change(function() {
+		if ($(this).is(':checked')) {
+			$('body').addClass('dark-mode').removeClass('light-mode');
+			$('#toggleLabel').text('Dark');
+		} else {
+			$('body').addClass('light-mode').removeClass('dark-mode');
+			$('#toggleLabel').text('Light');
+		}
+	});
+});

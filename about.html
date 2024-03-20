@@ -19,7 +19,7 @@
 			<label class="form-check-label" for="darkModeToggle" id="toggleLabel">Light</label>
 		</div>
 		<div class="header">
-			<img src="./images/eqbench_logo_sml.png" alt="EQ-bench Logo" class="logo"/>
+			<a href="./"><img src="./images/eqbench_logo_sml.png" alt="EQ-bench Logo" class="logo"/></a>
 			<div class="header-text">
 				<h1>EQ-Bench</h1>				 
 			</div>
@@ -29,13 +29,52 @@
 		<p><a href="https://github.com/EQ-bench/EQ-Bench" target="_blank">Github</a> | <a href="https://arxiv.org/abs/2312.06281" target="_blank">Paper</a> | <span id="email"></span> | <a href="https://twitter.com/sam_paech" target="_blank">Twitter</a> | <a href="index.html">Leaderboard</a></p>
 
 		<h3>About</h3>
-		<p>EQ-Bench is a benchmark for language models designed to assess emotional intelligence.</p>
-		<p>Why emotional intelligence? One reason is that it represents a subset of abilities that are important for the user experience, and which isn't explicitly tested by other benchmarks. Another reason is that it's not trivial to improve scores by fine tuning for the benchmark, which makes it harder to "game" the leaderboard.</p>
-		<p>EQ-Bench is a little different from traditional psychometric tests. It uses a specific question format, in which the subject has to read a dialogue then rate the intensity of possible emotional responses of one of the characters. Every question is interpretative and assesses the ability to predict the magnitude of the 4 presented emotions. The test is graded without the need for a judge (so there is no length bias). It's cheap to run (only 171 questions), and produces results that correlate strongly with human preference (Arena ELO) and multi-domain benchmarks like MMLU.</p>
-		<p>You can run the benchmark on your own models or validate the leaderboard scores using the code in the github repo above.</p>
-		<p>If you would like to see a model on the leaderboard, get in touch and suggest it!</p>
-		<br>
-		<p><b>MAGI</b> is a recently added metric to the leaderboard. It is a custom subset of MMLU and AGIEval, selected to have strong discriminatory power amongst the top models. It's still in development, but the test set and selection methodology will be released publicly soon (TM).</p>
+		<div class="section">
+			<p><b>EQ-Bench</b></p>
+			<p>EQ-Bench is a benchmark for language models designed to assess emotional intelligence.</p>
+			<p>Why emotional intelligence? One reason is that it represents a subset of abilities that are important for the user experience, and which isn't explicitly tested by other benchmarks. Another reason is that it's not trivial to improve scores by fine tuning for the benchmark, which makes it harder to "game" the leaderboard.</p>
+			<p>EQ-Bench is a little different from traditional psychometric tests. It uses a specific question format, in which the subject has to read a dialogue then rate the intensity of possible emotional responses of one of the characters. Every question is interpretative and assesses the ability to predict the magnitude of the 4 presented emotions. The test is graded without the need for a judge (so there is no length bias). It's cheap to run (only 171 questions), and produces results that correlate strongly with human preference (Arena ELO) and multi-domain benchmarks like MMLU.</p>
+			<p>You can run the benchmark on your own models or validate the leaderboard scores using the code in the github repo above.</p>
+			<p>If you would like to see a model on the leaderboard, get in touch and suggest it!</p>
+			<br>
+		</div>
+		<div class="section">
+			<p><b>MAGI</b></p>
+			<p>MAGI is a recently added metric to the leaderboard. It is a custom subset of MMLU and AGIEval, selected to have strong discriminatory power amongst the top models. It's still in development, but the test set and selection methodology will be released publicly soon (TM).</p>
+			<p>You can use the MAGI test set with <a href="https://github.com/sqrkl/lm-evaluation-harness">this fork of EleutherAI lm-evaluation-harness</a>.</p>
+			<br>
+		</div>
+		<div class="section">
+			<p><b>Creative Writing</b></p>
+			<p>This is a brand new leaderboard which uses a LLM judge (Claude 3 Opus) to assess the creative writing abilities of the test models on a series of writing prompts.</p>
+			<p>You can reproduce these results or run the benchmark on your own models with the <a href="https://github.com/EQ-bench/EQ-Bench" target="_blank">EQ-Bench repo on Github</a>.</p>
+			<p>There has been a distinct lack of automated benchmarks for creative writing because, put simply, it's hard to assess writing quality without humans in the loop. Asking a language model, "How good is this writing (0-10)" elicits poor results. Even if we had a good LLM judge, it's not immediately obvious how to formalise the assessment of creative writing objectively.</p>
+			<p>The release of Claude 3, in particular the flagship Opus model, has solved half of this equation: it's able to give meaningful & nuanced analysis of creative writing output, and it can tell the difference between a wide range of ability levels.</p>
+			<p>To solve the other half of the equation, we've come up with an assessment format that works to the strenths of LLM judges and avoids their weaknesses. LLM judges are typically bad at scoring nebulous metrics like "How well written is this piece?" They also find it hard to give consistent scores on an objective rating system if they don't have some exemplar or baseline reference to compare to.</p>
+			<p>Our test includes:</p>
+			<ul>
+				<li>19 writing prompts (typically assessed over multiple iterations)</li>
+				<li>36 narrowly defined assessment criteria</li>
+				<li>Including 6 question-specific criteria</li>
+				<li>Several criteria targeting positivity bias which (in our opinion) contributes to bad writing</li>
+				<li>Exemplar reference output for each question</li>
+			</ul>
+			<p>This approach of breaking down the assessment task into a granular set of criteria and comparing to an exemplar has brought creative writing assessment into the purview of LLM judges. Our test is discriminative amongst a wide range of writing ability levels.</p>
+			<p><b>* A note on biases *</b></p>
+			<p>LLM judges have biases. LLM-as-a-judge benchmarks such as Alpaca-Eval can exhibit a strong length bias where the judge, (in Alpaca-Eval's case GPT-4), prefers longer outputs. Their approach involves presenting the output from two models to the judge, and the judge says which it thinks is better.</p>
+			<p>We attempt to mitigate the length bias by: A. assessing by 36 narrow criteria, and B. explicitly instructing the judge not to be biased by length (this seems to work for MT-Bench).</p>
+			<p>It's possible / likely that this & other biases might still be a factor in scoring (e.g. Claude might prefer its own and other anthropic models). So bear this in mind when interpreting the results.</p>
+			<p>We include the outputs that the model generated for each prompt so you can judge for yourself.</p>
+			<p><b>Alternative Judge Models</b></p>
+			<p>Yes, you can use other judge models than Claude Opus (although the results won't be directly comparable). Currently the benchmark pipeline supports Anthropic, OpenAI and Mistral models via their APIs. Soon we will support local models as judges.</p>
+			<p><b>* A note on variance *</b></p>
+			<p>This benchmark has a relatively small number of test questions (19). We specify generation temperature = 0.7 so each run is different. This means there is significant variation of scores between iterations (avg range: 3.35, std dev: 1.41). To reduce variance we recommend using 3 iterations or more. The top half of models in the leaderboard have been averaged over 3 iterations.</p>
+			<p>It costs around $3.00 to bench a model over 3 iterations using Claude 3 Opus at current rates.</p>
+			<p>If you would like your model included on the creative writing leaderboard, please consider contributing to my compute costs, and get in touch!</p>
+		</div>
+
+		<p><script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#1a1a1a', 'O5O7VUVYO');kofiwidget2.draw();</script> </p>
+
 		<hr>
 		<h5>Cite EQ-Bench:</h5>
 		<pre><code>

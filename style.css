@@ -202,6 +202,7 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
 	text-align: center;
 	line-height: 20px;
 	z-index: 99;
+	
 }
  
  /* Dark Mode additional styles for the score bar */
@@ -258,3 +259,34 @@ body.dark-mode #leaderboard .new-model {
 .legend-text {
 	font-size: 0.9rem;
 }
+
+
+/* Creative Writing Leaderboard Styles */
+.creative-writing-score-bar {
+	display: none; /* Initially hidden, shown via JavaScript */
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	border-radius: 5px;
+	transition: width 0.5s ease;
+	z-index: 1;
+	/* Background will be set dynamically */
+}
+
+.section {
+	padding: 20px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	background-color: #f0f0f0;
+ }
+ 
+ body.light-mode .section {
+	background-color: #f0f0f0;
+ }
+ 
+ body.dark-mode .section {
+	background-color: #333;
+ }
+
+
