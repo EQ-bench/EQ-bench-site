@@ -105,11 +105,12 @@ abacusai/TheProfessor-155b,78.82,155
 mistral-small-2402,80.36,
 mistral-large-2402,85.17,
 yam-peleg/Experiment26-7B,77.21,7
-*cognitivecomputations/Samantha-120b,76.44,120
-*sophosympatheia/Midnight-Miqu-70B-v1.0,75.9,70
-*claude-3-sonnet-20240229,80.45,
-*claude-3-opus-20240229,82.19,
-*Infinimol/miiqu-f16,83.17,105`;
+cognitivecomputations/Samantha-120b,76.44,120
+sophosympatheia/Midnight-Miqu-70B-v1.0,75.9,70
+claude-3-sonnet-20240229,80.45,
+claude-3-opus-20240229,82.19,
+*Infinimol/miiqu-f16,83.17,105,
+*mlabonne/Beyonder-4x7B-v3,77.01,4x7`;
 
 const leaderboardDataMagi = `model,score
 TheBloke/koala-7B-HF,23.7
@@ -214,7 +215,8 @@ yam-peleg/Experiment26-7B,38.93
 cognitivecomputations/Samantha-120b,48.58
 sophosympatheia/Midnight-Miqu-70B-v1.0,40.74
 claude-3-sonnet-20240229,61.01
-Infinimol/miiqu-f16,63.28`;
+Infinimol/miiqu-f16,63.28
+mlabonne/Beyonder-4x7B-v3,39.03`;
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
