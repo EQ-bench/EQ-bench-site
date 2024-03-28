@@ -110,7 +110,8 @@ sophosympatheia/Midnight-Miqu-70B-v1.0,75.9,70
 claude-3-sonnet-20240229,80.45,
 claude-3-opus-20240229,82.19,
 *Infinimol/miiqu-f16,83.17,105,
-*mlabonne/Beyonder-4x7B-v3,77.01,4x7`;
+*mlabonne/Beyonder-4x7B-v3,77.01,4x7
+*Nexusflow/Starling-LM-7B-beta,73.82,7`;
 
 const leaderboardDataMagi = `model,score
 TheBloke/koala-7B-HF,23.7
@@ -216,7 +217,8 @@ cognitivecomputations/Samantha-120b,48.58
 sophosympatheia/Midnight-Miqu-70B-v1.0,40.74
 claude-3-sonnet-20240229,61.01
 Infinimol/miiqu-f16,63.28
-mlabonne/Beyonder-4x7B-v3,39.03`;
+mlabonne/Beyonder-4x7B-v3,39.03,
+Nexusflow/Starling-LM-7B-beta,40.12`;
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
