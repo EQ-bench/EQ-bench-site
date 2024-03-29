@@ -43,14 +43,15 @@ header, footer {
 }
 
 .lightbox_imgs a {
-	flex: 0 1 auto; /* Allows items to shrink but not grow */
+	display: inline-flex; /* Allows the container to be flexible */
+	justify-content: center; /* Centers content horizontally */
+	align-items: center; /* Centers content vertically */
 	margin: 0 10px; /* Adds spacing between images */
-	display: inline-flex; /* Displays links as flex containers to center the images */
-	justify-content: center; /* Center the images horizontally within the links */
-	align-items: center; /* Center the images vertically within the links */
+	flex: 0 1 auto; /* Allows the container to shrink but not grow */
 }
 
 .lightbox_imgs img {
-	height: auto; /* Maintains the image's aspect ratio */
-	max-width: 100%; /* Ensures the image can shrink but never exceeds its natural size */
+	height: auto; /* Maintains aspect ratio */
+	max-width: 100%; /* Allows shrinking */
+	max-height: 100vh; /* Prevents images from being taller than the viewport */
 }
