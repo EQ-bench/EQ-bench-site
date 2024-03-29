@@ -34,19 +34,29 @@ header, footer {
 	}
 }
 
+.lightbox_imgs {
+	display: flex; /* Enable flex layout for the container */
+	flex-wrap: wrap; /* Allow items to wrap to the next line if there's not enough space */
+	justify-content: center; /* Center items horizontally */
+	align-items: center; /* Align items vertically */
+}
+
 .lightbox_imgs a {
-	display: inline-flex; /* Use inline-flex for alignment and spacing */
-	justify-content: center; /* Center images within the links */
-	align-items: center; /* Align images vertically */
-	margin-right: 20px; /* Adjust spacing between images */
+	display: flex; /* Apply flex layout to anchor tags for alignment */
+	justify-content: center; /* Center the images within the anchor tags */
+	align-items: center; /* Align the images vertically */
+	margin-right: 20px; /* Spacing between each image */
+	flex: 1 1 auto; /* Allow flex items to grow and shrink but not beyond their content size */
+	max-width: 100%; /* Prevents the anchor tag from exceeding the container's width */
 }
 
 .lightbox_imgs a:last-child {
-	margin-right: 0; /* Removes margin from the last image */
+	margin-right: 0; /* Removes the margin from the last image */
 }
 
 .lightbox_imgs img {
-	max-width: none; /* Override any max-width */
-	height: auto; /* Keeps the image aspect ratio */
-	display: block; /* Ensures images are displayed correctly in flex container */
+	width: auto; /* Allows the image to maintain its aspect ratio */
+	height: auto; /* Additional control over the image's height */
+	max-width: 100%; /* Ensures images do not scale beyond their natural size */
+	max-height: 100%; /* You can adjust or remove this depending on your needs */
 }
