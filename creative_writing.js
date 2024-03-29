@@ -18,7 +18,8 @@ google/gemma-7b-it,47.34,7,2811
 meta-llama/Llama-2-7b-chat-hf,47.85,7,4196
 meta-llama/Llama-2-13b-chat-hf,54.6,13,3957
 alpindale/goliath-120b,68.33,120,3947
-sophosympatheia/Midnight-Miqu-70B-v1.5,75.22,70,8770`;
+sophosympatheia/Midnight-Miqu-70B-v1.5,75.22,70,8770
+Nexusflow/Starling-LM-7B-beta,62.14,7,4394`;
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');

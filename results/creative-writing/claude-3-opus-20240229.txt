@@ -3,7 +3,7 @@
 ##################
 # Writing Prompt #
 ##################
-Fairy Tale Retelling: Rewrite the story of Hansel and Gretel from the perspective of the witch, in the format of raw, terse stream-of-consciousness diary entries written in her style & voice. She may at times be an unreliable narrator. She sees herself as fundamentally good and portrays herself sympathetically; she believes she is misunderstood and has a tragic backstory. Include snippets of dialogue between the witch and the children in a way that feels natural for a diary entry. You may take liberties with the original story. The witch will not die in this version; she needs to be able to write her final entry. It will not be happily ever after. <SEED> 600-800 words.
+Fairy Tale Retelling: Rewrite the story of Hansel and Gretel from the perspective of the witch, in the format of raw, terse stream-of-consciousness diary entries written in her style & voice. She may at times be an unreliable narrator. She sees herself as fundamentally good and portrays herself sympathetically; she believes she is misunderstood and has a tragic backstory. Include snippets of dialogue between the witch and the children in a way that feels natural for a diary entry. You may take liberties with the original story. The witch will not die in this version; she needs to be able to write her final entry. It will not be happily ever after. 600-800 words.
 
 #####################
 # Test Model Output #
@@ -97,7 +97,7 @@ Overall Impression: 8
 ##################
 # Writing Prompt #
 ##################
-Historical Fiction: Write a scene from a story set during the height of the Roman Empire, focusing on a slice of a day in the life of a gladiator. Do not write a combat scene. Use sensory details to capture the sights, sounds, and smells of ancient Rome. Explore the gladiator's thoughts and emotions. The story should also touch on the larger political and social issues of the time period. The piece should feel like a slice of a larger story. <SEED> First person, past tense, 600-800 words.
+Historical Fiction: Write a scene from a story set during the height of the Roman Empire, focusing on a slice of a day in the life of a gladiator. Do not write a combat scene. Use sensory details to capture the sights, sounds, and smells of ancient Rome. Explore the gladiator's thoughts and emotions. The story should also touch on the larger political and social issues of the time period. The piece should feel like a slice of a larger story. First person, past tense, 600-800 words.
 
 #####################
 # Test Model Output #
@@ -190,7 +190,7 @@ Overall Impression: 8
 ##################
 # Writing Prompt #
 ##################
-Epistolary Narrative: Write a story told entirely through a series of brief correspondences: telegrams or letters or emails between two characters. The correspondence should span several months or years, and reveal a gradually unfolding plot. Use distinct voices for each character, and include details that provide insight into their personalities and motivations. The story should build to an emotional climax, and the final letter should provide a satisfying resolution. The setting is a lighthouse keeper writing to his mother. He is working class and scottish. He is struggling with the isolation of his posting. Write naturally and without cliches. <SEED> 600-800 words.
+Epistolary Narrative: Write a story told entirely through a series of brief correspondences: telegrams or letters or emails between two characters. The correspondence should span several months or years, and reveal a gradually unfolding plot. Use distinct voices for each character, and include details that provide insight into their personalities and motivations. The story should build to an emotional climax, and the final letter should provide a satisfying resolution. The setting is a lighthouse keeper writing to his mother. He is working class and scottish. He is struggling with the isolation of his posting. Write naturally and without cliches. 600-800 words.
 
 #####################
 # Test Model Output #
@@ -352,7 +352,7 @@ Overall Impression: 8
 ##################
 # Writing Prompt #
 ##################
-In the style of Ernest Hemingway: Write a scene in a larger story about a soldier returning home from war. The scene is set in a bar. It should carry the jadedness of a seasoned combatant but with a wry humour. Write in Heminway's voice, naturally: Use short, declarative sentences and simple, straightforward language. Include dialogue that is terse and revealing of character. Write with a keen sense of time and place. Capture realness and authenticity. <SEED> 600-800 words, past tense.
+In the style of Ernest Hemingway: Write a scene in a larger story about a soldier returning home from war. The scene is set in a bar. It should carry the jadedness of a seasoned combatant but with a wry humour. Write in Heminway's voice, naturally: Use short, declarative sentences and simple, straightforward language. Include dialogue that is terse and revealing of character. Write with a keen sense of time and place. Capture realness and authenticity. 600-800 words, past tense.
 
 #####################
 # Test Model Output #
@@ -488,7 +488,7 @@ Overall Impression: 8
 ##################
 # Writing Prompt #
 ##################
-In the style of Jane Austen: Write a scene in a larger story about a young woman navigating the complexities of society and romance. Use formal, elegant language and witty, incisive dialogue. Include detailed descriptions of characters' appearances, manners, and social status. It should embody Austen's understated, wry and insightful characterisations. Create a romantic subplot with misunderstandings and obstacles to overcome. The scene should be wholly original. The scene should naturally embody a specific historical time and place. <SEED> 600-800 words, past tense.
+In the style of Jane Austen: Write a scene in a larger story about a young woman navigating the complexities of society and romance. Use formal, elegant language and witty, incisive dialogue. Include detailed descriptions of characters' appearances, manners, and social status. It should embody Austen's understated, wry and insightful characterisations. Create a romantic subplot with misunderstandings and obstacles to overcome. The scene should be wholly original. The scene should naturally embody a specific historical time and place. 600-800 words, past tense.
 
 #####################
 # Test Model Output #
@@ -596,7 +596,7 @@ Overall Impression: 4
 ##################
 # Writing Prompt #
 ##################
-In the effortless elegant style of H.P. Lovecraft: Write a section of a larger story about a researcher uncovering an ancient, cosmic horror. Use archaic language and unsettling, atmospheric descriptions. Include references to esoteric lore and forbidden knowledge. Build a sense of mounting dread and madness as the piece progresses. End the section with a bleak, nihilistic revelation about the nature of reality. Avoid repeating existing names / places / people / events from Lovecraft's stories; this should be original. <SEED> 600-800 words, first person, past tense.
+In the effortless elegant style of H.P. Lovecraft: Write a section of a larger story about a researcher uncovering an ancient, cosmic horror. Use archaic language and unsettling, atmospheric descriptions. Include references to esoteric lore and forbidden knowledge. Build a sense of mounting dread and madness as the piece progresses. End the section with a bleak, nihilistic revelation about the nature of reality. Avoid repeating existing names / places / people / events from Lovecraft's stories; this should be original. 600-800 words, first person, past tense.
 
 #####################
 # Test Model Output #
@@ -680,7 +680,7 @@ Overall Impression: 9
 ##################
 # Writing Prompt #
 ##################
-In the style of Virginia Woolf: Write a slice of story that takes place over the course of a single day in a character's life. Use stream-of-consciousness narration to explore the character's thoughts and perceptions. Include poetic, impressionistic descriptions of the character's surroundings and sensations. Weave in memories and reflections that provide insight into the character's past and inner life. The scene should feel like part of a lived-in world, with the scene naturally existing in a wider story. <SEED> 600-800 words, first-person, past tense.
+In the style of Virginia Woolf: Write a slice of story that takes place over the course of a single day in a character's life. Use stream-of-consciousness narration to explore the character's thoughts and perceptions. Include poetic, impressionistic descriptions of the character's surroundings and sensations. Weave in memories and reflections that provide insight into the character's past and inner life. The scene should feel like part of a lived-in world, with the scene naturally existing in a wider story. 600-800 words, first-person, past tense.
 
 #####################
 # Test Model Output #
@@ -776,7 +776,7 @@ Overall Impression: 4
 ##################
 # Writing Prompt #
 ##################
-In the style of George Orwell: Write a story set in a dystopian future society. Use clear, direct language and vivid, concrete details. Include descriptions of the society's oppressive political and social structures. Create a protagonist who rebels against the system in some way. End the story with a bittersweet victory or a tragic defeat that highlights the cost of resistance. <SEED> 600-800 words, past tense.
+In the style of George Orwell: Write a story set in a dystopian future society. Use clear, direct language and vivid, concrete details. Include descriptions of the society's oppressive political and social structures. Create a protagonist who rebels against the system in some way. End the story with a bittersweet victory or a tragic defeat that highlights the cost of resistance. 600-800 words, past tense.
 
 #####################
 # Test Model Output #
@@ -874,7 +874,7 @@ Overall Impression: 9
 ##################
 # Writing Prompt #
 ##################
-Writing Prompt: Modern Epistolary Drama: Write a story told entirely through a series of text messages between two estranged siblings. The texts should span the course of several days and reveal a gradually unfolding family mystery. Use distinct voices for each character, and include details that provide insight into their personalities, motivations, and the complex history between them. The story should have an affecting but unresolved ending. The characters are a 40-year-old brother and 32-year-old sister. <SEED> 600-800 words.
+Writing Prompt: Modern Epistolary Drama: Write a story told entirely through a series of text messages between two estranged siblings. The texts should span the course of several days and reveal a gradually unfolding family mystery. Use distinct voices for each character, and include details that provide insight into their personalities, motivations, and the complex history between them. The story should have an affecting but unresolved ending. The characters are a 40-year-old brother and 32-year-old sister. 600-800 words.
 
 #####################
 # Test Model Output #
@@ -1056,7 +1056,7 @@ Overall Impression: 9
 ##################
 # Writing Prompt #
 ##################
-Writing Prompt: Historical Espionage Thriller: Write a story set during World War II, comprised solely of intercepted coded messages between a spy and their handler. The messages should hint at a high-stakes mission behind enemy lines, and gradually reveal the growing danger and tension as the mission progresses. Include vivid details of the time period and references to real historical events. The story should climax with a message that leaves the ultimate fate of the spy ambiguous. Use period-appropriate language and message formats (telegrams, etc.). <SEED> 600-800 words.
+Writing Prompt: Historical Espionage Thriller: Write a story set during World War II, comprised solely of intercepted coded messages between a spy and their handler. The messages should hint at a high-stakes mission behind enemy lines, and gradually reveal the growing danger and tension as the mission progresses. Include vivid details of the time period and references to real historical events. The story should climax with a message that leaves the ultimate fate of the spy ambiguous. Use period-appropriate language and message formats (telegrams, etc.). 600-800 words.
 
 #####################
 # Test Model Output #
@@ -1185,7 +1185,7 @@ Overall Impression: 8
 ##################
 # Writing Prompt #
 ##################
-Writing Prompt: Love Letters across continents in 1892: Write a story told through a series of brief love letters between two characters set in 1892, capturing the evolution of their relationship over several years. Write naturally, in the voices of the characters, allowing their thoughts and emotions to flow freely onto the page. Challenge yourself to reveal the characters' personalities, quirks, and vulnerabilities solely through their writing style and the details they choose to share. The letters should feel intimate and authentic, as if the reader is privy to the characters' deepest secrets. <SEED> 800-1000 words.
+Writing Prompt: Love Letters across continents in 1892: Write a story told through a series of brief love letters between two characters set in 1892, capturing the evolution of their relationship over several years. Write naturally, in the voices of the characters, allowing their thoughts and emotions to flow freely onto the page. Challenge yourself to reveal the characters' personalities, quirks, and vulnerabilities solely through their writing style and the details they choose to share. The letters should feel intimate and authentic, as if the reader is privy to the characters' deepest secrets. 800-1000 words.
 
 #####################
 # Test Model Output #
@@ -1350,7 +1350,7 @@ Overall Impression: 8
 ##################
 # Writing Prompt #
 ##################
-Writing Prompt: Epistolary Sci-Fi Worldbuilding: Write an original science fiction story set on a distant planet, conveyed through a series of transmission logs between a human explorer and their correspondence partner back on Earth. Use the epistolary format to gradually reveal details of the alien world. The narrative arc should incorporate some element of conflict or tension. Incorporate scientific jargon and speculative elements in a natural, unforced way. <SEED> 600-800 words.
+Writing Prompt: Epistolary Sci-Fi Worldbuilding: Write an original science fiction story set on a distant planet, conveyed through a series of transmission logs between a human explorer and their correspondence partner back on Earth. Use the epistolary format to gradually reveal details of the alien world. The narrative arc should incorporate some element of conflict or tension. Incorporate scientific jargon and speculative elements in a natural, unforced way. 600-800 words.
 
 #####################
 # Test Model Output #
@@ -1504,7 +1504,7 @@ Overall Impression: 8
 ##################
 # Writing Prompt #
 ##################
-Writing Prompt: Epistolary Neighbors: Write a story told through letters between two neighbors who have never met in person (and will never meet despite being neighbours). Use the epistolary format to explore their developing relationship. The messages should be naturally written, using distinctively voiced characters. The narrative arc should evolve naturally through the letters; it should be relatable but incorporate a touch of mystery. <SEED> 600-800 words.
+Writing Prompt: Epistolary Neighbors: Write a story told through letters between two neighbors who have never met in person (and will never meet despite being neighbours). Use the epistolary format to explore their developing relationship. The messages should be naturally written, using distinctively voiced characters. The narrative arc should evolve naturally through the letters; it should be relatable but incorporate a touch of mystery. 600-800 words.
 
 #####################
 # Test Model Output #
@@ -1606,7 +1606,7 @@ Overall Impression: 7
 ##################
 # Writing Prompt #
 ##################
-Writing Prompt: Epistolary Travelogue: Write a story told through postcards documenting a character's solo journey to a foreign country. Use the epistolary format to capture the character's experiences, observations, and personal reflections as they navigate a new culture. Incorporate vivid descriptions of the setting, local customs, and the character's interactions with the people they encounter. There should be a compelling narrative arc. <SEED> 600-800 words.
+Writing Prompt: Epistolary Travelogue: Write a story told through postcards documenting a character's solo journey to a foreign country. Use the epistolary format to capture the character's experiences, observations, and personal reflections as they navigate a new culture. Incorporate vivid descriptions of the setting, local customs, and the character's interactions with the people they encounter. There should be a compelling narrative arc. 600-800 words.
 
 #####################
 # Test Model Output #
@@ -1724,7 +1724,7 @@ Authentic dialogue.
 A compelling narrative unfolding over the course of the scene.
 Psychological Depth.
 Thematic Focus: Explore the inevitable decline of family legacies, the decaying structures and traditions of the Old South, and the burdens of personal and historical guilt.
-Southern Voice: Include hints of regional dialect, evocative turns of phrase, and a cadence that reflects the storytelling traditions of the South. <SEED> 600-800 words.
+Southern Voice: Include hints of regional dialect, evocative turns of phrase, and a cadence that reflects the storytelling traditions of the South. 600-800 words.
 
 #####################
 # Test Model Output #
@@ -1824,7 +1824,7 @@ Overall Impression: 8
 ##################
 # Writing Prompt #
 ##################
-Writing Prompt: In the style of J.D. Salinger: Write an original short story that captures Salinger's iconic conversational, confessional tone and keen observations of human nature. Use distinctive, colloquial dialogue and a candid, introspective narrative voice to create a sense of intimacy and authenticity. Explore themes of innocence, disillusionment, and the challenges of growing up in a complex world. <SEED> 600-800 words.
+Writing Prompt: In the style of J.D. Salinger: Write an original short story that captures Salinger's iconic conversational, confessional tone and keen observations of human nature. Use distinctive, colloquial dialogue and a candid, introspective narrative voice to create a sense of intimacy and authenticity. Explore themes of innocence, disillusionment, and the challenges of growing up in a complex world. 600-800 words.
 
 #####################
 # Test Model Output #
@@ -1916,7 +1916,7 @@ Overall Impression: 7
 ##################
 # Writing Prompt #
 ##################
-Writing Prompt: In the style of J.K. Rowling: Write an original short story set in a magical, richly detailed world that captures Rowling's imaginative storytelling and engaging prose. Create a relatable, young original protagonist who discovers hidden abilities and embarks on a thrilling adventure. Incorporate elements of friendship, courage, and the power of love to overcome adversity. <SEED> 600-800 words.
+Writing Prompt: In the style of J.K. Rowling: Write an original short story set in a magical, richly detailed world that captures Rowling's imaginative storytelling and engaging prose. Create a relatable, young original protagonist who discovers hidden abilities and embarks on a thrilling adventure. Incorporate elements of friendship, courage, and the power of love to overcome adversity. 600-800 words.
 
 #####################
 # Test Model Output #
@@ -2031,7 +2031,7 @@ Overall Impression: 8
 ##################
 # Writing Prompt #
 ##################
-Writing Prompt: In the style of Enid Blyton: Write an original short story that captures Blyton's imaginative, adventure-filled style and wholesome tone. Create a group of curious, resourceful children who stumble upon a mystery or embark on an exciting adventure. Use vivid descriptions and dialogue to bring the characters and setting to life. <SEED> 600-800 words.
+Writing Prompt: In the style of Enid Blyton: Write an original short story that captures Blyton's imaginative, adventure-filled style and wholesome tone. Create a group of curious, resourceful children who stumble upon a mystery or embark on an exciting adventure. Use vivid descriptions and dialogue to bring the characters and setting to life. 600-800 words.
 
 #####################
 # Test Model Output #
@@ -2159,7 +2159,7 @@ Overall Impression: 8
 ##################
 # Writing Prompt #
 ##################
-Writing Prompt: In the style of Roald Dahl: Write an original short story that embodies Dahl's darkly humorous, whimsical style. The protagonist should be a human child. Create a protagonist who faces a fantastical challenge or encounters a bizarre situation. Use descriptive language and elements of surprise to engage young readers. The magic of Roald Dahl's narratives combines dark adult themes with a child's perspective. It should esablish a grounded and relatable premise. <SEED> 600-800 words.
+Writing Prompt: In the style of Roald Dahl: Write an original short story that embodies Dahl's darkly humorous, whimsical style. The protagonist should be a human child. Create a protagonist who faces a fantastical challenge or encounters a bizarre situation. Use descriptive language and elements of surprise to engage young readers. The magic of Roald Dahl's narratives combines dark adult themes with a child's perspective. It should esablish a grounded and relatable premise. 600-800 words.
 
 #####################
 # Test Model Output #
