@@ -1,6 +1,7 @@
+baseurl: blog
+url: https://eqbench.com
 lsi: false
 safe: true
-source: _blog_src
 incremental: false
 highlighter: rouge
 gist:
@@ -8,3 +9,5 @@ gist:
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
+exclude: README.md
+include: blog/
