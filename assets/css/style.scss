@@ -35,23 +35,23 @@ header, footer {
 }
 
 .lightbox_imgs {
-	display: flex; /* Enables flex layout for the container */
-	flex-wrap: nowrap; /* Prevents flex items from wrapping */
-	justify-content: center; /* Center items horizontally */
-	align-items: center; /* Align items vertically */
-	overflow-x: auto; /* Adds horizontal scrolling if images exceed the viewport's width */
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between; /* Adjusts spacing dynamically */
+	overflow-x: auto; /* Allows horizontal scrolling */
+	width: 100%; /* Ensures the container fills its parent */
 }
 
 .lightbox_imgs a {
-	display: inline-flex; /* Allows the container to be flexible */
-	justify-content: center; /* Centers content horizontally */
+	flex: 1; /* Allows the links to grow to fill the container */
+	justify-content: center; /* Centers content for inline-flex items */
 	align-items: center; /* Centers content vertically */
-	margin: 0 10px; /* Adds spacing between images */
-	flex: 0 1 auto; /* Allows the container to shrink but not grow */
+	display: inline-flex; /* Facilitates centering of images */
+	margin: 0 5px; /* Provides minimal separation between items */
 }
 
 .lightbox_imgs img {
 	height: auto; /* Maintains aspect ratio */
-	max-width: 100%; /* Allows shrinking */
-	max-height: 100vh; /* Prevents images from being taller than the viewport */
+	max-width: 100%; /* Ensures image doesn't exceed its container */
+	width: auto; /* Allows image to scale based on its max-width */
 }
