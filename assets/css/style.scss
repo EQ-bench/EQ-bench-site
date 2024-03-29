@@ -34,19 +34,19 @@ header, footer {
 	}
 }
 
-.side-by-side a {
-	display: inline-block;
-	width: 48%; /* Adjust based on your needs and padding */
-	margin-right: 2%; /* Adjust spacing between images */
-	vertical-align: top; /* Keeps images aligned at the top */
-	box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+.lightbox_imgs a {
+	display: inline-flex; /* Use inline-flex for alignment and spacing */
+	justify-content: center; /* Center images within the links */
+	align-items: center; /* Align images vertically */
+	margin-right: 20px; /* Adjust spacing between images */
 }
 
-.side-by-side a:last-child {
+.lightbox_imgs a:last-child {
 	margin-right: 0; /* Removes margin from the last image */
 }
 
-.side-by-side img {
-	width: 100%; /* Makes the image fill its container */
+.lightbox_imgs img {
+	max-width: none; /* Override any max-width */
 	height: auto; /* Keeps the image aspect ratio */
+	display: block; /* Ensures images are displayed correctly in flex container */
 }
