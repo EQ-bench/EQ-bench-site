@@ -1,0 +1,52 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// Override specific styles for layout adjustments
+header, footer {
+	float: none;
+	position: static;
+	width: 100%;
+	}
+
+	section {
+	width: 100%;
+	float: none;
+	padding-bottom: 50px;
+	}
+
+	.wrapper {
+	width: 100%;
+	margin: 0 auto;
+	}
+
+	// Adjust the media queries as needed
+	@media print, screen and (max-width: 960px) {
+	header, section, footer {
+		float: none;
+		position: static;
+		width: auto;
+	}
+
+	header {
+		padding-right: 0;
+	}
+}
+
+.side-by-side a {
+	display: inline-block;
+	width: 48%; /* Adjust based on your needs and padding */
+	margin-right: 2%; /* Adjust spacing between images */
+	vertical-align: top; /* Keeps images aligned at the top */
+	box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+.side-by-side a:last-child {
+	margin-right: 0; /* Removes margin from the last image */
+}
+
+.side-by-side img {
+	width: 100%; /* Makes the image fill its container */
+	height: auto; /* Keeps the image aspect ratio */
+}
