@@ -9,6 +9,8 @@ gist:
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
-exclude: README.md
-include: blog/
+exclude: 
+  - README.md
+include: 
+  - blog/
 theme: jekyll-theme-Minimal
