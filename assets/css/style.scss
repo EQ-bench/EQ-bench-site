@@ -34,25 +34,44 @@ header, footer {
 	}
 }
 
+body {
+	background-color: #f8f8f8; /* Subtle off-white shade for the outside area */
+	margin: 0;
+	padding: 20px;
+}
+
+/* Set the main content area styles */
+.main-content {
+	max-width: 900px; /* Maximum width for text content */
+	margin: auto; /* Centers the content block */
+	background-color: #fdfdfd; /* Slightly different off-white for the content area */
+	padding: 40px; /* Spacing inside the content area */
+	border: 1px solid #eaeaea; /* Subtle border color */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Set styles for the lightbox images container */
 .lightbox_imgs {
-	display: flex; /* Enables flex layout for the container */
-	flex-wrap: nowrap; /* Prevents flex items from wrapping */
-	justify-content: center; /* Center items horizontally */
-	align-items: center; /* Align items vertically */
-	overflow-x: auto; /* Adds horizontal scrolling if images exceed the viewport's width */
-	max-width: 1200px;
-	margin: auto;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	overflow-x: auto;
+	max-width: 1200px; /* Maximum width for the images */
+	margin: 20px auto; /* Centers the images block and adds vertical spacing */
 }
 
+/* Style individual image links within the lightbox container */
 .lightbox_imgs a {
-	flex: 0 1 auto; /* Allows items to shrink but not grow */
-	margin: 0 10px; /* Adds spacing between images */
-	display: inline-flex; /* Displays links as flex containers to center the images */
-	justify-content: center; /* Center the images horizontally within the links */
-	align-items: center; /* Center the images vertically within the links */
+	flex: 0 1 auto; /* Allows shrinking but not growing */
+	margin: 0 10px; /* Horizontal spacing between images */
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
 }
 
+/* Style for images within the links */
 .lightbox_imgs img {
-	height: auto; /* Maintains the image's aspect ratio */
-	max-width: 100%; /* Ensures the image can shrink but never exceeds its natural size */
+	height: auto;
+	max-width: 100%;
 }
