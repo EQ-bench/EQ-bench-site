@@ -35,23 +35,25 @@ header, footer {
 }
 
 .lightbox_imgs {
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: space-between; /* Adjusts spacing dynamically */
-	overflow-x: auto; /* Allows horizontal scrolling */
-	width: 100%; /* Ensures the container fills its parent */
+	display: flex; /* Use flexbox for the container */
+	flex-wrap: nowrap; /* Prevent wrapping of items */
+	justify-content: flex-start; /* Align items to the start of the container */
+	overflow-x: auto; /* Provide horizontal scrolling if needed */
+	width: 100%; /* Full width of the container */
 }
 
 .lightbox_imgs a {
-	flex: 1; /* Allows the links to grow to fill the container */
-	justify-content: center; /* Centers content for inline-flex items */
-	align-items: center; /* Centers content vertically */
-	display: inline-flex; /* Facilitates centering of images */
-	margin: 0 5px; /* Provides minimal separation between items */
+	flex: 1 0 auto; /* Allow flex items to grow and not shrink below their content size */
+	max-width: 50%; /* Adjust this to the maximum width percentage for the image */
+	margin: 0 10px; /* Space between images */
+	/* The above max-width will serve as the upper size limit when there's enough space. */
+	display: inline-flex; /* Inline flex for each link container */
+	justify-content: center; /* Center the image within the link container */
+	align-items: center; /* Center the image vertically */
 }
 
 .lightbox_imgs img {
-	height: auto; /* Maintains aspect ratio */
-	max-width: 100%; /* Ensures image doesn't exceed its container */
-	width: auto; /* Allows image to scale based on its max-width */
+	width: 100%; /* Allow the image to fill its anchor tag */
+	height: auto; /* Maintain the aspect ratio */
+	max-width: 100%; /* Ensure the image does not exceed its natural size */
 }
