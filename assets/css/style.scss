@@ -35,21 +35,22 @@ header, footer {
 }
 
 .lightbox_imgs {
-	display: flex; /* Enable flex layout for the container */
-	flex-wrap: nowrap; /* Prevent wrapping of items to ensure they are side by side */
-	overflow-x: auto; /* Add horizontal scroll bar if content is too wide */
-	width: 100%; /* Container takes the full width */
+	display: flex; /* Enables flex layout for the container */
+	flex-wrap: nowrap; /* Prevents flex items from wrapping */
+	justify-content: center; /* Center items horizontally */
+	align-items: center; /* Align items vertically */
+	overflow-x: auto; /* Adds horizontal scrolling if images exceed the viewport's width */
 }
 
 .lightbox_imgs a {
-	flex: 1 1 auto; /* Allow items to grow and shrink but not less than their content size */
-	margin: 0 10px; /* Add space between images */
-	display: flex; /* Enable flex layout for link elements */
-	justify-content: center; /* Center images horizontally */
-	align-items: center; /* Center images vertically */
+	flex: 0 1 auto; /* Allows items to shrink but not grow */
+	margin: 0 10px; /* Adds spacing between images */
+	display: inline-flex; /* Displays links as flex containers to center the images */
+	justify-content: center; /* Center the images horizontally within the links */
+	align-items: center; /* Center the images vertically within the links */
 }
 
 .lightbox_imgs img {
-	max-width: 100%; /* Limit image width to not exceed its container */
-	height: auto; /* Maintain the aspect ratio */
+	height: auto; /* Maintains the image's aspect ratio */
+	max-width: 100%; /* Ensures the image can shrink but never exceeds its natural size */
 }
