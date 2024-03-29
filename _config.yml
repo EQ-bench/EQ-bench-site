@@ -11,3 +11,4 @@ kramdown:
   syntax_highlighter: rouge
 exclude: README.md
 include: blog/
+theme: jekyll-theme-Minimal
