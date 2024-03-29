@@ -36,26 +36,20 @@ header, footer {
 
 .lightbox_imgs {
 	display: flex; /* Enable flex layout for the container */
-	flex-wrap: wrap; /* Allow items to wrap as needed */
-	justify-content: center; /* Center items horizontally */
-	align-items: center; /* Align items vertically in the container */
+	flex-wrap: nowrap; /* Prevent wrapping of items to ensure they are side by side */
+	overflow-x: auto; /* Add horizontal scroll bar if content is too wide */
+	width: 100%; /* Container takes the full width */
 }
 
 .lightbox_imgs a {
-	flex: 1 1 auto; /* Allow flex items to grow and shrink but not beyond their content size */
-	margin: 0 10px 20px; /* Spacing between images and from the bottom */
-	max-width: calc(50% - 20px); /* Adjust based on the number of items you want side by side */
-	box-sizing: border-box; /* Include padding and border in the element's total width */
+	flex: 1 1 auto; /* Allow items to grow and shrink but not less than their content size */
+	margin: 0 10px; /* Add space between images */
+	display: flex; /* Enable flex layout for link elements */
+	justify-content: center; /* Center images horizontally */
+	align-items: center; /* Center images vertically */
 }
 
 .lightbox_imgs img {
-	width: 100%; /* Make the image responsive to the width of the anchor tag */
-	height: auto; /* Maintain aspect ratio */
-	max-width: 100%; /* Ensures images do not scale beyond their natural size */
-}
-
-@media (max-width: 600px) { /* Adjust breakpoint as needed */
-	.lightbox_imgs a {
-		 max-width: 100%; /* Allow images to take full width on smaller screens */
-	}
+	max-width: 100%; /* Limit image width to not exceed its container */
+	height: auto; /* Maintain the aspect ratio */
 }
