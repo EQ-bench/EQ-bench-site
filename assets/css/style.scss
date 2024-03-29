@@ -40,6 +40,8 @@ header, footer {
 	justify-content: center; /* Center items horizontally */
 	align-items: center; /* Align items vertically */
 	overflow-x: auto; /* Adds horizontal scrolling if images exceed the viewport's width */
+	max-width: 1200px;
+	margin: auto;
 }
 
 .lightbox_imgs a {
