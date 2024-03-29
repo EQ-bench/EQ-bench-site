@@ -1,2 +1,4 @@
 baseurl: "/blog"
 url: "https://eqbench.com"
+source: "_blog_src"
+destination: "blog"
