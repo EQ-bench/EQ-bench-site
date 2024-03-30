@@ -53,15 +53,18 @@ section {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
-/* Style the lightbox images container to allow for a larger max-width */
 .lightbox_imgs {
+	position: relative; /* Positioned relative to its normal position */
+	left: 50%; /* Move to the center */
+	right: 50%; /* Move to the center */
+	max-width: 1200px; /* Max width for the images */
+	margin-left: -600px; /* Pull back to align left edges */
+	margin-right: -600px; /* Pull back to align right edges */
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: center;
 	align-items: center;
-	overflow-x: auto;
-	max-width: 1200px; /* Allows the images to be wider than the text content */
-	margin: 40px auto; /* Centers the images block and adds vertical spacing */
+	overflow-x: auto; /* Adds horizontal scrolling if images exceed the viewport's width */
 }
 
 .lightbox_imgs a {
