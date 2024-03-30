@@ -54,22 +54,17 @@ section {
 }
 
 .lightbox_imgs {
-	position: relative; /* Positioned relative to its normal position */
-	left: 50%; /* Move to the center */
-	right: 50%; /* Move to the center */
-	max-width: 1200px; /* Max width for the images */
-	margin-left: -600px; /* Pull back to align left edges */
-	margin-right: -600px; /* Pull back to align right edges */
 	display: flex;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
+	justify-content: center; /* Center images horizontally */
+	align-items: center; /* Align images vertically */
 	overflow-x: auto; /* Adds horizontal scrolling if images exceed the viewport's width */
+	margin: 20px auto; /* Add some top and bottom space and center horizontally */
+	max-width: 1200px; /* Max width for the images */
 }
 
 .lightbox_imgs a {
-	flex: 0 1 auto; /* Allows items to shrink but not grow */
 	margin: 0 10px; /* Adds spacing between images */
+	flex: 1 1 auto; /* Allows items to shrink but not grow */
 	display: inline-flex; /* Displays links as flex containers to center the images */
 	justify-content: center; /* Center the images horizontally within the links */
 	align-items: center; /* Center the images vertically within the links */
