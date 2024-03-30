@@ -74,3 +74,23 @@ section {
 	height: auto; /* Maintains the image's aspect ratio */
 	max-width: 100%; /* Ensures the image can shrink but never exceeds its natural size */
 }
+
+/* Mobile view adjustments */
+@media (max-width: 600px) {
+	body {
+		padding: 10px; /* Reduced padding on smaller screens */
+	}
+
+	section {
+		max-width: none; /* Allows section to use maximum available width */
+		margin: 0; /* Removes the margin for full-width use */
+		padding: 20px; /* Adjust padding for mobile */
+		border: none; /* Removes border */
+		box-shadow: none; /* Removes shadow */
+	}
+
+	/* If you want the .lightbox_imgs to also have specific styles on mobile */
+	.lightbox_imgs {
+		margin: 10px auto; /* Adjust top and bottom margin for mobile */
+	}
+}
