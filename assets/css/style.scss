@@ -94,3 +94,41 @@ section {
 		margin: 10px auto; /* Adjust top and bottom margin for mobile */
 	}
 }
+
+
+.blog-index {
+	max-width: 800px; /* or whatever maximum width fits your design */
+	margin: auto;
+	padding: 20px;
+ 
+	.blog-post {
+	  margin-bottom: 40px; /* Spacing between posts */
+	  padding-bottom: 20px; /* Spacing within a post */
+	  border-bottom: 1px solid #ddd; /* Visual separation between posts */
+ 
+	  h2 {
+		 font-size: 1.5em;
+		 margin-bottom: 0.5em;
+	  }
+ 
+	  .date {
+		 font-size: 0.9em;
+		 color: #666;
+		 margin-bottom: 1em;
+	  }
+ 
+	  p {
+		 font-size: 1em;
+		 line-height: 1.6;
+	  }
+ 
+	  a {
+		 text-decoration: none;
+		 color: #333;
+ 
+		 &:hover {
+			text-decoration: underline;
+		 }
+	  }
+	}
+ }
