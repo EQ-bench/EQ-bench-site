@@ -114,7 +114,8 @@ claude-3-opus-20240229,82.19,
 *Nexusflow/Starling-LM-7B-beta,73.82,7
 *Qwen/Qwen1.5-MoE-A2.7B-Chat,58.07,8x1.8
 *databricks/dbrx-instruct,76.82,16x8,
-*CohereForAI/c4ai-command-r-v01,56.05,35`;
+*CohereForAI/c4ai-command-r-v01,56.05,35,
+*claude-3-haiku-20240307,63.65,`;
 
 const leaderboardDataMagi = `model,score
 TheBloke/koala-7B-HF,23.7
@@ -220,11 +221,12 @@ cognitivecomputations/Samantha-120b,48.58
 sophosympatheia/Midnight-Miqu-70B-v1.0,40.74
 claude-3-sonnet-20240229,61.01
 Infinimol/miiqu-f16,63.28
-mlabonne/Beyonder-4x7B-v3,39.03,
-Nexusflow/Starling-LM-7B-beta,40.12,
-Qwen/Qwen1.5-MoE-A2.7B-Chat,38.34,
-databricks/dbrx-instruct,57.13,
-CohereForAI/c4ai-command-r-v01,43.27`;
+mlabonne/Beyonder-4x7B-v3,39.03
+Nexusflow/Starling-LM-7B-beta,40.12
+Qwen/Qwen1.5-MoE-A2.7B-Chat,38.34
+databricks/dbrx-instruct,57.13
+CohereForAI/c4ai-command-r-v01,43.27
+claude-3-haiku-20240307,47.71`;
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
