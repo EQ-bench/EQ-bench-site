@@ -343,7 +343,58 @@ Final Judgemark Benchmark Results:
 Mean Score: 68.41
 Std. Dev.: 8.0
 Judgemark Score: 30.94
-Cost: $1.30`;
+Cost: $1.30
+
+
+# mistral-medium
+
+76.88 gpt-4-0125-preview
+74.3 claude-3-opus-20240229
+72.77 claude-3-sonnet-20240229
+73.25 claude-3-haiku-20240307
+72.18 mistral-small
+75.33 mistral-medium
+76.32 mistral-large-2402
+63.77 gpt-3.5-turbo-0301
+72.99 01-ai/Yi-34B-Chat
+68.51 openchat/openchat-3.5-1210
+65.84 garage-bAInd/Platypus2-70B-instruct
+72.46 mistralai/Mixtral-8x7B-Instruct-v0.1
+75.9 Qwen/Qwen1.5-14B-Chat
+39.93 Qwen/Qwen1.5-4B-Chat
+62.68 google/gemma-2b-it
+61.88 google/gemma-7b-it
+60.78 meta-llama/Llama-2-7b-chat-hf
+66.55 meta-llama/Llama-2-13b-chat-hf
+77.03 sophosympatheia/Midnight-Miqu-70B-v1.5
+# normalised:
+std_dev 0.5906501984424266
+avg_kendalls 0.5857843137254901
+avg_pearsons 0.6865766107431969
+mean_score 68.91315789473684
+range 37.1
+std_dev 8.859752976636399
+CV 0.1285640253225582
+std_dev_top_5 0.7018333135438918
+pearson_arena_elo 0.7836064501128717
+kendall_arena_elo 0.7142857142857143
+pearson_eq_bench 0.797765388448153
+kendall_eq_bench 0.676470588235294
+pearson_top_8_arena_elo 0.41544558485294697
+kendall_top_8_arena_elo 0.3333333333333333
+pearson_top_8_eq_bench 0.7494890195588157
+kendall_top_8_eq_bench 0.6190476190476191
+aggregate_score 62.10037076370378
+----judgemark Benchmark Complete----
+2024-04-04 20:58:18
+Time taken: 222.5 mins
+Judge: mistral-medium
+Final Judgemark Benchmark Results:
+Mean Score: 68.91
+Std. Dev.: 8.86
+Judgemark Score: 62.1
+Cost: $6.08
+`;
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
