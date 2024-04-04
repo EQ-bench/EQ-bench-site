@@ -367,7 +367,7 @@ Cost: $1.30
 60.78 meta-llama/Llama-2-7b-chat-hf
 66.55 meta-llama/Llama-2-13b-chat-hf
 77.03 sophosympatheia/Midnight-Miqu-70B-v1.5
-# normalised:
+normalised:
 std_dev 0.5906501984424266
 avg_kendalls 0.5857843137254901
 avg_pearsons 0.6865766107431969
@@ -393,8 +393,7 @@ Final Judgemark Benchmark Results:
 Mean Score: 68.91
 Std. Dev.: 8.86
 Judgemark Score: 62.1
-Cost: $6.08
-`;
+Cost: $6.08`;
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
