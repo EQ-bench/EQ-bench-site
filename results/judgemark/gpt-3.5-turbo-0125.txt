@@ -1,0 +1,39 @@
+# Judge: gpt-3.5-turbo-0125
+
+# Test model scores:
+63.98 gpt-4-0125-preview
+65.57 claude-3-opus-20240229
+63.56 claude-3-sonnet-20240229
+64.65 claude-3-haiku-20240307
+62.6 mistral-small
+63.39 mistral-medium
+63.47 mistral-large-2402
+59.53 gpt-3.5-turbo-0301
+66.71 01-ai/Yi-34B-Chat
+63.18 openchat/openchat-3.5-1210
+59.15 garage-bAInd/Platypus2-70B-instruct
+63.87 mistralai/Mixtral-8x7B-Instruct-v0.1
+65.6 Qwen/Qwen1.5-14B-Chat
+55.33 Qwen/Qwen1.5-4B-Chat
+61.79 google/gemma-2b-it
+60.45 google/gemma-7b-it
+61.47 meta-llama/Llama-2-7b-chat-hf
+60.64 meta-llama/Llama-2-13b-chat-hf
+66.01 sophosympatheia/Midnight-Miqu-70B-v1.5
+
+# Stats:
+mean_score 62.68157894736842
+range 11.379999999999995
+std_dev 2.800306060966857
+CV 0.04467510404162247
+std_dev_top_5 0.7492129203370664
+pearson_arena_elo 0.6855738008507067
+kendall_arena_elo 0.561904761904762
+pearson_eq_bench 0.6293986924598087
+kendall_eq_bench 0.3235294117647059
+pearson_top_8_arena_elo -0.28621629129984877
+kendall_top_8_arena_elo -0.06666666666666665
+pearson_top_8_eq_bench -0.2197282253729528
+kendall_top_8_eq_bench -0.23809523809523814
+Judgemark Score: 17.8
+Cost: $0.96

@@ -290,3 +290,18 @@ body.dark-mode #leaderboard .new-model {
  }
 
 
+ .judgemark-score-bar {
+	display: none;
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: linear-gradient(to right, #ecdfda, #e8bfaa);
+	border-radius: 5px;
+	transition: width 0.5s ease;
+	z-index: 1;
+}
+
+body.dark-mode .judgemark-score-bar {
+	background: linear-gradient(to right, #eaac97, #d3581a);
+ }
