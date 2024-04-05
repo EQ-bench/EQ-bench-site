@@ -492,8 +492,8 @@ function initializeDataTable() {
 			{ "targets": [6,5,4, 3], "orderSequence": ["asc", "desc"] }, // For Std. Dev. and Cost columns: sort asc first
 		],
 		"dom": "<'d-flex flex-column flex-md-row justify-content-between'<'#toggleMiddleStats.d-block.d-sm-none'><'dataTables_length'l><'dataTables_filter'f>>" +
-		"<'row'<'col-12'tr>>" +
-		"<'row'<'col-md-5'i><'col-md-7'p>>",
+            "<'row'<'col-12'tr>>" +
+            "<'row'<'col-md-5'i><'col-md-7'p>>",
 		"drawCallback": function(settings) {
 			const api = this.api();
 			const rows = api.rows({ page: 'current' }).nodes();
@@ -503,32 +503,30 @@ function initializeDataTable() {
 		}
 	});
 
-	function collapseMiddleColumns() {
-		if (window.innerWidth < 575) {
-			 $('#judgemark-leaderboard tr').each(function () {
-				  $(this).find('th, td').slice(1, -2).wrapAll('<div class="collapsed-columns"></div>');
-			 });
-			 $('#toggleMiddleStats').text('Expand Details');
-		} else {
-			 $('#judgemark-leaderboard tr').each(function () {
-				  $(this).find('.collapsed-columns').children().unwrap();
-			 });
-			 $('#toggleMiddleStats').text('Collapse Details');
-		}
-  }
+	let middleStatsExpanded = false;
 
-  function toggleMiddleStats() {
-		$('.collapsed-columns').toggle();
-		if ($('.collapsed-columns').is(':visible')) {
-			 $('#toggleMiddleStats').text('Collapse Details');
-		} else {
-			 $('#toggleMiddleStats').text('Expand Details');
-		}
-  }
+    function collapseMiddleColumns() {
+        if (window.innerWidth < 575 && !middleStatsExpanded) {
+            $('#judgemark-leaderboard tr').each(function () {
+                $(this).find('th, td').slice(1, -2).wrapAll('<div class="collapsed-columns"></div>');
+            });
+            $('#toggleMiddleStats').text('Expand Details');
+        } else {
+            $('#judgemark-leaderboard tr').each(function () {
+                $(this).find('.collapsed-columns').children().unwrap();
+            });
+            $('#toggleMiddleStats').text('Hide Details');
+        }
+    }
 
-  $(window).on('resize', collapseMiddleColumns);
-  $('#toggleMiddleStats').on('click', toggleMiddleStats);
-  collapseMiddleColumns();
+    function toggleMiddleStats() {
+        middleStatsExpanded = !middleStatsExpanded;
+        collapseMiddleColumns();
+    }
+
+    $(window).on('resize', collapseMiddleColumns);
+    $('#toggleMiddleStats').on('click', toggleMiddleStats);
+    collapseMiddleColumns();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
