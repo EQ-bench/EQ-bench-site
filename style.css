@@ -141,6 +141,24 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
 
 	}
 
+	#judgemark-leaderboard .collapsed-columns {
+			display: none;
+	}
+
+	#judgemark-leaderboard td,
+	#judgemark-leaderboard th {
+			white-space: normal;
+			word-wrap: break-word;
+	}
+
+	#judgemark-leaderboard_filter {
+		margin-left: auto;
+  }
+
+  #toggleMiddleStats {
+		margin-right: 10px;
+  }
+	
 }
 
 
@@ -148,9 +166,10 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
 @media (max-width: 767px) {
 	.table-responsive {
 		 display: block;
-		 width: 100%;
+		 width: 100%;		 
 		 overflow-x: auto;
 		 -webkit-overflow-scrolling: touch;
+		 
 	}
 	.table-responsive > .table {
 		 margin-bottom: 0;
@@ -165,7 +184,9 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
     .dataTables_wrapper .d-flex .dataTables_filter {
         text-align: right;
         justify-content: flex-end;
-    }
+	}
+
+
 }
 
 
@@ -221,17 +242,6 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
 
  .expando-content {
 	display: none;
-}
-
-
-/* Highlight for new models in light mode */
-#leaderboard .new-model {
-	background-color: #d1e7dd; /* light green for light mode */
-}
-
-/* Ensuring dark mode styles have enough specificity */
-body.dark-mode #leaderboard .new-model {
-	background-color: #276e576b; /* dark green for dark mode */
 }
 
 /* Legend styles */
@@ -304,4 +314,13 @@ body.dark-mode #leaderboard .new-model {
 
 body.dark-mode .judgemark-score-bar {
 	background: linear-gradient(to right, #eaac97, #d3581a);
- }
+}
+
+.middle-stats {
+	transition: display 0.3s ease;
+}
+
+table#judgemark-leaderboard td, table#judgemark-leaderboard th {
+	padding: 2px 4px;
+}
+

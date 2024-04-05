@@ -1,6 +1,6 @@
-# Judge: gpt-4-0125-preview:
+# gpt-4-0125-preview
 
-# Test model scores:
+Test model scores:
 71.49 gpt-4-0125-preview
 69.69 claude-3-opus-20240229
 68.5 claude-3-sonnet-20240229
@@ -22,18 +22,20 @@
 68.55 sophosympatheia/Midnight-Miqu-70B-v1.5
 
 Stats:
-mean_score 61.578947368421055
-range 34.99999999999999
-std_dev 8.880699981631103
-CV 0.1442164954281974
-std_dev_top_5 1.2286781515107994
-pearson_arena_elo 0.8489759877730771
-kendall_arena_elo 0.8095238095238096
-pearson_eq_bench 0.8377546150524986
-kendall_eq_bench 0.6470588235294118
-pearson_top_8_arena_elo 0.7867652770650644
-kendall_top_8_arena_elo 0.6190476190476191
-pearson_top_8_eq_bench 0.7356315671024446
-kendall_top_8_eq_bench 0.5238095238095238
-Judgemark Score: 68.14
+Self bias: 1.64
+Family bias: -1.49
+mean_score 61.58
+range 35.0
+std_dev 8.88
+CV 0.14
+std_dev_top_5 1.23
+pearson_arena_elo 0.85
+kendall_arena_elo 0.81
+pearson_eq_bench 0.84
+kendall_eq_bench 0.65
+pearson_top_8_arena_elo 0.79
+kendall_top_8_arena_elo 0.62
+pearson_top_8_eq_bench 0.74
+kendall_top_8_eq_bench 0.52
+Judgemark 68.14
 Cost: $16.00

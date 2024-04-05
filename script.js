@@ -115,7 +115,8 @@ claude-3-opus-20240229,82.19,
 *Qwen/Qwen1.5-MoE-A2.7B-Chat,58.07,8x1.8
 *databricks/dbrx-instruct,76.82,16x8,
 *CohereForAI/c4ai-command-r-v01,56.05,35,
-*claude-3-haiku-20240307,63.65,`;
+*claude-3-haiku-20240307,63.65,
+*Qwen/Qwen1.5-32B-Chat,75.59,32`;
 
 const leaderboardDataMagi = `model,score
 TheBloke/koala-7B-HF,23.7
@@ -226,7 +227,8 @@ Nexusflow/Starling-LM-7B-beta,40.12
 Qwen/Qwen1.5-MoE-A2.7B-Chat,38.34
 databricks/dbrx-instruct,57.13
 CohereForAI/c4ai-command-r-v01,43.27
-claude-3-haiku-20240307,47.71`;
+claude-3-haiku-20240307,47.71
+Qwen/Qwen1.5-32B-Chat,60.72`;
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');

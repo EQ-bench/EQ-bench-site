@@ -1,6 +1,6 @@
-# Judge: mistral-medium
+# mistral-medium
 
-# Test model scores:
+Test model scores:
 76.88 gpt-4-0125-preview
 74.3 claude-3-opus-20240229
 72.77 claude-3-sonnet-20240229
@@ -21,19 +21,21 @@
 66.55 meta-llama/Llama-2-13b-chat-hf
 77.03 sophosympatheia/Midnight-Miqu-70B-v1.5
 
-# Stats:
-mean_score 68.91315789473684
+Stats:
+Self bias: 1.6
+Family bias: 0.6
+mean_score 68.91
 range 37.1
-std_dev 8.859752976636399
-CV 0.1285640253225582
-std_dev_top_5 0.7018333135438918
-pearson_arena_elo 0.7836064501128717
-kendall_arena_elo 0.7142857142857143
-pearson_eq_bench 0.797765388448153
-kendall_eq_bench 0.676470588235294
-pearson_top_8_arena_elo 0.41544558485294697
-kendall_top_8_arena_elo 0.3333333333333333
-pearson_top_8_eq_bench 0.7494890195588157
-kendall_top_8_eq_bench 0.6190476190476191
-Judgemark Score: 62.1
+std_dev 8.86
+CV 0.13
+std_dev_top_5 0.7
+pearson_arena_elo 0.78
+kendall_arena_elo 0.71
+pearson_eq_bench 0.8
+kendall_eq_bench 0.68
+pearson_top_8_arena_elo 0.42
+kendall_top_8_arena_elo 0.33
+pearson_top_8_eq_bench 0.75
+kendall_top_8_eq_bench 0.62
+Judgemark 62.1
 Cost: $6.08

@@ -1,6 +1,6 @@
-# Judge: claude-3-opus
+# claude-3-opus-20240229
 
-# Test model scores:
+Test model scores:
 74.97 gpt-4-0125-preview
 76.81 claude-3-opus-20240229
 76.23 claude-3-sonnet-20240229
@@ -21,19 +21,21 @@
 55.47 meta-llama/Llama-2-13b-chat-hf
 76.41 sophosympatheia/Midnight-Miqu-70B-v1.5
 
-# Stats:
-mean_score 61.59526315789475
-range 41.480000000000004
-std_dev 13.145512698010956
-CV 0.21341759128966523
-std_dev_top_5 1.1987827159247852
-pearson_arena_elo 0.9321532547758339
-kendall_arena_elo 0.9238095238095239
-pearson_eq_bench 0.8595994993579341
-kendall_eq_bench 0.6323529411764706
-pearson_top_8_arena_elo 0.9045311880517819
-kendall_top_8_arena_elo 0.9047619047619049
-pearson_top_8_eq_bench 0.1059936033486515
-kendall_top_8_eq_bench 0.04761904761904762
-Judgemark Score: 73.47
+Stats:
+Self bias: 4.77
+Family bias: 3.94
+mean_score 61.6
+range 41.48
+std_dev 13.15
+CV 0.21
+std_dev_top_5 1.2
+pearson_arena_elo 0.93
+kendall_arena_elo 0.92
+pearson_eq_bench 0.86
+kendall_eq_bench 0.63
+pearson_top_8_arena_elo 0.9
+kendall_top_8_arena_elo 0.9
+pearson_top_8_eq_bench 0.11
+kendall_top_8_eq_bench 0.05
+Judgemark 73.47
 Cost: $40.00

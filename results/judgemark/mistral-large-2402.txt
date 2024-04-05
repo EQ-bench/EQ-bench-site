@@ -1,6 +1,6 @@
-# Judge: mistral-large
+# mistral-large-2402
 
-# Test model scores:
+Test model scores:
 76.14 gpt-4-0125-preview
 77.87 claude-3-opus-20240229
 77.71 claude-3-sonnet-20240229
@@ -21,19 +21,21 @@
 70.49 meta-llama/Llama-2-13b-chat-hf
 79.55 sophosympatheia/Midnight-Miqu-70B-v1.5
 
-# Stats:
-mean_score 72.76894736842105
-range 31.229999999999997
-std_dev 7.729203563065101
-CV 0.10621568460971419
-std_dev_top_5 0.8143709228600924
-pearson_arena_elo 0.7908538030644875
-kendall_arena_elo 0.7333333333333334
-pearson_eq_bench 0.86939963745214
-kendall_eq_bench 0.6715912882012389
-pearson_top_8_arena_elo 0.17803574640432773
-kendall_top_8_arena_elo 0.3333333333333333
-pearson_top_8_eq_bench -0.24101385326843625
-kendall_top_8_eq_bench 0.29277002188455997
-Judgemark Score: 47.41
+Stats:
+Self bias: 1.55
+Family bias: 1.44
+mean_score 72.77
+range 31.23
+std_dev 7.73
+CV 0.11
+std_dev_top_5 0.81
+pearson_arena_elo 0.79
+kendall_arena_elo 0.73
+pearson_eq_bench 0.87
+kendall_eq_bench 0.67
+pearson_top_8_arena_elo 0.18
+kendall_top_8_arena_elo 0.33
+pearson_top_8_eq_bench -0.24
+kendall_top_8_eq_bench 0.29
+Judgemark 47.41
 Cost: $21.14
