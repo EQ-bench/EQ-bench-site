@@ -68,6 +68,12 @@
 		<p><em>Judgemark:</em> A final aggregate score derived from the correlation & std. dev. stats.</p>
 		<p><em>Stats:</em> Test model scores and raw stats from the Judgemark run.</p>
 		<br>
+		<p>The Judgemark score is computed like this:</p>		
+		&nbsp;&nbsp;&nbsp;([Average of Pearson Correlations normalised 0-1]<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ [Average of Kendall Correlations normalised 0-1]<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ [Std. Dev. normalised 0-1])<br>
+		&nbsp;&nbsp;&nbsp;÷ 3			
+		</p>
 		<p>You can run Judgemark with the EQ-Bench pipeline at the github repo linked above.</p>
 		</div>
 		<br>
