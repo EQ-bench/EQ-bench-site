@@ -234,6 +234,7 @@ Qwen/Qwen1.5-32B-Chat,60.72
 CohereForAI/c4ai-command-r-plus,49.70
 google/gemma-1.1-7b-it,38.43`;
 
+
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
 	var label = document.getElementById('toggleLabel');
