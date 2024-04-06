@@ -109,14 +109,16 @@ cognitivecomputations/Samantha-120b,76.44,120
 sophosympatheia/Midnight-Miqu-70B-v1.0,75.9,70
 claude-3-sonnet-20240229,80.45,
 claude-3-opus-20240229,82.19,
-*Infinimol/miiqu-f16,83.17,105,
-*mlabonne/Beyonder-4x7B-v3,77.01,4x7
+Infinimol/miiqu-f16,83.17,105,
+mlabonne/Beyonder-4x7B-v3,77.01,4x7
 *Nexusflow/Starling-LM-7B-beta,73.82,7
 *Qwen/Qwen1.5-MoE-A2.7B-Chat,58.07,8x1.8
 *databricks/dbrx-instruct,76.82,16x8,
 *CohereForAI/c4ai-command-r-v01,56.05,35,
 *claude-3-haiku-20240307,63.65,
-*Qwen/Qwen1.5-32B-Chat,75.59,32`;
+*Qwen/Qwen1.5-32B-Chat,75.59,32
+*CohereForAI/c4ai-command-r-plus,73.65,104
+*google/gemma-1.1-7b-it,59.17,7`;
 
 const leaderboardDataMagi = `model,score
 TheBloke/koala-7B-HF,23.7
@@ -228,7 +230,9 @@ Qwen/Qwen1.5-MoE-A2.7B-Chat,38.34
 databricks/dbrx-instruct,57.13
 CohereForAI/c4ai-command-r-v01,43.27
 claude-3-haiku-20240307,47.71
-Qwen/Qwen1.5-32B-Chat,60.72`;
+Qwen/Qwen1.5-32B-Chat,60.72
+CohereForAI/c4ai-command-r-plus,49.70
+google/gemma-1.1-7b-it,38.43`;
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
