@@ -118,7 +118,8 @@ mlabonne/Beyonder-4x7B-v3,77.01,4x7
 *claude-3-haiku-20240307,63.65,
 *Qwen/Qwen1.5-32B-Chat,75.59,32
 *CohereForAI/c4ai-command-r-plus,73.65,104
-*google/gemma-1.1-7b-it,59.17,7`;
+*google/gemma-1.1-7b-it,59.17,7
+*gpt-4-turbo-2024-04-09,86.35,`;
 
 const leaderboardDataMagi = `model,score
 TheBloke/koala-7B-HF,23.7
@@ -232,7 +233,8 @@ CohereForAI/c4ai-command-r-v01,43.27
 claude-3-haiku-20240307,47.71
 Qwen/Qwen1.5-32B-Chat,60.72
 CohereForAI/c4ai-command-r-plus,49.70
-google/gemma-1.1-7b-it,38.43`;
+google/gemma-1.1-7b-it,38.43
+gpt-4-turbo-2024-04-09,77.74`;
 
 
 function setupDarkModeToggle() {
