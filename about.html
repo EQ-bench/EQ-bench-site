@@ -28,6 +28,8 @@
 		
 		<p><a href="https://github.com/EQ-bench/EQ-Bench" target="_blank">Github</a> | <a href="https://arxiv.org/abs/2312.06281" target="_blank">Paper</a> | <span id="email"></span> | <a href="https://twitter.com/sam_paech" target="_blank">Twitter</a> | <a href="index.html">Leaderboard</a></p>
 
+		<p><script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#1a1a1a', 'O5O7VUVYO');kofiwidget2.draw();</script> </p>
+
 		<h3>About</h3>
 		<div class="section">
 			<p><b>How to Submit</b></p>
@@ -39,7 +41,7 @@
 					<li>The EQ-Bench score that you got for your model</li>
 				</ul>
 			</p>
-			<p>We will then verify the result on our end and add to the leaderboard.</p>
+			<p>We will then verify the result on our end and add to the leaderboard. This project is self funded so please respect that we don't have unlimited compute!</p>
 		</div>
 		<div class="section">
 			<p><b>EQ-Bench</b></p>
@@ -85,6 +87,29 @@
 			<p>This benchmark has a relatively small number of test questions (19). We specify generation temperature = 0.7 so each run is different. This means there is significant variation of scores between iterations (avg range: 3.35, std dev: 1.41). To reduce variance we recommend using 3 iterations or more. The leaderboard scores are averaged over 3 iterations.</p>
 			<p>It costs around $3.00 to bench a model over 3 iterations using Claude 3 Opus at current rates.</p>
 			<p>If you would like your model included on the creative writing leaderboard, please consider contributing to my compute costs, and get in touch!</p>
+		</div>
+
+		<div class="section">
+			<p><b>Judgemark</b> measures the ability of a model to judge creative writing.</p>
+			<p>This is a *hard* test. The benchmark requires the model to judge a series of pre-generated creative writing outputs from 19 test models, assigning scores to each of the test models in the same way that the creative-writing benchmark does it.</p>
+			<p>Here's a quick rundown of the metrics:</p>
+			<p><em>EQB-Corr:</em> Correlation with EQ-Bench scores</p>
+			<p><em>Arena-Corr:</em> Correlation with LMSys Arena ELO</p>
+			<p><em>Cost:</em> in USD to run the Judgemark benchmark for this model</p>
+			<p><em>Std. Dev.:</em> Standard deviation of scores for the test models (a rough proxy for discriminative power)</p>
+			<p><em>Self Bias:</em> The deviation from the predicted score when the judge model scores its own output. The bias stats should be taken with a grain of salt as the sample size we've computed them from is quite low.</p>
+			<p><em>Family Bias:</em> The deviation from the predicted score when the judge model scores models in its family (e.g. Claude opus scoring sonnet & haiku).</p>
+			<p><em>Judgemark:</em> A final aggregate score derived from the correlation & std. dev. stats.</p>
+			<p><em>Stats:</em> Test model scores and raw stats from the Judgemark run.</p>
+			<br>
+			<p>The Judgemark score is computed like this:</p>		
+			&nbsp;&nbsp;&nbsp;([Average of Pearson Correlations normalised 0-1]<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ [Average of Kendall Correlations normalised 0-1]<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ [Std. Dev. normalised 0-1])<br>
+			&nbsp;&nbsp;&nbsp;÷ 3			
+			</p>
+			<p>The exact normalisation calculation is in lib/judgemark.py of the EQ-Bench pipeline.</p>
+			<p>You can run Judgemark with the EQ-Bench pipeline at the github repo linked above.</p>
 		</div>
 
 		<p><script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#1a1a1a', 'O5O7VUVYO');kofiwidget2.draw();</script> </p>

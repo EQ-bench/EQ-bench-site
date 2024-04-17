@@ -56,25 +56,26 @@
 		<hr>
 
 		<div class="section">
-		<p><b>Judgemark</b> measures the ability of a model to judge creative writing.</p>
-		<p>This is a *hard* test. The benchmark requires the model to judge a series of pre-generated creative writing outputs from 19 test models, assigning scores to each of the test models in the same way that the creative-writing benchmark does it.</p>
-		<p>Here's a quick rundown of the metrics:</p>
-		<p><em>EQB-Corr:</em> Correlation with EQ-Bench scores</p>
-		<p><em>Arena-Corr:</em> Correlation with LMSys Arena ELO</p>
-		<p><em>Cost:</em> in USD to run the Judgemark benchmark for this model</p>
-		<p><em>Std. Dev.:</em> Standard deviation of scores for the test models (a rough proxy for discriminative power)</p>
-		<p><em>Self Bias:</em> The deviation from the predicted score when the judge model scores its own output. The bias stats should be taken with a grain of salt as the sample size we've computed them from is quite low.</p>
-		<p><em>Family Bias:</em> The deviation from the predicted score when the judge model scores models in its family (e.g. Claude opus scoring sonnet & haiku).</p>
-		<p><em>Judgemark:</em> A final aggregate score derived from the correlation & std. dev. stats.</p>
-		<p><em>Stats:</em> Test model scores and raw stats from the Judgemark run.</p>
-		<br>
-		<p>The Judgemark score is computed like this:</p>		
-		&nbsp;&nbsp;&nbsp;([Average of Pearson Correlations normalised 0-1]<br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ [Average of Kendall Correlations normalised 0-1]<br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ [Std. Dev. normalised 0-1])<br>
-		&nbsp;&nbsp;&nbsp;÷ 3			
-		</p>
-		<p>You can run Judgemark with the EQ-Bench pipeline at the github repo linked above.</p>
+			<p><b>Judgemark</b> measures the ability of a model to judge creative writing.</p>
+			<p>This is a *hard* test. The benchmark requires the model to judge a series of pre-generated creative writing outputs from 19 test models, assigning scores to each of the test models in the same way that the creative-writing benchmark does it.</p>
+			<p>Here's a quick rundown of the metrics:</p>
+			<p><em>EQB-Corr:</em> Correlation with EQ-Bench scores</p>
+			<p><em>Arena-Corr:</em> Correlation with LMSys Arena ELO</p>
+			<p><em>Cost:</em> in USD to run the Judgemark benchmark for this model</p>
+			<p><em>Std. Dev.:</em> Standard deviation of scores for the test models (a rough proxy for discriminative power)</p>
+			<p><em>Self Bias:</em> The deviation from the predicted score when the judge model scores its own output. The bias stats should be taken with a grain of salt as the sample size we've computed them from is quite low.</p>
+			<p><em>Family Bias:</em> The deviation from the predicted score when the judge model scores models in its family (e.g. Claude opus scoring sonnet & haiku).</p>
+			<p><em>Judgemark:</em> A final aggregate score derived from the correlation & std. dev. stats.</p>
+			<p><em>Stats:</em> Test model scores and raw stats from the Judgemark run.</p>
+			<br>
+			<p>The Judgemark score is computed like this:</p>		
+			&nbsp;&nbsp;&nbsp;([Average of Pearson Correlations normalised 0-1]<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ [Average of Kendall Correlations normalised 0-1]<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ [Std. Dev. normalised 0-1])<br>
+			&nbsp;&nbsp;&nbsp;÷ 3			
+			</p>
+			<p>The exact normalisation calculation is in lib/judgemark.py of the EQ-Bench pipeline.</p>
+			<p>You can run Judgemark with the EQ-Bench pipeline at the github repo linked above.</p>
 		</div>
 		<br>
 	</div>
