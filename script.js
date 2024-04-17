@@ -121,7 +121,8 @@ databricks/dbrx-instruct,76.82,16x8,
 *google/gemma-1.1-7b-it,59.17,7
 *gpt-4-turbo-2024-04-09,86.35,
 *microsoft/WizardLM-2-7B,69.31,7
-*microsoft/WizardLM-2-8x22B,77.91,8x22`;
+*microsoft/WizardLM-2-8x22B,77.91,8x22
+*mistralai/Mixtral-8x22B-Instruct-v0.1,78.79,8x22`;
 
 const leaderboardDataMagi = `model,score
 TheBloke/koala-7B-HF,23.7
@@ -238,7 +239,8 @@ CohereForAI/c4ai-command-r-plus,49.70
 google/gemma-1.1-7b-it,38.43
 gpt-4-turbo-2024-04-09,77.74
 microsoft/WizardLM-2-7B,35.40
-microsoft/WizardLM-2-8x22B,59.16`;
+microsoft/WizardLM-2-8x22B,59.16
+mistralai/Mixtral-8x22B-Instruct-v0.1,62.41`;
 
 
 function setupDarkModeToggle() {

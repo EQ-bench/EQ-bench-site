@@ -93,10 +93,10 @@
 			<p><b>⚖️Judgemark</b> measures the ability of a model to judge creative writing.</p>
 			<p>This is a *hard* test. The benchmark requires the model to judge a series of pre-generated creative writing outputs from 19 test models, assigning scores to each of the test models in the same way that the creative-writing benchmark does it.</p>
 			<p>Here's a quick rundown of the metrics:</p>
-			<p><em>EQB-Corr:</em> Correlation with EQ-Bench scores</p>
-			<p><em>Arena-Corr:</em> Correlation with LMSys Arena ELO</p>
-			<p><em>Cost:</em> in USD to run the Judgemark benchmark for this model</p>
-			<p><em>Std. Dev.:</em> Standard deviation of scores for the test models (a rough proxy for discriminative power)</p>
+			<p><em>EQB-Corr:</em> Correlation with EQ-Bench scores.</p>
+			<p><em>Arena-Corr:</em> Correlation with LMSys Arena ELO.</p>
+			<p><em>Cost:</em> in USD to run the Judgemark benchmark for this model.</p>
+			<p><em>Std. Dev.:</em> Standard deviation of scores between the test models. This corresponds to the judge's ability to reliably identify different ability levels over multiple trials.</p>
 			<p><em>Self Bias:</em> The deviation from the predicted score when the judge model scores its own output. The bias stats should be taken with a grain of salt as the sample size we've computed them from is quite low.</p>
 			<p><em>Family Bias:</em> The deviation from the predicted score when the judge model scores models in its family (e.g. Claude opus scoring sonnet & haiku).</p>
 			<p><em>Judgemark:</em> A final aggregate score derived from the correlation & std. dev. stats.</p>
