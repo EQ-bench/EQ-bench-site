@@ -125,7 +125,8 @@ databricks/dbrx-instruct,76.82,16x8,
 *mistralai/Mixtral-8x22B-Instruct-v0.1,78.79,8x22
 *meta-llama/Meta-Llama-3-8B-Instruct,68.88,8
 *meta-llama/Meta-Llama-3-70B-Instruct,82.13,70
-*paloalma/ECE-TW3-JRGL-V1,83.07,69`;
+*paloalma/ECE-TW3-JRGL-V1,83.07,69
+*Nanbeige/Nanbeige2-8B-Chat,65.17,8`;
 
 const leaderboardDataMagi = `model,score
 TheBloke/koala-7B-HF,23.7
@@ -246,7 +247,8 @@ microsoft/WizardLM-2-8x22B,59.16
 mistralai/Mixtral-8x22B-Instruct-v0.1,62.41
 meta-llama/Meta-Llama-3-8B-Instruct,63.84
 meta-llama/Meta-Llama-3-70B-Instruct,67.97
-paloalma/ECE-TW3-JRGL-V1,63.56`;
+paloalma/ECE-TW3-JRGL-V1,63.56
+Nanbeige/Nanbeige2-8B-Chat,33.03`;
 
 
 function setupDarkModeToggle() {
