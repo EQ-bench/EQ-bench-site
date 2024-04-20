@@ -25,7 +25,8 @@ gemini-ultra,77.68,,4103
 *meta-llama/Meta-Llama-3-8B-Instruct,64.67,8,3719
 *meta-llama/Meta-Llama-3-70B-Instruct ,73.1,70,3796
 *senseable/WestLake-7B-v2,69.51,7,4461
-*N8Programs/Coxcomb,71.98,7,5200`;
+*N8Programs/Coxcomb,71.98,7,5200
+*OmnicromsBrain/NeuralStar_AlphaWriter_4x7b,73.32,4x7,4773`;
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
