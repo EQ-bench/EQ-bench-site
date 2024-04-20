@@ -20,7 +20,12 @@ meta-llama/Llama-2-13b-chat-hf,54.6,13,3957
 alpindale/goliath-120b,68.33,120,3947
 sophosympatheia/Midnight-Miqu-70B-v1.5,75.22,70,8770
 Nexusflow/Starling-LM-7B-beta,62.14,7,4394
-gemini-ultra,77.68,,4103`;
+gemini-ultra,77.68,,4103
+*gemini-1.5-pro-latest,69.73,,3335
+*meta-llama/Meta-Llama-3-8B-Instruct,64.67,8,3719
+*meta-llama/Meta-Llama-3-70B-Instruct ,73.1,70,3796
+*senseable/WestLake-7B-v2,69.51,7,4461
+*N8Programs/Coxcomb,71.98,7,5200`;
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
@@ -107,14 +112,20 @@ function loadLeaderboardData() {
 	const maxScoreCreativeWriting = Math.max(...creativeWritingRows.map(row => parseFloat(row.split(',')[1])));
 
 	let html = creativeWritingRows.map(creativeWritingRow => {
-		const [modelName, score, params, avgLength] = creativeWritingRow.split(',');
+		let [modelName, score, params, avgLength] = creativeWritingRow.split(',');
 		const scoreNum = parseFloat(score);
 
 		// Calculate score percentage based on max score
 		let scorePercentageCreativeWriting = (scoreNum / maxScoreCreativeWriting) * 100;
 
+		const isNewModel = modelName.startsWith('*');
+		modelName = modelName.replace(/^\*/, '');
+
 		// Extract model name without creator
 		let displayModelName = modelName.split('/').pop();
+		if (isNewModel) {
+			displayModelName = '🆕' + displayModelName
+		}
 		let modelNameDisplay = modelName.includes('/')
 			? `<a href="https://huggingface.co/${modelName}" target="_blank">${displayModelName}</a>`
 			: displayModelName;
