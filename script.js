@@ -114,11 +114,11 @@ mlabonne/Beyonder-4x7B-v3,77.01,4x7
 Nexusflow/Starling-LM-7B-beta,73.82,7
 Qwen/Qwen1.5-MoE-A2.7B-Chat,58.07,8x1.8
 databricks/dbrx-instruct,76.82,16x8,
-*CohereForAI/c4ai-command-r-v01,56.05,35,
-*claude-3-haiku-20240307,63.65,
-*Qwen/Qwen1.5-32B-Chat,75.59,32
-*CohereForAI/c4ai-command-r-plus,73.65,104
-*google/gemma-1.1-7b-it,59.17,7
+CohereForAI/c4ai-command-r-v01,56.05,35,
+claude-3-haiku-20240307,63.65,
+Qwen/Qwen1.5-32B-Chat,75.59,32
+CohereForAI/c4ai-command-r-plus,76.11,104
+google/gemma-1.1-7b-it,59.17,7
 *gpt-4-turbo-2024-04-09,86.35,
 *microsoft/WizardLM-2-7B,69.31,7
 *microsoft/WizardLM-2-8x22B,77.91,8x22
