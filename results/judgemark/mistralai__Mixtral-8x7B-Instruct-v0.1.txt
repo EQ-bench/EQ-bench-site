@@ -1,0 +1,43 @@
+# mistralai/Mixtral-8x7B-Instruct-v0.1
+
+Test model scores:
+69.45 gpt-4-0125-preview
+69.56 claude-3-opus-20240229
+78.71 claude-3-sonnet-20240229
+65.38 claude-3-haiku-20240307
+66.42 mistral-small
+68.9 mistral-medium
+75.2 mistral-large-2402
+61.99 gpt-3.5-turbo-0301
+67.33 01-ai/Yi-34B-Chat
+70.62 openchat/openchat-3.5-1210
+58.68 garage-bAInd/Platypus2-70B-instruct
+70.8 mistralai/Mixtral-8x7B-Instruct-v0.1
+72.57 Qwen/Qwen1.5-14B-Chat
+48.15 Qwen/Qwen1.5-4B-Chat
+60.01 google/gemma-2b-it
+64.93 google/gemma-7b-it
+59.98 meta-llama/Llama-2-7b-chat-hf
+64.9 meta-llama/Llama-2-13b-chat-hf
+76.98 sophosympatheia/Midnight-Miqu-70B-v1.5
+
+Stats:
+ANOVA f-statistic 4.669740009188166
+ANOVA p-value 3.4649715442407736e-09
+Self bias: 1.0
+Family bias: -0.13
+Avg 95% CI: 13.8
+mean_score 66.87
+range 30.56
+std_dev 7.22
+CV 0.11
+std_dev_top_5 3.21
+pearson_arena_elo 0.71
+kendall_arena_elo 0.58
+pearson_eq_bench 0.81
+kendall_eq_bench 0.63
+pearson_top_8_arena_elo -0.04
+kendall_top_8_arena_elo -0.07
+pearson_top_8_eq_bench 0.22
+kendall_top_8_eq_bench -0.05
+Judgemark 33.65

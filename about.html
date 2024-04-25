@@ -90,26 +90,33 @@
 		</div>
 
 		<div class="section">
-			<p><b>⚖️Judgemark</b> measures the ability of a model to judge creative writing.</p>
-			<p>This is a *hard* test. The benchmark requires the model to judge a series of pre-generated creative writing outputs from 19 test models, assigning scores to each of the test models in the same way that the creative-writing benchmark does it.</p>
+			<p><b>⚖️Judgemark</b> measures the ability of a model to judge creative writing using a numerical scoring system.</p>
+			<p>The Judgemark test incorporates a triple-whammy of difficult tasks that LLMs typically struggle with: Evaluating writing quality; effectively using a multi-criteria numerical scoring system; and following complex instructions over a long prompt.</p>
+			<p>The benchmark requires the model to judge a series of pre-generated creative writing outputs from 19 test models, assigning scores to each of the test models based on a set of 36 narrow criteria for good & bad writing. This differs from other LLM-as-a-judge evals which involve comparing to test model outputs head to head, which is a relatively easier task for judge models to accomplish.</p>
+			<p>A minimum of 8k supported context length is required for this test. The judging prompts are complex, and incorporate the writing prompt, an exemplar response, the test response, and detailed scoring instructions.</p>
+			
 			<p>Here's a quick rundown of the metrics:</p>
-			<p><em>EQB-Corr:</em> Correlation with EQ-Bench scores.</p>
-			<p><em>Arena-Corr:</em> Correlation with LMSys Arena ELO.</p>
-			<p><em>Cost:</em> in USD to run the Judgemark benchmark for this model.</p>
-			<p><em>Std. Dev.:</em> Standard deviation of scores between the test models. This corresponds to the judge's ability to reliably identify different ability levels over multiple trials.</p>
-			<p><em>Self Bias:</em> The deviation from the predicted score when the judge model scores its own output. The bias stats should be taken with a grain of salt as the sample size we've computed them from is quite low.</p>
-			<p><em>Family Bias:</em> The deviation from the predicted score when the judge model scores models in its family (e.g. Claude opus scoring sonnet & haiku).</p>
-			<p><em>Judgemark:</em> A final aggregate score derived from the correlation & std. dev. stats.</p>
-			<p><em>Stats:</em> Test model scores and raw stats from the Judgemark run.</p>
+			<div class="metric-description"><span class="metric-name">EQB-Corr:</span> <span class="metric-explanation">Correlation with EQ-Bench scores.</span></div>
+			<div class="metric-description"><span class="metric-name">Arena-Corr:</span> <span class="metric-explanation">Correlation with LMSys Arena ELO.</span></div>
+			<div class="metric-description"><span class="metric-name">Cost:</span> <span class="metric-explanation">in USD to run the Judgemark benchmark for this model.</span></div>
+			<div class="metric-description"><span class="metric-name">Std. Dev.:</span> <span class="metric-explanation">Standard deviation of scores for the test models. This is a rough proxy for discriminative power, or how well the judge was able to reliably separate each model by ability level.</span></div>
+			<div class="metric-description"><span class="metric-name">Self Bias:</span> <span class="metric-explanation">The deviation from the predicted score when the judge model scores its own output. The bias stats should be taken with a grain of salt as the sample size we've computed them from is quite low.</span></div>
+			<div class="metric-description"><span class="metric-name">Family Bias:</span> <span class="metric-explanation">The deviation from the predicted score when the judge model scores models in its family (e.g., Claude opus scoring sonnet & haiku).</span></div>
+			<div class="metric-description"><span class="metric-name">Judgemark:</span> <span class="metric-explanation">A final aggregate score derived from the correlation & std. dev. stats.</span></div>
+			<div class="metric-description"><span class="metric-name">Stats:</span> <span class="metric-explanation">Test model scores and raw stats from the Judgemark run.</span></div>
+			<div class="metric-description"><span class="metric-name">📊:</span> <span class="metric-explanation">Chart of the test model scores as evaluated by this judge.</span></div>
+			<div class="metric-description"><span class="metric-name">(Not pictured) ANOVA f-statistic:</span> <span class="metric-explanation">A measure of how well the judge model was able to tell apart the different test models based on their writing, based on cluster analysis.</span></div>
 			<br>
 			<p>The Judgemark score is computed like this:</p>		
 			&nbsp;&nbsp;&nbsp;([Average of Pearson Correlations normalised 0-1]<br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ [Average of Kendall Correlations normalised 0-1]<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ [ANOVA f-statistic normalised 0-1]<br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ [Std. Dev. normalised 0-1])<br>
-			&nbsp;&nbsp;&nbsp;÷ 3			
+			&nbsp;&nbsp;&nbsp;÷ 4			
 			</p>
 			<p>The exact normalisation calculation is in lib/judgemark.py of the EQ-Bench pipeline.</p>
-			<p>You can run Judgemark with the EQ-Bench pipeline at the github repo linked above.</p>
+			<p><b>A note on variance:</b> The number of creative writing outputs that are scored per test model is quite low (19 items), to keep the cost of the test manageable. This means the results will vary somewhat between runs, and the 95% confidence intervals are quite high for the individual test model scores. The variance is mitigated to a degree by the fact that there are 19 models tested, so 19x19=361 prompts, each of which involves 36 scored criteria. It should also be noted that the creative writing test (that the judgemark test outputs are sourced from) runs 3x iterations, so the confidence intervals are tighter in the creative writing test than those shown in the judgemark test model score charts.</p>
+			<p>You can run Judgemark with the EQ-Bench pipeline with the code <a href="https://github.com/EQ-bench/EQ-Bench" target="_blank">here</a>.</p>
 		</div>
 
 		<p><script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#1a1a1a', 'O5O7VUVYO');kofiwidget2.draw();</script> </p>

@@ -324,3 +324,15 @@ table#judgemark-leaderboard td, table#judgemark-leaderboard th {
 	padding: 2px 4px;
 }
 
+.metric-description {
+	display: flex;
+	justify-content: left;
+	margin-bottom: 5px; /* Adds space between lines */
+}
+.metric-name {
+	font-style: italic;
+	min-width: 120px; /* Adjust this as needed to align the descriptions */
+}
+.metric-explanation {
+	text-align: left;
+}

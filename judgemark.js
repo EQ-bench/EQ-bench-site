@@ -23,8 +23,11 @@ Test model scores:
 76.41 sophosympatheia/Midnight-Miqu-70B-v1.5
 
 Stats:
+ANOVA f-statistic 22.54776626305501
+ANOVA p-value 1.141134274589569e-46
 Self bias: 4.77
 Family bias: 3.94
+Avg 95% CI: 11.12
 mean_score 61.6
 range 41.48
 std_dev 13.15
@@ -38,7 +41,7 @@ pearson_top_8_arena_elo 0.9
 kendall_top_8_arena_elo 0.9
 pearson_top_8_eq_bench 0.11
 kendall_top_8_eq_bench 0.05
-Judgemark 73.47
+Judgemark 75.23
 Cost: $40.00
 
 
@@ -66,8 +69,11 @@ Test model scores:
 77.25 sophosympatheia/Midnight-Miqu-70B-v1.5
 
 Stats:
+ANOVA f-statistic 14.63007394321016
+ANOVA p-value 3.8078644425745344e-32
 Self bias: 0.22
 Family bias: -0.69
+Avg 95% CI: 7.37
 mean_score 72.14
 range 31.31
 std_dev 7.1
@@ -81,7 +87,7 @@ pearson_top_8_arena_elo 0.61
 kendall_top_8_arena_elo 0.2
 pearson_top_8_eq_bench 0.4
 kendall_top_8_eq_bench 0.14
-Judgemark 49.93
+Judgemark 50.51
 Cost: $15.00
 
 
@@ -109,8 +115,11 @@ Test model scores:
 83.63 sophosympatheia/Midnight-Miqu-70B-v1.5
 
 Stats:
+ANOVA f-statistic 13.440598873375457
+ANOVA p-value 1.0636743398714796e-29
 Self bias: 0.26
 Family bias: 0.1
+Avg 95% CI: 4.8
 mean_score 80.18
 range 20.56
 std_dev 4.57
@@ -124,7 +133,7 @@ pearson_top_8_arena_elo -0.2
 kendall_top_8_arena_elo 0.07
 pearson_top_8_eq_bench -0.02
 kendall_top_8_eq_bench -0.05
-Judgemark 28.52
+Judgemark 33.39
 Cost: $0.60
 
 
@@ -152,8 +161,11 @@ Test model scores:
 77.03 sophosympatheia/Midnight-Miqu-70B-v1.5
 
 Stats:
+ANOVA f-statistic 13.733752512102223
+ANOVA p-value 2.6105986190776132e-30
 Self bias: 1.6
 Family bias: 0.6
+Avg 95% CI: 9.82
 mean_score 68.91
 range 37.1
 std_dev 8.86
@@ -167,8 +179,7 @@ pearson_top_8_arena_elo 0.42
 kendall_top_8_arena_elo 0.33
 pearson_top_8_eq_bench 0.75
 kendall_top_8_eq_bench 0.62
-Judgemark 62.1
-Cost: $6.08
+Judgemark 58.84
 
 
 # mistral-large-2402
@@ -195,8 +206,11 @@ Test model scores:
 79.55 sophosympatheia/Midnight-Miqu-70B-v1.5
 
 Stats:
+ANOVA f-statistic 5.3312726205415055
+ANOVA p-value 7.34293606897579e-11
 Self bias: 1.55
 Family bias: 1.44
+Avg 95% CI: 14.12
 mean_score 72.77
 range 31.23
 std_dev 7.73
@@ -210,7 +224,7 @@ pearson_top_8_arena_elo 0.18
 kendall_top_8_arena_elo 0.33
 pearson_top_8_eq_bench -0.24
 kendall_top_8_eq_bench 0.29
-Judgemark 47.41
+Judgemark 40.32
 Cost: $21.14
 
 
@@ -238,8 +252,11 @@ Test model scores:
 75.6 sophosympatheia/Midnight-Miqu-70B-v1.5
 
 Stats:
+ANOVA f-statistic 6.35514785468332
+ANOVA p-value 1.9691762615862748e-13
 Self bias: -3.26
 Family bias: -0.7
+Avg 95% CI: 12.88
 mean_score 68.41
 range 32.69
 std_dev 8.0
@@ -253,7 +270,7 @@ pearson_top_8_arena_elo -0.34
 kendall_top_8_arena_elo -0.14
 pearson_top_8_eq_bench -0.25
 kendall_top_8_eq_bench -0.43
-Judgemark 30.94
+Judgemark 28.88
 Cost: $1.30
 
 
@@ -281,8 +298,11 @@ Test model scores:
 66.01 sophosympatheia/Midnight-Miqu-70B-v1.5
 
 Stats:
+ANOVA f-statistic 3.027904493985067
+ANOVA p-value 4.32665867613089e-05
 Self bias: N/A
 Self bias: N/A
+Avg 95% CI: 6.54
 mean_score 62.68
 range 11.38
 std_dev 2.8
@@ -296,7 +316,7 @@ pearson_top_8_arena_elo -0.29
 kendall_top_8_arena_elo -0.07
 pearson_top_8_eq_bench -0.22
 kendall_top_8_eq_bench -0.24
-Judgemark 17.8
+Judgemark 16.06
 Cost: $0.96
 
 
@@ -324,8 +344,11 @@ Test model scores:
 68.55 sophosympatheia/Midnight-Miqu-70B-v1.5
 
 Stats:
+ANOVA f-statistic 18.713951379060973
+ANOVA p-value 5.438739149382401e-40
 Self bias: 1.64
 Family bias: -1.49
+Avg 95% CI: 8.63
 mean_score 61.58
 range 35.0
 std_dev 8.88
@@ -339,8 +362,325 @@ pearson_top_8_arena_elo 0.79
 kendall_top_8_arena_elo 0.62
 pearson_top_8_eq_bench 0.74
 kendall_top_8_eq_bench 0.52
-Judgemark 68.14
-Cost: $16.00`;
+Judgemark 67.81
+Cost: $16.00
+
+
+# *gemini-1.5-pro-preview-0409
+
+Test model scores:
+64.31 gpt-4-0125-preview
+65.63 claude-3-opus-20240229
+62.45 claude-3-sonnet-20240229
+60.08 claude-3-haiku-20240307
+56.89 mistral-small
+58.33 mistral-medium
+61.61 mistral-large-2402
+44.05 gpt-3.5-turbo-0301
+61.32 01-ai/Yi-34B-Chat
+50.21 openchat/openchat-3.5-1210
+47.49 garage-bAInd/Platypus2-70B-instruct
+61.29 mistralai/Mixtral-8x7B-Instruct-v0.1
+60.43 Qwen/Qwen1.5-14B-Chat
+34.19 Qwen/Qwen1.5-4B-Chat
+42.9 google/gemma-2b-it
+48.86 google/gemma-7b-it
+45.36 meta-llama/Llama-2-7b-chat-hf
+45.3 meta-llama/Llama-2-13b-chat-hf
+66.66 sophosympatheia/Midnight-Miqu-70B-v1.5
+
+Stats:
+ANOVA f-statistic 16.30257975739365
+ANOVA p-value 8.005789693406729e-35
+Self bias: N/A
+Self bias: N/A
+Avg 95% CI: 9.17
+mean_score 54.6
+range 32.47
+std_dev 9.38
+CV 0.17
+std_dev_top_5 2.11
+pearson_arena_elo 0.89
+kendall_arena_elo 0.75
+pearson_eq_bench 0.83
+kendall_eq_bench 0.62
+pearson_top_8_arena_elo 0.93
+kendall_top_8_arena_elo 0.87
+pearson_top_8_eq_bench 0.61
+kendall_top_8_eq_bench 0.33
+Judgemark 66.58
+
+
+# *gpt-4-turbo-2024-04-09
+
+Test model scores:
+70.78 gpt-4-0125-preview
+69.86 claude-3-opus-20240229
+64.2 claude-3-sonnet-20240229
+63.8 claude-3-haiku-20240307
+60.22 mistral-small
+65.08 mistral-medium
+66.3 mistral-large-2402
+51.4 gpt-3.5-turbo-0301
+63.61 01-ai/Yi-34B-Chat
+58.92 openchat/openchat-3.5-1210
+54.79 garage-bAInd/Platypus2-70B-instruct
+62.59 mistralai/Mixtral-8x7B-Instruct-v0.1
+63.15 Qwen/Qwen1.5-14B-Chat
+38.15 Qwen/Qwen1.5-4B-Chat
+47.89 google/gemma-2b-it
+52.28 google/gemma-7b-it
+50.27 meta-llama/Llama-2-7b-chat-hf
+54.74 meta-llama/Llama-2-13b-chat-hf
+67.1 sophosympatheia/Midnight-Miqu-70B-v1.5
+
+Stats:
+ANOVA f-statistic 22.258294701268724
+ANOVA p-value 3.473818210081676e-46
+Self bias: N/A
+Self bias: N/A
+Avg 95% CI: 7.25
+mean_score 59.22
+range 32.63
+std_dev 8.46
+CV 0.14
+std_dev_top_5 2.41
+pearson_arena_elo 0.91
+kendall_arena_elo 0.81
+pearson_eq_bench 0.86
+kendall_eq_bench 0.71
+pearson_top_8_arena_elo 0.81
+kendall_top_8_arena_elo 0.52
+pearson_top_8_eq_bench 0.6
+kendall_top_8_eq_bench 0.62
+Judgemark 70.43
+Cost: $16.00
+
+
+# *mistralai/Mixtral-8x7B-Instruct-v0.1
+
+Test model scores:
+69.45 gpt-4-0125-preview
+69.56 claude-3-opus-20240229
+78.71 claude-3-sonnet-20240229
+65.38 claude-3-haiku-20240307
+66.42 mistral-small
+68.9 mistral-medium
+75.2 mistral-large-2402
+61.99 gpt-3.5-turbo-0301
+67.33 01-ai/Yi-34B-Chat
+70.62 openchat/openchat-3.5-1210
+58.68 garage-bAInd/Platypus2-70B-instruct
+70.8 mistralai/Mixtral-8x7B-Instruct-v0.1
+72.57 Qwen/Qwen1.5-14B-Chat
+48.15 Qwen/Qwen1.5-4B-Chat
+60.01 google/gemma-2b-it
+64.93 google/gemma-7b-it
+59.98 meta-llama/Llama-2-7b-chat-hf
+64.9 meta-llama/Llama-2-13b-chat-hf
+76.98 sophosympatheia/Midnight-Miqu-70B-v1.5
+
+Stats:
+ANOVA f-statistic 4.669740009188166
+ANOVA p-value 3.4649715442407736e-09
+Self bias: 1.0
+Family bias: -0.13
+Avg 95% CI: 13.8
+mean_score 66.87
+range 30.56
+std_dev 7.22
+CV 0.11
+std_dev_top_5 3.21
+pearson_arena_elo 0.71
+kendall_arena_elo 0.58
+pearson_eq_bench 0.81
+kendall_eq_bench 0.63
+pearson_top_8_arena_elo -0.04
+kendall_top_8_arena_elo -0.07
+pearson_top_8_eq_bench 0.22
+kendall_top_8_eq_bench -0.05
+Judgemark 33.65
+
+
+# *mistralai/Mixtral-8x22B-Instruct-v0.1
+
+Test model scores:
+81.87 gpt-4-0125-preview
+81.62 claude-3-opus-20240229
+79.97 claude-3-sonnet-20240229
+78.15 claude-3-haiku-20240307
+78.29 mistral-small
+80.89 mistral-medium
+81.85 mistral-large-2402
+69.01 gpt-3.5-turbo-0301
+80.05 01-ai/Yi-34B-Chat
+77.96 openchat/openchat-3.5-1210
+69.44 garage-bAInd/Platypus2-70B-instruct
+80.51 mistralai/Mixtral-8x7B-Instruct-v0.1
+78.83 Qwen/Qwen1.5-14B-Chat
+57.51 Qwen/Qwen1.5-4B-Chat
+68.04 google/gemma-2b-it
+71.05 google/gemma-7b-it
+73.85 meta-llama/Llama-2-7b-chat-hf
+74.95 meta-llama/Llama-2-13b-chat-hf
+83.51 sophosympatheia/Midnight-Miqu-70B-v1.5
+
+Stats:
+ANOVA f-statistic 7.780199786594963
+ANOVA p-value 6.164076032010373e-17
+Self bias: N/A
+Self bias: N/A
+Avg 95% CI: 10.02
+mean_score 76.18
+range 26.0
+std_dev 6.59
+CV 0.09
+std_dev_top_5 0.96
+pearson_arena_elo 0.78
+kendall_arena_elo 0.7
+pearson_eq_bench 0.8
+kendall_eq_bench 0.72
+pearson_top_8_arena_elo 0.58
+kendall_top_8_arena_elo 0.43
+pearson_top_8_eq_bench 0.74
+kendall_top_8_eq_bench 0.62
+Judgemark 51.45
+
+
+# *meta-llama/Meta-Llama-3-70B-Instruct
+
+Test model scores:
+71.81 gpt-4-0125-preview
+63.66 claude-3-opus-20240229
+57.71 claude-3-sonnet-20240229
+56.9 claude-3-haiku-20240307
+56.06 mistral-small
+57.57 mistral-medium
+65.64 mistral-large-2402
+41.0 gpt-3.5-turbo-0301
+66.33 01-ai/Yi-34B-Chat
+47.43 openchat/openchat-3.5-1210
+45.4 garage-bAInd/Platypus2-70B-instruct
+58.92 mistralai/Mixtral-8x7B-Instruct-v0.1
+59.03 Qwen/Qwen1.5-14B-Chat
+28.07 Qwen/Qwen1.5-4B-Chat
+41.82 google/gemma-2b-it
+43.46 google/gemma-7b-it
+39.19 meta-llama/Llama-2-7b-chat-hf
+45.9 meta-llama/Llama-2-13b-chat-hf
+65.57 sophosympatheia/Midnight-Miqu-70B-v1.5
+
+Stats:
+ANOVA f-statistic 12.931919411209947
+ANOVA p-value 1.2497248794244755e-28
+Self bias: N/A
+Self bias: N/A
+Avg 95% CI: 13.1
+mean_score 53.24
+range 43.74
+std_dev 11.58
+CV 0.22
+std_dev_top_5 3.08
+pearson_arena_elo 0.84
+kendall_arena_elo 0.62
+pearson_eq_bench 0.8
+kendall_eq_bench 0.6
+pearson_top_8_arena_elo 0.29
+kendall_top_8_arena_elo -0.07
+pearson_top_8_eq_bench 0.43
+kendall_top_8_eq_bench 0.24
+Judgemark 54.32
+
+
+# *databricks/dbrx-instruct
+
+Test model scores:
+72.22 gpt-4-0125-preview
+68.41 claude-3-opus-20240229
+72.58 claude-3-sonnet-20240229
+67.9 claude-3-haiku-20240307
+69.77 mistral-small
+73.48 mistral-medium
+75.36 mistral-large-2402
+62.85 gpt-3.5-turbo-0301
+75.27 01-ai/Yi-34B-Chat
+65.44 openchat/openchat-3.5-1210
+64.64 garage-bAInd/Platypus2-70B-instruct
+69.62 mistralai/Mixtral-8x7B-Instruct-v0.1
+77.71 Qwen/Qwen1.5-14B-Chat
+53.08 Qwen/Qwen1.5-4B-Chat
+64.29 google/gemma-2b-it
+64.73 google/gemma-7b-it
+62.98 meta-llama/Llama-2-7b-chat-hf
+69.03 meta-llama/Llama-2-13b-chat-hf
+69.51 sophosympatheia/Midnight-Miqu-70B-v1.5
+
+Stats:
+ANOVA f-statistic 4.906220048088916
+ANOVA p-value 8.729849973583686e-10
+Self bias: N/A
+Self bias: N/A
+Avg 95% CI: 10.91
+mean_score 68.36
+range 24.63
+std_dev 5.74
+CV 0.08
+std_dev_top_5 1.98
+pearson_arena_elo 0.65
+kendall_arena_elo 0.45
+pearson_eq_bench 0.72
+kendall_eq_bench 0.54
+pearson_top_8_arena_elo -0.14
+kendall_top_8_arena_elo -0.2
+pearson_top_8_eq_bench -0.05
+kendall_top_8_eq_bench 0.14
+Judgemark 27.17
+
+
+# *CohereForAI/c4ai-command-r-plus
+
+Test model scores:
+81.18 gpt-4-0125-preview
+81.03 claude-3-opus-20240229
+79.77 claude-3-sonnet-20240229
+77.96 claude-3-haiku-20240307
+76.46 mistral-small
+77.29 mistral-medium
+78.99 mistral-large-2402
+72.36 gpt-3.5-turbo-0301
+80.39 01-ai/Yi-34B-Chat
+73.08 openchat/openchat-3.5-1210
+71.4 garage-bAInd/Platypus2-70B-instruct
+77.53 mistralai/Mixtral-8x7B-Instruct-v0.1
+76.07 Qwen/Qwen1.5-14B-Chat
+57.09 Qwen/Qwen1.5-4B-Chat
+66.69 google/gemma-2b-it
+75.43 google/gemma-7b-it
+71.61 meta-llama/Llama-2-7b-chat-hf
+74.64 meta-llama/Llama-2-13b-chat-hf
+77.15 sophosympatheia/Midnight-Miqu-70B-v1.5
+
+Stats:
+ANOVA f-statistic 10.347631653787296
+ANOVA p-value 5.814716731842061e-23
+Self bias: N/A
+Self bias: N/A
+Avg 95% CI: 6.98
+mean_score 75.06
+range 24.09
+std_dev 5.75
+CV 0.08
+std_dev_top_5 0.91
+pearson_arena_elo 0.81
+kendall_arena_elo 0.71
+pearson_eq_bench 0.82
+kendall_eq_bench 0.6
+pearson_top_8_arena_elo 0.6
+kendall_top_8_arena_elo 0.43
+pearson_top_8_eq_bench 0.36
+kendall_top_8_eq_bench 0.14
+Judgemark 46.85
+`;
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
@@ -412,7 +752,7 @@ function loadLeaderboardData() {
 
 	let html = judgemarkRuns.map(judgemarkRun => {
 		const lines = judgemarkRun.split('\n');
-		const modelName = lines[0].trim();
+		let modelName = lines[0].trim();
 
 		const statsStartIndex = lines.findIndex(line => line.includes('Stats:'));
 		const statsLines = lines.slice(statsStartIndex + 1);
@@ -438,13 +778,19 @@ function loadLeaderboardData() {
 		const familyBiasMatch = statsLines.find(stat => stat.includes('Family bias:'));
 		const familyBias = familyBiasMatch ? familyBiasMatch.split(':')[1].trim() : 'N/A';
 
-		// Extract model name without creator
-		let displayModelName = modelName;
+		// Extract model name without creator		
+		const isNewModel = modelName.startsWith('*');
+		modelName = modelName.replace(/^\*/, '');
+		let displayModelName = modelName.split('/').pop();
+		if (isNewModel) {
+			displayModelName = '🆕' + displayModelName
+		}
 		let modelNameDisplay = displayModelName.includes('/')
-			? `<a href="https://huggingface.co/${displayModelName}" target="_blank">${displayModelName.split('/').pop()}</a>`
+			? `<a href="https://huggingface.co/${displayModelName}" target="_blank">${displayModelName}</a>`
 			: displayModelName;
 
 		let modelStatsFn = 'results/judgemark/' + displayModelName.replace('/', '__') + '.txt';
+		let testModelScoresChartFn = 'results/judgemark_test_model_scores/judgemark_score_ci_' + displayModelName.replace('/', '__') + '.png';
 
 		const judgemarkScorePercentage = (parseFloat(judgemarkScore) / maxJudgemarkScore) * 100;
 
@@ -468,6 +814,7 @@ function loadLeaderboardData() {
 			<td>${familyBiasLink}</td>
 			<td data-order="${judgemarkScore}">${judgemarkScoreBar}</td>
 			<td><a href="${modelStatsFn}">Stats</a></td>
+			<td><a href="${testModelScoresChartFn}">📊</a></td>
 			</tr>`;
 	}).join('');
 
@@ -508,7 +855,7 @@ function initializeDataTable() {
     function collapseMiddleColumns() {
         if (window.innerWidth < 575 && !middleStatsExpanded) {
             $('#judgemark-leaderboard tr').each(function () {
-                $(this).find('th, td').slice(1, -2).wrapAll('<div class="collapsed-columns"></div>');
+                $(this).find('th, td').slice(1, -3).wrapAll('<div class="collapsed-columns"></div>');
             });
             $('#toggleMiddleStats').text('Expand Details');
         } else {
