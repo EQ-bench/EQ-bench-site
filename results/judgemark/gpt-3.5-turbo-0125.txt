@@ -22,8 +22,11 @@ Test model scores:
 66.01 sophosympatheia/Midnight-Miqu-70B-v1.5
 
 Stats:
+ANOVA f-statistic 3.027904493985067
+ANOVA p-value 4.32665867613089e-05
 Self bias: N/A
 Self bias: N/A
+Avg 95% CI: 6.54
 mean_score 62.68
 range 11.38
 std_dev 2.8
@@ -37,5 +40,5 @@ pearson_top_8_arena_elo -0.29
 kendall_top_8_arena_elo -0.07
 pearson_top_8_eq_bench -0.22
 kendall_top_8_eq_bench -0.24
-Judgemark 17.8
+Judgemark 16.06
 Cost: $0.96
