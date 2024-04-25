@@ -789,8 +789,8 @@ function loadLeaderboardData() {
 			? `<a href="https://huggingface.co/${displayModelName}" target="_blank">${displayModelName}</a>`
 			: displayModelName;
 
-		let modelStatsFn = 'results/judgemark/' + displayModelName.replace('/', '__') + '.txt';
-		let testModelScoresChartFn = 'results/judgemark_test_model_scores/judgemark_score_ci_' + displayModelName.replace('/', '__') + '.png';
+		let modelStatsFn = 'results/judgemark/' + displayModelName.replace('/', '__').replace('🆕','') + '.txt';
+		let testModelScoresChartFn = 'results/judgemark_test_model_scores/judgemark_score_ci_' + displayModelName.replace('/', '__').replace('🆕','') + '.png';
 
 		const judgemarkScorePercentage = (parseFloat(judgemarkScore) / maxJudgemarkScore) * 100;
 
