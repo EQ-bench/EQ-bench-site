@@ -785,8 +785,8 @@ function loadLeaderboardData() {
 		if (isNewModel) {
 			displayModelName = '🆕' + displayModelName
 		}
-		let modelNameDisplay = displayModelName.includes('/')
-			? `<a href="https://huggingface.co/${displayModelName}" target="_blank">${displayModelName}</a>`
+		let modelNameDisplay = modelName.includes('/')
+			? `<a href="https://huggingface.co/${modelName}" target="_blank">${displayModelName}</a>`
 			: displayModelName;
 
 		let modelStatsFn = 'results/judgemark/' + modelName.replace('/', '__') + '.txt';
