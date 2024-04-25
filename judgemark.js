@@ -180,6 +180,7 @@ kendall_top_8_arena_elo 0.33
 pearson_top_8_eq_bench 0.75
 kendall_top_8_eq_bench 0.62
 Judgemark 58.84
+Cost: $6.08
 
 
 # mistral-large-2402
