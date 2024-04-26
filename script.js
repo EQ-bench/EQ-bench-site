@@ -127,7 +127,8 @@ google/gemma-1.1-7b-it,59.17,7
 *meta-llama/Meta-Llama-3-70B-Instruct,82.13,70
 *paloalma/ECE-TW3-JRGL-V1,83.07,69
 *Nanbeige/Nanbeige2-8B-Chat,65.17,8
-*microsoft/Phi-3-mini-4k-instruct,58.15,3.8`;
+*microsoft/Phi-3-mini-4k-instruct,58.15,3.8
+*Qwen/Qwen1.5-110B-Chat,83.68,110`;
 
 const leaderboardDataMagi = `model,score
 TheBloke/koala-7B-HF,23.7
@@ -250,7 +251,8 @@ meta-llama/Meta-Llama-3-8B-Instruct,63.84
 meta-llama/Meta-Llama-3-70B-Instruct,67.97
 paloalma/ECE-TW3-JRGL-V1,63.56
 Nanbeige/Nanbeige2-8B-Chat,33.03
-microsoft/Phi-3-mini-4k-instruct,53.26`;
+microsoft/Phi-3-mini-4k-instruct,53.26
+Qwen/Qwen1.5-110B-Chat,66.09`;
 
 
 function setupDarkModeToggle() {
