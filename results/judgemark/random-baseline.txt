@@ -1,0 +1,21 @@
+# random-baseline
+
+Stats:
+Note -- These statistics are averaged over 10k runs where items are randomly scored.
+ANOVA f-statistic 1.0257
+ANOVA p-value 0.4839
+Avg 95% CI 6.297
+mean_score 50.00
+range 5.61
+std_dev 1.50
+CV 0.03
+std_dev_top_5 0.72
+pearson_arena_elo 0.0057
+kendall_arena_elo 0.0039
+pearson_eq_bench 0.0056
+kendall_eq_bench 0.0034
+pearson_top_8_arena_elo 0.0096
+kendall_top_8_arena_elo 0.0072
+pearson_top_8_eq_bench 0.0073
+kendall_top_8_eq_bench 0.0042
+Judgemark 8.33
