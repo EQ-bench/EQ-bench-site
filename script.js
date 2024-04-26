@@ -1,4 +1,5 @@
 const leaderboardDataEqbench = `model,score,params
+random-baseline,0.00,
 internlm/internlm2-chat-7b,62.61,7
 NousResearch/Nous-Hermes-2-Yi-34B,72.68,34
 Yhyu13/LMCocktail-10.7B-v1,73.67,10.7
@@ -131,6 +132,7 @@ google/gemma-1.1-7b-it,59.17,7
 *Qwen/Qwen1.5-110B-Chat,83.68,110`;
 
 const leaderboardDataMagi = `model,score
+random-baseline,25.00
 TheBloke/koala-7B-HF,23.7
 lmsys/vicuna-7b-v1.1,27.38
 stabilityai/stablelm-2-zephyr-1_6b,27.54
