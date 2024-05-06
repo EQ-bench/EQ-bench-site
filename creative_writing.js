@@ -28,7 +28,8 @@ gemini-ultra,77.68,,4103
 *N8Programs/Coxcomb,71.98,7,5200
 *OmnicromsBrain/NeuralStar_AlphaWriter_4x7b,73.32,4x7,4773
 *microsoft/Phi-3-mini-4k-instruct,60.71,3.8,5133
-*Qwen/Qwen1.5-110B-Chat,75.91,110,3817`;
+*Qwen/Qwen1.5-110B-Chat,75.91,110,3817
+*mlabonne/Meta-Llama-3-120B-Instruct,74.68,120,3652`;
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
