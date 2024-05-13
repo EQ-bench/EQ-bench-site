@@ -256,7 +256,7 @@ paloalma/ECE-TW3-JRGL-V1,63.56
 Nanbeige/Nanbeige2-8B-Chat,33.03
 microsoft/Phi-3-mini-4k-instruct,53.26
 Qwen/Qwen1.5-110B-Chat,66.09
-*gpt-4o,80.86`;
+gpt-4o,80.86`;
 
 
 function setupDarkModeToggle() {
