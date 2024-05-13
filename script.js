@@ -120,16 +120,17 @@ claude-3-haiku-20240307,63.65,
 Qwen/Qwen1.5-32B-Chat,75.59,32
 CohereForAI/c4ai-command-r-plus,76.11,104
 google/gemma-1.1-7b-it,59.17,7
-*gpt-4-turbo-2024-04-09,86.35,
-*microsoft/WizardLM-2-7B,69.31,7
-*microsoft/WizardLM-2-8x22B,77.91,8x22
-*mistralai/Mixtral-8x22B-Instruct-v0.1,78.79,8x22
+gpt-4-turbo-2024-04-09,86.35,
+microsoft/WizardLM-2-7B,69.31,7
+microsoft/WizardLM-2-8x22B,77.91,8x22
+mistralai/Mixtral-8x22B-Instruct-v0.1,78.79,8x22
 *meta-llama/Meta-Llama-3-8B-Instruct,68.88,8
 *meta-llama/Meta-Llama-3-70B-Instruct,82.13,70
 *paloalma/ECE-TW3-JRGL-V1,83.07,69
 *Nanbeige/Nanbeige2-8B-Chat,65.17,8
 *microsoft/Phi-3-mini-4k-instruct,58.15,3.8
-*Qwen/Qwen1.5-110B-Chat,83.68,110`;
+*Qwen/Qwen1.5-110B-Chat,83.68,110
+*gpt-4o,83.51,`;
 
 const leaderboardDataMagi = `model,score
 random-baseline,25.00
@@ -254,7 +255,8 @@ meta-llama/Meta-Llama-3-70B-Instruct,67.97
 paloalma/ECE-TW3-JRGL-V1,63.56
 Nanbeige/Nanbeige2-8B-Chat,33.03
 microsoft/Phi-3-mini-4k-instruct,53.26
-Qwen/Qwen1.5-110B-Chat,66.09`;
+Qwen/Qwen1.5-110B-Chat,66.09
+*gpt-4o,80.86`;
 
 
 function setupDarkModeToggle() {
