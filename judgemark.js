@@ -390,7 +390,7 @@ Judgemark 67.81
 Cost: $16.00
 
 
-# *gemini-1.5-pro-preview-0409
+# gemini-1.5-pro-preview-0409
 
 Test model scores:
 64.31 gpt-4-0125-preview
@@ -435,7 +435,7 @@ kendall_top_8_eq_bench 0.33
 Judgemark 66.58
 
 
-# *gpt-4-turbo-2024-04-09
+# gpt-4-turbo-2024-04-09
 
 Test model scores:
 70.78 gpt-4-0125-preview
@@ -481,7 +481,7 @@ Judgemark 70.43
 Cost: $16.00
 
 
-# *mistralai/Mixtral-8x7B-Instruct-v0.1
+# mistralai/Mixtral-8x7B-Instruct-v0.1
 
 Test model scores:
 69.45 gpt-4-0125-preview
@@ -526,7 +526,7 @@ kendall_top_8_eq_bench -0.05
 Judgemark 33.65
 
 
-# *mistralai/Mixtral-8x22B-Instruct-v0.1
+# mistralai/Mixtral-8x22B-Instruct-v0.1
 
 Test model scores:
 81.87 gpt-4-0125-preview
@@ -571,7 +571,7 @@ kendall_top_8_eq_bench 0.62
 Judgemark 51.45
 
 
-# *meta-llama/Meta-Llama-3-70B-Instruct
+# meta-llama/Meta-Llama-3-70B-Instruct
 
 Test model scores:
 71.81 gpt-4-0125-preview
@@ -616,7 +616,7 @@ kendall_top_8_eq_bench 0.24
 Judgemark 54.32
 
 
-# *databricks/dbrx-instruct
+# databricks/dbrx-instruct
 
 Test model scores:
 72.22 gpt-4-0125-preview
@@ -661,7 +661,7 @@ kendall_top_8_eq_bench 0.14
 Judgemark 27.17
 
 
-# *CohereForAI/c4ai-command-r-plus
+# CohereForAI/c4ai-command-r-plus
 
 Test model scores:
 81.18 gpt-4-0125-preview
@@ -704,6 +704,53 @@ kendall_top_8_arena_elo 0.43
 pearson_top_8_eq_bench 0.36
 kendall_top_8_eq_bench 0.14
 Judgemark 46.85
+
+
+# *gpt-4o
+
+Test model scores:
+64.15 gpt-4-0125-preview
+64.15 claude-3-opus-20240229
+59.98 claude-3-sonnet-20240229
+56.26 claude-3-haiku-20240307
+54.21 mistral-small
+55.73 mistral-medium
+59.26 mistral-large-2402
+44.58 gpt-3.5-turbo-0301
+58.22 01-ai/Yi-34B-Chat
+51.64 openchat/openchat-3.5-1210
+46.09 garage-bAInd/Platypus2-70B-instruct
+57.52 mistralai/Mixtral-8x7B-Instruct-v0.1
+54.59 Qwen/Qwen1.5-14B-Chat
+33.26 Qwen/Qwen1.5-4B-Chat
+44.73 google/gemma-2b-it
+46.66 google/gemma-7b-it
+44.65 meta-llama/Llama-2-7b-chat-hf
+46.5 meta-llama/Llama-2-13b-chat-hf
+65.16 sophosympatheia/Midnight-Miqu-70B-v1.5
+
+
+Stats:
+ANOVA f-statistic 14.376182916224403
+ANOVA p-value 1.2483635880097534e-31
+Self bias: N/A
+Self bias: N/A
+Avg 95% CI: 8.78
+mean_score 53.02
+range 31.9
+std_dev 8.45
+CV 0.16
+std_dev_top_5 2.71
+pearson_arena_elo 0.9
+kendall_arena_elo 0.73
+pearson_eq_bench 0.82
+kendall_eq_bench 0.61
+pearson_top_8_arena_elo 0.82
+kendall_top_8_arena_elo 0.59
+pearson_top_8_eq_bench 0.77
+kendall_top_8_eq_bench 0.59
+Judgemark 63.35
+Cost: $8.00
 `;
 
 function setupDarkModeToggle() {
