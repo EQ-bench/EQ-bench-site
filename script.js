@@ -133,8 +133,7 @@ Nanbeige/Nanbeige2-8B-Chat,65.17,8
 *gpt-4o,83.51,
 *01-ai/Yi-1.5-34B-Chat,72.93,34
 *01-ai/Yi-1.5-9B-Chat,70.37,9
-*01-ai/Yi-1.5-6B-Chat,59.45,6
-`;
+*01-ai/Yi-1.5-6B-Chat,59.45,6`;
 
 const leaderboardDataMagi = `model,score
 random-baseline,25.00
