@@ -128,12 +128,15 @@ meta-llama/Meta-Llama-3-8B-Instruct,68.88,8
 meta-llama/Meta-Llama-3-70B-Instruct,82.13,70
 paloalma/ECE-TW3-JRGL-V1,83.07,69
 Nanbeige/Nanbeige2-8B-Chat,65.17,8
-*microsoft/Phi-3-mini-4k-instruct,58.15,3.8
-*Qwen/Qwen1.5-110B-Chat,83.68,110
+microsoft/Phi-3-mini-4k-instruct,58.15,3.8
+Qwen/Qwen1.5-110B-Chat,83.68,110
 *gpt-4o,83.51,
 *01-ai/Yi-1.5-34B-Chat,72.93,34
 *01-ai/Yi-1.5-9B-Chat,70.37,9
-*01-ai/Yi-1.5-6B-Chat,59.45,6`;
+*01-ai/Yi-1.5-6B-Chat,59.45,6
+*abacusai/Smaug-Llama-3-70B-Instruct,80.69,70
+*microsoft/Phi-3-medium-4k-instruct,76.34,14
+*microsoft/Phi-3-small-8k-instruct,73.49,7`;
 
 const leaderboardDataMagi = `model,score
 random-baseline,25.00
@@ -262,7 +265,10 @@ Qwen/Qwen1.5-110B-Chat,66.09
 gpt-4o,80.86
 01-ai/Yi-1.5-34B-Chat,64.85
 01-ai/Yi-1.5-9B-Chat,56.13
-01-ai/Yi-1.5-6B-Chat,46.18`;
+01-ai/Yi-1.5-6B-Chat,46.18
+abacusai/Smaug-Llama-3-70B-Instruct,67.25
+microsoft/Phi-3-medium-4k-instruct,66.38
+microsoft/Phi-3-small-8k-instruct,64.16`;
 
 
 function setupDarkModeToggle() {
