@@ -136,7 +136,8 @@ Qwen/Qwen1.5-110B-Chat,83.68,110
 *01-ai/Yi-1.5-6B-Chat,59.45,6
 *abacusai/Smaug-Llama-3-70B-Instruct,80.69,70
 *microsoft/Phi-3-medium-4k-instruct,76.34,14
-*microsoft/Phi-3-small-8k-instruct,73.49,7`;
+*microsoft/Phi-3-small-8k-instruct,73.49,7
+*mistralai/Mistral-7B-Instruct-v0.3,63.15,7`;
 
 const leaderboardDataMagi = `model,score
 random-baseline,25.00
@@ -268,7 +269,8 @@ gpt-4o,80.86
 01-ai/Yi-1.5-6B-Chat,46.18
 abacusai/Smaug-Llama-3-70B-Instruct,67.25
 microsoft/Phi-3-medium-4k-instruct,66.38
-microsoft/Phi-3-small-8k-instruct,64.16`;
+microsoft/Phi-3-small-8k-instruct,64.16
+mistralai/Mistral-7B-Instruct-v0.3,36.00`;
 
 
 function setupDarkModeToggle() {
