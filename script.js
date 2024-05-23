@@ -430,10 +430,11 @@ function loadLeaderboardData() {
 function initializeDataTable() {
 	let table = $('#leaderboard').DataTable({
 		 "order": [[4, "desc"]], // Default sorting
-		 "pageLength": 100,
-		 "lengthMenu": [50, 100, 200, 1000],
+		 //"pageLength": 100,
+		 //"lengthMenu": [50, 100, 200, 1000],
+		 "paging": false, // Disable pagination
 		 "language": {
-			  "lengthMenu": "Show _MENU_"
+			  //"lengthMenu": "Show _MENU_"
 		 },
 		 "columnDefs": [
 				{ "targets": [2, 3, 4], "orderSequence": ["desc", "asc"] }, // For score columns: sort desc first
