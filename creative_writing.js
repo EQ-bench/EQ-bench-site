@@ -18,7 +18,7 @@ google/gemma-7b-it,47.34,7,2811
 meta-llama/Llama-2-7b-chat-hf,47.85,7,4196
 meta-llama/Llama-2-13b-chat-hf,54.6,13,3957
 alpindale/goliath-120b,68.33,120,3947
-sophosympatheia/Midnight-Miqu-70B-v1.5,75.22,70,8770
+!sophosympatheia/Midnight-Miqu-70B-v1.5,75.22,70,8770
 Nexusflow/Starling-LM-7B-beta,62.14,7,4394
 gemini-ultra,77.68,,4103
 gemini-1.5-pro-latest,69.73,,3335
@@ -27,10 +27,12 @@ meta-llama/Meta-Llama-3-70B-Instruct,73.1,70,3796
 senseable/WestLake-7B-v2,69.51,7,4461
 N8Programs/Coxcomb,71.98,7,5200
 OmnicromsBrain/NeuralStar_AlphaWriter_4x7b,73.32,4x7,4773
-*microsoft/Phi-3-mini-4k-instruct,60.71,3.8,5133
-*Qwen/Qwen1.5-110B-Chat,75.91,110,3817
-*mlabonne/Meta-Llama-3-120B-Instruct,74.68,120,3652
-*gpt-4o,78.15,,4577`;
+microsoft/Phi-3-mini-4k-instruct,60.71,3.8,5133
+Qwen/Qwen1.5-110B-Chat,75.91,110,3817
+mlabonne/Meta-Llama-3-120B-Instruct,74.68,120,3652
+gpt-4o,78.15,,4577
+!*Sao10K/Fimbulvetr-11B-v2,71.23,11,4108
+!*jebcarter/psyonic-cetacean-20B,64.35,20,3601`;
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
@@ -123,6 +125,9 @@ function loadLeaderboardData() {
 		// Calculate score percentage based on max score
 		let scorePercentageCreativeWriting = (scoreNum / maxScoreCreativeWriting) * 100;
 
+		const isNsfwModel = modelName.startsWith('!');
+		modelName = modelName.replace(/^\!/, '');
+
 		const isNewModel = modelName.startsWith('*');
 		modelName = modelName.replace(/^\*/, '');
 
@@ -130,6 +135,9 @@ function loadLeaderboardData() {
 		let displayModelName = modelName.split('/').pop();
 		if (isNewModel) {
 			displayModelName = '🆕' + displayModelName
+		}
+		if (isNsfwModel) {
+			displayModelName = '🔞' + displayModelName
 		}
 		let modelNameDisplay = modelName.includes('/')
 			? `<a href="https://huggingface.co/${modelName}" target="_blank">${displayModelName}</a>`
