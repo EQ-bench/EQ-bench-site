@@ -31,8 +31,10 @@ microsoft/Phi-3-mini-4k-instruct,60.71,3.8,5133
 Qwen/Qwen1.5-110B-Chat,75.91,110,3817
 mlabonne/Meta-Llama-3-120B-Instruct,74.68,120,3652
 gpt-4o,78.15,,4577
-!*Sao10K/Fimbulvetr-11B-v2,71.23,11,4108
-!*jebcarter/psyonic-cetacean-20B,64.35,20,3601`;
+!Sao10K/Fimbulvetr-11B-v2,71.23,11,4108
+!jebcarter/psyonic-cetacean-20B,64.35,20,3601
+CohereForAI/c4ai-command-r-plus,73.88,104,4070
+*claude-3-5-sonnet-20240620,78.03,,4638`;
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');

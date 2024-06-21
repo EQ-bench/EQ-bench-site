@@ -706,7 +706,7 @@ kendall_top_8_eq_bench 0.14
 Judgemark 46.85
 
 
-# *gpt-4o
+# gpt-4o
 
 Test model scores:
 64.15 gpt-4-0125-preview
@@ -751,6 +751,52 @@ pearson_top_8_eq_bench 0.77
 kendall_top_8_eq_bench 0.59
 Judgemark 63.35
 Cost: $8.00
+
+
+# *claude-3-5-sonnet-20240620
+
+Test model scores:
+80.87 gpt-4-0125-preview
+82.17 claude-3-opus-20240229
+80.82 claude-3-sonnet-20240229
+77.61 claude-3-haiku-20240307
+72.18 mistral-small
+78.52 mistral-medium
+75.41 mistral-large-2402
+50.79 gpt-3.5-turbo-0301
+76.18 01-ai/Yi-34B-Chat
+70.89 openchat/openchat-3.5-1210
+57.07 garage-bAInd/Platypus2-70B-instruct
+73.54 mistralai/Mixtral-8x7B-Instruct-v0.1
+72.07 Qwen/Qwen1.5-14B-Chat
+30.03 Qwen/Qwen1.5-4B-Chat
+46.14 google/gemma-2b-it
+51.67 google/gemma-7b-it
+51.86 meta-llama/Llama-2-7b-chat-hf
+58.05 meta-llama/Llama-2-13b-chat-hf
+81.41 sophosympatheia/Midnight-Miqu-70B-v1.5
+
+Stats:
+ANOVA f-statistic 32.161209345618964
+ANOVA p-value 4.0236492223534766e-61
+Self bias: N/A
+Family bias: N/A
+Avg 95% CI: 10.09
+mean_score 66.7
+range 52.14
+std_dev 14.98
+CV 0.22
+std_dev_top_5 1.36
+pearson_arena_elo 0.87
+kendall_arena_elo 0.81
+pearson_eq_bench 0.85
+kendall_eq_bench 0.59
+pearson_top_8_arena_elo 0.85
+kendall_top_8_arena_elo 0.71
+pearson_top_8_eq_bench 0.32
+kendall_top_8_eq_bench 0.05
+Judgemark 82.35
+Cost: $6.50
 `;
 
 function setupDarkModeToggle() {
