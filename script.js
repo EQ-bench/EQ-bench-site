@@ -139,7 +139,7 @@ microsoft/Phi-3-medium-4k-instruct,76.34,14
 microsoft/Phi-3-small-8k-instruct,73.49,7
 mistralai/Mistral-7B-Instruct-v0.3,63.15,7
 *Qwen/Qwen2-72B-Instruct,81.35,72
-*claude-3-5-sonnet-20240620,86.36`;
+*claude-3-5-sonnet-20240620,86.36,`;
 
 const leaderboardDataMagi = `model,score
 random-baseline,25.00
