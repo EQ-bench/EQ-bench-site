@@ -278,9 +278,10 @@ body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
 	height: 100%;
 	left: 0;
 	top: 0;
-	border-radius: 5px;
+	border-radius: 2px;
 	transition: width 0.5s ease;
 	z-index: 1;
+	max-width: 100%;
 	/* Background will be set dynamically */
 }
 
@@ -335,4 +336,57 @@ table#judgemark-leaderboard td, table#judgemark-leaderboard th {
 }
 .metric-explanation {
 	text-align: left;
+}
+
+.error-bar {
+	position: absolute;
+	top: 50%;
+	height: 1px;
+	background-color: rgba(84, 84, 84, 0.6);
+	transform: translateY(-50%);
+	z-index: 2;
+}
+
+.error-bar::before,
+.error-bar::after {
+	content: "";
+	position: absolute;
+	width: 1px;
+	height: 6px;
+	background-color: rgba(84, 84, 84, 0.6);
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.error-bar::before {
+	left: 0;
+}
+
+.error-bar::after {
+	right: 0;
+}
+
+/* Add dark mode styles for the error bar */
+body.dark-mode .error-bar,
+body.dark-mode .error-bar::before,
+body.dark-mode .error-bar::after {
+	background-color: rgba(255, 255, 255, 0.6);
+}
+
+.length-control-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.length-control-label {
+	margin-bottom: 5px; /* Adjust this value to control space between text and slider */
+}
+
+.length-control-slider {
+	width: 100%;
+}
+
+.custom-width-slider {
+	width: 150px; /* Adjust this value to your desired width */
 }

@@ -30,8 +30,18 @@
 
 		<p><script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#1a1a1a', 'O5O7VUVYO');kofiwidget2.draw();</script> </p>
 
-		<h3>About</h3>
-		<div class="section">
+		<div class="toc">
+			<ul>
+				 <li><a href="#about">How to Submit</a></li>
+				 <li><a href="#eq-bench">EQ-Bench</a></li>
+				 <li><a href="#magi-hard">MAGI-Hard</a></li>
+				 <li><a href="#creative-writing">Creative Writing</a></li>
+				 <li><a href="#judgemark">Judgemark</a></li>
+				 <li><a href="#citations">Citations</a></li>
+			</ul>
+	  </div>
+		
+		<div id="about" class="section">
 			<p><b>📩How to Submit</b></p>
 			<p>At this time we only accept submissions of open weight models that are available to everyone via HuggingFace.</p>
 			<p>To submit, get in touch by email or twitter with:
@@ -43,7 +53,7 @@
 			</p>
 			<p>We will then verify the result on our end and add to the leaderboard. This project is self funded so please respect that we don't have unlimited compute!</p>
 		</div>
-		<div class="section">
+		<div id="eq-bench" class="section">
 			<p><b>💗EQ-Bench</b></p>
 			<p>EQ-Bench is a benchmark for language models designed to assess emotional intelligence.</p>
 			<p>Why emotional intelligence? One reason is that it represents a subset of abilities that are important for the user experience, and which isn't explicitly tested by other benchmarks. Another reason is that it's not trivial to improve scores by fine tuning for the benchmark, which makes it harder to "game" the leaderboard.</p>
@@ -52,7 +62,7 @@
 			<p>If you would like to see a model on the leaderboard, get in touch and suggest it!</p>
 			<br>
 		</div>
-		<div class="section">
+		<div id="magi-hard" class="section">
 			<p><b>🧙MAGI-Hard</b></p>
 			<p>LLM Benchmarks are chasing a moving target and fast running out of headroom. They are struggling to effectively separate SOTA models from leaderboard optimisers. Can we salvage these old dinosaurs for scrap and make a better benchmark?</p>
 			<p>MAGI-Hard is a recently added metric to the leaderboard. It is a custom subset of MMLU and AGIEval, selected to have strong discriminatory power between top ability models.</p>
@@ -60,17 +70,29 @@
 			<p>You can use the MAGI test sets with <a href="https://github.com/sqrkl/lm-evaluation-harness" target="_blank">this fork of EleutherAI lm-evaluation-harness</a>.</p>
 			<br>
 		</div>
-		<div class="section">
+		<div id="creative-writing" class="section">
 			<p><b>🎨Creative Writing</b></p>
-			<p>This is a brand new leaderboard which uses a LLM judge (Claude 3 Opus) to assess the creative writing abilities of the test models on a series of writing prompts.</p>
+			<p>This benchmark uses a LLM judge (Claude 3.5 Sonnet) to assess the creative writing abilities of the test models on a series of writing prompts.</p>
 			<p>You can reproduce these results or run the benchmark on your own models with the <a href="https://github.com/EQ-bench/EQ-Bench" target="_blank">EQ-Bench repo on Github</a>.</p>
+			<p>We've released v2 of the creative writing benchmark & leaderboard. The old version was starting to saturate (scores bunching at the top), so we removed some of the less discriminative prompts, switched judge models, and made some other improvements besides.</p>
+			<p><b>Version 2 Changes</b></p>
+			<ul>
+				<li>Default min_p = 0.1, temp = 1 for transformers & oobabooga inference</li>
+				<li>Change to Claude 3.5 Sonnet as judge</li>
+				<li>Removed some prompts and added new ones; 24 in total now.</li>
+				<li>Reworked the scoring criteria</li>
+				<li>Criteria now are weighted (to increase discriminative power)</li>
+				<li>Leaderboard models are now tested for 10 iterations</li>
+				<li>Leaderboard now shows error bars for 95% confidence interval</li>
+				<li>Sample txt on leaderboard now show scores for all iterations, as well as inference settings</li>
+			</ul>
 			<p>There has been a distinct lack of automated benchmarks for creative writing because, put simply, it's hard to assess writing quality without humans in the loop. Asking a language model, "How good is this writing (0-10)" elicits poor results. Even if we had a good LLM judge, it's not immediately obvious how to formalise the assessment of creative writing objectively.</p>
 			<p>The release of Claude 3, in particular the flagship Opus model, has solved half of this equation: it's able to give meaningful & nuanced analysis of creative writing output, and it can tell the difference between a wide range of ability levels.</p>
 			<p>To solve the other half of the equation, we've come up with an assessment format that works to the strengths of LLM judges and avoids their weaknesses. LLM judges are typically bad at scoring nebulous metrics like "How well written is this piece?" They also find it hard to give consistent scores on an objective rating system if they don't have some exemplar or baseline reference to compare to.</p>
 			<p>Our test includes:</p>
 			<ul>
-				<li>19 writing prompts (typically assessed over multiple iterations)</li>
-				<li>36 narrowly defined assessment criteria</li>
+				<li>24 writing prompts assessed over 10 iterations</li>
+				<li>27 narrowly defined assessment criteria</li>
 				<li>Including 6 question-specific criteria</li>
 				<li>Several criteria targeting positivity bias which (in our opinion) contributes to bad writing</li>
 				<li>Exemplar reference output for each question</li>
@@ -78,7 +100,8 @@
 			<p>This approach of breaking down the assessment task into a granular set of criteria and comparing to an exemplar has brought creative writing assessment into the purview of LLM judges. Our test is discriminative amongst a wide range of writing ability levels.</p>
 			<p><b>* A note on biases *</b></p>
 			<p>LLM judges have biases. LLM-as-a-judge benchmarks such as Alpaca-Eval can exhibit a strong length bias where the judge, (in Alpaca-Eval's case GPT-4), prefers longer outputs. Their approach involves presenting the output from two models to the judge, and the judge says which it thinks is better.</p>
-			<p>We attempt to mitigate the length bias by: A. assessing by 36 narrow criteria, and B. explicitly instructing the judge not to be biased by length (this seems to work for MT-Bench).</p>
+			<p>We attempt to mitigate the length bias by: A. assessing by 27 narrow criteria, and B. explicitly instructing the judge not to be biased by length (this seems to work for MT-Bench).</p>
+			<p>As of version 2, we now include length control slider which scales the score up or down depending on whether the average output length for a given model is above or below the average for all models. This is an attempt to control the bias where the judge model tends to favour longer outputs. With the slider at 0%, no length scaling is applied. With the slider at 100%, the scores are scaled by up to 10%. This length control implementation is somewhat arbitrary; it's not really possible to precisely control for this bias, as we can't meaningfully hold the writing quality equal while varying the length. It does seem likely/evident that some degree of length bias is present, and has set the default LC parameters according to our rough intuitive guess (science!).</p>
 			<p>It's possible / likely that this & other biases might still be a factor in scoring (e.g. Claude might prefer its own and other anthropic models). So bear this in mind when interpreting the results.</p>
 			<p>We include the outputs that the model generated for each prompt so you can judge for yourself.</p>
 			<p><b>Alternative Judge Models</b></p>
@@ -89,7 +112,7 @@
 			<p>If you would like your model included on the creative writing leaderboard, please consider contributing to my compute costs, and get in touch!</p>
 		</div>
 
-		<div class="section">
+		<div id="judgemark" class="section">
 			<p><b>⚖️Judgemark</b> measures the ability of a model to judge creative writing using a numerical scoring system.</p>
 			<p>The Judgemark test incorporates a triple-threat of difficult tasks that LLMs typically struggle with: Evaluating writing quality; effectively using a multi-criteria numerical scoring system; and following complex instructions over a long prompt.</p>
 			<p>The benchmark requires the model to judge a series of pre-generated creative writing outputs from 19 test models, assigning scores to each of the test models based on a set of 36 narrow criteria for good & bad writing. This differs from other LLM-as-a-judge evals which involve comparing to test model outputs head to head, which is a relatively easier task for judge models to accomplish.</p>
@@ -122,6 +145,8 @@
 		<p><script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#1a1a1a', 'O5O7VUVYO');kofiwidget2.draw();</script> </p>
 
 		<hr>
+
+		<div id="citations" class="section">
 		<h5>Cite EQ-Bench:</h5>
 		<pre><code>
 @misc{paech2023eqbench,
@@ -209,6 +234,7 @@
 
 		<br>
 		<hr>
+	</div>
 	</div>
 
 	<!-- jQuery and Bootstrap JS -->

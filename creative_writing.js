@@ -1,40 +1,33 @@
-const leaderboardDataCreativeWriting = `model,score,params,avgLength
-gpt-4-0125-preview,74.67,,4283
-claude-3-opus-20240229,76.55,,4338
-claude-3-sonnet-20240229,75.06,,4061
-claude-3-haiku-20240307,74.58,,4095
-mistral-small,62.91,,3887
-mistral-medium,69.97,,4639
-mistral-large-2402,71.18,,4554
-gpt-3.5-turbo-0301,49.08,,3566
-01-ai/Yi-34B-Chat,67.81,34,4381
-openchat/openchat-3.5-1210,51.76,7,4515
-garage-bAInd/Platypus2-70B-instruct,53.18,70,3673
-mistralai/Mixtral-8x7B-Instruct-v0.1,65.32,8x7,4077
-Qwen/Qwen1.5-14B-Chat,67.39,14,3421
-Qwen/Qwen1.5-4B-Chat,34.58,4,3080
-google/gemma-2b-it,40.12,2,2806
-google/gemma-7b-it,47.34,7,2811
-meta-llama/Llama-2-7b-chat-hf,47.85,7,4196
-meta-llama/Llama-2-13b-chat-hf,54.6,13,3957
-alpindale/goliath-120b,68.33,120,3947
-!sophosympatheia/Midnight-Miqu-70B-v1.5,75.22,70,8770
-Nexusflow/Starling-LM-7B-beta,62.14,7,4394
-gemini-ultra,77.68,,4103
-gemini-1.5-pro-latest,69.73,,3335
-meta-llama/Meta-Llama-3-8B-Instruct,64.67,8,3719
-meta-llama/Meta-Llama-3-70B-Instruct,73.1,70,3796
-senseable/WestLake-7B-v2,69.51,7,4461
-N8Programs/Coxcomb,71.98,7,5200
-OmnicromsBrain/NeuralStar_AlphaWriter_4x7b,73.32,4x7,4773
-microsoft/Phi-3-mini-4k-instruct,60.71,3.8,5133
-Qwen/Qwen1.5-110B-Chat,75.91,110,3817
-mlabonne/Meta-Llama-3-120B-Instruct,74.68,120,3652
-gpt-4o,78.15,,4577
-!Sao10K/Fimbulvetr-11B-v2,71.23,11,4108
-!jebcarter/psyonic-cetacean-20B,64.35,20,3601
-CohereForAI/c4ai-command-r-plus,73.88,104,4070
-*claude-3-5-sonnet-20240620,78.03,,4638`;
+let leaderboardDataCreativeWriting = `model,score,ci95_low,ci95_high,params,avgLength
+Qwen/Qwen1.5-4B-Chat,27.01,26.48,27.54,4,3219
+*claude-3-5-sonnet-20240620,78.77,78.41,79.13,,5875
+claude-3-haiku-20240307,68.97,68.14,69.81,,4907
+claude-3-opus-20240229,73.58,72.51,74.65,,4846
+gpt-4o,75.61,74.87,76.34,,5401
+*gemini-1.5-pro-001,80.27,79.76,80.77,,4312
+*microsoft/WizardLM-2-8x22B,78.91,78.17,79.65,8x22,5856
+meta-llama/Llama-3-70b-chat-hf,71.28,70.07,72.48,70,4439
+01-ai/Yi-34B-Chat,71.1,69.75,72.44,34,4496
+Qwen/Qwen1.5-14B-Chat,65.23,64.22,66.25,14,3736
+mistralai/Mixtral-8x7B-Instruct-v0.1,59.32,58.16,60.47,8x7,4775
+meta-llama/Llama-3-8b-chat-hf,61.7,60.38,63.02,8,4112
+meta-llama/Llama-2-13b-chat-hf,49.14,47.87,50.4,13,3809
+google/gemma-7b-it,46.19,44.94,47.44,7,2671
+Qwen/Qwen1.5-110B-Chat,75.33,74.55,76.12,110,4269
+google/gemma-2b-it,41.13,40.23,42.03,2,2890
+meta-llama/Llama-2-7b-chat-hf,46.67,45.32,48.01,7,3874
+garage-bAInd/Platypus2-70B-instruct,47.45,45.8,49.09,70,3561
+openchat/openchat-3.5-1210,57.28,56.38,58.17,7,4914
+mistralai/Mixtral-8x22B-Instruct-v0.1,63.64,62.49,64.8,8x22,4390
+*gemini-1.5-flash-001,71.96,71.08,72.84,,4933
+!sophosympatheia/Midnight-Miqu-70B-v1.5,77.15,76.62,77.68,70,7787
+CohereForAI/c4ai-command-r-plus,64.75,63.95,65.55,104,5961
+gpt-4-0125-preview,77.43,76.84,78.01,,5047
+gpt-3.5-turbo-0301,42.33,41.2,43.47,,3443
+!Sao10K/L3-70B-Euryale-v2.1,67.32,66.35,68.28,70,4473
+OmnicromsBrain/NeuralStar_AlphaWriter_4x7b,74.21,73.61,74.82,4x7,5461
+!Sao10K/L3-8B-Stheno-v3.2,69.21,68.62,69.8,8,4321
+*google/gemma-2-9b-it,76.63,75.28,77.98,9,3974`
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
@@ -118,14 +111,25 @@ function loadLeaderboardData() {
 	const creativeWritingRows = leaderboardDataCreativeWriting.split('\n').slice(1); // Skip header for Creative Writing data
 
 	// Calculate max score for Creative Writing
-	const maxScoreCreativeWriting = Math.max(...creativeWritingRows.map(row => parseFloat(row.split(',')[1])));
+	maxScoreCreativeWriting = Math.max(...creativeWritingRows.map(row => parseFloat(row.split(',')[1])));
+
+	const maxScore = Math.max(...creativeWritingRows.map(row => parseFloat(row.split(',')[1])));
 
 	let html = creativeWritingRows.map(creativeWritingRow => {
-		let [modelName, score, params, avgLength] = creativeWritingRow.split(',');
+		let [modelName, score, ci95_low, ci95_high, params, avgLength] = creativeWritingRow.split(',');
 		const scoreNum = parseFloat(score);
+		const ci95LowNum = parseFloat(ci95_low);
+		const ci95HighNum = parseFloat(ci95_high);
 
-		// Calculate score percentage based on max score
-		let scorePercentageCreativeWriting = (scoreNum / maxScoreCreativeWriting) * 100;
+		// Calculate score percentage
+		const scorePercentage = (scoreNum / maxScore) * 100;
+		const errorBarLeftPos = ((ci95LowNum / maxScore) * 100).toFixed(2);
+		const errorBarRightPos = ((ci95HighNum / maxScore) * 100).toFixed(2);
+		const errorBarWidth = (errorBarRightPos - errorBarLeftPos).toFixed(2);
+
+		console.log(maxScore, ci95HighNum)
+		console.log(errorBarLeftPos, errorBarRightPos, errorBarWidth)
+
 
 		const isNsfwModel = modelName.startsWith('!');
 		modelName = modelName.replace(/^\!/, '');
@@ -145,49 +149,54 @@ function loadLeaderboardData() {
 			? `<a href="https://huggingface.co/${modelName}" target="_blank">${displayModelName}</a>`
 			: displayModelName;
 
-		let modelResultsFn = 'results/creative-writing/' + modelName.replace('/','__')+'.txt'
+		let modelResultsFn = 'results/creative-writing-v2/' + modelName.replace('/','__')+'.txt'
 
-		let scoreBarCreativeWriting = `
-		<div class="score-bar-container">
-				<div class="creative-writing-score-bar" style="width: ${scorePercentageCreativeWriting}%"></div>
-				<span class="score-text">${score}</span>
-		</div>
-		`;
+		let scoreBarCreativeWriting = `<div class="score-bar-container">
+            <div class="creative-writing-score-bar" style="width: ${scorePercentage}%"></div>
+            <div class="error-bar" style="left: ${errorBarLeftPos}%; width: ${errorBarWidth}%;"></div>
+            <span class="score-text">${score}</span>
+        </div>`;
 
-		return `<tr>
-			<td>${modelNameDisplay}</td>
-			<td>${params}</td>
-			<td>${avgLength}</td>
-			<td data-order="${score}">${scoreBarCreativeWriting}</td>
-			<td><a href="${modelResultsFn}">Sample</a></td>
-			</tr>`;
-	}).join('');
+        return `<tr data-original-score="${scoreNum}" data-original-ci-low="${ci95LowNum}" data-original-ci-high="${ci95HighNum}">
+            <td>${modelNameDisplay}</td>
+            <td>${params}</td>
+            <td>${avgLength}</td>
+            <td data-order="${score}">
+                ${scoreBarCreativeWriting}
+            </td>
+            <td><a href="${modelResultsFn}" target="_blank">Sample</a></td>
+        </tr>`;
+		}).join('');
 
 	document.getElementById('leaderboardBody').innerHTML = html;
 	initializeDataTable();
 	updateCreativeWritingScoreBarColors();
 }
 
+let currentOrder = [[3, "desc"]]; // Default sorting
+let dataTableConfig = {
+	"order": currentOrder,
+	"paging": false, // Disable pagination
+	"searching": false, // Disable search bar
+	"lengthMenu": [50, 100, 200, 1000],
+	"language": {
+	  "lengthMenu": "Show _MENU_"
+	},
+	"columnDefs": [
+	  { "targets": [3], "orderSequence": ["desc", "asc"] },
+	  { "targets": [2], "orderSequence": ["desc", "asc"] },
+	  { "targets": [1], "type": "params", "orderSequence": ["asc", "desc"] },
+	],
+	"dom": "<'d-flex flex-column flex-md-row justify-content-between'<'dataTables_length'l><'dataTables_filter'f>>" +
+	  "<'row'<'col-12'tr>>" +
+	  "<'row'<'col-md-5'i><'col-md-7'p>>",
+	"drawCallback": function() {
+	  updateCreativeWritingScoreBarColors();
+	}
+ }
+
 function initializeDataTable() {
-	let table = $('#leaderboard').DataTable({
-		"order": [[3, "desc"]], // Default sorting
-		"pageLength": 100,
-		"lengthMenu": [50, 100, 200, 1000],
-		"language": {
-			"lengthMenu": "Show _MENU_"
-		},
-		"columnDefs": [
-			{ "targets": [3], "orderSequence": ["desc", "asc"] }, // For score column: sort desc first
-			{ "targets": [2], "orderSequence": ["desc", "asc"] }, // For avgLength column: sort desc first
-			{ "targets": [1], "type": "params", "orderSequence": ["asc", "desc"] }, // For params column: sort asc first
-		],
-		"dom": "<'d-flex flex-column flex-md-row justify-content-between'<'dataTables_length'l><'dataTables_filter'f>>" +
-			"<'row'<'col-12'tr>>" +
-			"<'row'<'col-md-5'i><'col-md-7'p>>",
-		"drawCallback": function(settings) {
-			
-		}
-	});
+	let table = $('#leaderboard').DataTable(dataTableConfig);
 }
 
 let lastSortedScoreColumn = null;
@@ -201,9 +210,94 @@ document.addEventListener('DOMContentLoaded', function() {
 	// Conditional execution based on the presence of elements
 	if (document.getElementById('leaderboard')) {
 		loadLeaderboardData(); // Only load leaderboard data if the leaderboard element exists
+		setupLengthControl();
 	}
 
 	// This checks if the system theme preference should be applied, which is common functionality
 	applySystemTheme();
 	setupDarkModeToggle();
 });
+
+function setupLengthControl() {
+	const slider = document.getElementById('lengthControlSlider');
+	const sliderValueLabel = document.getElementById('lengthControlValue');
+ 
+	// Set the initial value of the slider value label
+	sliderValueLabel.textContent = `${slider.value}%`;
+ 
+	// Update scores based on the initial slider value
+	updateScoresBasedOnLengthControl(slider.value);
+ 
+	slider.oninput = function() {
+	  sliderValueLabel.textContent = `${this.value}%`;
+	  updateScoresBasedOnLengthControl(this.value);
+	};
+ }
+
+ function updateScoresBasedOnLengthControl(percentage) {
+	const adjustmentFactor = 0.1 * parseFloat(percentage) / 100;
+	const avgLength = calculateAverageLength();
+	const table = $('#leaderboard').DataTable();
+
+	// Get the current page and sorting information
+	const currentPage = table.page.info().page;
+	const currentOrder = table.order();
+
+	// Clear the existing table
+	table.destroy();
+
+	// Update the scores and error bars
+	$('#leaderboardBody tr').each(function() {
+		 const row = $(this);
+		 const avgModelLength = parseFloat(row.find('td:eq(2)').text());
+		 const originalScore = parseFloat(row.attr('data-original-score'));
+		 const originalCILow = parseFloat(row.attr('data-original-ci-low'));
+		 const originalCIHigh = parseFloat(row.attr('data-original-ci-high'));
+
+		 let lengthAdjustmentFactor = avgLength / avgModelLength * adjustmentFactor + 1 - adjustmentFactor;
+		 if (lengthAdjustmentFactor > 1.15) { lengthAdjustmentFactor = 1.15 }
+		 if (lengthAdjustmentFactor < 0.85) { lengthAdjustmentFactor = 0.85 }
+
+		 const adjustedScore = originalScore * lengthAdjustmentFactor;
+		 const adjustedCILow = adjustedScore - (originalScore - originalCILow) //originalCILow * lengthAdjustmentFactor;
+		 const adjustedCIHigh = adjustedScore + (originalCIHigh - originalScore) //originalCIHigh * lengthAdjustmentFactor;
+
+		 const scoreText = adjustedScore.toFixed(2);
+
+		 // Update the score
+		 row.find('td:eq(3)').attr('data-order', scoreText).find('.score-text').text(scoreText);
+
+		 // Update error bar position and width
+		 const errorBarLeftPos = ((adjustedCILow / maxScoreCreativeWriting) * 98).toFixed(2);
+		 const errorBarRightPos = ((adjustedCIHigh / maxScoreCreativeWriting) * 98).toFixed(2);
+		 const errorBarWidth = (errorBarRightPos - errorBarLeftPos).toFixed(2);
+
+		 row.find('.error-bar').css({
+			  'left': `${errorBarLeftPos}%`,
+			  'width': `${errorBarWidth}%`
+		 });
+	});
+
+	// Reinitialize the DataTable
+	const newTable = $('#leaderboard').DataTable(dataTableConfig);
+
+	// Restore the previous page
+	newTable.page(currentPage).draw('page');
+
+	// Update the score bar widths
+	$('#leaderboardBody tr').each(function() {
+		 const row = $(this);
+		 const scoreText = row.find('td:eq(3)').attr('data-order');
+		 const percentageWidth = Math.max(0, Math.min(100, (parseFloat(scoreText) / maxScoreCreativeWriting) * 98));
+		 row.find('.creative-writing-score-bar').css('width', `${percentageWidth}%`);
+	});
+}
+
+
+
+
+function calculateAverageLength() {
+	const lengths = Array.from(document.querySelectorAll('#leaderboardBody tr'))
+		 .map(row => parseFloat(row.cells[2].textContent));
+	return lengths.reduce((a, b) => a + b, 0) / lengths.length;
+}

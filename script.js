@@ -139,7 +139,8 @@ microsoft/Phi-3-medium-4k-instruct,76.34,14
 microsoft/Phi-3-small-8k-instruct,73.49,7
 mistralai/Mistral-7B-Instruct-v0.3,63.15,7
 *Qwen/Qwen2-72B-Instruct,81.35,72
-*claude-3-5-sonnet-20240620,86.36,`;
+*claude-3-5-sonnet-20240620,86.36,
+*google/gemma-2-9b-it,80.46,9`;
 
 const leaderboardDataMagi = `model,score
 random-baseline,25.00
@@ -274,7 +275,8 @@ microsoft/Phi-3-medium-4k-instruct,66.38
 microsoft/Phi-3-small-8k-instruct,64.16
 mistralai/Mistral-7B-Instruct-v0.3,36.00
 Qwen/Qwen2-72B-Instruct,75.74
-claude-3-5-sonnet-20240620,78.8`;
+claude-3-5-sonnet-20240620,78.8
+google/gemma-2-9b-it,36.12`;
 
 
 function setupDarkModeToggle() {
@@ -437,6 +439,7 @@ function initializeDataTable() {
 		 //"pageLength": 100,
 		 //"lengthMenu": [50, 100, 200, 1000],
 		 "paging": false, // Disable pagination
+		 "searching": false, // Disable search bar
 		 "language": {
 			  //"lengthMenu": "Show _MENU_"
 		 },

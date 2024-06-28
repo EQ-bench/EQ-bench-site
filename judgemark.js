@@ -942,7 +942,8 @@ function loadLeaderboardData() {
 function initializeDataTable() {
 	let table = $('#judgemark-leaderboard').DataTable({
 		"order": [[7, "desc"]], // Default sorting
-		"pageLength": 100,
+		"paging": false, // Disable pagination
+		"searching": false, // Disable search bar
 		"lengthMenu": [50, 100, 200, 1000],
 		"language": {
 			"lengthMenu": "Show _MENU_"
