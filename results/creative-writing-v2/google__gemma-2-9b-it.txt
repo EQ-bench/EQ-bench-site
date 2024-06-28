@@ -6,9 +6,13 @@ Iteration 2: 78.91
 Iteration 3: 75.0
 Iteration 4: 77.08
 Iteration 5: 75.43
+Iteration 6: 77.2
+Iteration 7: 74.35
+Iteration 8: 74.09
+Iteration 9: 76.61
 ---
-Avg: 76.63
-95% CI: (75.28, 77.98)
+Avg: 76.15
+95% CI: (75.13, 77.17)
 
 # Inference settings:
 16 bit transformers, temp 1, min_p 0.1, default tokenizer prompt format

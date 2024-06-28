@@ -27,7 +27,7 @@ gpt-3.5-turbo-0301,42.33,41.2,43.47,,3443
 !*Sao10K/L3-70B-Euryale-v2.1,67.32,66.35,68.28,70,4473
 OmnicromsBrain/NeuralStar_AlphaWriter_4x7b,74.21,73.61,74.82,4x7,5461
 !*Sao10K/L3-8B-Stheno-v3.2,69.21,68.62,69.8,8,4321
-*google/gemma-2-9b-it,76.63,75.28,77.98,9,3974`
+*google/gemma-2-9b-it,76.15,75.13,77.17,9,4010`
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
