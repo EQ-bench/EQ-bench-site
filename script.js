@@ -143,7 +143,8 @@ claude-3-5-sonnet-20240620,86.36,
 google/gemma-2-9b-it,80.46,9
 google/gemma-2-27b-it,80.55,27
 *gpt-4o-mini,76.93,
-*mistralai/Mistral-Nemo-Instruct-2407,77.13,12`;
+*mistralai/Mistral-Nemo-Instruct-2407,77.13,12
+*deepseek-ai/DeepSeek-V2-Chat-0628,83.18,236B-21A`;
 
 const leaderboardDataMagi = `model,score
 random-baseline,25.00
@@ -282,7 +283,8 @@ claude-3-5-sonnet-20240620,78.8
 google/gemma-2-9b-it,36.12
 google/gemma-2-27b-it,46.08
 gpt-4o-mini,67.50
-mistralai/Mistral-Nemo-Instruct-2407,43.65`;
+mistralai/Mistral-Nemo-Instruct-2407,43.65
+deepseek-ai/DeepSeek-V2-Chat-0628,60.63`;
 
 
 function setupDarkModeToggle() {

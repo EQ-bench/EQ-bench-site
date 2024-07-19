@@ -32,8 +32,10 @@ google/gemma-2-27b-it,77.22,76.18,78.24,27,4010
 !TheDrummer/Llama-3SOME-8B-v2,70.59,69.54,71.65,8,4466
 !sophosympatheia/New-Dawn-Llama-3-70B-32K-v1.0,58.48,54.75,62.22,70,6811
 N8Programs/Coxcomb,71.4,70.62,72.17,7,5474
-*UCLA-AGI/Gemma-2-9B-It-SPPO-Iter3,78.76,78.17,79.36,9,4210
-*gpt-4o-mini,78.41,77.62,79.21,,5647`
+UCLA-AGI/Gemma-2-9B-It-SPPO-Iter3,78.76,78.17,79.36,9,4210
+*gpt-4o-mini,78.41,77.62,79.21,,5647
+*DeepSeek-V2-Chat-0628,69.77,68.84,70.69,236B-21A,5489
+*mistralai/Mistral-Nemo-Instruct-2407,77.46,76.82,78.1,12,6265`
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
