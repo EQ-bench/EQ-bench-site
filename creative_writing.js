@@ -1,11 +1,11 @@
 let leaderboardDataCreativeWriting = `model,score,ci95_low,ci95_high,params,avgLength
 Qwen/Qwen1.5-4B-Chat,27.01,26.48,27.54,4,3219
-*claude-3-5-sonnet-20240620,78.77,78.41,79.13,,5875
+claude-3-5-sonnet-20240620,78.77,78.41,79.13,,5875
 claude-3-haiku-20240307,68.97,68.14,69.81,,4907
 claude-3-opus-20240229,73.58,72.51,74.65,,4846
 gpt-4o,75.61,74.87,76.34,,5401
-*gemini-1.5-pro-001,80.27,79.76,80.77,,4312
-*alpindale/WizardLM-2-8x22B,78.91,78.17,79.65,8x22,5856
+gemini-1.5-pro-001,80.27,79.76,80.77,,4312
+alpindale/WizardLM-2-8x22B,78.91,78.17,79.65,8x22,5856
 meta-llama/Llama-3-70b-chat-hf,71.28,70.07,72.48,70,4439
 01-ai/Yi-34B-Chat,71.1,69.75,72.44,34,4496
 Qwen/Qwen1.5-14B-Chat,65.23,64.22,66.25,14,3736
@@ -19,19 +19,21 @@ meta-llama/Llama-2-7b-chat-hf,46.67,45.32,48.01,7,3874
 garage-bAInd/Platypus2-70B-instruct,47.45,45.8,49.09,70,3561
 openchat/openchat-3.5-1210,57.28,56.38,58.17,7,4914
 mistralai/Mixtral-8x22B-Instruct-v0.1,63.64,62.49,64.8,8x22,4390
-*gemini-1.5-flash-001,71.96,71.08,72.84,,4933
+gemini-1.5-flash-001,71.96,71.08,72.84,,4933
 !sophosympatheia/Midnight-Miqu-70B-v1.5,77.15,76.62,77.68,70,7787
 CohereForAI/c4ai-command-r-plus,64.75,63.95,65.55,104,5961
 gpt-4-0125-preview,77.43,76.84,78.01,,5047
 gpt-3.5-turbo-0301,42.33,41.2,43.47,,3443
-!*Sao10K/L3-70B-Euryale-v2.1,67.32,66.35,68.28,70,4473
+!Sao10K/L3-70B-Euryale-v2.1,67.32,66.35,68.28,70,4473
 OmnicromsBrain/NeuralStar_AlphaWriter_4x7b,74.21,73.61,74.82,4x7,5461
-!*Sao10K/L3-8B-Stheno-v3.2,69.21,68.62,69.8,8,4321
-*google/gemma-2-9b-it,76.15,75.13,77.17,9,4010
-*google/gemma-2-27b-it,77.22,76.18,78.24,27,4010
-!*TheDrummer/Llama-3SOME-8B-v2,70.59,69.54,71.65,8,4466
-!*sophosympatheia/New-Dawn-Llama-3-70B-32K-v1.0,58.48,54.75,62.22,70,6811
-N8Programs/Coxcomb,71.4,70.62,72.17,7,5474`
+!Sao10K/L3-8B-Stheno-v3.2,69.21,68.62,69.8,8,4321
+google/gemma-2-9b-it,76.15,75.13,77.17,9,4010
+google/gemma-2-27b-it,77.22,76.18,78.24,27,4010
+!TheDrummer/Llama-3SOME-8B-v2,70.59,69.54,71.65,8,4466
+!sophosympatheia/New-Dawn-Llama-3-70B-32K-v1.0,58.48,54.75,62.22,70,6811
+N8Programs/Coxcomb,71.4,70.62,72.17,7,5474
+*UCLA-AGI/Gemma-2-9B-It-SPPO-Iter3,78.76,78.17,79.36,9,4210
+*gpt-4o-mini,78.41,77.62,79.21,,5647`
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');

@@ -138,10 +138,12 @@ abacusai/Smaug-Llama-3-70B-Instruct,80.69,70
 microsoft/Phi-3-medium-4k-instruct,76.34,14
 microsoft/Phi-3-small-8k-instruct,73.49,7
 mistralai/Mistral-7B-Instruct-v0.3,63.15,7
-*Qwen/Qwen2-72B-Instruct,81.35,72
-*claude-3-5-sonnet-20240620,86.36,
-*google/gemma-2-9b-it,80.46,9
-*google/gemma-2-27b-it,80.55,27`;
+Qwen/Qwen2-72B-Instruct,81.35,72
+claude-3-5-sonnet-20240620,86.36,
+google/gemma-2-9b-it,80.46,9
+google/gemma-2-27b-it,80.55,27
+*gpt-4o-mini,76.93,
+*mistralai/Mistral-Nemo-Instruct-2407,77.13,12`;
 
 const leaderboardDataMagi = `model,score
 random-baseline,25.00
@@ -278,7 +280,9 @@ mistralai/Mistral-7B-Instruct-v0.3,36.00
 Qwen/Qwen2-72B-Instruct,75.74
 claude-3-5-sonnet-20240620,78.8
 google/gemma-2-9b-it,36.12
-google/gemma-2-27b-it,46.08`;
+google/gemma-2-27b-it,46.08
+gpt-4o-mini,67.50
+mistralai/Mistral-Nemo-Instruct-2407,43.65`;
 
 
 function setupDarkModeToggle() {
