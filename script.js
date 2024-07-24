@@ -144,7 +144,9 @@ google/gemma-2-9b-it,80.46,9
 google/gemma-2-27b-it,80.55,27
 *gpt-4o-mini,76.93,
 *mistralai/Mistral-Nemo-Instruct-2407,77.13,12
-*deepseek-ai/DeepSeek-V2-Chat-0628,83.18,236B-21A`;
+*deepseek-ai/DeepSeek-V2-Chat-0628,83.18,236B-21A
+*mistral-large-2407,85.05,123
+*meta-llama/Meta-Llama-3.1-405B-Instruct,83.0,405`;
 
 const leaderboardDataMagi = `model,score
 random-baseline,25.00
@@ -284,7 +286,9 @@ google/gemma-2-9b-it,36.12
 google/gemma-2-27b-it,46.08
 gpt-4o-mini,67.50
 mistralai/Mistral-Nemo-Instruct-2407,43.65
-deepseek-ai/DeepSeek-V2-Chat-0628,60.63`;
+deepseek-ai/DeepSeek-V2-Chat-0628,60.63
+mistral-large-2407,72.37
+meta-llama/Meta-Llama-3.1-405B-Instruct,83.81`;
 
 
 function setupDarkModeToggle() {
