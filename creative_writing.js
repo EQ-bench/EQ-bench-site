@@ -35,10 +35,7 @@ N8Programs/Coxcomb,71.4,70.62,72.17,7,5474
 UCLA-AGI/Gemma-2-9B-It-SPPO-Iter3,78.76,78.17,79.36,9,4210
 *gpt-4o-mini,78.41,77.62,79.21,,5647
 *DeepSeek-V2-Chat-0628,69.77,68.84,70.69,236B-21A,5489
-*mistralai/Mistral-Nemo-Instruct-2407,77.46,76.82,78.1,12,6265
-*meta-llama/Meta-Llama-3.1-8B-Instruct,66.91,65.35,68.48,8,4850
-*meta-llama/Meta-Llama-3.1-405B-Instruct,71.87,70.19,73.55,405,4393
-*meta-llama/Meta-Llama-3.1-70B-Instruct,59.68,55.39,63.98,70,4625`
+*mistralai/Mistral-Nemo-Instruct-2407,77.46,76.82,78.1,12,6265`
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
