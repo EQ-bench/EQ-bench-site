@@ -846,7 +846,7 @@ Judgemark 63.42
 Cost: $0.38
 
 
-# mistral-large-2407
+# *mistral-large-2407
 
 Test model scores:
 71.18 gpt-4-0125-preview
@@ -891,7 +891,7 @@ kendall_top_8_eq_bench -0.14
 Judgemark 65.69
 
 
-# meta-llama/Meta-Llama-3.1-405B-Instruct
+# *meta-llama/Meta-Llama-3.1-405B-Instruct
 
 Test model scores:
 69.51 gpt-4-0125-preview
