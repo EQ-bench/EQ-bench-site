@@ -844,6 +844,96 @@ pearson_top_8_eq_bench 0.49
 kendall_top_8_eq_bench 0.14
 Judgemark 63.42
 Cost: $0.38
+
+
+# mistral-large-2407
+
+Test model scores:
+71.18 gpt-4-0125-preview
+69.01 claude-3-opus-20240229
+71.33 claude-3-sonnet-20240229
+69.65 claude-3-haiku-20240307
+63.3 mistral-small
+67.94 mistral-medium
+67.28 mistral-large-2402
+53.28 gpt-3.5-turbo-0301
+66.54 01-ai/Yi-34B-Chat
+61.34 openchat/openchat-3.5-1210
+56.7 garage-bAInd/Platypus2-70B-instruct
+63.64 mistralai/Mixtral-8x7B-Instruct-v0.1
+62.83 Qwen/Qwen1.5-14B-Chat
+37.21 Qwen/Qwen1.5-4B-Chat
+47.59 google/gemma-2b-it
+48.65 google/gemma-7b-it
+50.37 meta-llama/Llama-2-7b-chat-hf
+55.09 meta-llama/Llama-2-13b-chat-hf
+70.18 sophosympatheia/Midnight-Miqu-70B-v1.5
+
+Stats:
+ANOVA f-statistic 24.966611099063776
+ANOVA p-value 1.376191469893298e-50
+Self bias: N/A
+Self bias: N/A
+Avg 95% CI: 7.95
+mean_score 60.69
+range 34.12
+std_dev 9.69
+CV 0.16
+std_dev_top_5 0.99
+pearson_arena_elo 0.9
+kendall_arena_elo 0.81
+pearson_eq_bench 0.85
+kendall_eq_bench 0.59
+pearson_top_8_arena_elo 0.75
+kendall_top_8_arena_elo 0.52
+pearson_top_8_eq_bench 0.08
+kendall_top_8_eq_bench -0.14
+Judgemark 65.69
+
+
+# meta-llama/Meta-Llama-3.1-405B-Instruct
+
+Test model scores:
+69.51 gpt-4-0125-preview
+66.75 claude-3-opus-20240229
+61.93 claude-3-sonnet-20240229
+60.68 claude-3-haiku-20240307
+53.28 mistral-small
+55.36 mistral-medium
+60.98 mistral-large-2402
+43.16 gpt-3.5-turbo-0301
+64.75 01-ai/Yi-34B-Chat
+46.33 openchat/openchat-3.5-1210
+44.14 garage-bAInd/Platypus2-70B-instruct
+57.55 mistralai/Mixtral-8x7B-Instruct-v0.1
+58.25 Qwen/Qwen1.5-14B-Chat
+28.94 Qwen/Qwen1.5-4B-Chat
+42.06 google/gemma-2b-it
+45.08 google/gemma-7b-it
+40.61 meta-llama/Llama-2-7b-chat-hf
+40.49 meta-llama/Llama-2-13b-chat-hf
+68.41 sophosympatheia/Midnight-Miqu-70B-v1.5
+
+Stats:
+ANOVA f-statistic 22.691519823912163
+ANOVA p-value 6.58312241269798e-47
+Self bias: N/A
+Family bias: N/A
+Avg 95% CI: 9.77
+mean_score 53.07
+range 40.57
+std_dev 11.51
+CV 0.22
+std_dev_top_5 3.02
+pearson_arena_elo 0.9
+kendall_arena_elo 0.71
+pearson_eq_bench 0.79
+kendall_eq_bench 0.59
+pearson_top_8_arena_elo 0.54
+kendall_top_8_arena_elo 0.33
+pearson_top_8_eq_bench 0.41
+kendall_top_8_eq_bench 0.33
+Judgemark 68.22
 `;
 
 function setupDarkModeToggle() {
