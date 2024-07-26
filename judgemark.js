@@ -846,7 +846,7 @@ Judgemark 63.42
 Cost: $0.38
 
 
-# *mistral-large-2407
+# *mistralai/Mistral-Large-Instruct-2407
 
 Test model scores:
 71.18 gpt-4-0125-preview
