@@ -148,8 +148,8 @@ google/gemma-2-27b-it,80.55,27
 *mistral-large-2407,85.05,123
 *meta-llama/Meta-Llama-3.1-405B-Instruct,83.0,405
 *google/gemma-2-2b-it,60.86,2.6
-*dnhkng/RYS-XLarge,84.55,72
-*dnhkng/RYS-XLarge-Base,85.05,72`;
+*dnhkng/RYS-XLarge,84.55,78
+*dnhkng/RYS-XLarge-Base,85.05,78`;
 
 const leaderboardDataMagi = `model,score
 random-baseline,25.00
