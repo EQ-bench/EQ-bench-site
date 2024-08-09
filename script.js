@@ -286,8 +286,8 @@ microsoft/Phi-3-small-8k-instruct,64.16
 mistralai/Mistral-7B-Instruct-v0.3,36.00
 Qwen/Qwen2-72B-Instruct,75.74
 claude-3-5-sonnet-20240620,78.8
-google/gemma-2-9b-it,36.12
-google/gemma-2-27b-it,46.08
+google/gemma-2-9b-it,57.98
+google/gemma-2-27b-it,64.10
 gpt-4o-mini,67.50
 mistralai/Mistral-Nemo-Instruct-2407,43.65
 deepseek-ai/DeepSeek-V2-Chat-0628,60.63
