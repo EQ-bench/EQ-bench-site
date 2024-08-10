@@ -38,6 +38,7 @@ DeepSeek-V2-Chat-0628,69.77,68.84,70.69,236B-21A,5489
 mistralai/Mistral-Nemo-Instruct-2407,77.46,76.82,78.1,12,6265
 mistralai/Mistral-Large-Instruct-2407,77.17,75.3,79.03,123,4789
 *gemini-1.5-pro-exp-0801,80.34,79.7,80.99,,5329
+*meta-llama/Meta-Llama-3.1-405B-Instruct,71.98,71.15,72.81,405,4462
 *dnhkng/RYS-Llama-3-Huge-Instruct,75.63,75.2,76.06,99,4507`
 
 function setupDarkModeToggle() {
