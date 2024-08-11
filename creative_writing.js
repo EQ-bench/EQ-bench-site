@@ -41,7 +41,7 @@ mistralai/Mistral-Large-Instruct-2407,77.17,75.3,79.03,123,4789
 *meta-llama/Meta-Llama-3.1-405B-Instruct,71.98,71.15,72.81,405,4462
 *dnhkng/RYS-Llama-3-Huge-Instruct,75.63,75.2,76.06,99,4507
 *OmnicromsBrain/NeuralStar_FusionWriter_4x7b,75.09,73.26,76.92,4x7,4956
-*OmnicromsBrain/Eros_Scribe-7b,68.04,66.54,69.53,7,10040`
+!*OmnicromsBrain/Eros_Scribe-7b,68.04,66.54,69.53,7,10040`
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
