@@ -150,7 +150,9 @@ google/gemma-2-27b-it,80.55,27
 *google/gemma-2-2b-it,60.86,2.6
 *dnhkng/RYS-XLarge,84.55,78
 *dnhkng/RYS-XLarge-Base,85.05,78
-*LGAI-EXAONE/EXAONE-3.0-7.8B-Instruct,66.72,8`;
+*LGAI-EXAONE/EXAONE-3.0-7.8B-Instruct,66.72,8
+*microsoft/Phi-3.5-mini-instruct,54.74,3.8
+*microsoft/Phi-3.5-MoE-instruct,76.97,16x3.8`;
 
 const leaderboardDataMagi = `model,score
 random-baseline,25.00
@@ -296,7 +298,9 @@ meta-llama/Meta-Llama-3.1-405B-Instruct,83.81
 google/gemma-2-2b-it,35.22
 dnhkng/RYS-XLarge,76.83
 dnhkng/RYS-XLarge-Base,78.30
-LGAI-EXAONE/EXAONE-3.0-7.8B-Instruct,42.80`;
+LGAI-EXAONE/EXAONE-3.0-7.8B-Instruct,42.80
+microsoft/Phi-3.5-mini-instruct,52.92
+microsoft/Phi-3.5-MoE-instruct,67.25`;
 
 
 function setupDarkModeToggle() {
