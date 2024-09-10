@@ -42,9 +42,15 @@ meta-llama/Meta-Llama-3.1-405B-Instruct,71.98,71.15,72.81,405,4462
 dnhkng/RYS-Llama-3-Huge-Instruct,75.63,75.2,76.06,99,4507
 OmnicromsBrain/NeuralStar_FusionWriter_4x7b,75.09,73.26,76.92,4x7,4956
 !OmnicromsBrain/Eros_Scribe-7b,68.04,66.54,69.53,7,10040
-*lemon07r/Gemma-2-Ataraxy-9B,82.36,81.97,82.76,9,4574
-*nbeerbower/mistral-nemo-gutenberg-12B-v2,80.12,79.2,81.03,12,4988
-*chatgpt-4o-latest-2024-08-08,81.36,80.97,81.74,,6784`
+lemon07r/Gemma-2-Ataraxy-9B,82.36,81.97,82.76,9,4574
+nbeerbower/mistral-nemo-gutenberg-12B-v2,80.12,79.2,81.03,12,4988
+chatgpt-4o-latest-2024-08-08,81.36,80.97,81.74,,6784
+*ArliAI/Mistral-Nemo-12B-ArliAI-RPMax-v1.1,56.42,53.63,59.2,12,5419
+!*FluffyKaeloky/Luminum-v0.1-123B,67.6,67.6,67.6,123,4963
+!*TheDrummer/Theia-21B-v1,58.87,58.26,59.49,21,6265
+*CohereForAI/c4ai-command-r-08-2024,65.67,62.67,68.67,32,4521
+!*Sao10K/MN-12B-Lyra-v1,72.85,70.8,74.9,12,5974
+*arcee-ai/Arcee-Scribe,64.15,62.15,66.14,7,5016`
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
