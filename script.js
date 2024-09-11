@@ -142,17 +142,20 @@ Qwen/Qwen2-72B-Instruct,81.35,72
 claude-3-5-sonnet-20240620,86.36,
 google/gemma-2-9b-it,80.46,9
 google/gemma-2-27b-it,80.55,27
-*gpt-4o-mini,76.93,
-*mistralai/Mistral-Nemo-Instruct-2407,77.13,12
-*deepseek-ai/DeepSeek-V2-Chat-0628,83.18,236B-21A
-*mistral-large-2407,85.05,123
-*meta-llama/Meta-Llama-3.1-405B-Instruct,83.0,405
-*google/gemma-2-2b-it,60.86,2.6
+gpt-4o-mini,76.93,
+mistralai/Mistral-Nemo-Instruct-2407,77.13,12
+deepseek-ai/DeepSeek-V2-Chat-0628,83.18,236B-21A
+mistral-large-2407,85.05,123
+meta-llama/Meta-Llama-3.1-405B-Instruct,83.0,405
+google/gemma-2-2b-it,60.86,2.6
 *dnhkng/RYS-XLarge,84.55,78
 *dnhkng/RYS-XLarge-Base,85.05,78
 *LGAI-EXAONE/EXAONE-3.0-7.8B-Instruct,66.72,8
 *microsoft/Phi-3.5-mini-instruct,54.74,3.8
-*microsoft/Phi-3.5-MoE-instruct,76.97,16x3.8`;
+*microsoft/Phi-3.5-MoE-instruct,76.97,16x3.8
+*senseable/Trillama-8B,66.63,8
+*upstage/solar-pro-preview-instruct,78.52,22
+*ifable/gemma-2-Ifable-9B,79.93,9`;
 
 const leaderboardDataMagi = `model,score
 random-baseline,25.00
@@ -300,7 +303,10 @@ dnhkng/RYS-XLarge,76.83
 dnhkng/RYS-XLarge-Base,78.30
 LGAI-EXAONE/EXAONE-3.0-7.8B-Instruct,42.80
 microsoft/Phi-3.5-mini-instruct,52.92
-microsoft/Phi-3.5-MoE-instruct,67.25`;
+microsoft/Phi-3.5-MoE-instruct,67.25
+senseable/Trillama-8B,41.90
+upstage/solar-pro-preview-instruct,70.84
+ifable/gemma-2-Ifable-9B,56.35`;
 
 
 function setupDarkModeToggle() {
