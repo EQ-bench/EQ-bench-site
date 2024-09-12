@@ -50,7 +50,8 @@ chatgpt-4o-latest-2024-08-08,81.36,80.97,81.74,,6784
 !*TheDrummer/Theia-21B-v1,58.87,58.26,59.49,21,6265
 *CohereForAI/c4ai-command-r-08-2024,65.67,62.67,68.67,32,4521
 !*Sao10K/MN-12B-Lyra-v1,72.85,70.8,74.9,12,5974
-*arcee-ai/Arcee-Scribe,64.15,62.15,66.14,7,5016`
+*arcee-ai/Arcee-Scribe,64.15,62.15,66.14,7,5016
+*ifable/gemma-2-Ifable-9B,84.59,84.24,84.95,9,4936`
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
