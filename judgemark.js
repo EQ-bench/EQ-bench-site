@@ -982,7 +982,7 @@ kendall_top_8_eq_bench 0.07
 Judgemark 53.55
 
 
-# o1-mini-2024-09-12
+# *o1-mini-2024-09-12
 
 Test model scores:
 69.14 gpt-4-0125-preview
