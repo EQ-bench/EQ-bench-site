@@ -799,7 +799,7 @@ Judgemark 82.35
 Cost: $6.50
 
 
-# *gpt-4o-mini
+# gpt-4o-mini
 
 Test model scores:
 70.22 gpt-4-0125-preview
@@ -846,7 +846,7 @@ Judgemark 63.42
 Cost: $0.38
 
 
-# *mistralai/Mistral-Large-Instruct-2407
+# mistralai/Mistral-Large-Instruct-2407
 
 Test model scores:
 71.18 gpt-4-0125-preview
@@ -891,7 +891,7 @@ kendall_top_8_eq_bench -0.14
 Judgemark 65.69
 
 
-# *meta-llama/Meta-Llama-3.1-405B-Instruct
+# meta-llama/Meta-Llama-3.1-405B-Instruct
 
 Test model scores:
 69.51 gpt-4-0125-preview
@@ -934,6 +934,52 @@ kendall_top_8_arena_elo 0.33
 pearson_top_8_eq_bench 0.41
 kendall_top_8_eq_bench 0.33
 Judgemark 68.22
+
+
+# *deepseek-ai/DeepSeek-V2.5
+
+Test model scores:
+68.26 gpt-4-0125-preview
+63.86 claude-3-opus-20240229
+65.15 claude-3-sonnet-20240229
+61.81 claude-3-haiku-20240307
+59.26 mistral-small
+62.21 mistral-medium
+63.72 mistral-large-2402
+51.91 gpt-3.5-turbo-0301
+62.54 01-ai/Yi-34B-Chat
+58.82 openchat/openchat-3.5-1210
+53.54 garage-bAInd/Platypus2-70B-instruct
+64.17 mistralai/Mixtral-8x7B-Instruct-v0.1
+62.32 Qwen/Qwen1.5-14B-Chat
+37.83 Qwen/Qwen1.5-4B-Chat
+45.58 google/gemma-2b-it
+50.74 google/gemma-7b-it
+52.91 meta-llama/Llama-2-7b-chat-hf
+53.78 meta-llama/Llama-2-13b-chat-hf
+61.8 sophosympatheia/Midnight-Miqu-70B-v1.5
+
+
+Stats:
+ANOVA f-statistic 13.266871806181612
+ANOVA p-value 2.4581334272379533e-29
+Self bias: N/A
+Family bias: N/A
+Avg 95% CI: 8.53
+mean_score 57.91
+range 30.43
+std_dev 7.69
+CV 0.13
+std_dev_top_5 1.89
+pearson_arena_elo 0.87
+kendall_arena_elo 0.71
+pearson_eq_bench 0.86
+kendall_eq_bench 0.62
+pearson_top_8_arena_elo 0.65
+kendall_top_8_arena_elo 0.43
+pearson_top_8_eq_bench 0.4
+kendall_top_8_eq_bench 0.07
+Judgemark 53.55
 `;
 
 function setupDarkModeToggle() {

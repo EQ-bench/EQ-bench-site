@@ -155,7 +155,10 @@ google/gemma-2-2b-it,60.86,2.6
 *microsoft/Phi-3.5-MoE-instruct,76.97,16x3.8
 *senseable/Trillama-8B,66.63,8
 *upstage/solar-pro-preview-instruct,78.52,22
-*ifable/gemma-2-Ifable-9B,79.93,9`;
+*ifable/gemma-2-Ifable-9B,79.93,9
+*o1-preview,80.51,
+*o1-mini,71.97,
+*NousResearch/Hermes-3-Llama-3.1-405B,82.79,405`;
 
 const leaderboardDataMagi = `model,score
 random-baseline,25.00
@@ -306,7 +309,8 @@ microsoft/Phi-3.5-mini-instruct,52.92
 microsoft/Phi-3.5-MoE-instruct,67.25
 senseable/Trillama-8B,41.90
 upstage/solar-pro-preview-instruct,70.84
-ifable/gemma-2-Ifable-9B,56.35`;
+ifable/gemma-2-Ifable-9B,56.35
+NousResearch/Hermes-3-Llama-3.1-405B,76.23`;
 
 
 function setupDarkModeToggle() {
