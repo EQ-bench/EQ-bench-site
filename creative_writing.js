@@ -51,7 +51,9 @@ chatgpt-4o-latest-2024-08-08,81.36,80.97,81.74,,6784
 *CohereForAI/c4ai-command-r-08-2024,65.67,62.67,68.67,32,4521
 !*Sao10K/MN-12B-Lyra-v1,72.85,70.8,74.9,12,5974
 *arcee-ai/Arcee-Scribe,64.15,62.15,66.14,7,5016
-*ifable/gemma-2-Ifable-9B,84.59,84.24,84.95,9,4936`
+*ifable/gemma-2-Ifable-9B,84.59,84.24,84.95,9,4936
+*o1-mini-2024-09-12,76.32,74.43,78.21,,6193
+*o1-preview-2024-09-12,80.52,80.31,80.74,,7072`
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');

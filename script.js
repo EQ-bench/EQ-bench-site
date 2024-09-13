@@ -156,8 +156,8 @@ google/gemma-2-2b-it,60.86,2.6
 *senseable/Trillama-8B,66.63,8
 *upstage/solar-pro-preview-instruct,78.52,22
 *ifable/gemma-2-Ifable-9B,79.93,9
-*o1-preview,80.51,
-*o1-mini,71.97,
+*o1-preview-2024-09-12,80.51,
+*o1-mini-2024-09-12,71.97,
 *NousResearch/Hermes-3-Llama-3.1-405B,82.79,405
 *deepseek-ai/DeepSeek-V2.5,81.96,236B-21A`;
 
