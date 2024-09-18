@@ -54,7 +54,9 @@ chatgpt-4o-latest-2024-08-08,81.36,80.97,81.74,,6784
 *ifable/gemma-2-Ifable-9B,84.59,84.24,84.95,9,4936
 *o1-mini-2024-09-12,76.32,74.43,78.21,,6193
 *o1-preview-2024-09-12,80.52,80.31,80.74,,7072
-*CohereForAI/c4ai-command-r-plus-08-2024,76.13,75.34,76.92,104,5566`
+*CohereForAI/c4ai-command-r-plus-08-2024,76.13,75.34,76.92,104,5566
+*chatgpt-4o-latest-2024-09-03,82.51,82.04,82.99,,6204
+*mistralai/Mistral-Small-Instruct-2409,72.39,70.03,74.75,22,5914`
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
