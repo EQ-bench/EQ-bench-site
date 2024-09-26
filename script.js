@@ -153,15 +153,25 @@ dnhkng/RYS-XLarge-Base,85.05,78
 LGAI-EXAONE/EXAONE-3.0-7.8B-Instruct,66.72,8
 microsoft/Phi-3.5-mini-instruct,54.74,3.8
 microsoft/Phi-3.5-MoE-instruct,76.97,16x3.8
-*senseable/Trillama-8B,66.63,8
-*upstage/solar-pro-preview-instruct,78.52,22
-*ifable/gemma-2-Ifable-9B,79.93,9
-*o1-preview-2024-09-12,80.51,
-*o1-mini-2024-09-12,71.97,
-*NousResearch/Hermes-3-Llama-3.1-405B,82.79,405
-*deepseek-ai/DeepSeek-V2.5,81.96,236B-21A
-*chatgpt-4o-latest-2024-09-03,82.45,
-*mistralai/Mistral-Small-Instruct-2409,80.86,22`;
+senseable/Trillama-8B,66.63,8
+upstage/solar-pro-preview-instruct,78.52,22
+ifable/gemma-2-Ifable-9B,79.93,9
+o1-preview-2024-09-12,80.51,
+o1-mini-2024-09-12,71.97,
+NousResearch/Hermes-3-Llama-3.1-405B,82.79,405
+deepseek-ai/DeepSeek-V2.5,81.96,236B-21A
+chatgpt-4o-latest-2024-09-03,82.45,
+mistralai/Mistral-Small-Instruct-2409,80.86,22
+*Qwen/Qwen2.5-3B-Instruct,49.76,3
+*Qwen/Qwen2.5-7B-Instruct,69.18,7
+*Qwen/Qwen2.5-14B-Instruct,79.23,14
+*Qwen/Qwen2.5-32B-Instruct,79.89,32
+*Qwen/Qwen2.5-72B-Instruct,79.05,72
+*gemini-1.5-pro-002,83.52,
+*meta-llama/Llama-3.2-1B-Instruct,22.65,1
+*meta-llama/Llama-3.2-3B-Instruct,61.06,3
+*meta-llama/Llama-3.2-11B-Vision-Instruct,67.88,11
+*meta-llama/Llama-3.2-90B-Vision-Instruct,81.98,90`;
 
 const leaderboardDataMagi = `model,score
 random-baseline,25.00
@@ -316,7 +326,16 @@ ifable/gemma-2-Ifable-9B,56.35
 NousResearch/Hermes-3-Llama-3.1-405B,76.23
 deepseek-ai/DeepSeek-V2.5,62.04
 chatgpt-4o-latest-2024-09-03,80.61
-mistralai/Mistral-Small-Instruct-2409,51.58`;
+mistralai/Mistral-Small-Instruct-2409,51.58
+Qwen/Qwen2.5-3B-Instruct,48.83
+Qwen/Qwen2.5-7B-Instruct,56.01
+Qwen/Qwen2.5-14B-Instruct,72.81
+Qwen/Qwen2.5-32B-Instruct,76.71
+Qwen/Qwen2.5-72B-Instruct,77.83
+gemini-1.5-pro-002,81.83
+meta-llama/Llama-3.2-1B-Instruct,31.28
+meta-llama/Llama-3.2-3B-Instruct,42.21
+meta-llama/Llama-3.2-90B-Vision-Instruct,77.83`
 
 
 function setupDarkModeToggle() {

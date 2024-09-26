@@ -936,7 +936,7 @@ kendall_top_8_eq_bench 0.33
 Judgemark 68.22
 
 
-# *deepseek-ai/DeepSeek-V2.5
+# deepseek-ai/DeepSeek-V2.5
 
 Test model scores:
 68.26 gpt-4-0125-preview
@@ -982,7 +982,7 @@ kendall_top_8_eq_bench 0.07
 Judgemark 53.55
 
 
-# *o1-mini-2024-09-12
+# o1-mini-2024-09-12
 
 Test model scores:
 69.14 gpt-4-0125-preview
@@ -1026,6 +1026,97 @@ pearson_top_8_eq_bench 0.01
 kendall_top_8_eq_bench 0.05
 Judgemark 31.12
 Cost: $16.44
+
+
+# *Qwen/Qwen2.5-72B-Instruct
+
+Test model scores:
+66.14 gpt-4-0125-preview
+66.0 claude-3-opus-20240229
+66.7 claude-3-sonnet-20240229
+64.71 claude-3-haiku-20240307
+63.36 mistral-small
+68.01 mistral-medium
+62.07 mistral-large-2402
+55.55 gpt-3.5-turbo-0301
+62.14 01-ai/Yi-34B-Chat
+60.22 openchat/openchat-3.5-1210
+58.09 garage-bAInd/Platypus2-70B-instruct
+63.83 mistralai/Mixtral-8x7B-Instruct-v0.1
+60.12 Qwen/Qwen1.5-14B-Chat
+40.7 Qwen/Qwen1.5-4B-Chat
+52.88 google/gemma-2b-it
+54.85 google/gemma-7b-it
+53.67 meta-llama/Llama-2-7b-chat-hf
+56.3 meta-llama/Llama-2-13b-chat-hf
+66.68 sophosympatheia/Midnight-Miqu-70B-v1.5
+
+Stats:
+ANOVA f-statistic 12.77074366668738
+ANOVA p-value 2.747277714276023e-28
+Self bias: N/A
+Family bias: N/A
+Avg 95% CI: 7.48
+mean_score 60.11
+range 27.31
+std_dev 6.71
+CV 0.11
+std_dev_top_5 0.79
+pearson_arena_elo 0.85
+kendall_arena_elo 0.75
+pearson_eq_bench 0.84
+kendall_eq_bench 0.62
+pearson_top_8_arena_elo 0.26
+kendall_top_8_arena_elo 0.07
+pearson_top_8_eq_bench 0.49
+kendall_top_8_eq_bench 0.43
+Judgemark 49.52
+
+
+# *gemini-1.5-pro-002
+
+Test model scores:
+58.91 gpt-4-0125-preview
+59.59 claude-3-opus-20240229
+58.24 claude-3-sonnet-20240229
+55.1 claude-3-haiku-20240307
+48.3 mistral-small
+53.7 mistral-medium
+52.14 mistral-large-2402
+40.92 gpt-3.5-turbo-0301
+53.11 01-ai/Yi-34B-Chat
+45.11 openchat/openchat-3.5-1210
+43.53 garage-bAInd/Platypus2-70B-instruct
+52.05 mistralai/Mixtral-8x7B-Instruct-v0.1
+50.33 Qwen/Qwen1.5-14B-Chat
+31.19 Qwen/Qwen1.5-4B-Chat
+39.36 google/gemma-2b-it
+41.21 google/gemma-7b-it
+40.22 meta-llama/Llama-2-7b-chat-hf
+40.83 meta-llama/Llama-2-13b-chat-hf
+58.14 sophosympatheia/Midnight-Miqu-70B-v1.5
+
+Stats:
+ANOVA f-statistic 17.262777296419706
+ANOVA p-value 2.692559575920475e-37
+Self bias: N/A
+Family bias: N/A
+Avg 95% CI: 8.06
+mean_score 48.53
+range 28.4
+std_dev 8.16
+CV 0.17
+std_dev_top_5 1.72
+pearson_arena_elo 0.94
+kendall_arena_elo 0.87
+pearson_eq_bench 0.8
+kendall_eq_bench 0.62
+pearson_top_8_arena_elo 0.9
+kendall_top_8_arena_elo 0.81
+pearson_top_8_eq_bench 0.22
+kendall_top_8_eq_bench -0.05
+Judgemark 60.9
+Cost: $2.20
 `;
 
 function setupDarkModeToggle() {

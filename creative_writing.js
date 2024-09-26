@@ -45,18 +45,20 @@ OmnicromsBrain/NeuralStar_FusionWriter_4x7b,75.09,73.26,76.92,4x7,4956
 lemon07r/Gemma-2-Ataraxy-9B,82.36,81.97,82.76,9,4574
 nbeerbower/mistral-nemo-gutenberg-12B-v2,80.12,79.2,81.03,12,4988
 chatgpt-4o-latest-2024-08-08,81.36,80.97,81.74,,6784
-*ArliAI/Mistral-Nemo-12B-ArliAI-RPMax-v1.1,56.42,53.63,59.2,12,5419
-!*FluffyKaeloky/Luminum-v0.1-123B,67.6,67.6,67.6,123,4963
-!*TheDrummer/Theia-21B-v1,58.87,58.26,59.49,21,6265
-*CohereForAI/c4ai-command-r-08-2024,65.67,62.67,68.67,32,4521
-!*Sao10K/MN-12B-Lyra-v1,72.85,70.8,74.9,12,5974
-*arcee-ai/Arcee-Scribe,64.15,62.15,66.14,7,5016
-*ifable/gemma-2-Ifable-9B,84.59,84.24,84.95,9,4936
-*o1-mini-2024-09-12,76.32,74.43,78.21,,6193
-*o1-preview-2024-09-12,80.52,80.31,80.74,,7072
-*CohereForAI/c4ai-command-r-plus-08-2024,76.13,75.34,76.92,104,5566
-*chatgpt-4o-latest-2024-09-03,82.51,82.04,82.99,,6204
-*mistralai/Mistral-Small-Instruct-2409,72.39,70.03,74.75,22,5914`
+ArliAI/Mistral-Nemo-12B-ArliAI-RPMax-v1.1,56.42,53.63,59.2,12,5419
+!FluffyKaeloky/Luminum-v0.1-123B,67.6,67.6,67.6,123,4963
+!TheDrummer/Theia-21B-v1,58.87,58.26,59.49,21,6265
+CohereForAI/c4ai-command-r-08-2024,65.67,62.67,68.67,32,4521
+!Sao10K/MN-12B-Lyra-v1,72.85,70.8,74.9,12,5974
+arcee-ai/Arcee-Scribe,64.15,62.15,66.14,7,5016
+ifable/gemma-2-Ifable-9B,84.59,84.24,84.95,9,4936
+o1-mini-2024-09-12,76.32,74.43,78.21,,6193
+o1-preview-2024-09-12,80.52,80.31,80.74,,7072
+CohereForAI/c4ai-command-r-plus-08-2024,76.13,75.34,76.92,104,5566
+chatgpt-4o-latest-2024-09-03,82.51,82.04,82.99,,6204
+mistralai/Mistral-Small-Instruct-2409,72.39,70.03,74.75,22,5914
+*gemini-1.5-pro-002,81.44,81.13,81.76,,4799
+*Qwen/Qwen2.5-72B-Instruct,72.16,70.06,74.26,72,7344`
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
