@@ -1076,46 +1076,46 @@ Judgemark 49.52
 # *gemini-1.5-pro-002
 
 Test model scores:
-58.91 gpt-4-0125-preview
-59.59 claude-3-opus-20240229
-58.24 claude-3-sonnet-20240229
-55.1 claude-3-haiku-20240307
-48.3 mistral-small
-53.7 mistral-medium
-52.14 mistral-large-2402
-40.92 gpt-3.5-turbo-0301
-53.11 01-ai/Yi-34B-Chat
-45.11 openchat/openchat-3.5-1210
-43.53 garage-bAInd/Platypus2-70B-instruct
-52.05 mistralai/Mixtral-8x7B-Instruct-v0.1
-50.33 Qwen/Qwen1.5-14B-Chat
-31.19 Qwen/Qwen1.5-4B-Chat
-39.36 google/gemma-2b-it
-41.21 google/gemma-7b-it
-40.22 meta-llama/Llama-2-7b-chat-hf
-40.83 meta-llama/Llama-2-13b-chat-hf
-58.14 sophosympatheia/Midnight-Miqu-70B-v1.5
+59.83 gpt-4-0125-preview
+60.26 claude-3-opus-20240229
+58.66 claude-3-sonnet-20240229
+56.15 claude-3-haiku-20240307
+46.98 mistral-small
+53.62 mistral-medium
+50.76 mistral-large-2402
+40.45 gpt-3.5-turbo-0301
+54.26 01-ai/Yi-34B-Chat
+44.07 openchat/openchat-3.5-1210
+42.45 garage-bAInd/Platypus2-70B-instruct
+51.49 mistralai/Mixtral-8x7B-Instruct-v0.1
+49.12 Qwen/Qwen1.5-14B-Chat
+30.73 Qwen/Qwen1.5-4B-Chat
+37.49 google/gemma-2b-it
+41.49 google/gemma-7b-it
+38.75 meta-llama/Llama-2-7b-chat-hf
+40.84 meta-llama/Llama-2-13b-chat-hf
+55.88 sophosympatheia/Midnight-Miqu-70B-v1.5
 
 Stats:
-ANOVA f-statistic 17.262777296419706
-ANOVA p-value 2.692559575920475e-37
+ANOVA f-statistic 18.98324733492056
+ANOVA p-value 1.7621647841397139e-40
 Self bias: N/A
 Family bias: N/A
-Avg 95% CI: 8.06
-mean_score 48.53
-range 28.4
-std_dev 8.16
-CV 0.17
-std_dev_top_5 1.72
+Avg 95% CI: 8.02
+mean_score 48.07
+range 29.53
+std_dev 8.55
+CV 0.18
+std_dev_top_5 2.04
 pearson_arena_elo 0.94
-kendall_arena_elo 0.87
-pearson_eq_bench 0.8
-kendall_eq_bench 0.62
-pearson_top_8_arena_elo 0.9
+kendall_arena_elo 0.81
+pearson_eq_bench 0.79
+kendall_eq_bench 0.57
+pearson_top_8_arena_elo 0.93
 kendall_top_8_arena_elo 0.81
-pearson_top_8_eq_bench 0.22
-kendall_top_8_eq_bench -0.05
-Judgemark 60.9
+pearson_top_8_eq_bench 0.47
+kendall_top_8_eq_bench 0.24
+Judgemark 64.74
 Cost: $2.20
 `;
 
