@@ -390,3 +390,38 @@ body.dark-mode .error-bar::after {
 .custom-width-slider {
 	width: 150px; /* Adjust this value to your desired width */
 }
+
+
+
+
+.d-flex {
+    display: flex;
+    align-items: flex-start; /* Align to the top */
+}
+
+.me-3 {
+    margin-right: 1rem; /* Space between the controls */
+}
+
+.length-control-container, .gpt-slop-control-container {
+    display: inline-block;
+}
+
+.custom-width-slider {
+    width: 150px;
+    height: 1.5rem; /* Set a fixed height for both sliders to align them perfectly */
+    margin: 0; /* Remove any margin between slider and label */
+    padding: 0; /* Ensure no padding throws off the alignment */
+}
+
+.form-range {
+    appearance: none; /* Remove default styles, we can set the same for both */
+    -webkit-appearance: none; /* Ensure consistency in Webkit browsers */
+    height: 1.5rem; /* Explicit height to ensure alignment */
+    margin: 0; /* Remove default margins */
+}
+
+.length-control-label, .gpt-slop-control-label {
+    display: block;
+    margin-bottom: 0.5rem; /* Adds some space between label and slider */
+}

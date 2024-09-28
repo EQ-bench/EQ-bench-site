@@ -74,6 +74,12 @@
 			<p><b>🎨Creative Writing</b></p>
 			<p>This benchmark uses a LLM judge (Claude 3.5 Sonnet) to assess the creative writing abilities of the test models on a series of writing prompts.</p>
 			<p>You can reproduce these results or run the benchmark on your own models with the <a href="https://github.com/EQ-bench/EQ-Bench" target="_blank">EQ-Bench repo on Github</a>.</p>
+			<p><b>2024/09/28 update. New metric: GPT-Slop</b></p>
+			<p>A new metric has been added to the leaderboard to measure "GPT-isms" or "GPT-slop". Higher values == more slop. It calculates a value representing how many words in the test model's output match words that are over-represented in typical language model writing. We compute the list of "gpt slop" words by counting the frequency of words in a large dataset of generated stories (<a href="https://huggingface.co/datasets/ajibawa-2023/General-Stories-Collection">Link to dataset</a>).</p>
+			<p>Some additional phrases have been added to the slop list as compiled from similar lists around the internet.</p>
+			<p>The full list, as well as the code to generate the over-represented words, can be found here: <a href="https://github.com/sam-paech/antislop-sampler">https://github.com/sam-paech/antislop-sampler</a>.</p>
+			<p>If you're interested in reducing gpt-isms, you can try the anti-slop sampler found in this repo. It downregulates the probability of the provided phrase list as the model inferences.</p>
+			<hr />
 			<p>We've released v2 of the creative writing benchmark & leaderboard. The old version was starting to saturate (scores bunching at the top), so we removed some of the less discriminative prompts, switched judge models, and made some other improvements besides.</p>
 			<p><b>Version 2 Changes</b></p>
 			<ul>
