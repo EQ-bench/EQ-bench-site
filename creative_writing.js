@@ -58,7 +58,8 @@ CohereForAI/c4ai-command-r-plus-08-2024,76.13,75.34,76.92,104,5566,9.53
 chatgpt-4o-latest-2024-09-03,82.51,82.04,82.99,,6204,4.78
 mistralai/Mistral-Small-Instruct-2409,72.39,70.03,74.75,22,5914,7.05
 *gemini-1.5-pro-002,81.44,81.13,81.76,,4799,6.64
-*Qwen/Qwen2.5-72B-Instruct,72.16,70.06,74.26,72,7344,5.42`
+*Qwen/Qwen2.5-72B-Instruct,72.16,70.06,74.26,72,7344,5.42
+*lemon07r/Gemma-2-Ataraxy-v2-9B,83.28,82.75,83.82,9,4366,13.95`
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
