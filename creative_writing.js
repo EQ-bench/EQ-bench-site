@@ -59,7 +59,8 @@ chatgpt-4o-latest-2024-09-03,82.51,82.04,82.99,,6204,4.78
 mistralai/Mistral-Small-Instruct-2409,72.39,70.03,74.75,22,5914,7.05
 *gemini-1.5-pro-002,81.44,81.13,81.76,,4799,6.64
 *Qwen/Qwen2.5-72B-Instruct,72.16,70.06,74.26,72,7344,5.42
-*lemon07r/Gemma-2-Ataraxy-v2-9B,83.28,82.75,83.82,9,4366,13.95`
+*lemon07r/Gemma-2-Ataraxy-v2-9B,83.28,82.75,83.82,9,4366,13.95
+*Gemma-2-Ataraxy-v2-9B [antislop],84.61,83.03,86.19,9,4495,0.69`
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
@@ -274,7 +275,7 @@ function updateScores() {
 	const gptSlopPercentage = document.getElementById('gptSlopControlSlider').value;
 
 	const lengthAdjustmentFactor = 0.1 * parseFloat(lengthPercentage) / 100;
-	const gptSlopAdjustmentFactor = 0.1 * parseFloat(gptSlopPercentage) / 100;
+	const gptSlopAdjustmentFactor = 0.05 * parseFloat(gptSlopPercentage) / 100;
 
 	const avgLength = calculateAverageLength();
 	const avgGptSlop = calculateAverageGptSlop();
@@ -304,7 +305,7 @@ function updateScores() {
 
 		 // GPT-Slop adjustment
 		 let gptSlopAdjustment = avgGptSlop / modelGptSlop * gptSlopAdjustmentFactor + 1 - gptSlopAdjustmentFactor;
-		 if (gptSlopAdjustment > 1.15) { gptSlopAdjustment = 1.15 }
+		 if (gptSlopAdjustment > 1.03) { gptSlopAdjustment = 1.03 }
 		 if (gptSlopAdjustment < 0.85) { gptSlopAdjustment = 0.85 }
 
 		 const adjustedScore = originalScore * lengthAdjustment * gptSlopAdjustment;
@@ -340,6 +341,89 @@ function updateScores() {
 		 const percentageWidth = Math.max(0, Math.min(100, (parseFloat(scoreText) / maxScoreCreativeWriting) * 98));
 		 row.find('.creative-writing-score-bar').css('width', `${percentageWidth}%`);
 	});
+}
+
+function updateScores() {
+    const lengthPercentage = document.getElementById('lengthControlSlider').value;
+    const gptSlopPercentage = document.getElementById('gptSlopControlSlider').value;
+
+    const lengthAdjustmentFactor = 0.1 * parseFloat(lengthPercentage) / 100;
+    const gptSlopAdjustmentFactor = 0.05 * parseFloat(gptSlopPercentage) / 100;
+
+    const avgLength = calculateAverageLength();
+    const avgGptSlop = calculateAverageGptSlop();
+
+    const table = $('#leaderboard').DataTable();
+
+    // Get the current page and sorting information
+    const currentPage = table.page.info().page;
+    const currentOrder = table.order();
+
+    // Clear the existing table
+    table.destroy();
+
+    // Update the scores and error bars
+    $('#leaderboardBody tr').each(function() {
+        const row = $(this);
+        const avgModelLength = parseFloat(row.find('td:eq(2)').text());
+        const modelGptSlop = parseFloat(row.find('td:eq(3)').text());
+        const originalScore = parseFloat(row.attr('data-original-score'));
+        const originalCILow = parseFloat(row.attr('data-original-ci-low'));
+        const originalCIHigh = parseFloat(row.attr('data-original-ci-high'));
+
+        // Length adjustment (unchanged)
+        let lengthAdjustment = avgLength / avgModelLength * lengthAdjustmentFactor + 1 - lengthAdjustmentFactor;
+        if (lengthAdjustment > 1.15) { lengthAdjustment = 1.15 }
+        if (lengthAdjustment < 0.85) { lengthAdjustment = 0.85 }
+
+        // Modified GPT-Slop adjustment with tapering and penalization
+        let gptSlopRatio = modelGptSlop / avgGptSlop;
+		if (gptSlopRatio < 0.34) { gptSlopRatio = 0.34; }			
+        let gptSlopAdjustment;
+
+        if (gptSlopRatio > 1) {
+            // Penalize higher GPT-slop
+            gptSlopAdjustment = 1 - (Math.log(gptSlopRatio) * gptSlopAdjustmentFactor);
+            gptSlopAdjustment = Math.max(gptSlopAdjustment, 0.85); // Floor at 0.85
+        } else {
+            // Reward lower GPT-slop with tapering
+            gptSlopAdjustment = 1 + (Math.log(1.5 / (gptSlopRatio+0.5)) * gptSlopAdjustmentFactor);
+            gptSlopAdjustment = Math.min(gptSlopAdjustment, 1.02); // Cap at 1.03
+        }
+
+        const adjustedScore = originalScore * lengthAdjustment * gptSlopAdjustment;
+        const adjustedCILow = adjustedScore - (originalScore - originalCILow) * lengthAdjustment * gptSlopAdjustment;
+        const adjustedCIHigh = adjustedScore + (originalCIHigh - originalScore) * lengthAdjustment * gptSlopAdjustment;
+
+        const scoreText = adjustedScore.toFixed(2);
+
+        // Update the score
+        row.find('td:eq(4)').attr('data-order', scoreText).find('.score-text').text(scoreText);
+
+        // Update error bar position and width
+        const errorBarLeftPos = ((adjustedCILow / maxScoreCreativeWriting) * 98).toFixed(2);
+        const errorBarRightPos = ((adjustedCIHigh / maxScoreCreativeWriting) * 98).toFixed(2);
+        const errorBarWidth = (errorBarRightPos - errorBarLeftPos).toFixed(2);
+
+        row.find('.error-bar').css({
+            'left': `${errorBarLeftPos}%`,
+            'width': `${errorBarWidth}%`
+        });
+    });
+
+    // Reinitialize the DataTable
+    const newTable = $('#leaderboard').DataTable(dataTableConfig);
+
+    // Restore the previous page
+    newTable.page(currentPage).draw('page');
+
+    // Update the score bar widths
+    $('#leaderboardBody tr').each(function() {
+        const row = $(this);
+        const scoreText = row.find('td:eq(4)').attr('data-order');
+        const percentageWidth = Math.max(0, Math.min(100, (parseFloat(scoreText) / maxScoreCreativeWriting) * 98));
+        row.find('.creative-writing-score-bar').css('width', `${percentageWidth}%`);
+    });
 }
 
 function calculateAverageLength() {
