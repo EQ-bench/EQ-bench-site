@@ -8,8 +8,11 @@ Avg: 84.61
 95% CI: (83.03, 86.19)
 
 # Inference settings:
-16 bit transformers, temp 1, min_p 0.1, default tokenizer prompt format
-* Note: This benchmark run used the antislop sampler, which greatly reduces gpt-isms. You cana find the sampler code here: https://github.com/sam-paech/antislop-sampler
+16 bit transformers, temp 1, min_p 0.1, antislop 5.0, default tokenizer prompt format
+
+******************
+* Note: This benchmark run used the new antislop sampler, which greatly reduces gpt-isms. You can find the code here: https://github.com/sam-paech/antislop-sampler
+******************
 
 # Sample Outputs:
 
