@@ -3,9 +3,17 @@
 # Benchmark Scores:
 Iteration 1: 83.8
 Iteration 2: 85.42
+Iteration 3: 84.49
+Iteration 4: 84.14
+Iteration 5: 83.16
+Iteration 6: 84.2
+Iteration 7: 83.68
+Iteration 8: 83.69
+Iteration 9: 84.2
+Iteration 10: 84.08
 ---
-Avg: 84.61
-95% CI: (83.03, 86.19)
+Avg: 84.09
+95% CI: (83.71, 84.46)
 
 # Inference settings:
 16 bit transformers, temp 1, min_p 0.1, antislop 5.0, default tokenizer prompt format
