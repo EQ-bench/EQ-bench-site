@@ -57,12 +57,15 @@ o1-preview-2024-09-12,80.52,80.31,80.74,,7072,6.99
 CohereForAI/c4ai-command-r-plus-08-2024,76.13,75.34,76.92,104,5566,9.53
 chatgpt-4o-latest-2024-09-03,82.51,82.04,82.99,,6204,4.78
 mistralai/Mistral-Small-Instruct-2409,72.39,70.03,74.75,22,5914,7.05
-*gemini-1.5-pro-002,81.44,81.13,81.76,,4799,6.64
-*Qwen/Qwen2.5-72B-Instruct,72.16,70.06,74.26,72,7344,5.42
-*lemon07r/Gemma-2-Ataraxy-v2-9B,83.28,82.75,83.82,9,4366,13.95
-*Gemma-2-Ataraxy-v2-9B [antislop],84.09,83.71,84.46,9,4492,0.69
-*meta-llama/Llama-3.2-3B-Instruct,62.5,61.13,63.88,3,4968,6.71
-*Llama-3.2-3B-Instruct [antislop],65.64,64.27,67.01,3,4813,0.26`
+gemini-1.5-pro-002,81.44,81.13,81.76,,4799,6.64
+Qwen/Qwen2.5-72B-Instruct,72.16,70.06,74.26,72,7344,5.42
+lemon07r/Gemma-2-Ataraxy-v2-9B,83.28,82.75,83.82,9,4366,13.95
+Gemma-2-Ataraxy-v2-9B [antislop],84.09,83.71,84.46,9,4492,0.69
+meta-llama/Llama-3.2-3B-Instruct,62.5,61.13,63.88,3,4968,6.71
+Llama-3.2-3B-Instruct [antislop],65.64,64.27,67.01,3,4813,0.26
+*claude-3-5-sonnet-20241022,83.0,82.65,83.35,,4710,4.15
+*sam-paech/Quill-v1,79.75,78.5,81.01,9,5910,4.53
+*sam-paech/Darkest-muse-v1,84.25,83.72,84.78,9,7133,5.11`
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
