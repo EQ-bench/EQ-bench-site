@@ -63,10 +63,12 @@ lemon07r/Gemma-2-Ataraxy-v2-9B,83.28,82.75,83.82,9,4366,13.95
 Gemma-2-Ataraxy-v2-9B [antislop],84.09,83.71,84.46,9,4492,0.69
 meta-llama/Llama-3.2-3B-Instruct,62.5,61.13,63.88,3,4968,6.71
 Llama-3.2-3B-Instruct [antislop],65.64,64.27,67.01,3,4813,0.26
-*claude-3-5-sonnet-20241022,83.0,82.65,83.35,,4710,4.15
-*sam-paech/Quill-v1,79.75,78.5,81.01,9,5910,4.53
-*sam-paech/Darkest-muse-v1,84.25,83.72,84.78,9,7133,5.11
-*lemon07r/Gemma-2-Ataraxy-v4d-9B,82.24,81.75,82.72,9,5661,11.58`
+claude-3-5-sonnet-20241022,83.0,82.65,83.35,,4710,4.15
+sam-paech/Quill-v1,79.75,78.5,81.01,9,5910,4.53
+sam-paech/Darkest-muse-v1,84.25,83.72,84.78,9,7133,5.11
+lemon07r/Gemma-2-Ataraxy-v4d-9B,82.24,81.75,82.72,9,5661,11.58
+*mistralai/Mistral-Large-Instruct-2411,75.58,75.15,76.01,123,5003,18.11
+*gpt-4o-2024-11-20,84.59,84.17,85.01,,6642,7.14`
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
