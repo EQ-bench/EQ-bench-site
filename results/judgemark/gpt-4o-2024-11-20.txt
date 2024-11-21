@@ -1,0 +1,44 @@
+# *gpt-4o-2024-11-20
+
+Test model scores:
+51.82 gpt-4-0125-preview
+52.0 claude-3-opus-20240229
+47.63 claude-3-sonnet-20240229
+47.68 claude-3-haiku-20240307
+43.69 mistral-small
+49.38 mistral-medium
+47.99 mistral-large-2402
+36.69 gpt-3.5-turbo-0301
+46.1 01-ai/Yi-34B-Chat
+41.47 openchat/openchat-3.5-1210
+40.81 garage-bAInd/Platypus2-70B-instruct
+46.06 mistralai/Mixtral-8x7B-Instruct-v0.1
+44.82 Qwen/Qwen1.5-14B-Chat
+26.14 Qwen/Qwen1.5-4B-Chat
+34.59 google/gemma-2b-it
+37.1 google/gemma-7b-it
+35.94 meta-llama/Llama-2-7b-chat-hf
+40.32 meta-llama/Llama-2-13b-chat-hf
+51.31 sophosympatheia/Midnight-Miqu-70B-v1.5
+
+Stats:
+ANOVA f-statistic 25.168690613138573
+ANOVA p-value 6.617766497946319e-51
+Self bias: N/A
+Family bias: N/A
+Avg 95% CI: 5.56
+mean_score 43.24
+range 25.86
+std_dev 6.88
+CV 0.16
+std_dev_top_5 1.75
+pearson_arena_elo 0.91
+kendall_arena_elo 0.79
+pearson_eq_bench 0.84
+kendall_eq_bench 0.65
+pearson_top_8_arena_elo 0.85
+kendall_top_8_arena_elo 0.43
+pearson_top_8_eq_bench 0.54
+kendall_top_8_eq_bench 0.33
+Judgemark 67.31
+Cost: $6.50
