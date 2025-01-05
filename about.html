@@ -37,6 +37,7 @@
 				 <li><a href="#magi-hard">MAGI-Hard</a></li>
 				 <li><a href="#creative-writing">Creative Writing</a></li>
 				 <li><a href="#judgemark">Judgemark</a></li>
+				 <li><a href="#buzzbench">BuzzBench</a></li>
 				 <li><a href="#citations">Citations</a></li>
 			</ul>
 	  </div>
@@ -146,6 +147,28 @@
 			<p>The exact normalisation calculation is in lib/judgemark.py of the EQ-Bench pipeline.</p>
 			<p><b>A note on variance:</b> The number of creative writing outputs that are scored per test model is quite low (19 items), to keep the cost of the test manageable. This means the results will vary somewhat between runs, and the 95% confidence intervals are quite high for the individual test model scores. The variance is mitigated to a degree by the fact that there are 19 models tested, so 19x19=361 prompts, each of which involves 36 scored criteria. It should also be noted that the creative writing test (that the judgemark test outputs are sourced from) runs 3x iterations, so the confidence intervals are tighter in the creative writing test than those shown in the judgemark test model score charts.</p>
 			<p>You can run Judgemark with the EQ-Bench pipeline with the code <a href="https://github.com/EQ-bench/EQ-Bench" target="_blank">here</a>.</p>
+		</div>
+
+		<div id="buzzbench" class="section">
+			<p><b>🎤BuzzBench</b> is a humour analysis benchmark.</p>
+			<p>Do you enjoy seeing the jokes from your favourite shows dissected with a blunt machete? Well, you found the right benchmark.</p>
+
+			<p>The task of explaining traditionally constructed jokes is actually pretty straightforward for modern LLMs. So we made things more difficult:</p>
+			<ul>
+				<li>We use the guest intros in the British music pop quiz show <a href="https://www.bbc.co.uk/programmes/b006v0dz" target="_blank">Never Mind The Buzzcocks</a>, because the intro jokes are variously subtle, risque, lazy, obscure, obvious and clever. LLMs find these distinctions hard.</li>
+				<li>In addition to explaining how the joke works, the LLM has to predict whether the joke is actually funny (to the audience and to a comedy writer).</li>
+				<li>The responses are scored by a LLM judge against a human-authored gold response.</li>
+			</ul>
+
+			<p>The responses from SOTA models typically miss a lot of the humour, predict the funniness badly, fabricate and over-analyse. That's good! It's meant to be a hard test. The task encodes some deep complexities including theory of mind understanding and requires an intricate understanding of how jokes work. The show is also very British and exists in a dated cultural context, increasing the interpretation challenge.</p>
+			<p>"Humour is so subjective -- so how can you even make a benchmark around that?"</p>
+			<p>This benchmark is as much about predicting human responses to jokes as it is about joke deconstruction. The questions are explicitly framed around analysing the jokes from the perspective of the show's audience, and from the perspective of a comedy writer. The human authored gold answers ground the judge's answers in a real human's sense of humour. This should mean that there is significant headroom for improvement on the benchmark as language models get better at getting inside our heads.</p>
+			<p><b>The Judge: Claude 3.5 Sonnet.</b> We picked Sonnet 3.5 to act as the judge partly because it scores highest on the Judgemark leaderboard, and partly because it seems least biased to favour longwinded, over-analysed, over-reaching responses. Which is a common failure mode in respondent answers, and something other judges are more easily led astray by.</p>
+			<p>* A note on judge self-bias:</p>
+			<p>We can expect there could be some degree of self-bias with the judge preferring its own outputs, although this is difficult to quantify and disentangle from other sources of bias. We should remain aware that LLM judge benchmarks are not perfect. The upside of a LLM judge using a scoring rubric is that we get nice interpretable results in the form of the judge's analysis and scores. So we have good visibility on whether the judge is doing its job, and can decide for ourselves whether the respondent models are indeed getting the humour, or just talking shite.</p>
+			<p>Models are evaluated using openrouter with temp=0.7. Several (typically 5-10) iterations are performed per model to establish confidence intervals and mitigate variance.</p>
+			<p>BuzzBench source code will be released soon.</p>
+			<p><em>Never Mind The Buzzcocks is a TV series developed by the BBC. Our usage of the work in BuzzBench is non-commercial educational & research, using only a small excerpt of the show's transcript which falls under fair use or "fair dealing" in UK copyright law.</em></p>
 		</div>
 
 		<p><script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#1a1a1a', 'O5O7VUVYO');kofiwidget2.draw();</script> </p>

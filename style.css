@@ -41,11 +41,11 @@ table#leaderboard td, table#leaderboard th {
  }
 
 body {
-	background-color: #e8e8e8;
+	background-color: #d0c8ce;
 }
 
 body .container {
-	background-color: #ffffff;
+	background-color: #f0ecef;
 }
 
 /* Dark Mode Styles */
@@ -424,4 +424,42 @@ body.dark-mode .error-bar::after {
 .length-control-label, .gpt-slop-control-label {
     display: block;
     margin-bottom: 0.5rem; /* Adds some space between label and slider */
+}
+
+/* BuzzBench score container background */
+#leaderboard.buzzbench .score-bar-container {
+    background-color: #5b5b5b !important;
+    border-radius: 5px;
+}
+
+/* BuzzBench score bar */
+.buzzbench-score-bar {
+    display: none;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(to right, 
+        #000000, 
+        #ff1493, 
+        #ff1493, 
+        #000000
+    );
+    border-radius: 5px;
+    transition: width 0.5s ease;
+    z-index: 1;
+}
+
+/* BuzzBench score text */
+#leaderboard.buzzbench .score-bar-container .score-text {
+    color: white !important;
+    z-index: 2;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+/* BuzzBench error bars */
+#leaderboard.buzzbench .error-bar, 
+#leaderboard.buzzbench .error-bar::before,
+#leaderboard.buzzbench .error-bar::after {
+    background-color: rgba(255, 255, 255, 0.6) !important;
 }
