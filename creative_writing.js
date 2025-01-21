@@ -69,7 +69,7 @@ sam-paech/Darkest-muse-v1,84.25,83.72,84.78,9,7133,5.11
 lemon07r/Gemma-2-Ataraxy-v4d-9B,82.24,81.75,82.72,9,5661,11.58
 mistralai/Mistral-Large-Instruct-2411,75.58,75.15,76.01,123,5003,18.11
 gpt-4o-2024-11-20,84.59,84.17,85.01,,6642,7.14
-*deepseek-ai/DeepSeek-R1,87.11,86.64,87.59,18x37,5301,5.23
+*deepseek-ai/DeepSeek-R1,87.11,86.64,87.59,671B-37A,5301,5.23
 *deepseek-ai/DeepSeek-V3,81.19,80.76,81.61,671B-37A,6402,9.32`
 
 function setupDarkModeToggle() {
