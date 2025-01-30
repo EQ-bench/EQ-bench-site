@@ -70,7 +70,11 @@ lemon07r/Gemma-2-Ataraxy-v4d-9B,82.24,81.75,82.72,9,5661,11.58
 mistralai/Mistral-Large-Instruct-2411,75.58,75.15,76.01,123,5003,18.11
 gpt-4o-2024-11-20,84.59,84.17,85.01,,6642,7.14
 *deepseek-ai/DeepSeek-R1,87.11,86.64,87.59,671B-37A,5301,5.23
-*deepseek-ai/DeepSeek-V3,81.19,80.76,81.61,671B-37A,6402,9.32`
+*deepseek-ai/DeepSeek-V3,81.19,80.76,81.61,671B-37A,6402,9.32
+*mistralai/mistral-small-24b-instruct-2501,67.55,67.55,67.55,24,5836,10.62
+*gemini-2.0-flash-thinking-exp-1219,82.5,81.08,83.92,,7476,8.79
+*grok-beta,78.11,76.55,79.67,,4768,14.84
+*deepseek/deepseek-r1-distill-llama-70b,76.17,76.17,76.17,70,6509,8.7`
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
