@@ -74,7 +74,9 @@ gpt-4o-2024-11-20,84.59,84.17,85.01,,6642,7.14
 *mistralai/mistral-small-24b-instruct-2501,67.55,67.55,67.55,24,5836,10.62
 *gemini-2.0-flash-thinking-exp-1219,82.5,81.08,83.92,,7476,8.79
 *grok-beta,78.11,76.55,79.67,,4768,14.84
-*deepseek/deepseek-r1-distill-llama-70b,76.17,76.17,76.17,70,6509,8.7`
+*deepseek-ai/deepseek-r1-distill-llama-70b,76.17,76.17,76.17,70,6509,8.7
+*deepseek-ai/deepseek-r1-distill-qwen-14b,55.0,55.0,55.0,14,8000,8.55
+*deepseek-ai/deepseek-r1-distill-qwen-32b,73.05,73.05,73.05,32,5525,8.88`
 
 function setupDarkModeToggle() {
 	var toggle = document.getElementById('darkModeToggle');
