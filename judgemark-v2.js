@@ -11,7 +11,7 @@
 const leaderboardDataV2 = `
 ministral/Ministral-3b-instruct,7.5,15.06,0.0,0.099,0.013,0.094,0.858,0.012,0.363,$0.30
 gpt-4o-mini,44.05,44.35,0.628,0.438,0.298,0.324,3.149,0.109,1.187,$1.65
-deepseek-ai/deepseek-r1,76.97,71.77,0.863,0.821,0.905,0.683,6.098,0.6,2.195,$69.80
+deepseek-ai/deepseek-r1,76.97,71.77,0.863,0.821,0.905,0.683,6.098,0.6,2.195,$13.80
 claude-3.5-haiku-20241022,77.64,76.88,0.898,0.832,0.891,0.665,5.975,0.575,2.229,$10.64
 claude-3.5-sonnet-20240620,78.84,74.72,0.905,0.83,0.902,0.664,6.255,0.591,2.232,$44.06
 microsoft/wizardlm-2-8x22b,55.42,52.86,0.749,0.566,0.463,0.417,4.62,0.198,1.53,$5.89
@@ -24,6 +24,7 @@ meta-llama/llama-3.1-405b-instruct,60.09,58.76,0.791,0.633,0.582,0.471,4.515,0.2
 mistralai/mistral-small-24b-instruct-2501,63.64,61.23,0.808,0.67,0.618,0.504,5.194,0.286,1.802,$1.13
 qwen/qwq-32b-preview,28.61,31.64,0.234,0.317,0.128,0.171,2.456,0.043,0.879,$2.13
 CohereForAI/c4ai-command-r-08-2024,34.31,33.68,0.427,0.362,0.194,0.246,2.707,0.07,0.99,$1.77
+gemini-pro-1_5,75.83,71.8,0.891,0.811,0.874,0.655,5.832,0.523,2.178,$13.455
 `;
 
 /**
@@ -126,7 +127,7 @@ function loadLeaderboardDataV2() {
     //  7: calibrated_score_range_norm
     //  8: modulated_ci95
     //  9: emd_norm
-    // 10: cost (new)
+    // 10: cost
 
     const model = parts[0] || '';
     const scoreCalibrated = parts[1] || '';
@@ -166,7 +167,7 @@ function loadLeaderboardDataV2() {
 
   // Build final HTML rows
   const rowsHtml = rowData.map(item => {
-    const {
+    let {
       model,
       scoreCalibrated,
       scoreRaw,
@@ -178,9 +179,17 @@ function loadLeaderboardDataV2() {
       scatterLink
     } = item;
 
+    const isNewModel = model.startsWith('*');
+		model = model.replace(/^\*/, '');
+
+
     let displayModel = model.includes('/')
       ? `<a href="https://huggingface.co/${model}" target="_blank">${model.split('/').pop()}</a>`
       : model;
+
+    if (isNewModel) {
+      displayModel = '🆕' + displayModel
+    }
 
     // Score bar for calibrated
     let numericScore = parseFloat(scoreCalibrated);
