@@ -1,0 +1,1128 @@
+{
+    "judge_model": "openai/gpt-4o-mini",
+    "start_time": "2025-01-29T15:36:22.676776",
+    "status": "completed",
+    "samples_file": "data/judgemark_v2.1_samples.json",
+    "prompts_file": "data/judge_prompts.json",
+    "end_time": "2025-01-31T15:23:01.216098",
+    "raw_score_distribution": {
+        "count": 2040,
+        "min": 3.64,
+        "max": 9.5,
+        "mean": 7.073,
+        "median": 7.14,
+        "stdev": 0.848,
+        "p10": 5.93,
+        "p25": 6.54,
+        "p75": 7.68,
+        "p90": 8.07
+    },
+    "calibration_config": {
+        "method": "piecewise_landmark",
+        "in_landmarks": [
+            3.64,
+            6.54,
+            7.14,
+            7.68,
+            9.5
+        ],
+        "out_landmarks": [
+            0,
+            3,
+            5,
+            7,
+            10
+        ]
+    },
+    "calibrated_score_distribution": {
+        "count": 2040,
+        "min": 0.0,
+        "max": 10.0,
+        "mean": 5.025,
+        "median": 5.0,
+        "stdev": 2.068,
+        "p10": 2.369,
+        "p25": 3.0,
+        "p75": 7.0,
+        "p90": 7.643
+    },
+    "raw_model_stats": {
+        "claude-3-5-sonnet-20240620": {
+            "count": 120,
+            "mean": 7.486666666666666,
+            "median": 7.52,
+            "stdev": 0.5615050802816237,
+            "ci95": 0.10046600621717156,
+            "min": 5.79,
+            "max": 8.86,
+            "length_correlation": -0.10567564015106837
+        },
+        "claude-3-haiku-20240307": {
+            "count": 120,
+            "mean": 7.023833333333333,
+            "median": 7.11,
+            "stdev": 0.7128050676207138,
+            "ci95": 0.12753700878235436,
+            "min": 5.29,
+            "max": 8.43,
+            "length_correlation": -0.09444498252537453
+        },
+        "claude-3-opus-20240229": {
+            "count": 120,
+            "mean": 7.34175,
+            "median": 7.375,
+            "stdev": 0.6270467829972711,
+            "ci95": 0.11219290476849307,
+            "min": 5.21,
+            "max": 8.54,
+            "length_correlation": 0.12831908571872552
+        },
+        "gemini-1.5-pro-001": {
+            "count": 120,
+            "mean": 7.43875,
+            "median": 7.46,
+            "stdev": 0.648418324486139,
+            "ci95": 0.11601675872011583,
+            "min": 5.39,
+            "max": 8.82,
+            "length_correlation": -0.17682831553537287
+        },
+        "Llama-3-70b-chat-hf": {
+            "count": 120,
+            "mean": 7.1730833333333335,
+            "median": 7.21,
+            "stdev": 0.6631942005318259,
+            "ci95": 0.11866049838837599,
+            "min": 5.18,
+            "max": 8.57,
+            "length_correlation": -0.15551940083296809
+        },
+        "Mixtral-8x7B-Instruct-v0.1": {
+            "count": 120,
+            "mean": 6.911333333333333,
+            "median": 6.89,
+            "stdev": 0.8039147215667969,
+            "ci95": 0.1438385942554557,
+            "min": 5.0,
+            "max": 8.86,
+            "length_correlation": -0.36343809650914266
+        },
+        "Llama-2-13b-chat-hf": {
+            "count": 120,
+            "mean": 6.468833333333333,
+            "median": 6.52,
+            "stdev": 0.8276921273656536,
+            "ci95": 0.14809291195035176,
+            "min": 4.75,
+            "max": 8.64,
+            "length_correlation": -0.0815811205118001
+        },
+        "gemma-7b-it": {
+            "count": 120,
+            "mean": 6.6595,
+            "median": 6.68,
+            "stdev": 0.9064603334589185,
+            "ci95": 0.16218633222557416,
+            "min": 4.07,
+            "max": 8.61,
+            "length_correlation": 0.07607290156174573
+        },
+        "gemma-2b-it": {
+            "count": 120,
+            "mean": 6.46025,
+            "median": 6.54,
+            "stdev": 0.9571416326970721,
+            "ci95": 0.17125436723213347,
+            "min": 4.43,
+            "max": 8.39,
+            "length_correlation": -0.08291320025362121
+        },
+        "Mixtral-8x22B-Instruct-v0.1": {
+            "count": 120,
+            "mean": 6.966583333333333,
+            "median": 7.02,
+            "stdev": 0.762022404039214,
+            "ci95": 0.13634310760542048,
+            "min": 4.68,
+            "max": 8.39,
+            "length_correlation": -0.05366841398411633
+        },
+        "c4ai-command-r-08-2024": {
+            "count": 120,
+            "mean": 6.976666666666667,
+            "median": 6.945,
+            "stdev": 0.7033549056125931,
+            "ci95": 0.12584616026040515,
+            "min": 5.21,
+            "max": 8.46,
+            "length_correlation": 0.020734617874437172
+        },
+        "gemini-1.5-pro-002": {
+            "count": 120,
+            "mean": 7.550916666666667,
+            "median": 7.61,
+            "stdev": 0.6621203473249684,
+            "ci95": 0.11846836167092657,
+            "min": 5.96,
+            "max": 8.96,
+            "length_correlation": -0.1457918795169273
+        },
+        "Mistral-Large-Instruct-2411": {
+            "count": 120,
+            "mean": 7.24575,
+            "median": 7.305,
+            "stdev": 0.6133742774209566,
+            "ci95": 0.10974658312605061,
+            "min": 5.54,
+            "max": 8.75,
+            "length_correlation": -0.016501224540276783
+        },
+        "gpt-4o-2024-11-20": {
+            "count": 120,
+            "mean": 7.554833333333333,
+            "median": 7.625,
+            "stdev": 0.6742004082438622,
+            "ci95": 0.12062975881228938,
+            "min": 5.82,
+            "max": 9.0,
+            "length_correlation": 0.11224041128178484
+        },
+        "DeepSeek-R1": {
+            "count": 120,
+            "mean": 7.803833333333333,
+            "median": 7.945,
+            "stdev": 0.7297854909116089,
+            "ci95": 0.13057519200067472,
+            "min": 6.18,
+            "max": 9.5,
+            "length_correlation": -0.11742833734667601
+        },
+        "gpt-3.5-turbo-0125": {
+            "count": 120,
+            "mean": 6.6225,
+            "median": 6.61,
+            "stdev": 0.8178330149462875,
+            "ci95": 0.14632889291579015,
+            "min": 4.79,
+            "max": 8.11,
+            "length_correlation": -0.06128137577706057
+        },
+        "databricks/dbrx-instruct": {
+            "count": 120,
+            "mean": 6.55225,
+            "median": 6.555,
+            "stdev": 0.866152957264565,
+            "ci95": 0.15497442756157936,
+            "min": 3.64,
+            "max": 8.71,
+            "length_correlation": -0.1541859080198592
+        }
+    },
+    "calibrated_model_stats": {
+        "claude-3-5-sonnet-20240620": {
+            "count": 120,
+            "mean": 6.065051635252785,
+            "median": 6.407407407407408,
+            "stdev": 1.57014682934,
+            "ci95": 0.28093491342807925,
+            "min": 2.224137931034483,
+            "max": 8.945054945054943,
+            "length_correlation": -0.11649818870883163
+        },
+        "claude-3-haiku-20240307": {
+            "count": 120,
+            "mean": 4.857338696850191,
+            "median": 4.900000000000002,
+            "stdev": 1.862189029802964,
+            "ci95": 0.33318789306750285,
+            "min": 1.706896551724138,
+            "max": 8.236263736263735,
+            "length_correlation": -0.07964084354673681
+        },
+        "claude-3-opus-20240229": {
+            "count": 120,
+            "mean": 5.6660911587348375,
+            "median": 5.870370370370371,
+            "stdev": 1.7571564702314328,
+            "ci95": 0.31439518369855746,
+            "min": 1.6241379310344826,
+            "max": 8.417582417582416,
+            "length_correlation": 0.14340222615104228
+        },
+        "gemini-1.5-pro-001": {
+            "count": 120,
+            "mean": 5.915674193835114,
+            "median": 6.185185185185186,
+            "stdev": 1.7531884808050036,
+            "ci95": 0.3136852203084037,
+            "min": 1.8103448275862064,
+            "max": 8.87912087912088,
+            "length_correlation": -0.13989586439552323
+        },
+        "Llama-3-70b-chat-hf": {
+            "count": 120,
+            "mean": 5.200723057274782,
+            "median": 5.25925925925926,
+            "stdev": 1.8341145170719524,
+            "ci95": 0.32816472538901414,
+            "min": 1.5931034482758615,
+            "max": 8.467032967032967,
+            "length_correlation": -0.14687376277080483
+        },
+        "Mixtral-8x7B-Instruct-v0.1": {
+            "count": 120,
+            "mean": 4.555028829195496,
+            "median": 4.166666666666666,
+            "stdev": 1.9529325632210803,
+            "ci95": 0.34942397126643937,
+            "min": 1.4068965517241379,
+            "max": 8.945054945054943,
+            "length_correlation": -0.3492822732221353
+        },
+        "Llama-2-13b-chat-hf": {
+            "count": 120,
+            "mean": 3.615276058551921,
+            "median": 2.979310344827586,
+            "stdev": 1.7508213938339918,
+            "ci95": 0.3132616947114011,
+            "min": 1.1482758620689655,
+            "max": 8.582417582417584,
+            "length_correlation": -0.10541825572241562
+        },
+        "gemma-7b-it": {
+            "count": 120,
+            "mean": 4.083761525830492,
+            "median": 3.466666666666666,
+            "stdev": 2.0201195647906682,
+            "ci95": 0.3614452511345002,
+            "min": 0.44482758620689666,
+            "max": 8.532967032967033,
+            "length_correlation": 0.07041636678406568
+        },
+        "gemma-2b-it": {
+            "count": 120,
+            "mean": 3.7125384545212134,
+            "median": 3.0,
+            "stdev": 1.9969471600376925,
+            "ci95": 0.35729918186151755,
+            "min": 0.8172413793103445,
+            "max": 8.170329670329672,
+            "length_correlation": -0.014373010893640065
+        },
+        "Mixtral-8x22B-Instruct-v0.1": {
+            "count": 120,
+            "mean": 4.735628815628816,
+            "median": 4.600000000000001,
+            "stdev": 1.8930766174463105,
+            "ci95": 0.3387143837105679,
+            "min": 1.075862068965517,
+            "max": 8.170329670329672,
+            "length_correlation": -0.05446878673163416
+        },
+        "c4ai-command-r-08-2024": {
+            "count": 120,
+            "mean": 4.69434350132626,
+            "median": 4.35,
+            "stdev": 1.8531523704929238,
+            "ci95": 0.3315710295656275,
+            "min": 1.6241379310344826,
+            "max": 8.285714285714288,
+            "length_correlation": -0.006333655131562546
+        },
+        "gemini-1.5-pro-002": {
+            "count": 120,
+            "mean": 6.199664365009193,
+            "median": 6.740740740740743,
+            "stdev": 1.7664257896909081,
+            "ci95": 0.3160536753830451,
+            "min": 2.4,
+            "max": 9.109890109890111,
+            "length_correlation": -0.1540139893413178
+        },
+        "Mistral-Large-Instruct-2411": {
+            "count": 120,
+            "mean": 5.373844563269851,
+            "median": 5.6111111111111125,
+            "stdev": 1.7707287615667953,
+            "ci95": 0.31682357473821804,
+            "min": 1.9655172413793103,
+            "max": 8.763736263736263,
+            "length_correlation": -0.05977292384722522
+        },
+        "gpt-4o-2024-11-20": {
+            "count": 120,
+            "mean": 6.193891461879968,
+            "median": 6.796296296296298,
+            "stdev": 1.788305995166103,
+            "ci95": 0.3199685408695717,
+            "min": 2.2551724137931037,
+            "max": 9.175824175824175,
+            "length_correlation": 0.12429936611686927
+        },
+        "DeepSeek-R1": {
+            "count": 120,
+            "mean": 6.76419727356509,
+            "median": 7.436813186813187,
+            "stdev": 1.849892144958842,
+            "ci95": 0.3309877012035543,
+            "min": 2.6275862068965514,
+            "max": 10.0,
+            "length_correlation": -0.09528243684993593
+        },
+        "gpt-3.5-turbo-0125": {
+            "count": 120,
+            "mean": 3.9636080352172307,
+            "median": 3.2333333333333343,
+            "stdev": 1.8922789482018936,
+            "ci95": 0.3385716625739601,
+            "min": 1.189655172413793,
+            "max": 7.708791208791208,
+            "length_correlation": -0.09436266782980293
+        },
+        "databricks/dbrx-instruct": {
+            "count": 120,
+            "mean": 3.8239861479516657,
+            "median": 3.0500000000000007,
+            "stdev": 1.861885411101722,
+            "ci95": 0.333133568789063,
+            "min": 0.0,
+            "max": 8.697802197802199,
+            "length_correlation": -0.12529077553396356
+        }
+    },
+    "raw_cross_model_stats": {
+        "anova_f": 38.43570465646321,
+        "anova_p": 2.1258939814461565e-104,
+        "kw_stat": 446.58597022428546,
+        "kw_p": 6.005539363922955e-85,
+        "std_dev_across_models": 0.40918960945503846,
+        "pearson_r": 0.9289204003253412,
+        "kendall_tau": 0.8235294117647058,
+        "normalized_components": {
+            "pearson_r": 0.7630680010844706,
+            "kendall_tau": 0.8039215686274509,
+            "anova_f": 0.1098162990184663,
+            "kw_stat": 0.2977239801495236,
+            "std_dev": 0.18599527702501747,
+            "ci99_overlap_magnitude_sum_norm": 0.7362593283920886,
+            "raw_score_range_norm": 0.16794791666666664,
+            "kendall_tau_bootstrapped": 0.6529264705882353
+        }
+    },
+    "calibrated_cross_model_stats": {
+        "anova_f": 35.16435920500956,
+        "anova_p": 8.37137185175789e-96,
+        "kw_stat": 446.58597022428546,
+        "kw_p": 6.005539363922955e-85,
+        "std_dev_across_models": 0.9645594281883361,
+        "pearson_r": 0.9236462195474132,
+        "kendall_tau": 0.7970588235294117,
+        "normalized_components": {
+            "pearson_r": 0.7454873984913775,
+            "kendall_tau": 0.7745098039215685,
+            "anova_f": 0.10046959772859874,
+            "kw_stat": 0.2977239801495236,
+            "std_dev": 0.4384361037219709,
+            "ci99_overlap_magnitude_sum_norm": 0.3242524241832798,
+            "calibrated_score_range_norm": 0.39361515187664614,
+            "kendall_tau_bootstrapped": 0.6282156862745097
+        }
+    },
+    "separability_metrics": {
+        "raw": {
+            "ci99_overlap_adjacent": {
+                "DeepSeek-R1__gpt-4o-2024-11-20": true,
+                "gpt-4o-2024-11-20__gemini-1.5-pro-002": true,
+                "gemini-1.5-pro-002__claude-3-5-sonnet-20240620": true,
+                "claude-3-5-sonnet-20240620__gemini-1.5-pro-001": true,
+                "gemini-1.5-pro-001__claude-3-opus-20240229": true,
+                "claude-3-opus-20240229__Mistral-Large-Instruct-2411": true,
+                "Mistral-Large-Instruct-2411__Llama-3-70b-chat-hf": true,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": true,
+                "claude-3-haiku-20240307__c4ai-command-r-08-2024": true,
+                "c4ai-command-r-08-2024__Mixtral-8x22B-Instruct-v0.1": true,
+                "Mixtral-8x22B-Instruct-v0.1__Mixtral-8x7B-Instruct-v0.1": true,
+                "Mixtral-8x7B-Instruct-v0.1__gemma-7b-it": true,
+                "gemma-7b-it__gpt-3.5-turbo-0125": true,
+                "gpt-3.5-turbo-0125__databricks/dbrx-instruct": true,
+                "databricks/dbrx-instruct__Llama-2-13b-chat-hf": true,
+                "Llama-2-13b-chat-hf__gemma-2b-it": true
+            },
+            "adjacent_overlap_fraction": 1.0,
+            "ci99_overlap_magnitude_adjacent": {
+                "DeepSeek-R1__gpt-4o-2024-11-20": 0.24619980114841233,
+                "gpt-4o-2024-11-20__gemini-1.5-pro-002": 0.467072873778676,
+                "gemini-1.5-pro-002__claude-3-5-sonnet-20240620": 0.36733486762253964,
+                "claude-3-5-sonnet-20240620__gemini-1.5-pro-001": 0.3788353611180941,
+                "gemini-1.5-pro-001__claude-3-opus-20240229": 0.35286923869922937,
+                "claude-3-opus-20240229__Mistral-Large-Instruct-2411": 0.3415088544898488,
+                "Mistral-Large-Instruct-2411__Llama-3-70b-chat-hf": 0.3775917417794634,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": 0.33607863782989167,
+                "claude-3-haiku-20240307__c4ai-command-r-08-2024": 0.4523270515831479,
+                "c4ai-command-r-08-2024__Mixtral-8x22B-Instruct-v0.1": 0.49616055204774767,
+                "Mixtral-8x22B-Instruct-v0.1__Mixtral-8x7B-Instruct-v0.1": 0.49707161069243355,
+                "Mixtral-8x7B-Instruct-v0.1__gemma-7b-it": 0.351432972722459,
+                "gemma-7b-it__gpt-3.5-turbo-0125": 0.5711754266659019,
+                "gpt-3.5-turbo-0125__databricks/dbrx-instruct": 0.5237086138843328,
+                "databricks/dbrx-instruct__Llama-2-13b-chat-hf": 0.5140193543002489,
+                "Llama-2-13b-chat-hf__gemma-2b-it": 0.5838705034432703
+            },
+            "ci99_overlap_magnitude_sum": 6.857257461805697,
+            "ci99_overlap_scale_factor": 1.5,
+            "average_cohens_d_adjacent": 0.1167708883544535,
+            "emd": {
+                "average": 0.5052181372549017,
+                "pairs": {
+                    "claude-3-5-sonnet-20240620__claude-3-haiku-20240307": 0.4628333333333333,
+                    "claude-3-5-sonnet-20240620__claude-3-opus-20240229": 0.15041666666666667,
+                    "claude-3-5-sonnet-20240620__gemini-1.5-pro-001": 0.09958333333333337,
+                    "claude-3-5-sonnet-20240620__Llama-3-70b-chat-hf": 0.3135833333333332,
+                    "claude-3-5-sonnet-20240620__Mixtral-8x7B-Instruct-v0.1": 0.5753333333333333,
+                    "claude-3-5-sonnet-20240620__Llama-2-13b-chat-hf": 1.0178333333333334,
+                    "claude-3-5-sonnet-20240620__gemma-7b-it": 0.8271666666666666,
+                    "claude-3-5-sonnet-20240620__gemma-2b-it": 1.0264166666666665,
+                    "claude-3-5-sonnet-20240620__Mixtral-8x22B-Instruct-v0.1": 0.5200833333333333,
+                    "claude-3-5-sonnet-20240620__c4ai-command-r-08-2024": 0.5099999999999999,
+                    "claude-3-5-sonnet-20240620__gemini-1.5-pro-002": 0.11875000000000008,
+                    "claude-3-5-sonnet-20240620__Mistral-Large-Instruct-2411": 0.24158333333333332,
+                    "claude-3-5-sonnet-20240620__gpt-4o-2024-11-20": 0.11983333333333335,
+                    "claude-3-5-sonnet-20240620__DeepSeek-R1": 0.35150000000000003,
+                    "claude-3-5-sonnet-20240620__gpt-3.5-turbo-0125": 0.8641666666666665,
+                    "claude-3-5-sonnet-20240620__databricks/dbrx-instruct": 0.9344166666666665,
+                    "claude-3-haiku-20240307__claude-3-opus-20240229": 0.31925000000000003,
+                    "claude-3-haiku-20240307__gemini-1.5-pro-001": 0.41491666666666666,
+                    "claude-3-haiku-20240307__Llama-3-70b-chat-hf": 0.15108333333333335,
+                    "claude-3-haiku-20240307__Mixtral-8x7B-Instruct-v0.1": 0.14933333333333332,
+                    "claude-3-haiku-20240307__Llama-2-13b-chat-hf": 0.5615000000000001,
+                    "claude-3-haiku-20240307__gemma-7b-it": 0.3716666666666667,
+                    "claude-3-haiku-20240307__gemma-2b-it": 0.56475,
+                    "claude-3-haiku-20240307__Mixtral-8x22B-Instruct-v0.1": 0.06375000000000007,
+                    "claude-3-haiku-20240307__c4ai-command-r-08-2024": 0.07633333333333335,
+                    "claude-3-haiku-20240307__gemini-1.5-pro-002": 0.5270833333333333,
+                    "claude-3-haiku-20240307__Mistral-Large-Instruct-2411": 0.22191666666666665,
+                    "claude-3-haiku-20240307__gpt-4o-2024-11-20": 0.5309999999999999,
+                    "claude-3-haiku-20240307__DeepSeek-R1": 0.7799999999999999,
+                    "claude-3-haiku-20240307__gpt-3.5-turbo-0125": 0.4013333333333333,
+                    "claude-3-haiku-20240307__databricks/dbrx-instruct": 0.47624999999999995,
+                    "claude-3-opus-20240229__gemini-1.5-pro-001": 0.10283333333333333,
+                    "claude-3-opus-20240229__Llama-3-70b-chat-hf": 0.1781666666666667,
+                    "claude-3-opus-20240229__Mixtral-8x7B-Instruct-v0.1": 0.4424166666666667,
+                    "claude-3-opus-20240229__Llama-2-13b-chat-hf": 0.87575,
+                    "claude-3-opus-20240229__gemma-7b-it": 0.6834166666666667,
+                    "claude-3-opus-20240229__gemma-2b-it": 0.8815000000000002,
+                    "claude-3-opus-20240229__Mixtral-8x22B-Instruct-v0.1": 0.37516666666666676,
+                    "claude-3-opus-20240229__c4ai-command-r-08-2024": 0.3650833333333333,
+                    "claude-3-opus-20240229__gemini-1.5-pro-002": 0.20966666666666667,
+                    "claude-3-opus-20240229__Mistral-Large-Instruct-2411": 0.1283333333333334,
+                    "claude-3-opus-20240229__gpt-4o-2024-11-20": 0.2130833333333333,
+                    "claude-3-opus-20240229__DeepSeek-R1": 0.46208333333333323,
+                    "claude-3-opus-20240229__gpt-3.5-turbo-0125": 0.7192500000000002,
+                    "claude-3-opus-20240229__databricks/dbrx-instruct": 0.7923333333333333,
+                    "gemini-1.5-pro-001__Llama-3-70b-chat-hf": 0.26566666666666666,
+                    "gemini-1.5-pro-001__Mixtral-8x7B-Instruct-v0.1": 0.5280833333333332,
+                    "gemini-1.5-pro-001__Llama-2-13b-chat-hf": 0.9699166666666666,
+                    "gemini-1.5-pro-001__gemma-7b-it": 0.77925,
+                    "gemini-1.5-pro-001__gemma-2b-it": 0.9784999999999999,
+                    "gemini-1.5-pro-001__Mixtral-8x22B-Instruct-v0.1": 0.47216666666666673,
+                    "gemini-1.5-pro-001__c4ai-command-r-08-2024": 0.4620833333333333,
+                    "gemini-1.5-pro-001__gemini-1.5-pro-002": 0.11400000000000002,
+                    "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": 0.20450000000000007,
+                    "gemini-1.5-pro-001__gpt-4o-2024-11-20": 0.12074999999999991,
+                    "gemini-1.5-pro-001__DeepSeek-R1": 0.3650833333333333,
+                    "gemini-1.5-pro-001__gpt-3.5-turbo-0125": 0.81625,
+                    "gemini-1.5-pro-001__databricks/dbrx-instruct": 0.8865,
+                    "Llama-3-70b-chat-hf__Mixtral-8x7B-Instruct-v0.1": 0.27408333333333335,
+                    "Llama-3-70b-chat-hf__Llama-2-13b-chat-hf": 0.7054166666666668,
+                    "Llama-3-70b-chat-hf__gemma-7b-it": 0.5142499999999999,
+                    "Llama-3-70b-chat-hf__gemma-2b-it": 0.7128333333333334,
+                    "Llama-3-70b-chat-hf__Mixtral-8x22B-Instruct-v0.1": 0.20766666666666672,
+                    "Llama-3-70b-chat-hf__c4ai-command-r-08-2024": 0.19691666666666666,
+                    "Llama-3-70b-chat-hf__gemini-1.5-pro-002": 0.37783333333333335,
+                    "Llama-3-70b-chat-hf__Mistral-Large-Instruct-2411": 0.08099999999999999,
+                    "Llama-3-70b-chat-hf__gpt-4o-2024-11-20": 0.3817499999999999,
+                    "Llama-3-70b-chat-hf__DeepSeek-R1": 0.6307499999999999,
+                    "Llama-3-70b-chat-hf__gpt-3.5-turbo-0125": 0.5505833333333334,
+                    "Llama-3-70b-chat-hf__databricks/dbrx-instruct": 0.6231666666666666,
+                    "Mixtral-8x7B-Instruct-v0.1__Llama-2-13b-chat-hf": 0.4425,
+                    "Mixtral-8x7B-Instruct-v0.1__gemma-7b-it": 0.25416666666666665,
+                    "Mixtral-8x7B-Instruct-v0.1__gemma-2b-it": 0.4510833333333334,
+                    "Mixtral-8x7B-Instruct-v0.1__Mixtral-8x22B-Instruct-v0.1": 0.09908333333333327,
+                    "Mixtral-8x7B-Instruct-v0.1__c4ai-command-r-08-2024": 0.11250000000000002,
+                    "Mixtral-8x7B-Instruct-v0.1__gemini-1.5-pro-002": 0.6395833333333334,
+                    "Mixtral-8x7B-Instruct-v0.1__Mistral-Large-Instruct-2411": 0.34108333333333324,
+                    "Mixtral-8x7B-Instruct-v0.1__gpt-4o-2024-11-20": 0.6434999999999998,
+                    "Mixtral-8x7B-Instruct-v0.1__DeepSeek-R1": 0.8925000000000001,
+                    "Mixtral-8x7B-Instruct-v0.1__gpt-3.5-turbo-0125": 0.28883333333333333,
+                    "Mixtral-8x7B-Instruct-v0.1__databricks/dbrx-instruct": 0.35908333333333325,
+                    "Llama-2-13b-chat-hf__gemma-7b-it": 0.20733333333333337,
+                    "Llama-2-13b-chat-hf__gemma-2b-it": 0.12075000000000007,
+                    "Llama-2-13b-chat-hf__Mixtral-8x22B-Instruct-v0.1": 0.5065833333333334,
+                    "Llama-2-13b-chat-hf__c4ai-command-r-08-2024": 0.5126666666666666,
+                    "Llama-2-13b-chat-hf__gemini-1.5-pro-002": 1.0820833333333333,
+                    "Llama-2-13b-chat-hf__Mistral-Large-Instruct-2411": 0.7769166666666667,
+                    "Llama-2-13b-chat-hf__gpt-4o-2024-11-20": 1.0859999999999999,
+                    "Llama-2-13b-chat-hf__DeepSeek-R1": 1.335,
+                    "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": 0.1718333333333334,
+                    "Llama-2-13b-chat-hf__databricks/dbrx-instruct": 0.12741666666666676,
+                    "gemma-7b-it__gemma-2b-it": 0.20525,
+                    "gemma-7b-it__Mixtral-8x22B-Instruct-v0.1": 0.31441666666666657,
+                    "gemma-7b-it__c4ai-command-r-08-2024": 0.322,
+                    "gemma-7b-it__gemini-1.5-pro-002": 0.8914166666666667,
+                    "gemma-7b-it__Mistral-Large-Instruct-2411": 0.5862499999999999,
+                    "gemma-7b-it__gpt-4o-2024-11-20": 0.8953333333333333,
+                    "gemma-7b-it__DeepSeek-R1": 1.1443333333333334,
+                    "gemma-7b-it__gpt-3.5-turbo-0125": 0.10100000000000003,
+                    "gemma-7b-it__databricks/dbrx-instruct": 0.13475000000000004,
+                    "gemma-2b-it__Mixtral-8x22B-Instruct-v0.1": 0.5075,
+                    "gemma-2b-it__c4ai-command-r-08-2024": 0.5164166666666667,
+                    "gemma-2b-it__gemini-1.5-pro-002": 1.0906666666666667,
+                    "gemma-2b-it__Mistral-Large-Instruct-2411": 0.7854999999999999,
+                    "gemma-2b-it__gpt-4o-2024-11-20": 1.0945833333333332,
+                    "gemma-2b-it__DeepSeek-R1": 1.3435833333333336,
+                    "gemma-2b-it__gpt-3.5-turbo-0125": 0.18125000000000008,
+                    "gemma-2b-it__databricks/dbrx-instruct": 0.1511666666666667,
+                    "Mixtral-8x22B-Instruct-v0.1__c4ai-command-r-08-2024": 0.08241666666666667,
+                    "Mixtral-8x22B-Instruct-v0.1__gemini-1.5-pro-002": 0.5843333333333334,
+                    "Mixtral-8x22B-Instruct-v0.1__Mistral-Large-Instruct-2411": 0.2808333333333334,
+                    "Mixtral-8x22B-Instruct-v0.1__gpt-4o-2024-11-20": 0.5882499999999999,
+                    "Mixtral-8x22B-Instruct-v0.1__DeepSeek-R1": 0.83725,
+                    "Mixtral-8x22B-Instruct-v0.1__gpt-3.5-turbo-0125": 0.34591666666666665,
+                    "Mixtral-8x22B-Instruct-v0.1__databricks/dbrx-instruct": 0.4196666666666666,
+                    "c4ai-command-r-08-2024__gemini-1.5-pro-002": 0.57425,
+                    "c4ai-command-r-08-2024__Mistral-Large-Instruct-2411": 0.26908333333333323,
+                    "c4ai-command-r-08-2024__gpt-4o-2024-11-20": 0.5781666666666666,
+                    "c4ai-command-r-08-2024__DeepSeek-R1": 0.8271666666666666,
+                    "c4ai-command-r-08-2024__gpt-3.5-turbo-0125": 0.3541666666666667,
+                    "c4ai-command-r-08-2024__databricks/dbrx-instruct": 0.42858333333333326,
+                    "gemini-1.5-pro-002__Mistral-Large-Instruct-2411": 0.30616666666666675,
+                    "gemini-1.5-pro-002__gpt-4o-2024-11-20": 0.048916666666666664,
+                    "gemini-1.5-pro-002__DeepSeek-R1": 0.25358333333333327,
+                    "gemini-1.5-pro-002__gpt-3.5-turbo-0125": 0.9284166666666667,
+                    "gemini-1.5-pro-002__databricks/dbrx-instruct": 0.9986666666666667,
+                    "Mistral-Large-Instruct-2411__gpt-4o-2024-11-20": 0.3119166666666667,
+                    "Mistral-Large-Instruct-2411__DeepSeek-R1": 0.5580833333333333,
+                    "Mistral-Large-Instruct-2411__gpt-3.5-turbo-0125": 0.6232500000000001,
+                    "Mistral-Large-Instruct-2411__databricks/dbrx-instruct": 0.6935,
+                    "gpt-4o-2024-11-20__DeepSeek-R1": 0.2526666666666667,
+                    "gpt-4o-2024-11-20__gpt-3.5-turbo-0125": 0.9323333333333332,
+                    "gpt-4o-2024-11-20__databricks/dbrx-instruct": 1.0025833333333334,
+                    "DeepSeek-R1__gpt-3.5-turbo-0125": 1.1813333333333333,
+                    "DeepSeek-R1__databricks/dbrx-instruct": 1.2515833333333335,
+                    "gpt-3.5-turbo-0125__databricks/dbrx-instruct": 0.0889166666666667
+                }
+            },
+            "average_ci95": 0.1319504627348919,
+            "modulated_ci95": 0.2919272208861337
+        },
+        "calibrated": {
+            "ci99_overlap_adjacent": {
+                "DeepSeek-R1__gemini-1.5-pro-002": true,
+                "gemini-1.5-pro-002__gpt-4o-2024-11-20": true,
+                "gpt-4o-2024-11-20__claude-3-5-sonnet-20240620": true,
+                "claude-3-5-sonnet-20240620__gemini-1.5-pro-001": true,
+                "gemini-1.5-pro-001__claude-3-opus-20240229": true,
+                "claude-3-opus-20240229__Mistral-Large-Instruct-2411": true,
+                "Mistral-Large-Instruct-2411__Llama-3-70b-chat-hf": true,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": true,
+                "claude-3-haiku-20240307__Mixtral-8x22B-Instruct-v0.1": true,
+                "Mixtral-8x22B-Instruct-v0.1__c4ai-command-r-08-2024": true,
+                "c4ai-command-r-08-2024__Mixtral-8x7B-Instruct-v0.1": true,
+                "Mixtral-8x7B-Instruct-v0.1__gemma-7b-it": true,
+                "gemma-7b-it__gpt-3.5-turbo-0125": true,
+                "gpt-3.5-turbo-0125__databricks/dbrx-instruct": true,
+                "databricks/dbrx-instruct__gemma-2b-it": true,
+                "gemma-2b-it__Llama-2-13b-chat-hf": true
+            },
+            "adjacent_overlap_fraction": 1.0,
+            "ci99_overlap_magnitude_adjacent": {
+                "DeepSeek-R1__gemini-1.5-pro-002": 0.7109784218678641,
+                "gemini-1.5-pro-002__gpt-4o-2024-11-20": 1.2460719161418048,
+                "gpt-4o-2024-11-20__claude-3-5-sonnet-20240620": 1.055719912799077,
+                "claude-3-5-sonnet-20240620__gemini-1.5-pro-001": 1.0227960011526855,
+                "gemini-1.5-pro-001__claude-3-opus-20240229": 0.9885505692053069,
+                "claude-3-opus-20240229__Mistral-Large-Instruct-2411": 0.9520736404517489,
+                "Mistral-Large-Instruct-2411__Llama-3-70b-chat-hf": 1.0983425990410929,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": 0.9603386915645098,
+                "claude-3-haiku-20240307__Mixtral-8x22B-Instruct-v0.1": 1.2028096904466175,
+                "Mixtral-8x22B-Instruct-v0.1__c4ai-command-r-08-2024": 1.2800469376807673,
+                "c4ai-command-r-08-2024__Mixtral-8x7B-Instruct-v0.1": 1.203129367701031,
+                "Mixtral-8x7B-Instruct-v0.1__gemma-7b-it": 0.9300677277967506,
+                "gemma-7b-it__gpt-3.5-turbo-0125": 1.2597884068179477,
+                "gpt-3.5-turbo-0125__databricks/dbrx-instruct": 1.1845092491823697,
+                "databricks/dbrx-instruct__gemma-2b-it": 1.2496009631427394,
+                "gemma-2b-it__Llama-2-13b-chat-hf": 1.2246128762424129
+            },
+            "ci99_overlap_magnitude_sum": 17.569436971234726,
+            "ci99_overlap_scale_factor": 1.5,
+            "average_cohens_d_adjacent": 0.10756996141803842,
+            "emd": {
+                "average": 1.1871805005527114,
+                "pairs": {
+                    "claude-3-5-sonnet-20240620__claude-3-haiku-20240307": 1.2077129384025933,
+                    "claude-3-5-sonnet-20240620__claude-3-opus-20240229": 0.408026410583882,
+                    "claude-3-5-sonnet-20240620__gemini-1.5-pro-001": 0.2613758134160434,
+                    "claude-3-5-sonnet-20240620__Llama-3-70b-chat-hf": 0.8643285779780032,
+                    "claude-3-5-sonnet-20240620__Mixtral-8x7B-Instruct-v0.1": 1.5100228060572891,
+                    "claude-3-5-sonnet-20240620__Llama-2-13b-chat-hf": 2.449775576700864,
+                    "claude-3-5-sonnet-20240620__gemma-7b-it": 1.9812901094222932,
+                    "claude-3-5-sonnet-20240620__gemma-2b-it": 2.352513180731572,
+                    "claude-3-5-sonnet-20240620__Mixtral-8x22B-Instruct-v0.1": 1.3294228196239692,
+                    "claude-3-5-sonnet-20240620__c4ai-command-r-08-2024": 1.3707081339265246,
+                    "claude-3-5-sonnet-20240620__gemini-1.5-pro-002": 0.27681579489050767,
+                    "claude-3-5-sonnet-20240620__Mistral-Large-Instruct-2411": 0.6923059730818353,
+                    "claude-3-5-sonnet-20240620__gpt-4o-2024-11-20": 0.26864187004991597,
+                    "claude-3-5-sonnet-20240620__DeepSeek-R1": 0.7848544505728412,
+                    "claude-3-5-sonnet-20240620__gpt-3.5-turbo-0125": 2.1014436000355543,
+                    "claude-3-5-sonnet-20240620__databricks/dbrx-instruct": 2.2410654873011198,
+                    "claude-3-haiku-20240307__claude-3-opus-20240229": 0.8101317722294735,
+                    "claude-3-haiku-20240307__gemini-1.5-pro-001": 1.0583354969849221,
+                    "claude-3-haiku-20240307__Llama-3-70b-chat-hf": 0.3452809121487283,
+                    "claude-3-haiku-20240307__Mixtral-8x7B-Instruct-v0.1": 0.36261490744249375,
+                    "claude-3-haiku-20240307__Llama-2-13b-chat-hf": 1.2527769240125566,
+                    "claude-3-haiku-20240307__gemma-7b-it": 0.7856650831076117,
+                    "claude-3-haiku-20240307__gemma-2b-it": 1.1467233192520552,
+                    "claude-3-haiku-20240307__Mixtral-8x22B-Instruct-v0.1": 0.13318053274949848,
+                    "claude-3-haiku-20240307__c4ai-command-r-08-2024": 0.202606323008622,
+                    "claude-3-haiku-20240307__gemini-1.5-pro-002": 1.3423256681590017,
+                    "claude-3-haiku-20240307__Mistral-Large-Instruct-2411": 0.5165058664196593,
+                    "claude-3-haiku-20240307__gpt-4o-2024-11-20": 1.3365527650297762,
+                    "claude-3-haiku-20240307__DeepSeek-R1": 1.9068585767148982,
+                    "claude-3-haiku-20240307__gpt-3.5-turbo-0125": 0.8937306616329606,
+                    "claude-3-haiku-20240307__databricks/dbrx-instruct": 1.0410448565908337,
+                    "claude-3-opus-20240229__gemini-1.5-pro-001": 0.2610304595362067,
+                    "claude-3-opus-20240229__Llama-3-70b-chat-hf": 0.47918583545020327,
+                    "claude-3-opus-20240229__Mixtral-8x7B-Instruct-v0.1": 1.1308425493195609,
+                    "claude-3-opus-20240229__Llama-2-13b-chat-hf": 2.0554854298532463,
+                    "claude-3-opus-20240229__gemma-7b-it": 1.5842527098274226,
+                    "claude-3-opus-20240229__gemma-2b-it": 1.9535527042136243,
+                    "claude-3-opus-20240229__Mixtral-8x22B-Instruct-v0.1": 0.9304623431060215,
+                    "claude-3-opus-20240229__c4ai-command-r-08-2024": 0.971747657408577,
+                    "claude-3-opus-20240229__gemini-1.5-pro-002": 0.5340904476536661,
+                    "claude-3-opus-20240229__Mistral-Large-Instruct-2411": 0.3349029046730197,
+                    "claude-3-opus-20240229__gpt-4o-2024-11-20": 0.5278003031451306,
+                    "claude-3-opus-20240229__DeepSeek-R1": 1.0981061148302524,
+                    "claude-3-opus-20240229__gpt-3.5-turbo-0125": 1.7024831235176066,
+                    "claude-3-opus-20240229__databricks/dbrx-instruct": 1.8467753404535014,
+                    "gemini-1.5-pro-001__Llama-3-70b-chat-hf": 0.714951136560332,
+                    "gemini-1.5-pro-001__Mixtral-8x7B-Instruct-v0.1": 1.3617442657385186,
+                    "gemini-1.5-pro-001__Llama-2-13b-chat-hf": 2.300398135283193,
+                    "gemini-1.5-pro-001__gemma-7b-it": 1.8319126680046223,
+                    "gemini-1.5-pro-001__gemma-2b-it": 2.2031357393139004,
+                    "gemini-1.5-pro-001__Mixtral-8x22B-Instruct-v0.1": 1.180045378206298,
+                    "gemini-1.5-pro-001__c4ai-command-r-08-2024": 1.2213306925088534,
+                    "gemini-1.5-pro-001__gemini-1.5-pro-002": 0.2888156288156287,
+                    "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": 0.5537261822894008,
+                    "gemini-1.5-pro-001__gpt-4o-2024-11-20": 0.29133774484349173,
+                    "gemini-1.5-pro-001__DeepSeek-R1": 0.8485230797299761,
+                    "gemini-1.5-pro-001__gpt-3.5-turbo-0125": 1.952066158617883,
+                    "gemini-1.5-pro-001__databricks/dbrx-instruct": 2.0916880458834486,
+                    "Llama-3-70b-chat-hf__Mixtral-8x7B-Instruct-v0.1": 0.6660238984089561,
+                    "Llama-3-70b-chat-hf__Llama-2-13b-chat-hf": 1.587370075645938,
+                    "Llama-3-70b-chat-hf__gemma-7b-it": 1.1180604325431913,
+                    "Llama-3-70b-chat-hf__gemma-2b-it": 1.4881846027535688,
+                    "Llama-3-70b-chat-hf__Mixtral-8x22B-Instruct-v0.1": 0.46701731856904294,
+                    "Llama-3-70b-chat-hf__c4ai-command-r-08-2024": 0.5068967973278318,
+                    "Llama-3-70b-chat-hf__gemini-1.5-pro-002": 0.9989413077344111,
+                    "Llama-3-70b-chat-hf__Mistral-Large-Instruct-2411": 0.18798109085465403,
+                    "Llama-3-70b-chat-hf__gpt-4o-2024-11-20": 0.993168404605186,
+                    "Llama-3-70b-chat-hf__DeepSeek-R1": 1.5634742162903081,
+                    "Llama-3-70b-chat-hf__gpt-3.5-turbo-0125": 1.237115022057551,
+                    "Llama-3-70b-chat-hf__databricks/dbrx-instruct": 1.3805830631692704,
+                    "Mixtral-8x7B-Instruct-v0.1__Llama-2-13b-chat-hf": 0.9397527706435753,
+                    "Mixtral-8x7B-Instruct-v0.1__gemma-7b-it": 0.4799092786736465,
+                    "Mixtral-8x7B-Instruct-v0.1__gemma-2b-it": 0.8424903746742829,
+                    "Mixtral-8x7B-Instruct-v0.1__Mixtral-8x22B-Instruct-v0.1": 0.25359172011470854,
+                    "Mixtral-8x7B-Instruct-v0.1__c4ai-command-r-08-2024": 0.21955548070490605,
+                    "Mixtral-8x7B-Instruct-v0.1__gemini-1.5-pro-002": 1.644635535813697,
+                    "Mixtral-8x7B-Instruct-v0.1__Mistral-Large-Instruct-2411": 0.8298047450633659,
+                    "Mixtral-8x7B-Instruct-v0.1__gpt-4o-2024-11-20": 1.638862632684472,
+                    "Mixtral-8x7B-Instruct-v0.1__DeepSeek-R1": 2.2091684443695936,
+                    "Mixtral-8x7B-Instruct-v0.1__gpt-3.5-turbo-0125": 0.5914207939782654,
+                    "Mixtral-8x7B-Instruct-v0.1__databricks/dbrx-instruct": 0.7310426812438306,
+                    "Llama-2-13b-chat-hf__gemma-7b-it": 0.4871592073316212,
+                    "Llama-2-13b-chat-hf__gemma-2b-it": 0.2457736165494787,
+                    "Llama-2-13b-chat-hf__Mixtral-8x22B-Instruct-v0.1": 1.1341970162659818,
+                    "Llama-2-13b-chat-hf__c4ai-command-r-08-2024": 1.0870344757413726,
+                    "Llama-2-13b-chat-hf__gemini-1.5-pro-002": 2.5843883064572726,
+                    "Llama-2-13b-chat-hf__Mistral-Large-Instruct-2411": 1.75856850471793,
+                    "Llama-2-13b-chat-hf__gpt-4o-2024-11-20": 2.578615403328047,
+                    "Llama-2-13b-chat-hf__DeepSeek-R1": 3.1489212150131687,
+                    "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": 0.3782770316103652,
+                    "Llama-2-13b-chat-hf__databricks/dbrx-instruct": 0.2579105441174409,
+                    "gemma-7b-it__gemma-2b-it": 0.37742996786100247,
+                    "gemma-7b-it__Mixtral-8x22B-Instruct-v0.1": 0.6639552018862362,
+                    "gemma-7b-it__c4ai-command-r-08-2024": 0.6185490084628016,
+                    "gemma-7b-it__gemini-1.5-pro-002": 2.1159028391787014,
+                    "gemma-7b-it__Mistral-Large-Instruct-2411": 1.2900830374393593,
+                    "gemma-7b-it__gpt-4o-2024-11-20": 2.1101299360494763,
+                    "gemma-7b-it__DeepSeek-R1": 2.680435747734598,
+                    "gemma-7b-it__gpt-3.5-turbo-0125": 0.18813986779504024,
+                    "gemma-7b-it__databricks/dbrx-instruct": 0.28924676855711334,
+                    "gemma-2b-it__Mixtral-8x22B-Instruct-v0.1": 1.0250134380306795,
+                    "gemma-2b-it__c4ai-command-r-08-2024": 0.9818050468050471,
+                    "gemma-2b-it__gemini-1.5-pro-002": 2.48712591048798,
+                    "gemma-2b-it__Mistral-Large-Instruct-2411": 1.6613061087486374,
+                    "gemma-2b-it__gpt-4o-2024-11-20": 2.4813530073587544,
+                    "gemma-2b-it__DeepSeek-R1": 3.051658819043877,
+                    "gemma-2b-it__gpt-3.5-turbo-0125": 0.2837584967182669,
+                    "gemma-2b-it__databricks/dbrx-instruct": 0.24205672041878953,
+                    "Mixtral-8x22B-Instruct-v0.1__c4ai-command-r-08-2024": 0.16933889333314622,
+                    "Mixtral-8x22B-Instruct-v0.1__gemini-1.5-pro-002": 1.4640355493803772,
+                    "Mixtral-8x22B-Instruct-v0.1__Mistral-Large-Instruct-2411": 0.6409630003882878,
+                    "Mixtral-8x22B-Instruct-v0.1__gpt-4o-2024-11-20": 1.4582626462511519,
+                    "Mixtral-8x22B-Instruct-v0.1__DeepSeek-R1": 2.0285684579362737,
+                    "Mixtral-8x22B-Instruct-v0.1__gpt-3.5-turbo-0125": 0.7739173321357231,
+                    "Mixtral-8x22B-Instruct-v0.1__databricks/dbrx-instruct": 0.9204338764683591,
+                    "c4ai-command-r-08-2024__gemini-1.5-pro-002": 1.5053208636829325,
+                    "c4ai-command-r-08-2024__Mistral-Large-Instruct-2411": 0.6795010619435906,
+                    "c4ai-command-r-08-2024__gpt-4o-2024-11-20": 1.4995479605537074,
+                    "c4ai-command-r-08-2024__DeepSeek-R1": 2.0698537722388295,
+                    "c4ai-command-r-08-2024__gpt-3.5-turbo-0125": 0.7307354661090295,
+                    "c4ai-command-r-08-2024__databricks/dbrx-instruct": 0.8772254852427266,
+                    "gemini-1.5-pro-002__Mistral-Large-Instruct-2411": 0.8268542844979628,
+                    "gemini-1.5-pro-002__gpt-4o-2024-11-20": 0.10937621339920188,
+                    "gemini-1.5-pro-002__DeepSeek-R1": 0.5652225637283106,
+                    "gemini-1.5-pro-002__gpt-3.5-turbo-0125": 2.2360563297919622,
+                    "gemini-1.5-pro-002__databricks/dbrx-instruct": 2.3756782170575277,
+                    "Mistral-Large-Instruct-2411__gpt-4o-2024-11-20": 0.8229779330928755,
+                    "Mistral-Large-Instruct-2411__DeepSeek-R1": 1.3903527102952387,
+                    "Mistral-Large-Instruct-2411__gpt-3.5-turbo-0125": 1.4102365280526201,
+                    "Mistral-Large-Instruct-2411__databricks/dbrx-instruct": 1.5498584153181854,
+                    "gpt-4o-2024-11-20__DeepSeek-R1": 0.5752483404207542,
+                    "gpt-4o-2024-11-20__gpt-3.5-turbo-0125": 2.230283426662737,
+                    "gpt-4o-2024-11-20__databricks/dbrx-instruct": 2.369905313928302,
+                    "DeepSeek-R1__gpt-3.5-turbo-0125": 2.8005892383478592,
+                    "DeepSeek-R1__databricks/dbrx-instruct": 2.9402111256134242,
+                    "gpt-3.5-turbo-0125__databricks/dbrx-instruct": 0.16711715062289773
+                }
+            },
+            "average_ci95": 0.3280954218646484,
+            "modulated_ci95": 0.10927725638918351
+        }
+    },
+    "calibrated_score_range": 3.148921215013169,
+    "final_judgemark_score": 0.4404653640836555,
+    "iteration_stability": {
+        "raw": {
+            "scoring_stability": {
+                "claude-3-5-sonnet-20240620": {
+                    "mean_iter_score": 7.486666666666666,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.13161285820330956
+                },
+                "claude-3-haiku-20240307": {
+                    "mean_iter_score": 7.023833333333333,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.13383769191740322
+                },
+                "claude-3-opus-20240229": {
+                    "mean_iter_score": 7.34175,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.07048561713017938
+                },
+                "gemini-1.5-pro-001": {
+                    "mean_iter_score": 7.43875,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.07192588778272621
+                },
+                "Llama-3-70b-chat-hf": {
+                    "mean_iter_score": 7.1730833333333335,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.06074056854085798
+                },
+                "Mixtral-8x7B-Instruct-v0.1": {
+                    "mean_iter_score": 6.911333333333333,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.11690463825034668
+                },
+                "Llama-2-13b-chat-hf": {
+                    "mean_iter_score": 6.468833333333333,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.08779766828085812
+                },
+                "gemma-7b-it": {
+                    "mean_iter_score": 6.6594999999999995,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.11517571117403372
+                },
+                "gemma-2b-it": {
+                    "mean_iter_score": 6.46025,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.128247969444614
+                },
+                "Mixtral-8x22B-Instruct-v0.1": {
+                    "mean_iter_score": 6.966583333333333,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.12184729742135787
+                },
+                "c4ai-command-r-08-2024": {
+                    "mean_iter_score": 6.976666666666667,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.06761461462665536
+                },
+                "gemini-1.5-pro-002": {
+                    "mean_iter_score": 7.550916666666667,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.0762308263689229
+                },
+                "Mistral-Large-Instruct-2411": {
+                    "mean_iter_score": 7.24575,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.07105768392260228
+                },
+                "gpt-4o-2024-11-20": {
+                    "mean_iter_score": 7.554833333333333,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.11114823685311224
+                },
+                "DeepSeek-R1": {
+                    "mean_iter_score": 7.803833333333333,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.050711876759240784
+                },
+                "gpt-3.5-turbo-0125": {
+                    "mean_iter_score": 6.6225,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.09730714544963069
+                },
+                "databricks/dbrx-instruct": {
+                    "mean_iter_score": 6.55225,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.13434760056576298
+                }
+            },
+            "ranking_stability": {
+                "pairwise_correlation": {
+                    "1__vs__2": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8382352941176471,
+                        "p_value": 5.634316092440314e-08
+                    },
+                    "1__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.926470588235294,
+                        "p_value": 1.080161877119549e-10
+                    },
+                    "1__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.7499999999999999,
+                        "p_value": 3.7189175256511566e-06
+                    },
+                    "1__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8823529411764705,
+                        "p_value": 3.5743855407137387e-09
+                    },
+                    "2__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8235294117647057,
+                        "p_value": 1.25716599654265e-07
+                    },
+                    "2__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.764705882352941,
+                        "p_value": 2.0270077800034225e-06
+                    },
+                    "2__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.7499999999999999,
+                        "p_value": 3.7189175256511566e-06
+                    },
+                    "3__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.764705882352941,
+                        "p_value": 2.0270077800034225e-06
+                    },
+                    "3__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8382352941176471,
+                        "p_value": 5.634316092440314e-08
+                    },
+                    "4__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.7499999999999999,
+                        "p_value": 3.7189175256511566e-06
+                    }
+                },
+                "average_kendall_tau": 0.8088235294117646
+            },
+            "randomized_average_kendall_tau_by_item": 0.7917558823529411
+        },
+        "calibrated": {
+            "scoring_stability": {
+                "claude-3-5-sonnet-20240620": {
+                    "mean_iter_score": 6.065051635252785,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.36330137824731473
+                },
+                "claude-3-haiku-20240307": {
+                    "mean_iter_score": 4.857338696850192,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.3281462755001807
+                },
+                "claude-3-opus-20240229": {
+                    "mean_iter_score": 5.6660911587348375,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.165850091451875
+                },
+                "gemini-1.5-pro-001": {
+                    "mean_iter_score": 5.915674193835114,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.1909457198468593
+                },
+                "Llama-3-70b-chat-hf": {
+                    "mean_iter_score": 5.200723057274782,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.2011337474113032
+                },
+                "Mixtral-8x7B-Instruct-v0.1": {
+                    "mean_iter_score": 4.555028829195496,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.3197756873947125
+                },
+                "Llama-2-13b-chat-hf": {
+                    "mean_iter_score": 3.615276058551921,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.14896315217182388
+                },
+                "gemma-7b-it": {
+                    "mean_iter_score": 4.083761525830492,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.2635806831653917
+                },
+                "gemma-2b-it": {
+                    "mean_iter_score": 3.7125384545212134,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.34621914760804295
+                },
+                "Mixtral-8x22B-Instruct-v0.1": {
+                    "mean_iter_score": 4.735628815628816,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.3381206561055452
+                },
+                "c4ai-command-r-08-2024": {
+                    "mean_iter_score": 4.69434350132626,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.15045635853689684
+                },
+                "gemini-1.5-pro-002": {
+                    "mean_iter_score": 6.199664365009193,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.19777990428686013
+                },
+                "Mistral-Large-Instruct-2411": {
+                    "mean_iter_score": 5.373844563269851,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.24068542073918017
+                },
+                "gpt-4o-2024-11-20": {
+                    "mean_iter_score": 6.193891461879968,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.31736405014169383
+                },
+                "DeepSeek-R1": {
+                    "mean_iter_score": 6.76419727356509,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.15968531412277884
+                },
+                "gpt-3.5-turbo-0125": {
+                    "mean_iter_score": 3.9636080352172307,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.21980552907916323
+                },
+                "databricks/dbrx-instruct": {
+                    "mean_iter_score": 3.8239861479516657,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.2685055183567032
+                }
+            },
+            "ranking_stability": {
+                "pairwise_correlation": {
+                    "1__vs__2": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.7499999999999999,
+                        "p_value": 3.7189175256511566e-06
+                    },
+                    "1__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8382352941176471,
+                        "p_value": 5.634316092440314e-08
+                    },
+                    "1__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.7352941176470588,
+                        "p_value": 6.6254254208949975e-06
+                    },
+                    "1__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.7941176470588235,
+                        "p_value": 5.454070925094403e-07
+                    },
+                    "2__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.7941176470588235,
+                        "p_value": 5.454070925094403e-07
+                    },
+                    "2__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.7205882352941176,
+                        "p_value": 1.148789053319355e-05
+                    },
+                    "2__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.7205882352941176,
+                        "p_value": 1.148789053319355e-05
+                    },
+                    "3__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8088235294117646,
+                        "p_value": 2.674946328840178e-07
+                    },
+                    "3__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.7794117647058824,
+                        "p_value": 1.0700241221269077e-06
+                    },
+                    "4__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.7352941176470588,
+                        "p_value": 6.6254254208949975e-06
+                    }
+                },
+                "average_kendall_tau": 0.7676470588235293
+            },
+            "randomized_average_kendall_tau_by_item": 0.7769294117647059
+        }
+    },
+    "raw_score_range": 1.3435833333333331,
+    "final_judgemark_score_raw": 0.4434922573618539,
+    "final_judgemark_score_elements_raw": {
+        "norm_stability_between_iterations": 0.6529264705882353,
+        "norm_correlation_with_lmsys_arena": 0.8039215686274509,
+        "norm_std_dev_between_models": 0.18599527702501747,
+        "norm_kruskall_wallis": 0.2977239801495236,
+        "norm_ci99_adjacent_overlap": 0.7362593283920886,
+        "norm_score_range": 0.16794791666666664,
+        "norm_intra_model_ci95": 0.2919272208861337,
+        "norm_earth_movers_distance": 0.12630453431372543
+    },
+    "final_judgemark_score_elements_calibrated": {
+        "norm_stability_between_iterations": 0.6282156862745097,
+        "norm_correlation_with_lmsys_arena": 0.7745098039215685,
+        "norm_std_dev_between_models": 0.4384361037219709,
+        "norm_kruskall_wallis": 0.2977239801495236,
+        "norm_ci99_adjacent_overlap": 0.3242524241832798,
+        "norm_score_range": 0.39361515187664614,
+        "norm_intra_model_ci95": 0.10927725638918351,
+        "norm_earth_movers_distance": {
+            "pearson_r": 0.7454873984913775,
+            "kendall_tau": 0.7745098039215685,
+            "anova_f": 0.10046959772859874,
+            "kw_stat": 0.2977239801495236,
+            "std_dev": 0.4384361037219709,
+            "ci99_overlap_magnitude_sum_norm": 0.3242524241832798,
+            "calibrated_score_range_norm": 0.39361515187664614,
+            "kendall_tau_bootstrapped": 0.6282156862745097
+        }
+    }
+}

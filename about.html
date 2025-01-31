@@ -43,7 +43,7 @@
 	  </div>
 		
 		<div id="about" class="section">
-			<p><b>📩How to Submit</b></p>
+			<h3>📩How to Submit</h3>
 			<p>At this time we only accept submissions of open weight models that are available to everyone via HuggingFace.</p>
 			<p>To submit, get in touch by email or twitter with:
 				<ul>
@@ -55,7 +55,7 @@
 			<p>We will then verify the result on our end and add to the leaderboard. This project is self funded so please respect that we don't have unlimited compute!</p>
 		</div>
 		<div id="eq-bench" class="section">
-			<p><b>💗EQ-Bench</b></p>
+			<h3>💗EQ-Bench</h3>
 			<p>EQ-Bench is a benchmark for language models designed to assess emotional intelligence.</p>
 			<p>Why emotional intelligence? One reason is that it represents a subset of abilities that are important for the user experience, and which isn't explicitly tested by other benchmarks. Another reason is that it's not trivial to improve scores by fine tuning for the benchmark, which makes it harder to "game" the leaderboard.</p>
 			<p>EQ-Bench is a little different from traditional psychometric tests. It uses a specific question format, in which the subject has to read a dialogue then rate the intensity of possible emotional responses of one of the characters. Every question is interpretative and assesses the ability to predict the magnitude of the 4 presented emotions. The test is graded without the need for a judge (so there is no length bias). It's cheap to run (only 171 questions), and produces results that correlate strongly with human preference (Arena ELO) and multi-domain benchmarks like MMLU.</p>
@@ -64,7 +64,7 @@
 			<br>
 		</div>
 		<div id="magi-hard" class="section">
-			<p><b>🧙MAGI-Hard</b></p>
+			<h3>🧙MAGI-Hard</h3>
 			<p>LLM Benchmarks are chasing a moving target and fast running out of headroom. They are struggling to effectively separate SOTA models from leaderboard optimisers. Can we salvage these old dinosaurs for scrap and make a better benchmark?</p>
 			<p>MAGI-Hard is a recently added metric to the leaderboard. It is a custom subset of MMLU and AGIEval, selected to have strong discriminatory power between top ability models.</p>
 			<p>Read more <a href="https://sampaech.substack.com/p/creating-magi-a-hard-subset-of-mmlu" target="_blank">here</a>.</p>
@@ -72,7 +72,7 @@
 			<br>
 		</div>
 		<div id="creative-writing" class="section">
-			<p><b>🎨Creative Writing</b></p>
+			<h3>🎨Creative Writing</h3>
 			<p>This benchmark uses a LLM judge (Claude 3.5 Sonnet) to assess the creative writing abilities of the test models on a series of writing prompts.</p>
 			<p>You can reproduce these results or run the benchmark on your own models with the <a href="https://github.com/EQ-bench/EQ-Bench" target="_blank">EQ-Bench repo on Github</a>.</p>
 			<p><b>2024/09/28 update. New metric: GPT-Slop</b></p>
@@ -120,37 +120,83 @@
 		</div>
 
 		<div id="judgemark" class="section">
-			<p><b>⚖️Judgemark</b> measures the ability of a model to judge creative writing using a numerical scoring system.</p>
-			<p>The Judgemark test incorporates a triple-threat of difficult tasks that LLMs typically struggle with: Evaluating writing quality; effectively using a multi-criteria numerical scoring system; and following complex instructions over a long prompt.</p>
-			<p>The benchmark requires the model to judge a series of pre-generated creative writing outputs from 19 test models, assigning scores to each of the test models based on a set of 36 narrow criteria for good & bad writing. This differs from other LLM-as-a-judge evals which involve comparing to test model outputs head to head, which is a relatively easier task for judge models to accomplish.</p>
-			<p>A minimum of 8k supported context length is required for this test. The judging prompts are complex, and incorporate the writing prompt, an exemplar response, the test response, and detailed scoring instructions.</p>
-			
-			<p>Here's a quick rundown of the metrics:</p>
-			<div class="metric-description"><span class="metric-name">EQB-Corr:</span> <span class="metric-explanation">Correlation with EQ-Bench scores.</span></div>
-			<div class="metric-description"><span class="metric-name">Arena-Corr:</span> <span class="metric-explanation">Correlation with LMSys Arena ELO.</span></div>
-			<div class="metric-description"><span class="metric-name">Cost:</span> <span class="metric-explanation">in USD to run the Judgemark benchmark for this model.</span></div>
-			<div class="metric-description"><span class="metric-name">Std. Dev.:</span> <span class="metric-explanation">Standard deviation of scores for the test models. This is a rough proxy for discriminative power, or how well the judge was able to reliably separate each model by ability level.</span></div>
-			<div class="metric-description"><span class="metric-name">Self Bias:</span> <span class="metric-explanation">The deviation from the predicted score when the judge model scores its own output. The bias stats should be taken with a grain of salt as the sample size we've computed them from is quite low.</span></div>
-			<div class="metric-description"><span class="metric-name">Family Bias:</span> <span class="metric-explanation">The deviation from the predicted score when the judge model scores models in its family (e.g., Claude opus scoring sonnet & haiku).</span></div>
-			<div class="metric-description"><span class="metric-name">Judgemark:</span> <span class="metric-explanation">A final aggregate score derived from the correlation & std. dev. stats.</span></div>
-			<div class="metric-description"><span class="metric-name">Stats:</span> <span class="metric-explanation">Test model scores and raw stats from the Judgemark run.</span></div>
-			<div class="metric-description"><span class="metric-name">📊:</span> <span class="metric-explanation">Chart of the test model scores as evaluated by this judge.</span></div>
-			<div class="metric-description"><span class="metric-name">(Not pictured) ANOVA f-statistic:</span> <span class="metric-explanation">A measure of how well the judge model was able to tell apart the different test models based on their writing, using cluster analysis.</span></div>
-			<br>
-			<p>The Judgemark score is computed like this:</p>		
-			&nbsp;&nbsp;&nbsp;([Average of Pearson Correlations normalised 0-1]<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ [Average of Kendall Correlations normalised 0-1]<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ [ANOVA f-statistic normalised 0-1]<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ [Std. Dev. normalised 0-1])<br>
-			&nbsp;&nbsp;&nbsp;÷ 4			
+			<h3>⚖️ Judgemark V2</h3>
+			<p>
+			  <strong>Judgemark V2</strong> is a major update to our original “judge” benchmark for creative-writing evaluation. 
+			  The benchmark measures how well a language model can <em>numerically grade</em> a diverse set of short fiction outputs, 
+			  using a detailed rubric of positive and negative criteria. It goes beyond simpler pairwise preference tests by 
+			  requiring the judge to follow complex instructions, parse each story, and produce scores for up to 36 different 
+			  literary qualities. 
 			</p>
-			<p>The exact normalisation calculation is in lib/judgemark.py of the EQ-Bench pipeline.</p>
-			<p><b>A note on variance:</b> The number of creative writing outputs that are scored per test model is quite low (19 items), to keep the cost of the test manageable. This means the results will vary somewhat between runs, and the 95% confidence intervals are quite high for the individual test model scores. The variance is mitigated to a degree by the fact that there are 19 models tested, so 19x19=361 prompts, each of which involves 36 scored criteria. It should also be noted that the creative writing test (that the judgemark test outputs are sourced from) runs 3x iterations, so the confidence intervals are tighter in the creative writing test than those shown in the judgemark test model score charts.</p>
-			<p>You can run Judgemark with the EQ-Bench pipeline with the code <a href="https://github.com/EQ-bench/EQ-Bench" target="_blank">here</a>.</p>
+		  
+			<p>
+			  <strong>Key improvements over V1 include:</strong>
+			  <ul>
+				<li><em>6x more samples per writer model</em>, reducing variance between benchmark runs.</li>
+				<li><em>Refined scoring metrics</em> that capture “separability” (whether the judge can distinguish strong vs. weak writing) and “stability” (how consistent its rankings are across multiple runs), as well as correlation to human preference.</li>
+				<li><em>Calibrated & raw scores</em>: We show two final Judgemark scores. “Raw” is how the judge performs out-of-the-box, while “Calibrated” normalizes the judge’s score distribution so that it can be compared more fairly to other judges.</li>
+				<li><em>Perturbation stability</em>: We run the judge at temp=0.5, top_k=3. This is intended to introduce variation between runs, so that we can assess the stability of scores & rankings to perturbation. This is a crucial part of understanding whether we're measuring the thing we intend to measure, and not just random fluctuations.</li>
+				<li><em>Simplified codebase</em>: A new codebase was created for v2, separate from the EQ-Bench code. It's simpler and handles concurrent threads.</li>
+			  </ul>
+			</p>
+
+			<p>
+				<strong>Repeatability Results</strong>
+				<p>We tested Llama-3.1-70B-instruct 20 times to test the repeatability of the final Judgemark score (tests were run at temp=0.5, top_k=3).</p>
+				<pre class="code-block">
+					<code>
+llama-3.3-70b_judgemark_scores = [
+	55.7, 54.4, 55.4, 56.7, 55.0, 56.3, 57.0, 54.5, 55.6, 56.1,
+	54.9, 57.5, 55.0, 53.8, 54.7, 56.2, 55.7, 54.6, 55.4, 56.6, 54.0
+]
+
+Mean Score: 55.481
+Standard Deviation: 1.004
+Range (Max - Min): 3.67
+Coefficient of Variation: 0.0181
+					</code>
+				</pre>
+			<p>
+			  <strong>The Judging Task</strong>:  
+			  Each test item is a short creative piece generated by one of 17 “writer models”. These models' writing abilities are an even spread from weak to strong. 
+			  The judge model receives a lengthy prompt that includes (a) the writing prompt itself, 
+			  (b) the test model’s story, and (c) an extensive list of scoring instructions (for example, 
+			  “Nuanced Characters: 0–10,” “Overwrought: 0–10”, etc.). 
+			  The judge must then output numeric scores for each criterion. We parse those scores and aggregate them 
+			  into a single <em>aggregated_score_raw</em> for each piece. Some criteria like “Weak Dialogue” are marked <em>lower is better</em> in the judging prompt which adds additional complexity to the task.
+			</p>
+		  
+			<p>
+			  <strong>Final Judgemark Score</strong>:  
+			  After scoring all stories from multiple writers, we track how the judge’s ratings compare to known references 
+			  and how well they separate the better texts from weaker ones. We also measure how consistently the judge’s 
+			  rankings repeat if we prompt it again, and compute correlation with human preference rankings (per <a href="https://lmarena.ai/" target="_blank">Chatbot Arena</a> ELO scores).
+			  The final Judgemark formula is a weighted sum of these computed metrics. See the formula at the bottom of the leaderboard page <a href="/judgemark-v2.html">here.</a>
+			</p>
+		  
+			<p>
+			  <strong>Interpreting the Leaderboard</strong>:  
+			  In the table, “Score (Calibrated)” is typically higher if a judge effectively uses the full range of scores 
+			  (once normalized), strongly differentiates strong vs. weak writing, and correlates with human preferences. 
+			  “Score (Raw)” shows how the judge performed before any normalization. “Stability” indicates how consistent the 
+			  judge’s assigned rankings remain across repeated trials. “Separability” highlights the judge’s ability to 
+			  keep higher- and lower-quality outputs well apart. 
+			</p>
+		  
+			<p>
+			  This is a particularly <em>difficult</em> task for LLMs, as it involves nuanced literary critique and 
+			  instructs models to use a multi-dimensional numeric scale—an area where many generative models still struggle.
+			</p>
+		  
+			<p>
+			  Source code for running Judgemark 2 to be released soon.			  
+			</p>
 		</div>
+		  
 
 		<div id="buzzbench" class="section">
-			<p><b>🎤BuzzBench</b> is a humour analysis benchmark.</p>
+			<h3>🎤BuzzBench</h3>
+			<p>A humour analysis benchmark.</p>
 			<p><a href="https://huggingface.co/datasets/sam-paech/BuzzBench-v0.60">BuzzBench dataset on Huggingface</a></p>
 			<p>Do you enjoy seeing the jokes from your favourite shows dissected with a blunt machete? Well, you found the right benchmark.</p>
 

@@ -1,0 +1,2486 @@
+{
+    "judge_model": "gemini-2.0-flash-thinking-exp-1219",
+    "start_time": "2025-01-29T21:09:16.461643",
+    "status": "completed",
+    "samples_file": "data/judgemark_v2.1_samples.json",
+    "prompts_file": "data/judge_prompts.json",
+    "errors": [
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "34",
+            "error": "500 Server Error: Internal Server Error for url: https://nano-gpt.com/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "1",
+            "item_id": "6",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "27",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "28",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "38",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "5",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "5",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "4",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "4",
+            "item_id": "35",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "2",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "2",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "2",
+            "item_id": "2",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "c4ai-command-r-08-2024",
+            "iteration": "2",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-5-sonnet-20240620",
+            "iteration": "2",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "44",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "19",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "34",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "5",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "27",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "2",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "4",
+            "item_id": "35",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "1",
+            "item_id": "6",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-5-sonnet-20240620",
+            "iteration": "2",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "4",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "44",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "2",
+            "item_id": "2",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "38",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "c4ai-command-r-08-2024",
+            "iteration": "2",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "2",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "19",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "28",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "34",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "5",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "4",
+            "item_id": "35",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "c4ai-command-r-08-2024",
+            "iteration": "2",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "27",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "5",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "44",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-5-sonnet-20240620",
+            "iteration": "2",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "1",
+            "item_id": "6",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "5",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "19",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "38",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "2",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "2",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "28",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "34",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "4",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "2",
+            "item_id": "2",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "5",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "27",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "4",
+            "item_id": "35",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "28",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "2",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "44",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "2",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "34",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "5",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "1",
+            "item_id": "6",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "4",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "c4ai-command-r-08-2024",
+            "iteration": "2",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-5-sonnet-20240620",
+            "iteration": "2",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "19",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "2",
+            "item_id": "2",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "38",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "1",
+            "item_id": "6",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "4",
+            "item_id": "35",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "5",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "2",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-5-sonnet-20240620",
+            "iteration": "2",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "38",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "44",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "c4ai-command-r-08-2024",
+            "iteration": "2",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "2",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "5",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "27",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "28",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "2",
+            "item_id": "2",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "34",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "19",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "4",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-5-sonnet-20240620",
+            "iteration": "2",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "5",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "2",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "1",
+            "item_id": "6",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "27",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "44",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "28",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "c4ai-command-r-08-2024",
+            "iteration": "2",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "4",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "34",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "2",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "19",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "38",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "4",
+            "item_id": "35",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "5",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "2",
+            "item_id": "2",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "27",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "5",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "44",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-5-sonnet-20240620",
+            "iteration": "2",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "2",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "4",
+            "item_id": "35",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "2",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "2",
+            "item_id": "2",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "c4ai-command-r-08-2024",
+            "iteration": "2",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "38",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "28",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "19",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "1",
+            "item_id": "6",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "5",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "34",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "4",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "27",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "2",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-5-sonnet-20240620",
+            "iteration": "2",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "5",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "44",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "1",
+            "item_id": "6",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "4",
+            "item_id": "35",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "2",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "c4ai-command-r-08-2024",
+            "iteration": "2",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "2",
+            "item_id": "2",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "19",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "4",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "34",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "28",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "5",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "38",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-5-sonnet-20240620",
+            "iteration": "2",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "4",
+            "item_id": "35",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "27",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "44",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "2",
+            "item_id": "2",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "2",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "4",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "2",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "38",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "5",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "34",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "36",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "1",
+            "item_id": "6",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "19",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "43",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "c4ai-command-r-08-2024",
+            "iteration": "2",
+            "item_id": "33",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "databricks/dbrx-instruct",
+            "iteration": "1",
+            "item_id": "28",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "29",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "5",
+            "item_id": "37",
+            "error": "400 Client Error: Bad Request for url: https://openrouter.ai/api/v1/chat/completions"
+        }
+    ],
+    "end_time": "2025-01-31T15:25:25.321285",
+    "raw_score_distribution": {
+        "count": 2015,
+        "min": 2.21,
+        "max": 9.04,
+        "mean": 5.952,
+        "median": 5.93,
+        "stdev": 1.14,
+        "p10": 4.5,
+        "p25": 5.15,
+        "p75": 6.77,
+        "p90": 7.43
+    },
+    "calibration_config": {
+        "method": "piecewise_landmark",
+        "in_landmarks": [
+            2.21,
+            5.15,
+            5.93,
+            6.77,
+            9.04
+        ],
+        "out_landmarks": [
+            0,
+            3,
+            5,
+            7,
+            10
+        ]
+    },
+    "calibrated_score_distribution": {
+        "count": 2015,
+        "min": 0.0,
+        "max": 10.0,
+        "mean": 5.047,
+        "median": 5.0,
+        "stdev": 2.152,
+        "p10": 2.337,
+        "p25": 3.0,
+        "p75": 7.0,
+        "p90": 7.872
+    },
+    "raw_model_stats": {
+        "claude-3-5-sonnet-20240620": {
+            "count": 119,
+            "mean": 6.882773109243698,
+            "median": 6.86,
+            "stdev": 0.6702186897961852,
+            "ci95": 0.12042013926081047,
+            "min": 5.46,
+            "max": 8.81,
+            "length_correlation": -0.12751408565427966
+        },
+        "claude-3-haiku-20240307": {
+            "count": 120,
+            "mean": 5.859333333333334,
+            "median": 5.81,
+            "stdev": 0.6412235328242555,
+            "ci95": 0.11472944715479302,
+            "min": 4.25,
+            "max": 7.56,
+            "length_correlation": -0.004280851878928947
+        },
+        "claude-3-opus-20240229": {
+            "count": 119,
+            "mean": 6.401848739495798,
+            "median": 6.32,
+            "stdev": 0.739492458088946,
+            "ci95": 0.13286675847919152,
+            "min": 4.57,
+            "max": 7.74,
+            "length_correlation": 0.13446541001578607
+        },
+        "gemini-1.5-pro-001": {
+            "count": 119,
+            "mean": 6.836302521008403,
+            "median": 6.92,
+            "stdev": 0.5971498201502325,
+            "ci95": 0.10729164315594744,
+            "min": 5.32,
+            "max": 8.19,
+            "length_correlation": -0.01711979891852624
+        },
+        "Llama-3-70b-chat-hf": {
+            "count": 119,
+            "mean": 6.1663025210084035,
+            "median": 6.11,
+            "stdev": 0.6294319009034628,
+            "ci95": 0.11309185839780361,
+            "min": 4.04,
+            "max": 8.07,
+            "length_correlation": -0.43916256916522695
+        },
+        "Mixtral-8x7B-Instruct-v0.1": {
+            "count": 117,
+            "mean": 5.490854700854701,
+            "median": 5.5,
+            "stdev": 0.7939529785537904,
+            "ci95": 0.1438659185124816,
+            "min": 3.32,
+            "max": 7.54,
+            "length_correlation": -0.4364109336854408
+        },
+        "Llama-2-13b-chat-hf": {
+            "count": 119,
+            "mean": 5.0301680672268905,
+            "median": 5.07,
+            "stdev": 0.6892749607479075,
+            "ci95": 0.1238440348291301,
+            "min": 3.5,
+            "max": 7.0,
+            "length_correlation": 0.07347724025061587
+        },
+        "gemma-7b-it": {
+            "count": 119,
+            "mean": 4.868823529411765,
+            "median": 4.89,
+            "stdev": 0.7237170723408473,
+            "ci95": 0.13003234908774836,
+            "min": 3.3,
+            "max": 6.86,
+            "length_correlation": -0.04375648503392448
+        },
+        "gemma-2b-it": {
+            "count": 117,
+            "mean": 4.455641025641025,
+            "median": 4.48,
+            "stdev": 0.8618468387566326,
+            "ci95": 0.15616842612096984,
+            "min": 2.41,
+            "max": 6.58,
+            "length_correlation": -0.04634287739581265
+        },
+        "Mixtral-8x22B-Instruct-v0.1": {
+            "count": 119,
+            "mean": 5.673697478991596,
+            "median": 5.67,
+            "stdev": 0.7628513256156737,
+            "ci95": 0.13706371407498186,
+            "min": 3.67,
+            "max": 7.4,
+            "length_correlation": -0.16228813193762703
+        },
+        "c4ai-command-r-08-2024": {
+            "count": 119,
+            "mean": 5.547226890756303,
+            "median": 5.56,
+            "stdev": 0.6497234409956546,
+            "ci95": 0.11673769836156402,
+            "min": 3.89,
+            "max": 7.04,
+            "length_correlation": 0.020975601356387884
+        },
+        "gemini-1.5-pro-002": {
+            "count": 120,
+            "mean": 6.958083333333334,
+            "median": 7.0,
+            "stdev": 0.6595469489514362,
+            "ci95": 0.11800792228030722,
+            "min": 5.39,
+            "max": 8.62,
+            "length_correlation": -0.16244817744297443
+        },
+        "Mistral-Large-Instruct-2411": {
+            "count": 120,
+            "mean": 6.197,
+            "median": 6.205,
+            "stdev": 0.9196488186149275,
+            "ci95": 0.1645460516265351,
+            "min": 3.86,
+            "max": 8.65,
+            "length_correlation": -0.10830779393371104
+        },
+        "gpt-4o-2024-11-20": {
+            "count": 115,
+            "mean": 7.111478260869565,
+            "median": 7.19,
+            "stdev": 0.7180837602981747,
+            "ci95": 0.13124484560267724,
+            "min": 5.18,
+            "max": 8.75,
+            "length_correlation": -0.013895253640547367
+        },
+        "DeepSeek-R1": {
+            "count": 119,
+            "mean": 7.536302521008404,
+            "median": 7.59,
+            "stdev": 0.7306728563178546,
+            "ci95": 0.13128211500435394,
+            "min": 6.07,
+            "max": 9.04,
+            "length_correlation": 0.028024472878212987
+        },
+        "gpt-3.5-turbo-0125": {
+            "count": 118,
+            "mean": 5.01457627118644,
+            "median": 5.095000000000001,
+            "stdev": 0.6847941160031041,
+            "ci95": 0.12355920000900124,
+            "min": 3.27,
+            "max": 6.89,
+            "length_correlation": -0.046704912120939454
+        },
+        "databricks/dbrx-instruct": {
+            "count": 117,
+            "mean": 5.132478632478633,
+            "median": 5.14,
+            "stdev": 0.8803848159233885,
+            "ci95": 0.15952754584782913,
+            "min": 2.21,
+            "max": 7.52,
+            "length_correlation": -0.21968383211954154
+        }
+    },
+    "calibrated_model_stats": {
+        "claude-3-5-sonnet-20240620": {
+            "count": 119,
+            "mean": 6.915860346171678,
+            "median": 7.118942731277534,
+            "stdev": 1.194539321738436,
+            "ci95": 0.21462635057222976,
+            "min": 3.7948717948717947,
+            "max": 9.696035242290751,
+            "length_correlation": -0.12671806778556874
+        },
+        "claude-3-haiku-20240307": {
+            "count": 120,
+            "mean": 4.806912824431705,
+            "median": 4.692307692307692,
+            "stdev": 1.4027200635200479,
+            "ci95": 0.25097846408063645,
+            "min": 2.081632653061224,
+            "max": 8.044052863436123,
+            "length_correlation": 0.019970217597217434
+        },
+        "claude-3-opus-20240229": {
+            "count": 119,
+            "mean": 5.941561995374711,
+            "median": 5.92857142857143,
+            "stdev": 1.540036098756809,
+            "ci95": 0.27670276031151314,
+            "min": 2.4081632653061225,
+            "max": 8.28193832599119,
+            "length_correlation": 0.159417716312017
+        },
+        "gemini-1.5-pro-001": {
+            "count": 119,
+            "mean": 6.858937882167439,
+            "median": 7.1982378854625555,
+            "stdev": 1.1415331068953245,
+            "ci95": 0.20510256994618214,
+            "min": 3.435897435897436,
+            "max": 8.876651982378855,
+            "length_correlation": -0.016739980236593142
+        },
+        "Llama-3-70b-chat-hf": {
+            "count": 119,
+            "mean": 5.487784105267222,
+            "median": 5.42857142857143,
+            "stdev": 1.3375031604430887,
+            "ci95": 0.24031307884193776,
+            "min": 1.86734693877551,
+            "max": 8.718061674008812,
+            "length_correlation": -0.40898281289614813
+        },
+        "Mixtral-8x7B-Instruct-v0.1": {
+            "count": 117,
+            "mean": 4.0934474569804,
+            "median": 3.8974358974358974,
+            "stdev": 1.5760394135328408,
+            "ci95": 0.28558159483548484,
+            "min": 1.1326530612244896,
+            "max": 8.01762114537445,
+            "length_correlation": -0.39572451283388316
+        },
+        "Llama-2-13b-chat-hf": {
+            "count": 119,
+            "mean": 3.200407093175654,
+            "median": 2.9183673469387754,
+            "stdev": 1.1698450340753668,
+            "ci95": 0.21018945616058984,
+            "min": 1.3163265306122447,
+            "max": 7.3039647577092515,
+            "length_correlation": 0.10882776452367295
+        },
+        "gemma-7b-it": {
+            "count": 119,
+            "mean": 2.9690152964898986,
+            "median": 2.73469387755102,
+            "stdev": 1.1425762865905777,
+            "ci95": 0.20529000107290088,
+            "min": 1.1122448979591835,
+            "max": 7.118942731277534,
+            "length_correlation": -0.01891908252825585
+        },
+        "gemma-2b-it": {
+            "count": 117,
+            "mean": 2.4402022478945553,
+            "median": 2.316326530612245,
+            "stdev": 1.1659171990754484,
+            "ci95": 0.21126660304244343,
+            "min": 0.20408163265306137,
+            "max": 6.547619047619049,
+            "length_correlation": -0.0522659155113199
+        },
+        "Mixtral-8x22B-Instruct-v0.1": {
+            "count": 119,
+            "mean": 4.442296025734688,
+            "median": 4.333333333333333,
+            "stdev": 1.6007107644516692,
+            "ci95": 0.28760435378214594,
+            "min": 1.4897959183673468,
+            "max": 7.832599118942732,
+            "length_correlation": -0.15222903967243157
+        },
+        "c4ai-command-r-08-2024": {
+            "count": 119,
+            "mean": 4.174779453341098,
+            "median": 4.05128205128205,
+            "stdev": 1.355362417457522,
+            "ci95": 0.2435219034383194,
+            "min": 1.7142857142857142,
+            "max": 7.3568281938326,
+            "length_correlation": 0.023905313325452298
+        },
+        "gemini-1.5-pro-002": {
+            "count": 120,
+            "mean": 7.047467498238424,
+            "median": 7.3039647577092515,
+            "stdev": 1.1864522466377767,
+            "ci95": 0.2122832419028231,
+            "min": 3.615384615384614,
+            "max": 9.444933920704846,
+            "length_correlation": -0.1776672286830417
+        },
+        "Mistral-Large-Instruct-2411": {
+            "count": 120,
+            "mean": 5.514228218114311,
+            "median": 5.654761904761905,
+            "stdev": 1.8635155549582174,
+            "ci95": 0.3334252385327088,
+            "min": 1.6836734693877546,
+            "max": 9.484581497797357,
+            "length_correlation": -0.08342723256532494
+        },
+        "gpt-4o-2024-11-20": {
+            "count": 115,
+            "mean": 7.285510122897597,
+            "median": 7.555066079295155,
+            "stdev": 1.2338196409337225,
+            "ci95": 0.22550637854371863,
+            "min": 3.0769230769230753,
+            "max": 9.616740088105729,
+            "length_correlation": -0.010137894372056668
+        },
+        "DeepSeek-R1": {
+            "count": 119,
+            "mean": 7.958876061437792,
+            "median": 8.083700440528634,
+            "stdev": 1.0623539515683702,
+            "ci95": 0.1908762210600824,
+            "min": 5.333333333333335,
+            "max": 10.0,
+            "length_correlation": 0.021932608585056575
+        },
+        "gpt-3.5-turbo-0125": {
+            "count": 118,
+            "mean": 3.164693549740109,
+            "median": 2.943877551020408,
+            "stdev": 1.1280762819482055,
+            "ci95": 0.2035417648740676,
+            "min": 1.0816326530612244,
+            "max": 7.158590308370044,
+            "length_correlation": -0.04277543029053672
+        },
+        "databricks/dbrx-instruct": {
+            "count": 117,
+            "mean": 3.4536793953940683,
+            "median": 2.989795918367346,
+            "stdev": 1.524885597720051,
+            "ci95": 0.2763124178236038,
+            "min": 0.0,
+            "max": 7.991189427312776,
+            "length_correlation": -0.17370635632035272
+        }
+    },
+    "raw_cross_model_stats": {
+        "anova_f": 180.59457531828394,
+        "anova_p": 0.0,
+        "kw_stat": 1225.5410929145182,
+        "kw_p": 4.906469596181233e-251,
+        "std_dev_across_models": 0.8777737717893972,
+        "pearson_r": 0.9664414014566598,
+        "kendall_tau": 0.9205882352941176,
+        "normalized_components": {
+            "pearson_r": 0.8881380048555326,
+            "kendall_tau": 0.9117647058823529,
+            "anova_f": 0.5159845009093827,
+            "kw_stat": 0.8170273952763455,
+            "std_dev": 0.3989880780860896,
+            "ci99_overlap_magnitude_sum_norm": 0.805715783909309,
+            "raw_score_range_norm": 0.3850826869209223,
+            "kendall_tau_bootstrapped": 0.8276813725490195
+        }
+    },
+    "calibrated_cross_model_stats": {
+        "anova_f": 195.6550229984763,
+        "anova_p": 0.0,
+        "kw_stat": 1225.5410929145182,
+        "kw_p": 4.906469596181233e-251,
+        "std_dev_across_models": 1.6834612398416307,
+        "pearson_r": 0.9617097028458247,
+        "kendall_tau": 0.9176470588235294,
+        "normalized_components": {
+            "pearson_r": 0.872365676152749,
+            "kendall_tau": 0.9084967320261438,
+            "anova_f": 0.5590143514242181,
+            "kw_stat": 0.8170273952763455,
+            "std_dev": 0.7652096544734684,
+            "ci99_overlap_magnitude_sum_norm": 0.6312088252235988,
+            "calibrated_score_range_norm": 0.6898342266929045,
+            "kendall_tau_bootstrapped": 0.8182843137254902
+        }
+    },
+    "separability_metrics": {
+        "raw": {
+            "ci99_overlap_adjacent": {
+                "DeepSeek-R1__gpt-4o-2024-11-20": false,
+                "gpt-4o-2024-11-20__gemini-1.5-pro-002": true,
+                "gemini-1.5-pro-002__claude-3-5-sonnet-20240620": true,
+                "claude-3-5-sonnet-20240620__gemini-1.5-pro-001": true,
+                "gemini-1.5-pro-001__claude-3-opus-20240229": false,
+                "claude-3-opus-20240229__Mistral-Large-Instruct-2411": true,
+                "Mistral-Large-Instruct-2411__Llama-3-70b-chat-hf": true,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": false,
+                "claude-3-haiku-20240307__Mixtral-8x22B-Instruct-v0.1": true,
+                "Mixtral-8x22B-Instruct-v0.1__c4ai-command-r-08-2024": true,
+                "c4ai-command-r-08-2024__Mixtral-8x7B-Instruct-v0.1": true,
+                "Mixtral-8x7B-Instruct-v0.1__databricks/dbrx-instruct": true,
+                "databricks/dbrx-instruct__Llama-2-13b-chat-hf": true,
+                "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": true,
+                "gpt-3.5-turbo-0125__gemma-7b-it": true,
+                "gemma-7b-it__gemma-2b-it": false
+            },
+            "adjacent_overlap_fraction": 0.75,
+            "ci99_overlap_magnitude_adjacent": {
+                "DeepSeek-R1__gpt-4o-2024-11-20": 0.09269459555240012,
+                "gpt-4o-2024-11-20__gemini-1.5-pro-002": 0.33795653943085746,
+                "gemini-1.5-pro-002__claude-3-5-sonnet-20240620": 0.3947025216037101,
+                "claude-3-5-sonnet-20240620__gemini-1.5-pro-001": 0.40241717853442793,
+                "gemini-1.5-pro-001__claude-3-opus-20240229": 0.038969980037337315,
+                "claude-3-opus-20240229__Mistral-Large-Instruct-2411": 0.381440519321413,
+                "Mistral-Large-Instruct-2411__Llama-3-70b-chat-hf": 0.44587549416407946,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": 0.14213448182631705,
+                "claude-3-haiku-20240307__Mixtral-8x22B-Instruct-v0.1": 0.31072348478749756,
+                "Mixtral-8x22B-Instruct-v0.1__c4ai-command-r-08-2024": 0.3738476123536012,
+                "c4ai-command-r-08-2024__Mixtral-8x7B-Instruct-v0.1": 0.45735518225783434,
+                "Mixtral-8x7B-Instruct-v0.1__databricks/dbrx-instruct": 0.23970284183146173,
+                "databricks/dbrx-instruct__Llama-2-13b-chat-hf": 0.45629924696816726,
+                "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": 0.4721136902520353,
+                "gpt-3.5-turbo-0125__gemma-7b-it": 0.354151755645554,
+                "gemma-7b-it__gemma-2b-it": 0.15100449379127223
+            },
+            "ci99_overlap_magnitude_sum": 5.051389618357966,
+            "ci99_overlap_scale_factor": 1.5,
+            "average_cohens_d_adjacent": 0.26583665483400054,
+            "emd": {
+                "average": 1.0740933092838918,
+                "pairs": {
+                    "claude-3-5-sonnet-20240620__claude-3-haiku-20240307": 1.023439775910364,
+                    "claude-3-5-sonnet-20240620__claude-3-opus-20240229": 0.4809243697478991,
+                    "claude-3-5-sonnet-20240620__gemini-1.5-pro-001": 0.09672268907563024,
+                    "claude-3-5-sonnet-20240620__Llama-3-70b-chat-hf": 0.7164705882352941,
+                    "claude-3-5-sonnet-20240620__Mixtral-8x7B-Instruct-v0.1": 1.3919184083889966,
+                    "claude-3-5-sonnet-20240620__Llama-2-13b-chat-hf": 1.8526050420168068,
+                    "claude-3-5-sonnet-20240620__gemma-7b-it": 2.013949579831933,
+                    "claude-3-5-sonnet-20240620__gemma-2b-it": 2.4271320836026717,
+                    "claude-3-5-sonnet-20240620__Mixtral-8x22B-Instruct-v0.1": 1.2090756302521006,
+                    "claude-3-5-sonnet-20240620__c4ai-command-r-08-2024": 1.3355462184873947,
+                    "claude-3-5-sonnet-20240620__gemini-1.5-pro-002": 0.09994327731092437,
+                    "claude-3-5-sonnet-20240620__Mistral-Large-Instruct-2411": 0.6857731092436975,
+                    "claude-3-5-sonnet-20240620__gpt-4o-2024-11-20": 0.23533284618195102,
+                    "claude-3-5-sonnet-20240620__DeepSeek-R1": 0.6535294117647059,
+                    "claude-3-5-sonnet-20240620__gpt-3.5-turbo-0125": 1.868196838057257,
+                    "claude-3-5-sonnet-20240620__databricks/dbrx-instruct": 1.750294476765065,
+                    "claude-3-haiku-20240307__claude-3-opus-20240229": 0.5425154061624649,
+                    "claude-3-haiku-20240307__gemini-1.5-pro-001": 0.97696918767507,
+                    "claude-3-haiku-20240307__Llama-3-70b-chat-hf": 0.31051820728291313,
+                    "claude-3-haiku-20240307__Mixtral-8x7B-Instruct-v0.1": 0.3685683760683761,
+                    "claude-3-haiku-20240307__Llama-2-13b-chat-hf": 0.8291652661064426,
+                    "claude-3-haiku-20240307__gemma-7b-it": 0.9905098039215686,
+                    "claude-3-haiku-20240307__gemma-2b-it": 1.4036923076923078,
+                    "claude-3-haiku-20240307__Mixtral-8x22B-Instruct-v0.1": 0.1909719887955182,
+                    "claude-3-haiku-20240307__c4ai-command-r-08-2024": 0.3121064425770308,
+                    "claude-3-haiku-20240307__gemini-1.5-pro-002": 1.0987500000000001,
+                    "claude-3-haiku-20240307__Mistral-Large-Instruct-2411": 0.3796666666666667,
+                    "claude-3-haiku-20240307__gpt-4o-2024-11-20": 1.2521449275362317,
+                    "claude-3-haiku-20240307__DeepSeek-R1": 1.6769691876750703,
+                    "claude-3-haiku-20240307__gpt-3.5-turbo-0125": 0.8447570621468927,
+                    "claude-3-haiku-20240307__databricks/dbrx-instruct": 0.7269358974358975,
+                    "claude-3-opus-20240229__gemini-1.5-pro-001": 0.43445378151260505,
+                    "claude-3-opus-20240229__Llama-3-70b-chat-hf": 0.24983193277310922,
+                    "claude-3-opus-20240229__Mixtral-8x7B-Instruct-v0.1": 0.9109940386410975,
+                    "claude-3-opus-20240229__Llama-2-13b-chat-hf": 1.3716806722689077,
+                    "claude-3-opus-20240229__gemma-7b-it": 1.5330252100840336,
+                    "claude-3-opus-20240229__gemma-2b-it": 1.9462077138547726,
+                    "claude-3-opus-20240229__Mixtral-8x22B-Instruct-v0.1": 0.7281512605042015,
+                    "claude-3-opus-20240229__c4ai-command-r-08-2024": 0.8546218487394959,
+                    "claude-3-opus-20240229__gemini-1.5-pro-002": 0.556234593837535,
+                    "claude-3-opus-20240229__Mistral-Large-Instruct-2411": 0.2563319327731093,
+                    "claude-3-opus-20240229__gpt-4o-2024-11-20": 0.7096295213737669,
+                    "claude-3-opus-20240229__DeepSeek-R1": 1.134453781512605,
+                    "claude-3-opus-20240229__gpt-3.5-turbo-0125": 1.3872724683093578,
+                    "claude-3-opus-20240229__databricks/dbrx-instruct": 1.2693701070171661,
+                    "gemini-1.5-pro-001__Llama-3-70b-chat-hf": 0.67,
+                    "gemini-1.5-pro-001__Mixtral-8x7B-Instruct-v0.1": 1.3454478201537026,
+                    "gemini-1.5-pro-001__Llama-2-13b-chat-hf": 1.8061344537815125,
+                    "gemini-1.5-pro-001__gemma-7b-it": 1.9674789915966389,
+                    "gemini-1.5-pro-001__gemma-2b-it": 2.3806614953673777,
+                    "gemini-1.5-pro-001__Mixtral-8x22B-Instruct-v0.1": 1.1626050420168066,
+                    "gemini-1.5-pro-001__c4ai-command-r-08-2024": 1.2890756302521007,
+                    "gemini-1.5-pro-001__gemini-1.5-pro-002": 0.12240266106442572,
+                    "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": 0.6665336134453781,
+                    "gemini-1.5-pro-001__gpt-4o-2024-11-20": 0.28122469857508214,
+                    "gemini-1.5-pro-001__DeepSeek-R1": 0.7,
+                    "gemini-1.5-pro-001__gpt-3.5-turbo-0125": 1.821726249821963,
+                    "gemini-1.5-pro-001__databricks/dbrx-instruct": 1.703823888529771,
+                    "Llama-3-70b-chat-hf__Mixtral-8x7B-Instruct-v0.1": 0.6754478201537024,
+                    "Llama-3-70b-chat-hf__Llama-2-13b-chat-hf": 1.1361344537815128,
+                    "Llama-3-70b-chat-hf__gemma-7b-it": 1.2974789915966387,
+                    "Llama-3-70b-chat-hf__gemma-2b-it": 1.7106614953673778,
+                    "Llama-3-70b-chat-hf__Mixtral-8x22B-Instruct-v0.1": 0.49260504201680666,
+                    "Llama-3-70b-chat-hf__c4ai-command-r-08-2024": 0.6190756302521009,
+                    "Llama-3-70b-chat-hf__gemini-1.5-pro-002": 0.7917808123249299,
+                    "Llama-3-70b-chat-hf__Mistral-Large-Instruct-2411": 0.2764187675070028,
+                    "Llama-3-70b-chat-hf__gpt-4o-2024-11-20": 0.9451757398611619,
+                    "Llama-3-70b-chat-hf__DeepSeek-R1": 1.37,
+                    "Llama-3-70b-chat-hf__gpt-3.5-turbo-0125": 1.1517262498219627,
+                    "Llama-3-70b-chat-hf__databricks/dbrx-instruct": 1.0338238885297708,
+                    "Mixtral-8x7B-Instruct-v0.1__Llama-2-13b-chat-hf": 0.4664942900237018,
+                    "Mixtral-8x7B-Instruct-v0.1__gemma-7b-it": 0.6220484091072327,
+                    "Mixtral-8x7B-Instruct-v0.1__gemma-2b-it": 1.0352136752136754,
+                    "Mixtral-8x7B-Instruct-v0.1__Mixtral-8x22B-Instruct-v0.1": 0.18526179702650292,
+                    "Mixtral-8x7B-Instruct-v0.1__c4ai-command-r-08-2024": 0.1323098470157293,
+                    "Mixtral-8x7B-Instruct-v0.1__gemini-1.5-pro-002": 1.4672286324786323,
+                    "Mixtral-8x7B-Instruct-v0.1__Mistral-Large-Instruct-2411": 0.7061452991452992,
+                    "Mixtral-8x7B-Instruct-v0.1__gpt-4o-2024-11-20": 1.6206235600148642,
+                    "Mixtral-8x7B-Instruct-v0.1__DeepSeek-R1": 2.0454478201537025,
+                    "Mixtral-8x7B-Instruct-v0.1__gpt-3.5-turbo-0125": 0.47627842966826023,
+                    "Mixtral-8x7B-Instruct-v0.1__databricks/dbrx-instruct": 0.3602564102564103,
+                    "Llama-2-13b-chat-hf__gemma-7b-it": 0.1647058823529412,
+                    "Llama-2-13b-chat-hf__gemma-2b-it": 0.5745385333620627,
+                    "Llama-2-13b-chat-hf__Mixtral-8x22B-Instruct-v0.1": 0.6435294117647059,
+                    "Llama-2-13b-chat-hf__c4ai-command-r-08-2024": 0.5170588235294118,
+                    "Llama-2-13b-chat-hf__gemini-1.5-pro-002": 1.9279152661064425,
+                    "Llama-2-13b-chat-hf__Mistral-Large-Instruct-2411": 1.1668319327731091,
+                    "Llama-2-13b-chat-hf__gpt-4o-2024-11-20": 2.0813101936426746,
+                    "Llama-2-13b-chat-hf__DeepSeek-R1": 2.506134453781513,
+                    "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": 0.05567155675829647,
+                    "Llama-2-13b-chat-hf__databricks/dbrx-instruct": 0.17616964734611795,
+                    "gemma-7b-it__gemma-2b-it": 0.4170925806219924,
+                    "gemma-7b-it__Mixtral-8x22B-Instruct-v0.1": 0.8048739495798319,
+                    "gemma-7b-it__c4ai-command-r-08-2024": 0.6784033613445379,
+                    "gemma-7b-it__gemini-1.5-pro-002": 2.0892598039215686,
+                    "gemma-7b-it__Mistral-Large-Instruct-2411": 1.3281764705882353,
+                    "gemma-7b-it__gpt-4o-2024-11-20": 2.2426547314578005,
+                    "gemma-7b-it__DeepSeek-R1": 2.6674789915966386,
+                    "gemma-7b-it__gpt-3.5-turbo-0125": 0.15612163509471577,
+                    "gemma-7b-it__databricks/dbrx-instruct": 0.29932413991237516,
+                    "gemma-2b-it__Mixtral-8x22B-Instruct-v0.1": 1.2180564533505711,
+                    "gemma-2b-it__c4ai-command-r-08-2024": 1.0915858651152768,
+                    "gemma-2b-it__gemini-1.5-pro-002": 2.5024423076923075,
+                    "gemma-2b-it__Mistral-Large-Instruct-2411": 1.7413589743589744,
+                    "gemma-2b-it__gpt-4o-2024-11-20": 2.6558372352285398,
+                    "gemma-2b-it__DeepSeek-R1": 3.0806614953673783,
+                    "gemma-2b-it__gpt-3.5-turbo-0125": 0.558935245545415,
+                    "gemma-2b-it__databricks/dbrx-instruct": 0.6802564102564103,
+                    "Mixtral-8x22B-Instruct-v0.1__c4ai-command-r-08-2024": 0.1474789915966387,
+                    "Mixtral-8x22B-Instruct-v0.1__gemini-1.5-pro-002": 1.2843858543417368,
+                    "Mixtral-8x22B-Instruct-v0.1__Mistral-Large-Instruct-2411": 0.5233025210084034,
+                    "Mixtral-8x22B-Instruct-v0.1__gpt-4o-2024-11-20": 1.4377807818779682,
+                    "Mixtral-8x22B-Instruct-v0.1__DeepSeek-R1": 1.8626050420168068,
+                    "Mixtral-8x22B-Instruct-v0.1__gpt-3.5-turbo-0125": 0.6591212078051562,
+                    "Mixtral-8x22B-Instruct-v0.1__databricks/dbrx-instruct": 0.5432959850606909,
+                    "c4ai-command-r-08-2024__gemini-1.5-pro-002": 1.410856442577031,
+                    "c4ai-command-r-08-2024__Mistral-Large-Instruct-2411": 0.6502731092436974,
+                    "c4ai-command-r-08-2024__gpt-4o-2024-11-20": 1.5642513701132625,
+                    "c4ai-command-r-08-2024__DeepSeek-R1": 1.9890756302521009,
+                    "c4ai-command-r-08-2024__gpt-3.5-turbo-0125": 0.5326620139581257,
+                    "c4ai-command-r-08-2024__databricks/dbrx-instruct": 0.43979171155641744,
+                    "gemini-1.5-pro-002__Mistral-Large-Instruct-2411": 0.7669166666666667,
+                    "gemini-1.5-pro-002__gpt-4o-2024-11-20": 0.16242391304347825,
+                    "gemini-1.5-pro-002__DeepSeek-R1": 0.57821918767507,
+                    "gemini-1.5-pro-002__gpt-3.5-turbo-0125": 1.9435070621468928,
+                    "gemini-1.5-pro-002__databricks/dbrx-instruct": 1.8256047008547012,
+                    "Mistral-Large-Instruct-2411__gpt-4o-2024-11-20": 0.9144782608695652,
+                    "Mistral-Large-Instruct-2411__DeepSeek-R1": 1.3393025210084035,
+                    "Mistral-Large-Instruct-2411__gpt-3.5-turbo-0125": 1.1824237288135593,
+                    "Mistral-Large-Instruct-2411__databricks/dbrx-instruct": 1.0645213675213674,
+                    "gpt-4o-2024-11-20__DeepSeek-R1": 0.4248242601388382,
+                    "gpt-4o-2024-11-20__gpt-3.5-turbo-0125": 2.0969019896831247,
+                    "gpt-4o-2024-11-20__databricks/dbrx-instruct": 1.978999628390933,
+                    "DeepSeek-R1__gpt-3.5-turbo-0125": 2.5217262498219633,
+                    "DeepSeek-R1__databricks/dbrx-instruct": 2.403823888529771,
+                    "gpt-3.5-turbo-0125__databricks/dbrx-instruct": 0.1796450818484717
+                }
+            },
+            "average_ci95": 0.13083998045918385,
+            "modulated_ci95": 0.6645916370850014
+        },
+        "calibrated": {
+            "ci99_overlap_adjacent": {
+                "DeepSeek-R1__gpt-4o-2024-11-20": false,
+                "gpt-4o-2024-11-20__gemini-1.5-pro-002": true,
+                "gemini-1.5-pro-002__claude-3-5-sonnet-20240620": true,
+                "claude-3-5-sonnet-20240620__gemini-1.5-pro-001": true,
+                "gemini-1.5-pro-001__claude-3-opus-20240229": false,
+                "claude-3-opus-20240229__Mistral-Large-Instruct-2411": true,
+                "Mistral-Large-Instruct-2411__Llama-3-70b-chat-hf": true,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": false,
+                "claude-3-haiku-20240307__Mixtral-8x22B-Instruct-v0.1": true,
+                "Mixtral-8x22B-Instruct-v0.1__c4ai-command-r-08-2024": true,
+                "c4ai-command-r-08-2024__Mixtral-8x7B-Instruct-v0.1": true,
+                "Mixtral-8x7B-Instruct-v0.1__databricks/dbrx-instruct": true,
+                "databricks/dbrx-instruct__Llama-2-13b-chat-hf": true,
+                "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": true,
+                "gpt-3.5-turbo-0125__gemma-7b-it": true,
+                "gemma-7b-it__gemma-2b-it": true
+            },
+            "adjacent_overlap_fraction": 0.8125,
+            "ci99_overlap_magnitude_adjacent": {
+                "DeepSeek-R1__gpt-4o-2024-11-20": 0.1474482208072594,
+                "gpt-4o-2024-11-20__gemini-1.5-pro-002": 0.624971150699821,
+                "gemini-1.5-pro-002__claude-3-5-sonnet-20240620": 0.7099588466041933,
+                "claude-3-5-sonnet-20240620__gemini-1.5-pro-001": 0.770488290856683,
+                "gemini-1.5-pro-001__claude-3-opus-20240229": 0.032405966485709925,
+                "claude-3-opus-20240229__Mistral-Large-Instruct-2411": 0.7754102877946476,
+                "Mistral-Large-Instruct-2411__Llama-3-70b-chat-hf": 0.9474573528170218,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": 0.28761072389334963,
+                "claude-3-haiku-20240307__Mixtral-8x22B-Instruct-v0.1": 0.69709039873071,
+                "Mixtral-8x22B-Instruct-v0.1__c4ai-command-r-08-2024": 0.779491522427374,
+                "c4ai-command-r-08-2024__Mixtral-8x7B-Instruct-v0.1": 0.9601084514271867,
+                "Mixtral-8x7B-Instruct-v0.1__databricks/dbrx-instruct": 0.46789244603812596,
+                "databricks/dbrx-instruct__Llama-2-13b-chat-hf": 0.705767838016234,
+                "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": 0.779873958809969,
+                "gpt-3.5-turbo-0125__gemma-7b-it": 0.610250963291509,
+                "gemma-7b-it__gemma-2b-it": 0.29234412548663746
+            },
+            "ci99_overlap_magnitude_sum": 9.588570544186434,
+            "ci99_overlap_scale_factor": 1.5,
+            "average_cohens_d_adjacent": 0.25860634773927477,
+            "emd": {
+                "average": 2.056682919091006,
+                "pairs": {
+                    "claude-3-5-sonnet-20240620__claude-3-haiku-20240307": 2.1089475217399736,
+                    "claude-3-5-sonnet-20240620__claude-3-opus-20240229": 0.974298350796968,
+                    "claude-3-5-sonnet-20240620__gemini-1.5-pro-001": 0.1580536653834696,
+                    "claude-3-5-sonnet-20240620__Llama-3-70b-chat-hf": 1.4280762409044558,
+                    "claude-3-5-sonnet-20240620__Mixtral-8x7B-Instruct-v0.1": 2.8224128891912788,
+                    "claude-3-5-sonnet-20240620__Llama-2-13b-chat-hf": 3.7154532529960242,
+                    "claude-3-5-sonnet-20240620__gemma-7b-it": 3.94684504968178,
+                    "claude-3-5-sonnet-20240620__gemma-2b-it": 4.4756580982771235,
+                    "claude-3-5-sonnet-20240620__Mixtral-8x22B-Instruct-v0.1": 2.4735643204369904,
+                    "claude-3-5-sonnet-20240620__c4ai-command-r-08-2024": 2.74108089283058,
+                    "claude-3-5-sonnet-20240620__gemini-1.5-pro-002": 0.17433343042401644,
+                    "claude-3-5-sonnet-20240620__Mistral-Large-Instruct-2411": 1.401632128057368,
+                    "claude-3-5-sonnet-20240620__gpt-4o-2024-11-20": 0.3852664428522429,
+                    "claude-3-5-sonnet-20240620__DeepSeek-R1": 1.0430157152661133,
+                    "claude-3-5-sonnet-20240620__gpt-3.5-turbo-0125": 3.7511667964315696,
+                    "claude-3-5-sonnet-20240620__databricks/dbrx-instruct": 3.4621809507776105,
+                    "claude-3-haiku-20240307__claude-3-opus-20240229": 1.134649170943006,
+                    "claude-3-haiku-20240307__gemini-1.5-pro-001": 2.0520250577357344,
+                    "claude-3-haiku-20240307__Llama-3-70b-chat-hf": 0.6844927294149497,
+                    "claude-3-haiku-20240307__Mixtral-8x7B-Instruct-v0.1": 0.7135839713144019,
+                    "claude-3-haiku-20240307__Llama-2-13b-chat-hf": 1.6065057312560505,
+                    "claude-3-haiku-20240307__gemma-7b-it": 1.8378975279418062,
+                    "claude-3-haiku-20240307__gemma-2b-it": 2.366710576537149,
+                    "claude-3-haiku-20240307__Mixtral-8x22B-Instruct-v0.1": 0.37663344088987033,
+                    "claude-3-haiku-20240307__c4ai-command-r-08-2024": 0.6321333710906061,
+                    "claude-3-haiku-20240307__gemini-1.5-pro-002": 2.2405546738067192,
+                    "claude-3-haiku-20240307__Mistral-Large-Instruct-2411": 0.7746143645530053,
+                    "claude-3-haiku-20240307__gpt-4o-2024-11-20": 2.4785972984658926,
+                    "claude-3-haiku-20240307__DeepSeek-R1": 3.151963237006087,
+                    "claude-3-haiku-20240307__gpt-3.5-turbo-0125": 1.642219274691596,
+                    "claude-3-haiku-20240307__databricks/dbrx-instruct": 1.3533407372947241,
+                    "claude-3-opus-20240229__gemini-1.5-pro-001": 0.9173758867927286,
+                    "claude-3-opus-20240229__Llama-3-70b-chat-hf": 0.47799229097651547,
+                    "claude-3-opus-20240229__Mixtral-8x7B-Instruct-v0.1": 1.8481145383943107,
+                    "claude-3-opus-20240229__Llama-2-13b-chat-hf": 2.7411549021990567,
+                    "claude-3-opus-20240229__gemma-7b-it": 2.972546698884812,
+                    "claude-3-opus-20240229__gemma-2b-it": 3.501359747480155,
+                    "claude-3-opus-20240229__Mixtral-8x22B-Instruct-v0.1": 1.4992659696400228,
+                    "claude-3-opus-20240229__c4ai-command-r-08-2024": 1.7667825420336123,
+                    "claude-3-opus-20240229__gemini-1.5-pro-002": 1.1059055028637137,
+                    "claude-3-opus-20240229__Mistral-Large-Instruct-2411": 0.4953732397414277,
+                    "claude-3-opus-20240229__gpt-4o-2024-11-20": 1.3439481275228866,
+                    "claude-3-opus-20240229__DeepSeek-R1": 2.017314066063081,
+                    "claude-3-opus-20240229__gpt-3.5-turbo-0125": 2.7768684456346016,
+                    "claude-3-opus-20240229__databricks/dbrx-instruct": 2.4878825999806424,
+                    "gemini-1.5-pro-001__Llama-3-70b-chat-hf": 1.3711537769002167,
+                    "gemini-1.5-pro-001__Mixtral-8x7B-Instruct-v0.1": 2.765490425187039,
+                    "gemini-1.5-pro-001__Llama-2-13b-chat-hf": 3.6585307889917846,
+                    "gemini-1.5-pro-001__gemma-7b-it": 3.8899225856775406,
+                    "gemini-1.5-pro-001__gemma-2b-it": 4.418735634272883,
+                    "gemini-1.5-pro-001__Mixtral-8x22B-Instruct-v0.1": 2.4166418564327516,
+                    "gemini-1.5-pro-001__c4ai-command-r-08-2024": 2.6841584288263407,
+                    "gemini-1.5-pro-001__gemini-1.5-pro-002": 0.19000427348167326,
+                    "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": 1.3806978919434039,
+                    "gemini-1.5-pro-001__gpt-4o-2024-11-20": 0.44142473691257766,
+                    "gemini-1.5-pro-001__DeepSeek-R1": 1.0999381792703529,
+                    "gemini-1.5-pro-001__gpt-3.5-turbo-0125": 3.69424433242733,
+                    "gemini-1.5-pro-001__databricks/dbrx-instruct": 3.405258486773371,
+                    "Llama-3-70b-chat-hf__Mixtral-8x7B-Instruct-v0.1": 1.3943366482868225,
+                    "Llama-3-70b-chat-hf__Llama-2-13b-chat-hf": 2.2873770120915684,
+                    "Llama-3-70b-chat-hf__gemma-7b-it": 2.518768808777324,
+                    "Llama-3-70b-chat-hf__gemma-2b-it": 3.0475818573726667,
+                    "Llama-3-70b-chat-hf__Mixtral-8x22B-Instruct-v0.1": 1.0454880795325345,
+                    "Llama-3-70b-chat-hf__c4ai-command-r-08-2024": 1.3130046519261238,
+                    "Llama-3-70b-chat-hf__gemini-1.5-pro-002": 1.5596833929712015,
+                    "Llama-3-70b-chat-hf__Mistral-Large-Instruct-2411": 0.5358073086748699,
+                    "Llama-3-70b-chat-hf__gpt-4o-2024-11-20": 1.7977260176303747,
+                    "Llama-3-70b-chat-hf__DeepSeek-R1": 2.4710919561705698,
+                    "Llama-3-70b-chat-hf__gpt-3.5-turbo-0125": 2.323090555527113,
+                    "Llama-3-70b-chat-hf__databricks/dbrx-instruct": 2.034104709873154,
+                    "Mixtral-8x7B-Instruct-v0.1__Llama-2-13b-chat-hf": 0.8989665438005536,
+                    "Mixtral-8x7B-Instruct-v0.1__gemma-7b-it": 1.124449749943865,
+                    "Mixtral-8x7B-Instruct-v0.1__gemma-2b-it": 1.6532452090858447,
+                    "Mixtral-8x7B-Instruct-v0.1__Mixtral-8x22B-Instruct-v0.1": 0.3520455100180858,
+                    "Mixtral-8x7B-Instruct-v0.1__c4ai-command-r-08-2024": 0.2403520825493477,
+                    "Mixtral-8x7B-Instruct-v0.1__gemini-1.5-pro-002": 2.954020041258024,
+                    "Mixtral-8x7B-Instruct-v0.1__Mistral-Large-Instruct-2411": 1.4207807611339103,
+                    "Mixtral-8x7B-Instruct-v0.1__gpt-4o-2024-11-20": 3.1920626659171973,
+                    "Mixtral-8x7B-Instruct-v0.1__DeepSeek-R1": 3.865428604457392,
+                    "Mixtral-8x7B-Instruct-v0.1__gpt-3.5-turbo-0125": 0.9287539072402909,
+                    "Mixtral-8x7B-Instruct-v0.1__databricks/dbrx-instruct": 0.6422530949083693,
+                    "Llama-2-13b-chat-hf__gemma-7b-it": 0.2393949979662679,
+                    "Llama-2-13b-chat-hf__gemma-2b-it": 0.7602322066529981,
+                    "Llama-2-13b-chat-hf__Mixtral-8x22B-Instruct-v0.1": 1.2418889325590334,
+                    "Llama-2-13b-chat-hf__c4ai-command-r-08-2024": 0.9743723601654442,
+                    "Llama-2-13b-chat-hf__gemini-1.5-pro-002": 3.84706040506277,
+                    "Llama-2-13b-chat-hf__Mistral-Large-Instruct-2411": 2.3138211249386567,
+                    "Llama-2-13b-chat-hf__gpt-4o-2024-11-20": 4.085103029721943,
+                    "Llama-2-13b-chat-hf__DeepSeek-R1": 4.758468968262137,
+                    "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": 0.09426578281364265,
+                    "Llama-2-13b-chat-hf__databricks/dbrx-instruct": 0.328638712518798,
+                    "gemma-7b-it__gemma-2b-it": 0.5381227553840415,
+                    "gemma-7b-it__Mixtral-8x22B-Instruct-v0.1": 1.4732807292447894,
+                    "gemma-7b-it__c4ai-command-r-08-2024": 1.2057641568511999,
+                    "gemma-7b-it__gemini-1.5-pro-002": 4.078452201748525,
+                    "gemma-7b-it__Mistral-Large-Instruct-2411": 2.545212921624412,
+                    "gemma-7b-it__gpt-4o-2024-11-20": 4.316494826407698,
+                    "gemma-7b-it__DeepSeek-R1": 4.989860764947893,
+                    "gemma-7b-it__gpt-3.5-turbo-0125": 0.2190203149771176,
+                    "gemma-7b-it__databricks/dbrx-instruct": 0.5210610752771365,
+                    "gemma-2b-it__Mixtral-8x22B-Instruct-v0.1": 2.0020937778401326,
+                    "gemma-2b-it__c4ai-command-r-08-2024": 1.7345772054465431,
+                    "gemma-2b-it__gemini-1.5-pro-002": 4.607265250343868,
+                    "gemma-2b-it__Mistral-Large-Instruct-2411": 3.074025970219755,
+                    "gemma-2b-it__gpt-4o-2024-11-20": 4.8453078750030425,
+                    "gemma-2b-it__DeepSeek-R1": 5.518673813543236,
+                    "gemma-2b-it__gpt-3.5-turbo-0125": 0.7244913018455537,
+                    "gemma-2b-it__databricks/dbrx-instruct": 1.0169657224166593,
+                    "Mixtral-8x22B-Instruct-v0.1__c4ai-command-r-08-2024": 0.3024448294106819,
+                    "Mixtral-8x22B-Instruct-v0.1__gemini-1.5-pro-002": 2.605171472503736,
+                    "Mixtral-8x22B-Instruct-v0.1__Mistral-Large-Instruct-2411": 1.0719321923796226,
+                    "Mixtral-8x22B-Instruct-v0.1__gpt-4o-2024-11-20": 2.84321409716291,
+                    "Mixtral-8x22B-Instruct-v0.1__DeepSeek-R1": 3.516580035703104,
+                    "Mixtral-8x22B-Instruct-v0.1__gpt-3.5-turbo-0125": 1.2776024759945788,
+                    "Mixtral-8x22B-Instruct-v0.1__databricks/dbrx-instruct": 0.9913617473640469,
+                    "c4ai-command-r-08-2024__gemini-1.5-pro-002": 2.8726880448973255,
+                    "c4ai-command-r-08-2024__Mistral-Large-Instruct-2411": 1.3399589688548446,
+                    "c4ai-command-r-08-2024__gpt-4o-2024-11-20": 3.110730669556499,
+                    "c4ai-command-r-08-2024__DeepSeek-R1": 3.784096608096694,
+                    "c4ai-command-r-08-2024__gpt-3.5-turbo-0125": 1.0101009622638932,
+                    "c4ai-command-r-08-2024__databricks/dbrx-instruct": 0.7594456495817787,
+                    "gemini-1.5-pro-002__Mistral-Large-Instruct-2411": 1.540948531225435,
+                    "gemini-1.5-pro-002__gpt-4o-2024-11-20": 0.26022901314990954,
+                    "gemini-1.5-pro-002__DeepSeek-R1": 0.9114085631993678,
+                    "gemini-1.5-pro-002__gpt-3.5-turbo-0125": 3.882773948498315,
+                    "gemini-1.5-pro-002__databricks/dbrx-instruct": 3.5937881028443557,
+                    "Mistral-Large-Instruct-2411__gpt-4o-2024-11-20": 1.7712819047832866,
+                    "Mistral-Large-Instruct-2411__DeepSeek-R1": 2.444647843323481,
+                    "Mistral-Large-Instruct-2411__gpt-3.5-turbo-0125": 2.3495346683742016,
+                    "Mistral-Large-Instruct-2411__databricks/dbrx-instruct": 2.060548822720242,
+                    "gpt-4o-2024-11-20__DeepSeek-R1": 0.6733659385401944,
+                    "gpt-4o-2024-11-20__gpt-3.5-turbo-0125": 4.120816573157488,
+                    "gpt-4o-2024-11-20__databricks/dbrx-instruct": 3.831830727503529,
+                    "DeepSeek-R1__gpt-3.5-turbo-0125": 4.794182511697683,
+                    "DeepSeek-R1__databricks/dbrx-instruct": 4.505196666043723,
+                    "gpt-3.5-turbo-0125__databricks/dbrx-instruct": 0.3526662103214724
+                }
+            },
+            "average_ci95": 0.23959543522478752,
+            "modulated_ci95": 0.4534329670349113
+        }
+    },
+    "calibrated_score_range": 5.518673813543236,
+    "final_judgemark_score": 0.717895040789048,
+    "iteration_stability": {
+        "raw": {
+            "scoring_stability": {
+                "claude-3-5-sonnet-20240620": {
+                    "mean_iter_score": 6.882826086956522,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.12149419318698275
+                },
+                "claude-3-haiku-20240307": {
+                    "mean_iter_score": 5.859333333333334,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.08627821599659749
+                },
+                "claude-3-opus-20240229": {
+                    "mean_iter_score": 6.402242753623188,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.14243731850464442
+                },
+                "gemini-1.5-pro-001": {
+                    "mean_iter_score": 6.8371811594202905,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.06749178421688079
+                },
+                "Llama-3-70b-chat-hf": {
+                    "mean_iter_score": 6.165547101449276,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.04864292213864302
+                },
+                "Mixtral-8x7B-Instruct-v0.1": {
+                    "mean_iter_score": 5.4900714285714285,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.03697771974269932
+                },
+                "Llama-2-13b-chat-hf": {
+                    "mean_iter_score": 5.031199275362319,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.09747313838906822
+                },
+                "gemma-7b-it": {
+                    "mean_iter_score": 4.86761231884058,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.0801539451972691
+                },
+                "gemma-2b-it": {
+                    "mean_iter_score": 4.454265151515152,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.13527194237173185
+                },
+                "Mixtral-8x22B-Instruct-v0.1": {
+                    "mean_iter_score": 5.672673913043479,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.1309896033134824
+                },
+                "c4ai-command-r-08-2024": {
+                    "mean_iter_score": 5.547692028985508,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.12587443963595313
+                },
+                "gemini-1.5-pro-002": {
+                    "mean_iter_score": 6.958083333333334,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.05298886151300513
+                },
+                "Mistral-Large-Instruct-2411": {
+                    "mean_iter_score": 6.197,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.07757317334118928
+                },
+                "gpt-4o-2024-11-20": {
+                    "mean_iter_score": 7.114556418219462,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.07816059115350037
+                },
+                "DeepSeek-R1": {
+                    "mean_iter_score": 7.536576086956521,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.02423783060139939
+                },
+                "gpt-3.5-turbo-0125": {
+                    "mean_iter_score": 5.014413043478261,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.13013449360631094
+                },
+                "databricks/dbrx-instruct": {
+                    "mean_iter_score": 5.1323748353096175,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.05707507850355233
+                }
+            },
+            "ranking_stability": {
+                "pairwise_correlation": {
+                    "1__vs__2": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.9411764705882352,
+                        "p_value": 2.628150241362193e-11
+                    },
+                    "1__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.9411764705882352,
+                        "p_value": 2.628150241362193e-11
+                    },
+                    "1__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8970588235294118,
+                        "p_value": 1.2313901628307946e-09
+                    },
+                    "1__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8970588235294118,
+                        "p_value": 1.2313901628307946e-09
+                    },
+                    "2__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.9411764705882352,
+                        "p_value": 2.628150241362193e-11
+                    },
+                    "2__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8970588235294118,
+                        "p_value": 1.2313901628307946e-09
+                    },
+                    "2__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8676470588235293,
+                        "p_value": 9.575975226992579e-09
+                    },
+                    "3__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.926470588235294,
+                        "p_value": 1.080161877119549e-10
+                    },
+                    "3__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8970588235294118,
+                        "p_value": 1.2313901628307946e-09
+                    },
+                    "4__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.9705882352941175,
+                        "p_value": 8.546830053210383e-13
+                    }
+                },
+                "average_kendall_tau": 0.9176470588235294
+            },
+            "randomized_average_kendall_tau_by_item": 0.8966088235294117
+        },
+        "calibrated": {
+            "scoring_stability": {
+                "claude-3-5-sonnet-20240620": {
+                    "mean_iter_score": 6.915874527215746,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.22009058770768894
+                },
+                "claude-3-haiku-20240307": {
+                    "mean_iter_score": 4.806912824431705,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.20222972135812298
+                },
+                "claude-3-opus-20240229": {
+                    "mean_iter_score": 5.942442457389991,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.2963597174069781
+                },
+                "gemini-1.5-pro-001": {
+                    "mean_iter_score": 6.860534737028704,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.11308171750820732
+                },
+                "Llama-3-70b-chat-hf": {
+                    "mean_iter_score": 5.48577998130629,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.12800302240947667
+                },
+                "Mixtral-8x7B-Instruct-v0.1": {
+                    "mean_iter_score": 4.092232909687733,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.07069027749900265
+                },
+                "Llama-2-13b-chat-hf": {
+                    "mean_iter_score": 3.201361333506927,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.11323960929439676
+                },
+                "gemma-7b-it": {
+                    "mean_iter_score": 2.9668138674394315,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.14847119982874263
+                },
+                "gemma-2b-it": {
+                    "mean_iter_score": 2.438386622004634,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.11153529817692129
+                },
+                "Mixtral-8x22B-Instruct-v0.1": {
+                    "mean_iter_score": 4.441094223578764,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.25144340286475925
+                },
+                "c4ai-command-r-08-2024": {
+                    "mean_iter_score": 4.175624473535725,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.2337338662636756
+                },
+                "gemini-1.5-pro-002": {
+                    "mean_iter_score": 7.047467498238424,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.10843230747798224
+                },
+                "Mistral-Large-Instruct-2411": {
+                    "mean_iter_score": 5.51422821811431,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.15499110202194474
+                },
+                "gpt-4o-2024-11-20": {
+                    "mean_iter_score": 7.289754613065693,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.1169497606239724
+                },
+                "DeepSeek-R1": {
+                    "mean_iter_score": 7.9591605786156645,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.034187170092848856
+                },
+                "gpt-3.5-turbo-0125": {
+                    "mean_iter_score": 3.164351899738183,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.18587690684546634
+                },
+                "databricks/dbrx-instruct": {
+                    "mean_iter_score": 3.453322258006979,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.10981290332653995
+                }
+            },
+            "ranking_stability": {
+                "pairwise_correlation": {
+                    "1__vs__2": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.926470588235294,
+                        "p_value": 1.080161877119549e-10
+                    },
+                    "1__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.9558823529411764,
+                        "p_value": 5.347391697765181e-12
+                    },
+                    "1__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8823529411764705,
+                        "p_value": 3.5743855407137387e-09
+                    },
+                    "1__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8970588235294118,
+                        "p_value": 1.2313901628307946e-09
+                    },
+                    "2__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.9411764705882352,
+                        "p_value": 2.628150241362193e-11
+                    },
+                    "2__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8970588235294118,
+                        "p_value": 1.2313901628307946e-09
+                    },
+                    "2__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8823529411764705,
+                        "p_value": 3.5743855407137387e-09
+                    },
+                    "3__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.926470588235294,
+                        "p_value": 1.080161877119549e-10
+                    },
+                    "3__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.9117647058823529,
+                        "p_value": 3.8599058936360526e-10
+                    },
+                    "4__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.9558823529411764,
+                        "p_value": 5.347391697765181e-12
+                    }
+                },
+                "average_kendall_tau": 0.9176470588235294
+            },
+            "randomized_average_kendall_tau_by_item": 0.8909705882352941
+        }
+    },
+    "raw_score_range": 3.0806614953673783,
+    "final_judgemark_score_raw": 0.6610108918050778,
+    "final_judgemark_score_elements_raw": {
+        "norm_stability_between_iterations": 0.8276813725490195,
+        "norm_correlation_with_lmsys_arena": 0.9117647058823529,
+        "norm_std_dev_between_models": 0.3989880780860896,
+        "norm_kruskall_wallis": 0.8170273952763455,
+        "norm_ci99_adjacent_overlap": 0.805715783909309,
+        "norm_score_range": 0.3850826869209223,
+        "norm_intra_model_ci95": 0.6645916370850014,
+        "norm_earth_movers_distance": 0.26852332732097295
+    },
+    "final_judgemark_score_elements_calibrated": {
+        "norm_stability_between_iterations": 0.8182843137254902,
+        "norm_correlation_with_lmsys_arena": 0.9084967320261438,
+        "norm_std_dev_between_models": 0.7652096544734684,
+        "norm_kruskall_wallis": 0.8170273952763455,
+        "norm_ci99_adjacent_overlap": 0.6312088252235988,
+        "norm_score_range": 0.6898342266929045,
+        "norm_intra_model_ci95": 0.4534329670349113,
+        "norm_earth_movers_distance": {
+            "pearson_r": 0.872365676152749,
+            "kendall_tau": 0.9084967320261438,
+            "anova_f": 0.5590143514242181,
+            "kw_stat": 0.8170273952763455,
+            "std_dev": 0.7652096544734684,
+            "ci99_overlap_magnitude_sum_norm": 0.6312088252235988,
+            "calibrated_score_range_norm": 0.6898342266929045,
+            "kendall_tau_bootstrapped": 0.8182843137254902
+        }
+    }
+}
