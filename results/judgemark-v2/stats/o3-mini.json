@@ -1,0 +1,1892 @@
+{
+    "judge_model": "openai/o3-mini",
+    "start_time": "2025-02-01T10:07:46.283873",
+    "status": "completed",
+    "samples_file": "data/judgemark_v2.1_samples.json",
+    "prompts_file": "data/judge_prompts.json",
+    "errors": [
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "33",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "34",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "35",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "36",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "38",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "41",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "42",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "43",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "2",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "6",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "3",
+            "item_id": "44",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "9",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "10",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "19",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "20",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "22",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "26",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "27",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "28",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "29",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "30",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "31",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "32",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "33",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "34",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "35",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "36",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "37",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "38",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "41",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "42",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "43",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "44",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "2",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "6",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "9",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "10",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "19",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "20",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "22",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "26",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "27",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "28",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "29",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "30",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "31",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "32",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "33",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "34",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "35",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "36",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "37",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "38",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "41",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "42",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "43",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "44",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "2",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "6",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "9",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "10",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "19",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "20",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "22",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "26",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "27",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "28",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "29",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "30",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "32",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "31",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "33",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "34",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "35",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "36",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "37",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "38",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "41",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "42",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "43",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "1",
+            "item_id": "44",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "2",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "6",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "9",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "10",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "19",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "20",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "22",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "27",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "28",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "26",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "29",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "30",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "31",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "32",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "33",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "34",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "35",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "36",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "37",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "38",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "41",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "42",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "43",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "2",
+            "item_id": "44",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "2",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "6",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "9",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "19",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "20",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "22",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "26",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "27",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "28",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "30",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "29",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "31",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "32",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "33",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "34",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "35",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "36",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "38",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        },
+        {
+            "model": "gpt-3.5-turbo-0125",
+            "iteration": "3",
+            "item_id": "41",
+            "error": "402 Client Error: Payment Required for url: https://openrouter.ai/api/v1/chat/completions"
+        }
+    ],
+    "end_time": "2025-02-01T10:32:26.736512",
+    "raw_score_distribution": {
+        "count": 2040,
+        "min": 3.54,
+        "max": 9.07,
+        "mean": 6.91,
+        "median": 7.07,
+        "stdev": 0.951,
+        "p10": 5.558,
+        "p25": 6.29,
+        "p75": 7.61,
+        "p90": 8.04
+    },
+    "calibration_config": {
+        "method": "piecewise_landmark",
+        "in_landmarks": [
+            3.54,
+            6.29,
+            7.07,
+            7.61,
+            9.07
+        ],
+        "out_landmarks": [
+            0,
+            3,
+            5,
+            7,
+            10
+        ]
+    },
+    "calibrated_score_distribution": {
+        "count": 2040,
+        "min": 0.0,
+        "max": 10.0,
+        "mean": 5.031,
+        "median": 5.0,
+        "stdev": 2.157,
+        "p10": 2.201,
+        "p25": 3.0,
+        "p75": 7.0,
+        "p90": 7.884
+    },
+    "raw_model_stats": {
+        "claude-3-5-sonnet-20240620": {
+            "count": 120,
+            "mean": 7.483666666666666,
+            "median": 7.48,
+            "stdev": 0.506984715154767,
+            "ci95": 0.09071107516819504,
+            "min": 6.04,
+            "max": 8.61,
+            "length_correlation": 0.22678435924247914
+        },
+        "claude-3-haiku-20240307": {
+            "count": 120,
+            "mean": 6.813166666666667,
+            "median": 6.93,
+            "stdev": 0.7751909315724461,
+            "ci95": 0.1386992561345863,
+            "min": 4.61,
+            "max": 8.14,
+            "length_correlation": 0.285738330614343
+        },
+        "claude-3-opus-20240229": {
+            "count": 120,
+            "mean": 7.363583333333334,
+            "median": 7.46,
+            "stdev": 0.639202228403123,
+            "ci95": 0.11436778990596022,
+            "min": 5.43,
+            "max": 8.71,
+            "length_correlation": 0.3367932061362673
+        },
+        "gemini-1.5-pro-001": {
+            "count": 120,
+            "mean": 7.352916666666666,
+            "median": 7.39,
+            "stdev": 0.5245444535532726,
+            "ci95": 0.09385291101094712,
+            "min": 6.0,
+            "max": 8.75,
+            "length_correlation": 0.08791929098578204
+        },
+        "Llama-3-70b-chat-hf": {
+            "count": 120,
+            "mean": 7.132333333333333,
+            "median": 7.32,
+            "stdev": 0.6194735272635886,
+            "ci95": 0.11083787738878927,
+            "min": 5.07,
+            "max": 8.54,
+            "length_correlation": 0.3077298693258134
+        },
+        "Mixtral-8x7B-Instruct-v0.1": {
+            "count": 120,
+            "mean": 6.711,
+            "median": 6.84,
+            "stdev": 0.8960608472736696,
+            "ci95": 0.16032562805666692,
+            "min": 3.68,
+            "max": 8.36,
+            "length_correlation": -0.05530444902967181
+        },
+        "Llama-2-13b-chat-hf": {
+            "count": 120,
+            "mean": 6.179333333333333,
+            "median": 6.25,
+            "stdev": 0.8284730647689271,
+            "ci95": 0.14823263938073075,
+            "min": 4.14,
+            "max": 7.82,
+            "length_correlation": 0.40330119139040943
+        },
+        "gemma-7b-it": {
+            "count": 120,
+            "mean": 6.06975,
+            "median": 6.0,
+            "stdev": 0.7342914752250875,
+            "ci95": 0.13138141488974525,
+            "min": 3.57,
+            "max": 7.79,
+            "length_correlation": -0.13501888700981435
+        },
+        "gemma-2b-it": {
+            "count": 120,
+            "mean": 5.638333333333334,
+            "median": 5.695,
+            "stdev": 0.8244726690878413,
+            "ci95": 0.1475168777759283,
+            "min": 3.64,
+            "max": 7.71,
+            "length_correlation": 0.24669655360085088
+        },
+        "Mixtral-8x22B-Instruct-v0.1": {
+            "count": 120,
+            "mean": 6.735333333333333,
+            "median": 6.82,
+            "stdev": 0.7894290387887395,
+            "ci95": 0.14124677675077635,
+            "min": 4.14,
+            "max": 8.61,
+            "length_correlation": -0.005362030982900436
+        },
+        "c4ai-command-r-08-2024": {
+            "count": 120,
+            "mean": 6.812583333333333,
+            "median": 7.0,
+            "stdev": 0.6665356261268849,
+            "ci95": 0.11925835528477137,
+            "min": 4.75,
+            "max": 8.04,
+            "length_correlation": 0.29665717330507174
+        },
+        "gemini-1.5-pro-002": {
+            "count": 120,
+            "mean": 7.533333333333333,
+            "median": 7.54,
+            "stdev": 0.4597374722788724,
+            "ci95": 0.08225747080519784,
+            "min": 6.18,
+            "max": 8.43,
+            "length_correlation": 0.06569007847338082
+        },
+        "Mistral-Large-Instruct-2411": {
+            "count": 120,
+            "mean": 7.303583333333333,
+            "median": 7.375,
+            "stdev": 0.7182282072594206,
+            "ci95": 0.1285073315804769,
+            "min": 4.43,
+            "max": 8.71,
+            "length_correlation": 0.41398660942094656
+        },
+        "gpt-4o-2024-11-20": {
+            "count": 120,
+            "mean": 7.821666666666666,
+            "median": 7.79,
+            "stdev": 0.5010850970741436,
+            "ci95": 0.08965549955974363,
+            "min": 5.96,
+            "max": 8.82,
+            "length_correlation": 0.209482245690201
+        },
+        "DeepSeek-R1": {
+            "count": 120,
+            "mean": 7.9795,
+            "median": 8.0,
+            "stdev": 0.4241627442544258,
+            "ci95": 0.0758923443399383,
+            "min": 6.68,
+            "max": 9.07,
+            "length_correlation": 0.3507905068806969
+        },
+        "gpt-3.5-turbo-0125": {
+            "count": 120,
+            "mean": 6.115583333333333,
+            "median": 6.14,
+            "stdev": 0.8117061560401655,
+            "ci95": 0.14523265876480893,
+            "min": 4.18,
+            "max": 8.25,
+            "length_correlation": 0.22039890332444487
+        },
+        "databricks/dbrx-instruct": {
+            "count": 120,
+            "mean": 6.426666666666667,
+            "median": 6.415,
+            "stdev": 0.8983433242871661,
+            "ci95": 0.16073401501144474,
+            "min": 3.54,
+            "max": 8.43,
+            "length_correlation": -0.07455890194892044
+        }
+    },
+    "calibrated_model_stats": {
+        "claude-3-5-sonnet-20240620": {
+            "count": 120,
+            "mean": 6.37145391805894,
+            "median": 6.518518518518517,
+            "stdev": 1.4362454440871555,
+            "ci95": 0.25697691576124954,
+            "min": 2.727272727272727,
+            "max": 9.054794520547944,
+            "length_correlation": 0.22419668313532917
+        },
+        "claude-3-haiku-20240307": {
+            "count": 120,
+            "mean": 4.703596945334388,
+            "median": 4.64102564102564,
+            "stdev": 1.7647284062039403,
+            "ci95": 0.3157499749430257,
+            "min": 1.1672727272727277,
+            "max": 8.089041095890412,
+            "length_correlation": 0.32599340336655275
+        },
+        "claude-3-opus-20240229": {
+            "count": 120,
+            "mean": 6.049812872312872,
+            "median": 6.444444444444443,
+            "stdev": 1.7450371119000867,
+            "ci95": 0.31222675535797245,
+            "min": 2.0618181818181816,
+            "max": 9.260273972602741,
+            "length_correlation": 0.3287542419004152
+        },
+        "gemini-1.5-pro-001": {
+            "count": 120,
+            "mean": 5.993293501104002,
+            "median": 6.185185185185183,
+            "stdev": 1.5007019989670538,
+            "ci95": 0.268509656729601,
+            "min": 2.6836363636363636,
+            "max": 9.342465753424657,
+            "length_correlation": 0.09141215676850213
+        },
+        "Llama-3-70b-chat-hf": {
+            "count": 120,
+            "mean": 5.46323833700546,
+            "median": 5.925925925925926,
+            "stdev": 1.6266896854668222,
+            "ci95": 0.2910517140317796,
+            "min": 1.6690909090909094,
+            "max": 8.910958904109586,
+            "length_correlation": 0.32405882420653664
+        },
+        "Mixtral-8x7B-Instruct-v0.1": {
+            "count": 120,
+            "mean": 4.504138225126809,
+            "median": 4.410256410256411,
+            "stdev": 1.9511479147009847,
+            "ci95": 0.34910465713089234,
+            "min": 0.15272727272727285,
+            "max": 8.541095890410958,
+            "length_correlation": -0.03276666935041097
+        },
+        "Llama-2-13b-chat-hf": {
+            "count": 120,
+            "mean": 3.3320340668126054,
+            "median": 2.9563636363636365,
+            "stdev": 1.5308963835756157,
+            "ci95": 0.27391211761256573,
+            "min": 0.6545454545454542,
+            "max": 7.431506849315069,
+            "length_correlation": 0.4218058156743609
+        },
+        "gemma-7b-it": {
+            "count": 120,
+            "mean": 3.092536406684808,
+            "median": 2.6836363636363636,
+            "stdev": 1.3285504611203414,
+            "ci95": 0.23770783840423704,
+            "min": 0.032727272727272515,
+            "max": 7.369863013698629,
+            "length_correlation": -0.051866224057299945
+        },
+        "gemma-2b-it": {
+            "count": 120,
+            "mean": 2.424042467763929,
+            "median": 2.3509090909090906,
+            "stdev": 1.1741289756870938,
+            "ci95": 0.2100783289653903,
+            "min": 0.10909090909090918,
+            "max": 7.205479452054794,
+            "length_correlation": 0.23599855066546474
+        },
+        "Mixtral-8x22B-Instruct-v0.1": {
+            "count": 120,
+            "mean": 4.486501657483392,
+            "median": 4.3589743589743595,
+            "stdev": 1.7790314604370892,
+            "ci95": 0.31830911605496603,
+            "min": 0.6545454545454542,
+            "max": 9.054794520547944,
+            "length_correlation": 0.02046886324933778
+        },
+        "c4ai-command-r-08-2024": {
+            "count": 120,
+            "mean": 4.626904985341057,
+            "median": 4.820512820512819,
+            "stdev": 1.6211799641271003,
+            "ci95": 0.2900658998017574,
+            "min": 1.32,
+            "max": 7.883561643835614,
+            "length_correlation": 0.32081725168687936
+        },
+        "gemini-1.5-pro-002": {
+            "count": 120,
+            "mean": 6.512535365361848,
+            "median": 6.74074074074074,
+            "stdev": 1.3224368207384976,
+            "ci95": 0.23661396934733764,
+            "min": 2.8799999999999994,
+            "max": 8.684931506849313,
+            "length_correlation": 0.07459190318737233
+        },
+        "Mistral-Large-Instruct-2411": {
+            "count": 120,
+            "mean": 5.940853128522077,
+            "median": 6.129629629629629,
+            "stdev": 1.7683081299070993,
+            "ci95": 0.316390468780832,
+            "min": 0.9709090909090905,
+            "max": 9.260273972602741,
+            "length_correlation": 0.3467242828471228
+        },
+        "gpt-4o-2024-11-20": {
+            "count": 120,
+            "mean": 7.278984122338003,
+            "median": 7.369863013698629,
+            "stdev": 1.2783334948697511,
+            "ci95": 0.2287228831104952,
+            "min": 2.64,
+            "max": 9.486301369863014,
+            "length_correlation": 0.21096278381260233
+        },
+        "DeepSeek-R1": {
+            "count": 120,
+            "mean": 7.684483341789277,
+            "median": 7.801369863013698,
+            "stdev": 1.0335672814565262,
+            "ci95": 0.18492865081932325,
+            "min": 3.999999999999999,
+            "max": 10.0,
+            "length_correlation": 0.34034137083710847
+        },
+        "gpt-3.5-turbo-0125": {
+            "count": 120,
+            "mean": 3.204611602502013,
+            "median": 2.836363636363636,
+            "stdev": 1.5407210624502812,
+            "ci95": 0.275669975704266,
+            "min": 0.6981818181818178,
+            "max": 8.315068493150685,
+            "length_correlation": 0.2231744135421358
+        },
+        "databricks/dbrx-instruct": {
+            "count": 120,
+            "mean": 3.8652841646768583,
+            "median": 3.3205128205128203,
+            "stdev": 1.7942274563491394,
+            "ci95": 0.3210280247049295,
+            "min": 0.0,
+            "max": 8.684931506849313,
+            "length_correlation": -0.033126837050992376
+        }
+    },
+    "raw_cross_model_stats": {
+        "anova_f": 108.88237645419557,
+        "anova_p": 1.3173457207683332e-258,
+        "kw_stat": 985.009375798799,
+        "kw_p": 1.8137518802032042e-199,
+        "std_dev_across_models": 0.6466916686729669,
+        "pearson_r": 0.9580515734930054,
+        "kendall_tau": 0.8823529411764706,
+        "normalized_components": {
+            "pearson_r": 0.8601719116433514,
+            "kendall_tau": 0.869281045751634,
+            "anova_f": 0.31109250415484446,
+            "kw_stat": 0.5472274309993328,
+            "std_dev": 0.24872756487421804,
+            "ci99_overlap_magnitude_sum_norm": 0.7956089236238862,
+            "raw_score_range_norm": 0.2341166666666666,
+            "kendall_tau_bootstrapped": 0.7819754901960784
+        }
+    },
+    "calibrated_cross_model_stats": {
+        "anova_f": 117.22462844050135,
+        "anova_p": 8.60127909547344e-274,
+        "kw_stat": 985.009375798799,
+        "kw_p": 1.8137518802032042e-199,
+        "std_dev_across_models": 1.495961375619645,
+        "pearson_r": 0.9671477438109286,
+        "kendall_tau": 0.8852941176470588,
+        "normalized_components": {
+            "pearson_r": 0.8904924793697621,
+            "kendall_tau": 0.8725490196078431,
+            "anova_f": 0.33492750983000386,
+            "kw_stat": 0.5472274309993328,
+            "std_dev": 0.5753697598537096,
+            "ci99_overlap_magnitude_sum_norm": 0.5259485775301015,
+            "calibrated_score_range_norm": 0.5260440874025348,
+            "kendall_tau_bootstrapped": 0.7799460784313724
+        }
+    },
+    "separability_metrics": {
+        "raw": {
+            "ci99_overlap_adjacent": {
+                "DeepSeek-R1__gpt-4o-2024-11-20": true,
+                "gpt-4o-2024-11-20__gemini-1.5-pro-002": false,
+                "gemini-1.5-pro-002__claude-3-5-sonnet-20240620": true,
+                "claude-3-5-sonnet-20240620__claude-3-opus-20240229": true,
+                "claude-3-opus-20240229__gemini-1.5-pro-001": true,
+                "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": true,
+                "Mistral-Large-Instruct-2411__Llama-3-70b-chat-hf": true,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": true,
+                "claude-3-haiku-20240307__c4ai-command-r-08-2024": true,
+                "c4ai-command-r-08-2024__Mixtral-8x22B-Instruct-v0.1": true,
+                "Mixtral-8x22B-Instruct-v0.1__Mixtral-8x7B-Instruct-v0.1": true,
+                "Mixtral-8x7B-Instruct-v0.1__databricks/dbrx-instruct": true,
+                "databricks/dbrx-instruct__Llama-2-13b-chat-hf": true,
+                "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": true,
+                "gpt-3.5-turbo-0125__gemma-7b-it": true,
+                "gemma-7b-it__gemma-2b-it": false
+            },
+            "adjacent_overlap_fraction": 0.875,
+            "ci99_overlap_magnitude_adjacent": {
+                "DeepSeek-R1__gpt-4o-2024-11-20": 0.1685107897198348,
+                "gpt-4o-2024-11-20__gemini-1.5-pro-002": 0.05055835038565881,
+                "gemini-1.5-pro-002__claude-3-5-sonnet-20240620": 0.2913058710709686,
+                "claude-3-5-sonnet-20240620__claude-3-opus-20240229": 0.2841882101844435,
+                "claude-3-opus-20240229__gemini-1.5-pro-001": 0.3700240996000481,
+                "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": 0.3700240996000481,
+                "Mistral-Large-Instruct-2411__Llama-3-70b-chat-hf": 0.3005707165258187,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": 0.1727453697005057,
+                "claude-3-haiku-20240307__c4ai-command-r-08-2024": 0.4701874993401436,
+                "c4ai-command-r-08-2024__Mixtral-8x22B-Instruct-v0.1": 0.43628322920054075,
+                "Mixtral-8x22B-Instruct-v0.1__Mixtral-8x7B-Instruct-v0.1": 0.5568789590609384,
+                "Mixtral-8x7B-Instruct-v0.1__databricks/dbrx-instruct": 0.3485708785047734,
+                "databricks/dbrx-instruct__Llama-2-13b-chat-hf": 0.3617319948831197,
+                "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": 0.514757536636222,
+                "gpt-3.5-turbo-0125__gemma-7b-it": 0.4994554192381724,
+                "gemma-7b-it__gemma-2b-it": 0.1183749621277208
+            },
+            "ci99_overlap_magnitude_sum": 5.314167985778957,
+            "ci99_overlap_scale_factor": 1.5,
+            "average_cohens_d_adjacent": 0.21874905300341757,
+            "emd": {
+                "average": 0.7900343137254905,
+                "pairs": {
+                    "claude-3-5-sonnet-20240620__claude-3-haiku-20240307": 0.6704999999999999,
+                    "claude-3-5-sonnet-20240620__claude-3-opus-20240229": 0.13224999999999998,
+                    "claude-3-5-sonnet-20240620__gemini-1.5-pro-001": 0.13791666666666666,
+                    "claude-3-5-sonnet-20240620__Llama-3-70b-chat-hf": 0.3513333333333334,
+                    "claude-3-5-sonnet-20240620__Mixtral-8x7B-Instruct-v0.1": 0.7726666666666667,
+                    "claude-3-5-sonnet-20240620__Llama-2-13b-chat-hf": 1.3043333333333333,
+                    "claude-3-5-sonnet-20240620__gemma-7b-it": 1.4139166666666667,
+                    "claude-3-5-sonnet-20240620__gemma-2b-it": 1.8453333333333333,
+                    "claude-3-5-sonnet-20240620__Mixtral-8x22B-Instruct-v0.1": 0.7483333333333333,
+                    "claude-3-5-sonnet-20240620__c4ai-command-r-08-2024": 0.6710833333333333,
+                    "claude-3-5-sonnet-20240620__gemini-1.5-pro-002": 0.0615,
+                    "claude-3-5-sonnet-20240620__Mistral-Large-Instruct-2411": 0.18941666666666657,
+                    "claude-3-5-sonnet-20240620__gpt-4o-2024-11-20": 0.3393333333333334,
+                    "claude-3-5-sonnet-20240620__DeepSeek-R1": 0.4958333333333333,
+                    "claude-3-5-sonnet-20240620__gpt-3.5-turbo-0125": 1.368083333333333,
+                    "claude-3-5-sonnet-20240620__databricks/dbrx-instruct": 1.057,
+                    "claude-3-haiku-20240307__claude-3-opus-20240229": 0.5504166666666666,
+                    "claude-3-haiku-20240307__gemini-1.5-pro-001": 0.53975,
+                    "claude-3-haiku-20240307__Llama-3-70b-chat-hf": 0.31916666666666665,
+                    "claude-3-haiku-20240307__Mixtral-8x7B-Instruct-v0.1": 0.15099999999999997,
+                    "claude-3-haiku-20240307__Llama-2-13b-chat-hf": 0.6338333333333332,
+                    "claude-3-haiku-20240307__gemma-7b-it": 0.7434166666666666,
+                    "claude-3-haiku-20240307__gemma-2b-it": 1.1748333333333334,
+                    "claude-3-haiku-20240307__Mixtral-8x22B-Instruct-v0.1": 0.1295,
+                    "claude-3-haiku-20240307__c4ai-command-r-08-2024": 0.10775000000000004,
+                    "claude-3-haiku-20240307__gemini-1.5-pro-002": 0.7201666666666666,
+                    "claude-3-haiku-20240307__Mistral-Large-Instruct-2411": 0.4934166666666666,
+                    "claude-3-haiku-20240307__gpt-4o-2024-11-20": 1.0085,
+                    "claude-3-haiku-20240307__DeepSeek-R1": 1.1663333333333332,
+                    "claude-3-haiku-20240307__gpt-3.5-turbo-0125": 0.6994166666666667,
+                    "claude-3-haiku-20240307__databricks/dbrx-instruct": 0.39316666666666666,
+                    "claude-3-opus-20240229__gemini-1.5-pro-001": 0.12116666666666664,
+                    "claude-3-opus-20240229__Llama-3-70b-chat-hf": 0.23124999999999998,
+                    "claude-3-opus-20240229__Mixtral-8x7B-Instruct-v0.1": 0.6525833333333333,
+                    "claude-3-opus-20240229__Llama-2-13b-chat-hf": 1.18425,
+                    "claude-3-opus-20240229__gemma-7b-it": 1.2938333333333332,
+                    "claude-3-opus-20240229__gemma-2b-it": 1.72525,
+                    "claude-3-opus-20240229__Mixtral-8x22B-Instruct-v0.1": 0.62825,
+                    "claude-3-opus-20240229__c4ai-command-r-08-2024": 0.551,
+                    "claude-3-opus-20240229__gemini-1.5-pro-002": 0.19374999999999998,
+                    "claude-3-opus-20240229__Mistral-Large-Instruct-2411": 0.09399999999999999,
+                    "claude-3-opus-20240229__gpt-4o-2024-11-20": 0.4580833333333334,
+                    "claude-3-opus-20240229__DeepSeek-R1": 0.6159166666666667,
+                    "claude-3-opus-20240229__gpt-3.5-turbo-0125": 1.2479999999999998,
+                    "claude-3-opus-20240229__databricks/dbrx-instruct": 0.9369166666666666,
+                    "gemini-1.5-pro-001__Llama-3-70b-chat-hf": 0.2205833333333333,
+                    "gemini-1.5-pro-001__Mixtral-8x7B-Instruct-v0.1": 0.6419166666666666,
+                    "gemini-1.5-pro-001__Llama-2-13b-chat-hf": 1.1735833333333332,
+                    "gemini-1.5-pro-001__gemma-7b-it": 1.2831666666666666,
+                    "gemini-1.5-pro-001__gemma-2b-it": 1.7145833333333333,
+                    "gemini-1.5-pro-001__Mixtral-8x22B-Instruct-v0.1": 0.6175833333333334,
+                    "gemini-1.5-pro-001__c4ai-command-r-08-2024": 0.5403333333333333,
+                    "gemini-1.5-pro-001__gemini-1.5-pro-002": 0.19774999999999998,
+                    "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": 0.11999999999999997,
+                    "gemini-1.5-pro-001__gpt-4o-2024-11-20": 0.4694166666666667,
+                    "gemini-1.5-pro-001__DeepSeek-R1": 0.6265833333333333,
+                    "gemini-1.5-pro-001__gpt-3.5-turbo-0125": 1.2373333333333334,
+                    "gemini-1.5-pro-001__databricks/dbrx-instruct": 0.92625,
+                    "Llama-3-70b-chat-hf__Mixtral-8x7B-Instruct-v0.1": 0.43033333333333335,
+                    "Llama-3-70b-chat-hf__Llama-2-13b-chat-hf": 0.9529999999999998,
+                    "Llama-3-70b-chat-hf__gemma-7b-it": 1.0625833333333332,
+                    "Llama-3-70b-chat-hf__gemma-2b-it": 1.4940000000000002,
+                    "Llama-3-70b-chat-hf__Mixtral-8x22B-Instruct-v0.1": 0.3993333333333333,
+                    "Llama-3-70b-chat-hf__c4ai-command-r-08-2024": 0.3220833333333334,
+                    "Llama-3-70b-chat-hf__gemini-1.5-pro-002": 0.40283333333333327,
+                    "Llama-3-70b-chat-hf__Mistral-Large-Instruct-2411": 0.20808333333333331,
+                    "Llama-3-70b-chat-hf__gpt-4o-2024-11-20": 0.6893333333333334,
+                    "Llama-3-70b-chat-hf__DeepSeek-R1": 0.8471666666666666,
+                    "Llama-3-70b-chat-hf__gpt-3.5-turbo-0125": 1.0167499999999998,
+                    "Llama-3-70b-chat-hf__databricks/dbrx-instruct": 0.7056666666666667,
+                    "Mixtral-8x7B-Instruct-v0.1__Llama-2-13b-chat-hf": 0.5436666666666667,
+                    "Mixtral-8x7B-Instruct-v0.1__gemma-7b-it": 0.6615833333333334,
+                    "Mixtral-8x7B-Instruct-v0.1__gemma-2b-it": 1.0726666666666667,
+                    "Mixtral-8x7B-Instruct-v0.1__Mixtral-8x22B-Instruct-v0.1": 0.0963333333333333,
+                    "Mixtral-8x7B-Instruct-v0.1__c4ai-command-r-08-2024": 0.19208333333333333,
+                    "Mixtral-8x7B-Instruct-v0.1__gemini-1.5-pro-002": 0.8223333333333334,
+                    "Mixtral-8x7B-Instruct-v0.1__Mistral-Large-Instruct-2411": 0.5925833333333334,
+                    "Mixtral-8x7B-Instruct-v0.1__gpt-4o-2024-11-20": 1.1106666666666667,
+                    "Mixtral-8x7B-Instruct-v0.1__DeepSeek-R1": 1.2685,
+                    "Mixtral-8x7B-Instruct-v0.1__gpt-3.5-turbo-0125": 0.6079166666666667,
+                    "Mixtral-8x7B-Instruct-v0.1__databricks/dbrx-instruct": 0.2855,
+                    "Llama-2-13b-chat-hf__gemma-7b-it": 0.17925000000000002,
+                    "Llama-2-13b-chat-hf__gemma-2b-it": 0.5409999999999999,
+                    "Llama-2-13b-chat-hf__Mixtral-8x22B-Instruct-v0.1": 0.5559999999999999,
+                    "Llama-2-13b-chat-hf__c4ai-command-r-08-2024": 0.63325,
+                    "Llama-2-13b-chat-hf__gemini-1.5-pro-002": 1.354,
+                    "Llama-2-13b-chat-hf__Mistral-Large-Instruct-2411": 1.12425,
+                    "Llama-2-13b-chat-hf__gpt-4o-2024-11-20": 1.6423333333333334,
+                    "Llama-2-13b-chat-hf__DeepSeek-R1": 1.8001666666666665,
+                    "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": 0.11074999999999999,
+                    "Llama-2-13b-chat-hf__databricks/dbrx-instruct": 0.264,
+                    "gemma-7b-it__gemma-2b-it": 0.4325833333333333,
+                    "gemma-7b-it__Mixtral-8x22B-Instruct-v0.1": 0.6710833333333334,
+                    "gemma-7b-it__c4ai-command-r-08-2024": 0.7428333333333332,
+                    "gemma-7b-it__gemini-1.5-pro-002": 1.4635833333333335,
+                    "gemma-7b-it__Mistral-Large-Instruct-2411": 1.2338333333333331,
+                    "gemma-7b-it__gpt-4o-2024-11-20": 1.7519166666666668,
+                    "gemma-7b-it__DeepSeek-R1": 1.9097499999999998,
+                    "gemma-7b-it__gpt-3.5-turbo-0125": 0.11033333333333338,
+                    "gemma-7b-it__databricks/dbrx-instruct": 0.39308333333333334,
+                    "gemma-2b-it__Mixtral-8x22B-Instruct-v0.1": 1.097,
+                    "gemma-2b-it__c4ai-command-r-08-2024": 1.1742499999999998,
+                    "gemma-2b-it__gemini-1.5-pro-002": 1.895,
+                    "gemma-2b-it__Mistral-Large-Instruct-2411": 1.66525,
+                    "gemma-2b-it__gpt-4o-2024-11-20": 2.1833333333333336,
+                    "gemma-2b-it__DeepSeek-R1": 2.341166666666667,
+                    "gemma-2b-it__gpt-3.5-turbo-0125": 0.47725,
+                    "gemma-2b-it__databricks/dbrx-instruct": 0.79,
+                    "Mixtral-8x22B-Instruct-v0.1__c4ai-command-r-08-2024": 0.11375,
+                    "Mixtral-8x22B-Instruct-v0.1__gemini-1.5-pro-002": 0.8009999999999999,
+                    "Mixtral-8x22B-Instruct-v0.1__Mistral-Large-Instruct-2411": 0.5682499999999999,
+                    "Mixtral-8x22B-Instruct-v0.1__gpt-4o-2024-11-20": 1.0863333333333334,
+                    "Mixtral-8x22B-Instruct-v0.1__DeepSeek-R1": 1.2441666666666666,
+                    "Mixtral-8x22B-Instruct-v0.1__gpt-3.5-turbo-0125": 0.6204166666666666,
+                    "Mixtral-8x22B-Instruct-v0.1__databricks/dbrx-instruct": 0.30866666666666664,
+                    "c4ai-command-r-08-2024__gemini-1.5-pro-002": 0.72075,
+                    "c4ai-command-r-08-2024__Mistral-Large-Instruct-2411": 0.51,
+                    "c4ai-command-r-08-2024__gpt-4o-2024-11-20": 1.0090833333333333,
+                    "c4ai-command-r-08-2024__DeepSeek-R1": 1.1669166666666664,
+                    "c4ai-command-r-08-2024__gpt-3.5-turbo-0125": 0.7005,
+                    "c4ai-command-r-08-2024__databricks/dbrx-instruct": 0.39975000000000005,
+                    "gemini-1.5-pro-002__Mistral-Large-Instruct-2411": 0.25041666666666657,
+                    "gemini-1.5-pro-002__gpt-4o-2024-11-20": 0.2961666666666667,
+                    "gemini-1.5-pro-002__DeepSeek-R1": 0.44616666666666666,
+                    "gemini-1.5-pro-002__gpt-3.5-turbo-0125": 1.4177500000000003,
+                    "gemini-1.5-pro-002__databricks/dbrx-instruct": 1.1066666666666667,
+                    "Mistral-Large-Instruct-2411__gpt-4o-2024-11-20": 0.5180833333333335,
+                    "Mistral-Large-Instruct-2411__DeepSeek-R1": 0.6759166666666667,
+                    "Mistral-Large-Instruct-2411__gpt-3.5-turbo-0125": 1.1879999999999997,
+                    "Mistral-Large-Instruct-2411__databricks/dbrx-instruct": 0.8769166666666667,
+                    "gpt-4o-2024-11-20__DeepSeek-R1": 0.15783333333333324,
+                    "gpt-4o-2024-11-20__gpt-3.5-turbo-0125": 1.7060833333333334,
+                    "gpt-4o-2024-11-20__databricks/dbrx-instruct": 1.395,
+                    "DeepSeek-R1__gpt-3.5-turbo-0125": 1.8639166666666664,
+                    "DeepSeek-R1__databricks/dbrx-instruct": 1.552833333333333,
+                    "gpt-3.5-turbo-0125__databricks/dbrx-instruct": 0.32824999999999993
+                }
+            },
+            "average_ci95": 0.1222770542240416,
+            "modulated_ci95": 0.885737691286374
+        },
+        "calibrated": {
+            "ci99_overlap_adjacent": {
+                "DeepSeek-R1__gpt-4o-2024-11-20": true,
+                "gpt-4o-2024-11-20__gemini-1.5-pro-002": false,
+                "gemini-1.5-pro-002__claude-3-5-sonnet-20240620": true,
+                "claude-3-5-sonnet-20240620__claude-3-opus-20240229": true,
+                "claude-3-opus-20240229__gemini-1.5-pro-001": true,
+                "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": true,
+                "Mistral-Large-Instruct-2411__Llama-3-70b-chat-hf": true,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": true,
+                "claude-3-haiku-20240307__c4ai-command-r-08-2024": true,
+                "c4ai-command-r-08-2024__Mixtral-8x7B-Instruct-v0.1": true,
+                "Mixtral-8x7B-Instruct-v0.1__Mixtral-8x22B-Instruct-v0.1": true,
+                "Mixtral-8x22B-Instruct-v0.1__databricks/dbrx-instruct": true,
+                "databricks/dbrx-instruct__Llama-2-13b-chat-hf": true,
+                "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": true,
+                "gpt-3.5-turbo-0125__gemma-7b-it": true,
+                "gemma-7b-it__gemma-2b-it": false
+            },
+            "adjacent_overlap_fraction": 0.875,
+            "ci99_overlap_magnitude_adjacent": {
+                "DeepSeek-R1__gpt-4o-2024-11-20": 0.40993119576891335,
+                "gpt-4o-2024-11-20__gemini-1.5-pro-002": 0.15086881999993906,
+                "gemini-1.5-pro-002__claude-3-5-sonnet-20240620": 0.8319332459322997,
+                "claude-3-5-sonnet-20240620__claude-3-opus-20240229": 0.800428976516562,
+                "claude-3-opus-20240229__gemini-1.5-pro-001": 1.0586250644234099,
+                "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": 1.0586250644234099,
+                "Mistral-Large-Instruct-2411__Llama-3-70b-chat-hf": 0.7198347299377952,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": 0.43654552560260473,
+                "claude-3-haiku-20240307__c4ai-command-r-08-2024": 1.1175516237230392,
+                "c4ai-command-r-08-2024__Mixtral-8x7B-Instruct-v0.1": 1.137228839667988,
+                "Mixtral-8x7B-Instruct-v0.1__Mixtral-8x22B-Instruct-v0.1": 1.2549642072262195,
+                "Mixtral-8x22B-Instruct-v0.1__databricks/dbrx-instruct": 0.6391064934305897,
+                "databricks/dbrx-instruct__Llama-2-13b-chat-hf": 0.6395541769614801,
+                "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": 0.9559675821214801,
+                "gpt-3.5-turbo-0125__gemma-7b-it": 0.8999454297230205,
+                "gemma-7b-it__gemma-2b-it": 0.2142260087586143
+            },
+            "ci99_overlap_magnitude_sum": 12.325336984217362,
+            "ci99_overlap_scale_factor": 1.5,
+            "average_cohens_d_adjacent": 0.22103037533515485,
+            "emd": {
+                "average": 1.8301500615795199,
+                "pairs": {
+                    "claude-3-5-sonnet-20240620__claude-3-haiku-20240307": 1.6678569727245525,
+                    "claude-3-5-sonnet-20240620__claude-3-opus-20240229": 0.34664104574606847,
+                    "claude-3-5-sonnet-20240620__gemini-1.5-pro-001": 0.39240450163737844,
+                    "claude-3-5-sonnet-20240620__Llama-3-70b-chat-hf": 0.9082155810534804,
+                    "claude-3-5-sonnet-20240620__Mixtral-8x7B-Instruct-v0.1": 1.8673156929321308,
+                    "claude-3-5-sonnet-20240620__Llama-2-13b-chat-hf": 3.039419851246335,
+                    "claude-3-5-sonnet-20240620__gemma-7b-it": 3.278917511374132,
+                    "claude-3-5-sonnet-20240620__gemma-2b-it": 3.9474114502950117,
+                    "claude-3-5-sonnet-20240620__Mixtral-8x22B-Instruct-v0.1": 1.884952260575548,
+                    "claude-3-5-sonnet-20240620__c4ai-command-r-08-2024": 1.744548932717882,
+                    "claude-3-5-sonnet-20240620__gemini-1.5-pro-002": 0.16539651579605918,
+                    "claude-3-5-sonnet-20240620__Mistral-Large-Instruct-2411": 0.4497788717286432,
+                    "claude-3-5-sonnet-20240620__gpt-4o-2024-11-20": 0.9089847497336083,
+                    "claude-3-5-sonnet-20240620__DeepSeek-R1": 1.313029423730337,
+                    "claude-3-5-sonnet-20240620__gpt-3.5-turbo-0125": 3.1668423155569263,
+                    "claude-3-5-sonnet-20240620__databricks/dbrx-instruct": 2.506169753382082,
+                    "claude-3-haiku-20240307__claude-3-opus-20240229": 1.3462159269784837,
+                    "claude-3-haiku-20240307__gemini-1.5-pro-001": 1.289696555769615,
+                    "claude-3-haiku-20240307__Llama-3-70b-chat-hf": 0.7596413916710719,
+                    "claude-3-haiku-20240307__Mixtral-8x7B-Instruct-v0.1": 0.3059704432215847,
+                    "claude-3-haiku-20240307__Llama-2-13b-chat-hf": 1.3715628785217822,
+                    "claude-3-haiku-20240307__gemma-7b-it": 1.6110605386495793,
+                    "claude-3-haiku-20240307__gemma-2b-it": 2.279554477570459,
+                    "claude-3-haiku-20240307__Mixtral-8x22B-Instruct-v0.1": 0.290005624090099,
+                    "claude-3-haiku-20240307__c4ai-command-r-08-2024": 0.210074848709552,
+                    "claude-3-haiku-20240307__gemini-1.5-pro-002": 1.8089384200274607,
+                    "claude-3-haiku-20240307__Mistral-Large-Instruct-2411": 1.2405289104604171,
+                    "claude-3-haiku-20240307__gpt-4o-2024-11-20": 2.5753871770036154,
+                    "claude-3-haiku-20240307__DeepSeek-R1": 2.9808863964548893,
+                    "claude-3-haiku-20240307__gpt-3.5-turbo-0125": 1.5027524661200458,
+                    "claude-3-haiku-20240307__databricks/dbrx-instruct": 0.8520114107945156,
+                    "claude-3-opus-20240229__gemini-1.5-pro-001": 0.30325505020938814,
+                    "claude-3-opus-20240229__Llama-3-70b-chat-hf": 0.5865745353074119,
+                    "claude-3-opus-20240229__Mixtral-8x7B-Instruct-v0.1": 1.5456746471860625,
+                    "claude-3-opus-20240229__Llama-2-13b-chat-hf": 2.7177788055002665,
+                    "claude-3-opus-20240229__gemma-7b-it": 2.9572764656280635,
+                    "claude-3-opus-20240229__gemma-2b-it": 3.6257704045489425,
+                    "claude-3-opus-20240229__Mixtral-8x22B-Instruct-v0.1": 1.5633112148294792,
+                    "claude-3-opus-20240229__c4ai-command-r-08-2024": 1.4229078869718137,
+                    "claude-3-opus-20240229__gemini-1.5-pro-002": 0.5120375615421277,
+                    "claude-3-opus-20240229__Mistral-Large-Instruct-2411": 0.19478107618746882,
+                    "claude-3-opus-20240229__gpt-4o-2024-11-20": 1.2291712500251315,
+                    "claude-3-opus-20240229__DeepSeek-R1": 1.6346704694764056,
+                    "claude-3-opus-20240229__gpt-3.5-turbo-0125": 2.8452012698108584,
+                    "claude-3-opus-20240229__databricks/dbrx-instruct": 2.1845287076360136,
+                    "gemini-1.5-pro-001__Llama-3-70b-chat-hf": 0.5300551640985429,
+                    "gemini-1.5-pro-001__Mixtral-8x7B-Instruct-v0.1": 1.4891552759771933,
+                    "gemini-1.5-pro-001__Llama-2-13b-chat-hf": 2.661259434291397,
+                    "gemini-1.5-pro-001__gemma-7b-it": 2.9007570944191943,
+                    "gemini-1.5-pro-001__gemma-2b-it": 3.5692510333400738,
+                    "gemini-1.5-pro-001__Mixtral-8x22B-Instruct-v0.1": 1.5067918436206105,
+                    "gemini-1.5-pro-001__c4ai-command-r-08-2024": 1.3663885157629447,
+                    "gemini-1.5-pro-001__gemini-1.5-pro-002": 0.5548583026140104,
+                    "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": 0.2359750224407758,
+                    "gemini-1.5-pro-001__gpt-4o-2024-11-20": 1.2864178939612732,
+                    "gemini-1.5-pro-001__DeepSeek-R1": 1.6911898406852746,
+                    "gemini-1.5-pro-001__gpt-3.5-turbo-0125": 2.788681898601989,
+                    "gemini-1.5-pro-001__databricks/dbrx-instruct": 2.128009336427144,
+                    "Llama-3-70b-chat-hf__Mixtral-8x7B-Instruct-v0.1": 0.9775932625635821,
+                    "Llama-3-70b-chat-hf__Llama-2-13b-chat-hf": 2.131204270192854,
+                    "Llama-3-70b-chat-hf__gemma-7b-it": 2.370701930320651,
+                    "Llama-3-70b-chat-hf__gemma-2b-it": 3.0391958692415306,
+                    "Llama-3-70b-chat-hf__Mixtral-8x22B-Instruct-v0.1": 0.9815312000700127,
+                    "Llama-3-70b-chat-hf__c4ai-command-r-08-2024": 0.8388788062098564,
+                    "Llama-3-70b-chat-hf__gemini-1.5-pro-002": 1.05306415164406,
+                    "Llama-3-70b-chat-hf__Mistral-Large-Instruct-2411": 0.5177966096984362,
+                    "Llama-3-70b-chat-hf__gpt-4o-2024-11-20": 1.8157457853325434,
+                    "Llama-3-70b-chat-hf__DeepSeek-R1": 2.2212450047838175,
+                    "Llama-3-70b-chat-hf__gpt-3.5-turbo-0125": 2.258626734503446,
+                    "Llama-3-70b-chat-hf__databricks/dbrx-instruct": 1.5979541723286013,
+                    "Mixtral-8x7B-Instruct-v0.1__Llama-2-13b-chat-hf": 1.1851950674051128,
+                    "Mixtral-8x7B-Instruct-v0.1__gemma-7b-it": 1.433783636623819,
+                    "Mixtral-8x7B-Instruct-v0.1__gemma-2b-it": 2.08009575736288,
+                    "Mixtral-8x7B-Instruct-v0.1__Mixtral-8x22B-Instruct-v0.1": 0.19588063103816528,
+                    "Mixtral-8x7B-Instruct-v0.1__c4ai-command-r-08-2024": 0.366712303931482,
+                    "Mixtral-8x7B-Instruct-v0.1__gemini-1.5-pro-002": 2.0083971402350396,
+                    "Mixtral-8x7B-Instruct-v0.1__Mistral-Large-Instruct-2411": 1.4367149033952682,
+                    "Mixtral-8x7B-Instruct-v0.1__gpt-4o-2024-11-20": 2.7748458972111942,
+                    "Mixtral-8x7B-Instruct-v0.1__DeepSeek-R1": 3.180345116662468,
+                    "Mixtral-8x7B-Instruct-v0.1__gpt-3.5-turbo-0125": 1.3131629862611591,
+                    "Mixtral-8x7B-Instruct-v0.1__databricks/dbrx-instruct": 0.6412513207239234,
+                    "Llama-2-13b-chat-hf__gemma-7b-it": 0.315497660127797,
+                    "Llama-2-13b-chat-hf__gemma-2b-it": 0.9079915990486765,
+                    "Llama-2-13b-chat-hf__Mixtral-8x22B-Instruct-v0.1": 1.1544675906707869,
+                    "Llama-2-13b-chat-hf__c4ai-command-r-08-2024": 1.2948709185284524,
+                    "Llama-2-13b-chat-hf__gemini-1.5-pro-002": 3.180501298549243,
+                    "Llama-2-13b-chat-hf__Mistral-Large-Instruct-2411": 2.608819061709472,
+                    "Llama-2-13b-chat-hf__gpt-4o-2024-11-20": 3.946950055525398,
+                    "Llama-2-13b-chat-hf__DeepSeek-R1": 4.3524492749766726,
+                    "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": 0.20751979991934322,
+                    "Llama-2-13b-chat-hf__databricks/dbrx-instruct": 0.5514319160460711,
+                    "gemma-7b-it__gemma-2b-it": 0.6697666661936068,
+                    "gemma-7b-it__Mixtral-8x22B-Instruct-v0.1": 1.3999652507985838,
+                    "gemma-7b-it__c4ai-command-r-08-2024": 1.5343685786562498,
+                    "gemma-7b-it__gemini-1.5-pro-002": 3.4199989586770405,
+                    "gemma-7b-it__Mistral-Large-Instruct-2411": 2.848316721837269,
+                    "gemma-7b-it__gpt-4o-2024-11-20": 4.186447715653195,
+                    "gemma-7b-it__DeepSeek-R1": 4.591946935104469,
+                    "gemma-7b-it__gpt-3.5-turbo-0125": 0.2052733310153402,
+                    "gemma-7b-it__databricks/dbrx-instruct": 0.8122023034465953,
+                    "gemma-2b-it__Mixtral-8x22B-Instruct-v0.1": 2.062459189719463,
+                    "gemma-2b-it__c4ai-command-r-08-2024": 2.202862517577129,
+                    "gemma-2b-it__gemini-1.5-pro-002": 4.08849289759792,
+                    "gemma-2b-it__Mistral-Large-Instruct-2411": 3.516810660758149,
+                    "gemma-2b-it__gpt-4o-2024-11-20": 4.854941654574074,
+                    "gemma-2b-it__DeepSeek-R1": 5.260440874025349,
+                    "gemma-2b-it__gpt-3.5-turbo-0125": 0.7805691347380844,
+                    "gemma-2b-it__databricks/dbrx-instruct": 1.4430598787311109,
+                    "Mixtral-8x22B-Instruct-v0.1__c4ai-command-r-08-2024": 0.21980041901274777,
+                    "Mixtral-8x22B-Instruct-v0.1__gemini-1.5-pro-002": 2.0321980914401,
+                    "Mixtral-8x22B-Instruct-v0.1__Mistral-Large-Instruct-2411": 1.4543514710386853,
+                    "Mixtral-8x22B-Instruct-v0.1__gpt-4o-2024-11-20": 2.792482464854611,
+                    "Mixtral-8x22B-Instruct-v0.1__DeepSeek-R1": 3.1979816843058853,
+                    "Mixtral-8x22B-Instruct-v0.1__gpt-3.5-turbo-0125": 1.2826173277086514,
+                    "Mixtral-8x22B-Instruct-v0.1__databricks/dbrx-instruct": 0.6212174928065338,
+                    "c4ai-command-r-08-2024__gemini-1.5-pro-002": 1.8856303800207908,
+                    "c4ai-command-r-08-2024__Mistral-Large-Instruct-2411": 1.3346754159082925,
+                    "c4ai-command-r-08-2024__gpt-4o-2024-11-20": 2.652079136996945,
+                    "c4ai-command-r-08-2024__DeepSeek-R1": 3.0575783564482193,
+                    "c4ai-command-r-08-2024__gpt-3.5-turbo-0125": 1.4294851636609622,
+                    "c4ai-command-r-08-2024__databricks/dbrx-instruct": 0.7900454781984462,
+                    "gemini-1.5-pro-002__Mistral-Large-Instruct-2411": 0.6141479902644283,
+                    "gemini-1.5-pro-002__gpt-4o-2024-11-20": 0.7811325176599151,
+                    "gemini-1.5-pro-002__DeepSeek-R1": 1.1719479764274285,
+                    "gemini-1.5-pro-002__gpt-3.5-turbo-0125": 3.3079237628598355,
+                    "gemini-1.5-pro-002__databricks/dbrx-instruct": 2.64725120068499,
+                    "Mistral-Large-Instruct-2411__gpt-4o-2024-11-20": 1.3381309938159256,
+                    "Mistral-Large-Instruct-2411__DeepSeek-R1": 1.7436302132671995,
+                    "Mistral-Large-Instruct-2411__gpt-3.5-turbo-0125": 2.7362415260200637,
+                    "Mistral-Large-Instruct-2411__databricks/dbrx-instruct": 2.0755689638452193,
+                    "gpt-4o-2024-11-20__DeepSeek-R1": 0.4054992194512741,
+                    "gpt-4o-2024-11-20__gpt-3.5-turbo-0125": 4.07437251983599,
+                    "gpt-4o-2024-11-20__databricks/dbrx-instruct": 3.413699957661145,
+                    "DeepSeek-R1__gpt-3.5-turbo-0125": 4.479871739287264,
+                    "DeepSeek-R1__databricks/dbrx-instruct": 3.8191991771124187,
+                    "gpt-3.5-turbo-0125__databricks/dbrx-instruct": 0.6793998349021179
+                }
+            },
+            "average_ci95": 0.2757086439565071,
+            "modulated_ci95": 0.4710577190364673
+        }
+    },
+    "iteration_stability": {
+        "raw": {
+            "scoring_stability": {
+                "claude-3-5-sonnet-20240620": {
+                    "mean_iter_score": 7.483666666666667,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.07367175698853529
+                },
+                "claude-3-haiku-20240307": {
+                    "mean_iter_score": 6.813166666666667,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.1430701556735172
+                },
+                "claude-3-opus-20240229": {
+                    "mean_iter_score": 7.363583333333334,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.10563452455413333
+                },
+                "gemini-1.5-pro-001": {
+                    "mean_iter_score": 7.352916666666666,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.09629778755967804
+                },
+                "Llama-3-70b-chat-hf": {
+                    "mean_iter_score": 7.132333333333333,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.15336109350157895
+                },
+                "Mixtral-8x7B-Instruct-v0.1": {
+                    "mean_iter_score": 6.711,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.13390362413152068
+                },
+                "Llama-2-13b-chat-hf": {
+                    "mean_iter_score": 6.179333333333333,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.09581144677612018
+                },
+                "gemma-7b-it": {
+                    "mean_iter_score": 6.06975,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.06728494548477307
+                },
+                "gemma-2b-it": {
+                    "mean_iter_score": 5.638333333333334,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.14369793743203918
+                },
+                "Mixtral-8x22B-Instruct-v0.1": {
+                    "mean_iter_score": 6.735333333333333,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.11093835876036948
+                },
+                "c4ai-command-r-08-2024": {
+                    "mean_iter_score": 6.812583333333333,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.11550895828655221
+                },
+                "gemini-1.5-pro-002": {
+                    "mean_iter_score": 7.533333333333333,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.07608337897041348
+                },
+                "Mistral-Large-Instruct-2411": {
+                    "mean_iter_score": 7.303583333333333,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.09434334458066829
+                },
+                "gpt-4o-2024-11-20": {
+                    "mean_iter_score": 7.821666666666667,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.04797279321541441
+                },
+                "DeepSeek-R1": {
+                    "mean_iter_score": 7.979500000000001,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.08135160313929526
+                },
+                "gpt-3.5-turbo-0125": {
+                    "mean_iter_score": 6.115583333333333,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.19614170755972424
+                },
+                "databricks/dbrx-instruct": {
+                    "mean_iter_score": 6.426666666666667,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.1274160943959242
+                }
+            },
+            "ranking_stability": {
+                "pairwise_correlation": {
+                    "1__vs__2": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8235294117647057,
+                        "p_value": 1.25716599654265e-07
+                    },
+                    "1__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8970588235294118,
+                        "p_value": 1.2313901628307946e-09
+                    },
+                    "1__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.7941176470588235,
+                        "p_value": 5.454070925094403e-07
+                    },
+                    "1__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8970588235294118,
+                        "p_value": 1.2313901628307946e-09
+                    },
+                    "2__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8676470588235293,
+                        "p_value": 9.575975226992579e-09
+                    },
+                    "2__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.9117647058823529,
+                        "p_value": 3.8599058936360526e-10
+                    },
+                    "2__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8970588235294118,
+                        "p_value": 1.2313901628307946e-09
+                    },
+                    "3__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8970588235294118,
+                        "p_value": 1.2313901628307946e-09
+                    },
+                    "3__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.9411764705882352,
+                        "p_value": 2.628150241362193e-11
+                    },
+                    "4__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8970588235294118,
+                        "p_value": 1.2313901628307946e-09
+                    }
+                },
+                "average_kendall_tau": 0.8823529411764706
+            },
+            "randomized_average_kendall_tau_by_item": 0.869185294117647
+        },
+        "calibrated": {
+            "scoring_stability": {
+                "claude-3-5-sonnet-20240620": {
+                    "mean_iter_score": 6.37145391805894,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.2187920863631611
+                },
+                "claude-3-haiku-20240307": {
+                    "mean_iter_score": 4.703596945334388,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.30120283489600497
+                },
+                "claude-3-opus-20240229": {
+                    "mean_iter_score": 6.049812872312872,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.2862699633526798
+                },
+                "gemini-1.5-pro-001": {
+                    "mean_iter_score": 5.993293501104002,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.2766913766685732
+                },
+                "Llama-3-70b-chat-hf": {
+                    "mean_iter_score": 5.46323833700546,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.4136440166525241
+                },
+                "Mixtral-8x7B-Instruct-v0.1": {
+                    "mean_iter_score": 4.504138225126809,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.2805039702556673
+                },
+                "Llama-2-13b-chat-hf": {
+                    "mean_iter_score": 3.3320340668126054,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.1639649426367803
+                },
+                "gemma-7b-it": {
+                    "mean_iter_score": 3.0925364066848084,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.15789253847295828
+                },
+                "gemma-2b-it": {
+                    "mean_iter_score": 2.424042467763929,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.1900557933026347
+                },
+                "Mixtral-8x22B-Instruct-v0.1": {
+                    "mean_iter_score": 4.486501657483392,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.25171633813418537
+                },
+                "c4ai-command-r-08-2024": {
+                    "mean_iter_score": 4.626904985341057,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.3048505271132519
+                },
+                "gemini-1.5-pro-002": {
+                    "mean_iter_score": 6.512535365361849,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.2188086287271982
+                },
+                "Mistral-Large-Instruct-2411": {
+                    "mean_iter_score": 5.940853128522077,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.2226689015790038
+                },
+                "gpt-4o-2024-11-20": {
+                    "mean_iter_score": 7.278984122338003,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.13456192433801276
+                },
+                "DeepSeek-R1": {
+                    "mean_iter_score": 7.684483341789277,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.179773940629603
+                },
+                "gpt-3.5-turbo-0125": {
+                    "mean_iter_score": 3.204611602502013,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.29493701925137267
+                },
+                "databricks/dbrx-instruct": {
+                    "mean_iter_score": 3.8652841646768583,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.29761053577026797
+                }
+            },
+            "ranking_stability": {
+                "pairwise_correlation": {
+                    "1__vs__2": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8676470588235293,
+                        "p_value": 9.575975226992579e-09
+                    },
+                    "1__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8823529411764705,
+                        "p_value": 3.5743855407137387e-09
+                    },
+                    "1__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.764705882352941,
+                        "p_value": 2.0270077800034225e-06
+                    },
+                    "1__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8970588235294118,
+                        "p_value": 1.2313901628307946e-09
+                    },
+                    "2__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8970588235294118,
+                        "p_value": 1.2313901628307946e-09
+                    },
+                    "2__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8382352941176471,
+                        "p_value": 5.634316092440314e-08
+                    },
+                    "2__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.9117647058823529,
+                        "p_value": 3.8599058936360526e-10
+                    },
+                    "3__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8823529411764705,
+                        "p_value": 3.5743855407137387e-09
+                    },
+                    "3__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.926470588235294,
+                        "p_value": 1.080161877119549e-10
+                    },
+                    "4__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8676470588235293,
+                        "p_value": 9.575975226992579e-09
+                    }
+                },
+                "average_kendall_tau": 0.8735294117647058
+            },
+            "randomized_average_kendall_tau_by_item": 0.8679676470588235
+        }
+    },
+    "raw_score_range": 2.341166666666666,
+    "final_judgemark_score_elements_raw": {
+        "norm_stability_between_iterations": 0.7819754901960784,
+        "norm_correlation_with_lmsys_arena": 0.869281045751634,
+        "norm_std_dev_between_models": 0.24872756487421804,
+        "norm_kruskall_wallis": 0.5472274309993328,
+        "norm_ci99_adjacent_overlap": 0.7956089236238862,
+        "norm_score_range": 0.2341166666666666,
+        "norm_intra_model_ci95": 0.885737691286374,
+        "norm_earth_movers_distance": 0.19750857843137262
+    },
+    "final_judgemark_score_raw": 0.5984235177559355,
+    "calibrated_score_range": 5.260440874025348,
+    "final_judgemark_score_elements_calibrated": {
+        "norm_stability_between_iterations": 0.7799460784313724,
+        "norm_correlation_with_lmsys_arena": 0.8725490196078431,
+        "norm_std_dev_between_models": 0.5753697598537096,
+        "norm_kruskall_wallis": 0.5472274309993328,
+        "norm_ci99_adjacent_overlap": 0.5259485775301015,
+        "norm_score_range": 0.5260440874025348,
+        "norm_intra_model_ci95": 0.4710577190364673,
+        "norm_earth_movers_distance": {
+            "pearson_r": 0.8904924793697621,
+            "kendall_tau": 0.8725490196078431,
+            "anova_f": 0.33492750983000386,
+            "kw_stat": 0.5472274309993328,
+            "std_dev": 0.5753697598537096,
+            "ci99_overlap_magnitude_sum_norm": 0.5259485775301015,
+            "calibrated_score_range_norm": 0.5260440874025348,
+            "kendall_tau_bootstrapped": 0.7799460784313724
+        }
+    },
+    "final_judgemark_score": 0.62021419303065
+}
