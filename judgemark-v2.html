@@ -73,11 +73,11 @@
         <thead>
           <tr>
             <th>Model</th>
-            <th class="calibrated-score-col">Score (Calibrated)</th>
-            <th>Score (Raw)</th>
+            <th class="calibrated-score-col">Judgemark Score</th>
             <th>Stability</th>
             <th>Separability</th>
-			<th>Cost</th>
+            <th>Human Corr</th>
+            <th>Cost</th>
             <th></th>  <!-- Stats -->
             <th></th>  <!-- Charts -->
           </tr>
@@ -94,11 +94,11 @@
     <div class="section">
       <p><b>⚖️ Judgemark v2</b> explanation of displayed stats:</p>
       <ul>
-        <li><b><code>Score (Calibrated)</code></b>: Overall Judgemark score, after calibration to normalise the judge's score distribution</li>
-        <li><b><code>Score (Raw)</code></b>: Judgemark score without calibration ("out of the box" performance)</li>
-		<li><b><code>Stability</code></b>: A measure of how much the judge's assigned rankings vary between iterations</li>
-		<li><b><code>Separability</code></b>: How well the judge can separate models by ability (measured by CI99 overlap with adjacent models)</li>
-		<li><b><code>Cost</code></b>: The cost to complete one run of the benchmark (via openrouter)</li>
+        <li><b><code>Judgemark Score</code></b>: Overall Judgemark score</li>
+        <li><b><code>Stability</code></b>: A measure of how much the judge's assigned rankings vary between iterations</li>
+        <li><b><code>Separability</code></b>: How well the judge can separate models by ability (measured by CI99 overlap with adjacent models)</li>
+        <li><b><code>Human Corr</code></b>: Correlation with human preferences (per the LMSys Arena creative writing category)</li>
+        <li><b><code>Cost</code></b>: The cost to complete one run of the benchmark (via openrouter)</li>
       </ul>
       <p>
         For each row, you can view:
@@ -106,7 +106,7 @@
       <ul>
         <li><b>Stats</b> – A link to the .json file with full computed statistics</li>
         <li><b>Scoring Chart</b> – Plots of the judge's assigned scores to the test models (raw & calibrated), and a heatmap of the frequency each score (0-10) was given by the judge.</li>
-		<li><b>Scatter Chart</b> – Scatter plots of item length vs score.</li>
+        <li><b>Scatter Chart</b> – Scatter plots of item length vs score.</li>
       </ul>
       <p>
         <b>Judgemark Score</b>		
@@ -118,13 +118,9 @@
 # All elements here are pre-normalised 0-1 (larger=better)		  
 # Compute an aggregated separability metric
 separability_agg = (
-	std_dev              # std deviation *between* models (separability)
-	+ kw_stat            # kruskal-wallis (separability)
+	+ kw_stat            # kruskal-wallis cluster analysis (separability)
 	+ ci99_overlap       # confidence interval overlap between adjacently ranked models (separability)
-	+ score_range        # range of assigned scores (separability)
-	+ per_model_ci95_avg # average ci95 per model scored (score stability + separability)
-	+ emd                # earth-movers distance (separability)
-) / 6.0
+) / 2.0
 
 # Combine into final Judgemark score  
 judgemark_score = (

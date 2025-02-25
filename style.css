@@ -394,18 +394,18 @@ body.dark-mode .error-bar::after {
 	background-color: rgba(255, 255, 255, 0.6);
 }
 
-.length-control-container {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+.vocab-control-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.length-control-label {
-	margin-bottom: 5px; /* Adjust this value to control space between text and slider */
+.vocab-control-label {
+    margin-bottom: 5px; /* Adjust this value to control space between text and slider */
 }
 
-.length-control-slider {
-	width: 100%;
+.vocab-control-slider {
+    width: 100%;
 }
 
 .custom-width-slider {
@@ -424,10 +424,6 @@ body.dark-mode .error-bar::after {
     margin-right: 1rem; /* Space between the controls */
 }
 
-.length-control-container, .gpt-slop-control-container {
-    display: inline-block;
-}
-
 .custom-width-slider {
     width: 150px;
     height: 1.5rem; /* Set a fixed height for both sliders to align them perfectly */
@@ -440,11 +436,6 @@ body.dark-mode .error-bar::after {
     -webkit-appearance: none; /* Ensure consistency in Webkit browsers */
     height: 1.5rem; /* Explicit height to ensure alignment */
     margin: 0; /* Remove default margins */
-}
-
-.length-control-label, .gpt-slop-control-label {
-    display: block;
-    margin-bottom: 0.5rem; /* Adds some space between label and slider */
 }
 
 /* BuzzBench score container background */
@@ -506,3 +497,39 @@ body.dark-mode .error-bar::after {
 	border-color: #2d2d2d;
 	color: #e9ecef;
   }
+
+  .gpt-slop-control-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.gpt-slop-control-label {
+    margin-bottom: 5px;
+}
+
+.gpt-slop-control-slider {
+    width: 100%;
+}
+
+/* Dark mode compatibility styles */
+.dark-mode-compatible {
+    background-color: rgba(23, 162, 184, 0.15);
+    color: inherit;
+    border: 1px solid rgba(23, 162, 184, 0.3);
+}
+
+.dark-mode .dark-mode-compatible {
+	background-color: rgba(23, 162, 184, 0.1);
+	border: 1px solid rgba(23, 162, 184, 0.2);
+}
+
+.dark-mode #vocab-explanation .card {
+	background-color: #2a2a2a;
+	border-color: #444;
+}
+
+/* Remove default alert icon padding if it exists */
+.dark-mode-compatible p {
+	margin-bottom: 0;
+}

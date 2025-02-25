@@ -28,6 +28,13 @@
 		
 		<p><a href="https://github.com/EQ-bench" target="_blank">Github</a> | <a href="https://arxiv.org/abs/2312.06281" target="_blank">Paper</a> | <span id="email"></span> | <a href="https://twitter.com/sam_paech" target="_blank">Twitter</a> | <a href="index.html">Leaderboard</a></p>
 
+		<p>
+			<a href='index.html'>💗EQ-Bench</a> |
+			<a href='creative_writing.html'>🎨Creative Writing</a> |
+			<a href='judgemark-v2.html'>⚖️Judgemark v2</a> |
+			<a href='buzzbench.html'>🎤BuzzBench</a>  
+		</p>
+
 		<p><script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#1a1a1a', 'O5O7VUVYO');kofiwidget2.draw();</script> </p>
 
 		<div class="toc">
@@ -75,8 +82,11 @@
 			<h3>🎨Creative Writing</h3>
 			<p>This benchmark uses a LLM judge (Claude 3.5 Sonnet) to assess the creative writing abilities of the test models on a series of writing prompts.</p>
 			<p>You can reproduce these results or run the benchmark on your own models with the <a href="https://github.com/EQ-bench" target="_blank">EQ-Bench repo on Github</a>.</p>
-			<p><b>2024/09/28 update. New metric: GPT-Slop</b></p>
-			<p>A new metric has been added to the leaderboard to measure "GPT-isms" or "GPT-slop". Higher values == more slop. It calculates a value representing how many words in the test model's output match words that are over-represented in typical language model writing. We compute the list of "gpt slop" words by counting the frequency of words in a large dataset of generated stories (<a href="https://huggingface.co/datasets/ajibawa-2023/General-Stories-Collection">Link to dataset</a>).</p>
+			<p><b>Update 2025-02-25: New metric -- Vocab Complexity</b></p>
+			<p>It's become apparent that the judge in this eval is easily impressed by vocab flexing. Some of the models tested use an inordinate amount of complex multisyllabic vocabulary, and it artificially inflates their score. As such we've introduced a new column for vocab complexity ("Vocab"), using a calculation of the proportion of words having 3+ syllables.</p>
+			<p>The "Vocab control" slider penalises overly complex vocab usage. It may seem counter-intuitive to penalise complex vocab, but in our experience, vocab-maxxing harms writing quality. Since this is quite a subjective aspect to the evaluation, we let the user set the penalty amount.</p>
+			<p><b>GPT-Slop</b></p>
+			<p>The "Slop" metric measures words that are typically over-used by LLMs (also known as GPT-isms). Higher values == more slop. It calculates a value representing how many words in the test model's output match words that are over-represented in typical language model writing. We compute the list of "gpt slop" words by counting the frequency of words in a large dataset of generated stories (<a href="https://huggingface.co/datasets/ajibawa-2023/General-Stories-Collection">Link to dataset</a>).</p>
 			<p>Some additional phrases have been added to the slop list as compiled from similar lists around the internet.</p>
 			<p>The full list, as well as the code to generate the over-represented words, can be found here: <a href="https://github.com/sam-paech/antislop-sampler">https://github.com/sam-paech/antislop-sampler</a>.</p>
 			<p>If you're interested in reducing gpt-isms, you can try the anti-slop sampler found in this repo. It downregulates the probability of the provided phrase list as the model inferences.</p>

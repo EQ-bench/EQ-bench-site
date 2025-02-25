@@ -9,27 +9,37 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 const leaderboardDataV2 = `
-ministral/Ministral-3b-instruct,6.89,8.94,0.0,0.083,0.01,0.018,0.858,0.032,0.363,$0.30
-gpt-4o-mini,42.52,42.9,0.625,0.371,0.248,0.265,3.149,0.27,1.187,$1.65
-deepseek-ai/deepseek-r1,72.07,66.84,0.864,0.694,0.754,0.677,6.098,0.611,2.195,$13.80
-claude-3.5-haiku-20241022,72.19,71.49,0.898,0.704,0.743,0.658,5.975,0.597,2.229,$10.64
-claude-3.5-sonnet-20240620,73.1,68.9,0.906,0.702,0.752,0.659,6.255,0.589,2.232,$44.06
-microsoft/wizardlm-2-8x22b,53.34,50.75,0.749,0.479,0.386,0.391,4.62,0.355,1.53,$5.89
-gpt-4o-2024-11-20,74.69,70.08,0.89,0.708,0.821,0.75,6.233,0.695,2.228,$31.64
-gemini-2.0-flash-thinking-exp-1219,67.12,61.83,0.816,0.647,0.681,0.616,5.519,0.555,2.057,$5.17
-deepseek-ai/deepseek-r1-distill-llama-70b,56.99,54.23,0.761,0.543,0.5,0.446,4.485,0.42,1.726,$2.66
-mistralai/mistral-large-instruct-2411,62.23,59.14,0.792,0.619,0.53,0.488,5.873,0.408,1.935,$23.61
-meta-llama/llama-3.1-8b-instruct,34.89,34.25,0.456,0.339,0.168,0.162,3.232,0.156,1.075,$0.30
-meta-llama/llama-3.1-405b-instruct,57.57,56.14,0.792,0.536,0.485,0.444,4.515,0.418,1.712,$7.42
-mistralai/mistral-small-24b-instruct-2501,60.77,58.07,0.809,0.567,0.515,0.482,5.194,0.43,1.802,$1.13
-CohereForAI/c4ai-command-r-08-2024,33.08,31.07,0.428,0.306,0.162,0.163,2.707,0.173,0.99,$1.77
-gemini-pro-1_5,71.15,66.9,0.892,0.686,0.728,0.646,5.832,0.582,2.178,$13.46
-o3-mini,60.93,55.51,0.781,0.575,0.547,0.506,5.26,0.453,1.83,$20.72
-microsoft/phi-4,47.97,45.88,0.663,0.449,0.308,0.292,4.031,0.262,1.431,$0.67
-qwen-plus,63.69,58.86,0.805,0.608,0.594,0.537,5.411,0.476,1.923,$4.39
-qwen-max,67.21,62.76,0.851,0.656,0.651,0.576,5.886,0.507,2.078,$22.72
-Qwen/Qwen2.5-72B-Instruct,52.78,50.98,0.727,0.464,0.39,0.418,4.48,0.383,1.475,$2.49
-`;
+ministral/Ministral-3b-instruct,7.51,0.0,0.041,0.288,$0.30
+gpt-4o-mini,40.9,0.654,0.249,0.804,$1.65
+claude-3.5-haiku-20241022,74.49,0.905,0.662,0.915,$10.64
+claude-3.5-sonnet-20240620,75.23,0.9,0.669,0.938,$44.06
+microsoft/wizardlm-2-8x22b,51.92,0.755,0.374,0.866,$5.89
+gpt-4o-2024-11-20,78.12,0.888,0.72,0.918,$31.64
+deepseek-ai/deepseek-r1-distill-llama-70b,56.94,0.776,0.442,0.873,$2.66
+mistralai/mistral-large-instruct-2411,61.65,0.806,0.501,0.889,$23.61
+meta-llama/llama-3.1-8b-instruct,31.36,0.46,0.19,0.66,$0.30
+meta-llama/llama-3.1-405b-instruct,57.29,0.798,0.435,0.899,$7.42
+mistralai/mistral-small-24b-instruct-2501,60.51,0.815,0.482,0.886,$1.13
+CohereForAI/c4ai-command-r-08-2024,29.34,0.423,0.182,0.611,$1.77
+gemini-pro-1_5,73.46,0.887,0.655,0.899,$13.46
+deepseek-ai/deepseek-r1,76.1,0.894,0.691,0.908,$13.80
+o3-mini,60.45,0.782,0.494,0.869,$20.72
+microsoft/phi-4,44.42,0.651,0.299,0.817,$0.67
+qwen-plus,64.72,0.806,0.544,0.902,$4.39
+qwen-max,67.61,0.846,0.581,0.886,$22.72
+Qwen/Qwen2.5-72B-Instruct,52.04,0.741,0.389,0.827,$2.49
+*gemini-2.0-flash-001,64.59,0.797,0.556,0.853,$1.09
+*claude-3-7-sonnet-20250219,81.54,0.912,0.773,0.889,$54.73
+`
+
+const csv_header = [
+  "model",
+  "judgemark_score",
+  "stability",
+  "separability",
+  "human_corr",
+  "cost"
+]
 
 /**
  * Dark mode toggling
@@ -102,7 +112,9 @@ $.fn.dataTable.ext.type.order['params-pre'] = function (data) {
  * Replaces '/' with '__' then removes all non-[A-Za-z0-9_-]
  */
 function sanitizeModelName(modelName) {
-  let sanitized = modelName.replace(/\//g, '__');
+  // Remove leading * and !
+  let sanitized = modelName.replace(/^[*!]+/, '');
+  sanitized = sanitized.replace(/\//g, '__');
   sanitized = sanitized.replace(/[^\w\-]/g, '-');
   return sanitized;
 }
@@ -114,37 +126,31 @@ function loadLeaderboardDataV2() {
   // Split on newlines, filter out empty lines
   const lines = leaderboardDataV2.trim().split('\n').filter(l => l.trim() !== '');
 
-  // We'll collect calibrated scores to find a maximum for the bar widths
-  let calibratedScores = [];
+  // We'll collect scores to find a maximum for the bar widths
+  let scores = [];
 
   // Prepare row data
   const rowData = lines.map(line => {
     const parts = line.split(',');
-    // Indices:
+    // Indices based on csv_header:
     //  0: model
-    //  1: judgemark_score (Calibrated)
-    //  2: judgemark_score_raw
-    //  3: kendall_tau_bootstrapped
-    //  4: std_dev
-    //  5: kw_stat
-    //  6: ci99_overlap_magnitude_sum_norm
-    //  7: calibrated_score_range_norm
-    //  8: modulated_ci95
-    //  9: emd_norm
-    // 10: cost
+    //  1: judgemark_score
+    //  2: stability
+    //  3: separability
+    //  4: human_corr
+    //  5: cost
 
     const model = parts[0] || '';
-    const scoreCalibrated = parts[1] || '';
-    const scoreRaw = parts[2] || '';
-    const stability = parts[3] || '';
-    // ignoring std_dev, kw_stat, etc. for display
-    const separability = parts[6] || '';
-    const cost = parts[10] || '';
+    const judgemarkScore = parts[1] || '';
+    const stability = parts[2] || '';
+    const separability = parts[3] || '';
+    const humanCorr = parts[4] || '';
+    const cost = parts[5] || '';
 
     // Convert strings to numbers for sorting & bar scaling
-    let parsedCalibrated = parseFloat(scoreCalibrated);
-    if (!isNaN(parsedCalibrated)) {
-      calibratedScores.push(parsedCalibrated);
+    let parsedScore = parseFloat(judgemarkScore);
+    if (!isNaN(parsedScore)) {
+      scores.push(parsedScore);
     }
 
     const sanitized = sanitizeModelName(model);
@@ -154,10 +160,10 @@ function loadLeaderboardDataV2() {
 
     return {
       model,
-      scoreCalibrated,
-      scoreRaw,
+      judgemarkScore,
       stability,
       separability,
+      humanCorr,
       cost,
       statsLink,
       chart3Link,
@@ -165,18 +171,18 @@ function loadLeaderboardDataV2() {
     };
   });
 
-  const maxCalibrated = calibratedScores.length > 0
-    ? Math.max(...calibratedScores)
+  const maxScore = scores.length > 0
+    ? Math.max(...scores)
     : 1;
 
   // Build final HTML rows
   const rowsHtml = rowData.map(item => {
     let {
       model,
-      scoreCalibrated,
-      scoreRaw,
+      judgemarkScore,
       stability,
       separability,
+      humanCorr,
       cost,
       statsLink,
       chart3Link,
@@ -184,8 +190,7 @@ function loadLeaderboardDataV2() {
     } = item;
 
     const isNewModel = model.startsWith('*');
-		model = model.replace(/^\*/, '');
-
+    model = model.replace(/^\*/, '');
 
     let displayModel = model.includes('/')
       ? `<a href="https://huggingface.co/${model}" target="_blank">${model.split('/').pop()}</a>`
@@ -195,17 +200,17 @@ function loadLeaderboardDataV2() {
       displayModel = '🆕' + displayModel
     }
 
-    // Score bar for calibrated
-    let numericScore = parseFloat(scoreCalibrated);
+    // Score bar for judgemark score
+    let numericScore = parseFloat(judgemarkScore);
     let barHtml = '-';
     let dataOrder = 0;
     if (!isNaN(numericScore)) {
-      const pct = (numericScore / maxCalibrated) * 100;
+      const pct = (numericScore / maxScore) * 100;
       dataOrder = numericScore; // for sorting
       barHtml = `
         <div class="score-bar-container">
           <div class="judgemark-score-bar" style="width: ${pct}%;"></div>
-          <span class="score-text">${scoreCalibrated}</span>
+          <span class="score-text">${judgemarkScore}</span>
         </div>`;
     }
 
@@ -217,15 +222,15 @@ function loadLeaderboardDataV2() {
       <span style="white-space: nowrap">
         <a href="${scatterLink}">📊Scatter</a>
       </span>
-	  `;
+    `;
 
     return `
       <tr>
         <td>${displayModel}</td>
         <td class="calibrated-score-col" data-order="${dataOrder}">${barHtml}</td>
-        <td class="middle-stats">${scoreRaw || '-'}</td>
         <td class="middle-stats">${stability || '-'}</td>
         <td class="middle-stats">${separability || '-'}</td>
+        <td class="middle-stats">${humanCorr || '-'}</td>
         <td class="middle-stats">${cost || '-'}</td>
         <td><a href="${statsLink}">Stats</a></td>
         <td>${chartLinksHtml}</td>
@@ -245,7 +250,7 @@ function loadLeaderboardDataV2() {
  */
 function initializeDataTableV2() {
   const table = $('#judgemark-leaderboard-v2').DataTable({
-    order: [[1, 'desc']],    // Sort by the (Calibrated Score) column descending
+    order: [[1, 'desc']],    // Sort by the Judgemark Score column descending
     paging: false,           // Show all
     searching: false,        // No search bar
     lengthMenu: [50, 100, 200, 1000],
@@ -253,9 +258,9 @@ function initializeDataTableV2() {
       lengthMenu: "Show _MENU_"
     },
     columnDefs: [
-      // Score (Raw) = col 2, Stability = col 3, Separability = col 4, Cost = col 5
+      // Stability = col 2, Separability = col 3, Human Corr = col 4, Cost = col 5
       { targets: [2,3,4,5], className: 'middle-stats' },
-      // Score (Calibrated) desc by default; if user clicks, toggle asc
+      // Judgemark Score desc by default; if user clicks, toggle asc
       { targets: [1,2,3,4,5], orderSequence: ['desc','asc'] }
     ],
     dom: "<'d-flex flex-column flex-md-row justify-content-between'<'#toggleMiddleStatsDummy.d-block.d-sm-none'><'dataTables_length'l><'dataTables_filter'f>>" +
@@ -268,7 +273,7 @@ function initializeDataTableV2() {
     }
   });
 
-  // Expand/Collapse columns (Score Raw, Stability, Separability, Cost) on mobile
+  // Expand/Collapse columns (Stability, Separability, Human Corr, Cost) on mobile
   let middleStatsExpanded = false;
   function collapseMiddleColumns() {
     if (window.innerWidth < 992 && !middleStatsExpanded) {

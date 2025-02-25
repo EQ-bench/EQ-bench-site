@@ -36,13 +36,13 @@
 		</p>
 		
 		<div class="d-flex align-items-start">
-			<!-- Length Control Slider -->
-			<div class="my-3 length-control-container me-3">
-				<div class="length-control-label">
-					<label for="lengthControlSlider">Length Control: <span id="lengthControlValue">50%</span></label>
+			<!-- Vocab Control Slider -->
+			<div class="my-3 vocab-control-container me-3">
+				<div class="vocab-control-label">
+					<label for="vocabControlSlider">* Vocab Control: <span id="vocabControlValue">50%</span></label>
 				</div>
-				<div class="length-control-slider">
-					<input type="range" class="form-range custom-width-slider" min="0" max="100" value="0" id="lengthControlSlider">
+				<div class="vocab-control-slider">
+					<input type="range" class="form-range custom-width-slider" min="0" max="100" value="50" id="vocabControlSlider">
 				</div>
 			</div>
 		
@@ -67,6 +67,7 @@
 						<th>Params</th>
 						<th>Length</th>
 						<th>Slop</th>
+						<th>Vocab*</th>
 						<th>Creative Writing</th>
 						<th></th>
 					</tr>
@@ -78,6 +79,32 @@
 		</div>
 		<br>
 		<hr>
+		<div class="section mt-4" id="vocab-explanation">			
+			<div class="card bg-card">
+			  <div class="card-body">
+				<h5 class="card-title">* Vocab Complexity Metric</h5>
+				<p>The <strong>Vocab</strong> column measures the proportion of words with 3+ syllables in a model's output. Higher values indicate more complex vocabulary usage.</p>
+				
+				<h5 class="card-title mt-3">Vocab Control Slider</h5>
+				<p>The <strong>Vocab Control</strong> slider applies a scaling penalty to models that use an unusually high proportion of complex words. This addresses an observed bias where the judge model is easily impressed by over-the-top vocabulary flexing, which can artificially inflate scores.</p>
+				
+				<ul>
+				  <li><strong>0%</strong>: No penalty applied (raw scores)</li>
+				  <li><strong>50%</strong>: Default moderate penalty for excessive vocabulary complexity</li>
+				  <li><strong>100%</strong>: Maximum penalty for overly complex vocabulary</li>
+				</ul>
+				
+				<div class="alert alert-info dark-mode-compatible">
+				  <p>While using complex vocabulary can enhance writing in some contexts, our view is that excessive use of complex, multisyllabic words is perceived negatively by humans. It's a kind of stylistic slop which tends to read unnaturally and sound amateurish.</p>
+				</div>
+				
+				<h5 class="card-title mt-3">GPT-Slop Control</h5>
+				<p>The <strong>Slop</strong> column measures the frequency of words and phrases typically overused by language models (sometimes called "GPT-isms"). The <strong>GPT-Slop Control</strong> slider allows you to penalize models that use these slop words excessively.</p>
+				
+				<p>For more information on these metrics and how they're calculated, please see the <a href="./about.html#creative-writing">About</a> section.</p>
+			  </div>
+			</div>
+		  </div>
 	</div>
 
 	<!-- jQuery and Bootstrap JS -->
