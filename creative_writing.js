@@ -85,7 +85,7 @@ alpindale/WizardLM-2-8x22B,78.91,78.17,79.65,8x22,5856,10.93,46.85
 google/gemma-2-9b-it,76.15,75.13,77.17,9,4010,12.10,47.16
 CohereForAI/c4ai-command-r-plus-08-2024,76.13,75.34,76.92,104,5566,15.24,53.8
 meta-llama/Llama-3.2-3B-Instruct,62.5,61.13,63.88,3,4968,8.97,43.84
-deepseek-ai/Deepseek-R1,87.11,86.78,87.45,18x37,5272,5.29,33.24
+deepseek-ai/DeepSeek-R1,87.11,86.78,87.45,18x37,5272,5.29,33.24
 deepseek-ai/deepseek-r1-distill-llama-70b,76.17,nan,nan,70,6509,8.7,38.65
 deepseek-ai/deepseek-r1-distill-qwen-14b,55.0,nan,nan,14,8000,8.55,50.91
 deepseek-ai/deepseek-r1-distill-qwen-32b,73.05,nan,nan,32,5525,8.88,37.24
