@@ -533,3 +533,57 @@ body.dark-mode .error-bar::after {
 .dark-mode-compatible p {
 	margin-bottom: 0;
 }
+
+
+/* EQ-Bench 3 score bar styles */
+.eqbench3-score-bar {
+    display: none;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    transition: width 0.5s ease;
+    z-index: 1;
+}
+
+/* Table styling for EQ-Bench 3 */
+table.eqbench3 th, table.eqbench3 td {
+    padding: 2px 4px;
+}
+
+table.eqbench3 .score-bar-container {
+    height: 20px;
+    position: relative;
+    background: transparent;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Adjust the layout of the table columns */
+table.eqbench3 th:nth-child(1) {
+    width: 45%;
+}
+
+table.eqbench3 th:nth-child(2) {
+    width: 15%;
+}
+
+table.eqbench3 th:nth-child(3) {
+    width: 40%;
+}
+
+
+
+
+
+
+/* Slightly improved dark mode background contrast */
+body.dark-mode {
+    background-color: #201f1f; /* Just a bit darker than original */
+    color: #fff;
+}
+
+body.dark-mode .container {
+    background-color: #201f1f; /* Mild contrast from background */
+}

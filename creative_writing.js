@@ -219,8 +219,8 @@ function updateCreativeWritingScoreBarColors() {
 		 const endPercent = ((index + 1) / numBars);
 		 // Adjust the lightness value based on the mode; darker for dark mode, lighter for light mode
 		 const lightness = isDarkMode ? '50%' : '80%'; // Lighter in light mode
-		 const startColor = `hsl(${startPercent * 360}, 30%, ${lightness})`;
-		 const endColor = `hsl(${endPercent * 360}, 30%, ${lightness})`;
+		 const startColor = `hsl(${startPercent * 360}, 40%, ${lightness})`;
+		 const endColor = `hsl(${endPercent * 360}, 40%, ${lightness})`;
 		 bar.style.background = `linear-gradient(to bottom, ${startColor}, ${endColor})`;
 		 bar.style.display = 'block'; // Make sure to display the bar
 	});

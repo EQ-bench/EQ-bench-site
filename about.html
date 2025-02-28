@@ -29,11 +29,12 @@
 		<p><a href="https://github.com/EQ-bench" target="_blank">Github</a> | <a href="https://arxiv.org/abs/2312.06281" target="_blank">Paper</a> | <span id="email"></span> | <a href="https://twitter.com/sam_paech" target="_blank">Twitter</a> | <a href="index.html">Leaderboard</a></p>
 
 		<p>
-			<a href='index.html'>💗EQ-Bench</a> |
-			<a href='creative_writing.html'>🎨Creative Writing</a> |
-			<a href='judgemark-v2.html'>⚖️Judgemark v2</a> |
-			<a href='buzzbench.html'>🎤BuzzBench</a>  
-		</p>
+            <a href="index.html">💙EQ-Bench3</a> |
+            <a href='creative_writing.html'>🎨Creative Writing</a> |
+            <a href='judgemark-v2.html'>⚖️Judgemark v2</a> |
+            <a href='buzzbench.html'>🎤BuzzBench</a> |
+            <a href='eqbench-v2.html'>💗EQ-Bench (Legacy)</a>
+        </p>
 
 		<p><script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#1a1a1a', 'O5O7VUVYO');kofiwidget2.draw();</script> </p>
 
@@ -61,6 +62,48 @@
 			</p>
 			<p>We will then verify the result on our end and add to the leaderboard. This project is self funded so please respect that we don't have unlimited compute!</p>
 		</div>
+		<div id="eq-bench3" class="section">
+			<h3>💙EQ-Bench 3</h3>
+			<p>EQ-Bench 3 is an Emotional Intelligence benchmark focused on active conflict mediation skills. It evaluates the ability of language models to navigate complex emotional territory in challenging and diverse scenarios.</p>
+			
+			<p>The benchmark employs a set of conflict scenarios where the model must mediate between two or more parties with conflicting interests, emotional states, and communication patterns. Unlike the original EQ-Bench which assesses the ability to predict emotional states, EQ-Bench 3 targets active emotional intelligence abilities.</p>
+			
+			<p><strong>Methodology:</strong></p>
+			<ul>
+				<li><strong>Test Structure:</strong> The benchmark runs multi-turn conversations (up to 21 turns) between the test model (acting as conflict mediator) and actor models (playing clients or disputants). The actor model we use is gemini-2.0-flash-001. Each scenario includes detailed character profiles with specific emotional states and backgrounds.</li>
+				
+				<li><strong>Assessment Criteria:</strong> We score models on:
+					<ul>
+						<li>Basic emotional intelligence skills (recognizing emotions, showing empathy)</li>
+						<li>Professional skills specific to therapy or mediation</li>
+						<li>Avoiding serious professional mistakes</li>
+					</ul>
+				</li>
+				
+				<li><strong>How It Works:</strong> The benchmark uses three models:
+					<ul>
+						<li>Test model: The AI being evaluated</li>
+						<li>Actor model: Plays realistic clients or disputants</li>
+						<li>Judge model: Claude-3.7-Sonnet scores the test model's performance</li>
+					</ul>
+				</li>
+				
+				<li><strong>Scoring:</strong> The final score combines:
+					<ul>
+						<li>Scores across multiple skill areas</li>
+						<li>A count of identified mis-steps and how serious they were</li>
+					</ul>
+				</li>
+			</ul>
+			
+			<p>Beyond just scores, the judge provides a critical analysis of specific errors, rating them as minor, moderate, or serious. This helps identify exactly where and how models struggle in realistic professional conversations.</p>
+			
+			<p>Code and full documentation will be available in the EQ-Bench repository soon.</p>
+			<br>
+		</div>
+		
+		
+		
 		<div id="eq-bench" class="section">
 			<h3>💗EQ-Bench</h3>
 			<p>EQ-Bench is a benchmark for language models designed to assess emotional intelligence.</p>
@@ -328,6 +371,6 @@ Coefficient of Variation: 0.0181
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-	<script src="script.js"></script>
+	<script src="eqbench3.js"></script>
 </body>
 </html>
