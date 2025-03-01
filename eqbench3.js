@@ -22,7 +22,8 @@ deepseek/deepseek-r1,,71.64
 o1,,59.81
 gpt-4o-mini,,50.32
 meta-llama/llama-3.1-405b-instruct,405,50.37
-gpt-4.5-preview-2025-02-27,,72.38`;
+gpt-4.5-preview-2025-02-27,,72.38
+inflection-3-pi,,42.36`;
 
 /**
  * Custom sorting function for estimated parameters

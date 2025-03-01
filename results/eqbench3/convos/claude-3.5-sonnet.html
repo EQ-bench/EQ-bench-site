@@ -223,6 +223,27 @@
             .stats p {
                 margin: 5px 0;
             }
+            .score-metric {
+                margin: 12px 0;
+                background: #f0f7ff;
+                padding: 10px;
+                border-radius: 4px;
+                box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            }
+            .score-metric .metric-name {
+                font-weight: bold;
+                color: #2c3e50;
+            }
+            .score-metric .metric-value {
+                font-size: 1.2em;
+                font-weight: bold;
+                color: #2980b9;
+            }
+            .sub-metric {
+                margin: 5px 0;
+                font-size: 0.9em;
+                color: #555;
+            }
             .chart-row {
                 display: flex;
                 align-items: center;
@@ -263,17 +284,59 @@
             .criteria-chart {
                 margin-top: 10px;
             }
+            .stats-tabs {
+                display: flex;
+                margin-bottom: 15px;
+                border-bottom: 1px solid #ddd;
+            }
+            .stats-tab {
+                background: #f5f7fa;
+                border: none;
+                padding: 10px 15px;
+                margin-right: 5px;
+                border-radius: 4px 4px 0 0;
+                cursor: pointer;
+                border-bottom: 2px solid transparent;
+            }
+            .stats-tab.active {
+                border-bottom: 2px solid #3498db;
+                background: white;
+            }
+            .stats-content {
+                display: none;
+                padding: 10px 0;
+            }
+            .stats-content.active {
+                display: block;
+            }
         </style>
     </head>
     <body>
-        <h1>EQ-Bench 3 claude-3.5-sonnet Results</h1>
-        <a href="/" class="back-button">← Back</a>
-
-        <div class="stats">
-            <h3>Summary Statistics</h3>
+    
+    <div class="stats">
+        <h3>EQ-Bench 3 Results for claude-3.5-sonnet</h3>
+        
+        <div class="stats-tabs">
+            <button class="stats-tab active" onclick="showStatsSection(this, 'summary')">Summary Statistics</button>
+            <button class="stats-tab" onclick="showStatsSection(this, 'criteria')">Criteria Scores</button>
+        </div>
+        
+        <div id="summary-stats" class="stats-content active">
             <p>Total Conversations: 60</p>
-            <p>Final Score: 8.63</p>
-            <p>Average Identified Mediation Issues: 10.15</p>
+            
+            <div class="score-metric">
+                <div class="metric-name">EQBench3 Score:</div>
+                <div class="metric-value">67.36</div>
+                <div class="sub-metric">
+                    Mediation Performance Score: 0.828
+                </div>
+                <div class="sub-metric">
+                    Mediation Mistakes Score: 0.519                    
+                </div>
+            </div>
+        </div>
+        
+        <div id="criteria-stats" class="stats-content">
             <div class="criteria-chart"><h4>Average Criteria Scores</h4>
         <div class="chart-row">
             <div class="chart-label">Cognitive Empathy</div>
@@ -334,7 +397,7 @@
         <div class="chart-row">
             <div class="chart-label">Neutrality</div>
             <div class="chart-bar-container">
-                <div class="chart-bar" style="width: 89.5%"></div>
+                <div class="chart-bar" style="width: 89.49999999999999%"></div>
                 <div class="chart-value">8.95</div>
             </div>
         </div>
@@ -380,11 +443,12 @@
         </div>
         </div>
         </div>
-    
+    </div>
+
         <div class="run-container" data-model="claude-3.5-sonnet">
             <div class="run-header">
                 <div>
-                    <strong>Mediation Dialogues: claude-3.5-sonnet</strong> - Score: 8.625641025641025
+                    <strong>Mediation Dialogues: claude-3.5-sonnet</strong>
                 </div>
                 <div>
                     <small>2025-02-28 04:16:39 - completed</small>
@@ -540,7 +604,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.69</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>8</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.69</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>8</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -778,7 +842,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">9.08</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>10</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>10</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>9</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">9.08</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>10</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>10</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>9</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -981,7 +1045,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">9.0</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>9</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">9.0</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>9</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -1199,7 +1263,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.77</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>10</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.77</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>10</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -1422,7 +1486,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -1630,7 +1694,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.31</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>8</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>7</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.31</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>8</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>7</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -1833,7 +1897,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.23</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>8</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>7</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.23</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>8</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>7</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -2046,7 +2110,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.38</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>8</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>7</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.38</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>8</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>7</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -2254,7 +2318,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.54</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.54</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -2457,7 +2521,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.38</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>8</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>7</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.38</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>8</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>7</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -2675,7 +2739,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.69</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.69</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -2883,7 +2947,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -3091,7 +3155,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.08</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>7</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>8</td></tr><tr><td>Power Balancing</td><td>7</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>7</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.08</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>7</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>8</td></tr><tr><td>Power Balancing</td><td>7</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>7</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -3304,7 +3368,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.38</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>8</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.38</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>8</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -3527,7 +3591,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -3745,7 +3809,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.54</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.54</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -3948,7 +4012,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.69</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>10</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>9</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.69</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>10</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>9</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -4151,7 +4215,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">9.08</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>10</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>9</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">9.08</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>10</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>9</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -4349,7 +4413,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -4552,7 +4616,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.77</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.77</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -4780,7 +4844,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.46</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>8</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.46</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>8</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -4988,7 +5052,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.69</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.69</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -5191,7 +5255,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.31</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>8</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>7</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.31</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>8</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>7</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -5389,7 +5453,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.23</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>8</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>8</td></tr><tr><td>Power Balancing</td><td>7</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.23</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>8</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>8</td></tr><tr><td>Power Balancing</td><td>7</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -5622,7 +5686,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.46</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.46</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -5825,7 +5889,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.46</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.46</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -6048,7 +6112,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.69</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.69</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -6246,7 +6310,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.69</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.69</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -6444,7 +6508,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.54</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.54</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -6657,7 +6721,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.77</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.77</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -6855,7 +6919,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.77</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.77</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -7088,7 +7152,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.54</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>8</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.54</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>8</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -7321,7 +7385,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>8</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>8</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -7549,7 +7613,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.23</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>8</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>7</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>7</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.23</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>8</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>7</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>7</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -7772,7 +7836,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.38</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>8</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.38</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>8</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -7995,7 +8059,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.08</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>7</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>8</td></tr><tr><td>Power Balancing</td><td>7</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>7</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.08</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>7</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>8</td></tr><tr><td>Power Balancing</td><td>7</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>7</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -8228,7 +8292,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">9.08</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>10</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>9</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">9.08</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>10</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>9</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -8431,7 +8495,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.54</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.54</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -8634,7 +8698,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>8</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>8</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -8842,7 +8906,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.85</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>10</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>9</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.85</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>10</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>9</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -9050,7 +9114,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">9.38</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>10</td></tr><tr><td>Emotional Understanding</td><td>10</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>10</td></tr><tr><td>Emotional Management</td><td>10</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>10</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">9.38</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>10</td></tr><tr><td>Emotional Understanding</td><td>10</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>10</td></tr><tr><td>Emotional Management</td><td>10</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>10</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -9278,7 +9342,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.54</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.54</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -9501,7 +9565,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.38</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>8</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>7</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>7</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.38</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>8</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>7</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>7</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -9719,7 +9783,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -9922,7 +9986,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -10125,7 +10189,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.46</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.46</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -10353,7 +10417,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.69</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>8</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>7</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>9</td></tr><tr><td>Progress Toward Resolution</td><td>10</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.69</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>8</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>7</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>9</td></tr><tr><td>Progress Toward Resolution</td><td>10</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -10576,7 +10640,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">9.31</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>10</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>10</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>9</td></tr><tr><td>Progress Toward Resolution</td><td>10</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">9.31</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>10</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>10</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>9</td></tr><tr><td>Progress Toward Resolution</td><td>10</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -10774,7 +10838,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.77</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.77</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -10977,7 +11041,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.31</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>8</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>7</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.31</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>8</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>7</td></tr><tr><td>Emotional Management</td><td>8</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -11190,7 +11254,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.46</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>8</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.46</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>8</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -11428,7 +11492,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.85</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>10</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>8</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>10</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.85</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>10</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>8</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>10</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -11631,7 +11695,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.38</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>8</td></tr><tr><td>Process Management</td><td>8</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.38</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>8</td></tr><tr><td>Process Management</td><td>8</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -11854,7 +11918,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.54</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.54</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>8</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -12052,7 +12116,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.62</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -12255,7 +12319,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.46</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.46</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>8</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>8</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>7</td></tr><tr><td>Progress Toward Resolution</td><td>8</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -12483,7 +12547,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">9.15</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>10</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>10</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>9</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">9.15</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>10</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>10</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>9</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -12706,7 +12770,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.77</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>10</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>8</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.77</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>10</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>8</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -12929,7 +12993,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">9.46</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>10</td></tr><tr><td>Emotional Integration</td><td>10</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>10</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>9</td></tr><tr><td>Option Generation</td><td>9</td></tr><tr><td>Progress Toward Resolution</td><td>10</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">9.46</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>9</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>10</td></tr><tr><td>Emotional Integration</td><td>10</td></tr><tr><td>Neutrality</td><td>9</td></tr><tr><td>Process Management</td><td>10</td></tr><tr><td>Reframing</td><td>10</td></tr><tr><td>Interest Identification</td><td>10</td></tr><tr><td>Power Balancing</td><td>9</td></tr><tr><td>Option Generation</td><td>9</td></tr><tr><td>Progress Toward Resolution</td><td>10</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -13127,7 +13191,7 @@
                     </div>
 
                     <div id="scores" class="section-content">
-                        <div class="scores-container"><div class="final-score">Final Score: <span class="score-value">8.69</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>8</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
+                        <div class="scores-container"><div class="final-score">Avg Mediation Score: <span class="score-value">8.69</span></div><div class="score-details"><h4>Score Details</h4><table><tr><th>Criterion</th><th>Score</th></tr><tr><td>Emotional Perception</td><td>9</td></tr><tr><td>Emotional Understanding</td><td>9</td></tr><tr><td>Cognitive Empathy</td><td>8</td></tr><tr><td>Emotional Empathy</td><td>9</td></tr><tr><td>Emotional Management</td><td>9</td></tr><tr><td>Emotional Integration</td><td>9</td></tr><tr><td>Neutrality</td><td>8</td></tr><tr><td>Process Management</td><td>9</td></tr><tr><td>Reframing</td><td>9</td></tr><tr><td>Interest Identification</td><td>9</td></tr><tr><td>Power Balancing</td><td>8</td></tr><tr><td>Option Generation</td><td>8</td></tr><tr><td>Progress Toward Resolution</td><td>9</td></tr></table></div></div>
                     </div>
 
                     <div id="analysis" class="section-content">
@@ -13272,6 +13336,26 @@
             button.classList.add('active');
             // Show selected content
             const selectedContent = contentContainer.querySelector('#' + sectionId);
+            if (selectedContent) {
+                selectedContent.classList.add('active');
+            }
+        }
+
+        // Add to the script section
+        function showStatsSection(button, sectionId) {
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.stats-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Remove active class from all content sections
+            const contents = document.querySelectorAll('.stats-content');
+            contents.forEach(c => c.classList.remove('active'));
+            
+            // Activate selected tab
+            button.classList.add('active');
+            
+            // Show selected content
+            const selectedContent = document.getElementById(sectionId + '-stats');
             if (selectedContent) {
                 selectedContent.classList.add('active');
             }
