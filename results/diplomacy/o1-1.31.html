@@ -1,0 +1,1719 @@
+<!DOCTYPE html><html lang='en'><head>
+<meta charset='utf-8'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
+<title>Diplomacy - AUT Report</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'/>
+<script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+<style>
+
+    .svg-player-container {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .svg-display {
+        width: 100%;
+        height: 600px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .svg-display object, .svg-display img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+    .player-controls {
+        padding: 15px;
+        background-color: #e9ecef;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .progress-container {
+        flex-grow: 1;
+        height: 10px;
+        background-color: #ced4da;
+        border-radius: 5px;
+        position: relative;
+        cursor: pointer;
+    }
+    .progress-bar {
+        height: 100%;
+        background-color: #0d6efd;
+        border-radius: 5px;
+        width: 0%;
+    }
+    .phase-label {
+        font-weight: bold;
+        min-width: 120px;
+        text-align: center;
+    }
+    .control-button {
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    .control-button:hover {
+        background-color: #5a6268;
+    }
+    .control-button:disabled {
+        background-color: #adb5bd;
+        cursor: not-allowed;
+    }
+    
+</style>
+</head><body class='bg-light'>
+<div class='container mt-4'>
+<h1>Diplomacy Report for Austria (AUT)</h1>
+<p><strong>Game ID:</strong> o1-1.31</p>
+<p><strong>Game Finished:</strong> False</p>
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h4>Overall Stats</h4>
+    
+<ul>
+<li><b>Avg Centers:</b> 10.59, <b>Final:</b> 18</li>
+<li><b>Avg Units:</b> 8.88, <b>Final:</b> 15</li>
+<li><b>Avg Influence:</b> 18.56, <b>Final:</b> 33</li>
+<li><b>Avg Self-Relationship:</b> -0.14, <b>Final:</b> -0.17</li>
+<li><b>Avg Others-Relationship:</b> -0.18, <b>Final:</b> -0.50</li>
+</ul>
+
+      </div>
+    </div>
+    
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="stats-tab" data-bs-toggle="tab" data-bs-target="#statsTabContent" type="button" role="tab" aria-controls="statsTabContent" aria-selected="true">AUT Charts</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="negotiation-tab" data-bs-toggle="tab" data-bs-target="#negotiationTabContent" type="button" role="tab" aria-controls="negotiationTabContent" aria-selected="false">Negotiations</button>
+  </li>
+
+  
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="animation-tab" data-bs-toggle="tab" data-bs-target="#animationTabContent" type="button" role="tab" aria-controls="animationTabContent" aria-selected="false">Game Animation</button>
+  </li>
+
+
+</ul>
+<div class="tab-content" id="myTabContent">
+  <!-- STATS TAB -->
+  <div class="tab-pane fade show active p-3" id="statsTabContent" role="tabpanel" aria-labelledby="stats-tab">
+
+<h3>Main Metrics</h3>
+<canvas id='mainMetricsChart' width='800' height='300'></canvas>
+<hr/><h3>Relationships (Self-Perceived)</h3>
+<canvas id='selfRelsChart' width='800' height='300'></canvas>
+<hr/><h3>Relationships (Others → AUT)</h3>
+<canvas id='othersRelsChart' width='800' height='300'></canvas>
+<hr/><h3>Orders: Issued vs Valid vs Rejected</h3>
+<canvas id='ordersChart' width='800' height='300'></canvas>
+</div>
+
+  <div class="tab-pane fade p-3" id="negotiationTabContent" role="tabpanel" aria-labelledby="negotiation-tab">
+    <h2>Negotiations / Dialogues</h2>
+
+<div class="accordion" id="negAccordion">
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading0">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse0" aria-expanded="false" aria-controls="negCollapse0">
+        Negotiation Turn 1 (1901 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse0" class="accordion-collapse collapse" aria-labelledby="negHeading0" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Greetings from Vienna. I suggest a DMZ in Tyrolia and assurance that neither of us intrudes on Trieste or Venice. I’m keen for a southern expansion and would prefer we cooperate rather than clash. Let’s keep the peace between us while we look for gains elsewhere.</li>
+<li><b>To</b> [RUS]: Friend of the north, I propose we keep Galicia empty to prevent early friction. A DMZ there frees us both to focus on more profitable directions. Let me know your thoughts on forging a stable eastern relationship.</li>
+<li><b>To</b> [TUR]: Sultan, I offer a cordial understanding: you take Bulgaria while I move to Serbia and, hopefully soon, Greece as well. If we avoid conflict in the Balkans, we can both profit. Let’s keep a channel open for cooperation.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: To AUT, Russia is interested in understanding your intentions in the Balkans. We believe that cooperation between our nations could be mutually beneficial in preventing other powers from gaining influence in the region. What are your goals?</li>
+<li><b>From</b> [GER]: To Austria and Italy, Germany proposes a discussion regarding the Balkans. We believe a coordinated approach to maintaining stability in the region is crucial. Let us explore potential areas of cooperation and prevent any unilateral actions that could destabilize the region. What are your interests in the Balkans?</li>
+<li><b>From</b> [ITA]: Austria, Italy seeks a peaceful resolution to tensions in the Adriatic. We propose a mutual guarantee of borders. Italy will not move against Trieste if Austria does not move against Venice. This will allow us both to focus on other threats. Do you agree to this proposal?</li>
+<li><b>From</b> [TUR]: Greetings, Austria. I wish to establish a dialogue regarding our shared border. I am concerned about your growing influence in the Balkans. I propose we maintain the status quo for the time being and avoid any actions that could destabilize the region. What are your intentions regarding Serbia and Greece?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Russia, let’s confirm we keep Galicia clear. I intend to focus on Serbia and Greece, not infringing to the north or east, and I respectfully suggest you do the same with your units so we avoid collisions. I’m open to mutual cooperation for mutual gain.</li>
+<li><b>To</b> [ITA]: Italy, I gladly accept your proposal for border peace: no moves on Venice or Trieste, plus a DMZ in Tyrolia. I plan to secure Serbia and possibly Greece, so I’d prefer we remain friendly neighbors while you pursue your interests in the west.</li>
+<li><b>To</b> [TUR]: Sultan, I will be moving toward Serbia and likely eye Greece soon. I welcome your growth in Bulgaria; let’s not stand in each other’s way. There is no reason for friction if we respect these spheres and keep an open line of communication.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: To AUT, we appreciate your offer to keep Galicia empty. However, we are more interested in understanding your long-term goals in the Balkans. What territories do you seek to control? We are willing to consider a stable eastern relationship, but we need to understand your ambitions first. Are you willing to cede influence in Rumania to Russia?</li>
+<li><b>From</b> [ITA]: Austria, I accept your proposal for a DMZ in Tyrolia and a guarantee of borders. Italy will not move against Trieste, and you will not move against Venice. This will allow us both to expand elsewhere. I suggest we publicly announce this agreement to deter any potential aggressors. Do you agree to this public announcement?</li>
+<li><b>From</b> [TUR]: Austria, your offer to divide the Balkans is tempting, but I am wary of your ambitions in Serbia and Greece. I am willing to consider an agreement where I secure Bulgaria, but I need assurances that you will not encroach further into Ottoman territories or interests. What guarantees can you provide?</li>
+<li><b>From</b> [GER]: To Austria and Italy, regarding the Balkans, Germany proposes a joint strategy. We believe Austria should have primary influence in Serbia and Romania, while Italy focuses on Greece and Albania. Germany will act as a mediator and guarantor of stability. This division of influence will prevent conflict and ensure a peaceful region. Let's discuss the details.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Russia, if you seek Rumania, I can respect that claim so long as Galicia remains free and you maintain a light touch on our shared border. I aim to secure Serbia and Greece, nothing more eastward. Let’s ensure we stay out of each other’s way for mutual gain.</li>
+<li><b>To</b> [ITA]: Italy, I agree to a public announcement of our border pact. Declaring a DMZ in Tyrolia and guaranteeing Trieste-Venice neutrality will deter distractions and let us focus elsewhere. Let’s finalize that publicly, and then each pursue our expansions with peace of mind.</li>
+<li><b>To</b> [TUR, GER]: Sultan and Chancellor, I appreciate Germany’s role in the Balkans. A fair balance would see Austria taking Serbia and Greece, and Turkey holding Bulgaria, with no further Austrian incursions eastward. This ensures regional stability under Berlin’s friendly guidance.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: To AUT, we acknowledge your intention to focus on Serbia and Greece. Russia will focus on Rumania and Turkey. We propose a non-aggression pact to avoid conflicts in the Balkans. We will keep Galicia clear, as you requested. Do you agree to these terms?</li>
+<li><b>From</b> [ITA]: Austria, I am glad we have reached an agreement on the Adriatic. I propose we publicly announce our agreement to deter any potential aggressors. This will strengthen our position and allow us to focus on other threats. Do you agree to this public announcement?</li>
+<li><b>From</b> [TUR]: Austria, I am concerned about your intentions in Serbia and Greece. I am willing to consider an agreement where I secure Bulgaria, but I need assurances that you will not encroach further into Ottoman territories or interests. What guarantees can you provide? I need something concrete.</li>
+<li><b>From</b> [GER]: To Austria and Italy, regarding the Balkans, we need to move beyond generalities. Austria, are you willing to commit to non-aggression towards Russia in exchange for German support in Serbia? Italy, can you guarantee that your focus on Greece and Albania will not destabilize the region or threaten Austrian interests? Germany is prepared to mediate, but we need concrete commitments from both of you.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Russia, I confirm a non-aggression pact and respect your claim to Rumania. Let Galicia remain empty, and I will focus on Serbia and Greece exclusively. May our eastern border stay calm as we each pursue our rightful gains.</li>
+<li><b>To</b> [TUR]: Sultan, to allay your concerns: I promise not to advance on Bulgaria. My focus is strictly on Serbia and Greece, leaving Ottoman territories unthreatened. Let us maintain friendly ties and keep the Balkans stable.</li>
+<li><b>To</b> [ITA, GER]: Italy and Germany, I will publicly affirm the Tyrolia DMZ with Italy and guarantee no aggression against Venice or Trieste. Further, I pledge no hostilities against Russia, in exchange for German goodwill in the Balkans. Let us uphold this cooperative framework for a secure region.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I am moving to Bulgaria. I expect you to stay out of my way. I will not tolerate any encroachment on Ottoman territories or interests. Consider this your final warning.</li>
+<li><b>From</b> [GER]: To Austria and Italy, it seems we are at an impasse. Austria, your ambitions are too broad. Italy, your guarantees are insufficient. Germany will proceed with its own plans to ensure stability in the Balkans. Do not interfere.</li>
+<li><b>From</b> [RUS]: To AUT, we will respect your claim to Serbia and Greece. We will focus on Rumania. We will keep Galicia clear and maintain a light touch on our shared border. We will move A WAR to MOS to show our commitment to a non-aggressive stance.</li>
+<li><b>From</b> [ITA]: Austria, I am pleased we agree. Let's publicly announce our agreement regarding the DMZ in Tyrolia and the guarantee of Trieste-Venice neutrality. This will deter any potential aggressors and allow us to focus on our respective expansions. I will announce this publicly.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Talks centered on securing border pacts with ITA and RUS to focus on the Balkans. We confirmed a DMZ with ITA in Tyrolia and agreed to leave Galicia empty with RUS. TUR demanded no interference in Bulgaria, while GER criticized our Balkan ambitions. Overall, we aim for Serbia and Greece, ensuring minimal friction to our north and west while watching GER’s meddling and TUR’s warnings.</li>
+<li><i>Intent:</i> Push into Serbia and Greece, maintain a non-aggression stance with RUS, respect the DMZ with ITA (Trieste-Venice), and watch TUR and GER closely for potential threats or alliances.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA+', 'AUT-RUS+', 'AUT-TUR-', 'AUT-GER-']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading1">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse1" aria-expanded="false" aria-controls="negCollapse1">
+        Negotiation Turn 1 (1901 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse1" class="accordion-collapse collapse" aria-labelledby="negHeading1" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Greetings friend in Rome! I propose we maintain our good understanding by respecting the Tyrolia–Trieste border and letting me secure Greece this autumn. Your fleet in ION can focus westward instead, allowing us both to expand without clashing. If we keep our mutual trust, we will profit greatly in the seasons to come.</li>
+<li><b>To</b> [RUS]: Esteemed compatriots in Moscow, I suggest we continue our cordial ties by upholding a DMZ in Galicia. I am wary of Germany’s maneuvers, so your cooperation would be greatly appreciated should they stray too far east. Together, we can ensure stability and discourage any opportunistic moves from Berlin.</li>
+<li><b>To</b> [TUR]: Neighbors in Ankara, I see no reason for direct conflict if we both respect each other’s claims in the Balkans. I intend to move into Greece peacefully without threatening Bulgaria. Let us keep the peace between us, for there are better opportunities elsewhere than fighting one another.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: To AUT, I am moving A WAR to MOS. This is not a threat to you, but a consolidation of my forces. I expect you to respect our agreement regarding Serbia and Greece. I will be watching your moves closely.</li>
+<li><b>From</b> [TUR]: Greetings Austria, I am moving to secure Bulgaria. I trust you will not interfere with my sphere of influence in the Balkans. I advise you to focus your efforts elsewhere. What are your intentions in Serbia and Greece?</li>
+<li><b>From</b> [ITA]: To Austria, I am publicly announcing our non-aggression pact, including the DMZ in Tyrolia and guarantees for Trieste and Venice. I hope this will foster stability in the region. I am moving to Tyrolia to maintain the DMZ.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Your planned move from WAR to MOS is welcomed. Let’s keep Galicia clear and maintain our cordial frontier while I turn south to secure Greece. If Germany grows too bold, our shared vigilance can keep them in check.</li>
+<li><b>To</b> [ITA]: Our non-aggression pact stands firm. I have no designs on your territory and trust your respect of Tyrolia as a DMZ. I plan to move my fleet from Albania to Greece this turn; I ask that your Ionian Fleet not interfere so we can both expand peacefully.</li>
+<li><b>To</b> [TUR]: I acknowledge your sphere in Bulgaria and wish to avoid any clash in the Balkans. I aim to move into Greece without threatening your position. Let us keep the peace and focus on more fruitful opportunities than battling each other.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: To AUT, I appreciate your concern about Germany. However, I have an agreement with them. I will not agree to a DMZ in Galicia. My A UKR will remain there. I suggest you focus on your own interests in the Balkans. I expect you to respect our agreement regarding Serbia and Greece.</li>
+<li><b>From</b> [TUR]: Greetings Austria, I appreciate your assurance that you will not interfere with my sphere of influence in the Balkans. However, I must reiterate that any move into Greece will be viewed with suspicion. I suggest you focus your efforts elsewhere, perhaps against Italy. What are your intentions in Tyrolia?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: I understand your reluctance about a DMZ in Galicia. My focus remains on securing Greece and stabilizing the Balkans. As long as you do not interfere there, I will respect our frontier. Let us keep the peace and remain vigilant against German expansion.</li>
+<li><b>To</b> [TUR]: I assure you my move to Greece is neither hostile nor encroaching on Bulgaria. Securing Greece is a natural step for Austria, and I prefer to avoid contention along our shared borders. I urge you to see reason and channel our energies toward more pressing concerns than Balkan squabbles.</li>
+<li><b>To</b> [ITA]: We have both committed to non-aggression, and I trust your presence in Tyrol is purely protective. My intentions lie southward, aiming for Greece, not toward Venice. Let us keep our border quiet so we may each grow without needless conflicts.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Greetings Austria, I am moving to Bulgaria. I reiterate my warning against any move into Greece. I suggest you focus your efforts elsewhere. I am watching your movements in Tyrolia closely. Do not test my resolve.</li>
+<li><b>From</b> [RUS]: To AUT, I appreciate your concern about Germany, but I have an agreement with them. I will not agree to a DMZ in Galicia. My A UKR will remain there. Focus on Greece as you stated. I expect you to respect our agreement regarding Serbia.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: I hear your caution about Greece, but my intent is only peaceful expansion. Fighting over such a small gain will only distract us from larger threats. Let us not drift into unnecessary conflict when cooperation serves us both better.</li>
+<li><b>To</b> [ITA]: I trust Tyrolia remains purely defensive. My fleet heads to Greece, and I ask that you keep the Ionian Sea clear so we can both expand without clashing. Our mutual friendship is worth far more than a contested Balkan shore.</li>
+<li><b>To</b> [RUS]: I note your decision on Galicia and respect it. My focus stays in the Balkans, not on challenging you. Let us guard our respective fronts while watching Germany’s moves, so neither of us is caught off guard.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: To AUT, I appreciate your vigilance regarding Germany, but I have an agreement with them. I will not agree to a DMZ in Galicia. Focus on Greece. I expect you to respect our agreement regarding Serbia. I will not interfere in the Balkans as long as you do not threaten my position in Rumania.</li>
+<li><b>From</b> [TUR]: Greetings Austria, I am moving to Bulgaria. I reiterate my warning against any move into Greece. I am watching your movements closely. I suggest you focus your efforts elsewhere. Do not test my resolve. I will not hesitate to defend my interests in the Balkans.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> We reaffirmed our non-aggression pact with ITA and plan to move our fleet to GRE. TUR remains wary of any moves into Greece, but we intend to focus on peaceful Balkan expansion. RUS will not demilitarize Galicia, though we remain cordial as we both watch GER’s possible eastward push. We maintain a friendly stance toward ITA, are cautious with TUR, and seek to avoid conflict while securing our southern flank.</li>
+<li><i>Intent:</i> Our goal is to move into Greece, uphold our understandings with ITA and RUS, and carefully manage TUR’s hostility. We will stay vigilant of GER’s eastern intentions and avoid unnecessary conflict unless provoked.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading2">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse2" aria-expanded="false" aria-controls="negCollapse2">
+        Negotiation Turn 2 (1902 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse2" class="accordion-collapse collapse" aria-labelledby="negHeading2" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Salutations, friend. Let us keep Tyrolia and Trieste peaceful while you focus your forces elsewhere. I have no wish for conflict between our nations and will gladly stand together if Turkey becomes belligerent. Please let me know if you’re amenable to continued cooperation and a united defense.</li>
+<li><b>To</b> [RUS]: Greetings. I value our understanding and would like to keep tensions low along our frontier. If you could shift your army in Galicia away from our border, it would solidify trust between us. I am open to mutual support should Turkey grow too adventurous in the Balkans. Your thoughts?</li>
+<li><b>To</b> [TUR]: Hello. I see your forces extending into the Balkans. I prefer avoiding a clash if we can find a workable boundary—perhaps a clear DMZ around Bulgaria. If we can settle a stable border, we both can focus on more immediate concerns elsewhere. Let me know your stance, and we can negotiate a friendly outcome.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I value our non-aggression pact. However, your move into Albania is concerning. Can you clarify your intentions in the Balkans? I want to ensure our agreement remains mutually beneficial and that no misunderstandings arise. I am open to discussing further guarantees to maintain stability in the region.</li>
+<li><b>From</b> [TUR]: Austria, I must warn you against any aggressive moves into Greece or Serbia. The Balkans are of vital interest to the Ottoman Empire, and any encroachment will be met with strong resistance. I suggest we maintain a neutral stance.</li>
+<li><b>From</b> [RUS]: Greetings, AUT. I am moving A WAR to MOS. I hope this does not cause you any concern. I am focused on the south and do not wish to interfere with your interests in SER and GRE. Let's maintain our current understanding and avoid any unnecessary conflicts.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: My friend, the move to Albania is simply to secure our position against Turkish encroachment. I have no designs on your territory, and I reaffirm our desire to keep Trieste–Tyrolia quiet. If you seek additional assurances, let me know how we can best cooperate to maintain stability.</li>
+<li><b>To</b> [TUR]: I understand your concerns, yet Greece and Serbia are firmly in Austrian hands, and we do not wish to see those territories contested. Let us formalize a stable boundary: we stay out of Bulgaria if you refrain from moving against Greece or Serbia. A clear demarcation should keep tensions low and benefit us both.</li>
+<li><b>To</b> [RUS]: Thank you for the update. Your shifting of A WAR to MOS is a reassuring sign of good faith. I remain committed to our understanding and will keep a watchful eye on Turkish moves in the south. If you see cause for joint action, let me know and we can coordinate accordingly.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I appreciate your willingness to avoid conflict. A DMZ around Bulgaria is not acceptable. The Balkans are vital to my interests. I propose we maintain the status quo and avoid any aggressive moves. I will resist any encroachment on Ottoman territories.</li>
+<li><b>From</b> [ITA]: Austria, I appreciate your willingness to maintain peace in Tyrolia and Trieste. However, your move into Greece is concerning. Can you provide assurances that your intentions are not hostile towards Italian interests in the Adriatic? I propose a meeting to discuss further guarantees and solidify our non-aggression pact.</li>
+<li><b>From</b> [RUS]: Greetings, AUT. I understand your concern regarding Galicia. However, I must maintain a presence there to ensure the security of my southern territories. I am willing to discuss a mutual withdrawal if you are willing to offer concessions elsewhere. Perhaps we can discuss a joint guarantee of Bulgarian neutrality to counter Turkish expansionism?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Friend, rest assured that my moves in Greece aim to deter Turkish aggression and not threaten your Adriatic interests. I propose we solidify our non-aggression pact by agreeing to mutually avoid hostile actions in the Adriatic and Tyrolia. Let us maintain trust so we can both focus on containing any destabilizing forces elsewhere.</li>
+<li><b>To</b> [RUS]: Your suggestion of a joint stance regarding Bulgarian neutrality has merit. While I understand your need to keep a presence in Galicia, I hope we can keep any build-up there minimal. I am prepared to work with you on countering any Turkish push into the Balkans, provided we uphold a spirit of mutual restraint and shared interests.</li>
+<li><b>To</b> [TUR]: Since a full DMZ in Bulgaria does not appeal to you, I remain open to other boundaries that preserve our respective holdings without sparking conflict. My intent in Greece and Serbia is purely defensive, yet I will protect them fiercely if threatened. Let us keep the region stable by defining lines we do not cross, to our mutual benefit.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I appreciate your assurances regarding Albania. However, I remain concerned about your intentions in Greece. To solidify our non-aggression pact, I propose a formal agreement guaranteeing the neutrality of the Adriatic Sea. I am willing to offer similar guarantees for Tyrolia and Trieste. What are your thoughts?</li>
+<li><b>From</b> [TUR]: Austria, I cannot accept your terms regarding Greece and Serbia. The Balkans are of vital interest to me. I propose we maintain the status quo for now, but I will not hesitate to defend my interests if you encroach further. I suggest you focus on Italy.</li>
+<li><b>From</b> [RUS]: Greetings, AUT. I appreciate your commitment to our understanding. I am willing to discuss a joint guarantee of Bulgarian neutrality. I propose we also discuss a mutual defense pact to protect our interests in the Balkans from Turkish aggression. I am willing to offer concessions elsewhere if you are willing to support my efforts to secure Rumania.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, I value your partnership and reaffirm that Greece is not intended as a threat against you. I accept your proposal for a formal Adriatic neutrality and will refrain from any moves into Tyrolia or against your fleets. Let us maintain this accord so we can jointly manage any Turkish or other hostile advances.</li>
+<li><b>To</b> [TUR]: Turkey, I hear your refusal regarding Bulgaria, yet I remain intent on safeguarding Greece and Serbia. I propose we keep our existing borders to prevent needless conflict. As long as you respect our holdings, we have no cause to clash. Let us not squander our strength in a Balkan stalemate when there are other opportunities to pursue.</li>
+<li><b>To</b> [RUS]: Russia, I agree a joint guarantee of Bulgarian neutrality benefits us both, and I am open to working together in the Balkans. I’m ready to support you if you secure Rumania, assuming you reciprocate by keeping Galicia calm. Let us coordinate to contain Turkish aggression and solidify our alliance going forward.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I appreciate your assurances regarding Albania and Greece. To solidify our non-aggression pact, I am moving A PIE to VEN. This is not an aggressive move, but a defensive one to protect against any unforeseen circumstances. I hope you understand.</li>
+<li><b>From</b> [RUS]: Greetings, AUT. I appreciate your willingness to work with me on countering Turkish aggression in the Balkans. I am willing to support your interests in Serbia and Greece if you support my efforts to secure Rumania. Let's coordinate our efforts to ensure a stable and secure future for the region. I will continue to monitor Turkish moves closely.</li>
+<li><b>From</b> [TUR]: Austria, I cannot accept your terms regarding Greece and Serbia. I will defend my interests in the Balkans. I suggest you focus on Italy and avoid any aggressive moves towards Ottoman territories. I will not hesitate to respond if you encroach further.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Negotiations were dominated by tensions over the Balkans. TUR refused to accept any arrangement in Bulgaria or recognize AUT’s holdings in Greece and Serbia, taking a hard line. ITA maintained a friendly stance, agreeing to Adriatic neutrality and mutual non-aggression, though they remain cautious. RUS suggested working together to contain TUR, offering support in exchange for help with Rumania and general restraint in Galicia. Overall, AUT is leaning toward closer cooperation with RUS and ITA while preparing to defend against potential Turkish aggression.</li>
+<li><i>Intent:</i> Forge a stronger alliance with RUS to counter TUR in the Balkans while preserving peace with ITA. Maintain a defensive posture in Greece and Serbia, ready to repel any Ottoman incursion. Continue to nurture cooperation with ITA to secure the Adriatic and Tyrolia. Watch TUR carefully for signs of further hostility and respond firmly if threatened.</li>
+<li><i>Relationship Updates:</i> ['AUT-RUS++', 'AUT-TUR--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading3">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse3" aria-expanded="false" aria-controls="negCollapse3">
+        Negotiation Turn 3 (1902 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse3" class="accordion-collapse collapse" aria-labelledby="negHeading3" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Esteemed Tsar, our position in the Balkans is secure and we would gladly work with you to contain Turkey. Let us coordinate so we both reinforce our holdings against Ottoman aggression. I can remain in Bulgaria to shield your southern flank. In return, I welcome any support you can provide if Turkey attempts to retake Rumania or push north.</li>
+<li><b>To</b> [ITA]: Friend in Rome, I trust we stand by our cordial understanding. Let us maintain our neutral stance in the Adriatic and keep Tyrolia calm. I have no designs on your peninsula, and I hope you share the same intention toward Trieste. We can profit from continued goodwill while we watch the east with caution.</li>
+<li><b>To</b> [TUR]: Ottoman Sultan, your threats on Bulgaria have not gone unnoticed. If you wish to avoid further conflict, we should discuss boundaries in the Balkans. Otherwise, know that I stand ready alongside my allies to repel any further moves against our shared frontier.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am moving A VEN to TYR. This is merely a probe of GER and does not violate our non-aggression pact. I am concerned about your expansion into the Balkans. What are your intentions?</li>
+<li><b>From</b> [TUR]: I am concerned about your movements in the Balkans. I will not tolerate encroachment on Ottoman interests. I advise you to reconsider your actions in Greece and Serbia. I am prepared to defend my territory.</li>
+<li><b>From</b> [RUS]: AUT, I am pleased with our understanding regarding the Balkans. I am focused on securing Rumania, and I appreciate your cooperation in keeping Galicia calm. I propose we coordinate our efforts against Turkey more directly. What are your specific objectives in Serbia and Greece, and how can I best support them while securing my own interests?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I understand your move to TYR is focused on GER. My Balkan advances are not aimed at you—I wish only to secure our region from Turkish aggression. As long as Trieste remains free from your designs, our friendly accord stands, and I welcome continued cooperation.</li>
+<li><b>To</b> [RUS]: I appreciate your solidarity. My goal in Serbia and Greece is to secure a stable bulwark against Turkey, ensuring we hold firm in the Balkans. If you can pressure their Black Sea position or support us around Rumania, we can cooperate to block any Ottoman resurgence.</li>
+<li><b>To</b> [TUR]: I respect your sovereignty, but Greece and Serbia lie solidly under my protection. If you truly desire peace, propose a clear boundary that respects our holdings. Continued threats will only push me to fortify my positions further and coordinate with those who share concern over Ottoman expansion.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, I am glad to hear you are willing to work with me against Turkey. I am focused on securing RUM. I propose a coordinated attack: I will move into Turkey from the East, while you pressure them from the West. What specific support do you need to secure Serbia and Greece? I can offer support for your moves into Serbia, but I need assurances that you will not interfere with my operations in RUM.</li>
+<li><b>From</b> [TUR]: Your threats are noted, but they are unlikely to deter me. I am moving to secure my interests in the Balkans. I suggest you reconsider your aggressive stance in Greece and Serbia. I am open to discussing boundaries, but only if you are willing to negotiate in good faith and respect Ottoman interests. What specific concessions are you willing to offer?</li>
+<li><b>From</b> [ITA]: Austria, I appreciate your reassurance. My move to TYR is merely a probe of GER and does not violate our non-aggression pact. However, I am concerned about your expansion into the Balkans, especially Greece and Serbia. I propose a DMZ in the Adriatic to ease tensions. What are your thoughts?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Honored Tsar, let us finalize our plan to contain Turkey. I will hold Bulgaria and Greece while you secure Rumania and strike from the East. If you can occupy their Black Sea forces, I will ensure the Balkans remain locked down. Together, we can squeeze the Ottomans from both sides.</li>
+<li><b>To</b> [TUR]: Sultan, I will not concede Serbia or Greece, but I am open to a stable frontier. If you genuinely desire peace, let us agree neither side will advance into my Western Balkans nor threaten the coastline near Bulgaria. Offer a concrete boundary, and we can avoid further escalation.</li>
+<li><b>To</b> [ITA]: My friend, I accept a DMZ in the Adriatic. Neither of us needs a naval buildup there while our interests align. My armies focus only on securing the Balkans against Turkey, so you need not fear aggression from me. May our cordial understanding continue to profit us both.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I appreciate your understanding. My move to TYR is merely a probe of GER. I propose a DMZ in the Adriatic to ease tensions. I am concerned about your expansion into the Balkans. I will not move on Trieste if you do not move on Venice. Do we have an understanding?</li>
+<li><b>From</b> [RUS]: AUT, I am focused on securing RUM. I propose a coordinated attack on Turkey next turn. I will move into Turkey from the East, while you pressure them from the West. What specific support do you need to secure Serbia and Greece? I can offer support for your moves into Serbia, but I need assurances that you will not interfere with my operations in RUM. Let's discuss specifics.</li>
+<li><b>From</b> [TUR]: I am not making threats, but securing my interests. I am willing to discuss boundaries, but only if you acknowledge Ottoman interests in the Balkans. I propose a neutral zone in Bulgaria and a guarantee of free passage through the Dardanelles. What specific concessions are you willing to offer to ensure peace and stability in the region?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Honored Tsar, let us finalize our coordinated strike. I will fortify Greece and Bulgaria, pressuring Turkey from the west, while you secure Rumania and advance from the east. I am prepared to offer full cooperation to ensure we contain the Ottoman threat. Once we have them locked down, we can split their holdings without interfering in each other’s gains.</li>
+<li><b>To</b> [ITA]: My friend in Rome, I confirm a DMZ in the Adriatic to keep our seas calm. I have no designs on Venice, and I appreciate your pledge not to move on Trieste. Let us respect these mutual boundaries so we both can focus on more pressing matters elsewhere.</li>
+<li><b>To</b> [TUR]: Sultan, our possession of Greece, Serbia, and Bulgaria stands firm. If you truly desire peace, acknowledge these holdings and propose a genuine boundary that respects our sovereignties. Otherwise, my cooperation with Russia will only intensify, and Turkey will find itself outflanked on all sides.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, I am securing RUM. I will strike Turkey from the East next turn. I need your support in the Balkans. I will occupy their Black Sea forces. Can you ensure the Balkans remain locked down? Let's coordinate our moves to squeeze the Ottomans from both sides.</li>
+<li><b>From</b> [ITA]: Austria, I appreciate your understanding. My move to PIE is merely a probe of GER. I propose a DMZ in the Adriatic to ease tensions. I am concerned about your expansion into the Balkans. I will not move on Trieste if you do not move on Venice. Do we have an understanding? I am moving A PIE to VEN to prepare for a move against GER.</li>
+<li><b>From</b> [TUR]: I am securing my interests in the Balkans. I am willing to discuss boundaries, but only if you acknowledge Ottoman interests. I propose a neutral zone in Bulgaria and free passage through the Dardanelles. If you are unwilling to negotiate in good faith, I will defend my territory. I am moving to RUM and SEV.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Discussions focused on coordinating with RUS against TUR in the Balkans. We have reaffirmed our alliance with RUS: we will lock down Greece, Bulgaria, and Serbia while they strike from the east. ITA agreed to a DMZ in the Adriatic, easing concerns around Trieste and Venice. TUR demanded concessions and proposed a neutral Bulgaria, but we stood firm. We plan to cooperate with RUS and maintain trust with ITA while countering TUR’s aggression.</li>
+<li><i>Intent:</i> Fortify Balkan holdings, coordinate with RUS to pressure TUR on both fronts, honor DMZ with ITA, and hold firm against TUR’s demands.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading4">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse4" aria-expanded="false" aria-controls="negCollapse4">
+        Negotiation Turn 4 (1903 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse4" class="accordion-collapse collapse" aria-labelledby="negHeading4" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We stand ready to coordinate against TUR while honoring our DMZ in Galicia. If you push from RUM, we will hold Bulgaria firmly and can offer naval support in the Aegean. Let us solidify this partnership and ensure the Sultanate’s days in the Balkans are numbered.</li>
+<li><b>To</b> [ITA]: Our pact stands firm: we respect the Adriatic DMZ and have no designs on your peninsula. Would you consider joining forces against Turkey or lending indirect support if conflict arises? Let’s maintain our trust and cooperatively secure our borders.</li>
+<li><b>To</b> [TUR]: Your aggressive stance in the Balkans leaves us no choice but to prepare for conflict. We are open to a peaceful solution if you stop expanding into Bulgaria’s orbit, but if you continue provoking us, we will unite with others to curtail your ambitions.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I want to reaffirm our non-aggression pact. I am moving A TYR to BOH to support you in MUN. I hope this demonstrates my commitment to our agreement. I am also building an army in Venice to defend against any threats. What are your intentions in Greece?</li>
+<li><b>From</b> [TUR]: To Austria, I am moving into Bulgaria. This is a direct response to your continued encroachment in the Balkans. I advise you to reconsider your position in Greece and Serbia, as further expansion will be met with strong resistance. I suggest we find a diplomatic solution to avoid further escalation.</li>
+<li><b>From</b> [RUS]: Greetings, AUT. I am concerned about TUR's recent aggression in RUM. I propose we coordinate our efforts to contain TUR's expansion in the Balkans. I am willing to support your efforts in SER and GRE, while I focus on retaking RUM. What are your thoughts on a joint strategy?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Your stance in Tyrolia reassures our mutual trust. We intend to keep Greece solely for strategic defense against Turkish aggression and have no designs on Italian soil. If possible, any indirect pressure you can apply to TUR would help. Let’s stand united in the Adriatic and maintain our friendly border.</li>
+<li><b>To</b> [TUR]: We hold Bulgaria and will defend it. A peaceful settlement requires you to stand down and respect our position. Should you persist in pressing into the Balkans, we will join with RUS and any others necessary to repel your expansion.</li>
+<li><b>To</b> [RUS]: We welcome coordinated action against TUR. While we hold Bulgaria and reinforce Greece, your pressure from RUM can clamp down on their attempts to advance. Together, we ensure TUR’s Balkan encroachments are decisively contained.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I appreciate your reassurance. I am moving A TYR to BOH to support you in MUN. I am also building an army in Venice to defend against any threats. I am concerned about your move to Greece. Can you clarify your intentions there? I am open to discussing joint action against Turkey if the opportunity arises.</li>
+<li><b>From</b> [RUS]: Greetings, AUT. I am pleased to hear of your readiness to coordinate against TUR. I propose a coordinated attack on TUR this turn. I will move A MOS to RUM and F SEV to BLA to retake RUM. Can you support me by moving A BUL to SER and F AEG to GRE? This will put significant pressure on TUR and secure our positions in the Balkans. I will keep Galicia calm.</li>
+<li><b>From</b> [TUR]: To Austria, my move into Bulgaria is a direct response to your continued encroachment in the Balkans. I am willing to negotiate a peaceful solution, but only if you withdraw from Greece and Serbia. Further expansion will be met with strong resistance. I suggest we find a diplomatic solution to avoid further escalation, or face the consequences of my alliance with Italy.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Friend Italy, we assure you that Greece is solely a defensive position against Turkish aggression, not a prelude to expansion toward your peninsula. We value our Adriatic DMZ and are grateful for your support in our push on Munich. If you can apply any pressure on Turkey—diplomatic or otherwise—it would bolster our mutual security.</li>
+<li><b>To</b> [RUS]: Partner Russia, we stand ready to coordinate. We can move A BUL to SER and shift F AEG to GRE, while you press from Sevastopol and Moscow. United pressure will thwart Turkey’s advance and secure our respective Balkan footholds. Your assurances on Galicia are appreciated, and we will maintain our mutual trust.</li>
+<li><b>To</b> [TUR]: Turkey, we will not cede our rightful holdings in Bulgaria, Serbia, or Greece. We prefer a peaceful settlement, but we cannot accept your requirement to abandon critical defenses. If you sincerely seek diplomacy, withdraw your claims over Bulgarian territory and respect our positions—only then can we discuss a lasting peace.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am moving A TYR to BOH to support you in MUN. I am also building an army in Venice to defend against any threats. I am concerned about your move to Greece. Can you clarify your intentions there? I am open to discussing joint action against Turkey if the opportunity arises. What are your long-term goals in the Balkans?</li>
+<li><b>From</b> [RUS]: Greetings, AUT. I am ready to coordinate against TUR. I will move A MOS to RUM and F SEV to BLA to retake RUM. Can you support me by moving A BUL to SER and F AEG to GRE? This will put significant pressure on TUR and secure our positions in the Balkans. I will keep Galicia calm. Please confirm your moves.</li>
+<li><b>From</b> [TUR]: To Austria, my move into Bulgaria is a direct response to your continued encroachment in the Balkans. I am willing to negotiate a peaceful solution, but only if you withdraw from Greece and Serbia. Further expansion will be met with strong resistance. I suggest we find a diplomatic solution to avoid further escalation, or face the consequences of my alliance with Italy. I am not holding Bulgaria, I am simply passing through.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Friend Italy, your support toward Munich is greatly appreciated and we reaffirm our defensive stance in Greece; it is aimed solely at deterring Turkish aggression. We have no designs on your peninsula. Let us stand firm in our Adriatic DMZ and, if the opportunity arises, coordinate to curb any Turkish incursions in the Balkans.</li>
+<li><b>To</b> [RUS]: Esteemed Russia, we confirm our plan to move A BUL to SER and F AEG to GRE, in concert with your push from MOS and SEV. By pressuring Turkey from both sides, we will secure our respective Balkan holdings and put a swift end to their hostile ambitions. Your assurances regarding Galicia further strengthen our trust and resolve.</li>
+<li><b>To</b> [TUR]: Turkey, we cannot comply with your demand to abandon Bulgaria, Serbia, or Greece, as they are critical to our security. Nonetheless, we remain open to genuine diplomacy if you fully respect our positions and renounce further expansion into the Balkans. Failing a peaceful arrangement, we stand ready to defend our territory with all necessary force.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Greetings, AUT. I am moving A MOS to RUM and F SEV to BLA. Please confirm your support by moving A BUL to SER and F AEG to GRE. Let's crush TUR's advance and secure our positions in the Balkans. I appreciate your assurances on Galicia.</li>
+<li><b>From</b> [ITA]: Austria, I am moving A TYR to BOH. I am also building an army in Venice. I am concerned about your move to Greece. Can you clarify your intentions there? I am open to discussing joint action against Turkey if the opportunity arises. I value our non-aggression pact.</li>
+<li><b>From</b> [TUR]: To Austria, my move into Bulgaria is a direct response to your continued encroachment in the Balkans. I am willing to negotiate a peaceful solution, but only if you withdraw from Greece and Serbia. Further expansion will be met with strong resistance. I suggest we find a diplomatic solution to avoid further escalation, or face the consequences of my alliance with Italy. I am not holding Bulgaria, I am simply passing through. I will not back down.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> We reaffirmed our alliance with RUS against TUR, agreeing to coordinate moves in the Balkans. We assured ITA of our friendly intentions and underscored our posture in Greece as solely defensive. We rejected TUR’s demand to abandon Bulgaria, Serbia, and Greece, while remaining open to diplomacy if TUR respects our positions. Our relationship with GER remains tense.</li>
+<li><i>Intent:</i> Proceed with the joint plan with RUS by moving A BUL to SER and F AEG to GRE, holding MUN with ITA’s support. Maintain a defensive yet cooperative posture toward ITA. Reject TUR’s demands and prepare for conflict if they push further.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading5">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse5" aria-expanded="false" aria-controls="negCollapse5">
+        Negotiation Turn 4 (1903 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse5" class="accordion-collapse collapse" aria-labelledby="negHeading5" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Friend, let us maintain our joint pressure on TUR. I intend to push my armies from CON deeper into their territory, and request your fleet keep BLA secure. Please share your next moves so we can avoid missteps and coordinate our offense efficiently.</li>
+<li><b>To</b> [ITA]: I am committed to our DMZ in the Adriatic and will not challenge your holdings there. Let us uphold our positive relations and cooperate on containing either GER or TUR if they threaten our stability. If you have any specific plans or needs, I am happy to discuss mutual support.</li>
+<li><b>To</b> [TUR]: Your continued hostility forces my hand. If you persist in contesting our rightful Balkan holdings, we will press forward relentlessly with RUS. Withdraw from our spheres or face the consequences of a united front against you.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Your continued presence in the Balkans is a matter of great concern to the Ottoman Empire. I urge you to reconsider your aggressive posture in the region. I am open to discussing a peaceful resolution, but only if you are willing to respect Ottoman interests.</li>
+<li><b>From</b> [RUS]: AUT, I am concerned about TUR's aggression. I intend to move A MOS to UKR and F SEV to BLA to retake RUM. Can I count on your support in the Balkans? Specifically, A BUL to SER and F AEG to GRE?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: My friend, your plan to move A MOS to UKR and F SEV to BLA sounds excellent. I will indeed push F AEG to GRE and use CON to maintain steady pressure on the Turks. Let us coordinate precisely in the Balkans so we corner TUR and ensure its downfall. I appreciate your steadfast partnership.</li>
+<li><b>To</b> [TUR]: I remain willing to hear proposals that respect our holdings in Serbia, Greece, and Constantinople. If you truly seek peace, demonstrate it by leaving RUM and BLA to Russia and permitting my garrison to remain in the Balkans unchallenged. Otherwise, my force will persist in its advance with Russia’s unyielding support.</li>
+<li><b>To</b> [ITA]: I reaffirm our DMZ agreement in the Adriatic and appreciate your cooperation. Let our positive ties continue. I have no designs on your mainland, and I trust you will likewise avoid intrusions into Austrian territory. If you need support against GER or if TUR threatens your interests, do let me know.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, I appreciate your willingness to coordinate against TUR. I am moving A MOS to UKR and F SEV to BLA to retake RUM. I need you to move A BUL to SER and F AEG to GRE to support this effort. Can you confirm these moves? I agree to keep BLA secure.</li>
+<li><b>From</b> [TUR]: Your threats are noted, but they do not intimidate me. The Ottoman Empire will not be bullied. I am open to a peaceful resolution, but only if you withdraw from Greece and Serbia. Your continued presence there is unacceptable. I suggest you reconsider your position before it is too late.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Friend, I confirm our plan: my A BUL will move to SER, and F AEG proceeds to GRE. Keep BLA secure as you advance from SEV, and we will coordinate pressure on TUR’s flank. Let us finalize these moves and ensure TUR’s quick downfall together.</li>
+<li><b>To</b> [ITA]: I remain fully committed to our DMZ in the Adriatic and have no designs on your territory. Let our positive ties continue as we focus on common threats. If you need support or have any concerns regarding GER or TUR, please let me know. Together, our stability is assured.</li>
+<li><b>To</b> [TUR]: Our holdings in Serbia and Greece are non-negotiable. If you truly seek peace, stand down in the Balkans and respect our position. Otherwise, my alliance with RUS will ensure we press forward relentlessly. The choice is yours.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Your demands are unreasonable. The Ottoman Empire will not withdraw from territories it has rightfully secured. I am open to a peaceful resolution, but only if you withdraw from Greece and Serbia. Your continued presence there is unacceptable. I suggest you reconsider your position before it is too late. I will not be intimidated by your threats.</li>
+<li><b>From</b> [RUS]: AUT, excellent! I am moving A MOS to UKR and F SEV to BLA to retake RUM. Please confirm you are moving F AEG to GRE and A BUL to SER. With our combined efforts, we will crush TUR in the Balkans. Let's coordinate precisely to ensure TUR's downfall.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: My friend, our final arrangement stands: A BUL to SER and F AEG to GRE. Please proceed with SEV to BLA and MOS to UKR to press TUR firmly. Our mutual cooperation will seal TUR’s fate, and I eagerly anticipate we will share in the spoils of victory.</li>
+<li><b>To</b> [ITA]: I remain committed to our Adriatic DMZ and harbor no designs on your territory. Let us keep our borders calm and watch for any hostile moves from GER or TUR. If ever you need support, I stand ready to assist our continued friendship.</li>
+<li><b>To</b> [TUR]: Serbia and Greece are not up for negotiation. Your refusal to yield only emboldens my resolve with RUS. If you will not truly seek peace by standing down in the Balkans, we will ensure the Ottoman presence there is swept aside.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, I am moving A MOS to UKR and F SEV to BLA to retake RUM. Please confirm you are moving F AEG to GRE and A BUL to SER. Let's coordinate precisely to ensure TUR's downfall. I expect your full commitment to this plan.</li>
+<li><b>From</b> [TUR]: Your threats are meaningless. The Ottoman Empire will not yield. I will continue to challenge your presence in the Balkans. You will find that your alliance with Russia will not save you. I will take what is rightfully mine. Prepare for war.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> We secured a firm alignment with RUS against TUR, planning coordinated moves in the Balkans (A BUL to SER, F AEG to GRE, RUS’s Sevastopol fleet to BLA, etc.). We reaffirmed our DMZ and cooperation with ITA and remained insistent on holding our Balkan positions against TUR’s demands. TUR refused to yield, so our alliance with RUS remains strong to confront them.</li>
+<li><i>Intent:</i> Carry out the agreed moves with RUS to pressure TUR (A BUL->SER, F AEG->GRE), maintain the DMZ with ITA, and strengthen our front against TUR’s resistance in the Balkans. Keep a watchful eye on GER but focus primarily on containing TUR.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading6">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse6" aria-expanded="false" aria-controls="negCollapse6">
+        Negotiation Turn 5 (1904 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse6" class="accordion-collapse collapse" aria-labelledby="negHeading6" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Esteemed ally, let us finalize our joint push against Turkey. If you order F SEV to BLA with A RUM supporting, I will move A BUL to CON with support from F AEG. This coordinated strike should crack their lines and secure our shared Balkan interests. Are you with me?</li>
+<li><b>To</b> [ITA]: Greetings friend. I appreciate your continued cooperation. I will respect our DMZs around Tyrolia and the Adriatic, and trust you will do the same. We both benefit by curbing Turkish influence and avoiding friction along our borders. Let us continue to work together for mutual gain.</li>
+<li><b>To</b> [TUR]: Sultan, your refusal to respect our rightful claims in Bulgaria, Greece, and Serbia leaves us no choice. Russia and I stand united in opposing any further interference. Yield and negotiate for peace, or risk being overrun by our combined force in the Balkans.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: You have occupied CON and BUL. This is unacceptable. Withdraw immediately or face the consequences. I will not tolerate your aggression in the Balkans.</li>
+<li><b>From</b> [ITA]: Austria, I am concerned about your expansion in the Balkans. I propose we reaffirm our non-aggression pact and establish a clear DMZ. Let's avoid unnecessary conflict and focus on our mutual interests.</li>
+<li><b>From</b> [RUS]: AUT, I am moving A RUM to SEV and A MOS to UKR to prepare to retake RUM. I expect your support in the Balkans. Can you confirm your moves for BUL and AEG this turn? We must coordinate to crush TUR.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Our alliance remains strong. I confirm A BUL will move to CON supported by F AEG this turn while you advance from SEV and RUM as discussed. This synchronized push should overwhelm the Sultan’s defenses and secure our shared interests in the Balkans.</li>
+<li><b>To</b> [ITA]: Friend, I welcome your proposal to solidify our non-aggression pact. I have no intention of entering Tyrolia or the Adriatic. Let us stand firm together and ensure Turkish influence does not erode our mutual stability.</li>
+<li><b>To</b> [TUR]: Your ultimatum only hardens our resolve. We will not withdraw from what is rightfully ours. Stand down and negotiate in good faith, or face the combined might of our alliance. The choice is yours.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: I will not yield to your demands. Your occupation of CON and BUL is a direct threat to my interests. I am prepared to fight for my rightful claims in the Balkans. Withdraw immediately, or face the consequences. I will not negotiate under duress.</li>
+<li><b>From</b> [ITA]: Austria, I reaffirm our non-aggression pact and will respect the DMZ. I am moving A TYR to TRI to deter further expansion in the Balkans, as agreed with Turkey. I suggest we focus on containing Russia and maintaining stability in the region.</li>
+<li><b>From</b> [RUS]: AUT, I am moving A RUM to SEV and A MOS to UKR to retake RUM. I will order F SEV to BLA. I need you to confirm that you will move A BUL to CON with support from F AEG. This is critical to our success. Do you agree to these moves?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Friend, I confirm that A BUL will strike CON with support from F AEG while you move into the Black Sea and secure RUM. Our combined efforts will break Turkey’s defenses and secure the Balkans for our alliance.</li>
+<li><b>To</b> [ITA]: I note your mention of coordinating with TUR by moving TYR to TRI. While I still honor our DMZ agreements, I cannot ignore potential threats. My aim is purely defensive in the Balkans, and I hope we can remain at peace without undermining each other’s security.</li>
+<li><b>To</b> [TUR]: We remain open to authentic peace, but your ongoing demands and threats leave us no choice but to press forward. If you will not negotiate in earnest, our alliance with Russia stands firm and will answer any aggression in the Balkans.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, excellent. I am moving A RUM to SEV and F SEV to BLA. I expect A BUL to CON supported by F AEG. Let's crush TUR this turn. I will need your support in the Black Sea to secure RUM.</li>
+<li><b>From</b> [TUR]: I will not yield to your threats. Your occupation of CON and BUL is a declaration of war. I am prepared to fight for my rightful claims in the Balkans. Withdraw immediately, or face the consequences. I will not negotiate under duress. Prepare for war.</li>
+<li><b>From</b> [ITA]: Austria, I reaffirm our non-aggression pact and will respect the DMZ. I am moving A TYR to TRI to deter further expansion in the Balkans, as agreed with Turkey. I suggest we focus on containing Russia and maintaining stability in the region. I will not move into Munich.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: I confirm our plan: A BUL will strike CON supported by F AEG, while you advance from SEV and RUM. Together, we will shatter Turkey’s defenses and secure the Balkans for our alliance.</li>
+<li><b>To</b> [ITA]: I respect our DMZ agreements and assure you I have no intention of expansion onto your borders. However, your reported cooperation with Turkey raises concerns. Let us remain at peace and ensure the Balkans stay free from further Turkish encroachments.</li>
+<li><b>To</b> [TUR]: Your belligerent stance and refusal to negotiate have forced our hand. We will not relinquish what is rightfully ours, and we stand ready to meet your threats with decisive action unless you choose to pursue genuine peace.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, I am moving A RUM to SEV and F SEV to BLA. I expect A BUL to CON supported by F AEG. Let's crush TUR this turn. I will need your support in the Black Sea to secure RUM. We must coordinate our builds next turn to maximize our gains.</li>
+<li><b>From</b> [ITA]: Austria, I reaffirm our non-aggression pact and will respect the DMZ. I am moving A TYR to TRI to deter further expansion in the Balkans, as agreed with Turkey. I suggest we focus on containing Russia and maintaining stability in the region. I will not move into Munich.</li>
+<li><b>From</b> [TUR]: I will not yield to your threats. Your occupation of CON and BUL is a declaration of war. I am prepared to fight for my rightful claims in the Balkans. Withdraw immediately, or face the consequences. I will not negotiate under duress. Prepare for war.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> We solidified a coordinated plan with RUS to strike TUR in the Balkans, ordering A BUL to CON with support from F AEG, while RUS moves on BLA and lines up for further pressure. TUR remains defiant, refusing any negotiation. ITA reaffirms our DMZ but admits some arrangement with TUR, raising our suspicions. We will maintain our alliance with RUS and watch ITA closely to ensure they do not intervene in our campaign against TUR.</li>
+<li><i>Intent:</i> Execute the joint attack on TUR with RUS, moving A BUL to CON with support from F AEG and cooperating with RUS’s moves in the Black Sea region. Stay vigilant about ITA’s possible shift and maintain alliances elsewhere. Secure our Balkan holdings and purge TUR’s influence.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA~']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading7">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse7" aria-expanded="false" aria-controls="negCollapse7">
+        Negotiation Turn 6 (1904 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse7" class="accordion-collapse collapse" aria-labelledby="negHeading7" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We remain committed to our alliance against TUR, planning to push A BUL to CON with F AEG’s support. Your fleet in BLA or army in UKR can press the eastern flank. Together we can quickly weaken TUR’s hold and secure the Balkans for our respective interests.</li>
+<li><b>To</b> [ITA]: We reaffirm our DMZ and mutual respect, particularly in the Adriatic and Tyrolian regions. Please rest assured our focus is on neutralizing TUR’s aggression, not encroaching on your sphere. Let us continue without conflict so each of us can advance our own positions in peace.</li>
+<li><b>To</b> [GER]: Though we have had recent frictions, I propose a mutual understanding around Munich and our common border. Let us de-escalate tensions there so we can each focus on other pressing fronts. I welcome your thoughts on a possible short-term non-aggression pact.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Greetings, AUT. I am concerned about your aggressive moves in the Balkans, particularly your support for BUL into CON. This directly contradicts our agreement for a coordinated, but separate, approach to Turkey. What are your intentions? I am moving A RUM to SEV and A MOS to UKR to prepare for a counterattack. I expect your full cooperation in containing TUR.</li>
+<li><b>From</b> [TUR]: I am retaking Bulgaria. Your presence there is unacceptable. Withdraw your forces or face the consequences.</li>
+<li><b>From</b> [ITA]: Austria, despite recent events, I wish to maintain a semblance of peace. I propose we reaffirm our non-aggression pact and discuss a potential DMZ in the Adriatic. I am willing to negotiate, but I will not tolerate any further expansion into the Mediterranean. Let us find a way to coexist peacefully.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We remain devoted to our joint campaign against TUR. Our move on CON was intended to accelerate TUR’s downfall, not to act unilaterally. Let’s finalize our next strikes together so we strike in harmony and swiftly crush Turkish resistance.</li>
+<li><b>To</b> [TUR]: We reject your ultimatum. Our presence in Bulgaria stands until you cease hostilities. Should you reconsider and respect our interests, we are open to talks. Otherwise, we will continue our campaign to strip you of further territory.</li>
+<li><b>To</b> [ITA]: Your proposal for an Adriatic DMZ is accepted. We aim only to neutralize TUR’s threats to the east. Let us uphold our non-aggression pact so we can focus on our own fronts without conflict or mistrust.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am willing to reaffirm our non-aggression pact and discuss a potential DMZ in the Adriatic. However, I will not tolerate any further expansion into the Mediterranean. Let us find a way to coexist peacefully. I am concerned about your moves in Greece.</li>
+<li><b>From</b> [TUR]: Austria, I am retaking Bulgaria. Your presence there is unacceptable. Withdraw your forces or face the consequences. I will not tolerate your encroachment on Ottoman interests. Consider this your final warning. I suggest you focus on Italy and leave the Balkans to me.</li>
+<li><b>From</b> [RUS]: AUT, I am concerned that your move of BUL to CON will fail, as it did last turn. I am moving A MOS to UKR to support a renewed attack on SEV. I expect you to coordinate your attack on CON with my moves. We must crush TUR quickly and decisively. What are your specific orders for this turn?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We will indeed move A BUL to CON with F AEG supporting, as previously discussed. Your push from SEV to BLA and the positioning of your armies will help ensure we break TUR’s defenses swiftly. Please confirm your final orders so we strike in sync and swiftly end TUR’s menace.</li>
+<li><b>To</b> [TUR]: We reject your threats and will not relinquish our rightful holdings in the Balkans. If you persist in demanding our withdrawal, we will respond with full force. That said, if you choose peace and recognize our position, we remain open to talks on a reasonable settlement.</li>
+<li><b>To</b> [ITA]: We appreciate your willingness to maintain the Adriatic DMZ and reaffirm our commitment to staying out of your sphere in the Mediterranean. Our moves in Greece are strictly defensive against Turkish aggression, and we have no intention of pushing further westward. Let us preserve this peace between us.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am willing to reaffirm our non-aggression pact and discuss a potential DMZ in the Adriatic. However, I will not tolerate any further expansion into the Mediterranean. Let us find a way to coexist peacefully. I am concerned about your moves in Greece. I am moving A TYR to TRI to pressure you. What are your intentions?</li>
+<li><b>From</b> [RUS]: AUT, I am moving A MOS to UKR to support the attack on SEV. I expect you to coordinate your attack on CON with my moves. We must crush TUR quickly and decisively. What are your specific orders for this turn? I need to know if you are moving A BUL to CON supported by F AEG. If not, what is your plan?</li>
+<li><b>From</b> [TUR]: Austria, I am retaking Bulgaria. Your presence there is unacceptable. Withdraw your forces or face the consequences. I will not tolerate your encroachment on Ottoman interests. Consider this your final warning. I suggest you focus on Italy and leave the Balkans to me. I am moving A CON to BUL and F BLA supports A CON to BUL.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We confirm A BUL will move to CON with F AEG support, fully in line with our agreement. Your buildup at UKR and SEV is crucial. Let us strike simultaneously and dismantle TUR’s defenses once and for all.</li>
+<li><b>To</b> [ITA]: Your move A TYR to TRI is noted, but we hope this is merely a gesture. We remain committed to our Adriatic DMZ and have no ambition to push westward. Let’s keep our borders quiet and focus on our separate priorities.</li>
+<li><b>To</b> [TUR]: Your threats will not force a retreat from Bulgaria or anywhere else in the Balkans. If you persist in aggression, we will press harder. However, if you back down and respect our positions, we remain open to discussing peace.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am moving A VEN to TRI to take Trieste and cripple you. I expect no further communication.</li>
+<li><b>From</b> [RUS]: AUT, I am moving A MOS to UKR to support the attack on SEV. I expect you to coordinate your attack on CON with my moves. We must crush TUR quickly and decisively. Please confirm that you are moving A BUL to CON supported by F AEG. I need to know your final orders.</li>
+<li><b>From</b> [TUR]: Austria, I am retaking Bulgaria. Your presence there is unacceptable. Withdraw your forces or face the consequences. I will not tolerate your encroachment on Ottoman interests. Consider this your final warning. I suggest you focus on Italy and leave the Balkans to me. I am moving A CON to BUL and F BLA supports A CON to BUL.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Throughout these talks, we confirmed with RUS a synchronized strike on TUR (moving A BUL to CON with F AEG support) while TUR threatened to retake BUL. ITA initially offered an Adriatic DMZ but then declared intent to move on TRI, signaling a major rift. We maintained our pledge to RUS for a coordinated push against TUR, rejecting TUR’s demands to leave Bulgaria. Our relationship with ITA appears to have soured due to their sudden aggression.</li>
+<li><i>Intent:</i> Execute the agreed-upon attack on TUR (A BUL to CON with F AEG support). Continue cooperating with RUS, stay vigilant against ITA’s Trieste move, and stand firm in the Balkans.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA-']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading8">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse8" aria-expanded="false" aria-controls="negCollapse8">
+        Negotiation Turn 7 (1905 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse8" class="accordion-collapse collapse" aria-labelledby="negHeading8" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Our joint push against TUR stands. I will move A BUL to CON with F AEG in support. Please press from SEV or BLA to keep TUR pinned. Let’s finalize the collapse of TUR together and secure our mutual gains.</li>
+<li><b>To</b> [ITA]: I propose we de-escalate around Trieste. The Balkans have enough tension with TUR; let us keep our accord and avoid unnecessary conflict. If you hold your ground and do not advance on Tri or Venice, we can remain at peace.</li>
+<li><b>To</b> [TUR]: TUR, reconsider your stance. We will not yield our hold in Greece or Bulgaria, and any further aggression will only strengthen our resolve with RUS. There is still a chance for peace if you respect our positions. Otherwise, prepare for a concerted attack.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, you have overstepped. Leave Bulgaria and Constantinople or face the consequences. I will not tolerate your aggression in the Balkans.</li>
+<li><b>From</b> [ITA]: Austria, I am concerned about your expansion in the Balkans. My move to Trieste was purely defensive. I propose we reaffirm our non-aggression pact and demilitarize Tyrolia. What are your thoughts?</li>
+<li><b>From</b> [RUS]: AUT, the situation in the Balkans is critical. TUR has taken SEV and UKR. I am moving A RUM to SEV and F SEV to BLA to retake RUM. Can you confirm your support by moving A BUL to CON supported by F AEG? We must coordinate to crush TUR.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I hear your concerns about Trieste and Tyrolia. Let us keep Tyrolia clear of armies and refrain from advancing on each other’s territories. If you hold in place and honor this DMZ, I will do the same. I value our non-aggression pact and see no need for hostilities between us.</li>
+<li><b>To</b> [TUR]: We stand firm in Bulgaria and Greece. If you insist on confrontation, know that we coordinate closely with Russia. There is still an opening for peace if you acknowledge our current positions and cease all threats, but our resolve is strong if you choose to escalate.</li>
+<li><b>To</b> [RUS]: We confirm our move A BUL to CON supported by F AEG. Your pressure from Sevastopol and Rumania will ensure Turkey cannot defend on both fronts. Let’s finalize this offensive and divide Turkey’s holdings to our mutual benefit.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your presence in Bulgaria and Constantinople is unacceptable. I am moving to retake Bulgaria. Withdraw your forces immediately or face the consequences. I will not tolerate your aggression in the Balkans. I am prepared for war.</li>
+<li><b>From</b> [ITA]: Austria, I understand your concerns. I propose we both hold our positions this turn to de-escalate. I am willing to withdraw from Trieste next turn if you guarantee the safety of Venice. Let's focus on containing Turkey's aggression in the Balkans.</li>
+<li><b>From</b> [RUS]: AUT, thank you for confirming your support. I am moving A RUM to SEV and F SEV to BLA to retake RUM. Please ensure A BUL moves to CON supported by F AEG. We must crush TUR this turn. What are your build plans for the winter?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I agree to hold positions this turn if you do the same, and I'll respect Venice as you withdraw from Trieste next turn. Let’s also keep Tyrolia clear to avoid misunderstandings. Our focus is on Turkey, not each other.</li>
+<li><b>To</b> [RUS]: We remain fully committed to the plan: A BUL moves to CON supported by F AEG. Your push from SEV and RUM will pin TUR down. After we break their defenses, we can discuss dividing the spoils and plan for winter builds.</li>
+<li><b>To</b> [TUR]: Once again, we offer peace if you accept our presence in Bulgaria and Greece, but if you continue to threaten us, we will not hesitate to drive forward with Russia’s support. Your aggressive stance leaves no room for compromise otherwise.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your presence in Bulgaria and Constantinople is unacceptable. I am moving to retake Bulgaria. Withdraw your forces immediately or face the consequences. I will not tolerate your aggression in the Balkans. I am prepared for war. Your alliance with Russia will not save you.</li>
+<li><b>From</b> [ITA]: Austria, I agree to hold my position in Trieste and maintain the DMZ in Tyrolia. Let us focus on containing Turkey. I propose we coordinate our efforts in the Balkans to prevent further Turkish expansion. What are your thoughts on a joint operation against Bulgaria?</li>
+<li><b>From</b> [RUS]: AUT, excellent. I am moving A RUM to SEV and F SEV to BLA. Ensure A BUL moves to CON supported by F AEG. After we crush TUR, I propose we divide the spoils: I will take RUM and SEV, and you can have CON and SMY. Does this sound agreeable? What are your specific build plans?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, let us maintain our current arrangement: you hold Trieste this turn and keep Tyrolia free from armies. I will not move against Venice if you uphold this. Maintaining peace between us will allow us both to focus on curbing Turkish aggression in the Balkans.</li>
+<li><b>To</b> [RUS]: Russia, we are fully committed to our plan: A BUL to CON supported by F AEG. Your moves toward SEV and the Black Sea will help ensure Turkey’s collapse. Once Turkey is broken, we agree to your proposed division of spoils and look forward to securing our mutual growth.</li>
+<li><b>To</b> [TUR]: Turkey, this is your last chance for peace. We will not abandon Bulgaria, Greece, or our alliance with Russia. If you persist in threatening us, our coordinated attack will press forward, and you risk losing everything. Withdraw your demands or face the consequences.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your presence in Bulgaria and Constantinople is unacceptable. I am moving to retake Bulgaria. Withdraw your forces immediately or face the consequences. I will not tolerate your aggression in the Balkans. I am prepared for war. Your alliance with Russia will not save you. Prepare to be destroyed.</li>
+<li><b>From</b> [RUS]: AUT, I am moving A RUM to SEV and F SEV to BLA. Ensure A BUL moves to CON supported by F AEG. After we crush TUR, I propose we divide the spoils: I will take RUM and SEV. You can have CON and SMY. I expect your full commitment to this plan.</li>
+<li><b>From</b> [ITA]: Austria, this is the final round. I will hold in Trieste and maintain the DMZ in Tyrolia as agreed. Let's focus on Turkey and avoid unnecessary conflict. I expect you to honor our agreement.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Negotiations focused on coordinating with RUS against TUR, securing A BUL to CON with support from F AEG. ITA insisted on preserving peace and offered to hold Trieste, with both sides respecting a DMZ in Tyrolia. TUR remained hostile and refused compromise. We maintained our alliance with RUS to split TUR’s centers and agreed to leave ITA unmolested if they hold position and keep Tyrolia clear.</li>
+<li><i>Intent:</i> Execute the promised move A BUL to CON (supported by F AEG), trusting RUS to press from SEV/BLA. Maintain peace with ITA by respecting their presence in Trieste and the Tyrolia DMZ. Prepare for further expansion if TUR collapses under coordinated pressure.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading9">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse9" aria-expanded="false" aria-controls="negCollapse9">
+        Negotiation Turn 8 (1905 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse9" class="accordion-collapse collapse" aria-labelledby="negHeading9" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Our alignment remains solid—we continue the push against Turkey together. I will drive from Bulgaria into Constantinople with Aegean support, and your pressure from Sevastopol and the Black Sea will ensure their collapse. Keep watch on Italy, as their wavering promises could pose a threat. Let us finalize Turkey’s downfall, secure Balkan dominance, and share the spoils.</li>
+<li><b>To</b> [ITA]: Trieste and the Adriatic must remain calm if you truly wish for peace between us. Acquiesce to a DMZ in Tyrolia and respect our sphere in the Balkans, and I shall not challenge your holdings further. Any aggression toward Trieste, however, will force me to respond decisively. Let us instead avoid bloodshed and prosper.</li>
+<li><b>To</b> [TUR]: Your refusal to negotiate leaves us no choice. We will hold firmly to Bulgaria, Serbia, and Greece, and our next wave of moves will pry loose the remainder of your holdings. Time is fleeting if you wish to de-escalate—agree to our terms soon, or be prepared to see your empire overrun by our combined forces.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: I demand you withdraw from Bulgaria and Constantinople. Your presence there is a direct threat to Ottoman interests. Failure to comply will result in continued conflict.</li>
+<li><b>From</b> [ITA]: Austria, I propose a temporary truce. Let's cease hostilities for the moment and focus on other threats. I will hold Trieste, and you will hold your current positions. No further aggression from either side this turn. Do you agree?</li>
+<li><b>From</b> [RUS]: AUT, the situation in the Balkans remains critical. I intend to retake SEV and RUM. I will move A UKR to SEV and F SEV to BLA. Can you support this by moving A BUD to RUM and A TRI to SER? This coordinated effort will cripple TUR.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I accept your offer of a temporary truce if you truly hold Trieste and stand down in Tyrolia. I will not advance on your positions this turn, provided you do the same. We both stand to benefit from focusing elsewhere rather than bleeding each other in the Balkans or the Alps.</li>
+<li><b>To</b> [RUS]: Your proposed plan is excellent. I will move A BUD to RUM to support your thrust on SEV and have A TRI shift to SER, aligning perfectly with our shared objective of overwhelming TUR. Let us continue forward in lockstep until we have broken the Ottoman threat entirely.</li>
+<li><b>To</b> [TUR]: Your demands are untenable. We hold Bulgaria and Constantinople with no intention of withdrawing. If you wish to avoid total collapse, you must accept the new reality. Continue to resist and we will drive your forces from all remaining strongholds in the Balkans.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I agree to a DMZ in Tyrolia and will respect your sphere in the Balkans for now. However, I cannot guarantee the Adriatic will remain calm indefinitely. I will hold Trieste this turn as promised. Let's see if we can find a way to coexist peacefully, but know that my ambitions extend beyond Italy.</li>
+<li><b>From</b> [TUR]: Your arrogance is astounding. I will not yield to your demands. I am moving to retake Bulgaria and will continue to challenge your presence in the Balkans. Prepare for war. I will use the straits to my advantage.</li>
+<li><b>From</b> [RUS]: AUT, I am glad to see our alliance holds firm. I am moving A UKR to SEV and F SEV to BLA to retake SEV and RUM. I expect you to move A BUL to CON supported by F AEG. I agree we must watch ITA. Let's coordinate our builds next turn to maximize our gains after we crush TUR.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I acknowledge your ambition and your acceptance of the DMZ in Tyrolia. Let us hold our current positions this turn and avoid unnecessary hostilities. It benefits us both to focus attention elsewhere, and if you honor your word by keeping Trieste peaceful, I will reciprocate with continued restraint.</li>
+<li><b>To</b> [RUS]: Our plan stands: A BUL to CON with F AEG support, while I move A BUD to RUM. Your moves from UKR and SEV will seal Turkey’s fate. With our forces aligned, Turkey cannot withstand the combined blow. Once this is done, we will coordinate our builds and remain vigilant regarding Italy’s potential shift.</li>
+<li><b>To</b> [TUR]: Your vow to retake Bulgaria only cements our resolve. Our alliance with Russia grows stronger, and we have no intention of relinquishing any foothold in the Balkans. If you persist in hostility, our united armies will drive you fully out of Europe. The time for compromise is closing swiftly.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I will hold Trieste and maintain the DMZ in Tyrolia this turn. However, I must be frank: my ambitions extend beyond this temporary truce. Do not mistake my current restraint for weakness. I suggest you focus on your problems in the East, as I will be focusing on the West.</li>
+<li><b>From</b> [RUS]: AUT, excellent! I am glad to see our plans align perfectly. I am moving A RUM to SEV and F SEV to BLA. I expect A BUL to CON supported by F AEG. Let's coordinate our builds next turn. I will build F SEV. What are your build plans?</li>
+<li><b>From</b> [TUR]: I am moving to retake Bulgaria. Your presence in Constantinople is unacceptable. I will use the straits to my advantage. Prepare for war. I will not yield to your demands. I will fight to reclaim what is rightfully mine.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: My steadfast ally, I confirm our plan against TUR: A BUL to CON with support from F AEG, A BUD to RUM, while you secure SEV and BLA. For our builds, I will likely reinforce our eastern front to ensure TUR’s swift downfall. Let us follow through now and split their remaining centers.</li>
+<li><b>To</b> [ITA]: I acknowledge our temporary truce. I will refrain from pressing into Trieste or Tyrolia, so long as you maintain the DMZ and stay out of my holdings. We both can gain elsewhere without clashing. May our calm border hold, ensuring we can direct our forces toward more pressing threats.</li>
+<li><b>To</b> [TUR]: Your refusal to yield only strengthens our resolve. My forces move on Constantinople and beyond, in concert with Russia’s advance. Should you persist in this futile struggle, your empire will fall. This is your final warning—accept reality, or watch your positions crumble under our alliance.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I will hold Trieste and maintain the DMZ in Tyrolia this turn. Do not expect this to last. I am merely biding my time.</li>
+<li><b>From</b> [RUS]: AUT, our plan stands: A BUL to CON with F AEG support, while I move A RUM to SEV and F SEV to BLA. I am building F SEV. What are your build plans? Let's crush TUR together.</li>
+<li><b>From</b> [TUR]: I am moving to retake Bulgaria. Your presence in Constantinople is unacceptable. I will not yield. Prepare for war. I will fight to reclaim what is rightfully mine.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> We solidified our alliance with RUS to break TUR by seizing Constantinople and supporting each other into the Black Sea and surrounding territories. We agreed to a temporary truce with ITA involving a DMZ in Tyrolia and no expansion into each other’s current positions. TUR remains hostile and refuses to yield, solidifying our resolve to crush its remaining holdings. Negotiations with other powers were minimal but did not shift our broader objectives.</li>
+<li><i>Intent:</i> Push into TUR’s centers (CON, SEV, RUM) in coordination with RUS while maintaining a cautious armistice with ITA. Strengthen our eastern front and reinforce alliances that support our campaign against TUR. Remain watchful for any Italian moves while focusing on the decisive blow in the Balkans.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading10">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse10" aria-expanded="false" aria-controls="negCollapse10">
+        Negotiation Turn 9 (1906 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse10" class="accordion-collapse collapse" aria-labelledby="negHeading10" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Our combined momentum against Turkey is unstoppable. I plan to push from Bulgaria to Constantinople supported by the Aegean fleet. If you press from Armenia and the Black Sea, we’ll swiftly carve up Turkey’s remaining centers. Your cooperation is key to sealing their fate.</li>
+<li><b>To</b> [ITA]: We have little desire for further conflict, so long as you respect our stake in Trieste and refrain from unwelcome encroachments. In return, we’re willing to leave you space to pursue other opportunities. But if you test our defenses, we will respond decisively.</li>
+<li><b>To</b> [ENG]: Greetings. If you’re interested in hurting Germany, we might coordinate efforts. I can pressure them from the south and east, while you tighten the noose at sea. Let me know if a shared approach to undermine them appeals to you.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, you have occupied CON and BUL. I demand you withdraw immediately. These are Ottoman territories. If you do not comply, I will be forced to take action. I am moving to retake BUL.</li>
+<li><b>From</b> [RUS]: AUT, we must coordinate our efforts to eliminate TUR. I plan to move A RUM to UKR and F SEV to BLA to retake SEV and RUM. Can you confirm your support by moving A BUL to CON supported by F AEG? Your assistance is crucial for our success in the Balkans.</li>
+<li><b>From</b> [ITA]: Austria, I propose we maintain the status quo in Trieste and Tyrolia for now. I am willing to continue the DMZ in Tyrolia and hold Trieste. This will allow both of us to focus on other threats. What are your thoughts?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Your demands to abandon Constantinople and Bulgaria are unacceptable. We hold these positions to secure our borders and will not withdraw. If you choose force, then we shall defend ourselves accordingly.</li>
+<li><b>To</b> [RUS]: We are fully committed to our plan against Turkey. I will move A BUL to CON supported by F AEG, while counting on you to seize the Black Sea and press from the east. Together, we will remove the Ottoman threat.</li>
+<li><b>To</b> [ITA]: We agree to preserve the status quo: Trieste remains ours, Tyrolia stays DMZ. We prefer peace between us while we handle other fronts. Let us both keep our word and avoid needless hostilities.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am moving A VEN to hold. I propose we maintain the status quo in Trieste and Tyrolia for now. I am willing to continue the DMZ in Tyrolia and hold Trieste. This will allow both of us to focus on other threats. What are your thoughts?</li>
+<li><b>From</b> [TUR]: Austria, I demand you withdraw from CON and BUL immediately. These are Ottoman territories. I am moving to retake BUL. If you do not comply, I will be forced to take action. I will not tolerate your presence in the Balkans.</li>
+<li><b>From</b> [RUS]: AUT, I am moving A RUM to UKR and F SEV to BLA to retake SEV and RUM. I expect you to move A BUL to CON supported by F AEG. This coordinated attack will crush TUR. Let me know if you are still committed to this plan.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: We have no intention of abandoning Bulgaria or Constantinople. Your repeated demands are futile; our presence in the Balkans is secure, and if you move to retake BUL, we will defend ourselves. Continued aggression will only hasten your downfall.</li>
+<li><b>To</b> [RUS]: We are fully committed to our shared plan. My army in Bulgaria will move on Constantinople, supported by the fleet in Aegean Sea. We look forward to seeing your forces press from the east, ensuring Turkey’s swift collapse.</li>
+<li><b>To</b> [ITA]: We agree to maintain the status quo: Trieste remains Austria’s, and Tyrolia stays a DMZ. We welcome peaceful cooperation so both of us can focus on more pressing matters in other theaters. Let us uphold this arrangement.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am moving A VEN to hold. I propose we maintain the status quo in Trieste and Tyrolia for now. I am willing to continue the DMZ in Tyrolia and hold Trieste. This will allow both of us to focus on other threats. I am willing to sign a formal non-aggression pact.</li>
+<li><b>From</b> [TUR]: Austria, I demand you withdraw from CON and BUL immediately. These are Ottoman territories. I am moving to retake BUL. If you do not comply, I will be forced to take action. I will not tolerate your presence in the Balkans. Your aggression will be met with force.</li>
+<li><b>From</b> [RUS]: AUT, I am executing our plan to crush TUR. I am moving A RUM to UKR, F SEV to BLA, and A MOS to SEV to retake SEV and RUM. I expect you to move A BUL to CON supported by F AEG. This coordinated attack will eliminate TUR. Confirm your commitment.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We stand ready to move A BUL to CON supported by F AEG. Your push from SEV and RUM will seal TUR’s fate. Our alliance remains unbreakable, and together we’ll crush their defenses.</li>
+<li><b>To</b> [ITA]: We reaffirm the DMZ in Tyrolia and your neutrality in Trieste. There’s no need for conflict between us. Let’s keep the peace and focus on more pressing matters elsewhere.</li>
+<li><b>To</b> [ENG]: If you wish to squeeze GER, I can strike from the east while you press at sea. Coordinated pressure could break them quickly. Let me know if you’re interested in such a plan.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, I am executing our plan to crush TUR. I am moving A RUM to UKR, F SEV to BLA, and A MOS to SEV to retake SEV and RUM. I expect you to move A BUL to CON supported by F AEG. This coordinated attack will eliminate TUR. Let's finish this.</li>
+<li><b>From</b> [ITA]: Austria, I am moving A VEN to hold. I propose we maintain the status quo in Trieste and Tyrolia for now. I am willing to continue the DMZ in Tyrolia and hold Trieste. This will allow both of us to focus on other threats. I am willing to sign a formal non-aggression pact. I will move A SER to RUM next turn if you agree.</li>
+<li><b>From</b> [TUR]: Austria, I demand you withdraw from CON and BUL immediately. These are Ottoman territories. I am moving to retake BUL. If you do not comply, I will be forced to take action. I will not tolerate your presence in the Balkans. Your aggression will be met with force. Prepare for war.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> We solidified our alliance with RUS to eliminate TUR, agreeing on a coordinated attack from Bulgaria and Aegean alongside Russia’s moves in Black Sea. Despite multiple warnings from TUR, we stand firm in Constantinople and Bulgaria. We also reached a non-aggression pact with ITA, preserving the DMZ in Tyrolia and securing Trieste. We floated the idea of cooperation with ENG against GER, but have not received a clear commitment yet.</li>
+<li><i>Intent:</i> Execute the attack on TUR by moving A BUL to CON with F AEG support, rely on RUS’s moves from the east, maintain the DMZ with ITA, and probe ENG for a joint strike on GER if possible.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA~']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading11">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse11" aria-expanded="false" aria-controls="negCollapse11">
+        Negotiation Turn 10 (1906 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse11" class="accordion-collapse collapse" aria-labelledby="negHeading11" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Our partnership has proven powerful against TUR. Let’s continue pressing hard: I propose we coordinate your forces around the Black Sea while I push forward from my Balkan positions. Together, we can dismantle TUR’s defenses and share the gains before turning our attention to any further threats.</li>
+<li><b>To</b> [ITA]: I remain committed to a peaceful accord with you. Let us uphold the DMZ in Tyrolia and avoid conflict on the Adriatic, so we can each focus on more pressing fronts. If you have concerns or wish to coordinate further, I’m ready to listen.</li>
+<li><b>To</b> [ENG, FRA]: GER is growing troublesome, and I see an opportunity for us to curb their influence together. While I handle eastern affairs, perhaps we can find common ground to exert pressure on GER from the west. Let me know if you’re open to working in concert to keep them in check.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, we must coordinate to eliminate TUR. I am moving A RUM to UKR and F SEV to BLA to retake RUM and SEV. Can you confirm A BUL to CON supported by F AEG? Let me know if you have any other plans for this turn.</li>
+<li><b>From</b> [TUR]: Austria, your presence in Constantinople and Bulgaria is an affront to the Ottoman Empire. Withdraw your forces immediately, or face the consequences. I will not tolerate your encroachment on my rightful territories. Consider this your final warning.</li>
+<li><b>From</b> [ITA]: To AUT, I propose we maintain the status quo in Trieste and Tyrolia for another turn. I have no intention of attacking you at this time. Let us focus on containing RUS and TUR together. I will move A SER to RUM next turn if you agree.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We stand by our plan to strike TUR together. Yes, I will order A BUL to CON with support from F AEG. Your moves around the Black Sea will be instrumental in pressing TUR from multiple angles. Let’s coordinate closely and seize this opportunity.</li>
+<li><b>To</b> [TUR]: Your threats do not change the reality on the ground. AUT will defend its rightful positions, and we will not withdraw from territory we have lawfully claimed. If you are open to negotiation, propose something tangible. Otherwise, we will continue our course.</li>
+<li><b>To</b> [ITA]: I want clarity on your suggestion about moving A SER to RUM. That is currently under my control, so please explain how you envision this. I do agree we should avoid conflict between us—maintaining the DMZ in Tyrolia and peace in Trieste serves us both. Let’s keep each other informed to prevent misunderstandings.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: AUT, I propose we maintain the status quo in Trieste and Tyrolia for another turn. I have no intention of attacking you at this time. Let us focus on containing RUS and TUR together. I will move A SER to RUM next turn if you agree. Please confirm your agreement.</li>
+<li><b>From</b> [RUS]: AUT, I am moving A RUM to UKR and F SEV to BLA, and A MOS to SEV to retake SEV and RUM. Can you confirm A BUL to CON supported by F AEG? I need to know if you are committed to this plan. We must crush TUR this turn.</li>
+<li><b>From</b> [ENG]: Austria, I appreciate your offer to coordinate against Germany. Their recent actions have made them a clear threat to the balance of power. I am open to discussing specific strategies for containing their expansion. What actions do you propose we take in concert?</li>
+<li><b>From</b> [TUR]: Austria, your presence in Constantinople and Bulgaria is unacceptable. I will not repeat my warning. Prepare for war. I will retake what is rightfully mine. Your aggression will be met with force. I suggest you withdraw your forces immediately to avoid further bloodshed.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Your proposal to move A SER to RUM is confusing, as SER is under my control. I cannot agree to any plan that cedes my position in the southeast. Let us maintain the DMZ in Tyrolia and keep Trieste peaceful rather than escalate tension. I am open to cooperation, but not at the cost of my core territories.</li>
+<li><b>To</b> [ENG]: I share your concern about Germany’s growing threat. If you attack them from the west, I will press from Munich and Kiel. Coordinating our moves will force GER to split their forces and weaken their position. Let me know how you envision applying pressure so we can align our strategies.</li>
+<li><b>To</b> [RUS]: I confirm A BUL will move to CON with support from F AEG, while holding the rest of my Balkans. Your advancements from SEV and BLA will seal TUR’s fate. Let’s remain closely coordinated and ensure TUR has no room to recover.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: AUT, I propose we maintain the status quo in Trieste and Tyrolia for another turn. I have no intention of attacking you at this time. Let us focus on containing RUS and TUR together. I will move A SER to RUM next turn if you agree. Please confirm your agreement and clarify your intentions regarding Greece.</li>
+<li><b>From</b> [ENG]: Austria, I agree that Germany is a threat. I am supporting France in containing them. What specific actions are you planning to take in the east? Perhaps we can coordinate our efforts to put pressure on Germany from both sides.</li>
+<li><b>From</b> [RUS]: AUT, I am moving A RUM to UKR, F SEV to BLA, and A MOS to SEV to retake SEV and RUM. Can you confirm A BUL to CON supported by F AEG? We must crush TUR this turn. What are your other plans?</li>
+<li><b>From</b> [TUR]: Austria, your presence in Constantinople and Bulgaria is unacceptable. I will not repeat my warning. Prepare for war. I will retake what is rightfully mine. Your aggression will be met with force. I suggest you withdraw your forces immediately to avoid further bloodshed. I am moving to take Bulgaria.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We are locked in on BUL to CON with F AEG support and will hold our other Balkan forces as discussed. Your moves from SEV and BLA will be key to pinning TUR in place. Let’s keep the pressure up together this turn to break TUR’s last defenses.</li>
+<li><b>To</b> [ITA]: Your proposal regarding SER to RUM is not feasible for us, as we cannot cede vital southeastern ground. We remain open to cooperation and uphold the DMZ in Tyrolia, but must keep our core positions secure. Let’s keep Trieste calm and focus on mutual threats elsewhere.</li>
+<li><b>To</b> [ENG]: We share your concern about GER and will press them from MUN and KIE. If you apply force from the west, GER will be caught in a two-front crisis. Let’s strike decisively so they cannot reinforce both sides effectively.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ENG]: Austria, I agree that Germany is a threat. I am supporting France in containing them. I am attacking GER from the west. Coordinate your efforts in the east to put pressure on Germany from both sides. Let's crush GER together.</li>
+<li><b>From</b> [RUS]: AUT, I am moving A RUM to UKR, F SEV to BLA, and A MOS to SEV to retake SEV and RUM. You confirmed A BUL to CON supported by F AEG. We must crush TUR this turn. Let's coordinate closely and seize this opportunity.</li>
+<li><b>From</b> [TUR]: Austria, your presence in Constantinople and Bulgaria is an act of war. I am moving to retake what is rightfully mine. Your aggression will be met with force. Prepare to be driven from the Balkans.</li>
+<li><b>From</b> [ITA]: AUT, I am moving A VEN to TRI to secure Trieste. I am also moving A TYR to BOH to support TUR in the Balkans. I propose we end our non-aggression pact and prepare for war. I will not allow you to dominate the Balkans. Prepare for my attack.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> We reaffirmed our alliance with RUS to break TUR’s remaining defenses and received further threats from TUR. ENG agreed to coordinate against GER on two fronts. ITA unexpectedly declared hostility, threatening Trieste and pledging support to TUR. We refused ITA’s demand regarding Serbia/Rumania and remain committed to holding our southeastern positions.</li>
+<li><i>Intent:</i> Move A BUL to CON with F AEG support to press TUR, maintain other Balkan units defensively, and continue coordinating with RUS in the Black Sea. Apply pressure on GER from MUN and KIE in tandem with ENG’s western offensive. Defend against ITA’s aggression in Trieste and preserve core territories.</li>
+<li><i>Relationship Updates:</i> ['AUT-ENG+', 'AUT-ITA--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading12">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse12" aria-expanded="false" aria-controls="negCollapse12">
+        Negotiation Turn 11 (1907 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse12" class="accordion-collapse collapse" aria-labelledby="negHeading12" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Our plan remains on course: we will move from BUL to CON with support from AEG this turn, hoping you’ll press from SEV or RUM to pin Turkey down. Let’s keep our momentum in the Balkans and finish TUR together before they can recover.</li>
+<li><b>To</b> [ENG]: Greetings! We propose a synchronized effort against GER: if you can apply pressure from the west, we will drive from MUN and KIE. This pincer could cripple GER swiftly, freeing us both to pursue larger opportunities elsewhere.</li>
+<li><b>To</b> [ITA]: We are aware of your recent hostility around Trieste. We prefer a stable border and DMZ, yet stand ready to defend if you choose aggression. We suggest continued peace in the Adriatic and Tyrolia for our mutual benefit.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I demand you withdraw from CON and BUL immediately. Your presence there is unacceptable. I will not tolerate your encroachment on Ottoman territories. Prepare for war.</li>
+<li><b>From</b> [RUS]: AUT, I am moving A RUM to UKR, F SEV to BLA, and A MOS to SEV to retake SEV and RUM. I expect you to move A BUL to CON supported by F AEG. Let me know if you anticipate any issues with this plan. We must crush TUR this turn.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Your moves toward the Black Sea and Sevastopol align perfectly. We’ll execute A BUL to CON with F AEG support as planned. Together we’ll finish off TUR swiftly.</li>
+<li><b>To</b> [ENG]: We’re ready to strike GER from KIE and MUN if you apply pressure from the west. A concerted assault will force GER to buckle and free us both for future advantages.</li>
+<li><b>To</b> [TUR]: We reject your demand to abandon CON and BUL. Our position stands, and further threats will only spur us to finalize your defeat alongside our allies.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your presence in CON and BUL is a direct threat. I will not tolerate it. I am moving to retake what is rightfully mine. Prepare for war. There will be no further negotiations.</li>
+<li><b>From</b> [RUS]: AUT, I am moving A RUM to UKR, F SEV to BLA, and A MOS to SEV to retake SEV and RUM. I expect you to move A BUL to CON supported by F AEG. We must coordinate our attacks to ensure TUR's defeat. Let me know if you foresee any issues.</li>
+<li><b>From</b> [ITA]: Austria, I am willing to maintain the status quo in Trieste and Tyrolia for now. However, I must secure my borders. I suggest we focus on other threats and avoid conflict in the Adriatic. Let's discuss a long-term peace agreement.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Your plan is perfect. We will move A BUL to CON with F AEG support as agreed. With your forces in UKR, BLA, and SEV, TUR will have nowhere to run.</li>
+<li><b>To</b> [ENG]: We stand ready to strike GER from MUN and KIE. If you apply pressure from the west, we can decisively crush them and then look to greater opportunities.</li>
+<li><b>To</b> [ITA]: We accept a stable border in Trieste and Tyrolia. We see no advantage in fighting each other while TUR’s aggression remains. Let us maintain peace for mutual benefit.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, I am proceeding with A RUM to UKR, F SEV to BLA, and A MOS to SEV. I expect you to move A BUL to CON supported by F AEG. GER is moving to MUN; are you aware of this? We must coordinate to ensure GER does not take advantage of our focus on TUR.</li>
+<li><b>From</b> [ITA]: Austria, I am willing to maintain the status quo in Trieste and Tyrolia for now. However, I must secure my borders. I suggest we focus on other threats and avoid conflict in the Adriatic. Let's discuss a long-term peace agreement.</li>
+<li><b>From</b> [TUR]: Austria, your arrogance will be your downfall. I am moving to retake CON and BUL. Your alliance with Russia will not save you. Prepare for the consequences of your actions. I will not yield.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We confirm A BUL will move to CON with F AEG support this turn, perfectly aligning with your maneuver into the Black Sea region. With our combined pressure, TUR’s defenses should crumble. Let’s stay alert to GER’s moves on MUN, but remain focused on finishing TUR together.</li>
+<li><b>To</b> [ENG]: We stand ready to press GER from both MUN and KIE. If you strike from the west, we can pin them down and quickly break their resistance. Let us finalize our cooperation to secure a swift victory over GER, freeing us to pursue greater opportunities afterward.</li>
+<li><b>To</b> [ITA]: We appreciate your willingness to maintain a stable border around Trieste and Tyrolia. As TUR continues its hostility, it benefits both of us to keep our peace. Let’s hold to this arrangement and avoid any conflict in the Adriatic while we focus on more pressing threats.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, I am proceeding with A RUM to UKR, F SEV to BLA, and A MOS to SEV. I expect you to move A BUL to CON supported by F AEG. GER is moving to MUN; are you aware of this? We must coordinate to ensure GER does not take advantage of our focus on TUR. What are your build plans?</li>
+<li><b>From</b> [TUR]: Austria, your arrogance will be your downfall. I am moving to retake CON and BUL. Your alliance with Russia will not save you. Prepare for the consequences of your actions. I will not yield. This is my final warning.</li>
+<li><b>From</b> [ITA]: Austria, I am willing to maintain the status quo in Trieste and Tyrolia for now. However, I must secure my borders. I suggest we focus on other threats and avoid conflict in the Adriatic. Let's discuss a long-term peace agreement. I am open to a defensive alliance against Turkey.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> We solidified our alliance with RUS to eliminate TUR, coordinating BUL–CON with AEG support while RUS moves into BLA and SEV. We also pushed ENG to strike GER from the west as we advance from MUN and KIE. Despite ITA’s recent incursions, we accepted a border agreement around Trieste and Tyrolia to focus on TUR. TUR remains hostile, threatening to retake CON and BUL, but we plan to press on regardless. Our core commitments are to finish TUR quickly and contain GER with ENG’s help, while keeping ITA at bay through a non-aggression pact.</li>
+<li><i>Intent:</i> Continue the alliance with RUS to finish TUR; coordinate with ENG against GER; maintain a temporary understanding with ITA to avoid distraction; resist TUR’s threats and secure control in the southeast.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA-']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading13">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse13" aria-expanded="false" aria-controls="negCollapse13">
+        Negotiation Turn 11 (1907 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse13" class="accordion-collapse collapse" aria-labelledby="negHeading13" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Our alliance remains paramount. Let us finalize Turkey’s downfall now. We plan to push from ARM into ANK, while supporting further advances from AEG or elsewhere. If you simultaneously pressure their remaining fleets from the Black Sea side, we can secure their final centers swiftly. Please confirm so we can coordinate each step.</li>
+<li><b>To</b> [ENG]: We welcome closer collaboration against Germany. With our forces pressing from the east and yours from the west, we can fracture their remaining positions. Let us know your intended moves so we can maximize our combined impact and swiftly claim Berlin and beyond.</li>
+<li><b>To</b> [ITA]: We propose a return to cordiality. If you keep Tyrolia and the Adriatic DMZ, we will not interfere in your current territories. Our focus is on eliminating Turkey and containing Germany. Let us set these borders definitively, so neither side wastes resources on unnecessary conflict.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [FRA]: France declares war on Italy for their treacherous attack on Marseilles. Germany's aggression will also be met with force. France will not yield.</li>
+<li><b>From</b> [FRA]: Austria, I see you are surrounded by enemies. Perhaps we can find common ground against Germany. What are your intentions in the coming season?</li>
+<li><b>From</b> [TUR]: Austria, I demand you withdraw your forces from CON and BUL immediately. Your continued occupation of Ottoman territories is unacceptable and will be met with force. Consider this your final warning.</li>
+<li><b>From</b> [RUS]: Greetings, AUT. I am concerned about your presence in Sevastopol. I propose a mutual withdrawal from Sevastopol and Constantinople to de-escalate tensions. I am willing to guarantee your access to the Black Sea if you withdraw from Sevastopol. What are your thoughts?</li>
+<li><b>From</b> [ITA]: Austria, I am willing to maintain the status quo in Trieste and Tyrolia for now. However, I am concerned about your expansion in the Balkans. I propose a formal non-aggression pact to ensure peace in the region. What are your thoughts?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We assure you we are not in Sevastopol and have no designs on it. Our forces in Constantinople serve only to contain Turkey, and we appreciate your guarantee in the Black Sea. Let us keep pressing Turkey from both sides until they collapse, and thereafter we can finalize a balanced arrangement to ensure our mutual security.</li>
+<li><b>To</b> [ITA]: We welcome a formal non-aggression pact. Let us keep Tyrolia and the Adriatic as strict DMZs, and we will honor your current holdings. Our focus remains directed elsewhere—chiefly on Turkey and Germany—so we see no profit in further discord with you. Are you prepared to finalize this pact so we can each focus on our real enemies?</li>
+<li><b>To</b> [FRA]: We appreciate your stance against Germany. We intend to continue pressuring them from our eastern flank, and we would gladly coordinate timing or support if you move from the west. Let us keep lines open to ensure our combined efforts against Germany are maximally effective and do not trip over each other’s moves.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [FRA]: Austria, Germany and Italy are encroaching on my territory. I propose a temporary alliance against Germany. I will focus on retaking PAR and threatening GER's western flank. Can you pressure GER from the east? What are your intentions regarding MUN?</li>
+<li><b>From</b> [FRA]: France reiterates its declaration of war on Italy for their unprovoked attack on Marseilles. Germany's aggression will be met with equal force. France will not yield to tyranny!</li>
+<li><b>From</b> [ITA]: Austria, your proposal is tempting, but I cannot ignore your expansion in the Balkans. I am willing to discuss a non-aggression pact, but only if you withdraw from Serbia and Greece. Otherwise, I will be forced to defend my interests in the region.</li>
+<li><b>From</b> [RUS]: AUT, I appreciate your continued commitment to our alliance against TUR. However, your presence in SEV is unacceptable. I propose a compromise: I will allow you to take CON, but you must withdraw from SEV immediately. If you agree, I will support your move into ANK. If not, I will be forced to reconsider our alliance. What is your decision?</li>
+<li><b>From</b> [TUR]: Austria, your continued presence in CON and BUL is an act of war. I will not repeat myself. Prepare to be expelled from Ottoman lands. I am moving to reclaim what is rightfully mine.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We are puzzled by the concern over Sevastopol; we do not occupy nor intend to move into SEV. We remain committed to our alliance and will continue pressing Turkey from ARM into ANK with support from AEG. Let us finalize the demise of Turkey together, and once that is done, we can negotiate a fair post-war boundary that respects both our interests.</li>
+<li><b>To</b> [ITA]: We respect your concerns but cannot withdraw from Serbia and Greece, as these positions are vital to our security. However, we still believe a non-aggression pact and a DMZ in Tyrolia and the Adriatic can serve both our interests. Let us preserve peace between us while we each focus on threats elsewhere.</li>
+<li><b>To</b> [FRA]: We stand ready to continue pressuring Germany from the east while you push from the west. MUN remains central to our strategy, and we intend to keep GER occupied on multiple fronts. Let us coordinate our timing so that each of our thrusts contributes decisively to unraveling Germany’s defenses.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [FRA]: Austria, I appreciate your willingness to coordinate against Germany. I intend to move A BRE to PIC to threaten GER's western flank. If you can pressure MUN, it would greatly assist my efforts. Let us coordinate our moves to maximize our impact on GER. What specific moves are you planning?</li>
+<li><b>From</b> [FRA]: France reiterates its declaration of war on Italy for their treacherous attack on Marseilles. Germany's aggression will be met with equal force. France will not yield to tyranny! We will fight to reclaim our territories and restore order to Europe.</li>
+<li><b>From</b> [RUS]: AUT, your denial of presence in Sevastopol is noted, but I find it hard to believe. I propose a test of our alliance: support my move into Sevastopol with A BUL to RUM. If you are truly committed to our alliance, you will agree to this move. If not, I will consider our alliance terminated. What is your decision?</li>
+<li><b>From</b> [ITA]: Austria, I appreciate your offer, but I cannot accept a non-aggression pact while you occupy Serbia and Greece. Withdraw your forces, and we can discuss a lasting peace. Otherwise, I will be forced to defend my interests in the Balkans. I am moving A TRI to SER to challenge your dominance.</li>
+<li><b>From</b> [TUR]: Austria, your time in CON and BUL is over. I am coming to reclaim what is rightfully mine. Prepare to face the consequences of your aggression. There will be no further warnings.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We reiterate that we do not occupy Sevastopol and cannot assist your suggested move there. Our forces in ARM will push on ANK with support from AEG, continuing our shared goal of eradicating Turkey. Once Turkey collapses, we can finalize a secure, fair boundary that cements our alliance and avoids further misunderstandings.</li>
+<li><b>To</b> [FRA]: We welcome your offensive against Germany and confirm we will maintain pressure from our eastern flank to strain their defenses. We plan to hold MUN firmly with our armies and stand ready to coordinate any supportive actions that help you regain your territories and break GER’s lines swiftly.</li>
+<li><b>To</b> [ITA]: We cannot withdraw from Serbia and Greece, as they are essential for our security, but we still believe in a practical DMZ for Tyrolia and the Adriatic. If you choose to advance on our Balkan holdings, know that we will defend them vigorously. Let us avoid a fruitless war and preserve stability where possible.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your occupation of CON and BUL ends now. I am coming to reclaim what is rightfully mine. Prepare to face the consequences.</li>
+<li><b>From</b> [FRA]: Austria, I am moving A BRE to PIC to threaten Germany's western flank. Any pressure you can apply to MUN would be greatly appreciated. Let us coordinate our efforts to maximize our impact on Germany.</li>
+<li><b>From</b> [FRA]: France reiterates its declaration of war on Italy for their treacherous attack on Marseilles. Germany's aggression will be met with equal force. France will not yield to tyranny! We will fight to reclaim our territories and restore order to Europe. The glory of France will prevail!</li>
+<li><b>From</b> [ITA]: Austria, I appreciate your offer, but I cannot accept a non-aggression pact while you occupy Serbia and Greece. Withdraw your forces, and we can discuss a lasting peace. Otherwise, I will be forced to defend my interests in the Balkans. I am moving A TRI to SER to challenge your dominance.</li>
+<li><b>From</b> [RUS]: AUT, your denial of presence in Sevastopol is noted. However, I find it hard to believe. I propose a test of our alliance: support my move into Sevastopol with A BUL to RUM. If you are truly committed to our alliance, you will agree to this move. If not, I will consider our alliance terminated. What is your decision? This is my final offer.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> We maintained pressure on Turkey, insisting on our push into ANK with Russian cooperation despite Russia’s repeated demands regarding Sevastopol. We upheld our commitment to France to harass Germany from the east. Italy’s insistence that we withdraw from Serbia and Greece remains unacceptable, leaving our relations strained. We refused Turkey’s demands for withdrawal from Ottoman centers and prepared for their retaliation. Overall, we sustained our alliance with Russia against Turkey, cooperated with France against Germany, and resisted Italian pressure in the Balkans.</li>
+<li><i>Intent:</i> Continue the offensive against Turkey (ARM->ANK with AEG support), hold and defend MUN to pressure Germany in coordination with France, and refuse withdrawal from the Balkans despite Italy’s threats.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading14">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse14" aria-expanded="false" aria-controls="negCollapse14">
+        Negotiation Turn 12 (1908 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse14" class="accordion-collapse collapse" aria-labelledby="negHeading14" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Our alliance is more crucial than ever. Let’s finalize our assault on TUR by moving A BUL to CON with F AEG supporting, while you press from SEV or coordinate support into ANK. This synchronized push will break their southern defenses. Please confirm your exact orders so we can ensure maximum pressure.</li>
+<li><b>To</b> [ENG]: Warm greetings. With GER weakened, now is an ideal time to coordinate offensives. I can keep them pinned from the east if you strike from the west or north. Let me know if you’ll support my moves around KIE and MUN or need help securing any territory; together we can carve GER up efficiently.</li>
+<li><b>To</b> [FRA]: Salutations. I’m focused on neutralizing the threat from TUR and guarding against ITA. I’d welcome a stable frontier with you while we each pursue our strategic aims. If you plan to push GER, we might assist each other indirectly. Let me know if you’d consider any coordination to avoid accidental clashes.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: AUT, I am moving A VEN to TRI. This is merely a defensive maneuver. I propose we maintain the status quo and focus on other threats. Let's avoid unnecessary conflict and maintain peace in the Adriatic.</li>
+<li><b>From</b> [RUS]: AUT, we must coordinate our efforts to crush TUR. I will move A RUM to SEV and F SEV to BLA. Can you confirm A BUL to CON supported by F AEG? Your move into CON is appreciated, but I need assurance that you will support my efforts to retake SEV and RUM.</li>
+<li><b>From</b> [TUR]: Austria, I demand you withdraw from CON and BUL immediately. Your presence there is unacceptable. I am prepared to use force to reclaim what is rightfully mine. Consider this your final warning.</li>
+<li><b>From</b> [FRA]: To Austria: I am aware of your precarious position and the threats you face. While I cannot offer a formal alliance at this moment, I am open to discussing coordinated actions against our common enemies, particularly Germany. A move against Munich would be mutually beneficial. Let me know your thoughts.</li>
+<li><b>From</b> [FRA]: To all nations: France is under attack! Germany and Italy have shown their true colors, violating treaties and seizing sovereign territory. I call upon all peace-loving nations to condemn their aggression and stand with France in defense of liberty and justice. We will not yield! We will fight to reclaim what is ours!</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We confirm A BUL→CON with F AEG support as you push SEV→BLA. We will not interfere with your moves on RUM or SEV. Once TUR falls, we can discuss next steps for dividing their centers. Let’s finalize this plan and maintain our solid alliance.</li>
+<li><b>To</b> [ITA]: Your plan to move VEN→TRI is concerning. We cannot see that as purely defensive if you occupy our home center. If you truly seek peace, hold your position and do not cross into Trieste. Otherwise, we will have no choice but to interpret it as aggression.</li>
+<li><b>To</b> [FRA]: We share your concern about GER’s and ITA’s incursions. I am pressing Germany from the east and would welcome parallel action from your side. With careful coordination, we can avoid accidental clashes while containing GER. Let me know your thoughts on a timing that benefits us both.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [FRA]: To Austria: I appreciate your willingness to consider coordinated actions. While I am currently focused on Germany, I recognize the importance of a stable frontier. I propose we avoid any moves that could be interpreted as hostile. If you are willing to move against Munich, I will support you indirectly by pressuring Germany from the west. Let us work together to contain our common enemies.</li>
+<li><b>From</b> [FRA]: To all nations: France stands firm against the aggression of Germany and Italy. We will not be deterred. We call upon all nations to recognize the threat these powers pose to the balance of power in Europe. We will fight to defend our territory and restore peace to the continent. France will prevail!</li>
+<li><b>From</b> [RUS]: AUT, I am moving A RUM to SEV and F SEV to BLA. A MOS will move to UKR to support the attack on SEV. Can you confirm A BUL to CON supported by F AEG? It is crucial that we coordinate our efforts to crush TUR. I need your assurance that you will support my efforts to retake SEV and RUM.</li>
+<li><b>From</b> [TUR]: Austria, your presence in CON and BUL is a direct threat to my homeland. I will not tolerate it. I am moving to reclaim what is rightfully mine. Withdraw now, or face the consequences. I am giving you one last chance to avoid war.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We stand by our plan: A BUL->CON supported by F AEG, and we will not interfere with your moves in SEV or RUM. Once TUR is crushed, we can resolve final center distribution. Our alliance remains strong.</li>
+<li><b>To</b> [ITA]: If VEN->TRI occurs, we will view it as hostile. If peace is indeed your aim, hold in Venice or propose a credible alternative. Let us focus on the true threat of TUR rather than fighting each other.</li>
+<li><b>To</b> [FRA]: We welcome a coordinated effort against GER. We will push from the east if you keep pressuring from the west. Let’s stay in touch to avoid any mishaps and ensure maximum pressure on Germany.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, I am moving A RUM to UKR, F SEV to BLA, and A MOS to SEV. I expect you to move A BUL to CON supported by F AEG. Let us crush TUR together. I will not interfere with your move on CON. Once TUR falls, we can discuss dividing their centers. Confirm your orders.</li>
+<li><b>From</b> [FRA]: To Austria: I appreciate your willingness to coordinate. I am moving A BRE to PIC, which will put pressure on Germany's western flank. If you are willing to move against Munich, I will support you indirectly by keeping German forces occupied. Let me know if you are ready to strike.</li>
+<li><b>From</b> [FRA]: To all nations: France remains resolute in the face of aggression. We will not yield to the tyranny of Germany and Italy. We call upon all peace-loving nations to join us in defending liberty and justice. France will prevail!</li>
+<li><b>From</b> [TUR]: Austria, I am moving to reclaim what is rightfully mine. Withdraw from CON and BUL now, or face the consequences. This is your last chance. I will not tolerate your presence in my homeland.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We confirm A BUL→CON supported by F AEG and will not interfere with your moves in SEV or RUM. Together we will break Turkey’s grip and then settle our shared interests amicably. Our alliance remains unshakable—let us see this through to victory.</li>
+<li><b>To</b> [ITA]: Your proposal to move VEN→TRI is plainly hostile. If you seek genuine peace, hold in Venice and respect our sovereignty. We have no wish to fight, but we will defend Trieste if threatened.</li>
+<li><b>To</b> [FRA]: We plan to strike Germany from the east and welcome your parallel pressure from the west. Close cooperation will split their defenses and hasten their collapse. Let us remain in communication to avoid any missteps.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, I am moving A RUM to UKR, F SEV to BLA, and A MOS to SEV. I expect you to move A BUL to CON supported by F AEG. Let us crush TUR together. I will not interfere with your move on CON. Once TUR falls, we can discuss dividing their centers. Confirm your orders.</li>
+<li><b>From</b> [TUR]: Austria, I am moving to reclaim what is rightfully mine. Withdraw from CON and BUL now, or face the consequences. This is your last chance. I will not tolerate your presence in my homeland.</li>
+<li><b>From</b> [FRA]: To Austria: I appreciate your willingness to coordinate. I am moving A BRE to PIC, which will put pressure on Germany's western flank. If you are willing to move against Munich, I will support you indirectly by keeping German forces occupied. Let us strike a blow against Germany together.</li>
+<li><b>From</b> [FRA]: To all nations: France remains resolute in the face of aggression. We will not yield to the tyranny of Germany and Italy. We call upon all peace-loving nations to join us in defending liberty and justice. France will prevail!</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> We finalized plans with RUS to attack TUR (A BUL→CON supported by F AEG) while RUS moves on SEV and BLA. We reaffirmed our alliance with RUS and continued to coordinate with FRA against GER. Tensions escalated with ITA over their intent to move VEN→TRI, which we warned we would view as aggression. Our stance remains friendly toward ENG, neutral/wary toward FRA, hostile toward TUR, and increasingly distrustful of ITA.</li>
+<li><i>Intent:</i> Execute the agreed moves against TUR with RUS, defend TRI from potential ITA incursion, and coordinate with FRA to pressure GER while maintaining warm ties with ENG.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading15">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse15" aria-expanded="false" aria-controls="negCollapse15">
+        Negotiation Turn 13 (1908 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse15" class="accordion-collapse collapse" aria-labelledby="negHeading15" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Our partnership against Turkey remains rock-solid. Let’s close the net around Ankara and Sever their last defenses. We’ll drive from Bulgaria and Aegean while you press from Sevastopol and Black Sea. The faster we finish Turkey, the sooner we can secure lasting gains. Ready to finalize our plan?</li>
+<li><b>To</b> [ENG]: Germany grows weaker and we’re poised to strike from the east. If your fleets press them from the west, we can break their lines entirely. Let’s coordinate our moves so no German unit can escape. Please share how you’d like to collaborate, and we’ll tailor our orders accordingly.</li>
+<li><b>To</b> [ITA]: We risk squandering energy battling each other while Turkey still clings on. Let’s hold our border steady around Trieste and Venice rather than clashing. We can each keep our forces in check and focus on wiping out Turkey’s presence. Are you open to a truce on this front?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Withdraw from Constantinople and Bulgaria. Your presence there is unacceptable. I will not tolerate your encroachment on Ottoman lands.</li>
+<li><b>From</b> [ITA]: Greetings, AUT. While tensions remain, I propose a temporary understanding to focus on mutual threats. I am willing to maintain the status quo in Trieste and Tyrolia for the time being. Let us discuss a long-term peace agreement to avoid further conflict. What are your thoughts on a potential DMZ in the Adriatic?</li>
+<li><b>From</b> [ENG]: AUT, I am aware of your conflict with GER. While I cannot commit to a full alliance at this time, I am open to discussing coordinated actions to contain GER's expansion. What are your specific plans for this turn, and how might we mutually benefit from cooperation?</li>
+<li><b>From</b> [RUS]: Austria, I hope our coordinated efforts against Turkey continue to bear fruit. I am moving A UKR to SEV to dislodge your unit. Can you confirm your support for this move by moving A BUL to RUM? Also, what are your intentions regarding CON and SMY after Turkey is eliminated?</li>
+<li><b>From</b> [FRA]: To Austria: France observes your strategic position and recognizes the potential for a mutually beneficial alliance against Germany. While we make no firm commitments at this time, we are open to coordinating actions, particularly against Munich. Consider this a preliminary overture for a future partnership.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We are a bit puzzled by your note about dislodging our unit in SEV, as we hold none there. Regardless, our stance remains that we fully support your eastward advances against Turkey. We will keep CON and SMY for ourselves once Turkey collapses, but we are open to clarifying a fair division of their remaining centers so both our gains are secure. Let’s finalize any boundary details so we present a united front.</li>
+<li><b>To</b> [ENG]: If you press GER from the west, we can advance on their remaining holdings from the east. For instance, should you move against BEL or HEL, we can move on KIE or BER as needed. Let’s coordinate so GER cannot muster a defense on two fronts. Please share which specific moves you plan, and we’ll lock in our orders accordingly.</li>
+<li><b>To</b> [ITA]: Your proposal for a temporary understanding is welcome. We agree to maintain the current line around Trieste and Venice and will accept an Adriatic DMZ if it helps avoid unnecessary friction. Our priority is finishing off Turkey; if you share that focus, let us both show restraint on our border and concentrate on more pressing targets.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [FRA]: To Austria: France observes the stalemate in Munich. A coordinated attack could break the deadlock. While we cannot commit forces directly at this time, we encourage you to press your advantage. A weakened Germany benefits us both. Consider this a renewed overture for future cooperation.</li>
+<li><b>From</b> [TUR]: Austria, your presence in Constantinople and Bulgaria is a direct threat to my empire. I demand that you withdraw immediately. If you do not comply, I will be forced to take action to reclaim what is rightfully mine. Consider this your final warning.</li>
+<li><b>From</b> [RUS]: Austria, I am moving A UKR to GAL instead of SEV due to GER's support in GAL. I expect you to take CON and SMY as agreed. I will focus on securing the Black Sea and retaking RUM. Let's coordinate our final moves to crush Turkey this turn. I suggest you move A BUL to CON supported by F AEG.</li>
+<li><b>From</b> [ITA]: Greetings, AUT. I appreciate your offer of a truce. However, I cannot ignore your continued occupation of Serbia and Greece. I am willing to discuss a long-term peace agreement, but only if you withdraw from these territories. Let us discuss the specifics of a potential DMZ in the Adriatic after you have withdrawn.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We confirm the plan to strike Turkey together: we will move A BUL to CON with support from F AEG, and we trust you to cover RUM and the Black Sea as you see fit. We intend to keep SMY and CON once Turkey falls, in line with our prior understanding. Let us coordinate closely so Turkey has nowhere left to run.</li>
+<li><b>To</b> [ENG]: We are positioned to hit Germany from the east by advancing on KIE or BER. If you press them from the west, we can split their defenses. Please tell us if you plan moves on BEL or HEL so our orders can fully complement yours. Together we can break Germany’s lines for good.</li>
+<li><b>To</b> [ITA]: We understand your concerns about Serbia and Greece but cannot withdraw from them. We do, however, accept a DMZ in the Adriatic and are willing to hold our current border to avoid unnecessary clashes. If you share our goal of bringing down Turkey, let us maintain this détente and focus our energies on more pressing threats.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your presence in Constantinople and Bulgaria is a direct threat to my empire. I demand that you withdraw immediately. If you do not comply, I will be forced to take action to reclaim what is rightfully mine. Consider this your final warning. I am moving A CON to BUL.</li>
+<li><b>From</b> [FRA]: To Austria: France recognizes your continued struggle against Germany. While we cannot offer direct military assistance at this time, we encourage you to exploit any weakness in Munich. A coordinated attack, even without our direct involvement, could significantly weaken our common enemy. Consider this a renewed call for opportunistic cooperation.</li>
+<li><b>From</b> [RUS]: Austria, I apologize for the confusion regarding SEV. I am moving A UKR to GAL to support GER. I expect you to move A BUL to CON supported by F AEG to crush TUR. After TUR is eliminated, I will focus on securing the Black Sea and retaking RUM. I expect you to take SMY. Let's finalize our plans to ensure a swift victory.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We confirm our final push against Turkey. We will move A BUL to CON supported by F AEG while you secure RUM and the Black Sea. Once Turkey collapses, we will keep SMY and CON as discussed, leaving RUM to you. Let us coordinate precisely so we catch them with no escape.</li>
+<li><b>To</b> [ENG]: Let us finalize our assault on GER. If you press them from the west (BEL or HEL), we can advance from the east on KIE or BER, leaving no path for a German defense. Please confirm your intended move so we can synchronize for maximum effect.</li>
+<li><b>To</b> [ITA]: We remain firm in holding Serbia and Greece, but agree to your proposal for an Adriatic DMZ. Let us keep the Trieste–Venice line stable to avoid a fruitless skirmish. If we focus our forces elsewhere, we can end this stalemate and address the larger threats on the board.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [FRA]: To Austria: France recognizes your continued struggle against Germany. While we cannot offer direct military assistance at this time, we encourage you to exploit any weakness in Munich. A coordinated attack, even without our direct involvement, could significantly weaken our common enemy. Consider this a renewed call for opportunistic cooperation.</li>
+<li><b>From</b> [RUS]: Austria, I confirm that I will cover RUM and the Black Sea. I expect you to move A BUL to CON supported by F AEG to crush Turkey. Let's coordinate our moves to ensure a swift victory. I am building F SEV this turn.</li>
+<li><b>From</b> [TUR]: Austria, your presence in Constantinople and Bulgaria is a direct threat to my empire. I demand that you withdraw immediately. If you do not comply, I will be forced to take action to reclaim what is rightfully mine. Consider this your final warning. I am moving A CON to BUL and building F SMY.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> We reaffirmed our alliance with RUS to attack TUR, finalizing a plan for A BUL to CON supported by F AEG, while RUS secures RUM and Black Sea. With ENG, we coordinated an assault on GER—ENG from the west and us from the east—to ensure no escape for Germany. ITA demanded withdrawals from Serbia and Greece, which we refused, but we accepted an Adriatic DMZ to avoid clashes. FRA continues to encourage us against GER without offering direct military help.</li>
+<li><i>Intent:</i> We will move against TUR as planned (A BUL→CON supported by F AEG) while RUS takes RUM and secures Black Sea. We aim to coordinate with ENG to press GER on two fronts. We will hold position against ITA around Trieste–Venice, respecting an Adriatic DMZ while refusing to abandon Serbia and Greece.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading16">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse16" aria-expanded="false" aria-controls="negCollapse16">
+        Negotiation Turn 14 (1909 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse16" class="accordion-collapse collapse" aria-labelledby="negHeading16" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Our alliance remains steadfast. I will proceed with our agreed push from Bulgaria to Constantinople with Aegean support, ensuring Turkey is squeezed. If you press in from Sevastopol and the Black Sea, we can dismantle their defenses together. Let me know if there are any last-minute tweaks to our plan.</li>
+<li><b>To</b> [ENG]: I propose we coordinate against Germany. If you advance from the west and I apply pressure from the east, we can swiftly end their resistance and divide the spoils. Let’s finalize target areas so neither of us wastes a move.</li>
+<li><b>To</b> [ITA]: Your recent hostility is concerning, but I am willing to discuss a truce if you respect our Balkan borders and refrain from any aggression on Trieste. We prefer to focus on mutual threats elsewhere rather than fight each other unnecessarily.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I demand you withdraw from CON and BUL immediately. Your presence there is unacceptable. Consider this your final warning. I am moving to reclaim what is rightfully mine.</li>
+<li><b>From</b> [RUS]: AUT, I see your unit in SEV. I am moving A UKR to SEV to dislodge it. I expect you to honor our agreement to eliminate TUR. Are you still moving A BUL to CON supported by F AEG? I am moving A MOS to SEV and F SEV to BLA to retake RUM and SEV. Let me know if you need support in the Balkans.</li>
+<li><b>From</b> [FRA]: To Austria, Germany is a threat to us both. While I make no promises, I am open to coordinating actions against MUN. Let me know if you are interested in a temporary alliance to deal with the German problem.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: I confirm our plan to move A BUL to CON with F AEG support. There must be some confusion about SEV—we have no unit there, so if you’re pressing from UKR, proceed as you will. Our alliance remains solid, and I have no intention of interfering in your attack. Together we can crush Turkey and split their remaining centers.</li>
+<li><b>To</b> [FRA]: I agree Germany remains a potential threat, and I’m open to coordinating against them. I already hold MUN and can apply pressure from KIE next while you push from BUR or beyond. Let’s ensure we align these moves so we’re not working at cross purposes. Share any specific target or support requests you have, and I’ll do the same.</li>
+<li><b>To</b> [ITA]: Despite our recent tensions, I remain willing to negotiate a truce. If you respect my Balkan borders and do not threaten Trieste, I will not advance further toward your territory. We both have larger adversaries to contain, and a secure border benefits us both. Let’s avoid needless conflict and focus on threats elsewhere.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your refusal to withdraw from CON and BUL is noted. Prepare for war. I am coming to reclaim what is rightfully mine. Your aggression will be met with swift and decisive action. I will not rest until the Ottoman Empire is restored.</li>
+<li><b>From</b> [RUS]: AUT, I am moving A UKR to SEV to dislodge your unit. I trust you are moving A BUL to CON supported by F AEG as agreed. I am also moving A MOS to SEV and F SEV to BLA to retake RUM and SEV. Let's coordinate our attacks to crush TUR this turn. Can you confirm your support for my move into SEV with A BUL to RUM next turn?</li>
+<li><b>From</b> [FRA]: To Austria, I see that you are also threatened by Germany. I am open to coordinating our actions against GER. If you are willing to attack MUN, I will support you by pressuring GER from the west. Let me know your intentions.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: It seems there’s confusion about SEV—I have no unit there. I confirm that I’ll move A BUL to CON with F AEG supporting, so we can together crush TUR’s defenses. Next turn, I’m open to coordinating in RUM or elsewhere to finish them off swiftly.</li>
+<li><b>To</b> [FRA]: I hold MUN and plan to maintain steady pressure on GER from KIE as well. If you can advance from BUR or further west, we’ll corner GER. Let me know your exact moves so we can ensure our offensive aligns perfectly.</li>
+<li><b>To</b> [ITA]: I’m still open to a truce if you honor my Balkan borders and keep clear of Trieste. Let’s finalize an Adriatic DMZ and avoid opportunistic moves on each other’s territory. There’s no advantage in us clashing while larger threats loom.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, I am moving A UKR to SEV to dislodge your unit. I trust you are moving A BUL to CON supported by F AEG as agreed. I am also moving A MOS to SEV and F SEV to BLA to retake RUM and SEV. Let's coordinate our attacks to crush TUR this turn. I will need your support to hold SEV next turn.</li>
+<li><b>From</b> [TUR]: Austria, your time is running out. Withdraw from CON and BUL or face the consequences. I am coming to reclaim what is rightfully mine. Your aggression will be met with swift and decisive action. The Ottoman Empire will rise again!</li>
+<li><b>From</b> [FRA]: To Austria, I am pleased to see your willingness to cooperate against GER. I am moving A SPA to MAR to deal with the Italian threat. I will support your attack on MUN by pressuring GER from the west. Let us coordinate our moves to ensure GER's defeat. What are your specific plans for KIE? I am open to coordinating further actions.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: There’s a misunderstanding about Sevastopol—I have no unit there. I confirm I’ll move A BUL to CON with F AEG support to crush Turkey alongside your push from the east. Once CON is ours, I’ll be ready to coordinate further over RUM or SEV as you wish. Let’s finish Turkey this turn and keep our alliance strong.</li>
+<li><b>To</b> [FRA]: I’m maintaining pressure on Germany from MUN and KIE. If you apply force from BUR or further west, we can trap GER together. Let me know where you plan to move so we can avoid interfering with each other. Our combined efforts will ensure Germany’s quick demise.</li>
+<li><b>To</b> [ITA]: I remain willing to pursue a truce if you leave Trieste and my Balkan borders untouched. We both stand to gain more by focusing on mutual threats rather than fighting each other. If you agree to respect these boundaries, we can avoid needless conflict and focus elsewhere.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, this is your final warning. Withdraw from CON and BUL. I am coming to reclaim what is rightfully mine. Prepare for war!</li>
+<li><b>From</b> [FRA]: To Austria, I am pleased to see your willingness to cooperate against GER. I am moving A SPA to MAR to deal with the Italian threat. I will support your attack on MUN by pressuring GER from the west. Let us coordinate our moves to ensure GER's defeat. I will move A BRE to PIC to threaten GER.</li>
+<li><b>From</b> [RUS]: AUT, I am moving A UKR to SEV to dislodge your unit. I trust you are moving A BUL to CON supported by F AEG as agreed. I am also moving A MOS to SEV and F SEV to BLA to retake RUM and SEV. Let's coordinate our attacks to crush TUR this turn. I will need your support to hold SEV next turn. I will build F SEV.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> We solidified our plans with RUS to strike TUR using A BUL to CON supported by F AEG, despite their confusion about SEV. TUR remains hostile, demanding we withdraw from their territory. We also coordinated with FRA against GER, intending to apply pressure from MUN and KIE while FRA moves from BUR and PIC. We offered ITA a truce if they leave Trieste and the Balkans alone, hoping to redirect focus on larger threats. No major changes in our relationship with ENG, though we still see them as a potential partner against GER.</li>
+<li><i>Intent:</i> Our main moves center on crushing TUR jointly with RUS (A BUL → CON with F AEG supporting) and pressing GER from MUN and KIE while FRA aids from the west. We continue offering a truce with ITA, but we remain prepared to defend Trieste. We ignore TUR’s warnings and push forward to secure our expansion.</li>
+<li><i>Relationship Updates:</i> ['AUT-FRA+']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading17">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse17" aria-expanded="false" aria-controls="negCollapse17">
+        Negotiation Turn 15 (1909 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse17" class="accordion-collapse collapse" aria-labelledby="negHeading17" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We stand ready to deliver the knockout blow to Turkey. We will move from Bulgaria to Constantinople with Aegean support as planned. Please confirm your moves to ensure a swift and coordinated capture of Ankara and secure the Black Sea front.</li>
+<li><b>To</b> [ENG, FRA]: Greetings friends. Germany appears weak, and now is our moment to strike decisively. We shall advance from Munich and Kiel, leaving no avenue of escape. Your timely push from the west would complete our encirclement. Let us crush their resistance and ensure we divide the spoils fairly.</li>
+<li><b>To</b> [ITA]: We have no immediate desire to battle you if your armies do not cross into our domains. However, if you persist in threatening Trieste or our Balkan holdings, we will have no choice but to respond with overwhelming force. Let us keep our borders at peace and focus on the real threats.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Withdraw from Constantinople and Bulgaria. Your continued occupation of my home territories is unacceptable. I will not tolerate your aggression in the Balkans.</li>
+<li><b>From</b> [FRA]: To Austria, I observe your position and the potential for mutual benefit against Germany. While I make no commitments, I am open to coordinating actions against MUN. Let me know your intentions.</li>
+<li><b>From</b> [RUS]: To AUT, we are moving A UKR to SEV to dislodge your unit. This was a misunderstanding. We will support your move into CON. Let's coordinate our next moves to eliminate TUR.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We value your support into CON and remain eager to finish Turkey together. The Sevastopol mix-up need not damage our alliance. Let us confirm a clear plan so neither of us dislodges the other inadvertently while we secure Turkish centers.</li>
+<li><b>To</b> [FRA, ENG]: Germany’s days are numbered if we work in concert. We will push in from Munich and Kiel while you strike from the west. Let us finalize orders so we encircle them effectively and share the spoils.</li>
+<li><b>To</b> [ITA]: Our stance is clear: harm us, and we will respond in full. If you keep distance from Trieste and our Balkans, we see no need for bloodshed. Let us keep our borders calm and focus on real threats.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Your aggression will not stand. I am moving to retake what is rightfully mine. Withdraw from CON and BUL or face the consequences. I will not negotiate while you occupy my home territories.</li>
+<li><b>From</b> [FRA]: To Austria, your assessment of Germany's weakness is noted. I am currently engaged in a war with Italy and Germany. If you are serious about attacking MUN, I will support your efforts by moving to BUR. However, I need a guarantee that you will not turn on me once Germany is defeated. What are your long-term goals in the region?</li>
+<li><b>From</b> [RUS]: To AUT, we apologize for the misunderstanding regarding SEV. We confirm our support for your move into CON. We will focus on retaking RUM and securing the Black Sea. Let's coordinate our final moves against TUR.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Our alliance remains paramount. We do not wish to clash over Sevastopol; let’s avoid any unintended engagement there. We’ll push from BUL to CON with AEG support, and trust you to secure the Black Sea region. Once Turkey is crushed, we can finalize borders peacefully.</li>
+<li><b>To</b> [FRA, ENG]: Germany’s collapse is near if we maintain coordinated pressure. We will advance from MUN and KIE again; your timely push from BUR or PIC will trap them. Let us finalize this strike swiftly, then speak on sharing the spoils once their demise is assured.</li>
+<li><b>To</b> [ITA]: We stand by our message: if you refrain from entering Trieste or threatening our Balkan positions, conflict can be avoided. But any intrusion will meet swift and decisive retaliation. Our intent is peace on our border, if you permit it.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: To AUT, we apologize again for the SEV misunderstanding. We confirm our support for your move into CON. We will focus on retaking RUM and securing the Black Sea. Let's coordinate our final moves against TUR. We will move A RUM to UKR, F SEV to BLA, and A MOS to SEV.</li>
+<li><b>From</b> [TUR]: I am moving to retake what is rightfully mine. Withdraw from CON and BUL immediately. Your continued occupation is an act of war, and I will not negotiate while you occupy my home territories. Prepare to face the consequences of your aggression.</li>
+<li><b>From</b> [FRA]: To Austria, I am willing to coordinate against GER, but I need assurances of your long-term intentions. If you move on MUN, I will move A BRE to BUR to support you. However, I need a guarantee that you will not turn on me after GER is defeated. What are your specific orders for this turn?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: We confirm our move from BUL to CON with F AEG support and appreciate your coordination around the Black Sea. Let us avoid any unintended conflict near SEV as we finish off TUR. Once that is done, we can finalize our borders in peace.</li>
+<li><b>To</b> [FRA, ENG]: Germany is teetering and we will strike again from MUN and KIE. Your timely push from BUR and PIC (and beyond) will box them in for a swift end. Let us coordinate closely, crush GER, and then fairly divide what remains.</li>
+<li><b>To</b> [ITA]: We repeat our offer of peace so long as you leave Trieste and our Balkan holdings untouched. Should you cross our borders or make hostile moves, we will retaliate without hesitation. Let us keep this frontier calm for both our sakes.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: I am moving to retake what is rightfully mine. Withdraw from CON and BUL immediately. Your continued occupation is an act of war.</li>
+<li><b>From</b> [FRA]: To Austria, I am willing to coordinate against GER, but I need assurances of your long-term intentions. If you move on MUN, I will move A BRE to BUR to support you. However, I need a guarantee that you will not turn on me after GER is defeated. I will not commit without a guarantee.</li>
+<li><b>From</b> [RUS]: To AUT, we apologize again for the SEV misunderstanding. We confirm our support for your move into CON. We will focus on retaking RUM and securing the Black Sea. We will move A RUM to UKR, F SEV to BLA, and A MOS to SEV. Let's crush TUR together.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> We have reaffirmed our alliance with RUS, ensuring they support our capture of CON while we coordinate attacks on TUR. RUS apologized for the Sevastopol incident, and we agreed to finalize borders after we eliminate TUR. Meanwhile, FRA seeks assurances before fully committing against GER, but we remain aligned with both FRA and ENG to finish GER swiftly. We warned ITA to avoid any moves toward Trieste or the Balkans. TUR continues making threats demanding we withdraw, which we refuse. Our intentions remain to weaken GER from MUN/KIE in tandem with FRA/ENG, finish TUR with RUS, and keep ITA at bay while maintaining apparent cooperation with FRA and ENG.</li>
+<li><i>Intent:</i> Continue the assault on TUR with RUS support into CON, push against GER with FRA/ENG, and hold ITA in check. Maintain a facade of cooperation with FRA and ENG while preserving freedom to expand further once TUR and GER are subdued.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <div class="tab-pane fade p-3" id="animationTabContent" role="tabpanel" aria-labelledby="animation-tab">
+    <h2>Game Animation</h2>
+    <div class="svg-player-container">
+      <div class="svg-display" id="svgDisplay">
+      </div>
+      <div class="player-controls">
+        <button class="control-button" id="prevBtn">◀</button>
+        <button class="control-button" id="playPauseBtn">▶</button>
+        <button class="control-button" id="nextBtn">▶</button>
+        <div class="progress-container" id="progressContainer">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="phase-label" id="phaseLabel"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+<script>
+
+    var ctxMain = document.getElementById('mainMetricsChart').getContext('2d');
+    var mainMetricsChart = new Chart(ctxMain, {
+      type: 'line',
+      data: {
+        labels: ['1901 1901 Fall Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Spring Movement','1902 1902 Spring Retreat','1902 1902 Fall Movement','1902 1902 Fall Movement','1902 1902 Fall Retreat','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Fall Movement','1903 1903 Fall Retreat','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Spring Retreat','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement','1905 1905 Spring Retreat','1905 1905 Fall Movement','1905 1905 Winter Adjustment','1906 1906 Spring Movement','1906 1906 Spring Retreat','1906 1906 Fall Movement','1906 1906 Winter Adjustment','1907 1907 Spring Movement','1907 1907 Fall Movement','1907 1907 Fall Retreat','1907 1907 Winter Adjustment','1908 1908 Spring Movement','1908 1908 Spring Retreat','1908 1908 Fall Movement','1908 1908 Fall Retreat','1908 1908 Winter Adjustment','1909 1909 Spring Movement','1909 1909 Spring Retreat','1909 1909 Fall Movement','9999 COMPLETED E T E D','9999 COMPLETED E T E D'],
+        datasets: [
+          {
+            label: 'Centers',
+            data: [3,3,4,5,4,5,5,4,5,5,7,7,7,7,8,8,8,8,10,10,10,10,14,14,14,14,14,14,14,14,15,15,15,15,15,17,17,17,17,18,18],
+            borderColor: 'red',
+            fill: false
+          },
+          {
+            label: 'Units',
+            data: [3,3,3,3,4,5,5,4,5,5,5,7,7,7,6,7,7,7,7,9,9,9,9,10,10,10,10,12,12,12,12,13,13,13,13,13,15,15,15,15,15],
+            borderColor: 'blue',
+            fill: false
+          },
+          {
+            label: 'Influence',
+            data: [5,6,5,7,5,7,7,5,7,9,9,9,13,12,12,12,15,15,17,17,21,21,24,24,25,25,26,26,26,26,26,26,27,27,29,29,29,32,32,33,33],
+            borderColor: 'green',
+            fill: false
+          },
+          {
+            label: 'Builds',
+            data: [0,0,1,2,0,0,0,0,0,0,2,0,0,0,1,0,0,0,2,0,0,0,1,0,0,0,2,0,0,0,1,0,0,0,0,2,0,0,0,2,2],
+            borderColor: 'purple',
+            fill: false
+          },
+          {
+            label: 'Civil Disorder',
+            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+            borderColor: 'orange',
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+
+    var ctxSelf = document.getElementById('selfRelsChart').getContext('2d');
+    var selfRelsChart = new Chart(ctxSelf, {
+      type: 'line',
+      data: {
+        labels: ['1901 1901 Fall Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Spring Movement','1902 1902 Spring Retreat','1902 1902 Fall Movement','1902 1902 Fall Movement','1902 1902 Fall Retreat','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Fall Movement','1903 1903 Fall Retreat','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Spring Retreat','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement','1905 1905 Spring Retreat','1905 1905 Fall Movement','1905 1905 Winter Adjustment','1906 1906 Spring Movement','1906 1906 Spring Retreat','1906 1906 Fall Movement','1906 1906 Winter Adjustment','1907 1907 Spring Movement','1907 1907 Fall Movement','1907 1907 Fall Retreat','1907 1907 Winter Adjustment','1908 1908 Spring Movement','1908 1908 Spring Retreat','1908 1908 Fall Movement','1908 1908 Fall Retreat','1908 1908 Winter Adjustment','1909 1909 Spring Movement','1909 1909 Spring Retreat','1909 1909 Fall Movement','9999 COMPLETED E T E D','9999 COMPLETED E T E D'],
+        datasets: [
+            {
+              label: 'AUT-ENG',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+              borderColor: 'maroon',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-FRA',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1],
+              borderColor: 'steelblue',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-GER',
+              data: [0,-1,0,-1,0,-1,-1,0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+              borderColor: 'darkgreen',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-ITA',
+              data: [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,-1,-1,-1,-1,-1,-1,0,0,-2,-2,-1,-1,-1,-1,-2,-2,-2,-2,-2,-2,-2,-2,-2],
+              borderColor: 'purple',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-RUS',
+              data: [-1,1,-1,1,-1,1,2,-1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
+              borderColor: 'darkorange',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-TUR',
+              data: [1,-1,1,-1,1,-1,-2,1,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2],
+              borderColor: 'navy',
+              fill: false
+            }
+            ,
+        {
+          label: 'Aggregate Self',
+          data: [0.16666666666666666,0.0,0.16666666666666666,0.0,0.16666666666666666,0.0,0.0,0.16666666666666666,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.16666666666666666,-0.16666666666666666,-0.3333333333333333,-0.3333333333333333,-0.3333333333333333,-0.3333333333333333,-0.3333333333333333,-0.3333333333333333,-0.16666666666666666,-0.16666666666666666,-0.3333333333333333,-0.3333333333333333,-0.16666666666666666,-0.16666666666666666,-0.16666666666666666,-0.16666666666666666,-0.3333333333333333,-0.3333333333333333,-0.3333333333333333,-0.3333333333333333,-0.3333333333333333,-0.16666666666666666,-0.16666666666666666,-0.16666666666666666,-0.16666666666666666],
+          borderColor: 'black',
+          borderDash: [5,5],
+          fill: false
+        }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            min: -2,
+            max: 2,
+            ticks: {
+              stepSize: 1
+            }
+          }
+        }
+      }
+    });
+
+
+    var ctxOthers = document.getElementById('othersRelsChart').getContext('2d');
+    var othersRelsChart = new Chart(ctxOthers, {
+      type: 'line',
+      data: {
+        labels: ['1901 1901 Fall Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Spring Movement','1902 1902 Spring Retreat','1902 1902 Fall Movement','1902 1902 Fall Movement','1902 1902 Fall Retreat','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Fall Movement','1903 1903 Fall Retreat','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Spring Retreat','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement','1905 1905 Spring Retreat','1905 1905 Fall Movement','1905 1905 Winter Adjustment','1906 1906 Spring Movement','1906 1906 Spring Retreat','1906 1906 Fall Movement','1906 1906 Winter Adjustment','1907 1907 Spring Movement','1907 1907 Fall Movement','1907 1907 Fall Retreat','1907 1907 Winter Adjustment','1908 1908 Spring Movement','1908 1908 Spring Retreat','1908 1908 Fall Movement','1908 1908 Fall Retreat','1908 1908 Winter Adjustment','1909 1909 Spring Movement','1909 1909 Spring Retreat','1909 1909 Fall Movement','9999 COMPLETED E T E D','9999 COMPLETED E T E D'],
+        datasets: [
+            {
+              label: 'ENG-AUT',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+              borderColor: 'maroon',
+              fill: false
+            }
+            ,
+            {
+              label: 'FRA-AUT',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+              borderColor: 'steelblue',
+              fill: false
+            }
+            ,
+            {
+              label: 'GER-AUT',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+              borderColor: 'darkgreen',
+              fill: false
+            }
+            ,
+            {
+              label: 'ITA-AUT',
+              data: [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,-2,-2,-1,-1,-1,-1,-1,-1,-2,-2,-1,-1,-1,-1,-2,-2,-2,-2,-2,-2,-2,-2,-2],
+              borderColor: 'purple',
+              fill: false
+            }
+            ,
+            {
+              label: 'RUS-AUT',
+              data: [0,0,0,0,0,0,0,-1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+              borderColor: 'darkorange',
+              fill: false
+            }
+            ,
+            {
+              label: 'TUR-AUT',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,-1,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2],
+              borderColor: 'navy',
+              fill: false
+            }
+            ,
+        {
+          label: 'Aggregate Others',
+          data: [0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.0,0.16666666666666666,0.3333333333333333,0.3333333333333333,0.3333333333333333,0.16666666666666666,0.0,0.0,0.0,0.0,0.0,-0.5,-0.5,-0.3333333333333333,-0.3333333333333333,-0.3333333333333333,-0.3333333333333333,-0.3333333333333333,-0.3333333333333333,-0.5,-0.5,-0.3333333333333333,-0.3333333333333333,-0.3333333333333333,-0.3333333333333333,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5],
+          borderColor: 'black',
+          borderDash: [5,5],
+          fill: false
+        }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            min: -2,
+            max: 2,
+            ticks: {
+              stepSize: 1
+            }
+          }
+        }
+      }
+    });
+
+
+    var ctxOrders = document.getElementById('ordersChart').getContext('2d');
+    var ordersChart = new Chart(ctxOrders, {
+      type: 'line',
+      data: {
+        labels: ['1901 1901 Fall Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Spring Movement','1902 1902 Spring Retreat','1902 1902 Fall Movement','1902 1902 Fall Movement','1902 1902 Fall Retreat','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Fall Movement','1903 1903 Fall Retreat','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Spring Retreat','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement','1905 1905 Spring Retreat','1905 1905 Fall Movement','1905 1905 Winter Adjustment','1906 1906 Spring Movement','1906 1906 Spring Retreat','1906 1906 Fall Movement','1906 1906 Winter Adjustment','1907 1907 Spring Movement','1907 1907 Fall Movement','1907 1907 Fall Retreat','1907 1907 Winter Adjustment','1908 1908 Spring Movement','1908 1908 Spring Retreat','1908 1908 Fall Movement','1908 1908 Fall Retreat','1908 1908 Winter Adjustment','1909 1909 Spring Movement','1909 1909 Spring Retreat','1909 1909 Fall Movement','9999 COMPLETED E T E D','9999 COMPLETED E T E D'],
+        datasets: [
+          {
+            label: 'Issued Orders',
+            data: [3,3,3,3,1,1,5,4,4,5,0,2,7,7,0,1,7,0,7,2,9,0,9,1,10,0,10,2,12,12,0,1,13,0,13,0,2,15,0,15,15],
+            borderColor: 'red',
+            fill: false
+          },
+          {
+            label: 'Valid Orders',
+            data: [3,3,3,3,1,1,5,4,4,5,0,2,7,6,0,1,7,0,6,2,9,0,9,1,10,0,9,2,11,12,0,1,11,0,12,0,2,14,0,13,13],
+            borderColor: 'green',
+            fill: false
+          },
+          {
+            label: 'Rejected Orders',
+            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,2,0,1,0,0,1,0,2,2],
+            borderColor: 'orange',
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const svgFiles = ['gamestate_renders/o1-1.31/gamestate_F1901M.svg','gamestate_renders/o1-1.31/gamestate_W1901A.svg','gamestate_renders/o1-1.31/gamestate_S1902R.svg','gamestate_renders/o1-1.31/gamestate_S1902M.svg','gamestate_renders/o1-1.31/gamestate_F1902R.svg','gamestate_renders/o1-1.31/gamestate_F1902M.svg','gamestate_renders/o1-1.31/gamestate_W1902A.svg','gamestate_renders/o1-1.31/gamestate_S1903M.svg','gamestate_renders/o1-1.31/gamestate_F1903M.svg','gamestate_renders/o1-1.31/gamestate_F1903R.svg','gamestate_renders/o1-1.31/gamestate_W1903A.svg','gamestate_renders/o1-1.31/gamestate_S1904M.svg','gamestate_renders/o1-1.31/gamestate_S1904R.svg','gamestate_renders/o1-1.31/gamestate_F1904M.svg','gamestate_renders/o1-1.31/gamestate_W1904A.svg','gamestate_renders/o1-1.31/gamestate_S1905M.svg','gamestate_renders/o1-1.31/gamestate_S1905R.svg','gamestate_renders/o1-1.31/gamestate_F1905M.svg','gamestate_renders/o1-1.31/gamestate_W1905A.svg','gamestate_renders/o1-1.31/gamestate_S1906R.svg','gamestate_renders/o1-1.31/gamestate_S1906M.svg','gamestate_renders/o1-1.31/gamestate_F1906M.svg','gamestate_renders/o1-1.31/gamestate_W1906A.svg','gamestate_renders/o1-1.31/gamestate_S1907M.svg','gamestate_renders/o1-1.31/gamestate_F1907R.svg','gamestate_renders/o1-1.31/gamestate_F1907M.svg','gamestate_renders/o1-1.31/gamestate_W1907A.svg','gamestate_renders/o1-1.31/gamestate_S1908R.svg','gamestate_renders/o1-1.31/gamestate_S1908M.svg','gamestate_renders/o1-1.31/gamestate_F1908M.svg','gamestate_renders/o1-1.31/gamestate_F1908R.svg','gamestate_renders/o1-1.31/gamestate_W1908A.svg','gamestate_renders/o1-1.31/gamestate_S1909R.svg','gamestate_renders/o1-1.31/gamestate_S1909M.svg','gamestate_renders/o1-1.31/gamestate_F1909M.svg','gamestate_renders/o1-1.31/gamestate_COMPLETED.svg'];
+        const phaseLabels = ['1901 1901 Fall Movement','1901 1901 Winter Adjustment','1902 1902 Spring Retreat','1902 1902 Spring Movement','1902 1902 Fall Retreat','1902 1902 Fall Movement','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Fall Movement','1903 1903 Fall Retreat','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Spring Retreat','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement','1905 1905 Spring Retreat','1905 1905 Fall Movement','1905 1905 Winter Adjustment','1906 1906 Spring Retreat','1906 1906 Spring Movement','1906 1906 Fall Movement','1906 1906 Winter Adjustment','1907 1907 Spring Movement','1907 1907 Fall Retreat','1907 1907 Fall Movement','1907 1907 Winter Adjustment','1908 1908 Spring Retreat','1908 1908 Spring Movement','1908 1908 Fall Movement','1908 1908 Fall Retreat','1908 1908 Winter Adjustment','1909 1909 Spring Retreat','1909 1909 Spring Movement','1909 1909 Fall Movement','9999 COMPLETED E T E D'];
+        let currentIndex = 0;
+        let isPlaying = false;
+        let playInterval = null;
+        const playbackSpeed = 1500;
+        const preloadedSVGs = [];
+        
+        const svgDisplay = document.getElementById('svgDisplay');
+        const prevBtn = document.getElementById('prevBtn');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progressContainer = document.getElementById('progressContainer');
+        const phaseLabel = document.getElementById('phaseLabel');
+        
+        svgDisplay.style.position = 'relative';
+        
+        function preloadSVGs() {
+            svgFiles.forEach((file, index) => {
+                const img = new Image();
+                img.src = file;
+                preloadedSVGs[index] = img;
+            });
+        }
+        
+        function initPlayer() {
+            if (svgFiles.length === 0) return;
+            preloadSVGs();
+            loadSVG(0);
+            updateControls();
+            
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            
+            playPauseBtn.addEventListener('click', togglePlayback);
+            progressContainer.addEventListener('click', handleProgressClick);
+        }
+        
+        function loadSVG(index) {
+            if (index < 0 || index >= svgFiles.length) return;
+            currentIndex = index;
+            const filePath = svgFiles[currentIndex];
+            
+            const newObj = document.createElement('object');
+            newObj.type = 'image/svg+xml';
+            newObj.data = filePath;
+            newObj.style.position = 'absolute';
+            newObj.style.top = 0;
+            newObj.style.left = 0;
+            newObj.style.width = '100%';
+            newObj.style.height = '100%';
+            newObj.style.opacity = '0';
+            
+            svgDisplay.appendChild(newObj);
+            
+            newObj.onload = function() {
+                newObj.style.transition = 'opacity 0.3s';
+                newObj.style.opacity = '1';
+                phaseLabel.textContent = phaseLabels[currentIndex];
+                const progress = (currentIndex / (svgFiles.length - 1)) * 100;
+                progressBar.style.width = progress + '%';
+                
+                updateControls();
+            };
+            
+            newObj.addEventListener('transitionend', function() {
+                Array.from(svgDisplay.children)
+                    .filter(child => child !== newObj)
+                    .forEach(child => svgDisplay.removeChild(child));
+            });
+        }
+        
+        function showPrevious() {
+            if (currentIndex > 0) {
+                loadSVG(currentIndex - 1);
+            }
+        }
+        
+        function showNext() {
+            if (currentIndex < svgFiles.length - 1) {
+                loadSVG(currentIndex + 1);
+            }
+        }
+        
+        function togglePlayback() {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                playPauseBtn.textContent = '⏸️';
+                playInterval = setInterval(() => {
+                    if (currentIndex < svgFiles.length - 1) {
+                        loadSVG(currentIndex + 1);
+                    } else {
+                        clearInterval(playInterval);
+                        isPlaying = false;
+                        playPauseBtn.textContent = '▶️';
+                    }
+                }, playbackSpeed);
+            } else {
+                playPauseBtn.textContent = '▶️';
+                clearInterval(playInterval);
+            }
+        }
+        
+        function handleProgressClick(e) {
+            const rect = progressContainer.getBoundingClientRect();
+            const clickPosition = e.clientX - rect.left;
+            const containerWidth = rect.width;
+            const clickRatio = clickPosition / containerWidth;
+            const newIndex = Math.round(clickRatio * (svgFiles.length - 1));
+            loadSVG(newIndex);
+            if (isPlaying) {
+                togglePlayback();
+            }
+        }
+        
+        function updateControls() { }
+        
+        if (svgDisplay) {
+            initPlayer();
+        }
+        
+        var animationTabTrigger = document.getElementById('animation-tab');
+        if (animationTabTrigger) {
+            animationTabTrigger.addEventListener('shown.bs.tab', function(e) {
+                if (!isPlaying) {
+                    togglePlayback();
+                }
+            });
+            animationTabTrigger.addEventListener('hidden.bs.tab', function(e) {
+                if (isPlaying) {
+                    togglePlayback();
+                }
+            });
+        }
+    });
+    
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body></html>

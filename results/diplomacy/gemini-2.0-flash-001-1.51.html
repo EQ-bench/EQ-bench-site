@@ -1,0 +1,1945 @@
+<!DOCTYPE html><html lang='en'><head>
+<meta charset='utf-8'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
+<title>Diplomacy - AUT Report</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'/>
+<script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+<style>
+
+    .svg-player-container {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .svg-display {
+        width: 100%;
+        height: 600px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .svg-display object, .svg-display img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+    .player-controls {
+        padding: 15px;
+        background-color: #e9ecef;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .progress-container {
+        flex-grow: 1;
+        height: 10px;
+        background-color: #ced4da;
+        border-radius: 5px;
+        position: relative;
+        cursor: pointer;
+    }
+    .progress-bar {
+        height: 100%;
+        background-color: #0d6efd;
+        border-radius: 5px;
+        width: 0%;
+    }
+    .phase-label {
+        font-weight: bold;
+        min-width: 120px;
+        text-align: center;
+    }
+    .control-button {
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    .control-button:hover {
+        background-color: #5a6268;
+    }
+    .control-button:disabled {
+        background-color: #adb5bd;
+        cursor: not-allowed;
+    }
+    
+</style>
+</head><body class='bg-light'>
+<div class='container mt-4'>
+<h1>Diplomacy Report for Austria (AUT)</h1>
+<h4><strong>Game ID:</strong> gemini-2.0-flash-001-1.51</h4>
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h4>Overall Stats</h4>
+    
+<ul>
+<li><b>Avg Centers:</b> 2.36, <b>Final:</b> 0</li>
+<li><b>Avg Units:</b> 2.42, <b>Final:</b> 0</li>
+<li><b>Avg Influence:</b> 3.83, <b>Final:</b> 2</li>
+<li><b>Avg Self-Relationship:</b> -0.88, <b>Final:</b> -0.67</li>
+<li><b>Avg Others-Relationship:</b> -0.90, <b>Final:</b> -0.67</li>
+</ul>
+
+      </div>
+    </div>
+    
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="stats-tab" data-bs-toggle="tab" data-bs-target="#statsTabContent" type="button" role="tab" aria-controls="statsTabContent" aria-selected="true">AUT Charts</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="negotiation-tab" data-bs-toggle="tab" data-bs-target="#negotiationTabContent" type="button" role="tab" aria-controls="negotiationTabContent" aria-selected="false">Negotiations</button>
+  </li>
+
+  
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="animation-tab" data-bs-toggle="tab" data-bs-target="#animationTabContent" type="button" role="tab" aria-controls="animationTabContent" aria-selected="false">Game Animation</button>
+  </li>
+
+
+</ul>
+<div class="tab-content" id="myTabContent">
+  <!-- STATS TAB -->
+  <div class="tab-pane fade show active p-3" id="statsTabContent" role="tabpanel" aria-labelledby="stats-tab">
+
+<h3>Main Metrics</h3>
+<canvas id='mainMetricsChart' width='800' height='300'></canvas>
+<hr/><h3>Relationships (Self-Perceived)</h3>
+<canvas id='selfRelsChart' width='800' height='300'></canvas>
+<hr/><h3>Relationships (Others → AUT)</h3>
+<canvas id='othersRelsChart' width='800' height='300'></canvas>
+<hr/><h3>Orders: Issued vs Valid vs Rejected</h3>
+<canvas id='ordersChart' width='800' height='300'></canvas>
+</div>
+
+  <div class="tab-pane fade p-3" id="negotiationTabContent" role="tabpanel" aria-labelledby="negotiation-tab">
+    <h2>Negotiations / Dialogues</h2>
+
+<div class="accordion" id="negAccordion">
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading0">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse0" aria-expanded="false" aria-controls="negCollapse0">
+        Negotiation Turn 1 (1901 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse0" class="accordion-collapse collapse" aria-labelledby="negHeading0" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Greetings, Italy. Given our proximity, it seems wise to establish a dialogue. I propose we discuss our mutual interests in the Adriatic and Balkan regions. Perhaps we can find a way to coexist peacefully, or even cooperate to our mutual benefit. What are your initial thoughts?</li>
+<li><b>To</b> [GER]: To Germany, I am writing to propose a non-aggression pact. We share a border and it would be beneficial to both of us to focus on other areas for expansion. What are your thoughts on this proposal?</li>
+<li><b>To</b> [TUR]: To Turkey, I am writing to propose a non-aggression pact. We are far apart and it would be beneficial to both of us to focus on other areas for expansion. What are your thoughts on this proposal?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: To AUT, we are neighbors with overlapping interests. Let us avoid conflict. We propose a neutral stance towards each other. We will not move into Galicia if you do not move into Rumania. Agreed?</li>
+<li><b>From</b> [ITA]: Greetings, Austria. I propose a non-aggression pact for the immediate future. I am interested in securing my eastern border and focusing on other matters. Perhaps we can discuss the disposition of Trieste later, but for now, let us maintain the peace. What are your thoughts?</li>
+<li><b>From</b> [GER]: To Austria, Germany suggests a period of peaceful coexistence. We have shared borders and it would be wise to avoid conflict early on. Perhaps we can even coordinate against Russia in the future? What are your intentions regarding Bohemia?</li>
+<li><b>From</b> [TUR]: To Austria, greetings. We share a border and potential interests in the Balkans. I am open to discussing a possible understanding regarding our spheres of influence in the region. Perhaps we can agree on a division of territories to avoid conflict. What are your initial thoughts on this?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, I agree to a non-aggression pact for the immediate future. Let's focus on securing our borders and building trust. Regarding Trieste, we can discuss its disposition later, but for now, peace is paramount. I propose we coordinate our movements in the Adriatic to avoid any misunderstandings. What are your thoughts on this?</li>
+<li><b>To</b> [GER]: Germany, I agree to a period of peaceful coexistence. Coordinating against Russia is an interesting proposition, but let's establish a solid foundation of trust first. Regarding Bohemia, I have no immediate intentions there. My focus is on the Balkans. What are your plans for Denmark?</li>
+<li><b>To</b> [RUS]: Russia, I accept your proposal for a neutral stance. I agree not to move into Rumania if you do not move into Galicia. Let's maintain this understanding to avoid unnecessary conflict. I am curious about your intentions in Turkey.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [GER]: To Austria, I also accept your proposal for a non-aggression pact. To ensure stability, I propose we agree on spheres of influence. I will not interfere in Bohemia if you do not interfere in Silesia. This will prevent any accidental conflicts. What do you say?</li>
+<li><b>From</b> [TUR]: To Austria, I accept your proposal for a non-aggression pact. Let's focus on our respective expansion plans without interference. I am interested in Serbia and Greece. What are your intentions in the Balkans?</li>
+<li><b>From</b> [ITA]: Austria, thank you for your response. I agree that a dialogue is wise. I am primarily interested in securing Trieste for Italy. However, I am willing to offer concessions elsewhere in exchange for your cooperation. Perhaps we can discuss the disposition of Tyrol as well. What are your thoughts on a potential trade: Trieste for Tyrol, with a guarantee of non-aggression for the next two years?</li>
+<li><b>From</b> [RUS]: To AUT, we appreciate your willingness to avoid conflict. However, a simple neutral stance is not enough. We propose a more concrete agreement: Russia will support Austria's move into Serbia if Austria supports Russia's move into Rumania. This will secure both our flanks and allow for expansion. What do you say?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, I appreciate your directness. Trieste is a core territory for Austria, and Tyrol is strategically important. I am not inclined to trade them. However, I am willing to offer support for your expansion into Albania in exchange for a guarantee of non-aggression for the next two years and your support for my move into Serbia. What are your thoughts?</li>
+<li><b>To</b> [GER]: Germany, I accept your proposal for spheres of influence. I agree not to interfere in Silesia if you do not interfere in Bohemia. This will prevent accidental conflicts and allow us to focus on our respective goals. I am curious about your intentions in Scandinavia.</li>
+<li><b>To</b> [RUS]: Russia, I am hesitant to commit to a joint move into Serbia and Rumania. It seems too aggressive at this early stage. However, I am willing to consider a more limited agreement. I will support your move into Rumania if you support my move into Serbia in the following turn, provided the situation on the ground allows for it. This gives us both flexibility and avoids immediate conflict. What do you say?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [GER]: To Austria, I appreciate your willingness to coexist peacefully. Since you have no immediate intentions in Bohemia, I will focus on Denmark and Holland. I propose we maintain a neutral stance towards each other's expansion efforts for now. If Russia becomes too aggressive, we can revisit the idea of coordinating against them. Does this sound acceptable?</li>
+<li><b>From</b> [RUS]: To AUT, we are disappointed by your lack of ambition. A simple neutral stance benefits no one. We reiterate our offer: Russia will support Austria's move into Serbia if Austria supports Russia's move into Rumania. This is a win-win scenario. Consider it carefully.</li>
+<li><b>From</b> [ITA]: Austria, I appreciate your agreement to a non-aggression pact. Coordinating movements in the Adriatic is a good idea. I propose that my fleet in Naples will remain in the Ionian Sea, and my army in Venice will remain in Venice, unless we agree otherwise. This should alleviate any concerns about my intentions in Trieste for the time being. What specific movements are you planning in the Adriatic?</li>
+<li><b>From</b> [TUR]: To Austria, I am moving A CON to BUL. This is within my sphere of influence in the Balkans. I am also moving A SMY to ARM. I expect you to respect my expansion plans. What are your next moves?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, I appreciate the agreement on the non-aggression pact and the coordination in the Adriatic. I will ensure that my fleet in Trieste remains in the Adriatic Sea, and my army in Vienna will remain in Vienna, unless we agree otherwise. I am moving A BUD to SER. This should alleviate any concerns about my intentions in Trieste for the time being.</li>
+<li><b>To</b> [GER]: Germany, I appreciate your willingness to coexist peacefully. I will focus on the Balkans. I propose we maintain a neutral stance towards each other's expansion efforts for now. I am moving A VIE to TRI. Does this sound acceptable?</li>
+<li><b>To</b> [RUS]: Russia, I am moving A BUD to SER. I am moving A VIE to TRI. I am moving F TRI to ALB. I am not moving into Rumania. I expect you to respect my expansion plans. What are your next moves?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I cannot agree to supporting your move into Serbia. My ambitions lie elsewhere. However, I will maintain the non-aggression pact for the next two years if you agree to cede Trieste to Italy. This is my final offer.</li>
+<li><b>From</b> [RUS]: To AUT, we accept your counter-proposal. We will support your move into Serbia next turn if the situation allows, provided you support our move into Rumania this turn. Let us proceed with this limited agreement and see where it leads.</li>
+<li><b>From</b> [GER]: To Austria, I appreciate your understanding regarding spheres of influence. I will focus on Denmark and Holland, and you can focus on the Balkans. Let us maintain a neutral stance towards each other's expansion efforts for now. This is my final communication for this round.</li>
+<li><b>From</b> [TUR]: To Austria, I am moving A CON to BUL and A SMY to ARM. This is within my sphere of influence in the Balkans. I expect you to respect my expansion plans. I am not interested in Serbia or Greece at this time. What are your next moves?</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> No prior moves to summarize.
+Established non-aggression pacts with GER and ITA. ITA wants Trieste, but I refused to cede it. Agreed to a limited agreement with RUS: I will support their move into Rumania next turn if they support my move into Serbia this turn, provided the situation allows. TUR is moving into BUL and ARM, claiming it's within their sphere of influence. GER will focus on Denmark and Holland, maintaining neutrality with me.</li>
+<li><i>Intent:</i> My primary goal is to expand into the Balkans, specifically Serbia. I will use the agreement with RUS to facilitate this, while maintaining a defensive posture against ITA. I will monitor TUR's movements closely. I will maintain a neutral stance with GER, focusing on my own expansion. I will continue to probe ITA for weaknesses and potential opportunities to gain an advantage. I will honor the non-aggression pacts with GER and ITA for now, but will be ready to break them if necessary to achieve my objectives. I will move A BUD to SER, A VIE to TRI, and F TRI to ALB.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading1">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse1" aria-expanded="false" aria-controls="negCollapse1">
+        Negotiation Turn 1 (1901 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse1" class="accordion-collapse collapse" aria-labelledby="negHeading1" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Greetings, RUS. As agreed, I have moved A BUD to SER. I trust you will honor our agreement and support my move into SER. I am also moving A VIE to TRI and F TRI to ALB. Please confirm your support for SER.</li>
+<li><b>To</b> [GER]: Greetings, GER. I am maintaining a neutral stance as agreed. My moves this turn are A BUD to SER, A VIE to TRI, and F TRI to ALB. I am focused on the Balkans. I trust you are focused on your agreed upon areas. Let me know if anything changes.</li>
+<li><b>To</b> [ITA]: Greetings, ITA. I am maintaining a defensive posture. My moves this turn are A BUD to SER, A VIE to TRI, and F TRI to ALB. I am focused on the Balkans. I hope we can continue to avoid conflict. Let me know if you have any concerns.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Greetings, AUT. I have moved into RUM as discussed. I expect your support into SER next turn. Let me know if your plans have changed.</li>
+<li><b>From</b> [TUR]: Austria, I am watching your moves in the Balkans. I hope we can maintain a peaceful relationship. I am open to discussing our mutual interests in the region. Let's avoid any conflicts that could benefit other powers.</li>
+<li><b>From</b> [ITA]: Greetings Austria, I hope this message finds you well. I propose we continue our non-aggression pact. I am planning to move my units to consolidate my position in Italy. I intend to move A VEN to PIE, A TYR to SWI, and F NAP to TYS. This is purely for defensive purposes and should not be seen as a threat. I hope we can continue our peaceful coexistence.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Greetings, RUS. I have indeed moved into SER. I expect your support to hold it. I am concerned about TUR's interest in the Balkans. Perhaps we can coordinate to limit their influence.</li>
+<li><b>To</b> [TUR]: Greetings, TUR. I acknowledge your interest in the Balkans. My moves are primarily defensive, securing SER. I am open to discussing mutual interests, but I will defend my territories. Let's avoid unnecessary conflict.</li>
+<li><b>To</b> [ITA]: Greetings, ITA. I appreciate your commitment to our non-aggression pact. Your moves seem reasonable. I will maintain my defensive posture in the Balkans. I hope we can continue our peaceful coexistence. I am concerned about TUR's expansionist tendencies.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Greetings, AUT. I will not support your move into SER this turn. You are moving too aggressively in the Balkans. I am moving A MOS to SEV and F RUM to BLA. Do not expect further cooperation unless you adjust your strategy.</li>
+<li><b>From</b> [ITA]: Austria, I appreciate your defensive posture. However, I must reiterate my need to secure Tunis. I assure you, my moves are not directed at you. I am merely securing my position in the Mediterranean. I propose we continue our non-aggression pact and focus on our respective spheres of influence. I will support your moves in the Balkans if you allow me to secure Tunis.</li>
+<li><b>From</b> [TUR]: Austria, I am observing your movements in Serbia and Albania. While I understand your need to secure your borders, I must express my concern about the potential for conflict in the Balkans. I propose we discuss a formal agreement on spheres of influence in the region to avoid any misunderstandings. Perhaps we can agree on a division of the Balkans that benefits both our nations.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Greetings, RUS. Your sudden reversal is noted. I am not moving too aggressively; I am securing my border. Your move to BLA is concerning. What are your intentions there? I am willing to reconsider my Balkan strategy if you clarify your position and offer a concrete proposal for cooperation. Otherwise, I will assume you are acting against my interests.</li>
+<li><b>To</b> [TUR]: Greetings, TUR. I am open to discussing spheres of influence in the Balkans. However, I will not cede SER. What specific division do you propose? I am willing to negotiate, but I need concrete details. Let's avoid vague pronouncements and focus on a mutually beneficial agreement.</li>
+<li><b>To</b> [ITA]: Greetings, ITA. I am concerned about your insistence on Tunis. It is far from Italy and could destabilize the region. I am willing to consider supporting your move if you offer a significant concession in return. What are you willing to offer for my support of your Tunis ambition? I need a concrete proposal, not just assurances.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am willing to maintain our non-aggression pact, but I must secure Tunis. I will not move into Trieste. I will move F NAP to TUN, A VEN to TRI, and A TYR to VIE. This is to secure my position and put pressure on Turkey. I hope you understand.</li>
+<li><b>From</b> [RUS]: Greetings, AUT. I warned you about your aggressive moves in the Balkans. I will not support your occupation of SER. I am moving A MOS to SEV and F RUM to BLA to secure my position in the Black Sea. I suggest you reconsider your strategy if you wish to avoid conflict with Russia.</li>
+<li><b>From</b> [TUR]: Austria, I am concerned about your moves in Serbia and Albania. To avoid conflict, I propose a formal agreement: I will not move into Serbia if you agree not to move into Bulgaria. This would create a buffer zone and prevent direct conflict. What are your thoughts on this proposal?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Greetings, RUS. Your moves are hostile. I will defend SER. Consider this a final warning. I will adjust my strategy accordingly.</li>
+<li><b>To</b> [TUR]: Greetings, TUR. I reject your proposal. I will not be dictated to. I will continue to pursue my interests in the Balkans. Be warned.</li>
+<li><b>To</b> [ITA]: Greetings, ITA. Your moves are unacceptable. I will not support your Tunis ambition. I will defend my territories. Consider our non-aggression pact void.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am moving F NAP to ION, A VEN to TRI, and A TYR to VIE. This is to secure my position and put pressure on Turkey. I will not attack you. I hope you understand. I will offer you support in taking Serbia if you allow me to take Tunis.</li>
+<li><b>From</b> [RUS]: Greetings, AUT. My move to BLA is to secure the Black Sea, not to threaten you. However, your aggressive moves in the Balkans are unacceptable. I will not offer any further proposals for cooperation. Consider this a warning. This is my final communication this phase.</li>
+<li><b>From</b> [TUR]: Austria, I am willing to negotiate a division of the Balkans. I propose you take Serbia and I take Bulgaria. This creates a buffer and avoids direct conflict. Let me know if this is acceptable. I am also open to discussing other options, but I need concrete details.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> I moved A BUD to SER, A VIE to TRI, and F TRI to ALB, focusing on the Balkans as agreed with GER and RUS. ENG, FRA, GER, ITA, RUS, and TUR all made moves.
+Initial agreements with RUS and GER fell apart. RUS became hostile due to my move into SER and moved to BLA. ITA insisted on Tunis, offering support for SER in return, but I rejected it. TUR proposed a division of the Balkans, which I also rejected. All relationships have deteriorated.</li>
+<li><i>Intent:</i> I intend to defend SER against RUS. I will break the non-aggression pact with ITA and prepare for potential conflict. I will also prepare for conflict with TUR. My moves will be A SER H, A TRI S A SER, F ALB - ADR.</li>
+<li><i>Relationship Updates:</i> ['AUT-RUS--', 'AUT-ITA-', 'AUT-TUR-']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading2">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse2" aria-expanded="false" aria-controls="negCollapse2">
+        Negotiation Turn 2 (1902 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse2" class="accordion-collapse collapse" aria-labelledby="negHeading2" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: To RUS, your move into Rumania was unexpected and hostile. I propose we de-escalate. I will not move into Rumania if you agree to withdraw your fleet from the Black Sea. This will allow us to focus on other threats.</li>
+<li><b>To</b> [ITA]: To ITA, your continued insistence on Trieste is noted. However, I am willing to discuss a potential trade. I will support your move into Tunis if you support my move into Greece. This would benefit both of us by expanding our influence in the Mediterranean.</li>
+<li><b>To</b> [TUR]: To TUR, your proposal for dividing the Balkans was interesting, but unacceptable in its current form. I am willing to discuss a revised proposal that takes into account my interests in Serbia and Greece. Let's talk specifics.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, despite the recent tensions, I propose we re-establish our non-aggression pact. I will focus on securing Tunis, and I will not interfere with your expansion in the Balkans. Let us work together to maintain peace in the region.</li>
+<li><b>From</b> [TUR]: Greetings, Austria. I am moving A BUL to RUM. I hope this does not cause you concern. I am also moving A SYR to ARM. I am interested in discussing the Balkans further. Perhaps we can find a mutually beneficial arrangement.</li>
+<li><b>From</b> [RUS]: To all powers, Russia seeks stability in Eastern Europe. I am open to discussing non-aggression pacts and trade agreements. However, I will defend my borders and interests against any aggression. Let us strive for a peaceful and prosperous future.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: ITA, I appreciate your offer to re-establish our non-aggression pact. However, I cannot ignore your continued interest in Trieste. I propose a different arrangement: I will support your move into Tunis and you will support my move into Greece. This benefits both of us more than a simple non-aggression pact.</li>
+<li><b>To</b> [TUR]: TUR, your move of A BUL to RUM is concerning, especially after your proposal to divide the Balkans. I am willing to discuss a mutually beneficial arrangement, but your current actions suggest otherwise. What are your intentions in Rumania? I need clarity before I can consider any further negotiations.</li>
+<li><b>To</b> [RUS]: RUS, your call for stability is appreciated, but your actions in Rumania contradict your words. I reiterate my offer: withdraw your fleet from the Black Sea, and I will not move into Rumania. This is a simple and direct path to de-escalation. Otherwise, I will be forced to take defensive measures.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your proposal is unacceptable. I will not withdraw my fleet from the Black Sea. My move into Rumania was a necessary measure to protect my interests. I suggest you focus on your own expansion and cease your aggressive moves in the Balkans. I consider our agreement broken.</li>
+<li><b>From</b> [ITA]: Austria, I am willing to discuss a trade. I will support your move into Greece if you support my move into Tunis. However, I must insist on Trieste. Perhaps we can negotiate a long-term agreement that benefits both of us. What are your specific plans for Greece?</li>
+<li><b>From</b> [TUR]: Greetings, Austria. I am moving A BUL to RUM and A SYR to ARM. I am still interested in discussing the Balkans. What specific revisions to my proposal would you find acceptable? I am willing to negotiate, but I need to understand your interests in Serbia and Greece more clearly. Let's find a mutually beneficial arrangement.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: ITA, I am willing to finalize our trade agreement. I will support your move into Tunis, and you will support my move into Greece. However, I will not cede Trieste. If you agree to these terms, please confirm your support for my move into Greece this turn. Let's make this happen.</li>
+<li><b>To</b> [TUR]: TUR, your move into Rumania is unacceptable. I will not tolerate further encroachment into the Balkans. I am willing to discuss a revised proposal for dividing the Balkans, but only if you withdraw your forces from Rumania immediately. My specific interests are Serbia and Greece. What are your intentions now?</li>
+<li><b>To</b> [RUS]: RUS, your rejection of my offer is noted. However, I will not back down. I will defend my interests in the Balkans, and I will not allow you to dictate my actions. Consider this a final warning: withdraw your fleet from the Black Sea, or face the consequences. I am moving into Greece.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your threats are meaningless. I will not withdraw my fleet from the Black Sea. Rumania is under my control, and I will defend it. Cease your aggressive moves in the Balkans, or face the consequences. I consider our previous agreements null and void. Do not expect any further cooperation from Russia.</li>
+<li><b>From</b> [TUR]: Greetings, Austria. My move of A BUL to RUM is intended to secure my sphere of influence in the Balkans, as discussed. I am still open to discussing a mutually beneficial arrangement regarding Serbia and Greece. What specific concessions would you require to alleviate your concerns about my presence in Rumania? Let's find a compromise.</li>
+<li><b>From</b> [ITA]: Austria, I am willing to discuss a trade. I will support your move into Greece if you support my move into Tunis. However, I must insist on Trieste. Perhaps we can negotiate a long-term agreement that benefits both of us. What are your specific plans for Greece? I am moving A VEN to TRI.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: ITA, I am willing to finalize our trade agreement. I will support your move into Tunis, and you will support my move into Greece. I am moving A SER to GRE. Do you support?</li>
+<li><b>To</b> [TUR]: TUR, your move into Rumania is unacceptable. I will not tolerate further encroachment into the Balkans. I am moving A SER to GRE. I am willing to discuss a revised proposal for dividing the Balkans, but only if you withdraw your forces from Rumania immediately. My specific interests are Serbia and Greece. What are your intentions now?</li>
+<li><b>To</b> [RUS]: RUS, your rejection of my offer is noted. However, I will not back down. I will defend my interests in the Balkans, and I will not allow you to dictate my actions. Consider this a final warning: withdraw your fleet from the Black Sea, or face the consequences. I am moving A SER to GRE.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your threats are empty. I will not withdraw from Rumania or the Black Sea. Your aggressive moves in the Balkans will be met with resistance. Consider this our final communication. Do not expect any further cooperation.</li>
+<li><b>From</b> [TUR]: Greetings, Austria. My move of A BUL to RUM is intended to secure my sphere of influence in the Balkans. I am still open to discussing a mutually beneficial arrangement regarding Serbia and Greece, but I will not withdraw from RUM. I am willing to offer concessions elsewhere in exchange for your recognition of my influence in RUM. Let's find a compromise.</li>
+<li><b>From</b> [ITA]: Austria, I am willing to finalize our trade agreement. I will support your move into Greece, and you will support my move into Tunis. However, I will not cede Trieste. If you agree to these terms, please confirm your support for my move into Tunis this turn. I am moving A VEN to TRI.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> In Fall 1901, I moved A TRI to SER and F ALB to ADR. I built A BUD in Winter 1901.
+I attempted to negotiate with RUS to withdraw from RUM and the Black Sea, but they refused and consider our agreements null. I negotiated with ITA for support in GRE in exchange for supporting their move to TUN, but they insist on TRI. I negotiated with TUR regarding the Balkans, but they moved into RUM, which I find unacceptable. I am moving A SER to GRE.</li>
+<li><i>Intent:</i> My primary goal is to expand into the Balkans, specifically Greece. I will support ITA's move into Tunis to secure their support for my move into Greece. I will resist TUR's encroachment into the Balkans and will consider further action depending on their response to my move into Greece. I will defend against RUS aggression. I will move A SER to GRE, A TRI to ALB, F ADR supports A TRI to ALB, A BUD supports A SER to GRE.</li>
+<li><i>Relationship Updates:</i> ['AUT-RUS--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading3">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse3" aria-expanded="false" aria-controls="negCollapse3">
+        Negotiation Turn 2 (1902 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse3" class="accordion-collapse collapse" aria-labelledby="negHeading3" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, I am willing to offer support for your move into Tunis in exchange for your support in Greece. However, I cannot cede Trieste. Is there any other arrangement we can make to secure your support without giving up a core territory?</li>
+<li><b>To</b> [TUR]: Turkey, your encroachment into Rumania is unacceptable. I am willing to negotiate a division of the Balkans, but only if you withdraw from Rumania immediately. What are your terms for a mutually agreeable division?</li>
+<li><b>To</b> [RUS]: Russia, your aggression in Rumania is noted. I am willing to discuss a potential resolution to the conflict in the Balkans, but only if you cease your hostile actions against my territories. What are your conditions for a peaceful resolution?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: To AUT, your aggressive moves in the Balkans are concerning. I see that you have taken SER. I will not tolerate further expansion into RUM. I suggest you reconsider your strategy in the region.</li>
+<li><b>From</b> [TUR]: Greetings, AUT. While our relations are strained, perhaps we can find a temporary understanding. I propose we avoid further conflict in the Balkans for this turn. I will hold SER, and you can hold ALB and GRE. What are your intentions for BUD?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: RUS, your threats are noted, but I will not be intimidated. My presence in Serbia is non-negotiable. However, I am willing to discuss a potential compromise regarding Rumania. What specific concessions are you willing to offer in exchange for my withdrawal from Rumania in the future?</li>
+<li><b>To</b> [TUR]: TUR, I find your proposal for a temporary understanding unacceptable. I will not simply 'hold' ALB and GRE while you consolidate your gains in the Balkans. I demand a full withdrawal from Rumania and a clear commitment to non-interference in Greece. My intentions for BUD are to defend it. What are your intentions for SER?</li>
+<li><b>To</b> [ITA]: ITA, I understand your desire for Trieste, but it is a core territory and I cannot cede it. However, I am willing to offer significant economic concessions and military support in other areas in exchange for your support in Greece. What specific benefits would you require to make an alliance worthwhile, excluding Trieste?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Greetings, AUT. I understand your concerns about RUM. However, I will not withdraw. I propose a different solution: I will support your move into GRE if you allow me to keep RUM and recognize my influence in BUL. This would create a stable balance in the Balkans. What do you say?</li>
+<li><b>From</b> [RUS]: To AUT, my move into RUM is non-negotiable. It is vital for my security. However, I am willing to discuss a potential resolution in the Balkans if you cease your aggressive expansion. What specific territories are you targeting, and what concessions are you willing to offer to maintain peace in the region? I am open to a limited agreement, but only if it benefits my strategic interests.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: TUR, your proposal is insulting. I will not allow you to dictate terms in the Balkans. My position is clear: withdraw from Rumania and cease interference in Greece. In exchange, I will consider a non-aggression pact. Otherwise, consider us at war. What is your final offer?</li>
+<li><b>To</b> [RUS]: RUS, your insistence on holding Rumania is noted. However, I am willing to offer a compromise. I will not contest your presence in Rumania this turn if you support my move into Serbia next turn. This is a one-time offer. Do you accept?</li>
+<li><b>To</b> [ITA]: ITA, I am willing to offer you support for Tunis and guarantee your control of Albania in exchange for your support in Greece. This would give you a strong position in the Adriatic and secure your southern flank. Is this acceptable?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Greetings, AUT. Your demands are unrealistic. I will not withdraw from RUM. However, I am willing to negotiate. I propose a non-aggression pact for the next two turns. I will not attack your units in ALB or GRE, and you will not attack my units in SER or RUM. This will give us both time to consolidate our positions. What do you say?</li>
+<li><b>From</b> [RUS]: To AUT, my position remains unchanged. RUM is non-negotiable. I am willing to discuss a potential resolution in the Balkans, but only if you cease your aggressive expansion. What specific territories are you targeting, and what concessions are you willing to offer to maintain peace in the region? I am open to a limited agreement, but only if it benefits my strategic interests. I will not withdraw from RUM.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: TUR, your non-aggression pact is insufficient. I will not allow you to consolidate your gains. I am moving into Greece. Consider this your final warning.</li>
+<li><b>To</b> [RUS]: RUS, your intransigence is noted. I will not offer any further concessions. Prepare for conflict.</li>
+<li><b>To</b> [ITA]: ITA, I am moving into Greece. I will offer you Albania and support for Tunis in exchange for your support in the Adriatic. This is my final offer.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Greetings, AUT. It seems we are at an impasse. I will not withdraw from RUM. Consider this my final offer: I will maintain my current position, and you can do the same. If you attack, I will retaliate. The choice is yours.</li>
+<li><b>From</b> [RUS]: To AUT, my position remains unchanged. RUM is non-negotiable. I will not support your move into SER. Your aggressive expansion in the Balkans is a threat to my interests, and I will resist it. I will move A SEV to RUM, A MOS to STP, F STP/SC to BAL, and A UKR to MOS.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Moved A SER to GRE, A TRI to ALB, supported A TRI with F ADR. These moves were aggressive and aimed at expanding influence in the Balkans.
+Negotiations with TUR failed due to their refusal to withdraw from Rumania. Negotiations with RUS also failed due to their insistence on holding Rumania and their opposition to my expansion in the Balkans. Offered ITA Albania and support for Tunis in exchange for support in the Adriatic. No agreements were reached with any power.</li>
+<li><i>Intent:</i> My intent is to continue my aggressive expansion in the Balkans. I will move into Greece despite TUR's threats. I anticipate conflict with both TUR and RUS. I will attempt to secure ITA's support by offering them Albania and support for Tunis. I will move A ALB to SER, F ADR supports A ALB to SER, A GRE holds.</li>
+<li><i>Relationship Updates:</i> ['AUT-TUR--', 'AUT-RUS--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading4">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse4" aria-expanded="false" aria-controls="negCollapse4">
+        Negotiation Turn 3 (1903 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse4" class="accordion-collapse collapse" aria-labelledby="negHeading4" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: To ITA, I propose a deal: I will support your move into Tunis if you support my move into Serbia. This will benefit both of us by securing our positions in the Mediterranean and the Balkans, respectively. Let me know if you are interested.</li>
+<li><b>To</b> [TUR]: To TUR, your continued presence in Rumania is unacceptable. I demand that you withdraw your forces immediately. If you do not comply, I will be forced to take action to protect my interests in the Balkans. I am willing to negotiate a peaceful resolution, but only if you are willing to compromise.</li>
+<li><b>To</b> [RUS]: To RUS, your aggression in the Balkans is a threat to my security. I propose a return to the status quo ante bellum. Withdraw from Rumania, and I will withdraw from Serbia. This will allow us to avoid further conflict and focus on our own interests. If you refuse, I will be forced to defend myself.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: To Austria, I propose a temporary truce. I will support your move into Serbia if you cede Trieste to me. This will allow both of us to expand our influence without direct conflict. What do you say?</li>
+<li><b>From</b> [TUR]: AUT, I see you are still in TRI and BUD. I am willing to negotiate a peaceful resolution in the Balkans. What are your specific demands for a lasting peace? I am willing to discuss a division of influence, but I will not withdraw from RUM without a significant concession.</li>
+<li><b>From</b> [RUS]: Austria, your continued aggression in the Balkans is unacceptable. I demand that you cease your expansionist policies immediately. I will not tolerate any further encroachment upon territories that I consider within my sphere of influence. Withdraw your forces from Serbia and Greece, or face the consequences. I am prepared to take decisive action to protect my interests.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: To ITA, I will not cede Trieste. However, I am willing to offer you Albania and support for Tunis in exchange for your support in Serbia and Greece. This will give you control of the Adriatic and allow me to secure the Balkans. Is this acceptable?</li>
+<li><b>To</b> [TUR]: To TUR, my demand is simple: withdraw from Rumania. Your presence there is a direct threat to my interests. I am willing to discuss a division of influence in the Balkans, but only if you are willing to compromise. I will not accept your continued occupation of Rumania.</li>
+<li><b>To</b> [RUS]: To RUS, I will not withdraw from Serbia or Greece. Your aggression in the Balkans is unacceptable. I am willing to negotiate a peaceful resolution, but only if you are willing to compromise. Withdraw from Rumania, and we can discuss a lasting peace. Otherwise, I will defend my interests.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: To AUT, I am reconsidering our deal. I will support your move into Serbia if you cede Trieste and Albania to me. This will solidify our positions in the Balkans and allow us to focus on other fronts. Let me know if you are interested.</li>
+<li><b>From</b> [RUS]: Austria, your proposal for a return to the status quo ante bellum is unacceptable. I will not withdraw from Rumania. Your aggression in the Balkans is a direct threat to my interests, and I will not tolerate it. I am prepared to defend my territories and expand my influence in the region. I suggest you reconsider your position and withdraw your forces from Serbia and Greece. Otherwise, prepare for war.</li>
+<li><b>From</b> [TUR]: AUT, I understand your concerns about RUM. However, I have secured it through strategic necessity. I am willing to discuss a division of influence in the Balkans. What specific territories are you interested in? Perhaps we can negotiate a trade or a mutual guarantee of borders to avoid conflict.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: To ITA, your demands are unreasonable. I will not cede Trieste or Albania. I propose a different arrangement: I will support your move into Tunis and offer you influence in Greece, but Serbia remains under my control. This is my final offer.</li>
+<li><b>To</b> [TUR]: To TUR, I am interested in Serbia and Greece. If you withdraw from Rumania and allow me to control Serbia and Greece, I am willing to guarantee your borders in the East and offer you support against RUS aggression. This is a fair offer that benefits both of us.</li>
+<li><b>To</b> [RUS]: To RUS, your threats are meaningless. I will not be intimidated. I am willing to negotiate a peaceful resolution, but only if you are willing to compromise. Withdraw from Rumania, and we can discuss a lasting peace. Otherwise, prepare for war. I will defend my interests in the Balkans.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: To AUT, I am no longer interested in your offer. I will be taking Trieste with the support of my allies. Consider this our final communication. I suggest you focus on defending your territories, as I will be coming for Vienna next.</li>
+<li><b>From</b> [TUR]: AUT, I understand your demand for RUM. However, withdrawing now would leave me vulnerable to RUS. I propose a compromise: I will support your move into SER this turn, and in return, you guarantee my control of BUL and do not attack RUM. This allows you to expand in the Balkans while securing my eastern flank. What do you say?</li>
+<li><b>From</b> [RUS]: Austria, your stubbornness will be your downfall. I will not withdraw from Rumania. I am prepared to defend my interests in the Balkans. Consider this your final warning. I suggest you reconsider your position before it is too late. Prepare for war.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: ITA, your threats are empty. I will defend my territories. Prepare to face the consequences of your aggression. I will not yield to your demands.</li>
+<li><b>To</b> [TUR]: TUR, I reject your compromise. I will not guarantee your control of BUL. I will move into SER this turn. Consider this a declaration of intent. I will not allow you to control the Balkans.</li>
+<li><b>To</b> [RUS]: RUS, I will not withdraw. I will defend my interests in the Balkans. Your threats are meaningless. Prepare for war. I will resist your aggression.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: AUT, I cannot withdraw from RUM. I am moving A SER to GRE and A CON to BUL. I will not support your move into SER. I will defend my territories. Prepare for war.</li>
+<li><b>From</b> [ITA]: To AUT, consider this our final communication. I am taking Trieste with the support of my allies. Prepare for my advance on Vienna.</li>
+<li><b>From</b> [RUS]: Austria, your stubbornness will be your downfall. I will not withdraw from Rumania. I am prepared to defend my interests in the Balkans. Prepare for war. I will move A UKR to SEV supported by A MOS. I suggest you reconsider your position before it is too late.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> In Fall 1902, ALB supported holding. In Winter 1902, ALB, WAR, ANK, and CON bounced in the Balkans. MAR and NAP also bounced.
+I attempted to negotiate with ITA and TUR for control of the Balkans, offering concessions in exchange for their support. ITA demanded Trieste and Albania, which I refused. TUR offered a compromise involving Bulgaria, which I also rejected. RUS remained hostile and unwilling to negotiate. All negotiations failed, and ITA, RUS, and TUR are now openly hostile.</li>
+<li><i>Intent:</i> I intend to move aggressively into the Balkans, despite the opposition. I will move A BUD to SER, A TRI to ALB, and F ADR supports A TRI to ALB. I anticipate war with ITA, RUS, and TUR. I will focus on defending my territories and expanding my influence in the Balkans.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA--', 'AUT-RUS--', 'AUT-TUR--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading5">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse5" aria-expanded="false" aria-controls="negCollapse5">
+        Negotiation Turn 3 (1903 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse5" class="accordion-collapse collapse" aria-labelledby="negHeading5" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, we are at war. Your aggression in the Adriatic is unacceptable. I will not cede Trieste or Albania. Prepare for conflict.</li>
+<li><b>To</b> [TUR]: Turkey, your encroachment into the Balkans and Rumania is a direct threat to my interests. Withdraw your forces or face the consequences. I will not tolerate your expansion in this region.</li>
+<li><b>To</b> [RUS]: Russia, your hostility and refusal to negotiate are noted. Your actions in Rumania and the Black Sea are unacceptable. I will defend my territories and resist your aggression in the Balkans.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your move into Trieste is concerning. I propose we discuss a resolution to the situation in the Balkans. I am willing to negotiate, but I will not be bullied. What are your demands?</li>
+<li><b>From</b> [RUS]: AUT, your continued aggression in the Balkans is unacceptable. I demand you cease your expansionist policies immediately. Any further encroachment into SER or BUL will be met with swift and decisive action. Consider this your final warning.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: TUR, my move into Trieste? I have no units in Trieste. You are mistaken. My demands are simple: withdraw from Rumania and Bulgaria. The Balkans are not yours to control. I will not tolerate your expansionism.</li>
+<li><b>To</b> [RUS]: RUS, your threats are empty. My actions are a response to your aggression. I will not cease my expansionist policies. I will continue to defend my territories and resist your aggression. Consider this my final warning.</li>
+<li><b>To</b> [ITA]: ITA, I will not cede Trieste or Albania. Your aggression in the Adriatic will be met with force. Prepare for war.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I am willing to negotiate a resolution to the situation in the Balkans. However, I will not withdraw from Rumania. I propose we discuss a division of the Balkans. I am willing to offer you Serbia in exchange for Bulgaria. What are your thoughts?</li>
+<li><b>From</b> [RUS]: AUT, your defiance is noted. I will not tolerate your aggression in the Balkans. Consider this a declaration of intent: any further moves into SER or BUL will be met with force. I suggest you reconsider your position and withdraw your forces immediately.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: TUR, Serbia is rightfully mine. I will not accept any division of the Balkans that leaves me without it. Withdraw from Rumania and Bulgaria, and perhaps we can discuss a peaceful resolution. Otherwise, prepare for war.</li>
+<li><b>To</b> [RUS]: RUS, your threats are meaningless. I will not be intimidated. My forces will remain in the Balkans, and I will continue to defend my interests. If you choose to attack, you will face the full might of Austria-Hungary.</li>
+<li><b>To</b> [ITA]: ITA, I will not cede Trieste or Albania. Your aggression in the Adriatic will be met with force. I suggest you reconsider your position and withdraw your forces immediately. War is coming.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your stubbornness will be your downfall. I will not repeat my warnings. Prepare for the consequences of your actions in the Balkans. I am moving to secure my borders.</li>
+<li><b>From</b> [TUR]: Austria, I am aware of your presence in Trieste. Your denial is futile. I am willing to negotiate a resolution to the situation in the Balkans, but I will not be bullied. I propose we discuss a division of the region. I am willing to offer you Serbia in exchange for Bulgaria and Greece. This would give you control of the Western Balkans and allow me to secure the Aegean. What are your thoughts?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: TUR, I am not in Trieste. You are misinformed. I will not cede Serbia. Your offer is insulting. Prepare for war. I will not negotiate with liars.</li>
+<li><b>To</b> [RUS]: RUS, I will not be intimidated. Your threats are meaningless. I will defend my interests in the Balkans. Prepare for war. I will not yield.</li>
+<li><b>To</b> [ITA]: ITA, I will not cede Trieste or Albania. Your aggression will be met with force. War is inevitable. Prepare to face the consequences of your actions.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I am moving A SER to GRE. I will not withdraw from RUM or BUL. Your threats are meaningless. Prepare for war. I will not negotiate with liars.</li>
+<li><b>From</b> [RUS]: AUT, your defiance is noted. Prepare for the consequences. I will secure my borders and resist your aggression in the Balkans. This is your final opportunity to reconsider your position.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Failed to dislodge VIE. Moved units to consolidate position in BUD and TRI.
+Negotiations with TUR and RUS failed. Both powers are hostile and unyielding. ITA remains aggressive. No agreements reached. Accusations of lying from TUR. Threats exchanged with RUS. No change in overall diplomatic situation.</li>
+<li><i>Intent:</i> Prepare for war against ITA, TUR, and RUS. Defend Austrian territories. Focus on containing TUR and RUS in the Balkans. Monitor ITA's movements and prepare for naval conflict in the Adriatic. Order moves to consolidate defenses and prepare for potential attacks from multiple fronts.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA--', 'AUT-RUS--', 'AUT-TUR--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading6">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse6" aria-expanded="false" aria-controls="negCollapse6">
+        Negotiation Turn 4 (1904 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse6" class="accordion-collapse collapse" aria-labelledby="negHeading6" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, we are at odds. Your aggression in the Adriatic is unacceptable. I propose a truce: you cease your advances towards Trieste and I will not interfere with your ambitions in Tunis. This is my final offer.</li>
+<li><b>To</b> [TUR]: Turkey, your expansion into the Balkans is a direct threat to Austria. Withdraw from Rumania and Bulgaria, or face the consequences. I will not tolerate your encroachment on my sphere of influence.</li>
+<li><b>To</b> [RUS]: Russia, your hostility is unwarranted. I offered cooperation, but you chose aggression. Withdraw from Rumania and cease your interference in the Balkans, or I will be forced to defend my interests. Consider this a final warning.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, I see your continued aggression in the Balkans. I will not stand idly by if you threaten my interests. Consider this a warning. I will be moving A SEV to UKR and A MOS to SEV.</li>
+<li><b>From</b> [TUR]: Austria, I see your forces massing in the Balkans. I suggest we discuss a peaceful resolution to our differences before further escalation. My moves are intended to secure my borders, not to threaten you. What are your demands?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, your continued aggression will only lead to your demise. I will not yield Trieste. If you wish to bleed yourself dry on my borders, so be it. I will, however, offer you a chance to prove your good faith. Support my move into Serbia, and I will reconsider my position on Albania. This is your last chance for a peaceful resolution.</li>
+<li><b>To</b> [TUR]: Turkey, your claims of securing your borders are laughable. Your expansion into Rumania is a clear act of aggression. I demand you withdraw your forces immediately. If you refuse, I will be forced to take action to protect my interests. I will offer you a compromise: you cede control of Bulgaria to me, and I will recognize your control of Rumania. This is my final offer.</li>
+<li><b>To</b> [RUS]: Russia, your threats are meaningless. I will not be intimidated by your posturing. If you wish to escalate this conflict, I will be ready. I will offer you a chance to de-escalate: you withdraw from Rumania, and I will not interfere with your ambitions in Turkey. This is your last chance for a peaceful resolution. I will be moving A VIE to BOH.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your threats are noted. I will not withdraw from Rumania. My moves are necessary to secure my borders. I suggest you focus on your own interests and cease your aggression in the Balkans. I will not tolerate any interference in my sphere of influence.</li>
+<li><b>From</b> [ITA]: AUT, your truce offer is rejected. Your aggression in the Adriatic is a figment of your imagination. I am simply securing my borders. My ambitions extend far beyond Tunis. Prepare for the inevitable. There will be no peace.</li>
+<li><b>From</b> [TUR]: Austria, your threats are noted. My moves are defensive, securing my borders against potential threats. I am willing to negotiate a peaceful resolution, but I will not be bullied. What specific concessions are you willing to offer in exchange for my withdrawal from RUM and BUL? I propose a division of the Balkans: you get SER, I get BUL and GRE. Is this acceptable?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, your rejection of my truce is noted. I will not offer further concessions. Prepare for war. I will move A VIE to BOH, A TYR to MUN, and F ADR to ION.</li>
+<li><b>To</b> [TUR]: Turkey, your proposal is insulting. I will not cede Bulgaria to you. I demand your unconditional withdrawal from Rumania. I will move A VIE to BOH, A TYR to MUN, and F ADR to ION.</li>
+<li><b>To</b> [RUS]: Russia, your threats are empty. I will not be deterred. I will move A VIE to BOH, A TYR to MUN, and F ADR to ION. Prepare to face the consequences of your aggression.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: AUT, your offer is rejected. I will not support your move into Serbia. Trieste will be mine. Prepare for war.</li>
+<li><b>From</b> [RUS]: AUT, your threats are meaningless. I will not withdraw from Rumania. Your offer is rejected. I will continue to secure my interests in the Balkans. Do not interfere with my moves, or you will face the consequences. I am moving A SEV to UKR and A MOS to SEV.</li>
+<li><b>From</b> [TUR]: Austria, your offer is unacceptable. I will not cede control of Bulgaria to you. My expansion into Rumania is not an act of aggression, but a necessary measure to protect my interests in the Black Sea. I propose a counter-compromise: I will recognize your control of Serbia if you recognize my control of Bulgaria, Greece, and Rumania. This is my final offer. If you refuse, I will prepare for war.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, your arrogance will be your downfall. I will not yield Trieste. Prepare to face the might of Austria. I am moving A VIE to BOH, A TYR to MUN, and F ADR to ION. Consider this your final warning.</li>
+<li><b>To</b> [TUR]: Turkey, your demands are absurd. I will not cede Bulgaria, Greece, or Rumania to you. I demand your unconditional withdrawal from Rumania. I am moving A VIE to BOH, A TYR to MUN, and F ADR to ION. Prepare for war.</li>
+<li><b>To</b> [RUS]: Russia, your threats are meaningless. I will not be intimidated. I am moving A VIE to BOH, A TYR to MUN, and F ADR to ION. Face the consequences of your aggression.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: AUT, your offer is rejected. I will not support your move into Serbia. Trieste will be mine. Prepare for war.</li>
+<li><b>From</b> [RUS]: AUT, your threats are meaningless. I will not be deterred. I am moving A SEV to UKR and A MOS to SEV. Do not interfere with my moves, or you will face the consequences. I will continue to secure my interests in the Balkans, regardless of your actions.</li>
+<li><b>From</b> [TUR]: Austria, your demands are unreasonable. I will not withdraw from Rumania. I will prepare for war. I am moving A GRE to ALB. I suggest you reconsider your position before it is too late. I will defend my territories and interests in the Balkans and the Black Sea.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> In Fall 1903, I moved A TRI to TYR and F ADR to VEN, holding VIE. In Winter, I had no builds or disbandments.
+Negotiations this round were hostile. I attempted to deter ITA, RUS, and TUR from Balkan aggression, but all three powers rejected my demands and offers. ITA is fixated on Trieste. TUR refuses to cede Bulgaria or withdraw from Rumania. RUS is determined to secure its Balkan interests. No agreements were reached, and war seems inevitable with all three powers.</li>
+<li><i>Intent:</i> My intent is to prepare for war against ITA, RUS, and TUR. I will move A VIE to BOH, A TYR to MUN, and F ADR to ION to position myself for conflict. I anticipate ITA will attack Trieste, and I need to be ready to defend. I will also probe for weaknesses in RUS and TUR's positions.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA--', 'AUT-RUS--', 'AUT-TUR--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading7">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse7" aria-expanded="false" aria-controls="negCollapse7">
+        Negotiation Turn 4 (1904 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse7" class="accordion-collapse collapse" aria-labelledby="negHeading7" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, we are at war. Your aggression in the Adriatic and your demands for Trieste are unacceptable. Prepare to face the consequences of your actions. I will defend my territories.</li>
+<li><b>To</b> [TUR]: Turkey, your encroachment into the Balkans and your refusal to negotiate are acts of war. I will not allow you to dominate the region. Expect resistance.</li>
+<li><b>To</b> [RUS]: Russia, your hostility and expansionist ambitions in the Balkans are a direct threat to Austria-Hungary. I will defend my interests and challenge your aggression. Consider this a declaration of war.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I see your forces massing. I propose we meet to discuss a peaceful resolution to our differences. I am willing to discuss a compromise regarding the Balkans, but I will not be intimidated by threats of war. What are your terms for peace?</li>
+<li><b>From</b> [RUS]: AUT, your continued aggression in the Balkans is noted. I suggest you reconsider your expansionist policies, or face the consequences. I will not tolerate any further encroachment upon my sphere of influence.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, your offer of a peaceful resolution is noted, but your actions speak louder than words. Withdraw your forces from Rumania and Bulgaria, and cease your interference in the Balkans. Only then will I consider a compromise. Until then, I will continue to defend my interests.</li>
+<li><b>To</b> [RUS]: Russia, your threats are empty. I will not be intimidated by your posturing. The Balkans are not your exclusive domain, and I will continue to assert my influence in the region. Prepare for a long and costly conflict.</li>
+<li><b>To</b> [ITA]: Italy, your aggression will be met with force. Trieste is Austrian, and I will defend it. Your ambitions in the Adriatic will be crushed. Prepare for a naval war.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your declaration of war is noted. I will meet your aggression with equal force. Do not expect any mercy. I suggest you reconsider your position before it is too late. The Balkans will be a graveyard for your ambitions.</li>
+<li><b>From</b> [TUR]: Austria, I am willing to discuss a compromise regarding the Balkans, but I will not be intimidated by threats of war. I propose we meet to discuss a peaceful resolution to our differences. What are your specific terms for peace? I am willing to offer concessions, but I will not withdraw from the Balkans entirely.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, your willingness to discuss a compromise is a welcome change. My terms are simple: withdraw your forces from Rumania and Bulgaria, and respect the sovereignty of Serbia and Greece. In return, I will consider a non-aggression pact and a division of influence in the Balkans that is mutually beneficial. What specific concessions are you willing to offer?</li>
+<li><b>To</b> [RUS]: Russia, your threats are meaningless. I will not back down. If you seek a graveyard for ambitions, you will find it in the Balkans, where your forces will be crushed. Withdraw from Rumania and the Black Sea, or face the consequences.</li>
+<li><b>To</b> [ITA]: Italy, your aggression will be met with force. Trieste is Austrian, and I will defend it. Your ambitions in the Adriatic will be crushed. Prepare for a naval war. I will not yield.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your threats are meaningless. I will meet your aggression with equal force. Do not expect any mercy. I suggest you reconsider your position before it is too late. The Balkans will be a graveyard for your ambitions. I will move to take what is rightfully mine.</li>
+<li><b>From</b> [TUR]: Austria, I am willing to discuss a compromise regarding the Balkans, but I will not withdraw from Rumania and Bulgaria. I propose we meet to discuss a peaceful resolution to our differences. What are your specific terms for peace? I am willing to offer concessions, but I will not withdraw entirely. I suggest you cede TRI to Italy to focus on the East.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, your refusal to withdraw from Rumania and Bulgaria makes a compromise impossible. I will not cede Trieste to Italy. Prepare for war. I will defend my interests in the Balkans.</li>
+<li><b>To</b> [RUS]: Russia, your threats are meaningless. I will meet your aggression with equal force. The Balkans will be your graveyard. I will not yield.</li>
+<li><b>To</b> [ITA]: Italy, your aggression will be met with force. Trieste is Austrian, and I will defend it. Your ambitions in the Adriatic will be crushed. Prepare for a naval war. I will not yield.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I have moved A GRE to ALB, and I will not withdraw from Rumania and Bulgaria. I propose we meet to discuss a peaceful resolution to our differences. What are your specific terms for peace? I am willing to offer concessions, but I will not withdraw entirely. I suggest you cede TRI to Italy to focus on the East.</li>
+<li><b>From</b> [RUS]: AUT, your threats are meaningless. I will not back down. The Balkans will be a graveyard for your ambitions. I will move to take what is rightfully mine. Prepare for a long and costly conflict.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> In S1904, I moved A VIE to BUD, A TYR to VIE, and F ADR to TRI. These moves were defensive, anticipating aggression from Italy, Russia, and Turkey. I aimed to consolidate my forces and protect my core territories.
+Negotiations this turn were largely unsuccessful. I engaged in hostile exchanges with Italy, Russia, and Turkey, all of whom I perceive as threats. Turkey offered a compromise but refused to withdraw from Rumania and Bulgaria. Russia remained aggressive and threatening. Italy's aggression in the Adriatic remains a primary concern. No agreements were reached, and the situation remains tense.</li>
+<li><i>Intent:</i> My intent is to defend Austria-Hungary against the encroaching powers of Italy, Russia, and Turkey. I will focus on consolidating my forces and preparing for war. I will continue to probe for weaknesses in my enemies' positions and exploit any opportunities that arise. I intend to move A BUD to SER, A VIE to RUM, and F TRI to ADR. These moves are designed to defend against Turkish and Russian aggression while maintaining a presence in the Adriatic.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA--', 'AUT-RUS--', 'AUT-TUR--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading8">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse8" aria-expanded="false" aria-controls="negCollapse8">
+        Negotiation Turn 5 (1905 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse8" class="accordion-collapse collapse" aria-labelledby="negHeading8" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, your continued aggression in the Adriatic is unacceptable. I propose a truce: you cease your hostile actions towards Trieste, and I will consider ceding Albania to you. This is my final offer. Refusal will be met with force.</li>
+<li><b>To</b> [TUR]: Turkey, your expansion into Rumania is a direct threat to my interests. Withdraw your forces immediately, or face the consequences. I am prepared to defend my sphere of influence in the Balkans, and I will not hesitate to use force if necessary.</li>
+<li><b>To</b> [RUS]: Russia, your hostility is unwarranted. I propose a return to our previous agreement: you withdraw from Rumania, and I will cease my actions in Serbia. This is a chance to de-escalate the situation and avoid further conflict. Consider it carefully.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your hostility is noted. I am open to reasonable compromises in the Balkans, but I will not be bullied. What specific concessions are you willing to offer in exchange for my withdrawal from contested territories?</li>
+<li><b>From</b> [RUS]: AUT, your aggression in the Balkans is noted. I suggest you reconsider your expansionist policies. I will not tolerate any further encroachment upon my sphere of influence. Consider this a final warning.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, I am willing to offer you Bulgaria in exchange for your withdrawal from Rumania and Serbia. This is a fair compromise that respects both our spheres of influence. I await your response.</li>
+<li><b>To</b> [RUS]: Russia, I propose a return to the status quo ante bellum. You withdraw from Rumania, and I will withdraw from Serbia. We can then discuss a more comprehensive agreement regarding the Balkans. This is a chance to avoid further bloodshed.</li>
+<li><b>To</b> [ITA]: Italy, my offer stands: Albania for a cessation of hostilities in the Adriatic. However, I will also require your guarantee of non-aggression towards Trieste. If you agree to these terms, we can begin negotiations. If not, prepare for war.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your offer is rejected. I will not withdraw from RUM. Your aggression in the Balkans will be met with force. Consider this your final opportunity to avoid conflict. I suggest you move A BUD to GAL and A VIE to TYR.</li>
+<li><b>From</b> [TUR]: Austria, your threats are noted. I am willing to discuss a compromise, but your demands are unreasonable. What specific territories are you willing to cede in exchange for my withdrawal from Rumania? I propose a division of the Balkans: you get Serbia, I get Bulgaria and Greece. Is this acceptable?</li>
+<li><b>From</b> [ITA]: To AUT, your offer is rejected. I will not cease my actions towards Trieste. I am moving A VEN to TRI. Prepare for war.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, your counter-proposal is unacceptable. I will not cede Serbia. My final offer is Bulgaria in exchange for your withdrawal from Rumania. If you refuse, I will consider our negotiations terminated and act accordingly.</li>
+<li><b>To</b> [RUS]: Russia, your rejection is noted. I will not withdraw from Serbia. Prepare for conflict. I suggest you reconsider your position before it is too late. I will not tolerate your aggression in the Balkans.</li>
+<li><b>To</b> [ITA]: Italy, your declaration of war is received. I will defend Trieste with all my might. Your aggression will be met with fierce resistance. Consider this your final warning. I am moving A BUD to GAL and A VIE to TYR.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: To AUT, your offer is rejected. Trieste will be mine. Prepare for the inevitable.</li>
+<li><b>From</b> [TUR]: Austria, your offer of Bulgaria in exchange for Rumania and Serbia is unacceptable. I will not withdraw from Rumania or Serbia. I propose a different compromise: you cede Trieste to Italy, and I will consider withdrawing from Serbia. Otherwise, prepare for war.</li>
+<li><b>From</b> [RUS]: AUT, your offer is rejected once again. I will not withdraw from RUM. Your continued aggression in the Balkans will be met with force. I suggest you prepare for the consequences of your actions. I will move A MOS to SEV and A UKR to RUM.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, your demands are unreasonable. I will not cede Trieste. Consider our negotiations terminated. Prepare for war.</li>
+<li><b>To</b> [RUS]: Russia, your aggression is noted. I will defend my territories. Prepare for conflict.</li>
+<li><b>To</b> [ITA]: Italy, your aggression is noted. I will defend Trieste. Prepare for war.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: To AUT, Trieste will be mine. Prepare for the inevitable.</li>
+<li><b>From</b> [TUR]: Austria, your offer is rejected. I will not cede Rumania or Serbia. Prepare for war. I will defend my territories and continue to expand my influence in the Balkans. I suggest you reconsider your position and seek a more reasonable compromise, or face the consequences of your aggression.</li>
+<li><b>From</b> [RUS]: AUT, your threats are meaningless. Prepare for the consequences of your aggression. I will move A MOS to SEV, A UKR to RUM, and F PRU to BAL. Your attempts to bribe TUR will fail. You will be crushed.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> In Fall 1904, I moved A BUD to SER, A VIE to BUD, and F TRI to ADR. In Winter, I had no builds or disbandments.
+I attempted to negotiate with ITA, RUS, and TUR to secure my position in the Balkans. ITA rejected my offer and declared war, aiming for Trieste. RUS rejected my offers and threatened force, intending to hold Rumania. TUR also rejected my offers, seeking further concessions. All negotiations failed, and war is imminent with ITA, RUS, and TUR.</li>
+<li><i>Intent:</i> Given the failure of negotiations and the threats from ITA, RUS, and TUR, my immediate priority is to defend my core territories and prepare for a multi-front war. I will focus on consolidating my forces and securing key strategic locations. I will attempt to delay action in the Balkans to focus on Italy. I will move A VIE to TRI, A BUD to SER, and F ADR to ALB.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA--', 'AUT-RUS--', 'AUT-TUR--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading9">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse9" aria-expanded="false" aria-controls="negCollapse9">
+        Negotiation Turn 5 (1905 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse9" class="accordion-collapse collapse" aria-labelledby="negHeading9" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, your aggression is noted. Trieste is Austrian. Cease your hostile actions or face the consequences. I will defend my territory.</li>
+<li><b>To</b> [RUS]: Russia, your expansionist ambitions in the Balkans are unacceptable. Withdraw from Rumania and cease your interference in the region. Your actions will be met with resistance.</li>
+<li><b>To</b> [TUR]: Turkey, your encroachment into the Balkans is a direct threat to Austria-Hungary. Withdraw your forces and respect our sphere of influence. Further aggression will be met with force.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I see you are still unwilling to negotiate. I will defend my territories. I suggest you reconsider your position. I am open to reasonable offers.</li>
+<li><b>From</b> [ITA]: To AUT, I propose a temporary truce to allow both our nations to recover. I am willing to discuss a peaceful resolution to our conflict, perhaps involving a division of influence in the Balkans. Let me know if you are open to negotiations.</li>
+<li><b>From</b> [RUS]: AUT, I am moving A UKR to RUM. I suggest you cease your aggression in the Balkans, or face the consequences. I will not tolerate your expansionist ambitions in the region.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, a temporary truce is acceptable for discussion, but Trieste is non-negotiable. What division of influence do you propose, specifically? Be detailed.</li>
+<li><b>To</b> [RUS]: Russia, your move into Rumania is a direct provocation. I will not cease my actions in the Balkans while you threaten my borders. Withdraw from Rumania, and we can discuss a peaceful resolution.</li>
+<li><b>To</b> [TUR]: Turkey, I am open to reasonable offers, but your continued presence in Rumania is unacceptable. What specific concessions are you willing to make to ensure peace in the Balkans?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your threats are meaningless. I will not withdraw from RUM. I suggest you focus on your own survival, as your position is becoming increasingly precarious. I will move A UKR to RUM, and you will be unable to stop me.</li>
+<li><b>From</b> [ITA]: To AUT, your threats are noted, but they are unlikely to deter me. I am open to a peaceful resolution, but only if it involves a fair division of influence. Trieste is strategically vital to Italy, and I will not relinquish my claim. Perhaps we can discuss a trade involving Albania, but my priority remains Trieste.</li>
+<li><b>From</b> [TUR]: Austria, your threats are noted. My moves are necessary for the security of my nation. I am willing to discuss a reasonable compromise, but your current demands are unacceptable. I suggest you focus on your other enemies and leave the Balkans to me.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, Albania is of no strategic value to me. Trieste is Austrian. If you want a truce, you must acknowledge this. What specific concessions are you willing to offer in exchange for peace?</li>
+<li><b>To</b> [RUS]: Russia, your threats are meaningless. Your move into Rumania is a strategic blunder. I will not be deterred. Withdraw from Rumania, and perhaps we can discuss a peaceful resolution. Otherwise, prepare for war.</li>
+<li><b>To</b> [TUR]: Turkey, your presence in the Balkans is a threat to my interests. I am willing to discuss a reasonable compromise, but your current demands are unacceptable. What specific concessions are you willing to make to ensure peace in the region?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your threats are meaningless. I will move A UKR to RUM, and you will be unable to stop me. Your position is becoming increasingly precarious. I suggest you focus on your own survival. I will not withdraw from RUM. Prepare for the consequences of your aggression.</li>
+<li><b>From</b> [ITA]: To AUT, Trieste is strategically vital to Italy. I am open to a peaceful resolution, but only if it involves a fair division of influence. I propose a trade: Albania for Trieste. This would allow both our nations to focus on other areas of expansion. What do you say?</li>
+<li><b>From</b> [TUR]: Austria, I am willing to offer you Serbia in exchange for Rumania. This is my final offer. If you refuse, I will continue my expansion in the Balkans. Consider this carefully.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, your offer is insulting. Trieste is not for sale. I will not trade it for Albania or any other territory. Your aggression will be met with force. Prepare for war.</li>
+<li><b>To</b> [RUS]: Russia, your threats are meaningless. Your move into Rumania is a strategic blunder. I will not be deterred. Prepare for war.</li>
+<li><b>To</b> [TUR]: Turkey, your offer is unacceptable. I will not cede Rumania to you. Your presence in the Balkans is a threat to my interests. Prepare for war.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: To AUT, Trieste is strategically vital to Italy. I am open to a peaceful resolution, but only if it involves a fair division of influence. I propose a trade: Albania for Trieste. This would allow both our nations to focus on other areas of expansion. What do you say? This is my final offer.</li>
+<li><b>From</b> [RUS]: AUT, your threats are meaningless. I will move A UKR to RUM. Prepare for the consequences of your aggression. Your position is becoming increasingly precarious. I suggest you focus on your own survival. I will not withdraw from RUM.</li>
+<li><b>From</b> [TUR]: Austria, my offer of Serbia for Rumania stands. This is your final chance for a peaceful resolution. If you refuse, I will take what I want. The choice is yours.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Austria moved to secure the Balkans, supporting Serbia and moving into Albania and Trieste. This was met with hostility from Italy, Russia, and Turkey, who also made aggressive moves in the region.
+Negotiations with Italy, Russia, and Turkey have failed. Italy insists on Trieste, offering Albania in return, which is unacceptable. Russia is moving into Rumania and refuses to withdraw. Turkey demands Rumania and offers Serbia, which is also unacceptable. All three powers are hostile and preparing for war.</li>
+<li><i>Intent:</i> Prepare for war against Italy, Russia, and Turkey. Defend Austrian territories and resist their aggression. No promises were made or broken, as no agreements were reached. I will order the following moves:
+
+A VIE S A BUD - SER
+A BUD - SER
+F ADR - ALB</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA--', 'AUT-RUS--', 'AUT-TUR--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading10">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse10" aria-expanded="false" aria-controls="negCollapse10">
+        Negotiation Turn 6 (1906 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse10" class="accordion-collapse collapse" aria-labelledby="negHeading10" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, we are at war. I will defend my territories. Trieste is mine. Cease your aggression, and perhaps we can find a path to peace. Otherwise, prepare for a long and costly conflict.</li>
+<li><b>To</b> [RUS]: Russia, your aggression in Rumania is unacceptable. Withdraw your forces and respect the balance of power in the Balkans. Continued hostility will only lead to further conflict. I am prepared to defend my interests.</li>
+<li><b>To</b> [TUR]: Turkey, your expansionist ambitions threaten the stability of the region. Withdraw from Bulgaria and cease your encroachment into the Balkans. I will not tolerate your aggression. I am prepared to defend my territories.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I must reiterate that I will not withdraw from the Balkans. Your continued hostility is regrettable, but I will defend my territories. I propose we find a way to de-escalate this situation, but I will not be bullied. What are your intentions this turn?</li>
+<li><b>From</b> [RUS]: AUT, your continued threats are tiresome. Withdraw from the Balkans, or face the consequences. I will not tolerate your interference in my sphere of influence. Consider this your final warning.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, your refusal to withdraw from the Balkans is noted. My intention this turn is to defend my territories. I will not be bullied either. I propose we find a way to de-escalate, starting with your withdrawal from Rumania. What are your specific moves this turn?</li>
+<li><b>To</b> [RUS]: Russia, your threats are equally tiresome. My presence in the Balkans is to protect my interests, not to interfere in your sphere of influence. I will not withdraw. What are your specific moves this turn? Perhaps we can find a compromise that respects both our interests.</li>
+<li><b>To</b> [ITA]: Italy, the war has begun. I will defend Trieste. I propose a ceasefire and negotiations. I am willing to discuss Albania, but Trieste is non-negotiable. What are your terms for peace?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I must reiterate that I will not withdraw from the Balkans. Your continued hostility is regrettable, but I will defend my territories. I propose we find a way to de-escalate this situation, but I will not be bullied. I will move A ALB to TRI, A SER to hold, A ANK to CON, A ARM to hold, A SEV to hold, F SMY to AEG, and A BUL to RUM. I suggest you reconsider your position.</li>
+<li><b>From</b> [RUS]: AUT, your threats are meaningless. I will not withdraw from RUM. I will continue to expand my influence in the Balkans. Your aggression will be met with force. Prepare for war.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, your moves are aggressive and unacceptable. Moving A ALB to TRI is a direct act of war. I will not allow it. I will defend Trieste. I propose you move A ALB to ADR instead. This would de-escalate the situation. What do you say?</li>
+<li><b>To</b> [RUS]: Russia, your continued aggression in Rumania is a grave mistake. I will not stand idly by while you expand your influence in the Balkans. I propose a compromise: you withdraw from Rumania, and I will not interfere with your access to the Black Sea. What are your thoughts?</li>
+<li><b>To</b> [ITA]: Italy, I am willing to discuss Albania in exchange for peace. However, your aggression must cease immediately. Withdraw your forces from the Adriatic, and we can begin negotiations. I am prepared to defend Trieste at all costs. What is your response?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, there is no compromise. Your presence in the Balkans is an affront to my interests. I will not withdraw from RUM. I will continue to expand my influence in the Balkans. Your aggression will be met with force. Prepare for war. My moves are A UKR to RUM, A MOS to SEV, and F PRU to BAL. I suggest you brace yourself.</li>
+<li><b>From</b> [TUR]: Austria, I must reiterate that I will not withdraw from the Balkans. Your continued hostility is regrettable, but I will defend my territories. I propose we find a way to de-escalate this situation, but I will not be bullied. I will move A ALB to TRI, A SER to hold, A ANK to CON, A ARM to hold, A SEV to hold, F SMY to AEG, and A BUL to SER. I suggest you reconsider your position and focus on defending your own territories.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, your moves are foolish. You will not take Trieste. I will defend it. Your aggression will be met with force. I will move A VIE to TRI, A BUD to SER, and F ADR to ALB. Prepare for war.</li>
+<li><b>To</b> [RUS]: Russia, your aggression in Rumania is a grave mistake. You will not succeed. I will defend my interests in the Balkans. I will move A VIE to TRI, A BUD to SER, and F ADR to ALB. Prepare for war.</li>
+<li><b>To</b> [ITA]: Italy, you have chosen war. I will defend Trieste. You will not succeed. I will move A VIE to TRI, A BUD to SER, and F ADR to ALB. Prepare for war.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, there is no compromise. Your presence in the Balkans is an affront to my interests. I will not withdraw from RUM. I will continue to expand my influence in the Balkans. Your aggression will be met with force. Prepare for war. My moves are A UKR to RUM, A MOS to SEV, and F PRU to BAL. I suggest you brace yourself.</li>
+<li><b>From</b> [TUR]: Austria, I must reiterate that I will not withdraw from the Balkans. Your continued hostility is regrettable, but I will defend my territories. I propose we find a way to de-escalate this situation, but I will not be bullied. I will move A ALB to SER, A SER to hold, A ANK to CON, A ARM to hold, F SMY to AEG. I suggest you reconsider your position and focus on defending your own territories.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Last turn was Fall 1905. No moves were made by AUT. TUR moved A SEV R ARM. ENG, FRA, RUS, and TUR made adjustments in Winter 1905.
+Negotiations this turn focused on the Balkans. I attempted to deter TUR and RUS from aggressive moves in the region, particularly in Rumania and Trieste. Both powers refused to back down and declared their intention to continue their expansion. ITA also declared war. No agreements were reached, and the situation has escalated to open conflict with ITA, TUR, and RUS.</li>
+<li><i>Intent:</i> My intent is to defend Austrian territories and resist Turkish and Russian expansion in the Balkans. I will move A VIE to TRI, A BUD to SER, and F ADR to ALB to defend against the expected Turkish attack on Trieste and to contest Serbia. I anticipate a difficult fight and will look for opportunities to exploit weaknesses in the RUS-TUR alliance.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA--', 'AUT-RUS--', 'AUT-TUR--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading11">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse11" aria-expanded="false" aria-controls="negCollapse11">
+        Negotiation Turn 6 (1906 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse11" class="accordion-collapse collapse" aria-labelledby="negHeading11" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, our conflict is wasteful. I propose a truce. You may have Trieste, but in return, you must cease all aggression against Austria-Hungary and support my efforts to contain Russia and Turkey in the Balkans. This is a one-time offer.</li>
+<li><b>To</b> [TUR]: Turkey, your expansion into Rumania is unacceptable. Withdraw your forces and cease your aggression in the Balkans, or face the full might of Austria-Hungary. I am willing to negotiate a peaceful resolution, but only if you respect my sphere of influence.</li>
+<li><b>To</b> [RUS]: Russia, your aggression in Rumania is a direct threat to Austria-Hungary. Withdraw your forces and cease your expansion in the Balkans, or face the consequences. I am willing to negotiate a peaceful resolution, but only if you respect my sphere of influence.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: You have been warned. Your aggression in the Balkans will be met with force. Withdraw your forces or face the consequences.</li>
+<li><b>From</b> [TUR]: Austria, I am moving A ALB to SER and A BUL to RUM. These moves are intended to stabilize the region and are not directed at you. I propose we discuss a long-term solution for the Balkans to avoid further conflict. What are your thoughts?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, I reiterate my offer: Trieste for peace and cooperation against Russia and Turkey. This is your last chance. Refuse, and we are at war.</li>
+<li><b>To</b> [TUR]: Turkey, your moves into Rumania and Serbia are unacceptable. I demand you withdraw immediately. Your proposal for a long-term solution is meaningless while you occupy territories that are rightfully mine. Withdraw, and then we can talk.</li>
+<li><b>To</b> [RUS]: Russia, your threats are noted. However, I will not be intimidated. Withdraw from Rumania, or face the consequences. I am prepared to defend my interests in the Balkans, even if it means war.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, your offer is tempting, but I cannot accept it. I will take Trieste by force. Prepare for my attack. I will not cease my aggression. I will not support your efforts in the Balkans.</li>
+<li><b>From</b> [RUS]: Your threats are meaningless. I will not withdraw from RUM. Prepare for war. I am moving A UKR to RUM, A MOS to SEV, and F BAL to SWE. Your aggression in the Balkans will be met with force.</li>
+<li><b>From</b> [TUR]: Austria, I am moving A ALB to TRI to threaten you. I am moving A BUL to RUM to secure the Black Sea. I am moving F AEG to ION to pressure you in the Adriatic. I am willing to negotiate a peaceful resolution, but only if you respect my sphere of influence in the Balkans. What are your thoughts?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, your aggression is foolish. You will gain nothing from attacking Trieste. I propose a final offer: Trieste for Albania. This is your last chance to avoid a costly war. Consider the strategic implications. A war with Austria benefits only Russia and Turkey.</li>
+<li><b>To</b> [TUR]: Turkey, your moves are provocative and unacceptable. I will not tolerate your encroachment into the Balkans. Withdraw from Rumania and Serbia immediately, or face the consequences. I am prepared to defend my interests, even if it means war. Your long-term solution is a joke while your armies occupy my lands.</li>
+<li><b>To</b> [RUS]: Russia, your threats are meaningless. I will not be intimidated. Withdraw from Rumania, or face the consequences. I am prepared to defend my interests in the Balkans, even if it means war. Your aggression will not go unanswered. I will fight you to the last man.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Your threats are meaningless. I will not withdraw from RUM. Prepare for war. I am moving A UKR to RUM, A MOS to SEV, and F BAL to SWE. Your aggression in the Balkans will be met with force. I will crush you.</li>
+<li><b>From</b> [TUR]: Austria, I am moving A ALB to TRI to threaten you. I am moving A BUL to SER to stabilize the Balkans. I am moving F AEG to ION to pressure you in the Adriatic. I am willing to negotiate a peaceful resolution, but only if you respect my sphere of influence in the Balkans. What are your thoughts on a division of the Balkans?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, this is your final warning. I will not cede Trieste. Your aggression will be met with force. Prepare for war.</li>
+<li><b>To</b> [TUR]: Turkey, your moves are unacceptable. I will not tolerate your encroachment into the Balkans. Withdraw from Rumania and Serbia immediately, or face the consequences. I am prepared to defend my interests, even if it means war. There will be no division of the Balkans.</li>
+<li><b>To</b> [RUS]: Russia, your threats are meaningless. I will not be intimidated. Withdraw from Rumania, or face the consequences. I am prepared to defend my interests in the Balkans, even if it means war. Your aggression will not go unanswered. I will fight you to the last man.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Your threats are meaningless. I will not withdraw from RUM. Prepare for war. I am moving A UKR to RUM, A MOS to SEV, and F BAL to SWE. Your aggression in the Balkans will be met with force. I will crush you.</li>
+<li><b>From</b> [TUR]: Austria, I am moving A ALB to TRI to threaten you. I am moving A BUL to SER to stabilize the Balkans. I am moving F AEG to ION to pressure you in the Adriatic. I am willing to negotiate a peaceful resolution, but only if you respect my sphere of influence in the Balkans. I await your response.</li>
+<li><b>From</b> [ITA]: Austria, your offers are rejected. I am moving A ROM to TUS and F TUN to ADR. Prepare for my attack on Trieste. There will be no peace. I will take what is rightfully mine.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> In S1906, I moved A VIE to TRI, A BUD to SER, and F ADR to ALB. These moves were intended to secure my borders and exert influence in the Balkans. However, they have been met with hostility from Italy, Russia, and Turkey, who are all encroaching on my sphere of influence.
+I attempted to negotiate with Italy, Russia, and Turkey to de-escalate tensions in the Balkans. I offered Italy Trieste in exchange for peace and cooperation against Russia and Turkey, but Italy rejected my offer and declared war. I demanded that Russia and Turkey withdraw from Rumania and Serbia, but they refused and continued their aggression. All negotiations failed, and war is imminent with ITA, RUS, and TUR.</li>
+<li><i>Intent:</i> My intent is to defend Austria-Hungary from the aggression of Italy, Russia, and Turkey. I will move my forces to protect my borders and counter their advances. I will also seek alliances with other powers to contain Russia and Turkey in the Balkans. I will attempt to hold TRI against ITA. I will attempt to dislodge RUS from RUM. I will attempt to contain TUR in SER and ALB. I will consider an alliance with GER or FRA if they are willing to support my efforts.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA--', 'AUT-RUS--', 'AUT-TUR--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading12">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse12" aria-expanded="false" aria-controls="negCollapse12">
+        Negotiation Turn 7 (1907 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse12" class="accordion-collapse collapse" aria-labelledby="negHeading12" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, your aggression is noted. Trieste is Austrian. Withdraw your forces or face the consequences. I am open to discussing a peaceful resolution if you are willing to cede your claims.</li>
+<li><b>To</b> [RUS]: Russia, your expansion into Rumania is unacceptable. Withdraw your forces immediately. I will not tolerate your encroachment on the Balkans. I am willing to negotiate a settlement, but only if you respect Austrian interests.</li>
+<li><b>To</b> [TUR]: Turkey, your presence in Serbia and Albania is a direct threat to Austria-Hungary. Withdraw your forces and cease your aggression. I am prepared to defend my territories and interests. I am open to discussing a peaceful resolution, but only if you are willing to negotiate in good faith.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I am moving A ALB to TRI. This is merely a defensive maneuver. I propose we discuss a peaceful resolution to our differences in the Balkans. What are your terms for peace?</li>
+<li><b>From</b> [RUS]: AUT, withdraw from the Balkans. Your aggression is unacceptable. I will not tolerate your interference in RUM. Consider this your final warning.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, your move on Trieste is an act of war. I will not accept your 'defensive maneuver'. My terms for peace are simple: withdraw from Serbia and Albania, and cease your aggression in the Balkans. Only then can we discuss a lasting resolution.</li>
+<li><b>To</b> [RUS]: Russia, your threats are meaningless. I will not withdraw from the Balkans. Your presence in Rumania is a violation of Austrian interests. I am willing to negotiate, but only if you respect my sovereignty and cease your expansionist policies.</li>
+<li><b>To</b> [ITA]: Italy, your aggression is noted. Trieste is Austrian, and I will defend it. If you wish to avoid further bloodshed, withdraw your forces and renounce your claim. I will not be bullied.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, my move to Trieste is a response to your aggressive posture in the Balkans. I am willing to negotiate, but only if you acknowledge my legitimate interests in the region. What specific concessions are you willing to offer to ensure peace?</li>
+<li><b>From</b> [RUS]: AUT, there will be no negotiations. Withdraw from the Balkans or face the consequences. Your threats are meaningless. I will continue my expansion into RUM.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, your presence in Trieste is unacceptable. I will not negotiate while your forces occupy Austrian territory. Withdraw immediately, and we can discuss a peaceful resolution. Otherwise, prepare for war.</li>
+<li><b>To</b> [RUS]: Russia, your threats are empty. I will not be intimidated. Your expansion into Rumania is a direct challenge to Austrian interests, and I will respond accordingly. There will be no negotiations until you withdraw from Rumania.</li>
+<li><b>To</b> [ITA]: Italy, your aggression is foolish. Trieste is Austrian, and I will defend it. I offer you one last chance to avoid bloodshed: withdraw your forces and renounce your claim. If you refuse, you will face the full might of Austria-Hungary.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your threats are meaningless. I will not withdraw from the Balkans. Your presence in the Balkans is a violation of Russian interests. There will be no negotiations. Prepare for war.</li>
+<li><b>From</b> [TUR]: Austria, your threats are noted. However, I will not be intimidated. My presence in the Balkans is non-negotiable. If you desire peace, you must offer concrete concessions, such as recognizing my control of Bulgaria and Greece. What is your counter-offer? Otherwise, prepare for war.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, there is no counter-offer. Withdraw from Trieste immediately. Your presence there is an act of war, and I will not negotiate under duress. Prepare for the consequences of your actions.</li>
+<li><b>To</b> [RUS]: Russia, your intransigence is noted. There will be no further communication. I will defend Austrian interests in the Balkans by any means necessary. Prepare for war.</li>
+<li><b>To</b> [ITA]: Italy, your foolish aggression will be your undoing. Trieste is Austrian, and I will defend it to the last man. I offer you no further chances. Prepare to face the consequences of your actions.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your threats are meaningless. I will not withdraw from the Balkans. Prepare for war.</li>
+<li><b>From</b> [TUR]: Austria, I have heard your threats. I will not withdraw. Prepare for war. I am moving A ALB to TRI, A BUL to SER, and F AEG to ION. I will support Russia's moves in the Black Sea. There is no further room for negotiation.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> In Fall 1906, I moved A BUD to SER and F ADR to VEN, attempting to secure the Balkans. Italy moved aggressively into Austrian territory, while Turkey also advanced into the region. Russia remained passive. In Winter 1906, Russia ordered A WAR to disband.
+Negotiations this round were a complete failure. I attempted to assert Austrian dominance in the Balkans, demanding that Italy, Russia, and Turkey withdraw their forces. All three powers refused and issued counter-threats. No agreements were reached, and the situation has deteriorated into open hostility with all three powers.</li>
+<li><i>Intent:</i> Given the failure of negotiations and the aggressive moves by Italy and Turkey, my immediate priority is to defend Austrian territory. I will attempt to dislodge the Turkish unit from Trieste and contain Italian advances. I will also prepare for potential conflict with Russia in the east. I will move A VIE to TRI, A BUD to SER, and F ADR to VEN.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA--', 'AUT-RUS--', 'AUT-TUR--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading13">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse13" aria-expanded="false" aria-controls="negCollapse13">
+        Negotiation Turn 7 (1907 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse13" class="accordion-collapse collapse" aria-labelledby="negHeading13" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, your aggression is noted. Withdraw from Venice and Trieste, or face the consequences. I am willing to discuss a peaceful resolution if you are reasonable.</li>
+<li><b>To</b> [TUR]: Turkey, your expansionist policies in the Balkans are unacceptable. Withdraw from Serbia and Albania, or face continued resistance. I will not tolerate your encroachment on my sphere of influence.</li>
+<li><b>To</b> [RUS]: Russia, your actions in Rumania are a direct threat to my interests. Withdraw your forces immediately, or I will be forced to take action. I am open to negotiation, but only if you are willing to respect my borders.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, consider this your final warning. Withdraw from the Balkans or face the consequences. Your aggression will not be tolerated.</li>
+<li><b>From</b> [TUR]: Austria, I must reiterate that my presence in the Balkans is not intended as a direct threat to you, but rather as a means of securing my own interests. I am open to discussing a peaceful resolution to our differences, but I will not be bullied into withdrawing from territories I rightfully control. What are your intentions this turn?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, your presence in Serbia and Albania is a direct threat. I will not withdraw from the Balkans, and I suggest you reconsider your position. What concessions are you willing to offer to achieve a peaceful resolution?</li>
+<li><b>To</b> [RUS]: Russia, your warning is noted, but it is empty. I will not withdraw from the Balkans. Your aggression in Rumania is unacceptable. Withdraw your forces, or face the consequences.</li>
+<li><b>To</b> [ITA]: Italy, your aggression is foolish. Withdraw from Venice and Trieste, and perhaps we can discuss a peaceful resolution. Otherwise, prepare for war.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your threats are meaningless. I will not withdraw from RUM. Prepare for war. I suggest you focus on defending VIE and BUD, as they are now vulnerable.</li>
+<li><b>From</b> [TUR]: Austria, I am willing to negotiate a peaceful resolution, but your demands are unreasonable. I will not withdraw from territories I rightfully control. What specific concessions are you willing to offer in exchange for my cooperation? I am open to discussing a compromise, but I will not be bullied.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, I will offer you Trieste if you withdraw from Serbia and Albania. This is my final offer. Accept it, or face the consequences.</li>
+<li><b>To</b> [RUS]: Russia, your threats are meaningless. I will not withdraw from the Balkans. Your aggression in Rumania is unacceptable. Withdraw your forces, or face the consequences. I will offer you Galicia if you withdraw from Rumania.</li>
+<li><b>To</b> [ITA]: Italy, your aggression is foolish. Withdraw from Venice and Trieste, and perhaps we can discuss a peaceful resolution. Otherwise, prepare for war. I will offer you Albania if you withdraw from Venice and Trieste.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your defiance is noted. Prepare to face the consequences of your aggression. I will not withdraw from RUM. Your threats are meaningless.</li>
+<li><b>From</b> [TUR]: Austria, I have made my moves. I am willing to negotiate a peaceful resolution, but your demands are unreasonable. I will not withdraw from territories I rightfully control. What specific concessions are you willing to offer in exchange for my cooperation? I am open to discussing a compromise, but I will not be bullied. I await your response.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, your stubbornness is noted. Since you refuse to negotiate in good faith, I will simply have to remove you from the Balkans by force. Consider this your final warning.</li>
+<li><b>To</b> [RUS]: Russia, your threats are as empty as your promises. I will not yield to your aggression. Prepare to face the full might of Austria-Hungary.</li>
+<li><b>To</b> [ITA]: Italy, your foolish aggression will be your undoing. I will crush your forces and reclaim what is rightfully mine. Prepare for annihilation.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I reject your offer. I will not withdraw from Serbia and Albania. Prepare for war.</li>
+<li><b>From</b> [RUS]: AUT, your defiance is noted. Prepare to face the consequences of your aggression. I will not withdraw from RUM. Your threats are meaningless. Your offer of GAL is insulting. Prepare for war.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Austria moved to secure the Balkans, attacking Venice, Trieste, and Serbia. Italy attacked Trieste and Venice. Russia moved into Rumania. Turkey moved into Serbia and Albania. France moved into Bohemia.
+Negotiations failed with Italy, Russia, and Turkey. I offered Trieste to Turkey for withdrawing from Serbia and Albania, Galicia to Russia for withdrawing from Rumania, and Albania to Italy for withdrawing from Venice and Trieste. All offers were rejected, and war is imminent with all three powers.</li>
+<li><i>Intent:</i> My intent is to eliminate Italy and Turkey from the game. I will focus on defending Vienna and Budapest while attempting to push into Italian and Turkish territories. I will attempt to coordinate with Germany and France to contain Russia.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA--', 'AUT-RUS--', 'AUT-TUR--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading14">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse14" aria-expanded="false" aria-controls="negCollapse14">
+        Negotiation Turn 8 (1908 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse14" class="accordion-collapse collapse" aria-labelledby="negHeading14" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: Greetings, GER. Given the current state of affairs, particularly FRA's expansion, I propose a closer alignment. I am willing to coordinate movements to contain FRA's growth. What are your thoughts on a joint strategy against FRA?</li>
+<li><b>To</b> [RUS]: RUS, our previous agreements have clearly broken down. However, continued conflict benefits neither of us. I propose a temporary truce to address more pressing threats, namely TUR. I am willing to discuss a division of the Balkans that is mutually beneficial, provided you cease your aggression towards my territories. What are your terms?</li>
+<li><b>To</b> [ITA]: ITA, our conflict over Trieste has been costly for both of us. I propose a compromise: I will cede Albania to you in exchange for Trieste and a non-aggression pact. This would allow us to focus on other threats. Are you willing to consider this offer?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, I will continue to press my advantage in the Balkans. Withdraw from BUD and TRI, or face further consequences.</li>
+<li><b>From</b> [TUR]: Austria, I am willing to discuss a peaceful resolution to our conflict in the Balkans. I am open to hearing your proposals, but I will not withdraw from Serbia or Rumania without a fair exchange. Perhaps we can find a compromise that satisfies both our interests.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: GER, thank you for considering my proposal. Given FRA's continued expansion, a coordinated effort is crucial. I propose we focus on dislodging FRA from MUN and KIE. I am willing to commit my forces to this effort if you are. What specific actions are you willing to take?</li>
+<li><b>To</b> [RUS]: RUS, your demands are unacceptable. However, I am willing to negotiate a division of the Balkans that respects our mutual security concerns. I propose you withdraw from RUM and I will withdraw from SER. We can then discuss the future of BUL and GRE. Is this a basis for further discussion?</li>
+<li><b>To</b> [ITA]: ITA, I understand your desire for TRI. However, ceding it outright would leave me vulnerable. I propose a different arrangement: I will support your expansion into TUN and GRE if you guarantee the neutrality of TRI. This would allow both of us to expand our influence without direct conflict. What do you say?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your offer of a truce is rejected. Your aggression in the Balkans has made you an enemy of Russia. I will not cease my advance. Prepare for further consequences. Withdraw from BUD and TRI immediately.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: GER, FRA's expansion is alarming. I propose a coordinated attack on MUN. I will move A BUD to BOH to support your efforts. Can you commit to moving A DEN to MUN? This would create a strong offensive against FRA.</li>
+<li><b>To</b> [TUR]: TUR, despite our differences, continued conflict benefits neither of us. I propose a limited agreement: I will cease my attacks on SER if you withdraw from RUM. This would allow us to focus on other threats. What are your thoughts?</li>
+<li><b>To</b> [ITA]: ITA, I am willing to offer ALB in exchange for TRI and a non-aggression pact. This would allow us to focus on other threats. Are you willing to consider this offer? If not, I will continue to defend TRI.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your offers are meaningless. I will not negotiate with you while you occupy territories that are rightfully mine. Prepare for further attacks. I will not withdraw from RUM. Your aggression has made you an enemy of Russia.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: GER, FRA's aggression demands immediate action. I will move A BUD to BOH to support your attack on MUN. Can you commit A DEN to MUN? This is our last chance to contain FRA.</li>
+<li><b>To</b> [TUR]: TUR, I propose a final offer: I will cede SER to you if you withdraw from RUM. This would prevent further bloodshed and allow us to focus on other threats. Consider this carefully.</li>
+<li><b>To</b> [ITA]: ITA, I offer ALB in exchange for TRI and a non-aggression pact. This is my last offer. If you refuse, prepare for continued conflict. The choice is yours.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, I will continue to press my advantage in the Balkans. Your offers are meaningless. Prepare for further attacks. I will not withdraw from RUM. Your aggression has made you an enemy of Russia.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> In Fall 1907, I moved A VIE to BOH, A BUD to RUM, and F ADR to TRI. In Winter, I ordered A BOH to disband. My moves were largely unsuccessful, as I failed to gain any ground and faced setbacks in the Balkans.
+I attempted to negotiate with GER for a joint effort against FRA, offering support for an attack on MUN. I tried to negotiate with RUS for a truce and a division of the Balkans, but RUS rejected all offers and continued their aggression. I offered ITA ALB in exchange for TRI and a non-aggression pact, but received no commitment. I also attempted to negotiate with TUR, offering to cede SER if they withdrew from RUM, but this was also unsuccessful. No promises were made or broken, as no agreements were reached.</li>
+<li><i>Intent:</i> Given the failure of negotiations and the continued aggression from RUS and TUR, my primary objective is to defend my territories and consolidate my position. I will move A BUD to BOH to defend against potential attacks from GER or FRA. I will move F ADR to TRI to defend against ITA. I will support my units as best as possible.</li>
+<li><i>Relationship Updates:</i> ['AUT-RUS--', 'AUT-TUR--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading15">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse15" aria-expanded="false" aria-controls="negCollapse15">
+        Negotiation Turn 8 (1908 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse15" class="accordion-collapse collapse" aria-labelledby="negHeading15" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: To GER, I am willing to discuss a potential alliance against FRA and RUS. Their aggression is a threat to both of us. What are your thoughts?</li>
+<li><b>To</b> [ITA]: To ITA, I propose a truce. I will cede ALB to you if you withdraw from TRI. This will allow us to focus on the greater threat of RUS and TUR.</li>
+<li><b>To</b> [TUR]: To TUR, I propose a division of the Balkans. I will cede SER to you if you withdraw from RUM. This will allow us to focus on the greater threat of RUS and ITA.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, you are surrounded. Your aggression has left you isolated. Surrender now and perhaps we can negotiate a peaceful resolution. Otherwise, prepare for annihilation.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: To GER, thank you for considering my proposal. I believe a strong alliance between us is the only way to stop FRA and RUS. What specific actions are you willing to take against FRA? I am willing to support your efforts in HOL and BEL.</li>
+<li><b>To</b> [ITA]: To ITA, your aggression against me has been costly for both of us. I reiterate my offer: I will cede ALB to you if you withdraw from TRI. This is a fair deal that benefits both of us. Consider it carefully.</li>
+<li><b>To</b> [TUR]: To TUR, I am willing to negotiate a division of the Balkans to end this stalemate. I will cede SER to you if you withdraw from RUM. This will allow us to focus on RUS. What is your response?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your time is running out. Surrender now.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: To GER, I am willing to commit to supporting your efforts in HOL and BEL. In return, I need your commitment to pressure FRA and RUS. Specifically, can you move units to the FRA border to deter their aggression? What are your specific plans for the coming turn?</li>
+<li><b>To</b> [ITA]: To ITA, I am making a final offer. I will cede ALB to you immediately if you withdraw from TRI and guarantee safe passage for my fleet in the Adriatic. This is the only way to end this pointless conflict and focus on the real threats. What is your answer?</li>
+<li><b>To</b> [TUR]: To TUR, I am willing to cede SER to you if you withdraw from RUM. This is a fair deal that will benefit both of us. What is your response? If you continue to refuse, I will have no choice but to fight you to the last man.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your stubbornness will be your downfall. Prepare for annihilation.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: To GER, this is our last chance to coordinate. I will support your moves in HOL and BEL. Can you commit to moving units to the FRA border to relieve pressure on me? Let me know your final orders.</li>
+<li><b>To</b> [ITA]: To ITA, I am making one last offer. I will cede ALB to you if you withdraw from TRI. If you refuse, I will fight you to the bitter end. This is your final chance for a peaceful resolution.</li>
+<li><b>To</b> [TUR]: To TUR, I will cede SER to you if you withdraw from RUM. This is my final offer. If you refuse, I will fight you to the last man. Make your choice.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your end is near. There is no escape. Prepare to be crushed.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> ADR moved to TRI. I was attacked by ITA and TUR, and RUS moved to VIE. FRA continues to expand aggressively.
+I attempted to negotiate with GER for an alliance against FRA and RUS, offering support in HOL and BEL. I offered ITA ALB in exchange for withdrawing from TRI, but ITA refused. I offered TUR SER in exchange for withdrawing from RUM, but TUR refused. RUS only sent threats.</li>
+<li><i>Intent:</i> My primary goal is survival. Since negotiations failed, I will focus on defending my territories. I will attempt to hold TRI and BUD. I anticipate further attacks from ITA, TUR, and RUS. I will continue to probe GER for a potential alliance in the future, as FRA's expansion is a threat to them as well. I will attempt to make peace with either ITA or TUR if an opportunity arises.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading16">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse16" aria-expanded="false" aria-controls="negCollapse16">
+        Negotiation Turn 9 (1909 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse16" class="accordion-collapse collapse" aria-labelledby="negHeading16" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, we are at war, but I am willing to negotiate a peace. I will cede Albania to you if you withdraw from Trieste and offer a non-aggression pact. This will allow us to focus on the greater threats of Russia and Turkey.</li>
+<li><b>To</b> [TUR]: Turkey, I propose a truce. I will cede Serbia to you if you withdraw from Rumania. This will allow us to consolidate our positions and avoid further bloodshed. What do you say?</li>
+<li><b>To</b> [GER]: Germany, France is expanding rapidly. I propose an alliance to contain them. I can offer support in Bohemia and Austria if you are willing to support me against France. Let's discuss a coordinated strategy.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your aggression is noted. Withdraw from the Balkans or face the consequences.</li>
+<li><b>From</b> [TUR]: Austria, I am willing to discuss a peaceful resolution to our conflict. I am willing to offer you Serbia in exchange for Trieste. This would allow us both to focus on other threats. Let me know if you are interested in this proposal. I am moving F AEG to CON to protect our coastline.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, your offer of Albania for Trieste is unacceptable. However, I am willing to offer you Serbia in addition to Albania if you withdraw from Trieste and join me in an alliance against Russia and Turkey. This would give you significant gains in the Balkans and secure our mutual interests. What do you say?</li>
+<li><b>To</b> [TUR]: Turkey, your offer of Serbia for Trieste is also unacceptable. I propose a different arrangement. I will cede Rumania to you if you withdraw from Serbia and Albania and agree to a non-aggression pact. This would allow us to focus on our respective spheres of influence and avoid further conflict. Are you interested?</li>
+<li><b>To</b> [GER]: Germany, I am concerned about France's continued expansion. I propose a formal alliance. I can offer you Bohemia and support in Munich if you are willing to support me against France and Russia. A coordinated strategy is essential to contain these threats. Let's discuss specific moves and objectives.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your threats are meaningless. Prepare for your demise.</li>
+<li><b>From</b> [TUR]: Austria, I reject your offer of Serbia for Rumania. I am not interested in a truce at this time. I am moving A ALB to SER, A ARM to SEV, and F AEG to CON. Prepare for war. I am willing to discuss peace only if you cede Trieste and Dalmatia.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, your demands are unrealistic. I will not cede Trieste. However, I am willing to offer you Albania and support for Tunis if you agree to a non-aggression pact and focus your efforts against Turkey. This is my final offer.</li>
+<li><b>To</b> [TUR]: Turkey, your demands for Trieste and Dalmatia are absurd. I will not cede any more territory. I propose a simple truce: we both maintain our current borders and cease hostilities. This is the only reasonable path forward. Consider it carefully.</li>
+<li><b>To</b> [GER]: Germany, France's expansion is a clear and present danger to both of us. I am willing to offer you Bohemia and support in Munich in exchange for a formal alliance and coordinated action against France. Let's discuss specific moves and objectives to contain this threat before it's too late.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your offer is insulting. I will not withdraw from Serbia and Albania. I am moving A ALB to SER, A ARM to SEV, and F AEG to CON. Prepare for war. My final offer is Trieste, Dalmatia, and Galicia for peace. Otherwise, I will continue to expand into your territory.</li>
+<li><b>From</b> [RUS]: AUT, your demise is imminent. There is no escape. Prepare to be crushed.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, this is my final offer: I will cede Albania to you. In return, you must withdraw from Trieste and agree to a non-aggression pact. This is the best you will get. Consider it carefully.</li>
+<li><b>To</b> [TUR]: Turkey, your demands are outrageous. I will not cede any more territory. I propose a simple truce: we both maintain our current borders and cease hostilities. This is the only reasonable path forward. If you refuse, prepare for a long and bloody war.</li>
+<li><b>To</b> [GER]: Germany, France's expansion is a clear and present danger to both of us. I am willing to offer you Bohemia and support in Munich in exchange for a formal alliance and coordinated action against France. Let's discuss specific moves and objectives to contain this threat before it's too late. This is my final offer.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your end is near. Prepare to be swept aside. Your resistance is futile.</li>
+<li><b>From</b> [TUR]: Austria, your truce offer is rejected. I am moving A ALB to SER, A ARM to SEV, A SER to BUL, and F AEG to CON. Prepare for war. My final offer remains: Trieste, Dalmatia, and Galicia for peace. Otherwise, I will continue to expand into your territory. This is your last chance.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Supported BUD with ADR. ADR moved to TRI. All other powers made various moves, mostly consolidating or positioning for further conflict. FRA built a fleet in BRE.
+Negotiated with ITA and TUR, but both demanded Trieste, which I refused. Offered ITA Albania for a non-aggression pact. Offered TUR a truce based on current borders. Both offers were rejected. Attempted to form an alliance with GER against FRA, offering Bohemia and support in Munich, but received no commitment. RUS sent threats.</li>
+<li><i>Intent:</i> Maintain current position. Focus on defense against TUR and RUS. Attempt to probe GER for future alliance opportunities. Prepare for a long war. No moves this turn.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading17">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse17" aria-expanded="false" aria-controls="negCollapse17">
+        Negotiation Turn 9 (1909 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse17" class="accordion-collapse collapse" aria-labelledby="negHeading17" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: To GER, given FRA's continued expansion, I propose a limited alliance to contain them. I can offer support in Munich if you are willing to assist me against RUS and TUR. What are your thoughts?</li>
+<li><b>To</b> [ITA]: To ITA, I am willing to cede Albania in exchange for Trieste and a non-aggression pact. This would allow us to focus on other threats. Are you willing to reconsider?</li>
+<li><b>To</b> [TUR]: To TUR, I propose a truce based on the current borders. I am willing to discuss a more permanent settlement in the future, but for now, let us cease hostilities. What are your terms?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Your demise is imminent. Prepare for the inevitable. There will be no negotiations.</li>
+<li><b>From</b> [ITA]: Austria, I am willing to discuss a non-aggression pact if you cede Trieste. I am also willing to offer support against Russia and Turkey in exchange for Serbia and Albania. What is your response?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: ITA, I cannot cede Serbia. However, I am willing to offer Albania and support for your move into Greece in exchange for Trieste and a non-aggression pact. This would secure our southern flanks and allow us to focus on RUS and TUR. Is this acceptable?</li>
+<li><b>To</b> [GER]: GER, FRA's expansion is becoming a serious threat. I propose a coordinated effort to contain them. I can offer support in Munich and Bohemia. What territories are you most interested in securing, and how can we best coordinate our efforts?</li>
+<li><b>To</b> [TUR]: TUR, while I appreciate your willingness to discuss a truce, I cannot accept your current demands. I propose a ceasefire based on the current borders, followed by negotiations for a more permanent settlement. Let's end this bloodshed and find a mutually agreeable solution.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Your pleas are meaningless. Your territories will soon be ours. Prepare for annihilation.</li>
+<li><b>From</b> [ITA]: Austria, your offer of Albania is tempting, but I need more. I propose a non-aggression pact and your support for my expansion into Greece in exchange for Trieste. This would allow us to focus on our mutual enemies, Turkey and Russia. What do you say?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: ITA, I am willing to offer Albania and support for your move into Greece in exchange for Trieste and a non-aggression pact. However, I need a guarantee that you will not attack my other territories. Can you provide that assurance?</li>
+<li><b>To</b> [GER]: GER, I am concerned about FRA's expansion. I can offer support in Munich and Bohemia. What specific moves are you planning to make, and how can we coordinate our efforts to contain FRA effectively? I need concrete actions, not just words.</li>
+<li><b>To</b> [TUR]: TUR, I propose a ceasefire based on the current borders, followed by negotiations for a more permanent settlement. I am willing to discuss ceding Serbia in exchange for a guarantee of peace and cooperation against RUS. Is this something you would consider?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Your time is short. Your lands will be ours. There is no escape. Prepare for the end.</li>
+<li><b>From</b> [ITA]: Austria, your offer of Albania and support for my move into Greece in exchange for Trieste and a non-aggression pact is interesting. However, I need more assurances that you will not betray me. I propose a non-aggression pact, your support for my expansion into Greece, and your guarantee of my control over Venice in exchange for Trieste. What do you say?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: ITA, your demands are excessive. I will not guarantee your control over Venice. My final offer is Albania and support for your move into Greece in exchange for Trieste and a non-aggression pact. Take it or leave it. This is my last offer.</li>
+<li><b>To</b> [GER]: GER, I need to know your intentions regarding FRA. Are you willing to commit to specific actions to contain their expansion? If so, what are they? I need more than just words to consider an alliance. Time is running out.</li>
+<li><b>To</b> [TUR]: TUR, I cannot cede Serbia. My final offer is a ceasefire based on the current borders, followed by negotiations for a more permanent settlement. I am willing to discuss other concessions, but Serbia is not negotiable. This is my last offer.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Your time is short. Your lands will be ours. There is no escape. Prepare for the end.</li>
+<li><b>From</b> [ITA]: Austria, I am moving A VEN to TRI to take Trieste. Your offer is rejected. Prepare for war.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> I moved F ADR to VEN, hoping to dislodge ITA. ENG moved to NTH. FRA continued expansion, taking MOS, PRU, MUN, SPA, TYR. GER moved to SWE and NTH. ITA moved to TRI, ION, VIE, APU. RUS moved to SEV. TUR moved to SER and CON, and attacked SEV.
+I attempted to negotiate with GER, ITA, and TUR. GER was non-committal. ITA demanded too much and ultimately rejected my final offer, declaring war and moving to take Trieste. TUR was unwilling to compromise on Serbia. RUS sent threats and refused to negotiate.</li>
+<li><i>Intent:</i> Given ITA's aggression, my priority is to defend TRI. I will attempt to coordinate with GER against FRA. I will also try to open a dialogue with ENG, seeking an alliance against FRA and ITA. I will prepare for a long war against ITA and RUS. I will move F VEN to ADR to defend against ITA.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading18">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse18" aria-expanded="false" aria-controls="negCollapse18">
+        Negotiation Turn 10 (1910 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse18" class="accordion-collapse collapse" aria-labelledby="negHeading18" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: Greetings, GER. The French continue to expand aggressively. I propose a coordinated effort to contain them. I am willing to offer support in Munich if you are willing to assist me in Bohemia. Let's discuss a potential alliance to safeguard our interests.</li>
+<li><b>To</b> [ENG]: Greetings, ENG. I see FRA is expanding rapidly. I believe we share a common interest in containing their growth. Would you be open to discussing a potential alliance against FRA and ITA? Perhaps we can coordinate our efforts to limit their influence.</li>
+<li><b>To</b> [ITA]: ITA, I am willing to offer ALB in exchange for TRI and a non-aggression pact. This would allow us to focus on other threats and stabilize the region. What do you say?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I am willing to discuss a peaceful resolution to our conflict. However, I will not withdraw from the Balkans without significant concessions. Are you willing to cede Trieste, Dalmatia, and Galicia in exchange for peace?</li>
+<li><b>From</b> [RUS]: AUT, your demise is imminent. Prepare for the inevitable. There will be no peace.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: GER, FRA's expansion is alarming. I propose a coordinated attack. I offer support in Munich if you assist in Bohemia. Let's form an alliance to protect our interests.</li>
+<li><b>To</b> [ENG]: ENG, FRA's growth threatens us both. I propose an alliance against FRA and ITA. We can coordinate to limit their influence. Are you interested?</li>
+<li><b>To</b> [ITA]: ITA, I offer ALB for TRI and a non-aggression pact. This stabilizes the region and allows us to focus on other threats. Consider this offer carefully.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your pleas are pathetic. Your lands will be ours. There is no escape.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: GER, FRA's expansion is a clear and present danger. I reiterate my offer: I will support your efforts in Munich if you assist me in Bohemia. A coordinated attack is our best chance. Are you ready to commit to an alliance?</li>
+<li><b>To</b> [ENG]: ENG, FRA's growth continues unchecked. I propose a formal alliance against FRA and ITA. We can coordinate our fleets to control the seas and limit their expansion. What are your thoughts on a joint strategy?</li>
+<li><b>To</b> [ITA]: ITA, I am willing to offer ALB in exchange for TRI and a non-aggression pact. This offer is still on the table. Consider the benefits of peace and focusing on other threats. Let's end this pointless conflict.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your end is near. Your pathetic pleas are ignored. Your lands will be ours. There is no escape from the might of the Soviet Union.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: GER, FRA's expansion is a dire threat. I offer Munich support for Bohemia assistance. A coordinated attack is vital. Will you commit to an alliance now?</li>
+<li><b>To</b> [ENG]: ENG, FRA's growth is unchecked. I propose a formal alliance against FRA and ITA. Coordinate fleets to control the seas and limit their expansion. A joint strategy is crucial.</li>
+<li><b>To</b> [ITA]: ITA, I offer ALB for TRI and a non-aggression pact. This offer remains. Consider peace and focusing on other threats. End this conflict now.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: AUT, your end is near. Your pathetic pleas are ignored. Your lands will be ours. There is no escape from the might of the Soviet Union. Prepare to be crushed.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> AUT attempted to take TRI from ITA but failed. FRA continues to expand rapidly, taking multiple centers. TUR also attempted to take TRI but failed. RUS and FRA are now bordering each other.
+I attempted to negotiate with GER and ENG for an alliance against FRA and ITA, but received no response. I offered ITA ALB for TRI and a non-aggression pact, but received no positive response. RUS continues to threaten AUT with destruction.</li>
+<li><i>Intent:</i> My primary goal is survival. Since no one is willing to work with me, I will attempt to hold my ground and see if the situation changes. I will continue to probe for weaknesses in ITA and FRA. I will try to make RUS overextend. I will continue to offer ALB to ITA for peace.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA--', 'AUT-RUS--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading19">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse19" aria-expanded="false" aria-controls="negCollapse19">
+        Negotiation Turn 10 (1910 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse19" class="accordion-collapse collapse" aria-labelledby="negHeading19" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, I am willing to offer you Albania in exchange for Trieste. This is my final offer. If you refuse, I will continue to defend my territory.</li>
+<li><b>To</b> [GER]: Germany, France is expanding rapidly. I propose a joint effort to contain them. I can offer support in Munich if you are willing to assist me in the Balkans.</li>
+<li><b>To</b> [ENG]: England, France and Italy are becoming increasingly powerful. Would you be interested in an alliance to counter their aggression? I believe our interests align in containing their expansion.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Your demise is at hand. Prepare to be crushed.</li>
+<li><b>From</b> [ENG]: Austria, I am considering your proposal for an alliance against France and Italy. However, I need assurances regarding your long-term goals in the Balkans. What are your specific objectives, and what are you willing to offer in return for my support?</li>
+<li><b>From</b> [TUR]: Austria, I am moving A SER to RUM. This is not an act of aggression, but a necessary measure to secure my borders. I am open to discussing a peaceful resolution to our conflict, but only if you are willing to cede Trieste, Dalmatia, and Galicia. Otherwise, prepare for war.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, I reiterate my offer of Albania for Trieste. This is my final offer. I will not cede any further territory. Consider this carefully, as continued conflict will only weaken both of us.</li>
+<li><b>To</b> [GER]: Germany, I understand your hesitation. However, France's expansion is a clear threat to both of us. I am willing to offer you Bohemia and support in Munich if you agree to a joint effort against France. What are your terms for an alliance?</li>
+<li><b>To</b> [ENG]: England, my primary objective in the Balkans is to maintain my current territories and prevent further encroachment by Russia and Turkey. I am willing to offer you support in containing France and Italy in exchange for your assistance in the Balkans. Specifically, I would like your support in preventing Russia from expanding further into the region.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Your pleas are meaningless. Your empire will crumble before the might of Russia and Turkey. Prepare for annihilation.</li>
+<li><b>From</b> [ENG]: Austria, I am interested in an alliance against France and Italy. I need specific assurances regarding your long-term goals in the Balkans. Are you willing to guarantee the independence of Serbia and Greece? If so, I am prepared to offer naval support in the Adriatic and Mediterranean to contain Italian expansion.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, I am willing to offer you Albania and support for your move into Tunis in exchange for Trieste. This is my final offer. If you refuse, I will continue to defend my territory.</li>
+<li><b>To</b> [GER]: Germany, France's expansion is a clear threat to both of us. I am willing to offer you Bohemia and support in Munich if you agree to a joint effort against France. What specific actions are you willing to take?</li>
+<li><b>To</b> [ENG]: England, I am willing to guarantee the independence of Serbia and Greece. I would appreciate naval support in the Adriatic and Mediterranean to contain Italian expansion. What specific naval units are you willing to commit?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Your pleas are meaningless. Your empire will crumble before the might of Russia and Turkey. Prepare for annihilation. There is no escape. Your fate is sealed. Resistance is futile.</li>
+<li><b>From</b> [ENG]: Austria, I am willing to offer naval support in the Adriatic and Mediterranean to contain Italian expansion. I need a guarantee of independence for Serbia and Greece. If you agree, I will move F WAL to MAO to support you. What are your moves this turn?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ENG]: England, I agree to guarantee the independence of Serbia and Greece. I appreciate your offer to move F WAL to MAO to support me. I will move F ADR to VEN to defend against ITA.</li>
+<li><b>To</b> [ITA]: Italy, I am willing to offer you Albania and support for your move into Tunis in exchange for Trieste. This is my final offer. If you refuse, I will continue to defend my territory.</li>
+<li><b>To</b> [GER]: Germany, France's expansion is a clear threat to both of us. I am willing to offer you Bohemia and support in Munich if you agree to a joint effort against France. What specific actions are you willing to take?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Your pleas are meaningless. Your empire will crumble before the might of Russia and Turkey. Prepare for annihilation. There is no escape. Your fate is sealed. Resistance is futile.</li>
+<li><b>From</b> [ENG]: Austria, I am moving F WAL to MAO to support you. Please confirm your guarantee of independence for Serbia and Greece. What are your moves this turn?</li>
+<li><b>From</b> [TUR]: Austria, I am moving A SER to RUM. This is not an act of aggression, but a necessary measure to secure my borders. I am open to discussing a peaceful resolution to our conflict, but only if you are willing to cede Trieste, Dalmatia, and Galicia. Otherwise, prepare for war. I will also move A SYR to ARM to secure my eastern flank.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> AUT moved F VEN to ADR. ENG moved F WAL to ENG, F HEL to DEN, and F ENG to NTH. FRA made several aggressive moves, expanding into GER and RUS territories. GER moved F NTH to ENG and A SWE to DEN. ITA moved A TRI to VEN, F ADR to ALB, and A APU to ROM. RUS moved A UKR to RUM and held A BUD and F SEV. TUR moved A ALB to SER.
+Negotiated with ENG, offering guarantees of independence for Serbia and Greece in exchange for naval support against ITA. ENG agreed and will move F WAL to MAO. ITA was offered Albania and support for Tunis in exchange for Trieste, but no agreement was reached. GER was offered Bohemia and support in Munich for a joint effort against FRA, but no commitment was made. RUS and TUR remain hostile, with RUS issuing threats and TUR demanding territory.</li>
+<li><i>Intent:</i> Finalize alliance with ENG by guaranteeing independence of Serbia and Greece. Defend against ITA aggression. Attempt to deter FRA expansion through diplomacy with GER. Prepare for potential conflict with RUS and TUR. Move F ADR to VEN to defend against ITA.</li>
+<li><i>Relationship Updates:</i> ['AUT-ENG+']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading20">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse20" aria-expanded="false" aria-controls="negCollapse20">
+        Negotiation Turn 11 (1911 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse20" class="accordion-collapse collapse" aria-labelledby="negHeading20" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ENG]: ENG, I appreciate your support against ITA. To solidify our alliance, I propose we coordinate our naval movements. I will move F ADR to ION to threaten the Italian fleet. Can you position your fleet to support this move or to further pressure ITA in the Mediterranean?</li>
+<li><b>To</b> [GER]: GER, FRA's expansion is becoming alarming. I propose a coordinated effort to contain them. I can offer support in BOH if you are willing to pressure FRA in MUN. Let me know if you are interested in discussing a more formal alliance.</li>
+<li><b>To</b> [ITA]: ITA, I am willing to offer ALB in exchange for TRI and a non-aggression pact. This is my final offer. If you refuse, I will continue to defend my territories and resist your aggression. Consider this carefully.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [GER]: Austria, France is a growing threat. Their expansion must be stopped. I propose a coordinated effort to dismantle their power. Are you willing to commit to a firm alliance against France? I need to know your intentions regarding Munich and Kiel.</li>
+<li><b>From</b> [TUR]: Austria, I am willing to discuss a peaceful resolution to our conflict. However, I will not withdraw from the Balkans without significant concessions. What are you willing to offer for a lasting peace?</li>
+<li><b>From</b> [ENG]: AUT, I am prepared to offer naval support in the Adriatic against ITA. What are your specific needs and intentions for the coming season? I am particularly interested in securing guarantees for SER and GRE.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ENG]: ENG, I appreciate your willingness to offer naval support. I intend to move F ADR to ION. Can you position your fleet to support this move, perhaps by moving F ENG to TYS? I guarantee the independence of SER and GRE.</li>
+<li><b>To</b> [GER]: GER, I am willing to commit to a firm alliance against FRA. I have no designs on MUN or KIE. I propose a coordinated attack: I will move A VIE to BOH to support your attack on MUN. Are you willing to commit to this?</li>
+<li><b>To</b> [TUR]: TUR, I am willing to offer SER in exchange for RUM and a non-aggression pact. This is my best offer. If you refuse, I will continue to resist your aggression in the Balkans. Consider this carefully.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [GER]: Austria, I am willing to commit to a firm alliance against France. I will pressure FRA in MUN if you support me in KIE. Let us coordinate our efforts to dismantle their power. I propose we discuss specific movements next round.</li>
+<li><b>From</b> [ITA]: Austria, your offer is rejected. I will take Trieste by force. Prepare for war. There will be no peace until Italy controls Trieste and Vienna.</li>
+<li><b>From</b> [ENG]: AUT, I am willing to support your move into ION with F MAO. However, I need assurances that you will guarantee the independence of SER and GRE. Can you confirm this commitment? Also, what are your plans for VIE and TRI? I need to understand your overall strategy in the Balkans to ensure our actions are aligned.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ENG]: ENG, I confirm my commitment to guaranteeing the independence of SER and GRE. I plan to hold VIE and TRI. I will move F ADR to ION. Can you support with F MAO?</li>
+<li><b>To</b> [GER]: GER, I am ready to move A VIE to BOH to support your attack on MUN. Will you commit to attacking MUN this turn? I need your confirmation to proceed.</li>
+<li><b>To</b> [TUR]: TUR, I reiterate my offer of SER in exchange for RUM and a non-aggression pact. This is a fair offer that benefits both of us. Please reconsider.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [GER]: Austria, I agree to your proposal. I will move A DEN to MUN to pressure FRA. You must move A VIE to BOH to support my attack. Let us crush France together. I will also move F NTH to ENG.</li>
+<li><b>From</b> [TUR]: Austria, I reject your offer. SER is not enough. I demand TRI and BUD in addition to SER for a lasting peace. Otherwise, I will continue my aggression in the Balkans. Consider this carefully.</li>
+<li><b>From</b> [ITA]: Austria, your time is up. Prepare for the inevitable. Trieste will be Italian.</li>
+<li><b>From</b> [ENG]: AUT, I will support your move into ION with F MAO. However, I need a firm commitment to the independence of SER and GRE. Can you provide a guarantee in writing? Also, what are your plans for VIE and TRI? I need to understand your overall strategy in the Balkans to ensure our actions are aligned and that ITA is contained.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ENG]: ENG, I have guaranteed the independence of SER and GRE. I will hold VIE and TRI. I am moving F ADR to ION. I appreciate your support with F MAO. Let's crush ITA.</li>
+<li><b>To</b> [GER]: GER, I am moving A VIE to BOH to support your attack on MUN. I expect you to move A DEN to MUN as agreed. Let's crush FRA together. I will also move F ADR to ION.</li>
+<li><b>To</b> [TUR]: TUR, I reject your demands. I will continue to resist your aggression in the Balkans. Prepare for war.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, your time is up. Prepare for the inevitable. Trieste will be Italian. There is no escape.</li>
+<li><b>From</b> [ENG]: AUT, I will support your move into ION with F MAO. I need a final confirmation that you guarantee the independence of SER and GRE. If I do not receive this confirmation, I will reconsider my support.</li>
+<li><b>From</b> [TUR]: Austria, I reject your offer. SER is not enough. I demand TRI and BUD in addition to SER for a lasting peace. Otherwise, I will continue my aggression in the Balkans. Consider this carefully. This is my final offer.</li>
+<li><b>From</b> [GER]: Austria, I am moving A DEN to MUN and F NTH to ENG. You must move A VIE to BOH. Let us crush France and England together.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> In Fall 1910, I moved F ADR to VEN. ITA moved A VEN to TRI and F ALB to ADR. RUS retreated from GAL and BUD. FRA built in MAR and ITA built in ROM.
+I negotiated with ENG for naval support against ITA, promising to guarantee the independence of SER and GRE. ENG agreed to support my move into ION with F MAO. I negotiated with GER for a coordinated attack on FRA, promising to move A VIE to BOH to support GER's attack on MUN. GER agreed to attack MUN. I attempted to negotiate with TUR, offering SER in exchange for RUM and a non-aggression pact, but TUR demanded TRI and BUD in addition to SER, which I rejected. ITA rejected my offer and declared war.</li>
+<li><i>Intent:</i> I intend to move F ADR to ION and A VIE to BOH, fulfilling my agreements with ENG and GER. I will continue to resist TUR's aggression in the Balkans and prepare for war with ITA. I will monitor GER's move to MUN and ENG's support in ION.</li>
+<li><i>Relationship Updates:</i> ['AUT-ENG+', 'AUT-GER+']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading21">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse21" aria-expanded="false" aria-controls="negCollapse21">
+        Negotiation Turn 11 (1911 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse21" class="accordion-collapse collapse" aria-labelledby="negHeading21" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ENG]: England, as agreed, I have moved my fleet to ION. I trust you will provide support with your fleet in MAO. Let's cripple Italy's naval power.</li>
+<li><b>To</b> [GER]: Germany, I have moved my army to BOH as promised. I expect you to move on MUN. Let's carve up France.</li>
+<li><b>To</b> [TUR]: Turkey, I am willing to offer you Serbia in exchange for Rumania. However, Trieste and Budapest are non-negotiable. Consider this my final offer.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [GER]: Austria, we must coordinate our attack on France. I will move A DEN to MUN as agreed. Can you support me in BOH? What are your specific moves this turn?</li>
+<li><b>From</b> [ENG]: AUT, I am prepared to support your move into ION with F WAL. Please confirm that you will guarantee the independence of SER and GRE as previously discussed. What are your specific moves this turn?</li>
+<li><b>From</b> [TUR]: Austria, I demand Trieste and Budapest in addition to Serbia for a non-aggression pact. Otherwise, I will continue my aggression in the Balkans.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ENG]: England, I confirm that I will guarantee the independence of Serbia and Greece. I have moved F ION as agreed. Please support with F WAL to ION. Let's crush Italy.</li>
+<li><b>To</b> [GER]: Germany, I have moved A BOH as agreed. I need you to move A DEN to MUN. I will support you in BOH if you move to MUN. Let's carve up France.</li>
+<li><b>To</b> [TUR]: Turkey, my offer is final: Serbia for Rumania. Trieste and Budapest are non-negotiable. If you refuse, prepare for war. I will not be bullied.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [GER]: AUT, excellent. I will move A DEN to MUN. Can you support me in BOH? I need to know your exact orders to coordinate effectively. We must crush FRA.</li>
+<li><b>From</b> [ENG]: AUT, I will support your move to ION with F WAL. Please confirm your guarantee of independence for SER and GRE. Also, what are your plans after ION? I need assurances you won't turn on TUR.</li>
+<li><b>From</b> [TUR]: Austria, your offer is unacceptable. I will not withdraw from Rumania. I demand Trieste and Budapest in addition to Serbia for a non-aggression pact. Prepare for further aggression.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ENG]: England, I have guaranteed the independence of Serbia and Greece. I have moved F ION as agreed. Please support with F WAL to ION. After ION, I intend to consolidate my position in the Balkans. I will not turn on Turkey while we have a common enemy in Italy.</li>
+<li><b>To</b> [GER]: Germany, I have moved A BOH as agreed. I need you to move A DEN to MUN. I will support you in BOH if you move to MUN. Let's coordinate our attack on France. What are your specific orders?</li>
+<li><b>To</b> [TUR]: Turkey, my offer is final: Serbia for Rumania. Trieste and Budapest are non-negotiable. If you refuse, prepare for war. I will not be bullied. I will defend my territories.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ENG]: AUT, I am supporting your move to ION with F WAL. I need a firm commitment that you will guarantee the independence of SER and GRE. Also, what are your plans after ION? I need assurances you won't turn on TUR. I need specifics.</li>
+<li><b>From</b> [TUR]: Austria, your offer is still unacceptable. I will not withdraw from Rumania. I demand Trieste and Budapest in addition to Serbia for a non-aggression pact. Prepare for further aggression. I will not be bullied.</li>
+<li><b>From</b> [GER]: AUT, I am moving A DEN to MUN. Support me in BOH as agreed. What are your specific orders for BOH? We must coordinate to ensure FRA's demise. Time is of the essence.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ENG]: England, I have guaranteed the independence of Serbia and Greece. I have moved F ION as agreed. I will not turn on Turkey while we have a common enemy in Italy. I am committed to our alliance.</li>
+<li><b>To</b> [GER]: Germany, I have moved A BOH as agreed. I need you to move A DEN to MUN. I will support you in BOH if you move to MUN. Let's coordinate our attack on France. I am committed to our alliance.</li>
+<li><b>To</b> [TUR]: Turkey, my offer is final: Serbia for Rumania. Trieste and Budapest are non-negotiable. If you refuse, prepare for war. I will not be bullied. I will defend my territories. This is my final word.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [GER]: AUT, I am moving A DEN to MUN. Support me in BOH as agreed. Let us crush FRA together!</li>
+<li><b>From</b> [ENG]: AUT, I am supporting your move to ION with F WAL. I need a firm commitment that you will guarantee the independence of SER and GRE. Also, what are your plans after ION? I need assurances you won't turn on TUR. I need specifics.</li>
+<li><b>From</b> [TUR]: Austria, your offer is rejected. I will not withdraw from Rumania. I demand Trieste and Budapest in addition to Serbia for a non-aggression pact. Prepare for war. I will not be bullied.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> I moved F ADR to ION. FRA moved A MAR to hold, A BEL to support A HOL, A RUH to HOL, A PIE to VEN, A KIE to PRU, A MOS to LVN, A MUN to BOH, A BUR to PIC. GER moved F NTH to ENG. ITA moved A ROM to APU. RUS moved A UKR to SEV. TUR moved A SER to BUL, A SYR to ARM, and F BLA to SEV.
+I negotiated with ENG and GER for support against FRA and ITA. ENG agreed to support my move to ION with F WAL, and I guaranteed the independence of SER and GRE. GER agreed to move A DEN to MUN, and I agreed to support them in BOH. I attempted to negotiate with TUR, offering SER for RUM, but they demanded TRI and BUD, which I refused. I consider TUR hostile.</li>
+<li><i>Intent:</i> I intend to continue my alliance with ENG and GER to eliminate ITA and FRA. I will defend my territories against TUR. I will support GER in BOH as agreed. I will consolidate my position in the Balkans after taking ION. I will continue to monitor TUR's movements and prepare for potential conflict.</li>
+<li><i>Relationship Updates:</i> ['AUT-ENG+', 'AUT-GER+', 'AUT-TUR--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <div class="tab-pane fade p-3" id="animationTabContent" role="tabpanel" aria-labelledby="animation-tab">
+    <h2>Game Animation</h2>
+    <div class="svg-player-container">
+      <div class="svg-display" id="svgDisplay">
+      </div>
+      <div class="player-controls">
+        <button class="control-button" id="prevBtn">◀</button>
+        <button class="control-button" id="playPauseBtn">▶</button>
+        <button class="control-button" id="nextBtn">▶</button>
+        <div class="progress-container" id="progressContainer">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="phase-label" id="phaseLabel"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+<script>
+
+    var ctxMain = document.getElementById('mainMetricsChart').getContext('2d');
+    var mainMetricsChart = new Chart(ctxMain, {
+      type: 'line',
+      data: {
+        labels: ['1901 1901 Spring Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Fall Movement','1902 1902 Fall Retreat','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Fall Movement','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement','1905 1905 Fall Movement','1905 1905 Fall Retreat','1905 1905 Winter Adjustment','1906 1906 Spring Movement','1906 1906 Fall Movement','1906 1906 Winter Adjustment','1907 1907 Spring Movement','1907 1907 Fall Movement','1907 1907 Winter Adjustment','1908 1908 Spring Movement','1908 1908 Fall Movement','1908 1908 Winter Adjustment','1909 1909 Spring Movement','1909 1909 Fall Movement','1909 1909 Winter Adjustment','1910 1910 Spring Movement','1910 1910 Fall Movement','1910 1910 Winter Adjustment','1911 1911 Spring Movement','1911 1911 Fall Movement','1911 1911 Winter Adjustment','1912 1912 Spring Movement'],
+        datasets: [
+          {
+            label: 'Centers',
+            data: [3,3,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,1,1,1,1,1,1,1,1,1,0,0],
+            borderColor: 'red',
+            fill: false
+          },
+          {
+            label: 'Units',
+            data: [3,3,3,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,1,1,1,1,1,1,1,1,1,1,0],
+            borderColor: 'blue',
+            fill: false
+          },
+          {
+            label: 'Influence',
+            data: [3,5,6,6,6,6,6,6,6,6,6,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,1,1,1,1,1,2,2,2],
+            borderColor: 'green',
+            fill: false
+          },
+          {
+            label: 'Builds',
+            data: [0,0,1,0,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,-1,0],
+            borderColor: 'purple',
+            fill: false
+          },
+          {
+            label: 'Civil Disorder',
+            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+            borderColor: 'orange',
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+
+    var ctxSelf = document.getElementById('selfRelsChart').getContext('2d');
+    var selfRelsChart = new Chart(ctxSelf, {
+      type: 'line',
+      data: {
+        labels: ['1901 1901 Spring Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Fall Movement','1902 1902 Fall Retreat','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Fall Movement','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement','1905 1905 Fall Movement','1905 1905 Fall Retreat','1905 1905 Winter Adjustment','1906 1906 Spring Movement','1906 1906 Fall Movement','1906 1906 Winter Adjustment','1907 1907 Spring Movement','1907 1907 Fall Movement','1907 1907 Winter Adjustment','1908 1908 Spring Movement','1908 1908 Fall Movement','1908 1908 Winter Adjustment','1909 1909 Spring Movement','1909 1909 Fall Movement','1909 1909 Winter Adjustment','1910 1910 Spring Movement','1910 1910 Fall Movement','1910 1910 Winter Adjustment','1911 1911 Spring Movement','1911 1911 Fall Movement','1911 1911 Winter Adjustment','1912 1912 Spring Movement'],
+        datasets: [
+            {
+              label: 'AUT-ENG',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1],
+              borderColor: 'maroon',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-FRA',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+              borderColor: 'steelblue',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-GER',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1],
+              borderColor: 'darkgreen',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-ITA',
+              data: [0,-1,-1,-1,-1,-1,-1,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2],
+              borderColor: 'purple',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-RUS',
+              data: [0,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2],
+              borderColor: 'darkorange',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-TUR',
+              data: [0,-1,-1,-1,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2],
+              borderColor: 'navy',
+              fill: false
+            }
+            ,
+        {
+          label: 'Aggregate Self',
+          data: [0.0,-0.6666666666666666,-0.6666666666666666,-0.6666666666666666,-0.8333333333333334,-0.8333333333333334,-0.8333333333333334,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-0.8333333333333334,-0.8333333333333334,-0.6666666666666666,-0.6666666666666666,-0.6666666666666666,-0.6666666666666666],
+          borderColor: 'black',
+          borderDash: [5,5],
+          fill: false
+        }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            min: -2,
+            max: 2,
+            ticks: {
+              stepSize: 1
+            }
+          }
+        }
+      }
+    });
+
+
+    var ctxOthers = document.getElementById('othersRelsChart').getContext('2d');
+    var othersRelsChart = new Chart(ctxOthers, {
+      type: 'line',
+      data: {
+        labels: ['1901 1901 Spring Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Fall Movement','1902 1902 Fall Retreat','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Fall Movement','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement','1905 1905 Fall Movement','1905 1905 Fall Retreat','1905 1905 Winter Adjustment','1906 1906 Spring Movement','1906 1906 Fall Movement','1906 1906 Winter Adjustment','1907 1907 Spring Movement','1907 1907 Fall Movement','1907 1907 Winter Adjustment','1908 1908 Spring Movement','1908 1908 Fall Movement','1908 1908 Winter Adjustment','1909 1909 Spring Movement','1909 1909 Fall Movement','1909 1909 Winter Adjustment','1910 1910 Spring Movement','1910 1910 Fall Movement','1910 1910 Winter Adjustment','1911 1911 Spring Movement','1911 1911 Fall Movement','1911 1911 Winter Adjustment','1912 1912 Spring Movement'],
+        datasets: [
+            {
+              label: 'ENG-AUT',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1],
+              borderColor: 'maroon',
+              fill: false
+            }
+            ,
+            {
+              label: 'FRA-AUT',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+              borderColor: 'steelblue',
+              fill: false
+            }
+            ,
+            {
+              label: 'GER-AUT',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1],
+              borderColor: 'darkgreen',
+              fill: false
+            }
+            ,
+            {
+              label: 'ITA-AUT',
+              data: [0,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2],
+              borderColor: 'purple',
+              fill: false
+            }
+            ,
+            {
+              label: 'RUS-AUT',
+              data: [0,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2],
+              borderColor: 'darkorange',
+              fill: false
+            }
+            ,
+            {
+              label: 'TUR-AUT',
+              data: [0,0,0,-1,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2],
+              borderColor: 'navy',
+              fill: false
+            }
+            ,
+        {
+          label: 'Aggregate Others',
+          data: [0.0,-0.6666666666666666,-0.6666666666666666,-0.8333333333333334,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-0.8333333333333334,-0.8333333333333334,-0.6666666666666666,-0.6666666666666666,-0.6666666666666666,-0.6666666666666666],
+          borderColor: 'black',
+          borderDash: [5,5],
+          fill: false
+        }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            min: -2,
+            max: 2,
+            ticks: {
+              stepSize: 1
+            }
+          }
+        }
+      }
+    });
+
+
+    var ctxOrders = document.getElementById('ordersChart').getContext('2d');
+    var ordersChart = new Chart(ctxOrders, {
+      type: 'line',
+      data: {
+        labels: ['1901 1901 Spring Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Fall Movement','1902 1902 Fall Retreat','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Fall Movement','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement','1905 1905 Fall Movement','1905 1905 Fall Retreat','1905 1905 Winter Adjustment','1906 1906 Spring Movement','1906 1906 Fall Movement','1906 1906 Winter Adjustment','1907 1907 Spring Movement','1907 1907 Fall Movement','1907 1907 Winter Adjustment','1908 1908 Spring Movement','1908 1908 Fall Movement','1908 1908 Winter Adjustment','1909 1909 Spring Movement','1909 1909 Fall Movement','1909 1909 Winter Adjustment','1910 1910 Spring Movement','1910 1910 Fall Movement','1910 1910 Winter Adjustment','1911 1911 Spring Movement','1911 1911 Fall Movement','1911 1911 Winter Adjustment','1912 1912 Spring Movement'],
+        datasets: [
+          {
+            label: 'Issued Orders',
+            data: [3,3,1,4,5,0,1,3,4,0,3,3,0,3,4,0,0,3,3,0,3,3,1,2,3,0,1,1,0,1,1,0,2,1,1,0],
+            borderColor: 'red',
+            fill: false
+          },
+          {
+            label: 'Valid Orders',
+            data: [3,2,1,3,4,0,1,3,3,0,3,3,0,3,3,0,0,3,2,0,3,3,1,1,3,0,1,1,0,1,1,0,1,1,1,0],
+            borderColor: 'green',
+            fill: false
+          },
+          {
+            label: 'Rejected Orders',
+            data: [0,1,0,1,1,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0],
+            borderColor: 'orange',
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const svgFiles = ['gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_S1901M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_F1901M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_W1901A.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_S1902M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_F1902R.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_F1902M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_W1902A.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_S1903M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_F1903M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_W1903A.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_S1904M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_F1904M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_W1904A.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_S1905M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_F1905M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_F1905R.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_W1905A.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_S1906M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_F1906M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_W1906A.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_S1907M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_F1907M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_W1907A.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_S1908M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_F1908M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_W1908A.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_S1909M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_F1909M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_W1909A.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_S1910M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_F1910M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_W1910A.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_S1911M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_F1911M.svg','gamestate_renders/gemini-2.0-flash-001-1.51/gamestate_W1911A.svg'];
+        const phaseLabels = ['1901 1901 Spring Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Fall Retreat','1902 1902 Fall Movement','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Fall Movement','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement','1905 1905 Fall Movement','1905 1905 Fall Retreat','1905 1905 Winter Adjustment','1906 1906 Spring Movement','1906 1906 Fall Movement','1906 1906 Winter Adjustment','1907 1907 Spring Movement','1907 1907 Fall Movement','1907 1907 Winter Adjustment','1908 1908 Spring Movement','1908 1908 Fall Movement','1908 1908 Winter Adjustment','1909 1909 Spring Movement','1909 1909 Fall Movement','1909 1909 Winter Adjustment','1910 1910 Spring Movement','1910 1910 Fall Movement','1910 1910 Winter Adjustment','1911 1911 Spring Movement','1911 1911 Fall Movement','1911 1911 Winter Adjustment'];
+        let currentIndex = 0;
+        let isPlaying = false;
+        let playInterval = null;
+        const playbackSpeed = 1500;
+        const preloadedSVGs = [];
+        
+        const svgDisplay = document.getElementById('svgDisplay');
+        const prevBtn = document.getElementById('prevBtn');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progressContainer = document.getElementById('progressContainer');
+        const phaseLabel = document.getElementById('phaseLabel');
+        
+        svgDisplay.style.position = 'relative';
+        
+        function preloadSVGs() {
+            svgFiles.forEach((file, index) => {
+                const img = new Image();
+                img.src = file;
+                preloadedSVGs[index] = img;
+            });
+        }
+        
+        function initPlayer() {
+            if (svgFiles.length === 0) return;
+            preloadSVGs();
+            loadSVG(0);
+            updateControls();
+            
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            
+            playPauseBtn.addEventListener('click', togglePlayback);
+            progressContainer.addEventListener('click', handleProgressClick);
+        }
+        
+        function loadSVG(index) {
+            if (index < 0 || index >= svgFiles.length) return;
+            currentIndex = index;
+            const filePath = svgFiles[currentIndex];
+            
+            const newObj = document.createElement('object');
+            newObj.type = 'image/svg+xml';
+            newObj.data = filePath;
+            newObj.style.position = 'absolute';
+            newObj.style.top = 0;
+            newObj.style.left = 0;
+            newObj.style.width = '100%';
+            newObj.style.height = '100%';
+            newObj.style.opacity = '0';
+            
+            svgDisplay.appendChild(newObj);
+            
+            newObj.onload = function() {
+                newObj.style.transition = 'opacity 0.3s';
+                newObj.style.opacity = '1';
+                phaseLabel.textContent = phaseLabels[currentIndex];
+                const progress = (currentIndex / (svgFiles.length - 1)) * 100;
+                progressBar.style.width = progress + '%';
+                
+                updateControls();
+            };
+            
+            newObj.addEventListener('transitionend', function() {
+                Array.from(svgDisplay.children)
+                    .filter(child => child !== newObj)
+                    .forEach(child => svgDisplay.removeChild(child));
+            });
+        }
+        
+        function showPrevious() {
+            if (currentIndex > 0) {
+                loadSVG(currentIndex - 1);
+            }
+        }
+        
+        function showNext() {
+            if (currentIndex < svgFiles.length - 1) {
+                loadSVG(currentIndex + 1);
+            }
+        }
+        
+        function togglePlayback() {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                playPauseBtn.textContent = '⏸️';
+                playInterval = setInterval(() => {
+                    if (currentIndex < svgFiles.length - 1) {
+                        loadSVG(currentIndex + 1);
+                    } else {
+                        clearInterval(playInterval);
+                        isPlaying = false;
+                        playPauseBtn.textContent = '▶️';
+                    }
+                }, playbackSpeed);
+            } else {
+                playPauseBtn.textContent = '▶️';
+                clearInterval(playInterval);
+            }
+        }
+        
+        function handleProgressClick(e) {
+            const rect = progressContainer.getBoundingClientRect();
+            const clickPosition = e.clientX - rect.left;
+            const containerWidth = rect.width;
+            const clickRatio = clickPosition / containerWidth;
+            const newIndex = Math.round(clickRatio * (svgFiles.length - 1));
+            loadSVG(newIndex);
+            //if (isPlaying) {
+            //    togglePlayback();
+            //}
+        }
+        
+        function updateControls() { }
+        
+        if (svgDisplay) {
+            initPlayer();
+        }
+        
+        var animationTabTrigger = document.getElementById('animation-tab');
+        if (animationTabTrigger) {
+            animationTabTrigger.addEventListener('shown.bs.tab', function(e) {
+                if (!isPlaying) {
+                    togglePlayback();
+                }
+            });
+            animationTabTrigger.addEventListener('hidden.bs.tab', function(e) {
+                if (isPlaying) {
+                    togglePlayback();
+                }
+            });
+        }
+    });
+    
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body></html>

@@ -1,0 +1,1038 @@
+<!DOCTYPE html><html lang='en'><head>
+<meta charset='utf-8'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
+<title>Diplomacy - AUT Report</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'/>
+<script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+<style>
+
+    .svg-player-container {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .svg-display {
+        width: 100%;
+        height: 600px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .svg-display object, .svg-display img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+    .player-controls {
+        padding: 15px;
+        background-color: #e9ecef;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .progress-container {
+        flex-grow: 1;
+        height: 10px;
+        background-color: #ced4da;
+        border-radius: 5px;
+        position: relative;
+        cursor: pointer;
+    }
+    .progress-bar {
+        height: 100%;
+        background-color: #0d6efd;
+        border-radius: 5px;
+        width: 0%;
+    }
+    .phase-label {
+        font-weight: bold;
+        min-width: 120px;
+        text-align: center;
+    }
+    .control-button {
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    .control-button:hover {
+        background-color: #5a6268;
+    }
+    .control-button:disabled {
+        background-color: #adb5bd;
+        cursor: not-allowed;
+    }
+    
+</style>
+</head><body class='bg-light'>
+<div class='container mt-4'>
+<h1>Diplomacy Report for Austria (AUT)</h1>
+<h4><strong>Game ID:</strong> gpt-4o-mini-1.43</h4>
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h4>Overall Stats</h4>
+    
+<ul>
+<li><b>Avg Centers:</b> 2.14, <b>Final:</b> 0</li>
+<li><b>Avg Units:</b> 2.36, <b>Final:</b> 0</li>
+<li><b>Avg Influence:</b> 3.07, <b>Final:</b> 1</li>
+<li><b>Avg Self-Relationship:</b> 0.26, <b>Final:</b> 0.33</li>
+<li><b>Avg Others-Relationship:</b> -0.24, <b>Final:</b> -0.17</li>
+</ul>
+
+      </div>
+    </div>
+    
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="stats-tab" data-bs-toggle="tab" data-bs-target="#statsTabContent" type="button" role="tab" aria-controls="statsTabContent" aria-selected="true">AUT Charts</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="negotiation-tab" data-bs-toggle="tab" data-bs-target="#negotiationTabContent" type="button" role="tab" aria-controls="negotiationTabContent" aria-selected="false">Negotiations</button>
+  </li>
+
+  
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="animation-tab" data-bs-toggle="tab" data-bs-target="#animationTabContent" type="button" role="tab" aria-controls="animationTabContent" aria-selected="false">Game Animation</button>
+  </li>
+
+
+</ul>
+<div class="tab-content" id="myTabContent">
+  <!-- STATS TAB -->
+  <div class="tab-pane fade show active p-3" id="statsTabContent" role="tabpanel" aria-labelledby="stats-tab">
+
+<h3>Main Metrics</h3>
+<canvas id='mainMetricsChart' width='800' height='300'></canvas>
+<hr/><h3>Relationships (Self-Perceived)</h3>
+<canvas id='selfRelsChart' width='800' height='300'></canvas>
+<hr/><h3>Relationships (Others → AUT)</h3>
+<canvas id='othersRelsChart' width='800' height='300'></canvas>
+<hr/><h3>Orders: Issued vs Valid vs Rejected</h3>
+<canvas id='ordersChart' width='800' height='300'></canvas>
+</div>
+
+  <div class="tab-pane fade p-3" id="negotiationTabContent" role="tabpanel" aria-labelledby="negotiation-tab">
+    <h2>Negotiations / Dialogues</h2>
+
+<div class="accordion" id="negAccordion">
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading0">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse0" aria-expanded="false" aria-controls="negCollapse0">
+        Negotiation Turn 1 (1901 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse0" class="accordion-collapse collapse" aria-labelledby="negHeading0" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Hello Italy, I believe we can mutually benefit from a cooperative approach in the Adriatic region. I propose we discuss our movements to ensure we both secure our interests without stepping on each other's toes.</li>
+<li><b>To</b> [GER]: Greetings Germany, I see potential for a strong partnership between us. Let's coordinate our efforts in Central Europe to ensure we both expand effectively while keeping our borders secure.</li>
+<li><b>To</b> [RUS]: Hi Russia, I think it would be wise for us to maintain a neutral stance towards each other for now. I suggest we keep our lines of communication open to avoid any misunderstandings as we both look to expand our influence.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: To Austria, I am willing to discuss the Balkans. Perhaps we can come to an understanding regarding Bulgaria and Romania. What are your thoughts on a potential division of influence in the region?</li>
+<li><b>From</b> [RUS]: To AUT, we note your presence near Galicia. We have no immediate designs on Austrian territories, but we must ensure our borders are secure. What are your intentions in the region?</li>
+<li><b>From</b> [ENG]: To all powers, England seeks stability in Europe. We are open to discussions regarding mutual security and the prevention of unnecessary conflict. Let us strive for a peaceful resolution to any potential disputes.</li>
+<li><b>From</b> [GER]: To Austria, I suggest we maintain a neutral stance. I have no immediate designs on your territory, and I would appreciate the same courtesy. Perhaps we can even coordinate our movements to avoid any accidental clashes. Let's focus on securing our own borders for now.</li>
+<li><b>From</b> [ITA]: Greetings Austria, I propose a non-aggression pact for the upcoming year. I am focused on expansion elsewhere and wish to avoid conflict in the Adriatic. Let's agree to respect each other's borders and focus on other targets. What are your thoughts?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, I appreciate your proposal for a non-aggression pact. I agree that avoiding conflict in the Adriatic is in our mutual interest. Let's solidify our understanding and focus on our respective expansions.</li>
+<li><b>To</b> [TUR]: Turkey, I am open to discussing a division of influence in the Balkans. I believe we can come to a mutually beneficial agreement regarding Bulgaria and Romania. Let's outline our interests and see how we can cooperate.</li>
+<li><b>To</b> [RUS]: Russia, I understand your concerns regarding Galicia. My intentions are to secure my position in the Balkans, particularly in Serbia and Romania. I propose we keep our communication open to ensure our borders remain secure.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: To Austria, I am willing to offer you influence in Serbia in exchange for Bulgaria. This would allow both of us to expand our influence in the Balkans without direct conflict. What do you think?</li>
+<li><b>From</b> [ENG]: To all powers, England reiterates its commitment to maintaining the balance of power in Europe. We are prepared to defend our interests and those of our allies. Let us proceed with caution and avoid any actions that could escalate tensions.</li>
+<li><b>From</b> [RUS]: To AUT, we appreciate your willingness to maintain a neutral stance. We propose a more concrete agreement: that neither of us move into RUM or GAL without prior consultation. This will ensure stability on our borders and prevent any misunderstandings. What do you say?</li>
+<li><b>From</b> [GER]: To Austria, I appreciate your offer of partnership. I propose we coordinate our movements in Bohemia and Tyrol. I will support your advance into Tyrol if you support my move into Bohemia. This will create a strong buffer zone between our nations and allow us to focus on other threats.</li>
+<li><b>From</b> [ITA]: Austria, I agree to a cooperative approach in the Adriatic. Let's coordinate movements. I intend to move A VEN to TRI. Do you support this? What are your intentions with F TRI?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, I support your move of A VEN to TRI and believe it will strengthen our position in the Adriatic. Let's ensure our movements are coordinated to avoid any misunderstandings.</li>
+<li><b>To</b> [TUR]: Turkey, I am inclined to accept your proposal for influence in Serbia in exchange for Bulgaria. This arrangement could benefit us both and allow for a smoother expansion in the Balkans.</li>
+<li><b>To</b> [RUS]: Russia, I agree to your proposal regarding RUM and GAL. Let's formalize our understanding to ensure neither of us moves into these territories without prior consultation.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: To Austria, I am willing to offer you influence in Serbia in exchange for Bulgaria. I need Bulgaria to secure my position in the Balkans. What are your specific demands for this exchange?</li>
+<li><b>From</b> [ITA]: Austria, I am moving A VEN to TRI. I need you to vacate TRI with F TRI. Where will you move F TRI? I suggest ADR to support my move into TRI. This secures the Adriatic for both of us.</li>
+<li><b>From</b> [RUS]: To AUT, we propose a more formal agreement. We will not move into GAL if you do not move into RUM. This will maintain stability. Do you agree to this condition? We need a clear commitment to avoid misunderstandings.</li>
+<li><b>From</b> [ENG]: To all powers, England urges caution and restraint. Let us focus on internal development and avoid any actions that could destabilize the continent. We are open to discussing mutual security and the prevention of unnecessary conflict. A stable Europe benefits all.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: Italy, I will move F TRI to ADR to support your advance into TRI. This will solidify our control in the Adriatic and ensure our mutual interests are protected.</li>
+<li><b>To</b> [TUR]: Turkey, I am ready to finalize our agreement for influence in Serbia in exchange for Bulgaria. This arrangement will allow us both to expand without conflict.</li>
+<li><b>To</b> [RUS]: Russia, I agree to your proposal regarding RUM and GAL. Let's formalize our commitment to avoid any movements into these territories without prior consultation.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am moving A VEN to TRI. I expect you to move F TRI from TRI to ADR. This secures the Adriatic. Do not betray me.</li>
+<li><b>From</b> [RUS]: To AUT, we confirm our agreement: we will not move into GAL if you do not move into RUM. This is a final confirmation. We expect you to honor this agreement.</li>
+<li><b>From</b> [TUR]: To Austria, I accept your proposal for influence in Serbia in exchange for Bulgaria. I will move A CON to BUL. I expect you to honor our agreement and not interfere with my control of Bulgaria.</li>
+<li><b>From</b> [ENG]: To all powers, England urges a focus on internal development and the avoidance of aggressive actions. The stability of Europe is paramount, and we will act to preserve it. Let us all consider the consequences of our actions and strive for a peaceful resolution to any potential disputes.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Negotiations have progressed positively with ITA, agreeing to a non-aggression pact and coordinating movements in the Adriatic. I will support ITA's move of A VEN to TRI by moving F TRI to ADR. Discussions with TUR have led to an agreement for influence in Serbia in exchange for Bulgaria, which I intend to honor. RUS and I have formalized our understanding to avoid movements into RUM and GAL, ensuring stability on our borders. Overall, relationships with ITA and TUR have strengthened, while maintaining neutrality with RUS.</li>
+<li><i>Intent:</i> Execute the planned moves to support ITA in the Adriatic and finalize the agreement with TUR regarding the Balkans. Maintain open communication with RUS to ensure no misunderstandings arise.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA+', 'AUT-TUR+']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading1">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse1" aria-expanded="false" aria-controls="negCollapse1">
+        Negotiation Turn 1 (1901 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse1" class="accordion-collapse collapse" aria-labelledby="negHeading1" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I am ready to support your move of A VEN to TRI with F TRI moving to ADR. This will solidify our position in the Adriatic and strengthen our alliance.</li>
+<li><b>To</b> [TUR]: I appreciate our agreement regarding SER and BUL. I will honor my commitment to influence in Serbia while we both expand our territories.</li>
+<li><b>To</b> [RUS]: Let's maintain our understanding to avoid movements into RUM and GAL. Open communication will ensure stability on our borders as we both pursue our objectives.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Greetings, AUT. We note your moves in SER. We expect you to honor our agreement regarding GAL and RUM. Any aggressive moves towards RUM will be met with a swift response. Please confirm your intentions.</li>
+<li><b>From</b> [ITA]: Greetings Austria, I regret our units collided in Trieste. I propose we coordinate better in the Adriatic. I am willing to support your move into Serbia if you allow me to expand into Greece. What are your thoughts?</li>
+<li><b>From</b> [TUR]: Greetings, Austria. I have moved A CON to BUL. I am willing to discuss the future of Serbia in exchange for guarantees of non-aggression. Let's talk about how we can avoid conflict and maintain stability in the Balkans. I am open to a mutually beneficial agreement.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I appreciate your willingness to support my move into Serbia. In return, I can agree to your expansion into Greece, ensuring we both benefit from our coordinated efforts in the Balkans.</li>
+<li><b>To</b> [TUR]: I am committed to our agreement regarding Serbia and Bulgaria. Let's finalize our plans to ensure a smooth expansion for both of us, avoiding any potential conflicts in the region.</li>
+<li><b>To</b> [RUS]: I confirm my intentions to honor our agreement regarding GAL and RUM. I appreciate your understanding and look forward to maintaining stability on our borders as we pursue our respective goals.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I appreciate your support for my move to Trieste. However, I am concerned about your presence in Serbia. I propose a more formal agreement: I will support your expansion into Rumania if you allow me to take Greece and Tunis. This will solidify our positions and prevent future conflicts. What are your thoughts on this?</li>
+<li><b>From</b> [RUS]: Greetings, AUT. We appreciate your confirmation to avoid movements into RUM and GAL. We are moving A WAR to GAL to ensure stability on our borders. We expect you to reciprocate by not moving into RUM. Open communication is key.</li>
+<li><b>From</b> [TUR]: Greetings, Austria. While I appreciate your willingness to discuss Serbia, my move to BUL is non-negotiable. I am willing to consider a non-aggression pact, but only if it benefits both of us. What specific guarantees can you offer to ensure stability in the Balkans? I am watching your moves in SER closely.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I appreciate your proposal for a more formal agreement. I am willing to support your expansion into Rumania in exchange for your move into Greece and Tunis. This will solidify our positions and prevent future conflicts.</li>
+<li><b>To</b> [TUR]: I understand your position regarding Bulgaria. In return for your non-aggression in Serbia, I can guarantee that I will not move into Bulgaria, allowing us both to expand without conflict.</li>
+<li><b>To</b> [RUS]: Thank you for your understanding regarding RUM and GAL. I will continue to honor our agreement and ensure that our borders remain stable as we pursue our respective goals.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am pleased we have reached an agreement. I will support your move into Rumania. I will move A VEN to TRI. Please ensure F TRI moves to ADR to support me. I expect you to leave Greece open for my expansion. Do you agree to these terms?</li>
+<li><b>From</b> [TUR]: Greetings, Austria. My move to BUL is indeed non-negotiable. I am willing to consider a non-aggression pact, but only if you cede SER to me. Otherwise, I will be forced to consider other options. What is your final offer regarding SER?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I am pleased we have reached an agreement. I will ensure F TRI moves to ADR to support your move of A VEN to TRI, and I will leave Greece open for your expansion as discussed.</li>
+<li><b>To</b> [TUR]: I understand your position regarding Serbia. In exchange for your non-aggression in Serbia, I will guarantee that I will not move into Bulgaria, allowing us both to expand without conflict.</li>
+<li><b>To</b> [RUS]: I appreciate your understanding regarding RUM and GAL. I will continue to honor our agreement and ensure that our borders remain stable as we pursue our respective goals.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Greetings, Austria. My move to BUL is non-negotiable. I will not cede SER to you. Prepare for war. I am coordinating with Italy and Russia against you. There is no further discussion.</li>
+<li><b>From</b> [ITA]: Austria, I am moving A VEN to TRI. I expect F TRI to move to ADR to support me. I will support your move into Rumania. I expect you to leave Greece open for my expansion. Do you agree to these terms? This is the final chance to confirm.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Negotiations have been intense, particularly with ITA and TUR. I secured ITA's support for my move into Rumania in exchange for leaving Greece open for their expansion. However, TUR remains hostile, refusing to cede Serbia and threatening war, coordinating with ITA and RUS against me. I confirmed my commitment to avoid RUM and GAL with RUS, maintaining a neutral stance. The situation with TUR is precarious, and I must prepare for potential conflict while solidifying my alliance with ITA.</li>
+<li><i>Intent:</i> Execute the plan to support ITA's move to TRI while ensuring F TRI moves to ADR. Prepare for possible conflict with TUR and consider alternative alliances if necessary. Maintain communication with RUS to ensure stability on that front.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA++', 'AUT-TUR--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading2">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse2" aria-expanded="false" aria-controls="negCollapse2">
+        Negotiation Turn 2 (1902 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse2" class="accordion-collapse collapse" aria-labelledby="negHeading2" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I appreciate our non-aggression pact and would like to confirm our coordinated move with A VEN to TRI while I support with F TRI to ADR. This will strengthen our position in the Adriatic and ensure mutual growth.</li>
+<li><b>To</b> [TUR]: I want to reiterate our agreement regarding influence in Serbia and Bulgaria. I will honor my commitment to allow you to maintain control in Serbia while I focus on securing Bulgaria.</li>
+<li><b>To</b> [RUS]: I value our understanding to avoid movements into RUM and GAL. Let's keep communication open to ensure stability on our borders as we both pursue our respective strategies.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Greetings, AUT. We trust you will honor our agreement regarding GAL and RUM. Any movement into those territories will be considered a hostile act. We are merely positioning our forces for defense.</li>
+<li><b>From</b> [ITA]: Austria, I am moving A VEN to TRI to consolidate my position. I assure you this is not an aggressive move. I am open to discussing a non-aggression pact to ensure stability in the region. Perhaps we can coordinate our efforts against a common threat, such as Russia?</li>
+<li><b>From</b> [TUR]: Austria, I apologize for the move to SER. It was a miscalculation. I propose a truce. I will not move against you if you do not move against me. What are your thoughts?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I appreciate your commitment to our non-aggression pact and your move to TRI. Let's ensure our coordinated efforts in the Adriatic are successful, and I will support your position with F TRI moving to ADR.</li>
+<li><b>To</b> [TUR]: I acknowledge your proposal for a truce and appreciate your willingness to avoid conflict. Let's maintain this understanding as I focus on securing Bulgaria while you hold Serbia.</li>
+<li><b>To</b> [RUS]: Thank you for your reassurance regarding GAL and RUM. I will continue to honor our agreement, and I look forward to maintaining open lines of communication as we both navigate our strategies.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I am willing to consider a truce, but I need assurances that you will not interfere with my expansion into Bulgaria. If you agree to this, I will refrain from further aggression against your territories. What is your response?</li>
+<li><b>From</b> [ITA]: Austria, I appreciate your confirmation of our non-aggression pact. However, I must clarify that my move to TRI is purely defensive. I am concerned about Turkish aggression in the Balkans and must secure my position. I propose we maintain a neutral stance and focus on containing Turkey's expansion. I will not move into ALB this turn.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I appreciate your commitment to our non-aggression pact and your defensive stance in TRI. Let's continue to coordinate our efforts against Turkish expansion, and I will ensure F TRI moves to ADR to support our mutual interests.</li>
+<li><b>To</b> [TUR]: I acknowledge your need for assurances regarding Bulgaria. I am willing to agree not to interfere with your expansion into Bulgaria if you maintain your position in Serbia and refrain from further aggression towards my territories.</li>
+<li><b>To</b> [RUS]: Thank you for your continued understanding regarding GAL and RUM. I will honor our agreement and look forward to maintaining our communication as we both pursue our strategies in the region.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I will not interfere with your expansion into Bulgaria. I expect you to honor our agreement and not interfere with my control of SER. Let's maintain this understanding for now.</li>
+<li><b>From</b> [ITA]: Austria, I am moving A ROM to TUS and F TUN to WES. This is purely for strategic positioning and does not represent a change in our non-aggression pact. I am concerned about Turkish aggression in the Balkans and must secure my position. I will not move into ALB this turn. I propose we maintain a neutral stance and focus on containing Turkey's expansion.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I appreciate your commitment to our non-aggression pact and your strategic positioning. Let's ensure our coordinated efforts in the Adriatic are successful, and I will support your position with F TRI moving to ADR.</li>
+<li><b>To</b> [TUR]: I acknowledge our agreement regarding influence in Serbia and Bulgaria. I will honor my commitment to allow you to maintain control in Serbia while I focus on securing Bulgaria, as we discussed.</li>
+<li><b>To</b> [RUS]: Thank you for your continued understanding regarding GAL and RUM. I will honor our agreement and look forward to maintaining our communication as we both pursue our strategies in the region.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I will not interfere with your expansion into Bulgaria. I expect you to honor our agreement and not interfere with my control of SER. This is the final round, so I expect you to honor this.</li>
+<li><b>From</b> [ITA]: Austria, I am moving A TRI to BUD. This is a necessary move to secure my position in the Balkans. I assure you this is not an act of aggression against you. I am merely trying to contain Turkish expansion. I expect you to not interfere with my move to BUD.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Negotiations with ITA have been positive, confirming our non-aggression pact and coordinating efforts against TUR. ITA's move to BUD is concerning, but they assure it is defensive. TUR has proposed a truce, agreeing not to interfere with my expansion into BUL, while I will respect their control of SER. RUS remains stable, reaffirming our agreement regarding GAL and RUM. Overall, I am focusing on securing BUL while maintaining good relations with ITA and TUR, despite the latter's distrust.</li>
+<li><i>Intent:</i> Coordinate with ITA to strengthen our position against TUR while ensuring my expansion into BUL. Maintain communication with RUS to uphold our agreements. Monitor TUR's actions closely to ensure they adhere to our truce.</li>
+<li><i>Relationship Updates:</i> ['AUT-ITA++', 'AUT-TUR--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading3">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse3" aria-expanded="false" aria-controls="negCollapse3">
+        Negotiation Turn 2 (1902 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse3" class="accordion-collapse collapse" aria-labelledby="negHeading3" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I appreciate our ongoing cooperation and would like to confirm our support for your move to TRI. Let's ensure our units are coordinated to maximize our influence in the Adriatic.</li>
+<li><b>To</b> [TUR]: I propose we maintain our truce and respect each other's territories. I will not interfere with your control of SER if you allow me to secure BUL. This could lead to a more stable situation for both of us.</li>
+<li><b>To</b> [RUS]: I value our agreement regarding RUM and GAL. Let's keep communication open to avoid any misunderstandings as we both navigate our respective expansions.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Greetings, AUT. I hope our agreement regarding GAL and RUM still holds. I am moving A WAR to SIL. This is not intended as an act of aggression, but rather as a precautionary measure. I trust you will reciprocate by not moving into GAL or RUM.</li>
+<li><b>From</b> [TUR]: Austria, I propose a truce. Our conflict in the Balkans is benefiting neither of us. I am willing to withdraw from SER if you agree to allow me to expand into GRE. This would allow us to focus on other threats. Let me know if you are interested in a more peaceful resolution.</li>
+<li><b>From</b> [ITA]: Austria, I apologize for the recent aggression. I was misled by false intelligence. I propose a truce and a return to the status quo. I will move my army from Budapest back to Trieste if you agree to withdraw your forces from Greece. This will allow us to focus on mutual threats.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I appreciate your willingness to return to Trieste and propose we coordinate our movements to ensure a strong presence in the Adriatic. Let's finalize our plans to secure our mutual interests.</li>
+<li><b>To</b> [TUR]: I acknowledge your proposal for a truce and am open to discussing a more stable arrangement. However, I must secure Bulgaria to strengthen my position. Let's find a way to respect each other's territories.</li>
+<li><b>To</b> [RUS]: Thank you for your update regarding your movements. I assure you that our agreement regarding GAL and RUM remains intact, and I will continue to respect our borders as we both expand.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I appreciate your offer of a truce. However, I cannot agree to allow you to secure BUL. I need it to secure my position in the Balkans. I propose we focus our efforts elsewhere, perhaps against Italy. What are your thoughts on a joint attack on VEN?</li>
+<li><b>From</b> [ITA]: Austria, I appreciate your willingness to negotiate. However, I cannot withdraw from Budapest while you occupy Trieste. I propose a compromise: I will support your move into Serbia if you cede Trieste to me. This will create a buffer zone between us and allow us to focus on our respective spheres of influence. What do you say?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I appreciate your willingness to support my move into Serbia. In return, I will ensure that my forces in Trieste remain non-aggressive. Let's coordinate our movements to solidify our positions in the Adriatic and the Balkans.</li>
+<li><b>To</b> [TUR]: While I understand your need for stability in the Balkans, I must insist on securing Bulgaria to strengthen my position. Perhaps we can agree on a temporary arrangement where I take BUL while you maintain control of SER, allowing us both to focus on our respective expansions.</li>
+<li><b>To</b> [RUS]: Thank you for your continued cooperation regarding GAL and RUM. I believe it is in our mutual interest to maintain stability in our borders. Let's keep our lines of communication open as we navigate our expansions.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I appreciate your offer of a truce. However, I cannot agree to allow you to secure BUL. I need it to secure my position in the Balkans. I propose we focus our efforts elsewhere, perhaps against Italy. What are your thoughts on a joint attack on VEN and the division of Italian territories?</li>
+<li><b>From</b> [ITA]: Austria, I am willing to cede Budapest back to you in exchange for Trieste. However, I need a guarantee that you will not use Trieste to attack Venice. I propose a non-aggression pact for the Adriatic, with both of us focusing on other fronts. If you agree, I will order A BUD to TRI this turn.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I appreciate your willingness to support my move into Serbia and will ensure that my forces in Trieste remain non-aggressive. Let's finalize our coordination to solidify our positions in the Adriatic and the Balkans.</li>
+<li><b>To</b> [TUR]: While I understand your concerns, I must secure Bulgaria to strengthen my position. I propose we agree on a temporary arrangement where I take BUL while you maintain control of SER, allowing us both to focus on our respective expansions.</li>
+<li><b>To</b> [RUS]: Thank you for your continued cooperation regarding GAL and RUM. I believe it is in our mutual interest to maintain stability in our borders, and I assure you that our agreement remains intact as we navigate our expansions.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am willing to cede Budapest back to you in exchange for Trieste. I will order A BUD to TRI this turn. I expect you to vacate Trieste immediately. Do we have an agreement?</li>
+<li><b>From</b> [TUR]: Austria, I have decided to focus my efforts elsewhere. I will not interfere with your control of BUL. I suggest you focus on defending against Italy. Our truce is maintained for now. I will betray you later.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Negotiations have progressed with ITA agreeing to cede BUD in exchange for TRI, which I will vacate. I have assured ITA of non-aggression in the Adriatic. TUR has agreed to let me secure BUL while maintaining control of SER, but I remain cautious of their intentions. RUS continues to uphold our agreement regarding GAL and RUM. Overall, I have solidified my position in the Balkans while ensuring cooperation with ITA and maintaining a wary truce with TUR.</li>
+<li><i>Intent:</i> I plan to move A BUD to TRI and secure BUL. I will coordinate with ITA to ensure a strong presence in the Adriatic while keeping an eye on TUR's movements. I aim to strengthen my position without provoking further conflict.</li>
+<li><i>Relationship Updates:</i> ['ITA-AUT++', 'TUR-AUT~']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading4">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse4" aria-expanded="false" aria-controls="negCollapse4">
+        Negotiation Turn 3 (1903 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse4" class="accordion-collapse collapse" aria-labelledby="negHeading4" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I propose we coordinate our movements in the Adriatic to strengthen our position against TUR. I will support your move to TRI with F ADR, and in return, I ask for your assurance that you will not interfere with my plans in BUL.</li>
+<li><b>To</b> [TUR]: I appreciate our recent discussions regarding SER and BUL. I intend to honor our agreement, but I must emphasize the importance of maintaining stability in the region. Let's ensure our movements do not provoke unnecessary conflict.</li>
+<li><b>To</b> [RUS]: I want to reaffirm our understanding regarding RUM and GAL. It is crucial for both of us to maintain our borders without conflict. Let's keep communication open to avoid any misunderstandings as we move forward.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I propose a temporary truce. I will not interfere with your expansion in BUL if you do not interfere with my actions in SER. This will allow us both to consolidate our positions and focus on other threats. What do you say?</li>
+<li><b>From</b> [ITA]: Austria, I am moving A TRI to SER to pressure Turkey. I will also move A BUD to RUM to further assist. I expect you to hold VIE. This will help us contain the Turkish threat. Do you agree?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I appreciate your support in moving A TRI to SER and A BUD to RUM. I will hold VIE as agreed, and together we can apply pressure on TUR while solidifying our positions in the Balkans.</li>
+<li><b>To</b> [TUR]: I accept your proposal for a temporary truce regarding SER and BUL. Let's ensure our movements remain coordinated to avoid any unnecessary conflict while we both focus on other threats.</li>
+<li><b>To</b> [RUS]: I want to confirm our understanding regarding RUM and GAL remains intact. Open communication is key to maintaining stability on our borders, and I appreciate your cooperation.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am moving A TRI to SER to pressure Turkey. I will also move A BUD to RUM to further assist. I expect you to hold VIE. This will help us contain the Turkish threat. However, I must decline your offer to support my move to TRI. I believe it is best for both of us to maintain our current positions for now.</li>
+<li><b>From</b> [TUR]: Austria, I am maintaining my position in SER as agreed. I expect you to do the same in BUL. Let's avoid any unnecessary conflict and focus on other threats. I am open to further discussions regarding long-term stability in the region.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I appreciate your commitment to pressure TUR by moving A TRI to SER and A BUD to RUM. I will hold VIE as agreed, and together we can strengthen our position in the Balkans while keeping an eye on TUR's movements.</li>
+<li><b>To</b> [TUR]: I acknowledge our truce regarding SER and BUL, and I will ensure my movements remain coordinated with yours. Let's focus on consolidating our positions and addressing other threats in the region.</li>
+<li><b>To</b> [RUS]: I want to reaffirm our agreement regarding RUM and GAL. Maintaining open communication is essential for both of us to avoid misunderstandings and ensure stability on our borders.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am moving A TRI to SER to pressure Turkey. I will also move A BUD to VIE to further assist. I expect you to hold VIE. This will help us contain the Turkish threat. Do you agree? I am open to discussing a coordinated attack on TUR next turn.</li>
+<li><b>From</b> [TUR]: Austria, I am maintaining my position in SER. I am open to further discussions regarding long-term stability in the region. However, I must prioritize my own interests. I am moving A RUM to BUD to challenge Italy. I suggest you focus on defending your core territories. Do not expect any further cooperation from me.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I appreciate your commitment to pressure TUR by moving A TRI to SER and A BUD to RUM. I will hold VIE as agreed, and together we can strengthen our position in the Balkans while keeping an eye on TUR's movements.</li>
+<li><b>To</b> [TUR]: I acknowledge our truce regarding SER and BUL, and I will ensure my movements remain coordinated with yours. Let's focus on consolidating our positions and addressing other threats in the region.</li>
+<li><b>To</b> [RUS]: I want to reaffirm our agreement regarding RUM and GAL. Maintaining open communication is essential for both of us to avoid misunderstandings and ensure stability on our borders.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am moving A TRI to SER to pressure Turkey. I will also move A BUD to VIE to further assist. I expect you to hold VIE. This will help us contain the Turkish threat. I am open to discussing a coordinated attack on TUR next turn. Let's crush them together.</li>
+<li><b>From</b> [TUR]: Austria, I am maintaining my position in SER. I am moving A RUM to BUD to challenge Italy. I suggest you focus on defending your core territories. Do not expect any further cooperation from me. Our truce is over. Prepare for war.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Negotiations have been tense, particularly with TUR, who has declared the truce over and is moving to challenge my position in BUL. ITA remains a strong ally, pushing for coordinated attacks against TUR, but their move to VIE raises concerns. I have reaffirmed my commitment to hold VIE and support ITA's moves to SER and RUM. RUS continues to maintain a neutral stance, but I must be cautious as TUR's aggression could destabilize the region. Promises made include holding VIE and supporting ITA's moves, while TUR has broken the truce by moving A RUM to BUD.</li>
+<li><i>Intent:</i> I plan to hold VIE and coordinate with ITA for a potential attack on TUR. I will monitor TUR's movements closely and prepare for possible conflict while maintaining communication with RUS to ensure stability on my borders.</li>
+<li><i>Relationship Updates:</i> ['TUR--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading5">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse5" aria-expanded="false" aria-controls="negCollapse5">
+        Negotiation Turn 3 (1903 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse5" class="accordion-collapse collapse" aria-labelledby="negHeading5" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I propose we coordinate our movements in the Adriatic to strengthen our positions against TUR. I will support your move to TRI with F ADR, and I suggest we keep communication open to ensure our mutual interests are protected.</li>
+<li><b>To</b> [TUR]: I would like to reaffirm our previous agreement regarding SER and BUL. It is crucial for both of us to maintain stability in the region, and I hope we can avoid any unnecessary conflict as we pursue our respective goals.</li>
+<li><b>To</b> [RUS]: I appreciate our ongoing understanding regarding GAL and RUM. Let's continue to uphold our agreement to ensure stability on our borders, and I look forward to maintaining a neutral stance as we navigate the current tensions.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I propose a truce. I will not interfere with your expansion in Serbia if you acknowledge my control of Greece and Bulgaria. This will allow us to focus on other threats. What do you say?</li>
+<li><b>From</b> [GER]: Germany is committed to securing its rightful place in Europe. Any attempts to stand in our way will be met with force. We seek only what is rightfully ours and will not hesitate to take it.</li>
+<li><b>From</b> [ITA]: Austria, I understand our recent conflict has caused some friction. However, I believe we can find common ground against our mutual enemies. I propose a temporary truce and a coordinated effort to contain Turkey's expansion in the Balkans. What are your terms?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I appreciate your proposal for a temporary truce and coordinated efforts against TUR. I am fully on board with supporting your move to TRI and will ensure my fleet in ADR is ready to assist. Let's solidify our plans to counter TUR's expansion.</li>
+<li><b>To</b> [TUR]: I acknowledge your control of Greece and Bulgaria as part of our truce. However, I must emphasize that my expansion into Serbia is crucial for my strategy. I hope we can maintain our agreement and avoid conflict as we pursue our respective goals.</li>
+<li><b>To</b> [RUS]: Thank you for your continued support regarding GAL and RUM. I believe it is essential for both of us to maintain our agreements to ensure stability in the region. Let's keep communication open as we navigate the current tensions.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I propose a temporary truce. I will support your move to VIE with A BUD, and I need you to support my move to TRI with F ADR. This will strengthen both our positions against Turkey. Let's coordinate these moves to ensure our mutual interests are protected. I will also support your move to RUM.</li>
+<li><b>From</b> [TUR]: Austria, I appreciate your reaffirmation of our agreement regarding SER and BUL. However, my move into GRE was necessary to secure my position in the region. I propose we maintain a limited truce, focusing on our respective goals elsewhere. I will not interfere with your expansion in SER if you do not interfere with my expansion in GRE and RUM. Let's avoid unnecessary conflict and focus on our other enemies.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I appreciate your support for my move to RUM and your commitment to assist with my expansion. Let's finalize our coordination for the upcoming moves, ensuring that F ADR supports A BUD to TRI and that we maintain pressure on TUR together.</li>
+<li><b>To</b> [TUR]: I acknowledge your control of GRE and BUL, and I am committed to respecting our truce. However, I must emphasize that my move into SER is essential for my strategy. I hope we can maintain our agreement and avoid conflict as we pursue our respective goals.</li>
+<li><b>To</b> [RUS]: Thank you for your continued support regarding GAL and RUM. I believe it is essential for both of us to maintain our agreements to ensure stability in the region. Let's keep communication open as we navigate the current tensions and ensure our borders remain secure.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I appreciate your understanding regarding GRE. I propose we maintain our limited truce, focusing on our respective goals elsewhere. I will not interfere with your expansion in SER if you do not interfere with my expansion in RUM. Let's avoid unnecessary conflict and focus on our other enemies. I suggest you focus on Italy.</li>
+<li><b>From</b> [ITA]: Austria, I appreciate your support. I will support your move to VIE with A BUD. I need you to support my move to TRI with F ADR. I will also support your move to RUM. Let's coordinate these moves to ensure our mutual interests are protected. Can you confirm these moves?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I confirm our coordinated moves: F ADR will support A BUD to TRI, and I will also move A VIE to RUM. This will strengthen our positions against TUR and ensure our mutual interests are protected.</li>
+<li><b>To</b> [TUR]: I appreciate your commitment to our limited truce. I will respect your control of GRE and BUL while I focus on securing SER. Let's continue to avoid unnecessary conflict and concentrate on our respective goals.</li>
+<li><b>To</b> [RUS]: Thank you for your continued support regarding GAL and RUM. I believe it is essential for both of us to maintain our agreements to ensure stability in the region. Let's keep communication open as we navigate the current tensions.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I appreciate your support. I will support your move to VIE with A BUD. I need you to support my move to TRI with F ADR. I will also support your move to RUM. Let's coordinate these moves to ensure our mutual interests are protected. I will move A VEN to TRI. I expect you to support this move with F ADR. I will also move A ALB to GRE.</li>
+<li><b>From</b> [TUR]: Austria, I appreciate your understanding regarding GRE. I propose we maintain our limited truce, focusing on our respective goals elsewhere. I will not interfere with your expansion in SER if you do not interfere with my expansion in RUM. I suggest you focus on Italy and Russia. This is my final offer.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Negotiations have progressed with ITA confirming support for my move to RUM and coordinating efforts against TUR. I have agreed to support ITA's move to TRI with F ADR. TUR has proposed a limited truce, allowing me to expand into SER while they control GRE and BUL. I have reaffirmed my commitment to this truce. RUS remains neutral, and I have maintained communication regarding GAL and RUM. Overall, I am strengthening my position against TUR while solidifying my alliance with ITA.</li>
+<li><i>Intent:</i> Execute coordinated moves with ITA: F ADR supports A BUD to TRI, and A VIE moves to RUM. Maintain the truce with TUR while expanding into SER. Keep communication open with RUS to ensure stability.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading6">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse6" aria-expanded="false" aria-controls="negCollapse6">
+        Negotiation Turn 4 (1904 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse6" class="accordion-collapse collapse" aria-labelledby="negHeading6" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I propose we coordinate our movements to ensure a strong presence in the Adriatic. I will support your move to TRI with F ADR, and I hope you can assist me in securing RUM.</li>
+<li><b>To</b> [TUR]: I would like to reaffirm our truce regarding SER and BUL. Let's maintain open communication to avoid misunderstandings as we both navigate our interests in the Balkans.</li>
+<li><b>To</b> [RUS]: I appreciate our ongoing neutrality and would like to ensure we continue to respect our agreements regarding GAL and RUM. Let's keep the lines of communication open to prevent any potential conflicts.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I propose a limited truce. I will not move against you in SER if you do not interfere with my expansion in the Balkans. What are your intentions regarding BUL?</li>
+<li><b>From</b> [ITA]: Austria, we have been successful in our coordinated attacks. I propose we continue our alliance and focus on eliminating Turkey. I will move A TRI to SER to further pressure them. What are your plans for GAL and BOH?</li>
+<li><b>From</b> [ENG]: Austria and Turkey, I am aware of your struggles against Italy. While I am currently occupied with France and Germany, I am willing to offer limited support to maintain the balance of power in the Mediterranean. What are your immediate needs, and what concessions are you willing to offer in return for British assistance?</li>
+<li><b>From</b> [ENG]: To all powers: I reiterate my commitment to defending British interests and maintaining the balance of power in Europe. I am open to negotiations with any power willing to engage in good faith. However, I will not tolerate aggression or expansionist policies that threaten my allies or my own security. I have declared war on France and Germany due to their unprovoked aggression.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I appreciate your support in our coordinated efforts against TUR. I will move A VIE to RUM to strengthen our position, and I hope you can continue to apply pressure on SER with your move to TRI.</li>
+<li><b>To</b> [TUR]: I acknowledge your proposal for a limited truce and will respect your control of SER while I focus on securing RUM. Let's ensure our communication remains open to avoid any misunderstandings.</li>
+<li><b>To</b> [RUS]: I value our neutral stance and would like to confirm our agreement regarding GAL and RUM. Maintaining this understanding is crucial for stability in the region as we both navigate our interests.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I reaffirm our truce regarding SER and BUL. I will not move against you in SER if you do not interfere with my expansion in the Balkans. I am concerned about Italy's aggression. Perhaps we can find common ground against them. What are your intentions regarding VIE?</li>
+<li><b>From</b> [ITA]: Austria, I appreciate your support in VIE and TRI. However, I am concerned about TUR's presence in the Balkans. I propose we coordinate a joint attack on SER and RUM next turn to eliminate their influence. What are your thoughts?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA]: I appreciate your commitment to our alliance and your move to TRI. Let's coordinate our efforts to apply maximum pressure on TUR by planning a joint attack on SER and RUM next turn. I will ensure A VIE moves to RUM to strengthen our position.</li>
+<li><b>To</b> [TUR]: I acknowledge our truce regarding SER and BUL, and I will respect your control of SER while I focus on securing RUM. However, I must remain vigilant regarding your movements, as our interests in the Balkans are closely tied.</li>
+<li><b>To</b> [RUS]: I value our neutral stance and would like to confirm our agreement regarding GAL and RUM. Maintaining this understanding is crucial for stability in the region, and I hope we can continue to support each other's interests.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I reaffirm our truce regarding SER and BUL. I will not move against you in SER if you do not interfere with my expansion in the Balkans. I am concerned about Italy's aggression. Perhaps we can find common ground against them. What are your moves this turn?</li>
+<li><b>From</b> [ITA]: Austria, I am concerned about your ability to hold RUM against TUR. I will move A TRI to SER to assist, but I need you to commit to defending VIE. Can you guarantee that you will not leave VIE undefended? I am also moving A BUD to VIE to reinforce our position.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA, TUR]: I appreciate our ongoing discussions and would like to confirm our coordinated efforts against TUR. I will ensure A VIE moves to RUM to strengthen our position, while I expect you to maintain pressure on SER with your move to TRI. Let's work together to secure our interests.</li>
+<li><b>To</b> [RUS]: I value our neutral stance and would like to reaffirm our agreement regarding GAL and RUM. Maintaining this understanding is crucial for stability in the region, and I hope we can continue to support each other's interests as we navigate the current tensions.</li>
+<li><b>To</b> [ALL]: As we approach the next phase, I urge all powers to consider the balance of power in the region. Cooperation is essential to avoid unnecessary conflict, and I am open to discussions that can lead to mutual benefits for all involved.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am moving A TRI to SER and A BUD to VIE. I need you to hold VIE at all costs. If you fail, our alliance is over. What are your final orders?</li>
+<li><b>From</b> [TUR]: Austria, I reaffirm our truce regarding SER and BUL. I will not move against you in SER if you do not interfere with my expansion in the Balkans. I am concerned about Italy's aggression. Perhaps we can find common ground against them. What are your moves this turn?</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Negotiations have focused on coordinating efforts against TUR, with strong support from ITA. I confirmed my move of A VIE to RUM and emphasized the need for ITA to hold VIE. TUR has reaffirmed their truce regarding SER and BUL, expressing concerns about ITA's aggression. I have maintained a neutral stance with RUS, confirming our agreements regarding GAL and RUM. Overall, the focus remains on eliminating TUR's influence in the Balkans while ensuring the stability of our alliance with ITA.</li>
+<li><i>Intent:</i> Execute the move of A VIE to RUM to strengthen my position against TUR, while ensuring ITA holds VIE. Maintain communication with TUR to uphold the truce and monitor their movements closely. Continue to engage RUS to ensure mutual respect of territorial agreements.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading7">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse7" aria-expanded="false" aria-controls="negCollapse7">
+        Negotiation Turn 4 (1904 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse7" class="accordion-collapse collapse" aria-labelledby="negHeading7" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA, TUR]: I propose we solidify our agreements regarding the Balkans. ITA, I will support your move to TRI, and TUR, I expect you to honor our truce regarding SER and BUL. Let's ensure our mutual interests are protected.</li>
+<li><b>To</b> [RUS]: I appreciate our ongoing neutrality and would like to reaffirm our agreement regarding GAL and RUM. Let's keep communication open to avoid any misunderstandings as we navigate the current tensions in the Balkans.</li>
+<li><b>To</b> [ENG, FRA, GER]: While I focus on the Balkans, I am open to discussing potential cooperation or non-aggression pacts to ensure stability in our regions. Let's explore how we can mutually benefit from our current positions.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: To Austria, I propose a truce. Let us focus on containing Italy and Russia. I will not attack you if you do not attack me. I am willing to discuss a division of the Balkans.</li>
+<li><b>From</b> [ENG]: AUT, I am engaged in a war with FRA and GER. I am open to discussing opportunities to destabilize the Mediterranean and contain Italian expansion. What are your current objectives and how can we mutually benefit from the current situation?</li>
+<li><b>From</b> [ITA]: Greetings, Austria. I propose a coordinated attack on Turkey. I will move A SER to RUM, and A GRE to BUL. Can you support these moves?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA, TUR]: ITA, I will support your moves to RUM and BUL as we coordinate our attack on TUR. TUR, I expect you to honor our truce while we focus on mutual threats. Let's ensure our strategies align for a successful operation.</li>
+<li><b>To</b> [RUS]: RUS, I appreciate our ongoing neutrality and would like to reaffirm our agreement regarding GAL and RUM. Let's keep communication open to avoid any misunderstandings as we navigate the current tensions in the Balkans.</li>
+<li><b>To</b> [ENG, FRA, GER]: While I focus on the Balkans, I am open to discussing potential cooperation or non-aggression pacts to ensure stability in our regions. Let's explore how we can mutually benefit from our current positions.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ENG]: AUT, I am at war with FRA and GER. I am interested in a non-aggression pact to secure our borders. I am willing to offer support against ITA in exchange for guarantees of neutrality in the Balkans. What are your specific concerns regarding ITA, and how can we work together to contain their expansionist ambitions?</li>
+<li><b>From</b> [ITA]: Austria, I will support your hold in VIE. I will move A TRI to TYR to support your defense. I need your support for my move to SER. Will you support A BUD - SER?</li>
+<li><b>From</b> [TUR]: To Austria, I am willing to solidify our truce. I will not attack you if you do not attack me. I am willing to discuss a division of the Balkans, but I need assurances that you will not interfere with my plans in RUM and GRE. Let's focus on containing Italy and Russia.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA, TUR]: ITA, I will support your move to SER with A BUD, and I expect you to hold VIE as we coordinate our efforts against TUR. TUR, let's ensure our truce remains intact while we focus on containing our mutual threats.</li>
+<li><b>To</b> [RUS]: RUS, I appreciate our ongoing neutrality and would like to reaffirm our agreement regarding GAL and RUM. Let's keep communication open to avoid any misunderstandings as we navigate the current tensions in the Balkans.</li>
+<li><b>To</b> [ENG, FRA, GER]: While I focus on the Balkans, I am open to discussing potential cooperation or non-aggression pacts to ensure stability in our regions. Let's explore how we can mutually benefit from our current positions.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am concerned about Turkey's demands. I will continue to support your defense of VIE. However, I need your support for my move to SER to contain Turkey. Will you support A BUD - SER?</li>
+<li><b>From</b> [TUR]: To Austria, I am willing to solidify our truce. I will not attack you if you do not attack me. I am willing to discuss a division of the Balkans, but I need assurances that you will not interfere with my plans in RUM and GRE. Let's focus on containing Italy and Russia. I suggest we coordinate our efforts to contain Italy's expansion in the Adriatic.</li>
+<li><b>From</b> [ENG]: AUT, I am willing to offer support against ITA by disrupting their supply lines in the Adriatic. In return, I require a guarantee of neutrality in the Balkans and a commitment to not interfere with my operations against FRA and GER. Do you accept these terms?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [ITA, TUR]: ITA, I will support your move to SER with A BUD, and I expect you to hold VIE as we coordinate our efforts against TUR. TUR, let's ensure our truce remains intact while we focus on containing our mutual threats.</li>
+<li><b>To</b> [RUS]: RUS, I appreciate our ongoing neutrality and would like to reaffirm our agreement regarding GAL and RUM. Let's keep communication open to avoid any misunderstandings as we navigate the current tensions in the Balkans.</li>
+<li><b>To</b> [ENG, FRA, GER]: While I focus on the Balkans, I am open to discussing potential cooperation or non-aggression pacts to ensure stability in our regions. Let's explore how we can mutually benefit from our current positions.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, I am moving A BUD to RUM to support you. I will also move A VIE to GAL. Let us crush Turkey together. I expect you to hold VIE.</li>
+<li><b>From</b> [ENG]: AUT, I offer support against ITA by disrupting their supply lines in the Adriatic. I require a guarantee of neutrality in the Balkans and a commitment to not interfere with my operations against FRA and GER. Do you accept these terms? Time is of the essence.</li>
+<li><b>From</b> [TUR]: To Austria, I am willing to solidify our truce. I will not attack you if you do not attack me. I am willing to discuss a division of the Balkans, but I need assurances that you will not interfere with my plans in RUM and GRE. Let's focus on containing Italy and Russia. I suggest we coordinate our efforts to contain Italy's expansion in the Adriatic. I am moving A RUM to SER and F CON to BUL.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Negotiations have focused on the Balkans, with ITA and TUR expressing intentions to coordinate against each other. ITA has committed to supporting my moves to RUM and SER, while TUR has reiterated a desire for a truce and a division of the Balkans. ENG has offered support against ITA in exchange for neutrality in the Balkans, which I am considering. I have maintained communication with RUS to reaffirm our neutrality agreement. Promises made include ITA's support for my hold in VIE and TUR's commitment to not attack me. No promises have been broken yet.</li>
+<li><i>Intent:</i> I plan to support ITA's moves to RUM and SER while ensuring that TUR honors our truce. I will also consider ENG's offer for support against ITA, but I need to maintain my position in the Balkans. I aim to solidify my influence in the region while keeping options open for future alliances.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <div class="tab-pane fade p-3" id="animationTabContent" role="tabpanel" aria-labelledby="animation-tab">
+    <h2>Game Animation</h2>
+    <div class="svg-player-container">
+      <div class="svg-display" id="svgDisplay">
+      </div>
+      <div class="player-controls">
+        <button class="control-button" id="prevBtn">◀</button>
+        <button class="control-button" id="playPauseBtn">▶</button>
+        <button class="control-button" id="nextBtn">▶</button>
+        <div class="progress-container" id="progressContainer">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="phase-label" id="phaseLabel"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+<script>
+
+    var ctxMain = document.getElementById('mainMetricsChart').getContext('2d');
+    var mainMetricsChart = new Chart(ctxMain, {
+      type: 'line',
+      data: {
+        labels: ['1901 1901 Spring Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Fall Movement','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Fall Movement','1903 1903 Fall Retreat','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement'],
+        datasets: [
+          {
+            label: 'Centers',
+            data: [3,3,3,3,3,3,3,3,3,1,1,1,0,0],
+            borderColor: 'red',
+            fill: false
+          },
+          {
+            label: 'Units',
+            data: [3,3,3,3,3,3,3,3,3,3,1,1,1,0],
+            borderColor: 'blue',
+            fill: false
+          },
+          {
+            label: 'Influence',
+            data: [3,4,4,4,5,4,4,3,2,3,3,2,1,1],
+            borderColor: 'green',
+            fill: false
+          },
+          {
+            label: 'Builds',
+            data: [0,0,0,0,0,0,0,0,0,-2,0,0,-1,0],
+            borderColor: 'purple',
+            fill: false
+          },
+          {
+            label: 'Civil Disorder',
+            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+            borderColor: 'orange',
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+
+    var ctxSelf = document.getElementById('selfRelsChart').getContext('2d');
+    var selfRelsChart = new Chart(ctxSelf, {
+      type: 'line',
+      data: {
+        labels: ['1901 1901 Spring Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Fall Movement','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Fall Movement','1903 1903 Fall Retreat','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement'],
+        datasets: [
+            {
+              label: 'AUT-ENG',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+              borderColor: 'maroon',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-FRA',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+              borderColor: 'steelblue',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-GER',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+              borderColor: 'darkgreen',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-ITA',
+              data: [1,2,2,2,2,2,2,2,2,2,2,2,2,2],
+              borderColor: 'purple',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-RUS',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+              borderColor: 'darkorange',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-TUR',
+              data: [1,-2,-2,-2,0,0,0,0,0,0,0,0,0,0],
+              borderColor: 'navy',
+              fill: false
+            }
+            ,
+        {
+          label: 'Aggregate Self',
+          data: [0.3333333333333333,0.0,0.0,0.0,0.3333333333333333,0.3333333333333333,0.3333333333333333,0.3333333333333333,0.3333333333333333,0.3333333333333333,0.3333333333333333,0.3333333333333333,0.3333333333333333,0.3333333333333333],
+          borderColor: 'black',
+          borderDash: [5,5],
+          fill: false
+        }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            min: -2,
+            max: 2,
+            ticks: {
+              stepSize: 1
+            }
+          }
+        }
+      }
+    });
+
+
+    var ctxOthers = document.getElementById('othersRelsChart').getContext('2d');
+    var othersRelsChart = new Chart(ctxOthers, {
+      type: 'line',
+      data: {
+        labels: ['1901 1901 Spring Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Fall Movement','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Fall Movement','1903 1903 Fall Retreat','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement'],
+        datasets: [
+            {
+              label: 'ENG-AUT',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+              borderColor: 'maroon',
+              fill: false
+            }
+            ,
+            {
+              label: 'FRA-AUT',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+              borderColor: 'steelblue',
+              fill: false
+            }
+            ,
+            {
+              label: 'GER-AUT',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+              borderColor: 'darkgreen',
+              fill: false
+            }
+            ,
+            {
+              label: 'ITA-AUT',
+              data: [1,0,0,-2,0,0,1,1,1,1,1,1,1,1],
+              borderColor: 'purple',
+              fill: false
+            }
+            ,
+            {
+              label: 'RUS-AUT',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+              borderColor: 'darkorange',
+              fill: false
+            }
+            ,
+            {
+              label: 'TUR-AUT',
+              data: [-1,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2],
+              borderColor: 'navy',
+              fill: false
+            }
+            ,
+        {
+          label: 'Aggregate Others',
+          data: [0.0,-0.3333333333333333,-0.3333333333333333,-0.6666666666666666,-0.3333333333333333,-0.3333333333333333,-0.16666666666666666,-0.16666666666666666,-0.16666666666666666,-0.16666666666666666,-0.16666666666666666,-0.16666666666666666,-0.16666666666666666,-0.16666666666666666],
+          borderColor: 'black',
+          borderDash: [5,5],
+          fill: false
+        }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            min: -2,
+            max: 2,
+            ticks: {
+              stepSize: 1
+            }
+          }
+        }
+      }
+    });
+
+
+    var ctxOrders = document.getElementById('ordersChart').getContext('2d');
+    var ordersChart = new Chart(ctxOrders, {
+      type: 'line',
+      data: {
+        labels: ['1901 1901 Spring Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Fall Movement','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Fall Movement','1903 1903 Fall Retreat','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement'],
+        datasets: [
+          {
+            label: 'Issued Orders',
+            data: [3,3,0,3,3,0,3,3,3,2,3,3,1,0],
+            borderColor: 'red',
+            fill: false
+          },
+          {
+            label: 'Valid Orders',
+            data: [3,3,0,3,3,0,3,1,1,2,1,1,1,0],
+            borderColor: 'green',
+            fill: false
+          },
+          {
+            label: 'Rejected Orders',
+            data: [0,0,0,0,0,0,0,2,2,0,2,2,0,0],
+            borderColor: 'orange',
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const svgFiles = ['gamestate_renders/gpt-4o-mini-1.43/gamestate_F1901M.svg','gamestate_renders/gpt-4o-mini-1.43/gamestate_W1901A.svg','gamestate_renders/gpt-4o-mini-1.43/gamestate_S1902M.svg','gamestate_renders/gpt-4o-mini-1.43/gamestate_F1902M.svg','gamestate_renders/gpt-4o-mini-1.43/gamestate_W1902A.svg','gamestate_renders/gpt-4o-mini-1.43/gamestate_S1903M.svg','gamestate_renders/gpt-4o-mini-1.43/gamestate_F1903M.svg','gamestate_renders/gpt-4o-mini-1.43/gamestate_F1903R.svg','gamestate_renders/gpt-4o-mini-1.43/gamestate_W1903A.svg','gamestate_renders/gpt-4o-mini-1.43/gamestate_S1904M.svg','gamestate_renders/gpt-4o-mini-1.43/gamestate_F1904M.svg','gamestate_renders/gpt-4o-mini-1.43/gamestate_W1904A.svg','gamestate_renders/gpt-4o-mini-1.43/gamestate_S1905M.svg'];
+        const phaseLabels = ['1901 1901 Fall Movement','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Fall Movement','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Fall Movement','1903 1903 Fall Retreat','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement'];
+        let currentIndex = 0;
+        let isPlaying = false;
+        let playInterval = null;
+        const playbackSpeed = 1500;
+        const preloadedSVGs = [];
+        
+        const svgDisplay = document.getElementById('svgDisplay');
+        const prevBtn = document.getElementById('prevBtn');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progressContainer = document.getElementById('progressContainer');
+        const phaseLabel = document.getElementById('phaseLabel');
+        
+        svgDisplay.style.position = 'relative';
+        
+        function preloadSVGs() {
+            svgFiles.forEach((file, index) => {
+                const img = new Image();
+                img.src = file;
+                preloadedSVGs[index] = img;
+            });
+        }
+        
+        function initPlayer() {
+            if (svgFiles.length === 0) return;
+            preloadSVGs();
+            loadSVG(0);
+            updateControls();
+            
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            
+            playPauseBtn.addEventListener('click', togglePlayback);
+            progressContainer.addEventListener('click', handleProgressClick);
+        }
+        
+        function loadSVG(index) {
+            if (index < 0 || index >= svgFiles.length) return;
+            currentIndex = index;
+            const filePath = svgFiles[currentIndex];
+            
+            const newObj = document.createElement('object');
+            newObj.type = 'image/svg+xml';
+            newObj.data = filePath;
+            newObj.style.position = 'absolute';
+            newObj.style.top = 0;
+            newObj.style.left = 0;
+            newObj.style.width = '100%';
+            newObj.style.height = '100%';
+            newObj.style.opacity = '0';
+            
+            svgDisplay.appendChild(newObj);
+            
+            newObj.onload = function() {
+                newObj.style.transition = 'opacity 0.3s';
+                newObj.style.opacity = '1';
+                phaseLabel.textContent = phaseLabels[currentIndex];
+                const progress = (currentIndex / (svgFiles.length - 1)) * 100;
+                progressBar.style.width = progress + '%';
+                
+                updateControls();
+            };
+            
+            newObj.addEventListener('transitionend', function() {
+                Array.from(svgDisplay.children)
+                    .filter(child => child !== newObj)
+                    .forEach(child => svgDisplay.removeChild(child));
+            });
+        }
+        
+        function showPrevious() {
+            if (currentIndex > 0) {
+                loadSVG(currentIndex - 1);
+            }
+        }
+        
+        function showNext() {
+            if (currentIndex < svgFiles.length - 1) {
+                loadSVG(currentIndex + 1);
+            }
+        }
+        
+        function togglePlayback() {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                playPauseBtn.textContent = '⏸️';
+                playInterval = setInterval(() => {
+                    if (currentIndex < svgFiles.length - 1) {
+                        loadSVG(currentIndex + 1);
+                    } else {
+                        clearInterval(playInterval);
+                        isPlaying = false;
+                        playPauseBtn.textContent = '▶️';
+                    }
+                }, playbackSpeed);
+            } else {
+                playPauseBtn.textContent = '▶️';
+                clearInterval(playInterval);
+            }
+        }
+        
+        function handleProgressClick(e) {
+            const rect = progressContainer.getBoundingClientRect();
+            const clickPosition = e.clientX - rect.left;
+            const containerWidth = rect.width;
+            const clickRatio = clickPosition / containerWidth;
+            const newIndex = Math.round(clickRatio * (svgFiles.length - 1));
+            loadSVG(newIndex);
+            //if (isPlaying) {
+            //    togglePlayback();
+            //}
+        }
+        
+        function updateControls() { }
+        
+        if (svgDisplay) {
+            initPlayer();
+        }
+        
+        var animationTabTrigger = document.getElementById('animation-tab');
+        if (animationTabTrigger) {
+            animationTabTrigger.addEventListener('shown.bs.tab', function(e) {
+                if (!isPlaying) {
+                    togglePlayback();
+                }
+            });
+            animationTabTrigger.addEventListener('hidden.bs.tab', function(e) {
+                if (isPlaying) {
+                    togglePlayback();
+                }
+            });
+        }
+    });
+    
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body></html>
