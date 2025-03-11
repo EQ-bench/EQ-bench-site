@@ -9,7 +9,7 @@ claude-3.5-haiku-20241022,,62.25
 claude-3.5-sonnet-20240620,,61.76
 gemini-2.0-flash-001,,61.16
 o1,,60.65
-mistralai/mistral-large-2411,24,60.64
+mistralai/mistral-large-2411,123,60.64
 o3-mini,,60.68
 qwen-max,,58.67
 alpindale/wizardlm-2-8x22b,8x22,54.89
