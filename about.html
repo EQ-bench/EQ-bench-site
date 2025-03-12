@@ -35,6 +35,7 @@
             <a href='creative_writing.html'>🎨Creative Writing</a> |
             <a href='judgemark-v2.html'>⚖️Judgemark v2</a> |
             <a href='buzzbench.html'>🎤BuzzBench</a> |
+			<a href='diplobench.html'>🌍DiploBench</a> |
             <a href='eqbench-v2.html'>💗EQ-Bench (Legacy)</a>
         </p>
 
@@ -48,6 +49,7 @@
 				 <li><a href="#creative-writing">Creative Writing</a></li>
 				 <li><a href="#judgemark">Judgemark</a></li>
 				 <li><a href="#buzzbench">BuzzBench</a></li>
+				 <li><a href="#diplobench">DiploBench</a></li>
 				 <li><a href="#citations">Citations</a></li>
 			</ul>
 	  </div>
@@ -281,6 +283,34 @@ Coefficient of Variation: 0.0181
 			<p>BuzzBench source code will be released soon.</p>
 			<p><em>Never Mind The Buzzcocks is a TV series developed by the BBC. Our usage of the work in BuzzBench is non-commercial educational & research, using only a small excerpt of the show's transcript which falls under fair use or "fair dealing" in UK copyright law.</em></p>
 		</div>
+
+		<div id="diplobench" class="section">
+			<h3>🌍DiploBench</h3>
+			<p>DiploBench is an experimental framework for evaluating LLM performance in strategic negotiation using the board game Diplomacy.</p>
+			
+			<p><strong>What is DiploBench?</strong></p>
+			<p>In DiploBench, the test model plays as Austria-Hungary, a challenging starting position that requires skillful negotiation and strategic planning. The model must communicate with other AI players, form alliances, detect deception, and make tactical decisions to survive and win the game.</p>
+			
+			<p><strong>Key Features:</strong></p>
+			<ul>
+			  <li><strong>Full-press format:</strong> Models engage in multiple rounds of negotiations before making moves</li>
+			  <li><strong>Multi-agent environment:</strong> Each power (country) is controlled by a separate LLM</li>
+			  <li><strong>Realistic diplomacy:</strong> Tests ability to form alliances, negotiate, and detect deception</li>
+			  <li><strong>Challenging position:</strong> Austria-Hungary's central position makes it vulnerable but strategic</li>
+			</ul>
+			
+			<p><strong>Game Structure:</strong></p>
+			<p>Games run for up to 50 turns with 4-round negotiation phases before each movement. All competing models (other than the test model) are powered by the same baseline LLM. Games end in win, loss, or stalemate conditions according to standard Diplomacy rules.</p>
+			
+			<p>This benchmark uniquely tests LLMs on several dimensions that are difficult to evaluate in other benchmarks: long-term strategic planning, multi-agent negotiation, theory of mind, and deception detection.</p>
+			
+			<p><em>Note: Due to the high variance between game runs, DiploBench is currently an experimental framework rather than a formal benchmark. Results should be interpreted accordingly.</em></p>
+			
+			<p>For more details and source code, see the <a href="https://github.com/sam-paech/diplobench" target="_blank">DiploBench GitHub repository</a>.</p>
+			<br>
+		</div>
+
+		
 
 		<p><script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#1a1a1a', 'O5O7VUVYO');kofiwidget2.draw();</script> </p>
 

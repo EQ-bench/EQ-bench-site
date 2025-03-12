@@ -587,3 +587,23 @@ body.dark-mode {
 body.dark-mode .container {
     background-color: #201f1f; /* Mild contrast from background */
 }
+
+
+/* Result column */
+.result-col a {
+	color: inherit;
+	text-decoration: none;
+  }
+  
+  .result-col a:hover {
+	text-decoration: underline;
+  }
+  
+  /* Make sure win and loss bars are visible in dark mode */
+  body.dark-mode .win-score-bar {
+	background-color: #2E7D32;
+  }
+  
+  body.dark-mode .loss-score-bar {
+	background-color: #C62828;
+  }
