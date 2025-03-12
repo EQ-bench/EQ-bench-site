@@ -15,57 +15,131 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="pragma" content="no-cache">
-  <style>
-    /* DiploBench specific styles */
-    .win-score-bar {
-      background-color: #4CAF50; /* Green for wins */
-      height: 20px;
-      border-radius: 3px;
-      display: none; /* Start hidden, shown via JS */
-    }
-    
-    .stalemate-score-bar {
-      background-color: #FFC107; /* Amber for stalemates */
-      height: 20px;
-      border-radius: 3px;
-      display: none; /* Start hidden, shown via JS */
-    }
-    
-    .loss-score-bar {
-      background-color: #F44336; /* Red for losses */
-      height: 20px;
-      border-radius: 3px;
-      display: none; /* Start hidden, shown via JS */
-    }
-    
-    .score-col {
-      min-width: 140px;
-    }
-    
-    .result-col {
-      min-width: 120px;
-    }
-    
-    /* Diplomacy game log section */
-    .game-log-preview {
-      background-color: #f8f9fa;
-      border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 20px;
-      max-height: 300px;
-      overflow-y: auto;
-      font-family: monospace;
-      white-space: pre-wrap;
-    }
-    
-    /* Dark mode adjustments */
-    body.dark-mode .game-log-preview {
-      background-color: #2a2a2a;
-      color: #e0e0e0;
-    }
-  </style>
+<style>
+  /* Make sure body has position relative for pseudo-elements */
+  body.diplobench-page {
+    position: relative;
+    min-height: 100%;
+  }
+
+
+
+
+
+  /* Background styling - only for DiploBench page */
+  body.diplobench-page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/diplo-map.webp');
+    background-position: center;
+    background-size: cover;
+    filter: blur(4px);
+    opacity: 0.7;
+    z-index: -2;
+    pointer-events: none;
+  }
+
+  /* Oval mask overlay - only for DiploBench page */
+  body.diplobench-page::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 1) 80%
+    );
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* Container styling for DiploBench - this is important! */
+  body.diplobench-page .container {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    border-radius: 8px;
+  }
+
+  /* Table cells opacity */
+  body.diplobench-page #diplomacy-leaderboard tbody td {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  /* Ensure the striped effect is maintained with opacity */
+  body.diplobench-page #diplomacy-leaderboard.table-striped tbody tr:nth-of-type(odd) td {
+    background-color: rgba(240, 240, 240, 0.6) !important;
+  }
+
+  /* About section opacity */
+  body.diplobench-page .section {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  /* Make sure table headers are readable */
+  body.diplobench-page #diplomacy-leaderboard thead th {
+    background-color: rgba(33, 37, 41, 0.8) !important;
+    color: white !important;
+  }
+
+  /* Dark mode adjustments - specific to DiploBench */
+  body.dark-mode.diplobench-page::after {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(33, 37, 41, 0) 30%,
+      rgba(33, 37, 41, 1) 80%
+    );
+  }
+
+  body.dark-mode.diplobench-page .container {
+    background-color: rgba(33, 37, 41, 0.6) !important;
+  }
+
+  body.dark-mode.diplobench-page #diplomacy-leaderboard tbody td {
+    background-color: rgba(33, 37, 41, 0.6) !important;
+  }
+
+  body.dark-mode.diplobench-page #diplomacy-leaderboard.table-striped tbody tr:nth-of-type(odd) td {
+    background-color: rgba(45, 50, 55, 0.6) !important;
+  }
+
+  body.dark-mode.diplobench-page .section {
+    background-color: rgba(33, 37, 41, 0.6);
+  }
+
+  body.dark-mode.diplobench-page #diplomacy-leaderboard thead th {
+    background-color: rgba(52, 58, 64, 0.8) !important;
+  }
+
+  /* Ensure text is readable against semi-transparent background */
+  body.diplobench-page .container h1,
+  body.diplobench-page .container h2,
+  body.diplobench-page .container h3,
+  body.diplobench-page .container p,
+  body.diplobench-page .container a {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+  }
+
+  body.dark-mode.diplobench-page .container h1,
+  body.dark-mode.diplobench-page .container h2,
+  body.dark-mode.diplobench-page .container h3,
+  body.dark-mode.diplobench-page .container p,
+  body.dark-mode.diplobench-page .container a {
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  }
+  
+
+  
+</style>
 </head>
-<body>
+<body class="diplobench-page">
   <div class="container mt-4">
   <!-- Dark/Light Mode Toggle -->
   <div class="form-check form-switch">
@@ -112,7 +186,7 @@
         <thead>
           <tr>
             <th>Model</th>
-            <th>Result</th>
+            <th>Results</th>
             <th>Game Report</th>
           </tr>
         </thead>

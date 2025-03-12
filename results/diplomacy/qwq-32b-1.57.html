@@ -1,0 +1,1046 @@
+<!DOCTYPE html><html lang='en'><head>
+<meta charset='utf-8'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
+<title>Diplomacy - AUT Report</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'/>
+<script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+<style>
+
+    .svg-player-container {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .svg-display {
+        width: 100%;
+        height: 600px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .svg-display object, .svg-display img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+    .player-controls {
+        padding: 15px;
+        background-color: #e9ecef;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .progress-container {
+        flex-grow: 1;
+        height: 10px;
+        background-color: #ced4da;
+        border-radius: 5px;
+        position: relative;
+        cursor: pointer;
+    }
+    .progress-bar {
+        height: 100%;
+        background-color: #0d6efd;
+        border-radius: 5px;
+        width: 0%;
+    }
+    .phase-label {
+        font-weight: bold;
+        min-width: 120px;
+        text-align: center;
+    }
+    .control-button {
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    .control-button:hover {
+        background-color: #5a6268;
+    }
+    .control-button:disabled {
+        background-color: #adb5bd;
+        cursor: not-allowed;
+    }
+    
+</style>
+</head><body class='bg-light'>
+<div class='container mt-4'>
+<h1>Diplomacy Report for Austria (AUT)</h1>
+<h4><strong>Game ID:</strong> qwq-32b-1.57</h4>
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h4>Overall Stats</h4>
+    
+<ul>
+<li><b>Avg Centers:</b> 1.94, <b>Final:</b> 0</li>
+<li><b>Avg Units:</b> 2.12, <b>Final:</b> 0</li>
+<li><b>Avg Influence:</b> 3.53, <b>Final:</b> 1</li>
+<li><b>Avg Self-Relationship:</b> -0.42, <b>Final:</b> -0.67</li>
+<li><b>Avg Others-Relationship:</b> -0.55, <b>Final:</b> -0.67</li>
+</ul>
+
+      </div>
+    </div>
+    
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="stats-tab" data-bs-toggle="tab" data-bs-target="#statsTabContent" type="button" role="tab" aria-controls="statsTabContent" aria-selected="true">AUT Charts</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="negotiation-tab" data-bs-toggle="tab" data-bs-target="#negotiationTabContent" type="button" role="tab" aria-controls="negotiationTabContent" aria-selected="false">Negotiations</button>
+  </li>
+
+  
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="animation-tab" data-bs-toggle="tab" data-bs-target="#animationTabContent" type="button" role="tab" aria-controls="animationTabContent" aria-selected="false">Game Animation</button>
+  </li>
+
+
+</ul>
+<div class="tab-content" id="myTabContent">
+  <!-- STATS TAB -->
+  <div class="tab-pane fade show active p-3" id="statsTabContent" role="tabpanel" aria-labelledby="stats-tab">
+
+<h3>Main Metrics</h3>
+<canvas id='mainMetricsChart' width='800' height='300'></canvas>
+<hr/><h3>Relationships (Self-Perceived)</h3>
+<canvas id='selfRelsChart' width='800' height='300'></canvas>
+<hr/><h3>Relationships (Others → AUT)</h3>
+<canvas id='othersRelsChart' width='800' height='300'></canvas>
+<hr/><h3>Orders: Issued vs Valid vs Rejected</h3>
+<canvas id='ordersChart' width='800' height='300'></canvas>
+</div>
+
+  <div class="tab-pane fade p-3" id="negotiationTabContent" role="tabpanel" aria-labelledby="negotiation-tab">
+    <h2>Negotiations / Dialogues</h2>
+
+<div class="accordion" id="negAccordion">
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading0">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse0" aria-expanded="false" aria-controls="negCollapse0">
+        Negotiation Turn 1 (1901 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse0" class="accordion-collapse collapse" aria-labelledby="negHeading0" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: To GER: I propose a strategic alliance to secure Central Europe. Let's divide the region: AUT will focus on Serbia (SER) and Rumania (RUM), while GER can expand northward. I suggest coordinating moves to avoid conflict. For instance, my army in VIE can support BUD's advance to SER, while your units in MUN and BER can push north. Let's discuss specifics to ensure mutual success.</li>
+<li><b>To</b> [ITA]: To ITA: I propose a non-aggression pact. AUT aims to secure the northern Balkans (SER, RUM), while ITA can focus on the Adriatic and southern territories (ALB, GRE). I will not oppose your moves southward, and I request the same in the north. Let's avoid conflict and expand our spheres of influence peacefully.</li>
+<li><b>To</b> [RUS]: To RUS: I propose a division of interests in the Balkans. Let's agree that Rumania (RUM) falls under my sphere while you secure the north. This avoids conflict between our forces. I suggest coordinating so that your units in WAR and SEV can focus on other targets while I handle RUM. Your thoughts?</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: To Austria, we propose a temporary alliance against Italy. We can coordinate our attacks to weaken them significantly. What are your thoughts?</li>
+<li><b>From</b> [TUR]: To all powers, Turkey wishes to maintain peace and stability in the region. We are open to diplomatic discussions and cooperation to ensure a balanced and prosperous Europe.</li>
+<li><b>From</b> [ITA]: Greetings Austria, Italy proposes a non-aggression pact for the immediate future. We are both surrounded by potential enemies and cooperation would be mutually beneficial. I suggest we focus our efforts elsewhere and avoid conflict in the Adriatic. What are your thoughts?</li>
+<li><b>From</b> [ENG]: To ALL, England wishes to state its intention to maintain the balance of power in Europe. We will act in accordance with our interests and expect others to do the same. Let us strive for a peaceful, if competitive, year.</li>
+<li><b>From</b> [GER]: To Austria, Germany suggests a cooperative stance in the south. We have no immediate designs on your territory, and believe a strong Austria is beneficial to maintaining balance in the region. Perhaps we can coordinate against Italy?</li>
+<li><b>From</b> [RUS]: To AUT, we note your presence near Galicia. We are willing to discuss our mutual interests in the region to avoid any misunderstandings. Perhaps we can come to an agreement regarding our respective spheres of influence in the Balkans. What are your thoughts?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: I accept your proposal for an alliance against Italy. Let us strike decisively at Venice (VEN) and the Adriatic. In exchange for your support, I agree that after weakening Italy, the Balkans will be divided to our mutual benefit. Austria secures Serbia (SER) and Rumania (RUM), while Turkey may expand into Albania (ALB) and Greece (GRE). Let us coordinate our moves this fall.</li>
+<li><b>To</b> [GER]: Germany, I propose a joint assault on Italy's Venice (VEN). My fleet in TRI can move to VEN, supported by army VIE, while your units in MUN could pressure Tyrolia (TYR) to block Italian reinforcements. This will cripple Italy's northern holdings. In return, I will not contest your expansion into Munich's sphere. Let us finalize coordinated orders.</li>
+<li><b>To</b> [ITA]: Italy, while I value our non-aggression pact, I must clarify: any Italian units north of the Adriatic (e.g., TYR, VEN) will be treated as hostile. Austria's focus remains on Serbia and Rumania. However, if Italy moves forces northward, I will respond accordingly. Let us maintain peace—but within clear boundaries.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: To AUT, we are amenable to a division of interests in the Balkans. We agree that Rumania falls under your sphere of influence, while we focus on the north. Let us coordinate our movements to avoid conflict and maximize our gains. We suggest you move to RUM and we will focus on other areas.</li>
+<li><b>From</b> [ITA]: Austria, I accept your non-aggression pact. I agree to focus on the Adriatic and southward, while you expand in the northern Balkans. Let's coordinate to avoid stepping on each other's toes. I propose A VEN to Trieste as a show of good faith.</li>
+<li><b>From</b> [TUR]: To Austria, we are considering Italy's offer of an alliance against Russia. However, we believe that Italy is the greater threat to both of us. Would you be interested in a coordinated attack on Italy? We could divide Italy's territories between us.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: To Turkey: Execute our alliance decisively. I commit F TRI to VEN, supported by A VIE. Your army in CON must advance to ALB to sever Italian supply lines. Simultaneously, A BUD secures SER. Ensure coordination to isolate VEN and cripple Italy's northern holdings this fall.</li>
+<li><b>To</b> [GER]: Germany, confirm A MUN to TYR this fall. This blocks Italian reinforcements to VEN, enabling our joint assault. In return, I will not contest your expansion northward. Coordinate orders promptly to ensure mutual success.</li>
+<li><b>To</b> [ITA]: Italy, your proposal to move A VEN to TRI is rejected. TRI is Austrian territory and off-limits. Our pact specifies boundaries: you focus south of the Adriatic, I on Serbia/Rumania. VEN is now a target—withdraw forces or face annihilation. Adhere strictly to agreed zones.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: To Austria, excellent! We agree to the division of the Balkans. This turn, I will move A CON to BUL. Can you support this move? Also, I will move A SMY to ARM. What are your moves this turn to attack Italy?</li>
+<li><b>From</b> [GER]: To Austria, the proposal for a joint assault on Venice is intriguing. However, we believe a more strategic approach would be to focus on Trieste first. If we take Trieste, we cut off Italy's access to the Adriatic and open a path to Vienna. What are your thoughts on this revised strategy?</li>
+<li><b>From</b> [ITA]: Austria, I understand your concern about my units moving north. I propose a more concrete agreement: I will support your move into Serbia with A VEN supporting A BUD - SER, if you allow me to take Trieste. This would solidify our non-aggression pact and benefit us both. What do you say?</li>
+<li><b>From</b> [RUS]: To AUT, we appreciate your cooperation in the Balkans. We will focus our efforts elsewhere, as agreed. Please confirm your move to RUM so we can coordinate effectively. We expect this arrangement to be mutually beneficial and contribute to the stability of the region.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: GER, Trieste is Austrian territory and non-negotiable. Our prior agreement to assault VEN stands. Coordinate A MUN to TYR this fall to block Italian reinforcements. In return, I will not contest your expansion northward. Failure to comply risks conflict—stick to the plan.</li>
+<li><b>To</b> [TUR]: TUR, confirm your A CON to ALB this fall to sever Italy's Adriatic access. I will send F TRI to VEN (supported by A VIE) and A BUD to SER. Post-fall, we divide the Balkans: you take GRE/BUL, I secure RUM/SER. Execute swiftly to cripple Italy decisively.</li>
+<li><b>To</b> [ITA]: ITA, your proposal to occupy TRI is rejected. Our pact explicitly bars northern Adriatic incursions. A VEN is now a target—withdraw or face annihilation. Your A VEN must retreat south or support defenseless VEN. Adhere strictly to agreed zones or void the pact.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: To Austria, I am moving A CON to BUL and A SMY to ARM as agreed. F ANK will move to BLA to honor my agreement with Russia. Please confirm your moves to attack Italy. I expect F TRI to VEN supported by A VIE, and A BUD to SER.</li>
+<li><b>From</b> [GER]: To Austria, we will move A MUN to TYR this fall. We expect you to follow through on your promise not to contest our expansion northward. Let us cripple Italy together.</li>
+<li><b>From</b> [ITA]: Austria, your rejection of my Trieste proposal and threat against Venice are noted. I will not withdraw from Venice. Consider this our non-aggression pact dissolved. Prepare for war.</li>
+<li><b>From</b> [RUS]: To AUT, we confirm our understanding that Rumania is within your sphere of influence. We will not interfere. We trust you will move to RUM this turn. We will focus our efforts elsewhere, as agreed. Let us maintain open communication to ensure the continued success of our arrangement.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> The game begins in S1901M with all powers in their home positions. Austria's units are in BUD, VIE, and TRI, preparing for initial moves.
+Formed an alliance with TUR to target ITA, coordinated with GER to assault VEN, and dissolved a failed non-aggression pact with ITA after their refusal to withdraw from VEN. Agreed with RUS on Balkan division (RUM to AUT, north to RUS).</li>
+<li><i>Intent:</i> Execute coordinated attack: F TRI - VEN (supported by A VIE), A BUD - SER. Coordinate GER's A MUN - TYR to block ITA reinforcements. Deceive ITA by maintaining pact discussions until final orders. Secure Serbia and pressure Italy's Adriatic holdings.</li>
+<li><i>Relationship Updates:</i> ['AUT-TUR++', 'AUT-ITA--', 'AUT-GER+', 'AUT-RUS+']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading1">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse1" aria-expanded="false" aria-controls="negCollapse1">
+        Negotiation Turn 1 (1901 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse1" class="accordion-collapse collapse" aria-labelledby="negHeading1" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Our alliance remains steadfast. Let us finalize plans to secure BUL and RUM. I propose your A BUL supports my A SER to take GRE, while my F TRI moves to ADR to threaten VEN. Your fleet in BLA can reinforce RUM if needed. Coordinate your moves to ensure we dominate the Balkans.</li>
+<li><b>To</b> [GER]: We must eliminate ITA's VEN. Your A MUN can support a push toward TYR or VEN, while my F TRI will assist in the Adriatic. Let's combine forces: if your fleet in DEN can pressure北海道方向, we can isolate ITA. Confirm your support for a joint assault.</li>
+<li><b>To</b> [RUS]: As agreed, RUM will fall to me while you secure the north. My A SER and F TRI will handle TUR and ITA distractions. Ensure your units in GAL/UKR don't contest RUM—I'll focus on Serbia and Greece. Let's keep this division clear to avoid conflict.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Greetings, AUT. As agreed, I am moving my units in a way that does not interfere with your sphere of influence in RUM. I am moving A UKR to SEV and A GAL to WAR. F RUM will support A UKR to SEV. I trust this aligns with our understanding.</li>
+<li><b>From</b> [TUR]: Austria, let's coordinate our attack on Italy. I will move A BUL to RUM and support you in SER. Please confirm your moves to VEN and APU. We must crush Italy swiftly.</li>
+<li><b>From</b> [ITA]: Austria, I am moving my troops to secure my borders. I suggest you do the same. I am open to discussing a more stable arrangement in the Adriatic, but your threats against Venice were unhelpful.</li>
+<li><b>From</b> [GER]: Greetings, Austria. I see our moves in Tyrol bounced. I am still committed to our agreement. I will support your move from Trieste to Venice. I will move Munich to Tyrol to block Italy. Please confirm your support for my move from Prussia to Warsaw. This will secure our eastern flank against Russia.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, our alliance is vital. RUM is confirmed as our target. I'll advance A SER to GRE to pressure Italy's flank. Your A BUL should secure BUL first, then support my push to RUM via F TRI's naval presence in ADR. Coordinate your BLA fleet to block Italian reinforcements. Confirm your full commitment to this Balkan strategy.</li>
+<li><b>To</b> [GER]: Germany, our joint VEN operation requires precision. I'll position F TRI in ADR to enable a convoy. Your A MUN must support this by moving to TYR, while my A VIE will reinforce the Adriatic. Ensure your DEN fleet pressures the north Adriatic to isolate Italy. Confirm your A PRU will support my northern flank against Russia's movements.</li>
+<li><b>To</b> [ITA]: Italy, I propose a temporary truce in the Adriatic. Withdraw your forces from VEN and APU, and I'll ensure German pressure is diverted. Refuse, and you'll face a combined Austro-German fleet in the Adriatic by Spring. The choice is yours - cooperation now avoids unnecessary conflict.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I am moving A BUL to RUM as agreed. I will support your attack on SER. Please confirm F TRI to ADR. I suggest you also move A SER to GRE. This will secure the Balkans for us. Let me know if you agree.</li>
+<li><b>From</b> [GER]: Austria, I am concerned about your focus on Venice. It is a trap. Italy will expect it. I propose we shift our focus to Trieste. I will support your move from Serbia to Trieste. This will give you a stronger position in the Balkans and allow me to move into Tyrol without Italian interference. Do you agree to this revised plan?</li>
+<li><b>From</b> [ITA]: Austria, I am moving A VEN - TRI. Do not test me. Your threats against Venice were a grave mistake. I suggest you focus on your eastern border with Russia and Turkey, as you will need all the strength you can muster. I will not be trifled with.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, our alliance is ironclad. I confirm A SER will advance to GRE to cut Italy's southern access. F TRI will move to ALB to secure our Adriatic flank and support your A BUL's push into RUM. Your fleet in BLA must block Italian reinforcements. Let's finalize: your A BUL holds BUL while we secure GRE and RUM. Confirm your F BLA will support RUM operations.</li>
+<li><b>To</b> [GER]: Germany, I accept your revised plan. Shift focus to securing TYR via your A MUN. My A VIE will support your move to TYR to block Italy's northern reinforcements. Venice remains a target, but prioritize Tyrol to isolate Italy. In return, your F DEN must pressure the North Adriatic to prevent Italian naval escapes. Confirm A PRU supports my northern border against Russia.</li>
+<li><b>To</b> [ITA]: Italy, your move to TRI is a fatal error. Austria and Germany will retaliate decisively. My F TRI and your advancing army will clash, but your overextension invites ruin. Withdraw from VEN and APU immediately, or face a combined Austro-German-Turkish assault this spring. Your fleet in APU cannot survive our coordinated push. Choose wisely.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [ITA]: Austria, your threats are empty. I am moving A VEN - TRI. I will not withdraw my forces. Prepare for war. I suggest you focus on your eastern border with Russia and Turkey, as you will need all the strength you can muster. I will not be trifled with. Your offer of a truce is rejected.</li>
+<li><b>From</b> [GER]: Austria, I am willing to support your move to Venice with Munich to Tyrol. However, I need your guarantee that you will support my move from Prussia to Warsaw. This is crucial for securing our eastern flank. Can you confirm this support?</li>
+<li><b>From</b> [TUR]: Austria, I am concerned about your suggestion to move A BUL to BUL. I need that unit to take RUM. I will support your attack on SER, but you must move A SER to GRE as planned. I will move A BUL to RUM and F BLA to SEV to cut off Russian support. Do you agree?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [TUR]: Turkey, our alliance is unwavering. I confirm A SER will advance to GRE to isolate Italy's southern flank, while your A BUL must secure RUM immediately. My F TRI will move to ALB to block Italian reinforcements. Your F BLA should support RUM operations and pressure SEV. Hold BUL firmly; we'll split the Balkans as agreed. Coordinate your moves to ensure RUM falls to me and north stays your sphere.</li>
+<li><b>To</b> [GER]: Germany, I support your A PRU - WAR and confirm A VIE will support your A MUN - TYR. Your F DEN must pressure the North Adriatic to trap Italy's navy. In return, I'll move F TRI to ALB to enable your eventual push to VEN. Secure TYR first—we'll coordinate a joint assault on Italy's heart once your eastern flank is safe.</li>
+<li><b>To</b> [ITA]: Italy, your overextension is fatal. Austria and Germany will crush you this spring. My F TRI and your A VEN cannot coexist in VEN—your unit will be dislodged. Your fleet in APU is isolated and doomed. Withdraw from VEN and APU immediately, or face annihilation. The Adriatic is ours to claim—resist, and you'll regret it.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [GER]: Austria, I am moving Munich to Tyrol to support you. However, I cannot support your move to Venice. It is too risky. I need your support for my move from Prussia to Warsaw. This is non-negotiable. If you cannot agree to this, our alliance is over.</li>
+<li><b>From</b> [TUR]: Austria, I am moving A BUL to RUM and F BLA to SEV. I expect you to move A SER to GRE and F TRI to ALB. Let's crush Italy and Russia. This is the final round, so I expect you to follow through.</li>
+<li><b>From</b> [ITA]: Austria, your threats are empty. I am moving A VEN - TRI. I will not withdraw my forces. Prepare for war. I suggest you focus on your eastern border with Russia and Turkey, as you will need all the strength you can muster. I will not be trifled with. Your offer of a truce is rejected. This is the final round, so I will not be responding to any further threats.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> In S1901M, AUT advanced F TRI toward VEN and A BUD to SER, while GER and AUT bounced in TYR. ITA moved A VEN - TRI, directly challenging AUT's F TRI. TUR moved A BUL toward RUM, aligning with AUT's Balkan strategy, while RUS positioned units to secure the north. FRA and ENG maintained coastal presence without direct conflict.
+AUT solidified its alliance with TUR to secure RUM and BUL, adjusting plans after GER's bounced move in TYR. GER demanded support for A PRU - WAR, but AUT prioritized Adriatic control. ITA rejected truces and escalated toward TRI, worsening relations. AUT shifted focus to isolating ITA via GRE and ALB while balancing GER's eastern demands.</li>
+<li><i>Intent:</i> A SER will advance to GRE to isolate ITA's southern access. F TRI will move to ALB to block ITA's naval escape routes and support TUR's RUM push. A VIE will support GER's A MUN - TYR to secure the northern flank. Coordinate with TUR to ensure RUM falls to AUT while holding BUL. Avoid direct confrontation with ITA's overextended VEN-TRI advance.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading2">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse2" aria-expanded="false" aria-controls="negCollapse2">
+        Negotiation Turn 2 (1902 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse2" class="accordion-collapse collapse" aria-labelledby="negHeading2" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: AUT to GER: Coordinate a joint strike on VEN. Your A TYR can support our F TRI to secure VEN. In return, we'll ensure GER retains control over TYR and MUN. Align our moves this turn for mutual benefit.</li>
+<li><b>To</b> [TUR]: AUT to TUR: Strengthen our alliance. As agreed, we'll take RUM while you hold BUL. Support our A GRE's advance to SER, then we'll push into RUM together. Confirm your naval/fleet support for this Balkan campaign.</li>
+<li><b>To</b> [RUS]: AUT to RUS: Uphold our Balkan pact. We focus on RUM, leaving BUD and northern territories to RUS. Avoid conflicting in the Balkans so both powers can expand. Confirm your commitment to this division.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Greetings, AUT. I am planning to move A BUD to SER. This is in line with our agreement regarding spheres of influence in the Balkans. I trust you will not interfere with this maneuver. I am also moving A UKR to WAR to pressure GER. I expect you to take RUM as agreed.</li>
+<li><b>From</b> [GER]: Greetings, Austria. As agreed, I have moved A MUN to TYR. I trust you will support this move. I am also moving A PRU to WAR. Will you support this move as well? I expect you to move against VEN this turn. Let me know your intentions.</li>
+<li><b>From</b> [TUR]: Austria, I am concerned about the stalemate in Trieste. I propose we coordinate our attacks more effectively. I will move A BUL to RUM and F BLA to SEV as agreed. Please confirm you are moving A SER to GRE and F TRI to ALB. Let's crush Italy together.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Russia, our Balkan pact explicitly granted Rumania to Austria. Your occupation of RUM violates this agreement. Immediately withdraw your units or risk our alliance. Your A BUD advancing to SER also threatens our Serbian ambitions. Adjust your strategy to align with our agreed division of spheres or face consequences.</li>
+<li><b>To</b> [GER]: Germany, we will support your A PRU - WAR via A VIE. Coordinate your A MUN to support our F TRI's assault on VEN. Our combined forces will secure VEN this turn. Ensure your fleets in the North Sea assist this operation to maximize tactical efficiency. Trust and coordination are vital for mutual success.</li>
+<li><b>To</b> [TUR]: Turkey, execute our plan: A BUL to RUM and F BLA to SEV. We advance A GRE to SER and F TRI to ALB to block Italy's escape routes. Coordinate naval support in the Adriatic to isolate Venice. Together, we will dismantle Italy's Adriatic holdings and enforce our Balkan dominance.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I am moving A BUL to RUM and F BLA to SEV as agreed. Please confirm A SER to GRE and F TRI to ALB. I need your confirmation before I finalize my orders. Also, I will not support your advance into Rumania. That territory is for Turkey.</li>
+<li><b>From</b> [GER]: Austria, I will support F TRI to VEN with A TYR. I expect you to support A WAR to SIL. I am concerned about RUS moving to UKR. We must contain them. Do you agree to support A WAR to SIL?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Russia, your occupation of RUM violates our explicit agreement. Withdraw immediately or face military consequences. We will secure RUM with Turkish support while you focus on GAL and UKR. Your A BUD advancing to SER jeopardizes our Serbian plans—redirect to GAL to avoid conflict. Alliance depends on mutual respect for spheres.</li>
+<li><b>To</b> [GER]: Germany, I will support A WAR - SIL via A VIE. In return, your A TYR must support F TRI - VEN and coordinate with ITA's naval blockade. We need your F NTH to pressure FRA's northern units. Let's crush Italy and contain Russia's northern ambitions simultaneously.</li>
+<li><b>To</b> [TUR]: Turkey, confirm A BUL - RUM and F BLA - SEV as agreed. I move A GRE - SER and F TRI - ALB to cut Italy's escape. Your fleet in ANK must convoy troops to RUM. Simultaneously, we'll isolate VEN by陆 naval dominance. Execute swiftly—Italy's overextension is our opportunity.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [GER]: Austria, I will support F TRI to VEN with A TYR. I need your support for A WAR to SIL. RUS is moving to UKR and BUD to SER. This is unacceptable. Will you support A WAR to SIL? I need a firm commitment.</li>
+<li><b>From</b> [RUS]: Greetings, AUT. I am aware of your concerns about RUM. I will withdraw from RUM in the next phase. I am moving A BUD to SER. This is in line with our agreement regarding spheres of influence in the Balkans. I expect you to take RUM as agreed. Do you agree to let me have SER?</li>
+<li><b>From</b> [TUR]: Austria, I am growing weary of your demands. I will move A BUL to RUM. However, I will NOT move F BLA to SEV. I need that fleet to protect my interests. Furthermore, I will not support your advance into Rumania. That territory is for Turkey. If you insist on these demands, our alliance is over.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Russia, your withdrawal from RUM is non-negotiable. I confirm we will secure RUM with Turkish support while you focus on GAL and UKR. Redirect A BUD to GAL immediately to avoid conflict with our A GRE advance to SER. Your move to UKR threatens our northern flank—cease aggression or face Austrian opposition. Our Balkan pact demands compliance.</li>
+<li><b>To</b> [GER]: Germany, I will support A WAR-SIL via A VIE. In return, your A TYR must support F TRI's assault on VEN. Coordinate F NTH to pressure FRA's northern units. We will crush Italy and contain Russia's northern ambitions. Execute these orders or risk Austrian neutrality in your disputes with Russia.</li>
+<li><b>To</b> [TUR]: Turkey, I accept your fleet remaining in BLA but demand A BUL-RUM now. In exchange, Austria will not contest BUL. My A GRE advances to SER to flank Italy, while F TRI moves to ALB to block their escape. Your naval support in the Adriatic is critical—failure to act ensures Italian survival and fractures our alliance.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [GER]: Austria, I am supporting F TRI to VEN with A TYR. I expect you to support A WAR to SIL with A VIE. I am concerned about RUS moving to UKR and BUD to SER. This is unacceptable. I need a firm commitment that you will support A WAR to SIL. This is the last chance to coordinate.</li>
+<li><b>From</b> [RUS]: Greetings, AUT. I will withdraw from RUM in the next phase. I am moving A BUD to SER. This is in line with our agreement regarding spheres of influence in the Balkans. I expect you to take RUM as agreed. I will take SER. Do you agree?</li>
+<li><b>From</b> [TUR]: Austria, our alliance is over. I will not move F BLA to SEV, and I will take Rumania for myself. Consider yourself warned. I am moving A BUL to SER to support Italy against you.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> In F1901M, AUT's F TRI failed to capture VEN (likely blocked by ITA), while A GRE successfully took GRE. RUS moved into RUM, violating AUT's claimed sphere, while TUR advanced A BUL to RUM and F BLA to SEV. GER pressured AUT to support their A WAR-SIL, while ITA remained isolated in northern Italy. No builds occurred for any power in W1901A.
+AUT sought GER-TUR coordination to crush ITA and secure RUM, but RUS violated the Balkan pact by occupying RUM. After tense exchanges, RUS agreed to withdraw but redirected to SER, breaching trust. TUR abruptly abandoned the alliance, seizing RUM and moving A BUL to SER against AUT. GER remained cooperative but demanded AUT support A WAR-SIL to counter RUS aggression.</li>
+<li><i>Intent:</i> 1. Execute F TRI-VEN supported by GER's A TYR to eliminate ITA's VEN. 2. A GRE-SER to counter TUR's invasion and reclaim influence. 3. A VIE-GAL to pressure RUS's A BUD and open a northern front. 4. Exploit TUR's betrayal by severing ties and preparing to contest BUL/ADR. 5. Maintain GER cooperation via supported A WAR-SIL while prioritizing ITA's collapse.</li>
+<li><i>Relationship Updates:</i> ['AUT-TUR--', 'AUT-RUS-']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading3">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse3" aria-expanded="false" aria-controls="negCollapse3">
+        Negotiation Turn 3 (1902 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse3" class="accordion-collapse collapse" aria-labelledby="negHeading3" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: GER, collaborate to crush RUS. My A GAL will support your advance to WAR, enabling your northern push. In return, your A BOH must target RUS's BUD. We split Balkan spoils: you take WAR, I secure RUM. GER's silence on this deal risks RUS dominance.</li>
+<li><b>To</b> [ITA]: ITA, your fleet in ADR and army in TYR are doomed. Withdraw from VEN and ADR immediately or face annihilation by GER and I. My F TRI will take ADR, while GER's A MUN pressures TYR. Your A VEN is isolated—surrender it or lose it.</li>
+<li><b>To</b> [TUR]: TUR, RUS's occupation of RUM endangers us both. Let's exploit their overextension: I'll attack BUD while you take RUM. We split the Balkans—BUL to you, RUM to me. Refuse, and I'll join GER to crush your northern flank instead.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [RUS]: Greetings, AUT. As promised, I will be withdrawing from RUM this turn. I trust this will alleviate your concerns. I propose we solidify our agreement regarding the Balkans. I am open to discussing further cooperation in the region.</li>
+<li><b>From</b> [GER]: To Austria, I am concerned about your lack of support for my move to Warsaw. I supported your move to Tyrol. I need your support in Warsaw to secure my eastern flank. I propose we coordinate our moves to maximize our gains. I will support your attack on Venice if you support my move to Warsaw. What are your intentions?</li>
+<li><b>From</b> [TUR]: Austria, your attack on Serbia and Greece failed. I am now reconsidering our alliance. Explain why you failed to take these territories, and what you intend to do to rectify this situation. I need assurances that you are a reliable ally before I commit further.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [RUS]: Russia, your prior assurance to vacate RUM is non-negotiable. Immediate withdrawal is required to honor our Balkan pact. Refusal will force me to ally with GER to dismantle your foothold here. Cooperate, and we can reaffirm the agreed division: RUM to Austria, north to Russia. Your hesitation risks losing both influence and units to a joint assault.</li>
+<li><b>To</b> [GER]: Germany, I confirm support for A WAR-SIL. In exchange, your A BOH must attack RUS's A BUD. We split spoils: WAR to you, RUM to me. Additionally, coordinate with my A GAL to pressure RUS's northern flank. Simultaneously, let's flank TUR's advance in Serbia—your A BOH can support my A GRE's push to BUL. Mutual survival demands this alliance.</li>
+<li><b>To</b> [TUR]: Turkey, your seizure of Serbia breaches prior agreements. Withdraw immediately or face a联合 strike from Austria and Germany. I propose a revised Balkan division: BUL to you, RUM to me, with mutual non-aggression. Persist in aggression, and you'll lose both territories to our combined forces. Your choice determines survival.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your threats are noted, but I do not respond well to coercion. Russia's presence in Rumania is indeed a concern, but your proposal is unacceptable. I will take Rumania myself. If you wish to cooperate, I suggest you focus on Italy. I will consider supporting you if you can demonstrate your strength against them. Otherwise, I will make my own arrangements.</li>
+<li><b>From</b> [GER]: AUT, your proposal to crush RUS is acceptable. A BOH will target BUD, and A GAL will support A WAR. However, I will take MOS, not WAR. You can have RUM. I also need your support for F DEN to SWE. Do we have an agreement?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: GER, I accept your revised terms: you take MOS, I secure RUM. In return, your A BOH must attack BUD and support my A GAL's push into RUM. I will also support F DEN to SWE. Coordinate your A MUN to pressure TYR, forcing ITA to divert forces. With RUS split, we can dominate the east. Delay or hesitation risks RUS regrouping—act now.</li>
+<li><b>To</b> [TUR]: TUR, your grip on BUL is fragile. GER and I will attack BUL and RUM simultaneously this turn. Withdraw from SER and RUM immediately, or face annihilation. Accept this: BUL to you, RUM to me, with mutual non-aggression. Persist, and your army in BUL will be crushed between our forces. Choose wisely.</li>
+<li><b>To</b> [ITA]: ITA, your fleet in ADR is trapped. My F TRI will take ADR, while GER's A MUN seizes TYR. Abandon VEN and retreat to PIÉ or face losing both VEN and ADR. If you withdraw peacefully, I'll ensure GER doesn't pursue further into Italy. Resistance guarantees your destruction.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your threats are empty. Germany is overextended and cannot effectively support you. I will not withdraw from Serbia. Your revised proposal is insulting. I suggest you focus on defending your own territories. I am no longer interested in any alliance with you.</li>
+<li><b>From</b> [GER]: AUT, I agree to your terms. A BOH will attack BUD, and A GAL will support A WAR to SIL. I will take MOS. You can have RUM. I also support F DEN to SWE. Let's coordinate our moves precisely to ensure success. Confirm your support for A WAR to SIL and A GAL support. Also, confirm your attack on BUD.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: GER, confirm your A BOH - BUD and F DEN - SWE. My A GAL will support your A WAR - SIL, and F TRI will take ADR. We'll crush RUS's BUD and MOS. Coordinate your A MUN to pressure TYR, forcing ITA to divert. Let's finalize this to ensure mutual victory.</li>
+<li><b>To</b> [ITA]: ITA, your fleet in ADR is doomed. My F TRI will take ADR, while GER's A MUN seizes TYR. Abandon VEN and retreat to PIÉ immediately. Resistance guarantees your destruction. Choose survival: withdraw now.</li>
+<li><b>To</b> [TUR]: TUR, Austria and Germany are attacking BUL and RUM. Your army in BUL will be crushed. Withdraw from BUL and SER or face annihilation. We'll split the Balkans—your survival depends on retreat.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your threats are meaningless. Your alliance with Germany is a paper tiger. I will hold my ground. Prepare to be swept aside.</li>
+<li><b>From</b> [GER]: AUT, excellent. A BOH to BUD, A GAL supports A WAR to SIL. I will take MOS. You secure RUM. F DEN to SWE. A MUN will pressure TYR. Let's crush RUS and ITA. I am moving A WAR SIL, A BOH BUD, F DEN SWE.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> AUT's attacks on SER (via A GRE) and GAL (via A VIE) failed, resulting in no territorial gains. RUS maintained control of RUM despite prior assurances, while TUR consolidated in BUL and SER. GER advanced towards MOS, and ITA threatened TYR and ADR.
+Secured alliance with GER to target RUS, with GER taking MOS and AUT securing RUM. Failed to sway TUR from hostility after their seizure of SER; TUR rejected Balkan division proposals. Pressured ITA to retreat via threats to ADR and TYR. RUS wavered on RUM withdrawal but final moves suggest compliance. GER's commitment solidified, while TUR turned openly hostile.</li>
+<li><i>Intent:</i> Capture ADR with F TRI, support GER's A WAR-SIL via A GAL, and coordinate A BOH (GER) to attack BUD. Pressure ITA by dislodging ADR and isolating VEN. Neutralize TUR's BUL presence via combined GER/AUT pressure. Prioritize securing RUM and destabilizing RUS's eastern front.</li>
+<li><i>Relationship Updates:</i> ['AUT-GER++', 'AUT-TUR--']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading4">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse4" aria-expanded="false" aria-controls="negCollapse4">
+        Negotiation Turn 4 (1903 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse4" class="accordion-collapse collapse" aria-labelledby="negHeading4" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: Germany, let's coordinate a two-pronged attack. Your A BOH can attack BUD with support from my A GAL. Simultaneously, I'll support your move on VEN with F TRI. We can cripple Russia and Italy, securing the Balkans. Let's align our orders.</li>
+<li><b>To</b> [ITA]: Austria seeks a peaceful resolution. If Italy withdraws from VEN, we can avoid conflict. Let's negotiate terms for mutual benefit.</li>
+<li><b>To</b> [TUR]: Turkey, Russia's advance into RUM threatens us both. Let's ally to counter their aggression. Control of the Balkans is at stake.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, I am disappointed in your continued aggression. I will not support your expansion into Rumania. Consider this our alliance broken. I will be focusing on securing my own territories.</li>
+<li><b>From</b> [GER]: To my Austrian ally, I propose a coordinated attack this turn. I will move A WAR to SIL, A BOH to MUN, and F DEN to SWE. This will pressure Russia and France. Can you support my move to MUN with A GAL? Also, can you move F TRI to ADR to further pressure ITA?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: Germany, securing BUD is critical to cripple Russia's Balkan foothold. Let's pivot: I'll support A BOH - BUD with A GAL. In return, direct A WAR to UKR to counter Turkey's advances. This weakens both Russia and Turkey simultaneously. We can address France later with renewed strength.</li>
+<li><b>To</b> [ITA]: Italy, your hold on VEN is unsustainable. Austria and Germany are coordinating a joint assault. Withdraw immediately or face dislodgement this turn. Your continued defiance invites annihilation.</li>
+<li><b>To</b> [TUR]: Turkey, your seizure of RUM and GRE threatens our shared security. Austria and Germany are uniting to counter your expansion. Cease hostilities in the Balkans or face a decisive coalition response. Your aggression isolates you.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your pleas fall on deaf ears. Your aggression in the Balkans is unacceptable. I am now allied with Italy to contain your expansion. Do not expect any further assistance from me. I suggest you focus on defending your own territories.</li>
+<li><b>From</b> [GER]: To my Austrian ally, I appreciate your proposal. However, I believe BUD is too risky at this stage. Let's focus on securing MUN and VEN first. I will move A BOH to MUN, supported by A GAL. You move F TRI to ADR. I will also move A WAR to SIL and F DEN to SWE. This will put us in a strong position for further expansion. Do you agree?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: Germany, I accept your plan to secure MUN and VEN. My F TRI will move to ADR to dislodge Italy's fleet, crippling their Adriatic presence. In return, I request your A WAR support a move to UKR to pressure Turkey's flank. This dual assault weakens both Italy and Turkey, freeing our alliance to dominate the Balkans. Confirm your A WAR - UKR and I'll coordinate F TRI - ADR.</li>
+<li><b>To</b> [ITA]: Italy, your fleet in ADR is now exposed. Austria and Germany are executing a joint strike on VEN and ADR this turn. Withdraw immediately or face dislodgement. Your continued defiance only accelerates your collapse. Choose wisely.</li>
+<li><b>To</b> [TUR]: Turkey, your grip on GRE is fragile. Austria's army in GAL will advance to ALB, supported by naval pressure from TRI. Your alliance with Italy offers no protection against our combined strength. Release GRE or face a decisive counterattack this turn.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your threats are meaningless. You are surrounded by enemies and your empire is crumbling. I suggest you focus on survival, not expansion. I will not cease hostilities in the Balkans. I am merely reclaiming what is rightfully mine.</li>
+<li><b>From</b> [GER]: To my Austrian ally, I must insist on MUN. BUD is too risky, and we need to secure our western flank first. I will move A BOH to MUN, supported by A GAL. You move F TRI to ADR. I will also move A WAR to SIL and F DEN to SWE. This is the best course of action. Do you agree to support A BOH to MUN?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: Germany, I confirm support for your A BOH - MUN via A GAL. Simultaneously, F TRI will move to ADR to dislodge Italy's fleet, crippling their Adriatic hold. Post-MUN, we can pivot to BUD to crush Russia's Balkan presence. Your A WAR should advance to UKR to counter Turkey's flank. This dual assault secures our alliance's dominance. Execute as agreed.</li>
+<li><b>To</b> [ITA]: Italy, your defiance ends here. Austria's F TRI and Germany's land forces are converging on VEN and ADR this turn. Withdraw immediately or face dislodgement. Your alliance with Turkey offers no salvation—our combined strength will dismantle your Adriatic ambitions. Surrender VEN now to avoid annihilation.</li>
+<li><b>To</b> [TUR]: Turkey, your grip on GRE is finished. Austria's A GAL advances to RUM, supported by naval pressure from TRI to ALB. Your southern territories are exposed—GRE and BUL will fall. Abandon your alliance with Italy or face a two-front collapse. We outnumber you, and your 'reclamation' ends today.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [GER]: To my Austrian ally, I am moving A BOH to MUN, A WAR to SIL, and F DEN to SWE. I expect your F TRI to ADR. I will not support A WAR to UKR. Securing MUN is paramount. I trust you will honor our agreement and support A BOH to MUN.</li>
+<li><b>From</b> [TUR]: Austria, your threats are laughable. Your army in GAL will be crushed by my forces in RUM. Your naval pressure from TRI will be met by my fleet in CON. Your alliance with Germany is meaningless. You are doomed. Prepare to be eliminated from the game.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Austria's forces are positioned in TRI and GAL. Germany's A WAR moved to SIL in the prior phase, while Turkey and Italy maintained hostile stances. Austria's A ALB held during the adjustment phase, indicating recent defensive or preparatory movements.
+Austria secured a German alliance to target Italy and Russia, agreeing to support Germany's A BOH to MUN and F TRI to ADR. Disagreements arose over Germany's refusal to support A WAR to UKR. Hostile exchanges with Turkey and Italy confirmed their opposition, with Turkey allying with Italy and rejecting Austrian overtures.</li>
+<li><i>Intent:</i> Support Germany's A BOH to MUN via A GAL, move F TRI to ADR to dislodge Italy's fleet. Pressure Turkey via ALB and plan future strikes on BUD after securing MUN. Maintain alliance with Germany despite strategic disagreements, while preparing for conflict with Italy and Turkey.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading5">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse5" aria-expanded="false" aria-controls="negCollapse5">
+        Negotiation Turn 5 (1903 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse5" class="accordion-collapse collapse" aria-labelledby="negHeading5" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: Germany, our alliance is critical. Coordinate with me to dismantle Italy's Adriatic presence. I'll move F TRI to ADR to attack their fleet, while your A BOH can take VEN with my support. My A GAL will support your advance to MUN. This secures the Adriatic and weakens Italy. Let's avoid conflict with Russia for now and focus on mutual gains.</li>
+<li><b>To</b> [RUS]: Russia, I propose a temporary truce in the Balkans. If you withdraw from BUD, I'll ensure Germany doesn't threaten your position. Let's both focus on eliminating Italy's threat in the south. Mutual survival requires cooperation—avoid unnecessary conflict while we dismantle Italy's power.</li>
+<li><b>To</b> [TUR]: Turkey, while we've clashed, let's exploit Italy's overextension. If you focus on RUM, I'll handle VEN and ADR. Dividing Italy's forces gives us both room to expand. Let's not let them recover their strength—coordinate strikes to cripple their holdings.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [GER]: To our valued ally, Austria. I propose a coordinated attack on France. I will move A BOH to MUN, supported by A GAL. Can you support this move? Also, I will move A WAR to SIL to threaten RUS. What are your intentions in Galicia?</li>
+<li><b>From</b> [TUR]: Austria, your threats are empty. You failed to dislodge me from Rumania, and your position is weakening. I suggest you focus on defending your remaining territories. I will continue to press my advantage in the Balkans. Surrender now and perhaps I will be lenient.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: Germany, our alliance demands immediate focus on dismantling Italy's Adriatic foothold. I propose F TRI to ADR to dislodge their fleet, while your A BOH can take VEN with my A GAL's support. In return, I'll back your A BOH to MUN. Italy's collapse weakens France and frees our southern flank. What's your stance on a coordinated strike on Venice this phase? My A GAL will support your advance, but only if we prioritize crushing Italy first.</li>
+<li><b>To</b> [RUS]: Russia, the Balkans cannot sustain endless conflict. If you withdraw from BUD, I'll ensure Germany halts aggression north of the Carpathians. Let's divide influence: you secure areas north, I handle the Adriatic. This allows us to jointly exploit Italy's overextension. What terms can we agree on to avoid mutual attrition while dismantling Italy's power?</li>
+<li><b>To</b> [TUR]: Turkey, your fixation on RUM is a strategic error. Austria and Germany can联合 crush your southern supply lines. Redirect efforts to aid Italy's collapse, or face联合 pressure from the west and north. The Adriatic is ripe for the taking—abandon RUM, and I'll respect your claims in the Black Sea. Persistence here ensures your isolation and defeat.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your offer is tempting, but I do not trust you. You have proven to be unreliable. I will continue my alliance with Italy and press my advantage in the Balkans. Your time is running out. Prepare for your demise.</li>
+<li><b>From</b> [GER]: To Austria, I agree to support your move of F TRI to ADR. I will move A BOH to MUN, supported by A GAL. However, I will also move A WAR to SIL to deter Russia. I need assurances that you will not stab me in the back and move into Munich after I take it. What are your intentions for Tyrol?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: Germany, our alliance demands decisive action. I will support your A BOH to MUN via A GAL, but in return, I require your support for my A GAL's attack on BUD. Russia's occupation of my home SC is intolerable. I pledge not to seize Munich—your advance there will proceed unchallenged. Simultaneously, my F TRI will target ADR to cripple Italy's naval presence. Coordinate your A WAR to SIL to deter Russia while we secure BUD and MUN. Our joint strikes will cripple both Italy and Russia.</li>
+<li><b>To</b> [RUS]: Russia, your grip on BUD is a direct affront. Withdraw immediately or face a联合 assault from Austria and Germany. I propose a truce: you retain influence north of the Carpathians, while I secure BUD and the Adriatic. Refuse, and your army there will be destroyed. Your survival depends on cooperation—abandon BUD now.</li>
+<li><b>To</b> [TUR]: Turkey, your alliance with Italy is a fatal mistake. Focus on the Black Sea instead of Balkan quagmires. If you withdraw from RUM, I will ensure Germany halts expansion southward. Persist in the Balkans, and you will face联合 pressure from Austria and Germany. Redirect your forces wisely—or perish in Italy's collapse.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [GER]: To Austria, I am moving A BOH to MUN, supported by A GAL. I expect you to support this move. I am also moving A WAR to SIL to deter Russia. I need assurances that you will not stab me in the back and move into Munich after I take it. I will not support an attack on Venice. My priority is Munich.</li>
+<li><b>From</b> [TUR]: Austria, your desperation is amusing. I will not abandon Rumania or aid in Italy's collapse. Your threats are meaningless. Prepare to be eliminated. I will continue to press my advantage in the Balkans, and there is nothing you can do to stop me.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: Germany, our alliance hinges on mutual success. I will support your A BOH to MUN via A GAL, but in return, I demand your A WAR support my A GAL's attack on BUD. Russia's occupation of my home SC is intolerable. Simultaneously, F TRI will move to ADR to cripple Italy's fleet. Secure Munich unchallenged—I pledge not to contest it. Coordinate A WAR to support BUD, and we crush Russia and Italy this phase.</li>
+<li><b>To</b> [RUS]: Russia, your hold on BUD is a direct affront. Withdraw immediately or face a joint assault from Austria and Germany. Your A BUD will be destroyed without support. Accept a truce: retain influence north of Carpathians, while I reclaim BUD. Refuse, and your army there dies. Your survival depends on compliance—abandon BUD now.</li>
+<li><b>To</b> [FRA]: France, Italy's Adriatic fleet threatens both our interests. Support my F TRI to ADR to eliminate their fleet, and I ensure Germany halts westward expansion. Weakening Italy benefits us both—your ION fleet can exploit the vacuum. Coordinate with me, and we dismantle Italy's power before they recover.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your threats are meaningless. I will continue to press my advantage in the Balkans. Prepare for your demise. There is nothing you can do to stop me. Your time is over.</li>
+<li><b>From</b> [GER]: Austria, I am moving A BOH to MUN, supported by A GAL. I expect you to support this move. I am also moving A WAR to SIL to deter Russia. I will not support an attack on Venice. My priority is Munich. I will not support your attack on Budapest. I need you to focus on Italy.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> In S1903M, Italy advanced into VEN and VIE while Russia secured BUD. Austria's F TRI moved to ALB but failed to counter Italy's pressure. Germany pushed toward Munich with A BOH, and Turkey maintained presence in RUM and SER. No retreats occurred, leaving Austria vulnerable in the Balkans and Adriatic.
+Austria sought German coordination to dismantle Italy and retake BUD, offering support for Munich. Germany prioritized Munich and Silistria but refused to aid Austria against Russia, breaking trust. Turkey rejected all overtures, doubling down on Balkan aggression. France showed no interest in collaboration.</li>
+<li><i>Intent:</i> Austria will focus on dislodging Italy's VEN and ADR presence via F TRI to ADR and A GAL support. Simultaneously, attempt to reclaim BUD with A GAL's attack, despite German reluctance. Redirect focus to southern pressure on Italy to weaken their flank while probing Russian defenses in BUD.</li>
+<li><i>Relationship Updates:</i> ['AUT-GER+']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading6">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse6" aria-expanded="false" aria-controls="negCollapse6">
+        Negotiation Turn 6 (1904 Spring)
+      </button>
+    </h2>
+    <div id="negCollapse6" class="accordion-collapse collapse" aria-labelledby="negHeading6" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: GER, our alliance is vital. Let's coordinate a decisive strike on BUD. My A GAL will support your A SIL to WAR or directly attack BUD. In return, I request your support for reclaiming VIE and pressuring TYR. Eliminating RUS's hold on BUD weakens their northern front and secures our mutual interests. Respond swiftly.</li>
+<li><b>To</b> [ITA]: ITA, while tensions simmer, mutual survival demands pragmatism. If you withdraw from VIE and VEN, I will reciprocate by halting aggression toward your Adriatic holdings. Let us avoid unnecessary conflict and negotiate a sustainable truce. Your decision shapes the Balkan balance.</li>
+<li><b>To</b> [FRA]: FRA, ITA's expansion threatens both our positions. Your units in MUN and PIC could target TYR, while my A GAL supports a joint push on VEN. Splitting ITA's forces would cripple their momentum. Coordinate your moves with mine, and we can secure key centers without overextension.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your threats are meaningless. Your empire is crumbling. Surrender now and perhaps we can negotiate a peaceful resolution. Otherwise, prepare for complete annihilation.</li>
+<li><b>From</b> [GER]: To Austria, we must coordinate our efforts against France. I will move A BOH to MUN, supported by A GAL. Can you support this move? Also, what are your intentions regarding Italy? We need to be clear on our objectives in the south.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: GER, I confirm support for your A BOH to MUN. In exchange, I require your A SIL to support my A GAL's attack on BUD. Russia's grip on BUD undermines our northern security. Weakening them first secures our mutual interests. Coordinate your A SIL's support, and I'll ensure A GAL strikes decisively. This alliance must prioritize shared survival over isolated gains.</li>
+<li><b>To</b> [FRA]: FRA, ITA's advance into TYR and VEN threatens both our positions. Your A MUN can capture TYR with my A GAL's support. In return, I'll assist your fleet in ION if needed. Let's split ITA's forces and secure key centers. Coordinate your moves this phase to maximize pressure on their Adriatic holdings.</li>
+<li><b>To</b> [ITA]: ITA, your occupation of VIE and VEN is a provocation. Withdraw immediately or face coordinated attacks from Austria, France, and Germany. Your Adriatic fleet in ADR is vulnerable to joint action. Pragmatism demands retreat—failure to comply will isolate you and invite annihilation.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [GER]: To Austria, I will support your attack on BUD with A SIL. However, I need your full commitment to supporting my attack on MUN. A GAL must support A BOH - MUN. Also, I cannot support your attack on VIE while FRA is threatening my western flank. Let's focus on eliminating FRA first, then we can deal with Italy.</li>
+<li><b>From</b> [TUR]: Austria, your pleas are falling on deaf ears. Your empire is crumbling, and your threats are meaningless. Surrender now and face the inevitable. There will be no peaceful resolution. Prepare for complete annihilation.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: GER, I confirm support for your A BOH to MUN via A GAL. In return, your A SIL must support my A GAL's attack on BUD. This cripples RUS's Balkan hold and secures our northern flank. Coordinate A SIL's support, and I'll ensure A GAL strikes decisively. Let's finalize this plan to weaken RUS and FRA simultaneously.</li>
+<li><b>To</b> [FRA]: FRA, Italy's Adriatic is ripe for exploitation. Your A MUN can take TYR with my support. In exchange, I'll help isolate VEN by moving A GAL to BUD (supported by GER). Coordinate F ION to ADR to dislodge ITA's fleet. Let's split their forces and secure key centers this phase.</li>
+<li><b>To</b> [TUR]: TUR, your fixation on the Balkans ignores RUS's threat to RUM. I propose a temporary truce to counter their expansion. Withdraw from ALB and RUM, and I'll ensure GER doesn't target your interests. Refuse, and face a two-front war with RUS and GER. Choose wisely.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Austria, your pleas are pathetic. Your empire is crumbling, and your threats are meaningless. Surrender now and face the inevitable. There will be no peaceful resolution. Prepare for complete annihilation. Your time is over.</li>
+<li><b>From</b> [GER]: To Austria, I will support your attack on BUD with A SIL. A GAL must support A BOH - MUN. I need your commitment to this. We will deal with Italy later. FRA is the priority.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: GER, final confirmation: A GAL will support A BOH-MUN as agreed. In return, your A SIL must support my A GAL's direct attack on BUD. This cripples RUS's Balkan hold and secures our northern flank. Execute this plan to weaken RUS and FRA simultaneously—our alliance's survival depends on it.</li>
+<li><b>To</b> [FRA]: FRA, your A MUN can capture TYR with my support. I'll isolate VEN by striking BUD (supported by GER). Coordinate F ION to ADR to dislodge ITA's fleet. Split their forces now—failure to act leaves your western gains vulnerable to GER's counterattacks.</li>
+<li><b>To</b> [ITA]: ITA, your Adriatic dominance is over. Withdraw from VIE and VEN immediately or face a three-front collapse: GER's A MUN, FRA's F ION, and my A GAL's BUD strike. Your fleet in ADR is exposed—surrender these territories or perish.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [GER]: To Austria, I am moving A BOH to MUN. A SIL will support your attack on BUD. I expect A GAL to support A BOH - MUN. Let's crush FRA.</li>
+<li><b>From</b> [TUR]: Austria, your pleas are pathetic. Your empire is crumbling, and your threats are meaningless. Surrender now and face the inevitable. There will be no peaceful resolution. Prepare for complete annihilation. Your time is over.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Austria's failed attack on BUD via A GAL was countered by Russia's A BUD, resulting in mutual dislodgment. Austria's sole remaining unit is A GAL, while Russia retains control of BUD.
+Negotiated with Germany to coordinate strikes on BUD (supported by GER's A SIL) and MUN (supported by AUT's A GAL), but conflicting support requirements caused tension. Pressured Italy to withdraw from VIE/VEN without success. Turkey maintained hostile stance, refusing truce proposals.</li>
+<li><i>Intent:</i> Move A GAL to BUD, supported by GER's A SIL to dislodge RUS's A BUD. Coordinate with FRA to have A MUN attack TYR. Deceive GER by prioritizing BUD over supporting MUN if necessary. Maintain pressure on ITA via threats of joint FRA/AUT action.</li>
+<li><i>Relationship Updates:</i> ['AUT-GER++']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="negHeading7">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#negCollapse7" aria-expanded="false" aria-controls="negCollapse7">
+        Negotiation Turn 7 (1904 Fall)
+      </button>
+    </h2>
+    <div id="negCollapse7" class="accordion-collapse collapse" aria-labelledby="negHeading7" data-bs-parent="#negAccordion">
+      <div class="accordion-body">
+
+<div class='mb-2'><b>Subround 1</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: Germany, our alliance is vital. Coordinate A SIL to support my A GAL - BUD. In return, I'll support your advance into Russian territories. Let's eliminate RUS's hold on BUD and split gains in the east. Immediate action is critical before RUS reinforces.</li>
+<li><b>To</b> [FRA]: France, Italy's Adriatic presence threatens us both. Your F ION can take ADR (held by ITA's fleet) while I pressure VEN via A GAL support. We can secure the Adriatic and split spoils. Let's act before ITA consolidates.</li>
+<li><b>To</b> [ITA]: Italy, your overextension into VIE and VEN is reckless. Withdraw to TUS/APU, and I'll refrain from attacking VEN. Refuse, and expect a combined strike from GER and myself. Your choice: negotiate now or face annihilation.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: To all powers, Turkey is committed to maintaining stability in the region and will act accordingly. I am open to further discussions regarding long-term peace and cooperation.</li>
+<li><b>From</b> [GER]: To Austria, we must coordinate our efforts to capitalize on the current situation. I propose A SIL - WAR to secure our eastern flank and prepare for further expansion. I will support your efforts in BUD. What are your intentions for GAL?</li>
+</ul></div>
+<div class='mb-2'><b>Subround 2</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: Germany, our alliance demands immediate coordination. A SIL must support my A GAL - BUD to dislodge RUS's grip. In return, I'll back your eastern push via WAR or MUN. Delay risks RUS reinforcement. Confirm A SIL's support and your eastern target by next round. Our survival hinges on this.</li>
+<li><b>To</b> [FRA]: France, Italy's Adriatic dominance ends now. Your F ION can take ADR with my support, while I pressure VEN. Split Adriatic spoils: you take ADR, I secure VEN. RUS is distracted; this is your chance. Confirm F ION - ADR and we'll coordinate support.</li>
+<li><b>To</b> [ITA]: Italy, your overreach in VEN and ADR is fatal. GER and FRA are joining my assault. Withdraw to TUS/APU immediately, or face annihilation from three fronts. Your prior defiance led to disaster—negotiate now or perish.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: To all powers, Turkey reiterates its commitment to regional stability. We are focused on resolving the situation in the Balkans and ensuring the security of our borders. We are open to further discussions regarding long-term peace and cooperation once these immediate concerns are addressed.</li>
+<li><b>From</b> [GER]: Austria, I agree to support A GAL - BUD with A SIL - WAR. However, I need assurances regarding MUN. Will you support my efforts to reclaim it from FRA? Also, ITA's move to BUD is concerning. We must coordinate to prevent them from gaining a foothold.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 3</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: Germany, confirm A SIL supports A GAL - BUD this phase. In return, I will support your A MUN to reclaim MUN from France. We must secure BUD immediately—Russia's hold weakens daily. My A GAL will also support your A WAR if needed. Finalize orders by next round to avoid delay.</li>
+<li><b>To</b> [FRA]: France, your F ION can secure ADR this phase with no resistance. Italy's F ADR is isolated. Take ADR, and I'll ensure VEN falls to you via A GAL support. Split the Adriatic: you hold ADR, I take VEN. Russia is distracted—act now before Italy regroups.</li>
+<li><b>To</b> [ITA]: Italy, your A VIE and VEN are doomed. Germany's A SIL and my A GAL will strike BUD, while France takes ADR. Withdraw to TUS/APU immediately or face dislodgment in all key positions. Your defiance has sealed your fate—surrender territories or be destroyed.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [GER]: Austria, I confirm A SIL will support A GAL - BUD. I need your firm commitment to support A MUN - RUH to reclaim MUN from FRA. ITA's move to BUD is a threat we must address together. Will you support A MUN - RUH?</li>
+<li><b>From</b> [FRA]: Austria, your offer is tempting, but I cannot betray my ally Italy at this time. However, I will keep your proposal in mind should circumstances change. Perhaps after we have dealt with Turkey, we can revisit our discussion. For now, I must remain loyal to my commitments.</li>
+<li><b>From</b> [TUR]: To all powers, Turkey is focused on resolving the situation in the Balkans and ensuring the security of our borders. We are committed to maintaining stability in the region and will act accordingly. We are open to further discussions regarding long-term peace and cooperation once these immediate concerns are addressed. We seek a peaceful resolution to the current conflicts.</li>
+</ul></div>
+<div class='mb-2'><b>Subround 4</b></div>
+<div class='ms-4'><u>Sent by AUT:</u><ul>
+<li><b>To</b> [GER]: Germany, our alliance's success hinges on immediate execution. Confirm A SIL supports A GAL - BUD this phase. In return, I will support your A MUN - RUH to reclaim MUN from France. Russia's hold on BUD is fragile—our combined force will dislodge them. Delay risks losing this window. Finalize orders now; my A GAL moves as agreed.</li>
+<li><b>To</b> [FRA]: France, Italy's F ADR is isolated and vulnerable. Your F ION can take ADR this phase with no resistance. If you strike, I'll ensure Italy's VEN is cut off via A GAL support. ADR is yours if you act—this weakens Italy and opens the Adriatic for joint exploitation. Russia's distraction in BUD is your chance.</li>
+<li><b>To</b> [ITA, TUR]: Italy and Turkey, your aggression has isolated you. Germany and I are striking BUD with overwhelming force. Any interference will be met with coordinated retaliation. Italy, your VEN and ADR are exposed; Turkey, your Balkan gains are at risk. Withdraw or face annihilation from our combined might.</li>
+</ul></div>
+<div class='ms-4'><u>Received by AUT:</u><ul>
+<li><b>From</b> [TUR]: Turkey is committed to regional stability and will act accordingly. We are focused on resolving the situation in the Balkans and ensuring the security of our borders. We seek a peaceful resolution to the current conflicts.</li>
+<li><b>From</b> [GER]: Austria, A SIL supports A GAL - BUD. I need your support for A MUN - RUH to reclaim MUN from FRA. I am moving A MUN - RUH. Do not fail me.</li>
+<li><b>From</b> [FRA]: Austria, your desperation is palpable. While I appreciate your continued overtures, my commitment to Italy remains firm for now. However, I will not forget your offer. Should the opportunity arise, I may reconsider our arrangement. Until then, I wish you luck in your struggle against the Italian onslaught.</li>
+</ul></div>
+<hr/>
+<p><b>Final Summary (AUT):</b></p>
+<ul>
+<li><i>Journal Summary:</i> Austria's A GAL - BUD was blocked by Germany's A SIL - GAL, resulting in a standoff. Russia's A BUD retreated to RUM, leaving BUD empty. France and Italy consolidated positions in the Adriatic, while Russia shifted forces eastward.
+Austria solidified its alliance with Germany, securing support for BUD while promising backing for Germany's MUN ambitions. France rejected overtures to attack Italy, maintaining loyalty to Italy. Italy and Turkey were pressured but remained defiant. Germany's coordination was critical, while France's refusal strained relations.</li>
+<li><i>Intent:</i> Coordinate with Germany to secure BUD via A GAL - BUD supported by GER's A SIL. Pressure Italy by attacking VEN with A GAL support. Monitor French movements and prepare countermeasures if they shift allegiances. Exploit Russia's weakened position in BUD to reclaim it decisively.</li>
+<li><i>Relationship Updates:</i> ['AUT-FRA-']</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <div class="tab-pane fade p-3" id="animationTabContent" role="tabpanel" aria-labelledby="animation-tab">
+    <h2>Game Animation</h2>
+    <div class="svg-player-container">
+      <div class="svg-display" id="svgDisplay">
+      </div>
+      <div class="player-controls">
+        <button class="control-button" id="prevBtn">◀</button>
+        <button class="control-button" id="playPauseBtn">▶</button>
+        <button class="control-button" id="nextBtn">▶</button>
+        <div class="progress-container" id="progressContainer">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="phase-label" id="phaseLabel"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+<script>
+
+    var ctxMain = document.getElementById('mainMetricsChart').getContext('2d');
+    var mainMetricsChart = new Chart(ctxMain, {
+      type: 'line',
+      data: {
+        labels: ['1901 1901 Spring Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Spring Retreat','1902 1902 Fall Movement','1902 1902 Fall Retreat','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Spring Retreat','1903 1903 Fall Movement','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Spring Retreat','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement'],
+        datasets: [
+          {
+            label: 'Centers',
+            data: [3,3,3,3,3,3,3,2,2,2,2,1,1,1,1,0,0],
+            borderColor: 'red',
+            fill: false
+          },
+          {
+            label: 'Units',
+            data: [3,3,3,3,3,3,3,3,2,2,2,2,1,1,1,1,0],
+            borderColor: 'blue',
+            fill: false
+          },
+          {
+            label: 'Influence',
+            data: [3,4,4,4,5,5,5,5,5,4,4,3,3,2,2,1,1],
+            borderColor: 'green',
+            fill: false
+          },
+          {
+            label: 'Builds',
+            data: [0,0,0,0,0,0,0,-1,0,0,0,-1,0,0,0,-1,0],
+            borderColor: 'purple',
+            fill: false
+          },
+          {
+            label: 'Civil Disorder',
+            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+            borderColor: 'orange',
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+
+    var ctxSelf = document.getElementById('selfRelsChart').getContext('2d');
+    var selfRelsChart = new Chart(ctxSelf, {
+      type: 'line',
+      data: {
+        labels: ['1901 1901 Spring Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Spring Retreat','1902 1902 Fall Movement','1902 1902 Fall Retreat','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Spring Retreat','1903 1903 Fall Movement','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Spring Retreat','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement'],
+        datasets: [
+            {
+              label: 'AUT-ENG',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+              borderColor: 'maroon',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-FRA',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,-1,-1],
+              borderColor: 'steelblue',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-GER',
+              data: [1,1,1,1,1,2,2,2,2,2,1,1,2,2,2,2,2],
+              borderColor: 'darkgreen',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-ITA',
+              data: [-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2],
+              borderColor: 'purple',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-RUS',
+              data: [1,1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],
+              borderColor: 'darkorange',
+              fill: false
+            }
+            ,
+            {
+              label: 'AUT-TUR',
+              data: [2,2,2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2],
+              borderColor: 'navy',
+              fill: false
+            }
+            ,
+        {
+          label: 'Aggregate Self',
+          data: [0.3333333333333333,0.3333333333333333,0.3333333333333333,-0.6666666666666666,-0.6666666666666666,-0.5,-0.5,-0.5,-0.5,-0.5,-0.6666666666666666,-0.6666666666666666,-0.5,-0.5,-0.6666666666666666,-0.6666666666666666,-0.6666666666666666],
+          borderColor: 'black',
+          borderDash: [5,5],
+          fill: false
+        }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            min: -2,
+            max: 2,
+            ticks: {
+              stepSize: 1
+            }
+          }
+        }
+      }
+    });
+
+
+    var ctxOthers = document.getElementById('othersRelsChart').getContext('2d');
+    var othersRelsChart = new Chart(ctxOthers, {
+      type: 'line',
+      data: {
+        labels: ['1901 1901 Spring Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Spring Retreat','1902 1902 Fall Movement','1902 1902 Fall Retreat','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Spring Retreat','1903 1903 Fall Movement','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Spring Retreat','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement'],
+        datasets: [
+            {
+              label: 'ENG-AUT',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+              borderColor: 'maroon',
+              fill: false
+            }
+            ,
+            {
+              label: 'FRA-AUT',
+              data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+              borderColor: 'steelblue',
+              fill: false
+            }
+            ,
+            {
+              label: 'GER-AUT',
+              data: [0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+              borderColor: 'darkgreen',
+              fill: false
+            }
+            ,
+            {
+              label: 'ITA-AUT',
+              data: [-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2],
+              borderColor: 'purple',
+              fill: false
+            }
+            ,
+            {
+              label: 'RUS-AUT',
+              data: [0,0,0,0,0,0,0,0,0,0,-1,-1,-1,-1,-1,-1,-1],
+              borderColor: 'darkorange',
+              fill: false
+            }
+            ,
+            {
+              label: 'TUR-AUT',
+              data: [1,-1,-1,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2],
+              borderColor: 'navy',
+              fill: false
+            }
+            ,
+        {
+          label: 'Aggregate Others',
+          data: [-0.16666666666666666,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.6666666666666666,-0.6666666666666666,-0.6666666666666666,-0.6666666666666666,-0.6666666666666666,-0.6666666666666666,-0.6666666666666666],
+          borderColor: 'black',
+          borderDash: [5,5],
+          fill: false
+        }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            min: -2,
+            max: 2,
+            ticks: {
+              stepSize: 1
+            }
+          }
+        }
+      }
+    });
+
+
+    var ctxOrders = document.getElementById('ordersChart').getContext('2d');
+    var ordersChart = new Chart(ctxOrders, {
+      type: 'line',
+      data: {
+        labels: ['1901 1901 Spring Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1902 1902 Spring Movement','1902 1902 Spring Retreat','1902 1902 Fall Movement','1902 1902 Fall Retreat','1902 1902 Winter Adjustment','1903 1903 Spring Movement','1903 1903 Spring Retreat','1903 1903 Fall Movement','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Spring Retreat','1904 1904 Fall Movement','1904 1904 Winter Adjustment','1905 1905 Spring Movement'],
+        datasets: [
+          {
+            label: 'Issued Orders',
+            data: [3,3,0,3,0,4,0,1,2,0,2,1,1,0,1,1,0],
+            borderColor: 'red',
+            fill: false
+          },
+          {
+            label: 'Valid Orders',
+            data: [2,2,0,2,0,4,0,1,1,0,1,1,1,0,1,1,0],
+            borderColor: 'green',
+            fill: false
+          },
+          {
+            label: 'Rejected Orders',
+            data: [1,1,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0],
+            borderColor: 'orange',
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const svgFiles = ['gamestate_renders/qwq-32b-1.57/gamestate_S1901M.svg','gamestate_renders/qwq-32b-1.57/gamestate_F1901M.svg','gamestate_renders/qwq-32b-1.57/gamestate_W1901A.svg','gamestate_renders/qwq-32b-1.57/gamestate_S1902R.svg','gamestate_renders/qwq-32b-1.57/gamestate_S1902M.svg','gamestate_renders/qwq-32b-1.57/gamestate_F1902R.svg','gamestate_renders/qwq-32b-1.57/gamestate_F1902M.svg','gamestate_renders/qwq-32b-1.57/gamestate_W1902A.svg','gamestate_renders/qwq-32b-1.57/gamestate_S1903R.svg','gamestate_renders/qwq-32b-1.57/gamestate_S1903M.svg','gamestate_renders/qwq-32b-1.57/gamestate_F1903M.svg','gamestate_renders/qwq-32b-1.57/gamestate_W1903A.svg','gamestate_renders/qwq-32b-1.57/gamestate_S1904M.svg','gamestate_renders/qwq-32b-1.57/gamestate_S1904R.svg','gamestate_renders/qwq-32b-1.57/gamestate_F1904M.svg','gamestate_renders/qwq-32b-1.57/gamestate_W1904A.svg'];
+        const phaseLabels = ['1901 1901 Spring Movement','1901 1901 Fall Movement','1901 1901 Winter Adjustment','1902 1902 Spring Retreat','1902 1902 Spring Movement','1902 1902 Fall Retreat','1902 1902 Fall Movement','1902 1902 Winter Adjustment','1903 1903 Spring Retreat','1903 1903 Spring Movement','1903 1903 Fall Movement','1903 1903 Winter Adjustment','1904 1904 Spring Movement','1904 1904 Spring Retreat','1904 1904 Fall Movement','1904 1904 Winter Adjustment'];
+        let currentIndex = 0;
+        let isPlaying = false;
+        let playInterval = null;
+        const playbackSpeed = 1500;
+        const preloadedSVGs = [];
+        
+        const svgDisplay = document.getElementById('svgDisplay');
+        const prevBtn = document.getElementById('prevBtn');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progressContainer = document.getElementById('progressContainer');
+        const phaseLabel = document.getElementById('phaseLabel');
+        
+        svgDisplay.style.position = 'relative';
+        
+        function preloadSVGs() {
+            svgFiles.forEach((file, index) => {
+                const img = new Image();
+                img.src = file;
+                preloadedSVGs[index] = img;
+            });
+        }
+        
+        function initPlayer() {
+            if (svgFiles.length === 0) return;
+            preloadSVGs();
+            loadSVG(0);
+            updateControls();
+            
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            
+            playPauseBtn.addEventListener('click', togglePlayback);
+            progressContainer.addEventListener('click', handleProgressClick);
+        }
+        
+        function loadSVG(index) {
+            if (index < 0 || index >= svgFiles.length) return;
+            currentIndex = index;
+            const filePath = svgFiles[currentIndex];
+            
+            const newObj = document.createElement('object');
+            newObj.type = 'image/svg+xml';
+            newObj.data = filePath;
+            newObj.style.position = 'absolute';
+            newObj.style.top = 0;
+            newObj.style.left = 0;
+            newObj.style.width = '100%';
+            newObj.style.height = '100%';
+            newObj.style.opacity = '0';
+            
+            svgDisplay.appendChild(newObj);
+            
+            newObj.onload = function() {
+                newObj.style.transition = 'opacity 0.3s';
+                newObj.style.opacity = '1';
+                phaseLabel.textContent = phaseLabels[currentIndex];
+                const progress = (currentIndex / (svgFiles.length - 1)) * 100;
+                progressBar.style.width = progress + '%';
+                
+                updateControls();
+            };
+            
+            newObj.addEventListener('transitionend', function() {
+                Array.from(svgDisplay.children)
+                    .filter(child => child !== newObj)
+                    .forEach(child => svgDisplay.removeChild(child));
+            });
+        }
+        
+        function showPrevious() {
+            if (currentIndex > 0) {
+                loadSVG(currentIndex - 1);
+            }
+        }
+        
+        function showNext() {
+            if (currentIndex < svgFiles.length - 1) {
+                loadSVG(currentIndex + 1);
+            }
+        }
+        
+        function togglePlayback() {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                playPauseBtn.textContent = '⏸️';
+                playInterval = setInterval(() => {
+                    if (currentIndex < svgFiles.length - 1) {
+                        loadSVG(currentIndex + 1);
+                    } else {
+                        clearInterval(playInterval);
+                        isPlaying = false;
+                        playPauseBtn.textContent = '▶️';
+                    }
+                }, playbackSpeed);
+            } else {
+                playPauseBtn.textContent = '▶️';
+                clearInterval(playInterval);
+            }
+        }
+        
+        function handleProgressClick(e) {
+            const rect = progressContainer.getBoundingClientRect();
+            const clickPosition = e.clientX - rect.left;
+            const containerWidth = rect.width;
+            const clickRatio = clickPosition / containerWidth;
+            const newIndex = Math.round(clickRatio * (svgFiles.length - 1));
+            loadSVG(newIndex);
+            //if (isPlaying) {
+            //    togglePlayback();
+            //}
+        }
+        
+        function updateControls() { }
+        
+        if (svgDisplay) {
+            initPlayer();
+        }
+        
+        var animationTabTrigger = document.getElementById('animation-tab');
+        if (animationTabTrigger) {
+            animationTabTrigger.addEventListener('shown.bs.tab', function(e) {
+                if (!isPlaying) {
+                    togglePlayback();
+                }
+            });
+            animationTabTrigger.addEventListener('hidden.bs.tab', function(e) {
+                if (isPlaying) {
+                    togglePlayback();
+                }
+            });
+        }
+    });
+    
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body></html>
