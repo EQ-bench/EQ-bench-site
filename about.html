@@ -30,14 +30,21 @@
 		
 		<p><a href="https://github.com/EQ-bench" target="_blank">Github</a> | <a href="https://arxiv.org/abs/2312.06281" target="_blank">Paper</a> | <span id="email"></span> | <a href="https://twitter.com/sam_paech" target="_blank">Twitter</a> | <a href="index.html">Leaderboard</a></p>
 
-		<p>
-            <a href="index.html">💙EQ-Bench3</a> |
-            <a href='creative_writing.html'>🎨Creative Writing</a> |
-            <a href='judgemark-v2.html'>⚖️Judgemark v2</a> |
-            <a href='buzzbench.html'>🎤BuzzBench</a> |
-			<a href='diplobench.html'>🌍DiploBench</a> |
-            <a href='eqbench-v2.html'>💗EQ-Bench (Legacy)</a>
-        </p>
+		<p class="nav-links">
+			<a href='index.html'>💙EQ-Bench3</a>
+			<span class="nav-separator">|</span>
+			<a href='creative_writing.html'>🎨Creative Writing v3</a>
+			<span class="nav-separator">|</span>
+			<a href='judgemark-v2.html'>⚖️Judgemark v2</a>
+			<span class="nav-separator">|</span>
+			<a href='buzzbench.html'>🎤BuzzBench</a>
+			<span class="nav-separator">|</span>
+			<a href='diplobench.html'>🌍DiploBench</a>
+			<span class="nav-separator">|</span>
+			<a href='creative_writing_v2.html'>🎨Creative Writing (Legacy)</a>
+			<span class="nav-separator">|</span>
+			<a href='eqbench-v2.html'>💗EQ-Bench (Legacy)</a>
+		</p>
 
 		<p><script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#1a1a1a', 'O5O7VUVYO');kofiwidget2.draw();</script> </p>
 
@@ -133,8 +140,193 @@
 			<p>You can use the MAGI test sets with <a href="https://github.com/sqrkl/lm-evaluation-harness" target="_blank">this fork of EleutherAI lm-evaluation-harness</a>.</p>
 			<br>
 		</div>
+		<div id="creative-writing-v3" class="section">
+			<h3>🎨 Creative Writing v3</h3>
+			
+			<p><strong>A new version of the creative writing benchmark has dropped!</strong> In this update:</p>
+			
+			<ul>
+			  <li>New writing prompts designed for better discrimination & vibe checks</li>
+			  <li>Hybrid rubric + Elo scoring system for much better separability at the top end & increased headroom</li>
+			  <li>Improved sample output pages</li>
+			</ul>
+			
+			<p><strong>How the benchmark works:</strong></p>
+			<ol>
+			  <li>Run the 32 writing prompts for 3 iterations (96 items total) @ temp 0.7, min_p 0.1.</li>
+			  <li>Grade the outputs with a comprehensive scoring rubric using Claude 3.7 Sonnet.</li>
+			  <li>Use this score to infer an initial Elo rating for the evaluated model.</li>
+			  <li>Perform pairwise matchups with neighboring models on the leaderboard (sparse sampling). Items are scored on several criteria, with the winner on each criteria given up to 5 +'s.</li>
+			  <li>Calculate Elo scores using the <a href="https://en.wikipedia.org/wiki/Glicko_rating_system">Glicko rating system</a> (modified to weight the win margin in '+' count). Loop until stable positions are found.</li>
+			  <li>Perform comprehensive matchups with final neighbors and compute the definitive leaderboard Elo.</li>
+			</ol>
+
+			<p><strong>Rubric vs Elo Scores</strong></p>
+			<p>We score the model two different ways: First, with the model's output presented to the judge on its own, which is then scored to a rubric on several criteria. You can see the analysis & scores per item for the rubric evaluation in the sample outputs. The aggregate score on all the items is what is shown on the leaderboard as "Rubric score".</p>
+			<p>Second, we score the model by matching it up against other models on the leaderboard in pairwise matchups (of the same writing prompt). The judge picks which of the outputs is better on several criteria. These pairwise matchup results are then used to compute the Elo score.</p>
+			<p>Why do these scores disagree? Pairwise matchups allow the judge to be more discriminative than scoring a single item in isolation. When it's directly comparing one item to another, it's easier to spot small differences. The scores may also differ because we use different criteria in the judging prompts between rubris & pairwise. The judge will also be subject to different biases depending on the evaluation method.</p>
+			<p>Which one is right? Well, both and neither. Both approaches have pros & cons: rubric evals are less subject to systematic biases, but less discriminative.</p>
+
+			<p><strong>Score Normalisation</strong></p>
+			<p>The Elo solver shifts all the scores around whenever a new model is added. To counter this, on the leaderboard we anchor the scores such that DeepSeek-R1 has a score of 1500 and ministral-3b has a score of 200. You may see intermediate scores shift around a bit; this is just a quirk of relative rating systems.</p>
+			
+			<p><strong>Benchmark Philosophy:</strong></p>
+			<p>Judging creative writing reliably -- and *in line with human preferences* -- is hard. The fundamental limitation of any creative writing evaluation is the judge's ability to discern good writing from bad. On top of this, there are a host of biases that LLM judges can exhibit.</p>
+				
+			<p>The previous version of the creative writing eval (v2) was saturating, meaning the judge could no longer tell apart models around the top ability range. To remedy this in v3, every aspect of the test is tuned to make this task easier for the judge.</p>
+
+			<p>We now use <strong>pairwise comparisons</strong> and an <strong>Elo ranking system</strong>, as it offers better discriminative power than a scoring rubric alone.</p>
+			
+			<p>The prompts were chosen through a process of elimination to be <em>challenging for weaker models</em> and therefore <em>highly discriminative</em>. It's a bit counter-intuitive, but the purpose of the evaluation is not to help models write their best. Instead, we are deliberately exposing weaknesses, creating a steeper gradient for the judge to evaluate on.</p>
+
+			<p>The prompt requirements include humour, romance, spatial awareness, unusual first-person perspectives. Things language models typically struggle to represent to the level of human writers. So, expect some clangers in the outputs!</p>
+
+			
+
+			<p><strong>Cost:</strong></p>
+			<p>The hybrid rubric + Glicko scoring system that we've implemented is relatively economical for an Elo framework. But scoring a model still costs around $10 in API fees. (Side note: if you'd like to sponsor these leaderboards, get in touch.)</p>
+
+			<p><strong>Mitigating Bias:</strong></p>
+
+			<p>Since moving to pairwise comparisons, we have to contend with new biases that this method is notorious for. Here are some of the biases that we have attempted to control for:</p>
+
+			<ul>
+				<li>
+					<strong>Length Bias:</strong> LLM judges *strongly* favour longer outputs in pairwise judging tasks. There are many approaches to mitigating length bias, with varying efficies & tradeoffs. We opted to simply truncate the outputs at 4000 chars, which puts all models on the same footing. We can get away with this because we are evaluating creative writing, not factual responses. There appears to be no impact on the judge's ability to evaluate & rank the models.
+				</li>
+				<li>
+					<strong>Position Bias:</strong> Different judges have systematic biases in whether they favour the output that comes first or second in a pairwise comparison. We mitigate this bias by running all evaluations in both directions and averaging the two.
+				</li>
+				<li>
+					<strong>Complex Verbosity Bias:</strong> The judge tends to be easily impressed by vocab flexes and superficial sophistication that doesn't contribute to writing quality. We include judging criteria to help the judge notice when this is excessive, and punish it in the scoring.
+				</li>
+				<li>
+					<strong>Poetic Incoherence Bias:</strong> We've noticed that some models output relentlessly poetic prose which borders on incoherence. This can happen when a model is overtrained near the point of collapse. The judge tends to be impressed by this style of writing and has a hard time differentiating between it and *good* use of poetic & unconventional styles. We attempt to control for this bias by including judging criteria that punish overly poetic & incoherent prose. This is not really an ideal solution as it hasn't solved the judge's difficulty in identifying purple prose and similar distinctions. Though in practice is *does* downrank the models that are notorious for this.
+				</li>				
+			</ul>
+
+			<p>Biases we don't control for:</p>
+
+			<ul>
+				<li>
+					<strong>Self-Bias:</strong> We *do not* control for the judge possibly preferring its own outputs. Be aware that it may be a factor in the scores.
+				</li>
+				<li>
+					<strong>Positivity Bias:</strong> It's unclear whether the judge has a positivity bias nor in which direction. Often a piece that unexpectedly leans dark elicits very favourable judging. So if there is a bias, it may not be in the assumed direction, or it may be situation dependent. We don't control for this possible bias. We do include criteria in the rubric eval targeting things like unearned positivity, to give visibility on this dimension of writing. But these criteria are not used in the final Elo scoring.
+				</li>
+				<li>
+					<strong>Smut Bias:</strong> Some models are that are tuned for RP/ERP can have a tendency to write towards erotica. The judge tends to punish this severely, and instructing it not to is ineffective. So be aware that this may affect the score for NSFW tuned models.
+				</li>
+				<li>
+					<strong>Stylistic & Content Biases:</strong> There are likely additional biases other than those mentioned above which differ from *your* preferences or from *average human* preferences. This is the case with any eval (judged by human or LLM) and is something to be mentally factored in.
+				</li>
+				<li>
+					<strong>Slop Bias:</strong> It may be the case that judges favour certain kinds of slop (overused phrases, tropes, stylistic choices) which get selected for when models are RL tuned using LLM judges. What looks like slop to us may look like shakespeare to the judge. We don't control for this possible bias in any empirical way. We do measure one dimension of slop (overused phrases, via the slop score), and provide a manual slider for the user to adjust to punish high slop scores.
+				</li>
+			</ul>
+
+			<p><strong>The Pairwise Judging Prompt:</strong></p>
+
+
+			<div class="judging-prompt">
+				<div class="prompt-content">
+<p>Compare the relative ability of each writer on these criteria:</p>
+
+<div class="raw-list">
+- Character authenticity and insight
+- Interesting and original
+- Writing quality
+- Coherence in plot, character choices, metaphor
+- Instruction following (followed the prompt)
+- World and atmosphere
+- Avoids cliches in characters, dialogue & plot
+- Avoids flowery verbosity & show-offy vocab maxxing
+- Avoids gratuitous metaphor or poetic overload
+	</div>
+	
+	<p><strong>Judging notes:</strong></p>
+	<div class="raw-list">
+- Be aware that these abilities may be independent, i.e. a model may be strong in one and weak in another.
+- Outputs will sometimes be truncated to ensure length consistency. Don't penalise this, just judge what is there on its merit.
+- You must always pick a winner for each criteria (no draws)
+	</div>
+	
+<p>The response will use a + / ++ / +++ / ++++ / +++++ format to denote the stronger response and relative ability difference for each criteria.</p>
+				</div>
+			
+				<style>
+				  .judging-prompt {
+					background-color: var(--bg-color, #f8f9fa);
+					border: 2px solid var(--border-color, #6c757d);
+					padding: 1.5rem;
+					margin: 1.5rem 0;
+					border-radius: 0.25rem;
+					color: var(--text-color, #212529);
+					font-family: monospace;
+					}
+
+					.judging-prompt h4 {
+					margin-top: 0;
+					color: var(--heading-color, #343a40);
+					font-weight: 600;
+					}
+
+					.prompt-content {
+					margin-left: 0.5rem;
+					}
+
+					.prompt-content .raw-list {
+					padding-left: 1.5rem;
+					margin-bottom: 0.5rem;
+					white-space: pre-wrap;
+					}
+
+					.prompt-content p {
+					margin-top: 1.25rem;
+					}
+
+					/* Light mode */
+					:root {
+					--bg-color: #f8f9fa;
+					--border-color: #6c757d;
+					--text-color: #212529;
+					--heading-color: #343a40;
+					}
+
+					/* Dark mode */
+					.dark-mode .judging-prompt, [data-theme="dark"] .judging-prompt {
+					--bg-color: #2d3238;
+					--border-color: #90a4ae;
+					--text-color: #e9ecef;
+					--heading-color: #f8f9fa;
+					}
+				</style>
+			</div>
+
+
+			<p><strong>Limitations of the benchmark:</strong></p>
+			
+			<p>
+				The scores and rankings should only ever be interpreted as a rough guide of writing ability. Evaluating creative writing is highly subjective and tastes differ. It's good to be skeptical of benchmark numbers by default; the best way to judge is to use the model yourself or read the sample outputs.
+			</p>
+			<p>What the benchmark is not:</p>
+			<ul>
+				<li>Not a roleplay eval. Models tuned for RP tend to score poorly because they output more casual conversational prose. We aren't assessing multi-turn or typical RP usage</li>
+				<li>It doesn't represent your taste. The judge has its own taste & biases. There's no substitute for your own eyeballs (so we encourage you to read the sample outputs).</li>
+				<li>Not objective. It's a creative writing eval and there are no right or wrong answers.</li>
+				<li>Not an expert. Sonnet 3.7 (the judge) is generally *pretty good* at literary criticism, but can fall short on vibe checks or other things humans pick up on.</li>
+				<li>Multilingual. It only tests writing in English.Though it could be translated easily enough!</li>
+			</ul>
+
+			
+			
+
+			
+			<p><strong>Source Code:</strong></p>	
+			<p>Source code for creative writing v3 benchmark will be released soon.</p>
+		</div>
 		<div id="creative-writing" class="section">
-			<h3>🎨Creative Writing</h3>
+			<h3>🎨Creative Writing (Legacy v2)</h3>
 			<p>This benchmark uses a LLM judge (Claude 3.5 Sonnet) to assess the creative writing abilities of the test models on a series of writing prompts.</p>
 			<p>You can reproduce these results or run the benchmark on your own models with the <a href="https://github.com/EQ-bench" target="_blank">EQ-Bench repo on Github</a>.</p>
 			<p><b>Update 2025-02-25: New metric -- Vocab Complexity</b></p>

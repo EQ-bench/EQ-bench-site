@@ -609,3 +609,126 @@ body.dark-mode .container {
   }
 
 
+
+
+  /* Add this to your style.css */
+.collapsed-columns {
+	display: none; /* Hide the container by default */
+  }
+  
+  /* Ensure table width is handled correctly */
+  #leaderboard {
+	  width: 100% !important; /* Force table width for DataTables */
+  }
+  
+  /* Adjust padding for mobile toggle button if needed */
+  #toggleMobilePlaceholder {
+	  /* Add any specific styling if the button looks out of place */
+	  /* Example: margin-bottom: 0.5rem; */
+  }
+  
+  /* Ensure score text remains centered and visible */
+  .score-text {
+	display: block;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	line-height: 20px; /* Match score-bar-container height */
+	z-index: 99;
+	color: #000; /* Default text color */
+	/* Prevent text selection if desired */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  }
+  
+  body.dark-mode .score-text {
+   color: #fff; /* Text color for dark mode */
+  }
+  
+  /* Ensure score bar container allows text overlay */
+  .score-bar-container {
+	position: relative;
+	height: 20px;
+	background: transparent;
+	border-radius: 5px;
+	overflow: hidden;
+	z-index: 1; /* Ensure container is behind text */
+  }
+  
+  /* Ensure score bar itself is behind text */
+  .creative-writing-score-bar {
+	/* display: none; */ /* Controlled by JS */
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	border-radius: 2px;
+	transition: width 0.5s ease;
+	z-index: 1; /* Behind score-text (z-index 99) */
+	max-width: 100%;
+	/* Background set by JS */
+  }
+  
+  /* Dark mode score bar container background */
+  body.dark-mode .score-bar-container {
+   background: #555;
+  }
+
+
+  @media (max-width: 768px) {
+	/* Ensure the table layout is “fixed” so columns don't jump around */
+
+  
+	/* Remove any extra spacing from the td itself, so the .cell-content controls it */
+	#leaderboard tbody td {
+		padding: 0;
+		white-space: normal; /* allow text wrapping */
+		vertical-align: middle;
+	  }
+	
+	  /* The nested .cell-content block can enforce min-height */
+	  #leaderboard tbody td .cell-content {
+		display: flex;
+		align-items: center;
+		min-height: 3.5em;
+		line-height: 1.3em;
+		width: 100%;
+		padding: 0.4em;
+		box-sizing: border-box;
+	  }
+
+	  #leaderboard tbody td .cell-content .score-bar-container {
+		flex: 1;              /* Occupy leftover space inside the row's flex container */
+		display: flex;        /* (optional) If you also want to align items inside it */
+		align-items: center;  /* (optional) to vertically center the bar & text */
+		gap: 0.5em;           /* optional spacing between bar and text */
+	  }
+
+
+  }
+
+  @media (min-width: 768px) {
+	#leaderboard tbody td:first-child {
+	  white-space: nowrap;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	  
+	  
+	  vertical-align: middle; /* optional alignment tweak */
+	}
+  }
+
+
+  /* Make each navigation link non-breaking */
+.container p a,
+.container p b {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Style the separator spans for proper spacing */
+.container p .nav-separator {
+  margin: 0 0.5rem;
+}

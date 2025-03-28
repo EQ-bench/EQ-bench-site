@@ -1,422 +1,437 @@
-let leaderboardDataCreativeWriting = `model,score,ci95_low,ci95_high,params,avgLength,slopScore,vocabComplexity
-alpindale/WizardLM-2-8x22B,78.91,78.17,79.65,8x22,5856,10.93,46.85
-google/gemma-2-9b-it,76.15,75.13,77.17,9,4010,12.10,47.16
-CohereForAI/c4ai-command-r-plus-08-2024,76.13,75.34,76.92,104,5566,15.24,53.8
-meta-llama/Llama-3.2-3B-Instruct,62.5,61.13,63.88,3,4968,8.97,43.84
-deepseek-ai/DeepSeek-R1,87.11,86.78,87.45,18x37,5272,5.29,33.24
-deepseek-ai/deepseek-r1-distill-llama-70b,76.17,nan,nan,70,6509,8.7,38.65
-deepseek-ai/deepseek-r1-distill-qwen-14b,55.0,nan,nan,14,8000,8.55,50.91
-deepseek-ai/deepseek-r1-distill-qwen-32b,73.05,nan,nan,32,5525,8.88,37.24
-grok-beta,78.11,76.55,79.67,,4768,15.16,61.24
-mistralai/mistral-small-24b-instruct-2501,67.55,,,24,5836,10.62,35.86
-gemini-2.0-flash-thinking-exp-1219,82.5,81.08,83.92,,7476,9.25,44.17
-deepseek-ai/DeepSeek-V3,81.19,80.76,81.61,18x37,6402,8.49,41.8
-gpt-4o-2024-11-20,84.59,84.17,85.01,,6642,7.22,42.02
-lemon07r/Gemma-2-Ataraxy-v4d-9B,82.24,81.75,82.72,9,5661,11.56,49.26
-sam-paech/Darkest-muse-v1,84.25,83.72,84.78,9,7133,5.19,37.57
-claude-3-5-sonnet-20241022,83.0,82.65,83.35,,4710,4.27,43.08
-sam-paech/Quill-v1,79.75,78.5,81.01,9,5910,4.84,35.75
-lemon07r/Gemma-2-Ataraxy-v2-9B,83.28,82.75,83.82,9,4366,17.43,73.19
-gemini-1.5-pro-002,81.44,81.13,81.76,,4799,10.0,41.35
-Qwen/Qwen2.5-72B-Instruct,72.16,70.06,74.26,72,7344,8.24,40.93
-mistralai/Mistral-Small-Instruct-2409,72.39,70.03,74.75,22,5914,8.14,30.19
-chatgpt-4o-latest-2024-09-03,82.51,82.04,82.99,,6204,5.28,31.71
-CohereForAI/c4ai-command-r-plus-08-2024,76.13,75.34,76.92,104,5566,15.24,53.8
-o1-preview-2024-09-12,80.52,80.31,80.74,,7072,10.55,37.91
-o1-mini-2024-09-12,76.32,74.43,78.21,,6193,13.7,53.59
-ifable/gemma-2-Ifable-9B,84.59,84.24,84.95,9,4936,15.47,68.63
-ArliAI/Mistral-Nemo-12B-ArliAI-RPMax-v1.1,56.42,53.63,59.2,12,5419,6.72,39.14
-!FluffyKaeloky/Luminum-v0.1-123B,67.6,,,123,4963,7.94,38.45
-!TheDrummer/Theia-21B-v1,58.87,58.26,59.49,21,6265,7.36,33.54
-!Sao10K/MN-12B-Lyra-v1,72.85,70.8,74.9,12,5974,6.89,39.46
-arcee-ai/Arcee-Scribe,64.15,62.15,66.14,7,5016,15.99,51.82
-lemon07r/Gemma-2-Ataraxy-9B,82.36,81.97,82.76,9,4574,14.72,54.9
-nbeerbower/mistral-nemo-gutenberg-12B-v2,80.12,79.2,81.03,12,4988,15.8,52.65
-OmnicromsBrain/NeuralStar_FusionWriter_4x7b,75.09,73.26,76.92,4x7,4956,16.91,55.79
-!OmnicromsBrain/Eros_Scribe-7b,68.04,66.54,69.53,7,10040,8.42,34.96
-meta-llama/Meta-Llama-3.1-405B-Instruct,71.98,71.15,72.81,405,4462,10.65,46.75
-dnhkng/RYS-Llama-3-Huge-Instruct,75.63,75.2,76.06,99,4507,9.59,44.5
-gemini-1.5-pro-exp-0801,80.34,79.7,80.99,,5329,10.86,43.27
-mistralai/Mistral-Large-Instruct-2407,77.17,75.3,79.03,123,4789,10.8,36.19
-mistralai/Mistral-Nemo-Instruct-2407,77.46,76.82,78.1,12,6265,9.22,33.96
-DeepSeek-V2-Chat-0628,69.77,68.84,70.69,236B-21A,5489,9.8,35.28
-gpt-4o-mini,78.41,77.62,79.21,,5647,10.56,42.28
-UCLA-AGI/Gemma-2-9B-It-SPPO-Iter3,78.76,78.17,79.36,9,4210,13.81,48.72
-N8Programs/Coxcomb,71.4,70.62,72.17,7,5474,12.94,51.79
-!sophosympatheia/New-Dawn-Llama-3-70B-32K-v1.0,58.48,54.75,62.22,70,6811,8.27,45.72
-!TheDrummer/Llama-3SOME-8B-v2,70.59,69.54,71.65,8,4466,11.28,46.71
-google/gemma-2-27b-it,77.22,76.4,78.04,27,4010,10.94,39.54
-!Sao10K/L3-8B-Stheno-v3.2,69.21,68.62,69.8,8,4321,12.28,49.92
-OmnicromsBrain/NeuralStar_AlphaWriter_4x7b,74.21,73.61,74.82,4x7,5461,17.12,59.3
-!Sao10K/L3-70B-Euryale-v2.1,67.32,66.35,68.28,70,4473,5.91,32.43
-gpt-3.5-turbo-0301,42.33,41.2,43.47,,3443,6.38,37.35
-gpt-4-0125-preview,77.43,76.84,78.01,,5047,11.98,49.38
-CohereForAI/c4ai-command-r-plus,64.75,63.95,65.55,104,5961,11.13,47.43
-!sophosympatheia/Midnight-Miqu-70B-v1.5,77.15,76.62,77.68,70,7787,9.55,40.1
-gemini-1.5-flash-001,71.96,71.08,72.84,,4933,10.55,38.05
-mistralai/Mixtral-8x22B-Instruct-v0.1,63.64,62.49,64.8,8x22,4390,13.56,47.69
-openchat/openchat-3.5-1210,57.28,56.38,58.17,7,4914,11.53,45.36
-garage-bAInd/Platypus2-70B-instruct,47.45,45.8,49.09,70,3561,9.39,50.22
-meta-llama/Llama-2-7b-chat-hf,46.67,45.32,48.01,7,3874,10.24,44.39
-google/gemma-2b-it,41.13,40.23,42.03,2,2890,22.43,53.26
-Qwen/Qwen1.5-110B-Chat,75.33,74.55,76.12,110,4269,15.09,50.5
-google/gemma-7b-it,46.19,44.94,47.44,7,2671,20.24,55.43
-meta-llama/Llama-2-13b-chat-hf,49.14,47.87,50.4,13,3809,9.22,45.41
-meta-llama/Llama-3-8b-chat-hf,61.7,60.38,63.02,8,4112,9.43,43.91
-mistralai/Mixtral-8x7B-Instruct-v0.1,59.32,58.16,60.47,8x7,4775,11.59,47.01
-Qwen/Qwen1.5-14B-Chat,65.23,64.22,66.25,14,3736,17.52,54.29
-01-ai/Yi-34B-Chat,71.1,69.75,72.44,34,4496,11.11,47.24
-meta-llama/Llama-3-70b-chat-hf,71.28,70.07,72.48,70,4439,10.3,45.41
-gemini-1.5-pro-001,80.27,79.76,80.77,,4312,10.15,41.77
-gpt-4o,75.61,74.87,76.34,,5401,10.78,41.93
-claude-3-opus-20240229,73.58,72.51,74.65,,4846,7.65,40.87
-claude-3-haiku-20240307,68.97,68.14,69.81,,4907,9.78,43.08
-claude-3-5-sonnet-20240620,78.77,78.41,79.13,,5875,8.35,39.13
-Qwen/Qwen1.5-4B-Chat,27.01,26.48,27.54,4,3219,5.63,45.37
-claude-3-7-sonnet-20250219,84.45,84.23,84.67,,5976,4.94,43.15
-gemini-2.0-flash-001,81.41,81.18,81.65,,5692,8.18,41.23
-gpt-4.5-preview-2025-02-27,81.68,81.68,81.68,,5792,8.6,45.69
-liquid/lfm-7b,79.65,79.24,80.07,7,5477,13.53,52.89
-qwen/qwq-32b,84.71,84.09,85.33,32,5134,5.41,31.59
-!thedrummer/skyfall-36b-v2,62.06,62.06,62.06,36,5383,8.1,43.63
-latitudegames/wayfarer-large-70b-llama-3.3,76.01,76.01,76.01,70,4993,9.48,44.8
-!TheDrummer/Anubis-Pro-105B-v1,64.48,64.48,64.48,105,5660,9.07,39.58
-google/gemma-3-27b-it,85.25,85.25,85.25,27,6673,6.56,42.59
-*mistralai/Mistral-Small-3.1-24B-Instruct-2503,66.25,66.25,66.25,24,7806,8.29,32.16
-*gemini-2.5-pro-exp-03-25,86.18,86.18,86.18,,7486,7.65,39.63
-*deepseek-ai/DeepSeek-V3-0324,84.47,84.47,84.47,18x37,4511,5.3,28.29`
 
+// creative_writing_v3.js
+
+let leaderboardDataCreativeWritingV3 = `model_name,elo_score,creative_writing_score,avg_length,vocab_complexity,slop_score
+deepseek-ai/DeepSeek-R1,1594.4,17.17,5352,29.20,4.73
+chatgpt-4o-latest-2025-03-27,1453.5,17.15,5956,28.29,4.16
+deepseek-ai/DeepSeek-V3-0324,1453.0,16.44,4414,24.28,4.87
+gemini-2.5-pro-exp-03-25,1369.4,17.27,7886,41.00,7.80
+claude-3-5-sonnet-20241022,1347.5,16.04,4921,39.27,3.94
+chatgpt-4o-latest-2025-01-29,1340.2,16.57,5622,29.04,6.04
+qwen/qwq-32b,1318.5,16.67,6126,29.23,4.90
+claude-3-7-sonnet-20250219,1315.4,16.73,6327,39.58,5.23
+google/gemma-3-27b-it,1225.3,16.59,7049,42.62,7.03
+gpt-4.5-preview,1174.8,16.32,6451,46.41,10.92
+CohereForAI/c4ai-command-a-03-2025,1119.1,16.12,6691,32.24,6.04
+anthropic/claude-3.5-haiku-20241022,1107.9,12.90,4016,60.14,6.93
+google/gemma-3-12b-it,1097.8,16.15,7150,45.86,8.76
+sam-paech/Darkest-muse-v1,1087.1,16.15,8184,39.50,5.45
+gemini-2.0-flash-001,1083.5,15.83,6208,37.66,8.50
+allura-org/Gemma-3-Glitter-12B,1054.9,15.83,7934,41.37,7.68
+google/gemma-3-4b-it,1023.6,15.97,6509,51.77,7.81
+ifable/gemma-2-Ifable-9B,992.9,15.56,5324,66.98,12.68
+ToastyPigeon/Gemma-3-Starshine-12B,809.8,12.82,7973,29.74,7.52
+mistralai/Mistral-Nemo-Instruct-2407,791.7,12.73,7013,30.32,9.47
+gpt-4o-mini,789.6,14.28,5999,41.70,9.27
+meta-llama/llama-3.1-405b-instruct,769.0,11.66,4531,41.55,9.50
+google/gemma-2-9b-it,757.6,11.33,4120,39.98,11.92
+liquid/lfm-7b,680.5,12.04,6230,49.84,14.70
+meta-llama/llama-3.1-70b-instruct,649.4,10.70,4502,39.85,10.04
+mistralai/mistral-small-3.1-24b-instruct-2503,623.2,10.49,7900,28.80,9.24
+meta-llama/llama-3.1-8b-instruct,567.5,10.81,4709,37.45,9.83
+mistralai/Mistral-Small-24B-Instruct-2501,539.7,10.24,7660,32.53,9.24
+meta-llama/llama-3.2-3b-instruct,431.3,9.38,4759,37.38,11.00
+ministral-3b,95.9,7.14,11640,28.66,10.14`;
+
+// --- Global Scope Variables ---
+let eloScores = [];
+let rubricScores = [];
+let maxEloScore;
+let maxRubricScore;
+let baselineEloScore;
+let baselineRubricScore;
+let lastSortedScoreColumn = 5; // Default Elo (column index 5)
+// --- End Global Scope Variables ---
+
+// --- Dark Mode / Theme / Email Functions ---
 function setupDarkModeToggle() {
-	var toggle = document.getElementById('darkModeToggle');
-	var label = document.getElementById('toggleLabel');
-
-	// Check if a preference is saved in localStorage
-	const savedMode = localStorage.getItem('darkModeEnabled');
-	if (savedMode) {
-		 document.body.classList.toggle('dark-mode', savedMode === 'true');
-		 toggle.checked = savedMode === 'true';
-		 label.textContent = savedMode === 'true' ? 'Dark' : 'Light';
-		 updateCreativeWritingScoreBarColors(); // Ensure score bars match the theme
-	}
-
-	toggle.addEventListener('change', function() {
-		 document.body.classList.toggle('dark-mode', this.checked);         
-		 label.textContent = this.checked ? 'Dark' : 'Light';
-		 localStorage.setItem('darkModeEnabled', this.checked); // Save preference
-		 updateCreativeWritingScoreBarColors(); // Update score bars on toggle
-	});
+  var toggle = document.getElementById('darkModeToggle');
+  var label = document.getElementById('toggleLabel');
+  const savedMode = localStorage.getItem('darkModeEnabled');
+  if (savedMode) {
+     document.body.classList.toggle('dark-mode', savedMode === 'true');
+     toggle.checked = savedMode === 'true';
+     label.textContent = savedMode === 'true' ? 'Dark' : 'Light';
+  }
+  toggle.addEventListener('change', function() {
+     document.body.classList.toggle('dark-mode', this.checked);
+     label.textContent = this.checked ? 'Dark' : 'Light';
+     localStorage.setItem('darkModeEnabled', this.checked);
+     if ($.fn.DataTable.isDataTable('#leaderboard')) {
+        $('#leaderboard').DataTable().draw(false); // Use draw(false) to prevent reset page
+     }
+  });
 }
 
 function applySystemTheme() {
-	// Only apply system theme if there's no saved preference
-	if (localStorage.getItem('darkModeEnabled') === null) {
-		 const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-		 const toggle = document.getElementById('darkModeToggle');
-		 const label = document.getElementById('toggleLabel');
-
-		 document.body.classList.toggle('dark-mode', prefersDarkMode);
-		 toggle.checked = prefersDarkMode;
-		 label.textContent = prefersDarkMode ? 'Dark' : 'Light';
-		 updateCreativeWritingScoreBarColors(); // Ensure score bars match the theme
-	}
+  if (localStorage.getItem('darkModeEnabled') === null) {
+     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+     const toggle = document.getElementById('darkModeToggle');
+     const label = document.getElementById('toggleLabel');
+     document.body.classList.toggle('dark-mode', prefersDarkMode);
+     toggle.checked = prefersDarkMode;
+     label.textContent = prefersDarkMode ? 'Dark' : 'Light';
+  }
 }
 
 function displayEncodedEmail() {
-	var encodedUser = '&#99;&#111;&#110;&#116;&#97;&#99;&#116;';
-	var encodedDomain = '&#101;&#113;&#98;&#101;&#110;&#99;&#104;&#46;&#99;&#111;&#109;';
-	var emailElement = document.getElementById('email');
-	emailElement.innerHTML = decodeHtmlEntities(encodedUser + '&#64;' + encodedDomain);
-
-	var emailAddress = emailElement.innerText;
-	emailElement.innerHTML = `<a href="mailto:${emailAddress}">Contact</a>`;
+  var encodedUser = 'contact';
+  var encodedDomain = 'eqbench.com';
+  var emailElement = document.getElementById('email');
+  if (emailElement) {
+    emailElement.innerHTML = decodeHtmlEntities(encodedUser + '@' + encodedDomain);
+    var emailAddress = emailElement.innerText;
+    emailElement.innerHTML = `<a href="mailto:${emailAddress}">Contact</a>`;
+  }
 }
 
 function decodeHtmlEntities(encodedString) {
-	var textArea = document.createElement('textarea');
-	textArea.innerHTML = encodedString;
-	return textArea.value;
+  var textArea = document.createElement('textarea');
+  textArea.innerHTML = encodedString;
+  return textArea.value;
 }
+// --- End Dark Mode / Theme / Email Functions ---
 
-function updateCreativeWritingScoreBarColors() {
-	const scoreBars = document.querySelectorAll('.creative-writing-score-bar');
-	const isDarkMode = document.body.classList.contains('dark-mode'); // Check if dark mode is active
-	const numBars = scoreBars.length;
-	scoreBars.forEach((bar, index) => {
-		 const startPercent = (index / numBars);
-		 const endPercent = ((index + 1) / numBars);
-		 // Adjust the lightness value based on the mode; darker for dark mode, lighter for light mode
-		 const lightness = isDarkMode ? '50%' : '80%'; // Lighter in light mode
-		 const startColor = `hsl(${startPercent * 360}, 40%, ${lightness})`;
-		 const endColor = `hsl(${endPercent * 360}, 40%, ${lightness})`;
-		 bar.style.background = `linear-gradient(to bottom, ${startColor}, ${endColor})`;
-		 bar.style.display = 'block'; // Make sure to display the bar
-	});
+// Gradient logic (applies to visible bars)
+function updateScoreBarColorsV3() {
+  const scoreBars = document.querySelectorAll('#leaderboard .creative-writing-score-bar');
+  const isDarkMode = document.body.classList.contains('dark-mode');
+
+  scoreBars.forEach((bar) => {
+    if ($(bar).is(':visible')) { // Check visibility
+        const overallIndex = $(bar).closest('tr').index();
+        const totalRows = $('#leaderboard tbody tr').length;
+        if (totalRows === 0) return; // Avoid division by zero
+
+        const startPercent = (overallIndex / totalRows);
+        const endPercent = ((overallIndex + 1) / totalRows);
+        const lightness = isDarkMode ? '50%' : '80%';
+        const startColor = `hsl(${startPercent * 360}, 40%, ${lightness})`;
+        const endColor = `hsl(${endPercent * 360}, 40%, ${lightness})`;
+        bar.style.background = `linear-gradient(to bottom, ${startColor}, ${endColor})`;
+    }
+  });
 }
-
-$.fn.dataTable.ext.type.order['params-pre'] = function (data) {
-	if (!data || data === '-') {
-		return 9999; // Sort missing or null values last
-  }
-  if (data.includes('x')) {
-		const parts = data.split('x').map(Number);
-		return parts.reduce((acc, val) => acc * val, 1); // Multiply if in 'x' format
-  }
-  return parseFloat(data) || 0; // Default to float conversion
-};
 
 function loadLeaderboardData() {
-    const creativeWritingRows = leaderboardDataCreativeWriting.split('\n').slice(1); // Skip header for Creative Writing data
+    const creativeWritingRows = leaderboardDataCreativeWritingV3.split('\n').slice(1).filter(l => l.trim() !== '');
 
-    // Calculate max score for Creative Writing
-    maxScoreCreativeWriting = Math.max(...creativeWritingRows.map(row => parseFloat(row.split(',')[1])));
-
-    const maxScore = maxScoreCreativeWriting;
-
-    // Get min and max vocab complexity for normalization
-    const vocabValues = creativeWritingRows.map(row => {
-        const values = row.split(',');
-        // Divide by 10 when getting vocab values for min/max calculation
-        return parseFloat(values[6]) / 10; 
-    }).filter(value => !isNaN(value));
+    // Find original min/max Elo scores for rescaling
+    const originalEloScores = creativeWritingRows.map(row => parseFloat(row.split(',')[1])).filter(s => !isNaN(s));
+    const originalMaxElo = Math.max(...originalEloScores); // Should be DeepSeek-R1
+    const originalMinElo = Math.min(...originalEloScores); // Should be ministral-3b
     
-    const minVocab = 30;
-    const maxVocab = 80;
+    // Populate global score arrays with scaled values
+    eloScores = originalEloScores.map(score => {
+        const scaleFactor = (1500 - 200) / (originalMaxElo - originalMinElo);
+        return 200 + (score - originalMinElo) * scaleFactor;
+    });
+    
+    // Scale rubric scores by multiplying by 5
+    rubricScores = creativeWritingRows.map(row => parseFloat(row.split(',')[2]) * 5).filter(s => !isNaN(s));
 
-    let html = creativeWritingRows.map(creativeWritingRow => {
-        let [modelName, score, ci95_low, ci95_high, params, avgLength, gptSlop, vocabComplexity] = creativeWritingRow.split(',');		
-        const scoreNum = parseFloat(score);
-        const ci95LowNum = parseFloat(ci95_low);
-        const ci95HighNum = parseFloat(ci95_high);
-        // Divide by 10 when parsing the value
-        let vocabNum = parseFloat(vocabComplexity) / 10;
-		vocabNum = Math.min((vocabNum / 7.5) * 10, 10);
+    // Calculate global max/baseline values
+    maxEloScore = eloScores.length > 0 ? Math.max(...eloScores) : 1500;
+    maxRubricScore = rubricScores.length > 0 ? Math.max(...rubricScores) : 100;
+    baselineEloScore = eloScores.length > 0 ? Math.min(400, Math.min(...eloScores) - 50) : 150;
+    baselineRubricScore = rubricScores.length > 0 ? Math.max(0, Math.min(...rubricScores) - 1) : 30;
 
-		gptSlop = parseFloat(gptSlop).toFixed(1)
+    let html = creativeWritingRows.map(row => {
+        let [modelName, eloScore, creativeWritingScore, avgLength, vocabComplexity, slopScore] = row.split(',');
 
+        // Get model scores and scale them
+        const originalEloScoreNum = parseFloat(eloScore);
+        const originalRubricScoreNum = parseFloat(creativeWritingScore);
+        
+        // Scale Elo score to new range (1500 to 200)
+        const eloScaleFactor = (1500 - 200) / (originalMaxElo - originalMinElo);
+        const eloScoreNum = 200 + (originalEloScoreNum - originalMinElo) * eloScaleFactor;
+        
+        // Scale rubric score by multiplying by 5
+        const rubricScoreNum = originalRubricScoreNum * 5;
+        
+        let vocabNum = parseFloat(vocabComplexity) / 10; // Divide by 10
+        vocabNum = Math.min((vocabNum / 7.0) * 10, 10)
+        const slopNum = parseFloat(slopScore);
+        const lengthNum = parseInt(avgLength, 10);
 
-        // Calculate score percentage
-        const scorePercentage = (scoreNum / maxScore) * 100;
-        const errorBarLeftPos = ((ci95LowNum / maxScore) * 100).toFixed(2);
-        const errorBarRightPos = ((ci95HighNum / maxScore) * 100).toFixed(2);
-        const errorBarWidth = (errorBarRightPos - errorBarLeftPos).toFixed(2);
+        // Initial percentages for width (will be updated by updateScores if needed)
+        const eloScoreRange = maxEloScore - baselineEloScore;
+        const eloScoreRelativeToBaseline = eloScoreNum - baselineEloScore;
+        const eloScorePercentage = eloScoreRange > 0 ? Math.max(0, Math.min(100, (eloScoreRelativeToBaseline / eloScoreRange) * 100)) : 0;
+
+        // Use scaled rubric score for percentage calculation
+        const rubricScoreRange = maxRubricScore - baselineRubricScore; // These are already scaled in the global variables
+        const rubricScoreRelativeToBaseline = rubricScoreNum - baselineRubricScore;
+        const rubricScorePercentage = rubricScoreRange > 0 ? Math.max(0, Math.min(100, (rubricScoreRelativeToBaseline / rubricScoreRange) * 100)) : 0;
 
         const isNsfwModel = modelName.startsWith('!');
         modelName = modelName.replace(/^\!/, '');
-
         const isNewModel = modelName.startsWith('*');
         modelName = modelName.replace(/^\*/, '');
 
-        // Extract model name without creator
         let displayModelName = modelName.split('/').pop();
-        
-        if (isNsfwModel) {
-            displayModelName = '🔞' + displayModelName
-        }
-        if (isNewModel) {
-            displayModelName = '🆕' + displayModelName
-        }
+        if (isNsfwModel) displayModelName = '🔞' + displayModelName;
+        if (isNewModel) displayModelName = '🆕' + displayModelName;
+
         let modelNameDisplay = modelName.includes('/')
             ? `<a href="https://huggingface.co/${modelName}" target="_blank">${displayModelName}</a>`
-            : displayModelName;
+            : modelName;
 
-        let modelResultsFn = 'results/creative-writing-v2/' + modelName.replace('/','__')+'.txt'
+        let modelResultsFn = `results/creative-writing-v3/${modelName.replace(/\//g,'__')}.html`;
 
-        let scoreBarCreativeWriting = `<div class="score-bar-container">
-            <div class="creative-writing-score-bar" style="width: ${scorePercentage}%"></div>
-            <div class="error-bar" style="left: ${errorBarLeftPos}%; width: ${errorBarWidth}%;"></div>
-            <span class="score-text">${score}</span>
+        // --- Generate Bar Structure for BOTH score columns directly in TD ---
+        let scoreBarEloHTML = `<div class="score-bar-container">
+            <div class="creative-writing-score-bar" style="width: ${eloScorePercentage}%; display: none;"></div>
+            <span class="score-text">${eloScoreNum.toFixed(1)}</span>
         </div>`;
+        let scoreBarRubricHTML = `<div class="score-bar-container">
+             <div class="creative-writing-score-bar" style="width: ${rubricScorePercentage}%; display: none;"></div>
+             <span class="score-text">${rubricScoreNum.toFixed(2)}</span>
+         </div>`;
 
-        // Use the vocabNum (already divided by 10) in the data attribute and display
-        return `<tr data-original-score="${scoreNum}" data-original-ci-low="${ci95LowNum}" data-original-ci-high="${ci95HighNum}" data-vocab="${vocabNum}" data-gpt-slop="${parseFloat(gptSlop)}">
-            <td>${modelNameDisplay}</td>
-            <td>${params}</td>
-            <td>${avgLength}</td>
-            <td>${gptSlop}</td>
-            <td>${vocabNum.toFixed(1) || '-'}</td>
-            <td data-order="${score}">
-                ${scoreBarCreativeWriting}
-            </td>
-            <td><a href="${modelResultsFn}" target="_blank">Sample</a></td>
-        </tr>`;
+        // --- Create TR with data-order on TD and necessary data attributes ---
+        return `
+  <tr data-original-elo-score="${eloScoreNum}"
+      data-original-rubric-score="${rubricScoreNum}"
+      data-vocab="${vocabNum}"
+      data-gpt-slop="${slopNum}">
+    
+    <td>
+      <div class="cell-content">
+        ${modelNameDisplay}
+      </div>
+    </td>
+    
+    <td class="mobile-collapsible" data-order="${lengthNum}">
+      <div class="cell-content">
+        ${isNaN(lengthNum) ? '-' : lengthNum}
+      </div>
+    </td>
+    
+    <td data-order="${slopNum}">
+      <div class="cell-content">
+        ${slopNum.toFixed(1)}
+      </div>
+    </td>
+    
+    <td class="mobile-collapsible" data-order="${vocabNum}">
+      <div class="cell-content">
+        ${vocabNum.toFixed(1)}
+      </div>
+    </td>
+    
+    <td class="mobile-collapsible" data-order="${rubricScoreNum}">
+      <div class="cell-content">
+        ${scoreBarRubricHTML}
+      </div>
+    </td>
+    
+    <td data-order="${eloScoreNum}">
+      <div class="cell-content">
+        ${scoreBarEloHTML}
+      </div>
+    </td>
+    
+    <td>
+      <div class="cell-content">
+        <a href="${modelResultsFn}">Sample</a>
+      </div>
+    </td>
+  </tr>
+`;
+
     }).join('');
 
     document.getElementById('leaderboardBody').innerHTML = html;
     initializeDataTable();
-    updateCreativeWritingScoreBarColors();
 }
 
-let currentOrder = [[5, "desc"]]; // Default sorting (updated to reflect the new column position)
+// DataTable configuration
 let dataTableConfig = {
-	"order": currentOrder,
-	"paging": false, // Disable pagination
-	"searching": false, // Disable search bar
-	"lengthMenu": [50, 100, 200, 1000],
-	"language": {
-	  "lengthMenu": "Show _MENU_"
-	},
-	"columnDefs": [
-	  { "targets": [5], "orderSequence": ["desc", "asc"] },
-	  { "targets": [2,3,4], "orderSequence": ["desc", "asc"] },
-	  { "targets": [1], "type": "params", "orderSequence": ["asc", "desc"] },
-	],
-	"dom": "<'d-flex flex-column flex-md-row justify-content-between'<'dataTables_length'l><'dataTables_filter'f>>" +
-	  "<'row'<'col-12'tr>>" +
-	  "<'row'<'col-md-5'i><'col-md-7'p>>",
-	"drawCallback": function() {
-	  updateCreativeWritingScoreBarColors();
-	}
- }
+  order: [[5, "desc"]], // Default sort Elo
+  paging: false,
+  searching: false,
+  info: true,
+  lengthChange: false,
+  columnDefs: [
+    // Define explicit numeric type for sorting
+    { targets: [1], type: 'num' }, // Length
+    { targets: [2], type: 'num' }, // Slop
+    { targets: [3], type: 'num' }, // Vocab
+    { targets: [4], type: 'num' }, // Rubric Score
+    { targets: [5], type: 'num' }, // Elo Score
+    // Define sorting sequences
+    { targets: [4, 5], orderSequence: ["desc", "asc"] }, // Rubric, Elo
+    { targets: [1, 2, 3], orderSequence: ["desc", "asc"] }, // Length, Slop, Vocab
+  ],
+  dom: "<'d-flex flex-column flex-md-row justify-content-between align-items-center mb-2'<'#toggleMobilePlaceholder'><'ms-md-auto'f>>" +
+       "<'row'<'col-12'tr>>" +
+       "<'row mt-2'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+  // drawCallback aligned with eqbench.js logic
+  drawCallback: function(settings) {
+    let api = this.api();
+    if (!api) return;
+    let order = api.order();
+    if (!order || order.length === 0) {
+        order = [[5, 'desc']]; // Fallback to default sort
+    }
 
-function initializeDataTable() {
-	let table = $('#leaderboard').DataTable(dataTableConfig);
-}
+    let sortedColumnIndex = order[0][0];
+    const SCORE_COLUMNS = [4, 5]; // Indices for Rubric Score, Elo Score
+    const NON_SCORE_COLUMNS = [0, 1, 2, 3, 6]; // Indices for other columns
 
-document.addEventListener('DOMContentLoaded', function() {
-	// Always execute
-	displayEncodedEmail();
+    const tableNode = $(api.table().node());
 
-	// Conditional execution based on the presence of elements
-	if (document.getElementById('leaderboard')) {
-		loadLeaderboardData(); // Only load leaderboard data if the leaderboard element exists
-		setupControls();
-	}
+    // Hide all score bars initially within this table
+    tableNode.find('.creative-writing-score-bar').hide();
+    // Reset header widths
+    tableNode.find('th').css('width', '');
 
-	// This checks if the system theme preference should be applied, which is common functionality
-	applySystemTheme();
-	setupDarkModeToggle();
-});
+    let columnToShowBar = -1;
+
+    // Determine which score column's bar to show
+    if (SCORE_COLUMNS.includes(sortedColumnIndex)) {
+        columnToShowBar = sortedColumnIndex;
+        lastSortedScoreColumn = sortedColumnIndex;
+    } else if (NON_SCORE_COLUMNS.includes(sortedColumnIndex) && lastSortedScoreColumn !== null) {
+        columnToShowBar = lastSortedScoreColumn;
+    } else { // Fallback
+        columnToShowBar = 5;
+        lastSortedScoreColumn = 5;
+    }
+
+    // Show the selected column's score bar and adjust width
+    if (columnToShowBar !== -1) {
+        try {
+            // Show the bar in the target column for all visible rows
+            // Use api().rows() to get nodes for current page/view
+            api.rows({ page: 'current' }).nodes().to$().find(`td:eq(${columnToShowBar}) .creative-writing-score-bar`).show();
+
+            let header = api.column(columnToShowBar).header();
+            if (header) {
+                $(header).css('width', '30%');
+            }
+        } catch (e) {
+            console.error("Error showing score bar or adjusting width:", e);
+        }
+    }
+
+    // Apply the gradient colors to the *now visible* bars
+    updateScoreBarColorsV3();
+  }
+};
+
+// --- Mobile Column Collapse Logic ---
+let middleStatsExpanded = false;
+function collapseMiddleColumns() {
+    const isMobile = window.innerWidth < 768;
+  
+    // If on mobile AND not expanded, hide them
+    if (isMobile && !middleStatsExpanded) {
+      $('#leaderboard .mobile-collapsible').hide(); 
+      $('#toggleMiddleStats').text('Expand Details');
+    } else {
+      $('#leaderboard .mobile-collapsible').show();
+      $('#toggleMiddleStats').text('Hide Details');
+    }
+  }
+  
+  function toggleMiddleStats() {
+    middleStatsExpanded = !middleStatsExpanded;
+    collapseMiddleColumns();
+  }
+  
+  // --- End Mobile Column Collapse Logic ---
+
+// Add this function to ensure initial score bars use scaled values
+function fixInitialScoreBars() {
+    // Wait until the table is fully initialized
+    setTimeout(() => {
+      // Apply updateScores to set initial bar widths and values based on slider settings
+      if ($.fn.DataTable.isDataTable('#leaderboard')) {
+        updateScores();
+      }
+    }, 200); // Small delay to ensure DOM is ready
+  }
+  
+  
+  
+  // Modify initializeDataTable to ensure bars are properly initialized
+  function initializeDataTable() {
+    // Don't create the toggle button here if it's already in the HTML
+    
+    // Check if DataTable already exists and destroy it
+    if ($.fn.DataTable.isDataTable('#leaderboard')) {
+      $('#leaderboard').DataTable().destroy();
+    }
+    
+    let table = $('#leaderboard').DataTable(dataTableConfig);
+    
+    // Don't set up the event handlers here if they're in document.ready
+    
+    // Still call collapseMiddleColumns after table initialization
+    table.one('init.dt', function () {
+      collapseMiddleColumns();
+      setupControls();
+    });
+  }
+
+
 
 function setupControls() {
-	const vocabSlider = document.getElementById('vocabControlSlider');
-	const vocabSliderValueLabel = document.getElementById('vocabControlValue');
+    //const vocabSlider = document.getElementById('vocabControlSlider');
+    //const vocabSliderValueLabel = document.getElementById('vocabControlValue');
+    const gptSlopSlider = document.getElementById('gptSlopControlSlider');
+    const gptSlopSliderValueLabel = document.getElementById('gptSlopControlValue');
+  
+    //if (!vocabSlider || !gptSlopSlider) {
+    if (!gptSlopSlider) {
+      console.error("Control sliders not found");
+      return;
+    }
+  
+    // Set initial label values
+    //vocabSliderValueLabel.textContent = `${vocabSlider.value}%`;
+    gptSlopSliderValueLabel.textContent = `${gptSlopSlider.value}%`;
+  
+    // Add event listeners for sliders (only if they don't already have listeners)
+    /*
+    if (!vocabSlider.hasListeners) {
+      vocabSlider.oninput = function() {
+        vocabSliderValueLabel.textContent = `${this.value}%`;
+        updateScores();
+      };
+      vocabSlider.hasListeners = true;
+    }
+    */
+  
+    if (!gptSlopSlider.hasListeners) {
+      gptSlopSlider.oninput = function() {
+        gptSlopSliderValueLabel.textContent = `${this.value}%`;
+        updateScores();
+      };
+      gptSlopSlider.hasListeners = true;
+    }
+  
+    // Initial call to apply slider values
+    updateScores();
+  }
 
-	const gptSlopSlider = document.getElementById('gptSlopControlSlider');
-	const gptSlopSliderValueLabel = document.getElementById('gptSlopControlValue');
-
-	// Set the initial value of the slider value labels
-	vocabSliderValueLabel.textContent = `${vocabSlider.value}%`;
-	gptSlopSliderValueLabel.textContent = `${gptSlopSlider.value}%`;
-
-	// Update scores based on the initial slider values
-	updateScores();
-
-	vocabSlider.oninput = function() {
-		vocabSliderValueLabel.textContent = `${this.value}%`;
-		updateScores();
-	};
-
-	gptSlopSlider.oninput = function() {
-		gptSlopSliderValueLabel.textContent = `${this.value}%`;
-		updateScores();
-	};
-}
 
 function normalizeVocabComplexity(value) {
-	console.log(value);
-    // Normalize vocab complexity from 30-80 range to 0-1 range
-    const minVocab = 5.5;
-    const maxVocab = 10;
+    // Use same range values as original code
+    const minVocab = 4.5;
+    const maxVocab = 10.0;
     
     // Clamp the value to the min-max range
     const clampedValue = Math.max(minVocab, Math.min(maxVocab, value));
     
     // Normalize to 0-1 range (1 is high complexity, 0 is low)
-	retval = Math.pow((clampedValue - minVocab) / (maxVocab - minVocab), 2)
-	console.log(retval);
-    return retval;
+    return Math.pow((clampedValue - minVocab) / (maxVocab - minVocab), 2);
 }
 
-function updateScores() {
-    const vocabPercentage = document.getElementById('vocabControlSlider').value;
-    const gptSlopPercentage = document.getElementById('gptSlopControlSlider').value;
-
-    const vocabAdjustmentFactor = parseFloat(vocabPercentage) / 100;
-    const gptSlopAdjustmentFactor = 0.05 * parseFloat(gptSlopPercentage) / 100;
-
-    const avgGptSlop = calculateAverageGptSlop();
-    //console.log("Average GPT-Slop:", avgGptSlop);
-
-    const table = $('#leaderboard').DataTable();
-
-    // Get the current page and sorting information
-    const currentPage = table.page.info().page;
-    const currentOrder = table.order();
-
-    // Clear the existing table
-    table.destroy();
-
-    // Update the scores and error bars
-    $('#leaderboardBody tr').each(function() {
-        const row = $(this);
-        const modelGptSlop = parseFloat(row.attr('data-gpt-slop'));
-        const vocabComplexity = parseFloat(row.attr('data-vocab'));
-        const originalScore = parseFloat(row.attr('data-original-score'));
-        const originalCILow = parseFloat(row.attr('data-original-ci-low'));
-        const originalCIHigh = parseFloat(row.attr('data-original-ci-high'));
-
-        // Vocab adjustment: -2.5 pts for high complexity (1.0), +2.5 pts for low complexity (0.0)
-        let vocabAdjustment = 0;
-        if (!isNaN(vocabComplexity)) {
-            const normalizedVocab = normalizeVocabComplexity(vocabComplexity);
-            // Scale from -2.5 to +2.5 based on slider position
-            vocabAdjustment = -1.0 * 12.0 * normalizedVocab * vocabAdjustmentFactor; //(0.5 - normalizedVocab) * 8 * vocabAdjustmentFactor;
-        }
-
-        // GPT-Slop adjustment
-        let gptSlopRatio = !isNaN(modelGptSlop) ? modelGptSlop / avgGptSlop : 1;
-        if (gptSlopRatio < 0.34) { gptSlopRatio = 0.34; }            
-        let gptSlopAdjustment = 1; // Default to 1 (no adjustment) if calculation fails
-
-        if (!isNaN(gptSlopRatio)) {
-            if (gptSlopRatio > 1) {
-                // Penalize higher GPT-slop
-                gptSlopAdjustment = 1 - (Math.log(gptSlopRatio) * gptSlopAdjustmentFactor);
-                gptSlopAdjustment = Math.max(gptSlopAdjustment, 0.85); // Floor at 0.85
-            } else {
-                // Reward lower GPT-slop with tapering
-                gptSlopAdjustment = 1 + (Math.log(1.5 / (gptSlopRatio+0.5)) * gptSlopAdjustmentFactor);
-                gptSlopAdjustment = Math.min(gptSlopAdjustment, 1.02); // Cap at 1.03
-            }
-        }
-
-        // Apply both adjustments
-        const adjustedScore = originalScore * gptSlopAdjustment + vocabAdjustment;
-        const adjustedCILow = originalCILow * gptSlopAdjustment + vocabAdjustment;
-        const adjustedCIHigh = originalCIHigh * gptSlopAdjustment + vocabAdjustment;
-
-        const scoreText = adjustedScore.toFixed(2);
-
-        // Update the score
-        row.find('td:eq(5)').attr('data-order', scoreText).find('.score-text').text(scoreText);
-
-        // Update error bar position and width
-        const errorBarLeftPos = ((adjustedCILow / maxScoreCreativeWriting) * 98).toFixed(2);
-        const errorBarRightPos = ((adjustedCIHigh / maxScoreCreativeWriting) * 98).toFixed(2);
-        const errorBarWidth = (errorBarRightPos - errorBarLeftPos).toFixed(2);
-
-        row.find('.error-bar').css({
-            'left': `${errorBarLeftPos}%`,
-            'width': `${errorBarWidth}%`
-        });
-    });
-
-    // Reinitialize the DataTable
-    const newTable = $('#leaderboard').DataTable(dataTableConfig);
-
-    // Restore the previous page
-    newTable.page(currentPage).draw('page');
-
-    // Update the score bar widths
-    $('#leaderboardBody tr').each(function() {
-        const row = $(this);
-        const scoreText = row.find('td:eq(5)').attr('data-order');
-        const percentageWidth = Math.max(0, Math.min(100, (parseFloat(scoreText) / maxScoreCreativeWriting) * 98));
-        row.find('.creative-writing-score-bar').css('width', `${percentageWidth}%`);
-    });
-}
-
-  function calculateAverageGptSlop() {
+function calculateAverageGptSlop() {
     const gptSlops = Array.from(document.querySelectorAll('#leaderboardBody tr'))
         .map(row => parseFloat(row.getAttribute('data-gpt-slop')))
         .filter(val => !isNaN(val));
@@ -424,4 +439,101 @@ function updateScores() {
     return gptSlops.length > 0 ? 
         gptSlops.reduce((a, b) => a + b, 0) / gptSlops.length : 
         1;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    displayEncodedEmail();
+    applySystemTheme();
+    setupDarkModeToggle();
+  
+    if (document.getElementById('leaderboard')) {
+      loadLeaderboardData(); // Calls initializeDataTable
+      setupControls(); // Sets up slider listeners
+      
+      // Directly bind the event handlers here, outside of any other function
+      $(window).on('resize', collapseMiddleColumns);
+      $('#toggleMiddleStats').on('click', toggleMiddleStats);
+      
+      // Initial call to collapse columns
+      setTimeout(collapseMiddleColumns, 50); // Give time for DataTable to initialize
+    }
+  });
+
+
+
+  function updateScores() {
+    // 1) Read slider values
+    //const vocabPercentage = document.getElementById('vocabControlSlider').value;
+    const gptSlopPercentage = document.getElementById('gptSlopControlSlider').value;
+
+    // 2) Calculate adjustment factors
+    //const vocabAdjustmentFactor = parseFloat(vocabPercentage) / 100;
+    const vocabAdjustmentFactor = 0.0;
+    const gptSlopAdjustmentFactor = 0.30 * parseFloat(gptSlopPercentage) / 100;
+
+    const avgGptSlop = calculateAverageGptSlop();
+
+    // 3) Get the *existing* DataTable instance
+    const table = $('#leaderboard').DataTable();
+
+    // 4) Loop over each row in the tbody
+    $('#leaderboardBody tr').each(function() {
+        const row = $(this);
+        const modelGptSlop = parseFloat(row.attr('data-gpt-slop'));
+        const vocabComplexity = parseFloat(row.attr('data-vocab'));
+        const originalEloScore = parseFloat(row.attr('data-original-elo-score'));
+        const originalRubricScore = parseFloat(row.attr('data-original-rubric-score'));
+
+        // --- (A) Compute your adjustments ---
+        let vocabAdjustment = 0;
+        if (!isNaN(vocabComplexity)) {
+            const normalizedVocab = normalizeVocabComplexity(vocabComplexity);
+            // Multiply by -12 and scale by vocabAdjustmentFactor
+            vocabAdjustment = -12.0 * normalizedVocab * vocabAdjustmentFactor;
+        }
+
+        let gptSlopRatio = !isNaN(modelGptSlop) ? (modelGptSlop / avgGptSlop) : 1;
+        if (gptSlopRatio < 0.34) {
+            gptSlopRatio = 0.34;
+        }
+        let gptSlopMultiplier = 1.0;
+        if (gptSlopRatio > 1) {
+            // Penalize higher GPT-slop
+            gptSlopMultiplier = 1 - (Math.log(gptSlopRatio) * gptSlopAdjustmentFactor);
+            gptSlopMultiplier = Math.max(gptSlopMultiplier, 0.85);
+        } else {
+            // Reward lower GPT-slop
+            gptSlopMultiplier = 1 + (Math.log(1.5 / (gptSlopRatio + 0.5)) * gptSlopAdjustmentFactor);
+            gptSlopMultiplier = Math.min(gptSlopMultiplier, 1.02);
+        }
+
+        // --- (B) Apply them to get new scores ---
+        const adjustedEloScore = originalEloScore * gptSlopMultiplier + 15 * vocabAdjustment;
+        const adjustedRubricScore = originalRubricScore * gptSlopMultiplier + vocabAdjustment;
+
+        // --- (C) Update each cell's `data-order` and displayed text ---
+        row.find('td:eq(5)')
+           .attr('data-order', adjustedEloScore.toFixed(1))
+           .find('.score-text').text(adjustedEloScore.toFixed(1));
+
+        row.find('td:eq(4)')
+           .attr('data-order', adjustedRubricScore.toFixed(2))
+           .find('.score-text').text(adjustedRubricScore.toFixed(2));
+
+        // --- (D) Update the bar widths based on your global maxEloScore / maxRubricScore ---
+        const eloPercentage = Math.max(0, Math.min(100, (adjustedEloScore / maxEloScore) * 100));
+        const rubricPercentage = Math.max(0, Math.min(100, (adjustedRubricScore / maxRubricScore) * 100));
+
+        row.find('td:eq(5) .creative-writing-score-bar').css('width', `${eloPercentage}%`);
+        row.find('td:eq(4) .creative-writing-score-bar').css('width', `${rubricPercentage}%`);
+    });
+
+    // 5) Tell DataTables “we changed row data—recheck sorting”
+    table.rows().invalidate();
+
+    // 6) Redraw the table (false = stay on the same page)
+    table.draw(false);
+
+    // 7) Finally, refresh your color gradients or any final styling
+    updateScoreBarColorsV3();
 }
