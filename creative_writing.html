@@ -372,16 +372,24 @@ body.creative-writing-page #leaderboard {
         <div class="card-body">
           <p>For more details about the benchmark, see the <a href="./about.html#creative-writing-v3">About</a> section.</p>
         
-        <h5 class="card-title mt-3">Slop Control</h5>
-        <p>The <strong>Slop</strong> column measures the frequency of words/phrases typically overused by LLMs ("GPT-isms"). The <strong>Slop Control</strong> slider adjusts Elo scores based on this metric.</p>
-         <ul>
-          <li><strong>0%</strong>: No adjustment based on slop.</li>
-          <li><strong>50%</strong>: Moderate adjustment - penalizes high slop, slightly rewards low slop.</li>
-          <li><strong>100%</strong>: Maximum adjustment - stronger penalty for high slop, capped reward for low slop (approx. +/- 10% Elo impact).</li>
-        </ul>        
+          <h5 class="card-title">* Vocab Complexity Metric</h5>
+          <p>The <strong>Vocab</strong> column measures the proportion of words with 3+ syllables in a model's output. Higher values indicate more complex vocabulary usage. The typical range observed is roughly 4-6, with outliers up to 10.</p>
+          <p>This metric gives visibiliy on models that are using an unusually high proportion of complex words, which car artificially inflate their score.</p>
+
+          <div class="alert alert-info dark-mode-compatible">
+            <p> Counter-intuitively, a high vocab score typically results in lower quality outputs.</p>
+          </div>
+
+          <h5 class="card-title mt-3">Slop Control</h5>
+          <p>The <strong>Slop</strong> column measures the frequency of words/phrases typically overused by LLMs ("GPT-isms"). The <strong>Slop Control</strong> slider adjusts Elo scores based on this metric.</p>
+          <ul>
+            <li><strong>0%</strong>: No adjustment based on slop.</li>
+            <li><strong>50%</strong>: Moderate adjustment - penalizes high slop, slightly rewards low slop.</li>
+            <li><strong>100%</strong>: Maximum adjustment - stronger penalty for high slop, capped reward for low slop (approx. +/- 10% Elo impact).</li>
+          </ul>        
         </div>
       </div>
-      </div>
+    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
