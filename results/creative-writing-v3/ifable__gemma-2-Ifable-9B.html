@@ -509,78 +509,67 @@
                 font-family: var(--font-body) !important;
             }
 
-            /* Add these media queries to the existing CSS, just before the end of the style tag */
-
             /* Mobile Responsiveness Adjustments */
-            @media screen and (max-width: 768) {
-                /* Reduce main container margins */
-                body {
-                    max-width: 100%;
-                    margin: 10px 5px;  /* Very small left/right margins, just a couple px */
-                    padding: 15px 10px; /* Reduced inner padding */
-                }
-
-                /* Adjust heading sizes for mobile */
-                h1 {
-                    font-size: 1.8em;
-                    padding-bottom: 10px;
-                    margin-bottom: 1em;
-                }
-                
-                h2 {
-                    font-size: 1.5em;
-                }
-                
-                h3 {
-                    font-size: 1.2em;
-                }
-
-                /* Reduce padding in content containers */
-                .iteration-header {
-                    padding: 10px 12px;
-                }
-                
-                .prompt-header {
-                    padding: 8px 12px;
-                }
-                
-                .content-block {
-                    padding: 10px 12px;
-                }
-                
-                /* Adjust controls layout for smaller screens */
-                .top-controls {
-                    flex-direction: column;
-                    align-items: flex-start;
-                    gap: 10px;
-                }
-                
-                .controls-right {
-                    width: 100%;
-                    justify-content: space-between;
-                }
-            }
-
-            /* Extra small screens like phones */
             @media screen and (max-width: 768px) {
-                body {
-                    margin: 5px 2px; /* Even smaller margins */
-                    padding: 16px 12px; /* Even smaller padding */
-                }
+    /* Body / Layout */
+    body.theme-cozy,
+    body.theme-modern {
+        max-width: 100%;
+        margin: 10px 5px;
+        padding: 15px 10px;
+    }
 
-                .content-block {
-                    padding: 15px 13px;
-                }
-                
-                .response-content {
-                    font-size: 0.95em;
-                }
-                
-                .judge-content {
-                    font-size: 0.9em;
-                    padding: 8px 10px;
-                }
-            }
+    /* Headings */
+    body.theme-cozy h1,
+    body.theme-modern h1 {
+        font-size: 1.8em;
+        padding-bottom: 10px;
+        margin-bottom: 1em;
+    }
+
+    body.theme-cozy h2,
+    body.theme-modern h2 {
+        font-size: 1.5em;
+    }
+
+    body.theme-cozy h3,
+    body.theme-modern h3 {
+        font-size: 1.2em;
+    }
+
+    /* Iteration / Prompt headers */
+    body.theme-cozy .iteration-header,
+    body.theme-modern .iteration-header {
+        padding: 10px 12px;
+    }
+
+    body.theme-cozy .prompt-header,
+    body.theme-modern .prompt-header {
+        padding: 8px 12px;
+    }
+
+    /* Content blocks */
+    body.theme-cozy .content-block,
+    body.theme-modern .content-block {
+        padding: 10px 12px;
+    }
+
+    /* Top controls layout */
+    body.theme-cozy .top-controls,
+    body.theme-modern .top-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    body.theme-cozy .controls-right,
+    body.theme-modern .controls-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+
 
         </style>
     </head>
