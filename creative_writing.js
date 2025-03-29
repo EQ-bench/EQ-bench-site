@@ -31,7 +31,8 @@ mistralai/mistral-small-3.1-24b-instruct-2503,623.2,10.49,7900,28.80,9.24
 meta-llama/llama-3.1-8b-instruct,567.5,10.81,4709,37.45,9.83
 mistralai/Mistral-Small-24B-Instruct-2501,539.7,10.24,7660,32.53,9.24
 meta-llama/llama-3.2-3b-instruct,431.3,9.38,4759,37.38,11.00
-ministral-3b,95.9,7.14,11640,28.66,10.14`;
+ministral-3b,95.9,7.14,11640,28.66,10.14
+RekaAI/reka-flash-3,1352.7,16.26,5225,29.53,5.23`;
 
 // --- Global Scope Variables ---
 let eloScores = [];
