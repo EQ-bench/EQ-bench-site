@@ -509,6 +509,79 @@
                 font-family: var(--font-body) !important;
             }
 
+            /* Add these media queries to the existing CSS, just before the end of the style tag */
+
+            /* Mobile Responsiveness Adjustments */
+            @media screen and (max-width: 768) {
+                /* Reduce main container margins */
+                body {
+                    max-width: 100%;
+                    margin: 10px 5px;  /* Very small left/right margins, just a couple px */
+                    padding: 15px 10px; /* Reduced inner padding */
+                }
+
+                /* Adjust heading sizes for mobile */
+                h1 {
+                    font-size: 1.8em;
+                    padding-bottom: 10px;
+                    margin-bottom: 1em;
+                }
+                
+                h2 {
+                    font-size: 1.5em;
+                }
+                
+                h3 {
+                    font-size: 1.2em;
+                }
+
+                /* Reduce padding in content containers */
+                .iteration-header {
+                    padding: 10px 12px;
+                }
+                
+                .prompt-header {
+                    padding: 8px 12px;
+                }
+                
+                .content-block {
+                    padding: 10px 12px;
+                }
+                
+                /* Adjust controls layout for smaller screens */
+                .top-controls {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                }
+                
+                .controls-right {
+                    width: 100%;
+                    justify-content: space-between;
+                }
+            }
+
+            /* Extra small screens like phones */
+            @media screen and (max-width: 480px) {
+                body {
+                    margin: 5px 2px; /* Even smaller margins */
+                    padding: 10px 8px; /* Even smaller padding */
+                }
+
+                .content-block {
+                    padding: 8px 6px;
+                }
+                
+                .response-content {
+                    font-size: 0.95em;
+                }
+                
+                .judge-content {
+                    font-size: 0.9em;
+                    padding: 8px 10px;
+                }
+            }
+
         </style>
     </head>
     <body class="theme-cozy">
