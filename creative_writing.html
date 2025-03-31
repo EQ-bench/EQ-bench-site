@@ -279,29 +279,52 @@
 
 
 
-    /* Slop Info Icon Styling */
-    .slop-info-icon {
+    /* Custom Info Icon using pure CSS - improved alignment and color matching */
+    .custom-info-icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: transparent;
+      border: 1.5px solid currentColor; /* Uses the current text color */
+      color: inherit; /* Inherits text color from parent */
+      margin-left: 5px;
       cursor: pointer;
-      margin-left: 5px; /* Space between score and icon */
-      vertical-align: middle; /* Align with text */
-      color: var(--bs-link-color); /* Use Bootstrap link color */
-      font-weight: normal; /* Or bold if you prefer */
-      font-size: 1.1em; /* Slightly larger to be more visible */
-      line-height: 1; /* Prevent extra line height */
-      display: inline-block; /* Needed for proper alignment/spacing */
-      transition: color 0.2s ease-in-out;
+      font-size: 11px;
+      font-weight: bold;
+      font-style: italic;
+      line-height: 1;
+      position: relative;
+      /* Improved vertical alignment to match text */
+      vertical-align: middle;
+      /*top: -0.5px;*/
     }
 
-    .slop-info-icon:hover {
-      color: var(--bs-link-hover-color); /* Use Bootstrap link hover color */
+    /* Ensures the icon picks up the correct color in both modes */
+    body:not(.dark-mode) .custom-info-icon {
+      color: var(--bs-link-color, #0d6efd);
     }
 
-    /* Dark mode adjustments for icon */
-    body.dark-mode .slop-info-icon {
-        color: var(--bs-link-color); /* Ensure dark mode link color is used */
+    /* Match dark mode link colors from your stylesheet */
+    body.dark-mode .custom-info-icon {
+      color: #aad; /* Same as your 'body.dark-mode a' color */
     }
-    body.dark-mode .slop-info-icon:hover {
-        color: var(--bs-link-hover-color);
+
+    /* Hover effect */
+    .custom-info-icon:hover {
+      color: var(--bs-link-hover-color, #0a58ca);
+    }
+
+    /* Dark mode hover using your theme colors */
+    body.dark-mode .custom-info-icon:hover {
+      opacity: 0.8; /* Simple hover effect for dark mode */
+    }
+
+    /* Ensure proper alignment within flex container */
+    #leaderboard tbody td:nth-child(3) .cell-content .custom-info-icon {
+      margin-top: -1px; /* Fine-tune vertical position in flex container */
     }
 
     /* Prevent wrapping in the Slop column cell */

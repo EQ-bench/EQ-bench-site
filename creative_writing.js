@@ -704,11 +704,9 @@ function loadLeaderboardData() {
            <div class="creative-writing-score-bar" style="width: ${rubricScorePercentage}%; display: none;"></div>
            <span class="score-text">${rubricScoreNum.toFixed(2)}</span>
        </div>`;
-
-      // --- SVG Icon for Slop Profile ---
-      // Using Bootstrap Icons "info-circle" (outline version)
-      const slopInfoIconUnicode = `
-          <span class="slop-info-icon" data-model-name="${currentModelName}" title="View Slop Profile">🛈</span>`;
+      
+       const slopInfoIconUnicode = `
+       <span class="slop-info-icon custom-info-icon" data-model-name="${currentModelName}" title="View Slop Profile">i</span>`;
 
       // --- Create TR with data-order on TD and necessary data attributes ---
       return `
