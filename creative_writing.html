@@ -10,273 +10,370 @@
   <meta http-equiv="pragma" content="no-cache">
   <style>
     /* ============================================= */
-/* == Creative Writing v3 Page Specific Styles == */
-/* ============================================= */
+    /* == Creative Writing v3 Page Specific Styles == */
+    /* ============================================= */
 
-/* Make sure body has position relative for pseudo-elements */
-body.creative-writing-page {
-  position: relative;
-  min-height: 100%;
-}
+    /* Make sure body has position relative for pseudo-elements */
+    body.creative-writing-page {
+      position: relative;
+      min-height: 100%;
+    }
 
-/* Background styling - only for Creative Writing page */
-body.creative-writing-page::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* --- Updated image path and visibility --- */
-  background-image: url('./images/bookshelves.jpg');
-  background-position: center;
-  background-size: cover;
-  filter: blur(3px); /* Reduced blur */
-  opacity: 0.75;     /* Increased opacity */
-  z-index: -2;
-  pointer-events: none;
-}
+    /* Background styling - only for Creative Writing page */
+    body.creative-writing-page::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* --- Updated image path and visibility --- */
+      background-image: url('./images/bookshelves.jpg');
+      background-position: center;
+      background-size: cover;
+      filter: blur(3px); /* Reduced blur */
+      opacity: 0.75;     /* Increased opacity */
+      z-index: -2;
+      pointer-events: none;
+    }
 
-/* Oval mask overlay - only for Creative Writing page */
-body.creative-writing-page::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* --- Softened vignette --- */
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255, 255, 255, 0) 45%,  /* Start fade later */
-    rgba(255, 255, 255, 0.9) 90% /* End fade later and not fully opaque */
-  );
-  z-index: -1;
-  pointer-events: none;
-}
+    /* Oval mask overlay - only for Creative Writing page */
+    body.creative-writing-page::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* --- Softened vignette --- */
+      background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 0) 45%,  /* Start fade later */
+        rgba(255, 255, 255, 0.9) 90% /* End fade later and not fully opaque */
+      );
+      z-index: -1;
+      pointer-events: none;
+    }
 
-/* Container styling for Creative Writing - semi-transparent */
-body.creative-writing-page .container {
-  background-color: rgba(255, 255, 255, 0.76) !important; /* Slightly more opaque */
-  border-radius: 8px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
+    /* Container styling for Creative Writing - semi-transparent */
+    body.creative-writing-page .container {
+      background-color: rgba(255, 255, 255, 0.76) !important; /* Slightly more opaque */
+      border-radius: 8px;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
 
-/* Table cells opacity */
-body.creative-writing-page #leaderboard tbody td {
-  background-color: rgba(255, 255, 255, 0.65) !important;
-}
+    /* Table cells opacity */
+    body.creative-writing-page #leaderboard tbody td {
+      background-color: rgba(255, 255, 255, 0.65) !important;
+    }
 
-/* Ensure the striped effect is maintained with opacity */
-body.creative-writing-page #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
-  background-color: rgba(245, 245, 245, 0.65) !important; /* Use a slightly distinct light grey */
-}
+    /* Ensure the striped effect is maintained with opacity */
+    body.creative-writing-page #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
+      background-color: rgba(245, 245, 245, 0.65) !important; /* Use a slightly distinct light grey */
+    }
 
-/* Explanation section opacity */
-body.creative-writing-page .section {
-  background-color: rgba(248, 248, 248, 0.75) !important; /* Consistent with container */
-  padding: 20px;
-  border-radius: 8px;
-}
-body.creative-writing-page .section .card {
-    background-color: transparent !important;
-    border: none !important;
-}
-
-
-/* Make sure table headers are readable */
-body.creative-writing-page #leaderboard thead th {
-  background-color: rgba(70, 65, 60, 0.85) !important; /* Slightly warmer dark header */
-  color: white !important;
-}
-
-/* --- Dark Mode Adjustments - Warmer Tones & Visibility --- */
-
-body.dark-mode.creative-writing-page::before {
-    opacity: 0.65;      /* Increased dark mode background visibility */
-    filter: blur(3px); /* Reduced blur */
-}
-
-body.dark-mode.creative-writing-page::after {
-  /* --- Warmer, softer dark vignette --- */
-  background: radial-gradient(
-    ellipse at center,
-    rgba(45, 40, 35, 0) 45%,  /* Start fade later (using warm dark base) */
-    rgba(45, 40, 35, 0.9) 90% /* End fade later/softer (using warm dark base) */
-  );
-}
-
-body.dark-mode.creative-writing-page .container {
-  /* --- Warmer dark brown base --- */
-  background-color: rgba(45, 40, 35, 0.75) !important;
-}
-
-body.dark-mode.creative-writing-page #leaderboard tbody td {
-  /* --- Warmer dark brown base for cells --- */
-  background-color: rgba(45, 40, 35, 0.7) !important;
-}
-
-body.dark-mode.creative-writing-page #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
-  /* --- Slightly lighter warm brown for striping --- */
-  background-color: rgba(55, 50, 45, 0.7) !important;
-}
-
-body.dark-mode.creative-writing-page .section {
-  /* --- Warmer dark brown for section --- */
-  background-color: rgba(50, 45, 40, 0.75) !important;
-}
-
-body.dark-mode.creative-writing-page #leaderboard thead th {
-  /* --- Adjusted dark header for consistency --- */
-  background-color: rgba(65, 60, 55, 0.85) !important;
-}
-
-/* Ensure text is readable against semi-transparent backgrounds (Keep Text Shadow) */
-body.creative-writing-page .container h1,
-body.creative-writing-page .container h2,
-body.creative-writing-page .container h3,
-body.creative-writing-page .container h5,
-body.creative-writing-page .container p,
-body.creative-writing-page .container label,
-body.creative-writing-page .container a,
-body.creative-writing-page .container span,
-body.creative-writing-page .container li,
-body.creative-writing-page .container .alert,
-body.creative-writing-page .container .dataTables_info
- {
-  text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
-}
-
-body.dark-mode.creative-writing-page .container h1,
-body.dark-mode.creative-writing-page .container h2,
-body.dark-mode.creative-writing-page .container h3,
-body.dark-mode.creative-writing-page .container h5,
-body.dark-mode.creative-writing-page .container p,
-body.dark-mode.creative-writing-page .container label,
-body.dark-mode.creative-writing-page .container a,
-body.dark-mode.creative-writing-page .container span,
-body.dark-mode.creative-writing-page .container li,
-body.dark-mode.creative-writing-page .container .alert,
-body.dark-mode.creative-writing-page .container .dataTables_info
- {
-  text-shadow: 0 0 4px rgba(0, 0, 0, 0.8); /* Slightly stronger shadow for dark mode */
-}
-
-/* Ensure score text inside bars is also readable */
-body.creative-writing-page .score-text {
-    text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
-}
-body.dark-mode.creative-writing-page .score-text {
-    text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
-}
-
-/* Adjust slider appearance slightly for better visibility */
-body.creative-writing-page .form-range::-webkit-slider-thumb {
-    background-color: #666; /* Slightly darker */
-}
-body.creative-writing-page .form-range::-moz-range-thumb {
-    background-color: #666;
-}
-body.dark-mode.creative-writing-page .form-range::-webkit-slider-thumb {
-    background-color: #ccc; /* Slightly lighter */
-}
-body.dark-mode.creative-writing-page .form-range::-moz-range-thumb {
-    background-color: #ccc;
-}
+    /* Explanation section opacity */
+    body.creative-writing-page .section {
+      background-color: rgba(248, 248, 248, 0.75) !important; /* Consistent with container */
+      padding: 20px;
+      border-radius: 8px;
+    }
+    body.creative-writing-page .section .card {
+        background-color: transparent !important;
+        border: none !important;
+    }
 
 
-/* 1. Make the datatable not transparent at all in light mode only */
-body.creative-writing-page:not(.dark-mode) #leaderboard tbody td {
-  background-color: rgba(255, 255, 255, 1) !important; /* Fully opaque */
-}
+    /* Make sure table headers are readable */
+    body.creative-writing-page #leaderboard thead th {
+      background-color: rgba(70, 65, 60, 0.85) !important; /* Slightly warmer dark header */
+      color: white !important;
+    }
 
-body.creative-writing-page:not(.dark-mode) #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
-  background-color: rgba(245, 245, 245, 1) !important; /* Fully opaque striping */
-}
+    /* --- Dark Mode Adjustments - Warmer Tones & Visibility --- */
 
-/* 2. Background glow for nav sections - light mode only */
-body.creative-writing-page:not(.dark-mode) .container p:nth-of-type(2)::before,
-body.creative-writing-page:not(.dark-mode) .container p:nth-of-type(3)::before {
-  content: "";
-  position: absolute;
-  top: -3px;
-  left: -10px;
-  right: -10px;
-  bottom: -3px;
-  background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 6px;
-  z-index: -1;
-  filter: blur(1px);
-}
+    body.dark-mode.creative-writing-page::before {
+        opacity: 0.65;      /* Increased dark mode background visibility */
+        filter: blur(3px); /* Reduced blur */
+    }
 
-/* 3. Text shadows on nav items - light mode only */
-body.creative-writing-page:not(.dark-mode) .container p a,
-body.creative-writing-page:not(.dark-mode) .container p b {
-  text-shadow: 
-    0 0 3px rgba(255, 255, 255, 0.6),
-    0 0 6px rgba(255, 255, 255, 0.5), 
-    0 0 9px rgba(255, 255, 255, 0.4), 
-    0 0 12px rgba(255, 255, 255, 0.3);
-}
+    body.dark-mode.creative-writing-page::after {
+      /* --- Warmer, softer dark vignette --- */
+      background: radial-gradient(
+        ellipse at center,
+        rgba(45, 40, 35, 0) 45%,  /* Start fade later (using warm dark base) */
+        rgba(45, 40, 35, 0.9) 90% /* End fade later/softer (using warm dark base) */
+      );
+    }
 
-/* Don't forget to keep the paragraph display:inline-block for both modes */
-body.creative-writing-page .container p:nth-of-type(2),
-body.creative-writing-page .container p:nth-of-type(3) {
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-}
+    body.dark-mode.creative-writing-page .container {
+      /* --- Warmer dark brown base --- */
+      background-color: rgba(45, 40, 35, 0.75) !important;
+    }
+
+    body.dark-mode.creative-writing-page #leaderboard tbody td {
+      /* --- Warmer dark brown base for cells --- */
+      background-color: rgba(45, 40, 35, 0.7) !important;
+    }
+
+    body.dark-mode.creative-writing-page #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
+      /* --- Slightly lighter warm brown for striping --- */
+      background-color: rgba(55, 50, 45, 0.7) !important;
+    }
+
+    body.dark-mode.creative-writing-page .section {
+      /* --- Warmer dark brown for section --- */
+      background-color: rgba(50, 45, 40, 0.75) !important;
+    }
+
+    body.dark-mode.creative-writing-page #leaderboard thead th {
+      /* --- Adjusted dark header for consistency --- */
+      background-color: rgba(65, 60, 55, 0.85) !important;
+    }
+
+    /* Ensure text is readable against semi-transparent backgrounds (Keep Text Shadow) */
+    body.creative-writing-page .container h1,
+    body.creative-writing-page .container h2,
+    body.creative-writing-page .container h3,
+    body.creative-writing-page .container h5,
+    body.creative-writing-page .container p,
+    body.creative-writing-page .container label,
+    body.creative-writing-page .container a,
+    body.creative-writing-page .container span,
+    body.creative-writing-page .container li,
+    body.creative-writing-page .container .alert,
+    body.creative-writing-page .container .dataTables_info
+    {
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
+    }
+
+    body.dark-mode.creative-writing-page .container h1,
+    body.dark-mode.creative-writing-page .container h2,
+    body.dark-mode.creative-writing-page .container h3,
+    body.dark-mode.creative-writing-page .container h5,
+    body.dark-mode.creative-writing-page .container p,
+    body.dark-mode.creative-writing-page .container label,
+    body.dark-mode.creative-writing-page .container a,
+    body.dark-mode.creative-writing-page .container span,
+    body.dark-mode.creative-writing-page .container li,
+    body.dark-mode.creative-writing-page .container .alert,
+    body.dark-mode.creative-writing-page .container .dataTables_info
+    {
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.8); /* Slightly stronger shadow for dark mode */
+    }
+
+    /* Ensure score text inside bars is also readable */
+    body.creative-writing-page .score-text {
+        text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
+    }
+    body.dark-mode.creative-writing-page .score-text {
+        text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Adjust slider appearance slightly for better visibility */
+    body.creative-writing-page .form-range::-webkit-slider-thumb {
+        background-color: #666; /* Slightly darker */
+    }
+    body.creative-writing-page .form-range::-moz-range-thumb {
+        background-color: #666;
+    }
+    body.dark-mode.creative-writing-page .form-range::-webkit-slider-thumb {
+        background-color: #ccc; /* Slightly lighter */
+    }
+    body.dark-mode.creative-writing-page .form-range::-moz-range-thumb {
+        background-color: #ccc;
+    }
+
+
+    /* 1. Make the datatable not transparent at all in light mode only */
+    body.creative-writing-page:not(.dark-mode) #leaderboard tbody td {
+      background-color: rgba(255, 255, 255, 1) !important; /* Fully opaque */
+    }
+
+    body.creative-writing-page:not(.dark-mode) #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
+      background-color: rgba(245, 245, 245, 1) !important; /* Fully opaque striping */
+    }
+
+    /* 2. Background glow for nav sections - light mode only */
+    body.creative-writing-page:not(.dark-mode) .container p:nth-of-type(2)::before,
+    body.creative-writing-page:not(.dark-mode) .container p:nth-of-type(3)::before {
+      content: "";
+      position: absolute;
+      top: -3px;
+      left: -10px;
+      right: -10px;
+      bottom: -3px;
+      background-color: rgba(255, 255, 255, 0.4);
+      border-radius: 6px;
+      z-index: -1;
+      filter: blur(1px);
+    }
+
+    /* 3. Text shadows on nav items - light mode only */
+    body.creative-writing-page:not(.dark-mode) .container p a,
+    body.creative-writing-page:not(.dark-mode) .container p b {
+      text-shadow:
+        0 0 3px rgba(255, 255, 255, 0.6),
+        0 0 6px rgba(255, 255, 255, 0.5),
+        0 0 9px rgba(255, 255, 255, 0.4),
+        0 0 12px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Don't forget to keep the paragraph display:inline-block for both modes */
+    body.creative-writing-page .container p:nth-of-type(2),
+    body.creative-writing-page .container p:nth-of-type(3) {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+    }
 
 
 
 
-/* Make the toggle button more prominent and position it better */
-body.creative-writing-page #toggleMiddleStats {
-  /* Improve button visibility */
-  font-weight: bold;
-  font-size: 1rem;
-  padding: 0.4rem 1rem;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-color: #666;
-  color: #333;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  
-  /* Position directly on top of table */
-  margin-bottom: 0 !important; /* Remove the bottom margin */
-  border-bottom-left-radius: 0; /* Blend with table top */
-  border-bottom-right-radius: 0; /* Blend with table top */
-}
+    /* Make the toggle button more prominent and position it better */
+    body.creative-writing-page #toggleMiddleStats {
+      /* Improve button visibility */
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 0.4rem 1rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-color: #666;
+      color: #333;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 
-/* Add a light glow in light mode */
-body.creative-writing-page:not(.dark-mode) #toggleMiddleStats {
-  text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
-}
+      /* Position directly on top of table */
+      margin-bottom: 0 !important; /* Remove the bottom margin */
+      border-bottom-left-radius: 0; /* Blend with table top */
+      border-bottom-right-radius: 0; /* Blend with table top */
+    }
 
-/* Dark mode adjustments */
-body.dark-mode.creative-writing-page #toggleMiddleStats {
-  background-color: rgba(45, 40, 35, 0.9);
-  color: #eee;
-  border-color: #888;
-}
+    /* Add a light glow in light mode */
+    body.creative-writing-page:not(.dark-mode) #toggleMiddleStats {
+      text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+    }
 
-/* Remove any top margin from the table to ensure no gap */
-body.creative-writing-page #leaderboard {
-  margin-top: 0 !important;
-}
+    /* Dark mode adjustments */
+    body.dark-mode.creative-writing-page #toggleMiddleStats {
+      background-color: rgba(45, 40, 35, 0.9);
+      color: #eee;
+      border-color: #888;
+    }
 
-@media (min-width: 768px) {
-  .hide-details-toggle-button {
-    display: none !important;
-  }
-}
+    /* Remove any top margin from the table to ensure no gap */
+    body.creative-writing-page #leaderboard {
+      margin-top: 0 !important;
+    }
 
-@media (max-width: 767px) {
-  .show-details-toggle-button {
-    display: block !important;
-  }
-}
-    </style>
+    @media (min-width: 768px) {
+      .hide-details-toggle-button {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .show-details-toggle-button {
+        display: block !important;
+      }
+    }
+
+
+
+    /* Slop Info Icon Styling */
+    .slop-info-icon {
+      cursor: pointer;
+      margin-left: 5px; /* Space between score and icon */
+      vertical-align: middle; /* Align with text */
+      color: var(--bs-link-color); /* Use Bootstrap link color */
+      font-weight: normal; /* Or bold if you prefer */
+      font-size: 1.1em; /* Slightly larger to be more visible */
+      line-height: 1; /* Prevent extra line height */
+      display: inline-block; /* Needed for proper alignment/spacing */
+      transition: color 0.2s ease-in-out;
+    }
+
+    .slop-info-icon:hover {
+      color: var(--bs-link-hover-color); /* Use Bootstrap link hover color */
+    }
+
+    /* Dark mode adjustments for icon */
+    body.dark-mode .slop-info-icon {
+        color: var(--bs-link-color); /* Ensure dark mode link color is used */
+    }
+    body.dark-mode .slop-info-icon:hover {
+        color: var(--bs-link-hover-color);
+    }
+
+    /* Prevent wrapping in the Slop column cell */
+    #leaderboard tbody td:nth-child(3) .cell-content { /* Target content div in 3rd TD */
+        white-space: nowrap;
+        display: flex; /* Use flex to keep score and icon together */
+        align-items: center; /* Vertically align items in flex container */
+    }
+
+
+    /* Styling for items within the modal (from Python output) */
+    #slopProfileContent .slop-section-items {
+        line-height: 1.8; /* Increase line height for wrapped spans */
+    }
+
+    #slopProfileContent .slop-word-item,
+    #slopProfileContent .slop-ngram-item {
+      display: inline-block; /* Allows margin/padding and wrapping */
+      margin: 2px 4px 2px 0; /* Spacing around items */
+      padding: 2px 6px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f0f0f0;
+      font-size: 0.9em;
+      color: #333; /* Ensure text color contrasts with background */
+      white-space: nowrap; /* Prevent breaking within a single item */
+    }
+
+    /* --- Modal Styling --- */
+    .modal-content {
+        /* Reduced transparency */
+        background-color: rgba(255, 255, 255, 0.95); /* Light mode: less transparent white */
+        backdrop-filter: blur(2px); /* Optional: Reduce blur slightly */
+    }
+
+    /* Dark mode styling for modal */
+    body.dark-mode .modal-content {
+        /* Reduced transparency */
+        background-color: rgba(50, 49, 48, 0.94); /* Dark mode: less transparent dark */
+        color: #eee; /* Ensure text is light */
+    }
+    body.dark-mode .modal-header {
+        border-bottom-color: #2e2e2e; /* Darker border */
+    }
+    /* Ensure dark mode modal title is light */
+    body.dark-mode .modal-header .modal-title {
+        color: #eee; /* Or use a light variable */
+    }
+    body.dark-mode .modal-footer {
+        border-top-color: #2e2e2e; /* Darker border */
+    }
+    body.dark-mode .btn-close {
+        filter: invert(1) grayscale(100%) brightness(200%); /* Make close button visible */
+    }
+
+    /* Dark mode styling for modal items */
+    body.dark-mode #slopProfileContent .slop-word-item,
+    body.dark-mode #slopProfileContent .slop-ngram-item {
+      border-color: #666; /* Slightly lighter border */
+      background-color: #585756; /* Lighter than modal background, adjust as needed */
+      color: #f0f0f0; /* Light text */
+    }
+
+    /* Ensure modal body text color is correct */
+    .modal-body {
+        color: var(--bs-body-color); /* Use Bootstrap body color */
+    }
+    /* This rule might be redundant if the above works, but added for safety */
+    body.dark-mode .modal-body {
+        color: #eee;
+    }
+  </style>
 </head>
 <body class="creative-writing-page">
   <div class="container mt-4">
@@ -310,21 +407,19 @@ body.creative-writing-page #leaderboard {
     </p>
 
     <!-- Added mb-3 for spacing -->
-    <div class="d-flex align-items-start mb-3">
-      <!-- Vocab Control Slider -->
-      <!--
-      <div class="vocab-control-container me-3">
+    <div class="d-flex align-items-start mb-3 d-none">
+      <!-- Vocab Control Slider (Hidden) -->
+      <div class="vocab-control-container me-3 d-none">
         <div class="vocab-control-label">
-          <label for="vocabControlSlider">* Vocab Control: <span id="vocabControlValue">0%</span></label>
+          <label for="vocabControlSlider">Vocab Control: <span id="vocabControlValue">0%</span></label>
         </div>
         <div class="vocab-control-slider">
           <input type="range" class="form-range custom-width-slider" min="0" max="100" value="0" id="vocabControlSlider">
         </div>
       </div>
-      -->
 
       <!-- GPT-Slop Control Slider -->
-      <div class="gpt-slop-control-container">
+      <div class="gpt-slop-control-container d-none">
         <div class="gpt-slop-control-label">
           <label for="gptSlopControlSlider">GPT-Slop Control: <span id="gptSlopControlValue">0%</span></label>
         </div>
@@ -333,8 +428,6 @@ body.creative-writing-page #leaderboard {
         </div>
       </div>
     </div>
-
-    
 
     A LLM-judged creative writing benchmark (v3). <a href="./about.html#creative-writing-v3">Learn more</a>
 
@@ -349,12 +442,9 @@ body.creative-writing-page #leaderboard {
         <thead>
           <tr>
             <th>Model</th>
-            <!-- Added class -->
             <th class="mobile-collapsible">Length</th>
             <th>Slop</th>
-            <!-- Added class -->
-            <th class="mobile-collapsible">Vocab*</th>
-            <!-- Added class -->
+            <th class="mobile-collapsible">Repetition</th> <!-- Changed from Vocab* -->
             <th class="mobile-collapsible">Rubric Score</th>
             <th>Elo Score</th>
             <th></th>
@@ -367,26 +457,20 @@ body.creative-writing-page #leaderboard {
     </div>
     <br>
     <hr>
-    <div class="section mt-4" id="vocab-explanation">
+    <div class="section mt-4" id="metrics-explanation"> <!-- Changed ID -->
       <div class="card bg-card">
         <div class="card-body">
           <p>For more details about the benchmark, see the <a href="./about.html#creative-writing-v3">About</a> section.</p>
-        
-          <h5 class="card-title">* Vocab Complexity Metric</h5>
-          <p>The <strong>Vocab</strong> column measures the proportion of words with 3+ syllables in a model's output. Higher values indicate more complex vocabulary usage. The typical range observed is roughly 4-6, with outliers up to 10.</p>
-          <p>This metric gives visibiliy on models that are using an unusually high proportion of complex words, which car artificially inflate their score.</p>
 
-          <div class="alert alert-info dark-mode-compatible">
-            <p> Counter-intuitively, a high vocab score typically results in lower quality outputs.</p>
-          </div>
-
+          <h5 class="card-title">Repetition Metric</h5> <!-- Changed Title -->
+          <p>The <strong>Repetition</strong> column measures the tendency of a model to repeat words and phrases across different prompts. It sums the frequencies of the top most common words, bigrams and trigrams that appear the text. Higher values indicate more repetitive output.</p>          
           <h5 class="card-title mt-3">Slop Control</h5>
-          <p>The <strong>Slop</strong> column measures the frequency of words/phrases typically overused by LLMs ("GPT-isms"). The <strong>Slop Control</strong> slider adjusts Elo scores based on this metric.</p>
+          <p>The <strong>Slop</strong> column measures the frequency of words/phrases typically overused by LLMs ("GPT-isms"). The value is calculated by matching the text against a master slop list which is derived from over-represented words & phrases in outputs from a diverse set of models. The <strong>Slop Control</strong> slider adjusts Elo scores based on this metric.</p>
           <ul>
             <li><strong>0%</strong>: No adjustment based on slop.</li>
             <li><strong>50%</strong>: Moderate adjustment - penalizes high slop, slightly rewards low slop.</li>
             <li><strong>100%</strong>: Maximum adjustment - stronger penalty for high slop, capped reward for low slop (approx. +/- 10% Elo impact).</li>
-          </ul>        
+          </ul>
         </div>
       </div>
     </div>
@@ -395,8 +479,30 @@ body.creative-writing-page #leaderboard {
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Added defer attribute -->
   <script src="creative_writing.js" defer></script>
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1600fe1d3da743c1b311f4e5fee86767"}'></script>
+
+  <!-- Slop Profile Modal -->
+  <div class="modal fade" id="slopProfileModal" tabindex="-1" aria-labelledby="slopProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg"> <!-- modal-lg for wider content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="slopProfileModalLabel">Slop Profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="slopProfileContent">
+            <!-- Slop profile HTML will be injected here -->
+            Loading...
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
