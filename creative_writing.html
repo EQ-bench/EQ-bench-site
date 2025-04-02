@@ -486,14 +486,9 @@
           <p>For more details about the benchmark, see the <a href="./about.html#creative-writing-v3">About</a> section.</p>
 
           <h5 class="card-title">Repetition Metric</h5> <!-- Changed Title -->
-          <p>The <strong>Repetition</strong> column measures the tendency of a model to repeat words and phrases across different prompts. It sums the frequencies of the top most common words, bigrams and trigrams that appear the text. Higher values indicate more repetitive output.</p>          
-          <h5 class="card-title mt-3">Slop Control</h5>
-          <p>The <strong>Slop</strong> column measures the frequency of words/phrases typically overused by LLMs ("GPT-isms"). The value is calculated by matching the text against a master slop list which is derived from over-represented words & phrases in outputs from a diverse set of models. The <strong>Slop Control</strong> slider adjusts Elo scores based on this metric.</p>
-          <ul>
-            <li><strong>0%</strong>: No adjustment based on slop.</li>
-            <li><strong>50%</strong>: Moderate adjustment - penalizes high slop, slightly rewards low slop.</li>
-            <li><strong>100%</strong>: Maximum adjustment - stronger penalty for high slop, capped reward for low slop (approx. +/- 10% Elo impact).</li>
-          </ul>
+          <p>The <strong>Repetition</strong> column measures the tendency of a model to repeat words and phrases in the outputs generated for this benchmark. It sums the frequencies of the top most common words, bigrams and trigrams that appear in the text. Higher values indicate more repetitive output.</p>          
+          <h5 class="card-title mt-3">Slop Score</h5>
+          <p>The <strong>Slop</strong> column measures the frequency of words/phrases typically overused by LLMs ("GPT-isms"). The value is calculated by matching the text against a master slop list which is derived from over-represented words & phrases in outputs from a diverse set of models.</p>
         </div>
       </div>
     </div>
