@@ -396,6 +396,53 @@
     body.dark-mode .modal-body {
         color: #eee;
     }
+
+    /* Styling for the similarity section container */
+    .slop-similar-section {
+      margin-bottom: 15px;
+      line-height: 1.5; /* Reduced from 1.8 */
+    }
+
+    /* Style for each similar model item as a ranked list */
+    .slop-similar {
+      display: block;
+      margin: 2px 0; /* Reduced from 4px 0 */
+      padding: 1px 0; /* Reduced from 2px 0 */
+      font-size: 0.95em;
+      color: #333;
+    }
+
+    /* Counter for automatic ranking */
+    .slop-similar-section {
+      counter-reset: similarity-rank;
+    }
+
+    .slop-similar::before {
+      counter-increment: similarity-rank;
+      content: counter(similarity-rank) ". ";
+      font-weight: bold;
+      color: #555;
+      margin-right: 5px;
+    }
+
+    /* Make the distance value slightly muted */
+    .slop-similar .distance {
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    /* Dark mode adjustments */
+    body.dark-mode .slop-similar {
+      color: #f0f0f0;
+    }
+
+    body.dark-mode .slop-similar::before {
+      color: #bbb;
+    }
+
+    body.dark-mode .slop-similar .distance {
+      color: #aaa;
+    }
   </style>
 </head>
 <body class="creative-writing-page">

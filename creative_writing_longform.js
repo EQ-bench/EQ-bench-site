@@ -2,20 +2,29 @@
 
 // --- New Leaderboard Data ---
 let leaderboardDataLongformV3 = `model_name,overall_score_100,avg_chapter_length,vocab_complexity,slop_score,repetition_score
-deepseek-ai/DeepSeek-V3-0324,78.1,4131,19.39,47.40,718
-claude-3-7-sonnet-20250219,77.6,9380,47.17,22.60,856
-chatgpt-4o-latest-2025-03-27,76.8,5399,18.53,33.91,840
-deepseek-ai/DeepSeek-R1,74.6,4035,23.66,55.12,509
-qwen/qwq-32b,60.8,5320,25.21,63.54,889
-google/gemma-3-27b-it,59.3,5367,43.52,61.49,1505
-gpt-4o-mini,55.2,7855,43.04,63.58,2348
-gemini-2.0-flash-001,55.1,4915,31.84,70.16,1706
-RekaAI/reka-flash-3,51.8,4531,24.17,61.65,624
-google/gemma-3-4b-it,47.3,4244,59.42,75.18,1397`;
+deepseek-ai/DeepSeek-V3-0324,78.1,4131,19.39,47.40,11.6
+claude-3-7-sonnet-20250219,77.6,9380,47.17,22.60,6.1
+chatgpt-4o-latest-2025-03-27,76.8,5399,18.53,33.91,9.4
+deepseek-ai/DeepSeek-R1,74.6,4035,23.66,55.12,8.5
+qwen/qwq-32b,60.8,5320,25.21,63.54,11.1
+google/gemma-3-27b-it,59.3,5367,43.52,61.49,17.8
+gpt-4o-mini,55.2,7855,43.04,63.58,18.3
+gemini-2.0-flash-001,55.1,4915,31.84,70.16,21.0
+RekaAI/reka-flash-3,51.8,4531,24.17,61.65,10.7
+google/gemma-3-4b-it,47.3,4244,59.42,75.18,21.1`;
 
 
 // --- New Slop Data ---
 const slopData = `##### deepseek-ai/DeepSeek-V3-0324
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>deepseek-ai/DeepSeek-R1 (distance=0.755)</div>
+<div class='slop-similar'>RekaAI/reka-flash-3 (distance=0.772)</div>
+<div class='slop-similar'>qwen/qwq-32b (distance=0.799)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.805)</div>
+<div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.865)</div>
+</div>
+
 <h4>Top Repetitive Words</h4>
 <div class='slop-section-items'>
 <span class='slop-word-item'>medbay</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>rasped</span> <span class='slop-word-item'>glinted</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>throbbed</span> <span class='slop-word-item'>twitched</span> <span class='slop-word-item'>exhaled</span> <span class='slop-word-item'>hummed</span> <span class='slop-word-item'>viewport</span> <span class='slop-word-item'>doorframe</span> <span class='slop-word-item'>gleamed</span> <span class='slop-word-item'>stilled</span> <span class='slop-word-item'>floorboard</span> <span class='slop-word-item'>hissed</span> <span class='slop-word-item'>gaped</span> <span class='slop-word-item'>clattered</span> <span class='slop-word-item'>trembled</span> <span class='slop-word-item'>blared</span> <span class='slop-word-item'>yelped</span> <span class='slop-word-item'>voss</span> <span class='slop-word-item'>ached</span> <span class='slop-word-item'>squinted</span> <span class='slop-word-item'>groaned</span> <span class='slop-word-item'>grinned</span> <span class='slop-word-item'>glinting</span> <span class='slop-word-item'>muttered</span> <span class='slop-word-item'>safehouse</span> <span class='slop-word-item'>whirled</span> <span class='slop-word-item'>crouched</span> <span class='slop-word-item'>pulsed</span> <span class='slop-word-item'>lurched</span> <span class='slop-word-item'>buzzed</span> <span class='slop-word-item'>lunged</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>wailed</span> <span class='slop-word-item'>flinched</span> <span class='slop-word-item'>skidded</span> <span class='slop-word-item'>windbreaker</span> <span class='slop-word-item'>recoiled</span> <span class='slop-word-item'>yanked</span> <span class='slop-word-item'>blinked</span> <span class='slop-word-item'>stiffened</span> <span class='slop-word-item'>flicked</span> <span class='slop-word-item'>lena</span> <span class='slop-word-item'>smirked</span> <span class='slop-word-item'>limped</span> <span class='slop-word-item'>clutched</span> <span class='slop-word-item'>pried</span>
@@ -30,6 +39,15 @@ const slopData = `##### deepseek-ai/DeepSeek-V3-0324
 </div>
 
 ##### claude-3-7-sonnet-20250219
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.865)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.868)</div>
+<div class='slop-similar'>google/gemma-3-27b-it (distance=0.876)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.883)</div>
+<div class='slop-similar'>qwen/qwq-32b (distance=0.888)</div>
+</div>
+
 <h4>Top Repetitive Words</h4>
 <div class='slop-section-items'>
 <span class='slop-word-item'>jingled</span> <span class='slop-word-item'>handholds</span> <span class='slop-word-item'>bioluminescent</span> <span class='slop-word-item'>bioluminescence</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>viewport</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>eliza</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>crawlspace</span> <span class='slop-word-item'>shimmered</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>gleamed</span> <span class='slop-word-item'>harlow</span> <span class='slop-word-item'>nodded</span> <span class='slop-word-item'>blared</span> <span class='slop-word-item'>floorboard</span> <span class='slop-word-item'>interjected</span> <span class='slop-word-item'>vibrated</span> <span class='slop-word-item'>gareth</span> <span class='slop-word-item'>muttered</span> <span class='slop-word-item'>pulsed</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>glowed</span> <span class='slop-word-item'>harrington</span> <span class='slop-word-item'>elena</span> <span class='slop-word-item'>glanced</span> <span class='slop-word-item'>hummed</span> <span class='slop-word-item'>pulsing</span> <span class='slop-word-item'>hissed</span> <span class='slop-word-item'>dani</span> <span class='slop-word-item'>lunged</span> <span class='slop-word-item'>grimly</span> <span class='slop-word-item'>wincing</span> <span class='slop-word-item'>airlock</span> <span class='slop-word-item'>whispered</span> <span class='slop-word-item'>winced</span> <span class='slop-word-item'>clutched</span> <span class='slop-word-item'>elijah</span> <span class='slop-word-item'>trembled</span> <span class='slop-word-item'>luminescent</span> <span class='slop-word-item'>gasped</span> <span class='slop-word-item'>blinked</span> <span class='slop-word-item'>buzzed</span> <span class='slop-word-item'>keller</span> <span class='slop-word-item'>workbench</span> <span class='slop-word-item'>sneakers</span> <span class='slop-word-item'>ajar</span> <span class='slop-word-item'>methodically</span>
@@ -44,6 +62,15 @@ const slopData = `##### deepseek-ai/DeepSeek-V3-0324
 </div>
 
 ##### chatgpt-4o-latest-2025-03-27
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.805)</div>
+<div class='slop-similar'>RekaAI/reka-flash-3 (distance=0.838)</div>
+<div class='slop-similar'>qwen/qwq-32b (distance=0.848)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-R1 (distance=0.850)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.863)</div>
+</div>
+
 <h4>Top Repetitive Words</h4>
 <div class='slop-section-items'>
 <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>shimmered</span> <span class='slop-word-item'>hummed</span> <span class='slop-word-item'>thudding</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>blinked</span> <span class='slop-word-item'>nodded</span> <span class='slop-word-item'>firelight</span> <span class='slop-word-item'>faintly</span> <span class='slop-word-item'>mara</span> <span class='slop-word-item'>crouched</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>exhaled</span> <span class='slop-word-item'>hissed</span> <span class='slop-word-item'>grunted</span> <span class='slop-word-item'>flinched</span> <span class='slop-word-item'>pulsed</span> <span class='slop-word-item'>trembled</span> <span class='slop-word-item'>muttered</span> <span class='slop-word-item'>ached</span> <span class='slop-word-item'>leaned</span> <span class='slop-word-item'>groaned</span> <span class='slop-word-item'>unreadable</span> <span class='slop-word-item'>glowed</span> <span class='slop-word-item'>sidearm</span> <span class='slop-word-item'>stared</span> <span class='slop-word-item'>rusted</span> <span class='slop-word-item'>smirked</span> <span class='slop-word-item'>glanced</span> <span class='slop-word-item'>sipped</span> <span class='slop-word-item'>chimed</span> <span class='slop-word-item'>howled</span> <span class='slop-word-item'>dimmed</span> <span class='slop-word-item'>knelt</span> <span class='slop-word-item'>paused</span> <span class='slop-word-item'>scrawled</span> <span class='slop-word-item'>creak</span> <span class='slop-word-item'>flinch</span> <span class='slop-word-item'>bloomed</span> <span class='slop-word-item'>flickering</span> <span class='slop-word-item'>spirals</span> <span class='slop-word-item'>nightstand</span> <span class='slop-word-item'>humming</span> <span class='slop-word-item'>whispered</span> <span class='slop-word-item'>duffel</span> <span class='slop-word-item'>clenched</span> <span class='slop-word-item'>hunched</span> <span class='slop-word-item'>curled</span>
@@ -58,6 +85,15 @@ const slopData = `##### deepseek-ai/DeepSeek-V3-0324
 </div>
 
 ##### deepseek-ai/DeepSeek-R1
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>RekaAI/reka-flash-3 (distance=0.712)</div>
+<div class='slop-similar'>qwen/qwq-32b (distance=0.752)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.755)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.850)</div>
+<div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.894)</div>
+</div>
+
 <h4>Top Repetitive Words</h4>
 <div class='slop-section-items'>
 <span class='slop-word-item'>holoscreen</span> <span class='slop-word-item'>kael</span> <span class='slop-word-item'>rasped</span> <span class='slop-word-item'>glinted</span> <span class='slop-word-item'>jangled</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>glinting</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>selene</span> <span class='slop-word-item'>hissed</span> <span class='slop-word-item'>locket</span> <span class='slop-word-item'>lunged</span> <span class='slop-word-item'>reeked</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>throbbed</span> <span class='slop-word-item'>bioluminescent</span> <span class='slop-word-item'>stilled</span> <span class='slop-word-item'>screeched</span> <span class='slop-word-item'>hummed</span> <span class='slop-word-item'>twitched</span> <span class='slop-word-item'>blared</span> <span class='slop-word-item'>panted</span> <span class='slop-word-item'>lamplight</span> <span class='slop-word-item'>glowed</span> <span class='slop-word-item'>clattered</span> <span class='slop-word-item'>recoiled</span> <span class='slop-word-item'>gleamed</span> <span class='slop-word-item'>muttered</span> <span class='slop-word-item'>trembled</span> <span class='slop-word-item'>writhed</span> <span class='slop-word-item'>crouched</span> <span class='slop-word-item'>snarled</span> <span class='slop-word-item'>lila</span> <span class='slop-word-item'>viewport</span> <span class='slop-word-item'>stiffened</span> <span class='slop-word-item'>vibrated</span> <span class='slop-word-item'>shuddered</span> <span class='slop-word-item'>pulsed</span> <span class='slop-word-item'>glitching</span> <span class='slop-word-item'>groaned</span> <span class='slop-word-item'>whirled</span> <span class='slop-word-item'>grunted</span> <span class='slop-word-item'>wailed</span> <span class='slop-word-item'>fraying</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>detonator</span> <span class='slop-word-item'>rippled</span> <span class='slop-word-item'>sputtered</span> <span class='slop-word-item'>streaked</span> <span class='slop-word-item'>palmed</span>
@@ -72,6 +108,15 @@ const slopData = `##### deepseek-ai/DeepSeek-V3-0324
 </div>
 
 ##### qwen/qwq-32b
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>RekaAI/reka-flash-3 (distance=0.723)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-R1 (distance=0.752)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.799)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.848)</div>
+<div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.888)</div>
+</div>
+
 <h4>Top Repetitive Words</h4>
 <div class='slop-section-items'>
 <span class='slop-word-item'>veyra</span> <span class='slop-word-item'>elara</span> <span class='slop-word-item'>kael</span> <span class='slop-word-item'>glinted</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>glinting</span> <span class='slop-word-item'>rasped</span> <span class='slop-word-item'>blackthorn</span> <span class='slop-word-item'>hissed</span> <span class='slop-word-item'>blared</span> <span class='slop-word-item'>lunged</span> <span class='slop-word-item'>throbbed</span> <span class='slop-word-item'>trembled</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>nessa</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>hummed</span> <span class='slop-word-item'>stilled</span> <span class='slop-word-item'>shimmered</span> <span class='slop-word-item'>pulsed</span> <span class='slop-word-item'>glowed</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>muttered</span> <span class='slop-word-item'>lila</span> <span class='slop-word-item'>shuddered</span> <span class='slop-word-item'>locket</span> <span class='slop-word-item'>twitched</span> <span class='slop-word-item'>smirked</span> <span class='slop-word-item'>paled</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>hazel</span> <span class='slop-word-item'>pocketed</span> <span class='slop-word-item'>knelt</span> <span class='slop-word-item'>clattered</span> <span class='slop-word-item'>voss</span> <span class='slop-word-item'>recoiled</span> <span class='slop-word-item'>lurched</span> <span class='slop-word-item'>whispered</span> <span class='slop-word-item'>whitened</span> <span class='slop-word-item'>buzzed</span> <span class='slop-word-item'>reeked</span> <span class='slop-word-item'>growled</span> <span class='slop-word-item'>clutched</span> <span class='slop-word-item'>groaned</span> <span class='slop-word-item'>vibrated</span> <span class='slop-word-item'>dirge</span> <span class='slop-word-item'>mara</span> <span class='slop-word-item'>tendrils</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>lingered</span>
@@ -86,6 +131,15 @@ const slopData = `##### deepseek-ai/DeepSeek-V3-0324
 </div>
 
 ##### google/gemma-3-27b-it
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.714)</div>
+<div class='slop-similar'>google/gemma-3-4b-it (distance=0.753)</div>
+<div class='slop-similar'>gpt-4o-mini (distance=0.845)</div>
+<div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.876)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.882)</div>
+</div>
+
 <h4>Top Repetitive Words</h4>
 <div class='slop-section-items'>
 <span class='slop-word-item'>lysandra</span> <span class='slop-word-item'>elara</span> <span class='slop-word-item'>rostova</span> <span class='slop-word-item'>veridian</span> <span class='slop-word-item'>kael</span> <span class='slop-word-item'>bioluminescent</span> <span class='slop-word-item'>chronos</span> <span class='slop-word-item'>stammered</span> <span class='slop-word-item'>valerius</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>tiber</span> <span class='slop-word-item'>alistair</span> <span class='slop-word-item'>grunted</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>hemlock</span> <span class='slop-word-item'>unreadable</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>imperceptible</span> <span class='slop-word-item'>trembling</span> <span class='slop-word-item'>thorne</span> <span class='slop-word-item'>elias</span> <span class='slop-word-item'>unsettling</span> <span class='slop-word-item'>flicker</span> <span class='slop-word-item'>impassive</span> <span class='slop-word-item'>unwavering</span> <span class='slop-word-item'>raspy</span> <span class='slop-word-item'>luminescence</span> <span class='slop-word-item'>furrowed</span> <span class='slop-word-item'>retorted</span> <span class='slop-word-item'>shuddered</span> <span class='slop-word-item'>scoffed</span> <span class='slop-word-item'>poring</span> <span class='slop-word-item'>contorted</span> <span class='slop-word-item'>glanced</span> <span class='slop-word-item'>gaze</span> <span class='slop-word-item'>blackwood</span> <span class='slop-word-item'>scrolled</span> <span class='slop-word-item'>gravelly</span> <span class='slop-word-item'>hulking</span> <span class='slop-word-item'>pulsing</span> <span class='slop-word-item'>lunged</span> <span class='slop-word-item'>paused</span> <span class='slop-word-item'>meticulously</span> <span class='slop-word-item'>knelt</span> <span class='slop-word-item'>pulsed</span> <span class='slop-word-item'>chuckled</span> <span class='slop-word-item'>stared</span> <span class='slop-word-item'>clutching</span>
@@ -100,6 +154,15 @@ const slopData = `##### deepseek-ai/DeepSeek-V3-0324
 </div>
 
 ##### gpt-4o-mini
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.826)</div>
+<div class='slop-similar'>google/gemma-3-27b-it (distance=0.845)</div>
+<div class='slop-similar'>google/gemma-3-4b-it (distance=0.891)</div>
+<div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.895)</div>
+<div class='slop-similar'>qwen/qwq-32b (distance=0.906)</div>
+</div>
+
 <h4>Top Repetitive Words</h4>
 <div class='slop-section-items'>
 <span class='slop-word-item'>furrowing</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>mira</span> <span class='slop-word-item'>steeling</span> <span class='slop-word-item'>twinkled</span> <span class='slop-word-item'>mara</span> <span class='slop-word-item'>furrowed</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>flicker</span> <span class='slop-word-item'>nodded</span> <span class='slop-word-item'>glancing</span> <span class='slop-word-item'>loomed</span> <span class='slop-word-item'>coursing</span> <span class='slop-word-item'>busied</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>chimed</span> <span class='slop-word-item'>interjected</span> <span class='slop-word-item'>exclaimed</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>exhilaration</span> <span class='slop-word-item'>squinted</span> <span class='slop-word-item'>steadying</span> <span class='slop-word-item'>gnawed</span> <span class='slop-word-item'>underbrush</span> <span class='slop-word-item'>lingered</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>lacing</span> <span class='slop-word-item'>clara</span> <span class='slop-word-item'>glanced</span> <span class='slop-word-item'>sparkled</span> <span class='slop-word-item'>rippled</span> <span class='slop-word-item'>darted</span> <span class='slop-word-item'>tousled</span> <span class='slop-word-item'>muttered</span> <span class='slop-word-item'>flickering</span> <span class='slop-word-item'>coursed</span> <span class='slop-word-item'>dappled</span> <span class='slop-word-item'>echoed</span> <span class='slop-word-item'>igniting</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>glances</span> <span class='slop-word-item'>gesturing</span> <span class='slop-word-item'>leaned</span> <span class='slop-word-item'>softening</span> <span class='slop-word-item'>surged</span> <span class='slop-word-item'>raced</span> <span class='slop-word-item'>ominously</span> <span class='slop-word-item'>palpable</span> <span class='slop-word-item'>gaze</span>
@@ -114,6 +177,15 @@ const slopData = `##### deepseek-ai/DeepSeek-V3-0324
 </div>
 
 ##### gemini-2.0-flash-001
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>google/gemma-3-27b-it (distance=0.714)</div>
+<div class='slop-similar'>google/gemma-3-4b-it (distance=0.803)</div>
+<div class='slop-similar'>gpt-4o-mini (distance=0.826)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.863)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.883)</div>
+</div>
+
 <h4>Top Repetitive Words</h4>
 <div class='slop-section-items'>
 <span class='slop-word-item'>elara</span> <span class='slop-word-item'>omnicorp</span> <span class='slop-word-item'>rostova</span> <span class='slop-word-item'>aris</span> <span class='slop-word-item'>bioluminescent</span> <span class='slop-word-item'>shimmered</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>stammered</span> <span class='slop-word-item'>glinting</span> <span class='slop-word-item'>thorne</span> <span class='slop-word-item'>flinched</span> <span class='slop-word-item'>trembling</span> <span class='slop-word-item'>unreadable</span> <span class='slop-word-item'>contorted</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>sighed</span> <span class='slop-word-item'>darting</span> <span class='slop-word-item'>poring</span> <span class='slop-word-item'>silhouetted</span> <span class='slop-word-item'>furrowed</span> <span class='slop-word-item'>ellie</span> <span class='slop-word-item'>gasped</span> <span class='slop-word-item'>scoffed</span> <span class='slop-word-item'>nodded</span> <span class='slop-word-item'>lunged</span> <span class='slop-word-item'>glanced</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>hissed</span> <span class='slop-word-item'>flicker</span> <span class='slop-word-item'>gesturing</span> <span class='slop-word-item'>shimmering</span> <span class='slop-word-item'>peered</span> <span class='slop-word-item'>hunched</span> <span class='slop-word-item'>whispered</span> <span class='slop-word-item'>flickering</span> <span class='slop-word-item'>glint</span> <span class='slop-word-item'>clutched</span> <span class='slop-word-item'>unwavering</span> <span class='slop-word-item'>groaned</span> <span class='slop-word-item'>glared</span> <span class='slop-word-item'>etched</span> <span class='slop-word-item'>hoarse</span> <span class='slop-word-item'>whisper</span> <span class='slop-word-item'>pulsating</span> <span class='slop-word-item'>dimly</span> <span class='slop-word-item'>unsettling</span> <span class='slop-word-item'>pounding</span> <span class='slop-word-item'>clung</span>
@@ -128,6 +200,15 @@ const slopData = `##### deepseek-ai/DeepSeek-V3-0324
 </div>
 
 ##### RekaAI/reka-flash-3
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>deepseek-ai/DeepSeek-R1 (distance=0.712)</div>
+<div class='slop-similar'>qwen/qwq-32b (distance=0.723)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.772)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.838)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.886)</div>
+</div>
+
 <h4>Top Repetitive Words</h4>
 <div class='slop-section-items'>
 <span class='slop-word-item'>veyra</span> <span class='slop-word-item'>kael</span> <span class='slop-word-item'>rasped</span> <span class='slop-word-item'>glinted</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>glinting</span> <span class='slop-word-item'>bioluminescent</span> <span class='slop-word-item'>hissed</span> <span class='slop-word-item'>lunged</span> <span class='slop-word-item'>ember</span> <span class='slop-word-item'>reeked</span> <span class='slop-word-item'>hummed</span> <span class='slop-word-item'>floorboard</span> <span class='slop-word-item'>keycard</span> <span class='slop-word-item'>slithered</span> <span class='slop-word-item'>twitched</span> <span class='slop-word-item'>throbbed</span> <span class='slop-word-item'>silas</span> <span class='slop-word-item'>glowed</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>voss</span> <span class='slop-word-item'>muttered</span> <span class='slop-word-item'>mara</span> <span class='slop-word-item'>trembled</span> <span class='slop-word-item'>tendrils</span> <span class='slop-word-item'>croaked</span> <span class='slop-word-item'>blared</span> <span class='slop-word-item'>clattered</span> <span class='slop-word-item'>smirked</span> <span class='slop-word-item'>lena</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>shuddered</span> <span class='slop-word-item'>cybernetic</span> <span class='slop-word-item'>recoiled</span> <span class='slop-word-item'>pried</span> <span class='slop-word-item'>purred</span> <span class='slop-word-item'>viewport</span> <span class='slop-word-item'>lurched</span> <span class='slop-word-item'>squinted</span> <span class='slop-word-item'>clutched</span> <span class='slop-word-item'>crouched</span> <span class='slop-word-item'>rusted</span> <span class='slop-word-item'>howled</span> <span class='slop-word-item'>intoned</span> <span class='slop-word-item'>pulsed</span> <span class='slop-word-item'>snarled</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>buzzed</span> <span class='slop-word-item'>scrawled</span>
@@ -142,6 +223,15 @@ const slopData = `##### deepseek-ai/DeepSeek-V3-0324
 </div>
 
 ##### google/gemma-3-4b-it
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>google/gemma-3-27b-it (distance=0.753)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.803)</div>
+<div class='slop-similar'>gpt-4o-mini (distance=0.891)</div>
+<div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.909)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.920)</div>
+</div>
+
 <h4>Top Repetitive Words</h4>
 <div class='slop-section-items'>
 <span class='slop-word-item'>seraphina</span> <span class='slop-word-item'>blackwoods</span> <span class='slop-word-item'>blackwood</span> <span class='slop-word-item'>silas</span> <span class='slop-word-item'>shimmered</span> <span class='slop-word-item'>chillingly</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>imperceptible</span> <span class='slop-word-item'>recoiled</span> <span class='slop-word-item'>bioluminescence</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>elias</span> <span class='slop-word-item'>unsettling</span> <span class='slop-word-item'>yellowed</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>dampness</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>mournful</span> <span class='slop-word-item'>slicked</span> <span class='slop-word-item'>meticulously</span> <span class='slop-word-item'>poring</span> <span class='slop-word-item'>flicker</span> <span class='slop-word-item'>thorne</span> <span class='slop-word-item'>intricately</span> <span class='slop-word-item'>pulsed</span> <span class='slop-word-item'>amplifying</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>obsidian</span> <span class='slop-word-item'>laced</span> <span class='slop-word-item'>resonating</span> <span class='slop-word-item'>radiating</span> <span class='slop-word-item'>unwavering</span> <span class='slop-word-item'>crate</span> <span class='slop-word-item'>melancholic</span> <span class='slop-word-item'>swirling</span> <span class='slop-word-item'>malevolent</span> <span class='slop-word-item'>fragmented</span> <span class='slop-word-item'>decaying</span> <span class='slop-word-item'>muttered</span> <span class='slop-word-item'>unreadable</span> <span class='slop-word-item'>fleeting</span> <span class='slop-word-item'>palpable</span> <span class='slop-word-item'>shimmering</span> <span class='slop-word-item'>streaked</span> <span class='slop-word-item'>lingered</span> <span class='slop-word-item'>gesturing</span> <span class='slop-word-item'>clung</span> <span class='slop-word-item'>chilling</span> <span class='slop-word-item'>insistent</span> <span class='slop-word-item'>etched</span>
@@ -284,7 +374,7 @@ function loadLeaderboardData() {
       const lengthNum = parseInt(avgChapterLength, 10);
       const vocabNumRaw = parseFloat(vocabComplexity); // Keep for potential future use
       const slopNum = (parseFloat(slopScore) / 10.0) / 7.2 * 10; // Keep slop calc consistent
-      const repetitionScoreNum = parseInt(repetitionScore, 10);
+      const repetitionScoreNum = parseFloat(repetitionScore, 10);
 
       // Calculate percentage for the score bar
       const scoreRelativeToBaseline = scoreNum - baselineScore;
@@ -343,7 +433,7 @@ function loadLeaderboardData() {
 
     <td class="mobile-collapsible" data-order="${repetitionScoreNum}">
       <div class="cell-content">
-        ${isNaN(repetitionScoreNum) ? '-' : repetitionScoreNum}
+        ${isNaN(repetitionScoreNum) ? '-' : repetitionScoreNum.toFixed(1)}
       </div>
     </td>
 
