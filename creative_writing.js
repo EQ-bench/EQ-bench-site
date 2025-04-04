@@ -42,12 +42,12 @@ meta-llama/llama-3.2-1b-instruct,200.0,7.44,5290,38.32,61.12,27.21`;
 
 const slopData = `##### deepseek-ai/DeepSeek-R1
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/deepseek-ai__DeepSeek-R1__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/deepseek-ai__DeepSeek-R1__phylo_tree_combined_circular.png' alt='Circular dendrogram for deepseek-ai/DeepSeek-R1' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/deepseek-ai__DeepSeek-R1__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/deepseek-ai__DeepSeek-R1__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for deepseek-ai/DeepSeek-R1' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/deepseek-ai__DeepSeek-R1__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/deepseek-ai__DeepSeek-R1__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for deepseek-ai/DeepSeek-R1' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/deepseek-ai__DeepSeek-R1__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/deepseek-ai__DeepSeek-R1__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for deepseek-ai/DeepSeek-R1' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -76,12 +76,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### chatgpt-4o-latest-2025-03-27
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/chatgpt-4o-latest-2025-03-27__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/chatgpt-4o-latest-2025-03-27__phylo_tree_combined_circular.png' alt='Circular dendrogram for chatgpt-4o-latest-2025-03-27' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/chatgpt-4o-latest-2025-03-27__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/chatgpt-4o-latest-2025-03-27__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for chatgpt-4o-latest-2025-03-27' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/chatgpt-4o-latest-2025-03-27__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/chatgpt-4o-latest-2025-03-27__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for chatgpt-4o-latest-2025-03-27' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/chatgpt-4o-latest-2025-03-27__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/chatgpt-4o-latest-2025-03-27__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for chatgpt-4o-latest-2025-03-27' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -110,12 +110,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### deepseek-ai/DeepSeek-V3-0324
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/deepseek-ai__DeepSeek-V3-0324__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/deepseek-ai__DeepSeek-V3-0324__phylo_tree_combined_circular.png' alt='Circular dendrogram for deepseek-ai/DeepSeek-V3-0324' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/deepseek-ai__DeepSeek-V3-0324__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/deepseek-ai__DeepSeek-V3-0324__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for deepseek-ai/DeepSeek-V3-0324' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/deepseek-ai__DeepSeek-V3-0324__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/deepseek-ai__DeepSeek-V3-0324__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for deepseek-ai/DeepSeek-V3-0324' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/deepseek-ai__DeepSeek-V3-0324__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/deepseek-ai__DeepSeek-V3-0324__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for deepseek-ai/DeepSeek-V3-0324' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -144,12 +144,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### gemini-2.5-pro-exp-03-25
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/gemini-2.5-pro-exp-03-25__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/gemini-2.5-pro-exp-03-25__phylo_tree_combined_circular.png' alt='Circular dendrogram for gemini-2.5-pro-exp-03-25' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/gemini-2.5-pro-exp-03-25__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/gemini-2.5-pro-exp-03-25__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for gemini-2.5-pro-exp-03-25' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/gemini-2.5-pro-exp-03-25__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/gemini-2.5-pro-exp-03-25__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for gemini-2.5-pro-exp-03-25' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/gemini-2.5-pro-exp-03-25__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/gemini-2.5-pro-exp-03-25__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for gemini-2.5-pro-exp-03-25' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -178,12 +178,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### claude-3-5-sonnet-20241022
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/claude-3-5-sonnet-20241022__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/claude-3-5-sonnet-20241022__phylo_tree_combined_circular.png' alt='Circular dendrogram for claude-3-5-sonnet-20241022' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/claude-3-5-sonnet-20241022__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/claude-3-5-sonnet-20241022__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for claude-3-5-sonnet-20241022' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/claude-3-5-sonnet-20241022__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/claude-3-5-sonnet-20241022__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for claude-3-5-sonnet-20241022' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/claude-3-5-sonnet-20241022__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/claude-3-5-sonnet-20241022__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for claude-3-5-sonnet-20241022' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -212,12 +212,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### chatgpt-4o-latest-2025-01-29
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/chatgpt-4o-latest-2025-01-29__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/chatgpt-4o-latest-2025-01-29__phylo_tree_combined_circular.png' alt='Circular dendrogram for chatgpt-4o-latest-2025-01-29' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/chatgpt-4o-latest-2025-01-29__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/chatgpt-4o-latest-2025-01-29__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for chatgpt-4o-latest-2025-01-29' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/chatgpt-4o-latest-2025-01-29__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/chatgpt-4o-latest-2025-01-29__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for chatgpt-4o-latest-2025-01-29' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/chatgpt-4o-latest-2025-01-29__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/chatgpt-4o-latest-2025-01-29__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for chatgpt-4o-latest-2025-01-29' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -246,12 +246,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### openrouter/quasar-alpha
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/openrouter__quasar-alpha__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/openrouter__quasar-alpha__phylo_tree_combined_circular.png' alt='Circular dendrogram for openrouter/quasar-alpha' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/openrouter__quasar-alpha__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/openrouter__quasar-alpha__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for openrouter/quasar-alpha' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/openrouter__quasar-alpha__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/openrouter__quasar-alpha__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for openrouter/quasar-alpha' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/openrouter__quasar-alpha__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/openrouter__quasar-alpha__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for openrouter/quasar-alpha' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -280,12 +280,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### RekaAI/reka-flash-3
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/RekaAI__reka-flash-3__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/RekaAI__reka-flash-3__phylo_tree_combined_circular.png' alt='Circular dendrogram for RekaAI/reka-flash-3' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/RekaAI__reka-flash-3__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/RekaAI__reka-flash-3__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for RekaAI/reka-flash-3' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/RekaAI__reka-flash-3__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/RekaAI__reka-flash-3__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for RekaAI/reka-flash-3' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/RekaAI__reka-flash-3__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/RekaAI__reka-flash-3__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for RekaAI/reka-flash-3' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -314,12 +314,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### qwen/qwq-32b
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/qwen__qwq-32b__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/qwen__qwq-32b__phylo_tree_combined_circular.png' alt='Circular dendrogram for qwen/qwq-32b' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/qwen__qwq-32b__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/qwen__qwq-32b__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for qwen/qwq-32b' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/qwen__qwq-32b__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/qwen__qwq-32b__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for qwen/qwq-32b' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/qwen__qwq-32b__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/qwen__qwq-32b__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for qwen/qwq-32b' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -348,12 +348,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### claude-3-7-sonnet-20250219
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/claude-3-7-sonnet-20250219__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/claude-3-7-sonnet-20250219__phylo_tree_combined_circular.png' alt='Circular dendrogram for claude-3-7-sonnet-20250219' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/claude-3-7-sonnet-20250219__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/claude-3-7-sonnet-20250219__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for claude-3-7-sonnet-20250219' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/claude-3-7-sonnet-20250219__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/claude-3-7-sonnet-20250219__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for claude-3-7-sonnet-20250219' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/claude-3-7-sonnet-20250219__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/claude-3-7-sonnet-20250219__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for claude-3-7-sonnet-20250219' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -382,12 +382,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### google/gemma-3-27b-it
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/google__gemma-3-27b-it__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/google__gemma-3-27b-it__phylo_tree_combined_circular.png' alt='Circular dendrogram for google/gemma-3-27b-it' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/google__gemma-3-27b-it__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/google__gemma-3-27b-it__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for google/gemma-3-27b-it' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/google__gemma-3-27b-it__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/google__gemma-3-27b-it__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for google/gemma-3-27b-it' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/google__gemma-3-27b-it__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/google__gemma-3-27b-it__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for google/gemma-3-27b-it' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -398,7 +398,7 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 <div class='slop-similar'>google/gemma-3-12b-it (distance=0.689)</div>
 <div class='slop-similar'>google/gemma-3-4b-it (distance=0.715)</div>
 <div class='slop-similar'>gemini-2.0-flash-001 (distance=0.717)</div>
-<div class='slop-similar'>google/gemma-3-4b-it:free (distance=0.719)</div>
+<div class='slop-similar'>gemini-2.5-pro-exp-03-25 (distance=0.778)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -416,12 +416,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### gpt-4.5-preview
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/gpt-4.5-preview__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/gpt-4.5-preview__phylo_tree_combined_circular.png' alt='Circular dendrogram for gpt-4.5-preview' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/gpt-4.5-preview__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/gpt-4.5-preview__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for gpt-4.5-preview' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/gpt-4.5-preview__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/gpt-4.5-preview__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for gpt-4.5-preview' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/gpt-4.5-preview__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/gpt-4.5-preview__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for gpt-4.5-preview' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -450,12 +450,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### CohereForAI/c4ai-command-a-03-2025
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/CohereForAI__c4ai-command-a-03-2025__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/CohereForAI__c4ai-command-a-03-2025__phylo_tree_combined_circular.png' alt='Circular dendrogram for CohereForAI/c4ai-command-a-03-2025' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/CohereForAI__c4ai-command-a-03-2025__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/CohereForAI__c4ai-command-a-03-2025__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for CohereForAI/c4ai-command-a-03-2025' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/CohereForAI__c4ai-command-a-03-2025__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/CohereForAI__c4ai-command-a-03-2025__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for CohereForAI/c4ai-command-a-03-2025' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/CohereForAI__c4ai-command-a-03-2025__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/CohereForAI__c4ai-command-a-03-2025__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for CohereForAI/c4ai-command-a-03-2025' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -484,12 +484,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### anthropic/claude-3.5-haiku-20241022
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/anthropic__claude-3.5-haiku-20241022__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/anthropic__claude-3.5-haiku-20241022__phylo_tree_combined_circular.png' alt='Circular dendrogram for anthropic/claude-3.5-haiku-20241022' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/anthropic__claude-3.5-haiku-20241022__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/anthropic__claude-3.5-haiku-20241022__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for anthropic/claude-3.5-haiku-20241022' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/anthropic__claude-3.5-haiku-20241022__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/anthropic__claude-3.5-haiku-20241022__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for anthropic/claude-3.5-haiku-20241022' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/anthropic__claude-3.5-haiku-20241022__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/anthropic__claude-3.5-haiku-20241022__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for anthropic/claude-3.5-haiku-20241022' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -518,12 +518,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### google/gemma-3-12b-it
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/google__gemma-3-12b-it__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/google__gemma-3-12b-it__phylo_tree_combined_circular.png' alt='Circular dendrogram for google/gemma-3-12b-it' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/google__gemma-3-12b-it__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/google__gemma-3-12b-it__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for google/gemma-3-12b-it' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/google__gemma-3-12b-it__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/google__gemma-3-12b-it__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for google/gemma-3-12b-it' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/google__gemma-3-12b-it__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/google__gemma-3-12b-it__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for google/gemma-3-12b-it' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -533,8 +533,8 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 <div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.625)</div>
 <div class='slop-similar'>google/gemma-3-27b-it (distance=0.689)</div>
 <div class='slop-similar'>google/gemma-3-4b-it (distance=0.689)</div>
-<div class='slop-similar'>google/gemma-3-4b-it:free (distance=0.696)</div>
 <div class='slop-similar'>gemini-2.0-flash-001 (distance=0.712)</div>
+<div class='slop-similar'>gemini-2.5-pro-exp-03-25 (distance=0.767)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -552,12 +552,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### sam-paech/Darkest-muse-v1
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/sam-paech__Darkest-muse-v1__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/sam-paech__Darkest-muse-v1__phylo_tree_combined_circular.png' alt='Circular dendrogram for sam-paech/Darkest-muse-v1' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/sam-paech__Darkest-muse-v1__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/sam-paech__Darkest-muse-v1__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for sam-paech/Darkest-muse-v1' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/sam-paech__Darkest-muse-v1__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/sam-paech__Darkest-muse-v1__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for sam-paech/Darkest-muse-v1' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/sam-paech__Darkest-muse-v1__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/sam-paech__Darkest-muse-v1__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for sam-paech/Darkest-muse-v1' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -586,12 +586,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### gemini-2.0-flash-001
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/gemini-2.0-flash-001__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/gemini-2.0-flash-001__phylo_tree_combined_circular.png' alt='Circular dendrogram for gemini-2.0-flash-001' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/gemini-2.0-flash-001__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/gemini-2.0-flash-001__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for gemini-2.0-flash-001' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/gemini-2.0-flash-001__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/gemini-2.0-flash-001__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for gemini-2.0-flash-001' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/gemini-2.0-flash-001__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/gemini-2.0-flash-001__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for gemini-2.0-flash-001' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -620,12 +620,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### allura-org/Gemma-3-Glitter-12B
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/allura-org__Gemma-3-Glitter-12B__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/allura-org__Gemma-3-Glitter-12B__phylo_tree_combined_circular.png' alt='Circular dendrogram for allura-org/Gemma-3-Glitter-12B' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/allura-org__Gemma-3-Glitter-12B__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/allura-org__Gemma-3-Glitter-12B__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for allura-org/Gemma-3-Glitter-12B' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/allura-org__Gemma-3-Glitter-12B__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/allura-org__Gemma-3-Glitter-12B__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for allura-org/Gemma-3-Glitter-12B' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/allura-org__Gemma-3-Glitter-12B__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/allura-org__Gemma-3-Glitter-12B__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for allura-org/Gemma-3-Glitter-12B' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -636,7 +636,7 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 <div class='slop-similar'>google/gemma-3-27b-it (distance=0.688)</div>
 <div class='slop-similar'>google/gemma-3-4b-it (distance=0.702)</div>
 <div class='slop-similar'>gemini-2.0-flash-001 (distance=0.703)</div>
-<div class='slop-similar'>google/gemma-3-4b-it:free (distance=0.724)</div>
+<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.734)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -654,23 +654,23 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### google/gemma-3-4b-it
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/google__gemma-3-4b-it__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/google__gemma-3-4b-it__phylo_tree_combined_circular.png' alt='Circular dendrogram for google/gemma-3-4b-it' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/google__gemma-3-4b-it__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/google__gemma-3-4b-it__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for google/gemma-3-4b-it' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/google__gemma-3-4b-it__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/google__gemma-3-4b-it__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for google/gemma-3-4b-it' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/google__gemma-3-4b-it__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/google__gemma-3-4b-it__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for google/gemma-3-4b-it' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>google/gemma-3-4b-it:free (distance=0.613)</div>
 <div class='slop-similar'>google/gemma-3-12b-it (distance=0.689)</div>
 <div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.702)</div>
 <div class='slop-similar'>google/gemma-3-27b-it (distance=0.715)</div>
 <div class='slop-similar'>gemini-2.0-flash-001 (distance=0.768)</div>
+<div class='slop-similar'>gemini-2.5-pro-exp-03-25 (distance=0.785)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -688,12 +688,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### ifable/gemma-2-Ifable-9B
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/ifable__gemma-2-Ifable-9B__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/ifable__gemma-2-Ifable-9B__phylo_tree_combined_circular.png' alt='Circular dendrogram for ifable/gemma-2-Ifable-9B' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/ifable__gemma-2-Ifable-9B__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/ifable__gemma-2-Ifable-9B__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for ifable/gemma-2-Ifable-9B' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/ifable__gemma-2-Ifable-9B__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/ifable__gemma-2-Ifable-9B__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for ifable/gemma-2-Ifable-9B' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/ifable__gemma-2-Ifable-9B__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/ifable__gemma-2-Ifable-9B__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for ifable/gemma-2-Ifable-9B' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -722,12 +722,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### mistralai/mistral-large-2411
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/mistralai__mistral-large-2411__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/mistralai__mistral-large-2411__phylo_tree_combined_circular.png' alt='Circular dendrogram for mistralai/mistral-large-2411' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/mistralai__mistral-large-2411__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/mistralai__mistral-large-2411__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for mistralai/mistral-large-2411' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/mistralai__mistral-large-2411__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/mistralai__mistral-large-2411__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for mistralai/mistral-large-2411' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/mistralai__mistral-large-2411__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/mistralai__mistral-large-2411__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for mistralai/mistral-large-2411' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -756,12 +756,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### ToastyPigeon/Gemma-3-Starshine-12B
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/ToastyPigeon__Gemma-3-Starshine-12B__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/ToastyPigeon__Gemma-3-Starshine-12B__phylo_tree_combined_circular.png' alt='Circular dendrogram for ToastyPigeon/Gemma-3-Starshine-12B' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/ToastyPigeon__Gemma-3-Starshine-12B__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/ToastyPigeon__Gemma-3-Starshine-12B__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for ToastyPigeon/Gemma-3-Starshine-12B' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/ToastyPigeon__Gemma-3-Starshine-12B__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/ToastyPigeon__Gemma-3-Starshine-12B__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for ToastyPigeon/Gemma-3-Starshine-12B' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/ToastyPigeon__Gemma-3-Starshine-12B__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/ToastyPigeon__Gemma-3-Starshine-12B__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for ToastyPigeon/Gemma-3-Starshine-12B' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -790,12 +790,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### mistralai/Mistral-Nemo-Instruct-2407
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/mistralai__Mistral-Nemo-Instruct-2407__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/mistralai__Mistral-Nemo-Instruct-2407__phylo_tree_combined_circular.png' alt='Circular dendrogram for mistralai/Mistral-Nemo-Instruct-2407' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/mistralai__Mistral-Nemo-Instruct-2407__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/mistralai__Mistral-Nemo-Instruct-2407__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for mistralai/Mistral-Nemo-Instruct-2407' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/mistralai__Mistral-Nemo-Instruct-2407__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/mistralai__Mistral-Nemo-Instruct-2407__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for mistralai/Mistral-Nemo-Instruct-2407' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/mistralai__Mistral-Nemo-Instruct-2407__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/mistralai__Mistral-Nemo-Instruct-2407__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for mistralai/Mistral-Nemo-Instruct-2407' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -824,12 +824,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### gpt-4o-mini
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/gpt-4o-mini__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/gpt-4o-mini__phylo_tree_combined_circular.png' alt='Circular dendrogram for gpt-4o-mini' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/gpt-4o-mini__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/gpt-4o-mini__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for gpt-4o-mini' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/gpt-4o-mini__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/gpt-4o-mini__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for gpt-4o-mini' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/gpt-4o-mini__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/gpt-4o-mini__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for gpt-4o-mini' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -858,12 +858,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### meta-llama/llama-3.1-405b-instruct
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.1-405b-instruct__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.1-405b-instruct__phylo_tree_combined_circular.png' alt='Circular dendrogram for meta-llama/llama-3.1-405b-instruct' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.1-405b-instruct__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.1-405b-instruct__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for meta-llama/llama-3.1-405b-instruct' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.1-405b-instruct__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.1-405b-instruct__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for meta-llama/llama-3.1-405b-instruct' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.1-405b-instruct__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.1-405b-instruct__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for meta-llama/llama-3.1-405b-instruct' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -892,12 +892,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### google/gemma-2-9b-it
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/google__gemma-2-9b-it__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/google__gemma-2-9b-it__phylo_tree_combined_circular.png' alt='Circular dendrogram for google/gemma-2-9b-it' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/google__gemma-2-9b-it__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/google__gemma-2-9b-it__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for google/gemma-2-9b-it' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/google__gemma-2-9b-it__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/google__gemma-2-9b-it__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for google/gemma-2-9b-it' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/google__gemma-2-9b-it__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/google__gemma-2-9b-it__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for google/gemma-2-9b-it' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -926,12 +926,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### liquid/lfm-7b
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/liquid__lfm-7b__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/liquid__lfm-7b__phylo_tree_combined_circular.png' alt='Circular dendrogram for liquid/lfm-7b' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/liquid__lfm-7b__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/liquid__lfm-7b__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for liquid/lfm-7b' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/liquid__lfm-7b__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/liquid__lfm-7b__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for liquid/lfm-7b' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/liquid__lfm-7b__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/liquid__lfm-7b__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for liquid/lfm-7b' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -960,12 +960,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### openai/gpt-4-0314
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/openai__gpt-4-0314__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/openai__gpt-4-0314__phylo_tree_combined_circular.png' alt='Circular dendrogram for openai/gpt-4-0314' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/openai__gpt-4-0314__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/openai__gpt-4-0314__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for openai/gpt-4-0314' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/openai__gpt-4-0314__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/openai__gpt-4-0314__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for openai/gpt-4-0314' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/openai__gpt-4-0314__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/openai__gpt-4-0314__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for openai/gpt-4-0314' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -994,12 +994,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### meta-llama/llama-3.1-70b-instruct
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.1-70b-instruct__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.1-70b-instruct__phylo_tree_combined_circular.png' alt='Circular dendrogram for meta-llama/llama-3.1-70b-instruct' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.1-70b-instruct__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.1-70b-instruct__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for meta-llama/llama-3.1-70b-instruct' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.1-70b-instruct__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.1-70b-instruct__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for meta-llama/llama-3.1-70b-instruct' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.1-70b-instruct__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.1-70b-instruct__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for meta-llama/llama-3.1-70b-instruct' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -1028,12 +1028,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### mistralai/mistral-small-3.1-24b-instruct-2503
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/mistralai__mistral-small-3.1-24b-instruct-2503__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/mistralai__mistral-small-3.1-24b-instruct-2503__phylo_tree_combined_circular.png' alt='Circular dendrogram for mistralai/mistral-small-3.1-24b-instruct-2503' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/mistralai__mistral-small-3.1-24b-instruct-2503__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/mistralai__mistral-small-3.1-24b-instruct-2503__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for mistralai/mistral-small-3.1-24b-instruct-2503' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/mistralai__mistral-small-3.1-24b-instruct-2503__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/mistralai__mistral-small-3.1-24b-instruct-2503__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for mistralai/mistral-small-3.1-24b-instruct-2503' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/mistralai__mistral-small-3.1-24b-instruct-2503__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/mistralai__mistral-small-3.1-24b-instruct-2503__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for mistralai/mistral-small-3.1-24b-instruct-2503' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -1062,12 +1062,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### mistralai/Mistral-Small-24B-Instruct-2501
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/mistralai__Mistral-Small-24B-Instruct-2501__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/mistralai__Mistral-Small-24B-Instruct-2501__phylo_tree_combined_circular.png' alt='Circular dendrogram for mistralai/Mistral-Small-24B-Instruct-2501' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/mistralai__Mistral-Small-24B-Instruct-2501__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/mistralai__Mistral-Small-24B-Instruct-2501__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for mistralai/Mistral-Small-24B-Instruct-2501' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/mistralai__Mistral-Small-24B-Instruct-2501__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/mistralai__Mistral-Small-24B-Instruct-2501__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for mistralai/Mistral-Small-24B-Instruct-2501' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/mistralai__Mistral-Small-24B-Instruct-2501__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/mistralai__Mistral-Small-24B-Instruct-2501__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for mistralai/Mistral-Small-24B-Instruct-2501' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -1096,12 +1096,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### meta-llama/llama-3.1-8b-instruct
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.1-8b-instruct__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.1-8b-instruct__phylo_tree_combined_circular.png' alt='Circular dendrogram for meta-llama/llama-3.1-8b-instruct' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.1-8b-instruct__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.1-8b-instruct__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for meta-llama/llama-3.1-8b-instruct' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.1-8b-instruct__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.1-8b-instruct__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for meta-llama/llama-3.1-8b-instruct' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.1-8b-instruct__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.1-8b-instruct__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for meta-llama/llama-3.1-8b-instruct' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -1130,12 +1130,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### anthropic/claude-3-haiku
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/anthropic__claude-3-haiku__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/anthropic__claude-3-haiku__phylo_tree_combined_circular.png' alt='Circular dendrogram for anthropic/claude-3-haiku' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/anthropic__claude-3-haiku__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/anthropic__claude-3-haiku__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for anthropic/claude-3-haiku' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/anthropic__claude-3-haiku__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/anthropic__claude-3-haiku__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for anthropic/claude-3-haiku' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/anthropic__claude-3-haiku__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/anthropic__claude-3-haiku__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for anthropic/claude-3-haiku' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -1164,12 +1164,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### meta-llama/llama-3.2-3b-instruct
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.2-3b-instruct__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.2-3b-instruct__phylo_tree_combined_circular.png' alt='Circular dendrogram for meta-llama/llama-3.2-3b-instruct' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.2-3b-instruct__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.2-3b-instruct__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for meta-llama/llama-3.2-3b-instruct' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.2-3b-instruct__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.2-3b-instruct__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for meta-llama/llama-3.2-3b-instruct' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.2-3b-instruct__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.2-3b-instruct__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for meta-llama/llama-3.2-3b-instruct' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -1198,12 +1198,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### openai/gpt-3.5-turbo-0613
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/openai__gpt-3.5-turbo-0613__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/openai__gpt-3.5-turbo-0613__phylo_tree_combined_circular.png' alt='Circular dendrogram for openai/gpt-3.5-turbo-0613' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/openai__gpt-3.5-turbo-0613__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/openai__gpt-3.5-turbo-0613__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for openai/gpt-3.5-turbo-0613' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/openai__gpt-3.5-turbo-0613__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/openai__gpt-3.5-turbo-0613__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for openai/gpt-3.5-turbo-0613' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/openai__gpt-3.5-turbo-0613__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/openai__gpt-3.5-turbo-0613__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for openai/gpt-3.5-turbo-0613' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -1232,12 +1232,12 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 ##### meta-llama/llama-3.2-1b-instruct
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.2-1b-instruct__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.2-1b-instruct__phylo_tree_combined_circular.png' alt='Circular dendrogram for meta-llama/llama-3.2-1b-instruct' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.2-1b-instruct__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.2-1b-instruct__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for meta-llama/llama-3.2-1b-instruct' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.2-1b-instruct__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.2-1b-instruct__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for meta-llama/llama-3.2-1b-instruct' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.2-1b-instruct__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/meta-llama__llama-3.2-1b-instruct__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for meta-llama/llama-3.2-1b-instruct' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
@@ -1264,48 +1264,14 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 <span class='slop-ngram-item'>voice barely whisper (46)</span> <span class='slop-ngram-item'>narrowed mind racing (37)</span> <span class='slop-ngram-item'>eyes narrowed mind (35)</span> <span class='slop-ngram-item'>said voice low (34)</span> <span class='slop-ngram-item'>could shake feeling (34)</span> <span class='slop-ngram-item'>took deep breath (29)</span> <span class='slop-ngram-item'>shiver run spine (27)</span> <span class='slop-ngram-item'>felt shiver run (26)</span> <span class='slop-ngram-item'>take deep breath (25)</span> <span class='slop-ngram-item'>mind racing possibilities (24)</span> <span class='slop-ngram-item'>eyes locked onto (23)</span> <span class='slop-ngram-item'>eyes never leaving (23)</span> <span class='slop-ngram-item'>said voice barely (23)</span> <span class='slop-ngram-item'>eyes widened face (22)</span> <span class='slop-ngram-item'>make feel like (20)</span> <span class='slop-ngram-item'>heart pounding chest (20)</span> <span class='slop-ngram-item'>voice low husky (19)</span> <span class='slop-ngram-item'>said voice dripping (18)</span> <span class='slop-ngram-item'>smile grew wider (17)</span> <span class='slop-ngram-item'>eyes glinting amusement (17)</span> <span class='slop-ngram-item'>smile faltered moment (16)</span> <span class='slop-ngram-item'>eyes seemed bore (15)</span> <span class='slop-ngram-item'>grew wider eyes (15)</span> <span class='slop-ngram-item'>starting feel like (14)</span> <span class='slop-ngram-item'>try push thought (14)</span> <span class='slop-ngram-item'>trying sound casual (14)</span> <span class='slop-ngram-item'>could help feel (14)</span> <span class='slop-ngram-item'>casting eerie glow (13)</span> <span class='slop-ngram-item'>lurking beneath surface (12)</span> <span class='slop-ngram-item'>much longer keep (12)</span>
 </div>
 
-##### google/gemma-3-4b-it:free
-<div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/google__gemma-3-4b-it-free__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/google__gemma-3-4b-it-free__phylo_tree_combined_circular.png' alt='Circular dendrogram for google/gemma-3-4b-it:free' class='dendrogram-thumb circular-thumb' />
-    <span class='dendrogram-caption'>Circular View</span>
-  </a>
-  <a href='results/creative-writing-v3/charts/google__gemma-3-4b-it-free__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/google__gemma-3-4b-it-free__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for google/gemma-3-4b-it:free' class='dendrogram-thumb rect-thumb' />
-    <span class='dendrogram-caption'>Rectangular View</span>
-  </a>
-</div>
-
-<h4>Most Similar To:</h4>
-<div class='slop-similar-section'>
-<div class='slop-similar'>google/gemma-3-4b-it (distance=0.613)</div>
-<div class='slop-similar'>google/gemma-3-12b-it (distance=0.696)</div>
-<div class='slop-similar'>google/gemma-3-27b-it (distance=0.719)</div>
-<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.724)</div>
-<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.764)</div>
-</div>
-
-<h4>Top Repetitive Words</h4>
-<div class='slop-section-items'>
-<span class='slop-word-item'>xylos</span> <span class='slop-word-item'>elara</span> <span class='slop-word-item'>unsettlingly</span> <span class='slop-word-item'>unnervingly</span> <span class='slop-word-item'>shimmered</span> <span class='slop-word-item'>prickle</span> <span class='slop-word-item'>disconcertingly</span> <span class='slop-word-item'>chronos</span> <span class='slop-word-item'>imperceptible</span> <span class='slop-word-item'>kenji</span> <span class='slop-word-item'>grunted</span> <span class='slop-word-item'>unreadable</span> <span class='slop-word-item'>unsettling</span> <span class='slop-word-item'>valerius</span> <span class='slop-word-item'>impassive</span> <span class='slop-word-item'>chillingly</span> <span class='slop-word-item'>flicker</span> <span class='slop-word-item'>stammered</span> <span class='slop-word-item'>sputtered</span> <span class='slop-word-item'>insistent</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>mumbled</span> <span class='slop-word-item'>cloying</span> <span class='slop-word-item'>rasp</span> <span class='slop-word-item'>meticulously</span> <span class='slop-word-item'>obsidian</span> <span class='slop-word-item'>disconcerting</span> <span class='slop-word-item'>slicked</span> <span class='slop-word-item'>shimmering</span> <span class='slop-word-item'>silas</span> <span class='slop-word-item'>perceptible</span> <span class='slop-word-item'>retorts</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>cobblestones</span> <span class='slop-word-item'>lyra</span> <span class='slop-word-item'>radiating</span> <span class='slop-word-item'>mournful</span> <span class='slop-word-item'>intricately</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>gesturing</span> <span class='slop-word-item'>labyrinthine</span> <span class='slop-word-item'>pulsed</span> <span class='slop-word-item'>iridescent</span> <span class='slop-word-item'>subtly</span> <span class='slop-word-item'>dampness</span> <span class='slop-word-item'>instinctively</span> <span class='slop-word-item'>dissecting</span> <span class='slop-word-item'>sandalwood</span> <span class='slop-word-item'>impeccably</span>
-</div>
-<h4>Top Bigrams</h4>
-<div class='slop-section-items'>
-<span class='slop-ngram-item'>said voice (95)</span> <span class='slop-ngram-item'>voice low (55)</span> <span class='slop-ngram-item'>flicker something (40)</span> <span class='slop-ngram-item'>felt like (35)</span> <span class='slop-ngram-item'>carefully constructed (33)</span> <span class='slop-ngram-item'>says voice (29)</span> <span class='slop-ngram-item'>voice barely (27)</span> <span class='slop-ngram-item'>almost imperceptible (24)</span> <span class='slop-ngram-item'>something else (20)</span> <span class='slop-ngram-item'>playing lips (19)</span> <span class='slop-ngram-item'>smile playing (18)</span> <span class='slop-ngram-item'>something akin (18)</span> <span class='slop-ngram-item'>something vaguely (17)</span> <span class='slop-ngram-item'>voice softer (17)</span> <span class='slop-ngram-item'>barely whisper (17)</span> <span class='slop-ngram-item'>voice laced (16)</span> <span class='slop-ngram-item'>like trying (16)</span> <span class='slop-ngram-item'>asked voice (15)</span> <span class='slop-ngram-item'>look like (15)</span> <span class='slop-ngram-item'>low rumble (14)</span> <span class='slop-ngram-item'>know said (14)</span> <span class='slop-ngram-item'>chilling certainty (13)</span> <span class='slop-ngram-item'>long time (13)</span> <span class='slop-ngram-item'>first time (13)</span> <span class='slop-ngram-item'>something unreadable (13)</span> <span class='slop-ngram-item'>stark contrast (13)</span> <span class='slop-ngram-item'>subtle shift (13)</span> <span class='slop-ngram-item'>metallic tang (12)</span> <span class='slop-ngram-item'>rain continued (12)</span> <span class='slop-ngram-item'>continued fall (12)</span>
-</div>
-<h4>Top Trigrams</h4>
-<div class='slop-section-items'>
-<span class='slop-ngram-item'>said voice low (24)</span> <span class='slop-ngram-item'>smile playing lips (18)</span> <span class='slop-ngram-item'>voice barely whisper (17)</span> <span class='slop-ngram-item'>voice low rumble (13)</span> <span class='slop-ngram-item'>rain continued fall (12)</span> <span class='slop-ngram-item'>said voice barely (12)</span> <span class='slop-ngram-item'>flicker something unreadable (11)</span> <span class='slop-ngram-item'>voice barely audible (9)</span> <span class='slop-ngram-item'>something unreadable eyes (8)</span> <span class='slop-ngram-item'>small intricately carved (8)</span> <span class='slop-ngram-item'>voice devoid emotion (8)</span> <span class='slop-ngram-item'>flicker something akin (8)</span> <span class='slop-ngram-item'>something vaguely metallic (7)</span> <span class='slop-ngram-item'>knew chilling certainty (7)</span> <span class='slop-ngram-item'>something else something (7)</span> <span class='slop-ngram-item'>said voice softer (7)</span> <span class='slop-ngram-item'>carefully constructed facade (7)</span> <span class='slop-ngram-item'>hand instinctively moving (7)</span> <span class='slop-ngram-item'>tasting like ash (6)</span> <span class='slop-ngram-item'>continued fall washing (6)</span> <span class='slop-ngram-item'>small almost imperceptible (6)</span> <span class='slop-ngram-item'>air hung thick (6)</span> <span class='slop-ngram-item'>tiny almost imperceptible (6)</span> <span class='slop-ngram-item'>object class euclid (6)</span> <span class='slop-ngram-item'>class euclid special (6)</span> <span class='slop-ngram-item'>euclid special containment (6)</span> <span class='slop-ngram-item'>special containment procedures (6)</span> <span class='slop-ngram-item'>first time day (5)</span> <span class='slop-ngram-item'>small smile playing (5)</span> <span class='slop-ngram-item'>said voice little (5)</span>
-</div>
-
 ##### unsloth/gemma-3-12b-it
 <div class='dendrogram-thumbnails'>
-  <a href='results/creative-writing-v3/charts/unsloth__gemma-3-12b-it__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/unsloth__gemma-3-12b-it__phylo_tree_combined_circular.png' alt='Circular dendrogram for unsloth/gemma-3-12b-it' class='dendrogram-thumb circular-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/unsloth__gemma-3-12b-it__phylo_tree_parsimony_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/unsloth__gemma-3-12b-it__phylo_tree_parsimony_circular.png' alt='Circular dendrogram for unsloth/gemma-3-12b-it' class='dendrogram-thumb circular-thumb' />
     <span class='dendrogram-caption'>Circular View</span>
   </a>
-  <a href='results/creative-writing-v3/charts/unsloth__gemma-3-12b-it__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
-    <img src='results/creative-writing-v3/charts/unsloth__gemma-3-12b-it__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for unsloth/gemma-3-12b-it' class='dendrogram-thumb rect-thumb' />
+  <a href='results/creative-writing-v3/hybrid_parsimony/charts/unsloth__gemma-3-12b-it__phylo_tree_parsimony_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/hybrid_parsimony/charts/unsloth__gemma-3-12b-it__phylo_tree_parsimony_rectangular.png' alt='Rectangular dendrogram for unsloth/gemma-3-12b-it' class='dendrogram-thumb rect-thumb' />
     <span class='dendrogram-caption'>Rectangular View</span>
   </a>
 </div>
