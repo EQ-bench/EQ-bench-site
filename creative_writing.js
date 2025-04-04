@@ -2,50 +2,63 @@
 
 let leaderboardDataCreativeWritingV3 = `model_name,elo_score,creative_writing_score,avg_length,vocab_complexity,slop_score,repetition_score
 deepseek-ai/DeepSeek-R1,1500.0,17.17,5352,29.20,31.21,5.79
-chatgpt-4o-latest-2025-03-27,1393.1,17.15,5956,28.29,24.76,6.70
-deepseek-ai/DeepSeek-V3-0324,1387.5,16.44,4414,24.28,33.02,7.86
-gemini-2.5-pro-exp-03-25,1323.9,17.27,7886,41.00,35.06,6.30
-claude-3-5-sonnet-20241022,1302.1,16.04,4921,39.27,19.82,5.98
-chatgpt-4o-latest-2025-01-29,1297.9,16.57,5622,29.04,29.09,7.30
-RekaAI/reka-flash-3,1286.9,16.26,5225,29.53,37.81,7.01
-qwen/qwq-32b,1282.2,16.67,6126,29.23,34.74,6.41
-claude-3-7-sonnet-20250219,1274.7,16.73,6327,39.58,23.66,5.46
-google/gemma-3-27b-it,1206.1,16.59,7049,42.62,35.73,9.19
-gpt-4.5-preview,1164.6,16.32,6451,46.41,41.58,6.98
-CohereForAI/c4ai-command-a-03-2025,1118.5,16.12,6691,32.24,39.86,9.20
-anthropic/claude-3.5-haiku-20241022,1107.8,12.90,4016,60.14,22.00,9.13
-google/gemma-3-12b-it,1103.2,16.15,7150,45.86,44.30,8.92
-sam-paech/Darkest-muse-v1,1093.8,16.15,8184,39.50,42.09,11.13
-gemini-2.0-flash-001,1081.6,15.83,6208,37.66,46.45,10.09
-allura-org/Gemma-3-Glitter-12B,1065.2,15.83,7934,41.37,43.91,9.36
-google/gemma-3-4b-it,1039.6,15.97,6509,51.77,48.78,12.30
-ifable/gemma-2-Ifable-9B,1013.1,15.56,5324,66.98,43.29,7.88
-ToastyPigeon/Gemma-3-Starshine-12B,846.3,12.82,7973,29.74,46.09,14.24
-gpt-4o-mini,846.1,14.28,5999,41.70,44.02,10.62
-google/gemma-2-9b-it,846.0,11.33,4120,39.98,67.68,16.78
-mistralai/Mistral-Nemo-Instruct-2407,843.2,12.73,7013,30.32,56.72,18.93
-meta-llama/llama-3.1-405b-instruct,837.7,11.66,4531,41.56,45.09,15.14
-liquid/lfm-7b,760.9,12.04,6230,49.84,57.57,10.95
-mistralai/mistral-small-3.1-24b-instruct-2503,739.2,10.49,7900,28.80,62.21,24.81
-meta-llama/llama-3.1-70b-instruct,721.9,10.70,4502,39.85,47.79,15.82
-meta-llama/llama-3.1-8b-instruct,706.8,10.81,4709,37.45,53.28,16.56
-openai/gpt-4-0314,698.2,11.99,5378,41.81,41.57,12.09
-mistralai/Mistral-Small-24B-Instruct-2501,657.5,10.24,7660,32.53,62.86,27.39
-anthropic/claude-3-haiku,652.9,11.66,5008,41.11,44.89,10.80
-meta-llama/llama-3.2-3b-instruct,583.2,9.38,4759,37.38,57.45,21.90
-openai/gpt-3.5-turbo-0613,406.4,8.77,3400,42.88,53.15,17.15
+chatgpt-4o-latest-2025-03-27,1380.7,17.15,5956,28.29,24.76,6.70
+deepseek-ai/DeepSeek-V3-0324,1373.8,16.44,4414,24.28,33.02,7.86
+gemini-2.5-pro-exp-03-25,1301.7,17.27,7886,41.00,35.06,6.30
+claude-3-5-sonnet-20241022,1280.3,16.04,4921,39.27,19.82,5.98
+chatgpt-4o-latest-2025-01-29,1270.1,16.57,5622,29.04,29.09,7.30
+openrouter/quasar-alpha,1266.0,16.694,6671,35.15,30.02,5.74
+RekaAI/reka-flash-3,1256.2,16.26,5225,29.53,37.81,7.01
+qwen/qwq-32b,1255.5,16.67,6126,29.23,34.74,6.41
+claude-3-7-sonnet-20250219,1247.1,16.73,6327,39.58,23.66,5.46
+google/gemma-3-27b-it,1167.7,16.59,7049,42.62,35.73,9.19
+gpt-4.5-preview,1124.9,16.32,6451,46.41,41.58,6.98
+CohereForAI/c4ai-command-a-03-2025,1069.3,16.12,6691,32.24,39.86,9.20
+anthropic/claude-3.5-haiku-20241022,1062.7,12.90,4016,60.14,22.00,9.13
+google/gemma-3-12b-it,1048.1,16.15,7150,45.86,44.30,8.92
+sam-paech/Darkest-muse-v1,1038.8,16.15,8184,39.50,42.09,11.13
+gemini-2.0-flash-001,1035.8,15.83,6208,37.66,46.45,10.09
+allura-org/Gemma-3-Glitter-12B,1024.3,15.83,7934,41.37,43.91,9.36
+google/gemma-3-4b-it,986.0,15.97,6509,51.77,48.78,12.30
+ifable/gemma-2-Ifable-9B,956.6,15.56,5324,66.98,43.29,7.88
+mistralai/mistral-large-2411,929.5,13.64,5641,31.55,48.78,14.93
+ToastyPigeon/Gemma-3-Starshine-12B,796.3,12.82,7973,29.74,46.09,14.24
+mistralai/Mistral-Nemo-Instruct-2407,794.3,12.73,7013,30.32,56.72,18.93
+gpt-4o-mini,782.1,14.28,5999,41.70,44.02,10.62
+meta-llama/llama-3.1-405b-instruct,757.2,11.66,4531,41.56,45.09,15.14
+google/gemma-2-9b-it,748.7,11.33,4120,39.98,67.68,16.78
+liquid/lfm-7b,689.0,12.04,6230,49.84,57.57,10.95
+openai/gpt-4-0314,678.8,11.99,5378,41.81,41.57,12.09
+meta-llama/llama-3.1-70b-instruct,669.9,10.70,4502,39.85,47.79,15.82
+mistralai/mistral-small-3.1-24b-instruct-2503,651.9,10.49,7900,28.80,62.21,24.81
+mistralai/Mistral-Small-24B-Instruct-2501,631.1,10.24,7660,32.53,62.86,27.39
+meta-llama/llama-3.1-8b-instruct,627.8,10.81,4709,37.45,53.28,16.56
+anthropic/claude-3-haiku,625.8,11.66,5008,41.11,44.89,10.80
+meta-llama/llama-3.2-3b-instruct,563.2,9.38,4759,37.38,57.45,21.90
+openai/gpt-3.5-turbo-0613,399.0,8.77,3400,42.88,53.15,17.15
 meta-llama/llama-3.2-1b-instruct,200.0,7.44,5290,38.32,61.12,27.21`;
 
 
 
 const slopData = `##### deepseek-ai/DeepSeek-R1
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/deepseek-ai__DeepSeek-R1__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/deepseek-ai__DeepSeek-R1__phylo_tree_combined_circular.png' alt='Circular dendrogram for deepseek-ai/DeepSeek-R1' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/deepseek-ai__DeepSeek-R1__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/deepseek-ai__DeepSeek-R1__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for deepseek-ai/DeepSeek-R1' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>RekaAI/reka-flash-3 (distance=0.686)</div>
 <div class='slop-similar'>qwen/qwq-32b (distance=0.700)</div>
 <div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.772)</div>
 <div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.788)</div>
-<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.810)</div>
+<div class='slop-similar'>openrouter/quasar-alpha (distance=0.789)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -62,13 +75,24 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### chatgpt-4o-latest-2025-03-27
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/chatgpt-4o-latest-2025-03-27__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/chatgpt-4o-latest-2025-03-27__phylo_tree_combined_circular.png' alt='Circular dendrogram for chatgpt-4o-latest-2025-03-27' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/chatgpt-4o-latest-2025-03-27__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/chatgpt-4o-latest-2025-03-27__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for chatgpt-4o-latest-2025-03-27' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.726)</div>
 <div class='slop-similar'>chatgpt-4o-latest-2025-01-29 (distance=0.732)</div>
+<div class='slop-similar'>openrouter/quasar-alpha (distance=0.769)</div>
 <div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.770)</div>
 <div class='slop-similar'>qwen/qwq-32b (distance=0.771)</div>
-<div class='slop-similar'>RekaAI/reka-flash-3 (distance=0.788)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -85,6 +109,17 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### deepseek-ai/DeepSeek-V3-0324
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/deepseek-ai__DeepSeek-V3-0324__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/deepseek-ai__DeepSeek-V3-0324__phylo_tree_combined_circular.png' alt='Circular dendrogram for deepseek-ai/DeepSeek-V3-0324' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/deepseek-ai__DeepSeek-V3-0324__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/deepseek-ai__DeepSeek-V3-0324__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for deepseek-ai/DeepSeek-V3-0324' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>chatgpt-4o-latest-2025-01-29 (distance=0.690)</div>
@@ -108,6 +143,17 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### gemini-2.5-pro-exp-03-25
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/gemini-2.5-pro-exp-03-25__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/gemini-2.5-pro-exp-03-25__phylo_tree_combined_circular.png' alt='Circular dendrogram for gemini-2.5-pro-exp-03-25' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/gemini-2.5-pro-exp-03-25__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/gemini-2.5-pro-exp-03-25__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for gemini-2.5-pro-exp-03-25' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.753)</div>
@@ -131,6 +177,17 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### claude-3-5-sonnet-20241022
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/claude-3-5-sonnet-20241022__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/claude-3-5-sonnet-20241022__phylo_tree_combined_circular.png' alt='Circular dendrogram for claude-3-5-sonnet-20241022' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/claude-3-5-sonnet-20241022__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/claude-3-5-sonnet-20241022__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for claude-3-5-sonnet-20241022' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.754)</div>
@@ -154,13 +211,24 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### chatgpt-4o-latest-2025-01-29
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/chatgpt-4o-latest-2025-01-29__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/chatgpt-4o-latest-2025-01-29__phylo_tree_combined_circular.png' alt='Circular dendrogram for chatgpt-4o-latest-2025-01-29' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/chatgpt-4o-latest-2025-01-29__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/chatgpt-4o-latest-2025-01-29__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for chatgpt-4o-latest-2025-01-29' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.690)</div>
 <div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.732)</div>
 <div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.774)</div>
+<div class='slop-similar'>openrouter/quasar-alpha (distance=0.774)</div>
 <div class='slop-similar'>qwen/qwq-32b (distance=0.807)</div>
-<div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.807)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -176,7 +244,52 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 <span class='slop-ngram-item'>something else something (7)</span> <span class='slop-ngram-item'>something else entirely (7)</span> <span class='slop-ngram-item'>air thick scent (6)</span> <span class='slop-ngram-item'>chuckled shaking head (4)</span> <span class='slop-ngram-item'>hands clasped behind (4)</span> <span class='slop-ngram-item'>clasped behind back (4)</span> <span class='slop-ngram-item'>something unreadable expression (4)</span> <span class='slop-ngram-item'>one last time (4)</span> <span class='slop-ngram-item'>say something else (4)</span> <span class='slop-ngram-item'>door swings open (4)</span> <span class='slop-ngram-item'>without another word (3)</span> <span class='slop-ngram-item'>look like belong (3)</span> <span class='slop-ngram-item'>like everyone else (3)</span> <span class='slop-ngram-item'>leaned back chair (3)</span> <span class='slop-ngram-item'>like something else (3)</span> <span class='slop-ngram-item'>squeezed eyes shut (3)</span> <span class='slop-ngram-item'>rubbing hand face (3)</span> <span class='slop-ngram-item'>answer right away (3)</span> <span class='slop-ngram-item'>something like amusement (3)</span> <span class='slop-ngram-item'>cigarette dangling lips (3)</span> <span class='slop-ngram-item'>close enough could (3)</span> <span class='slop-ngram-item'>says voice calm (3)</span> <span class='slop-ngram-item'>chest rising falling (3)</span> <span class='slop-ngram-item'>eyes locked onto (3)</span> <span class='slop-ngram-item'>grin spread across (3)</span> <span class='slop-ngram-item'>says voice even (3)</span> <span class='slop-ngram-item'>fingers tighten around (3)</span> <span class='slop-ngram-item'>tilted head studying (3)</span> <span class='slop-ngram-item'>opened mouth closed (3)</span> <span class='slop-ngram-item'>resting chin hand (3)</span>
 </div>
 
+##### openrouter/quasar-alpha
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/openrouter__quasar-alpha__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/openrouter__quasar-alpha__phylo_tree_combined_circular.png' alt='Circular dendrogram for openrouter/quasar-alpha' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/openrouter__quasar-alpha__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/openrouter__quasar-alpha__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for openrouter/quasar-alpha' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.769)</div>
+<div class='slop-similar'>gpt-4.5-preview (distance=0.772)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-01-29 (distance=0.774)</div>
+<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.776)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.779)</div>
+</div>
+
+<h4>Top Repetitive Words</h4>
+<div class='slop-section-items'>
+<span class='slop-word-item'>prickled</span> <span class='slop-word-item'>prickling</span> <span class='slop-word-item'>shimmered</span> <span class='slop-word-item'>thudded</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>unbothered</span> <span class='slop-word-item'>smirks</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>lounged</span> <span class='slop-word-item'>crackles</span> <span class='slop-word-item'>gleamed</span> <span class='slop-word-item'>flickers</span> <span class='slop-word-item'>shyly</span> <span class='slop-word-item'>flickering</span> <span class='slop-word-item'>shakily</span> <span class='slop-word-item'>hissed</span> <span class='slop-word-item'>grunted</span> <span class='slop-word-item'>hums</span> <span class='slop-word-item'>coiling</span> <span class='slop-word-item'>warily</span> <span class='slop-word-item'>exhales</span> <span class='slop-word-item'>steadied</span> <span class='slop-word-item'>faintly</span> <span class='slop-word-item'>tightens</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>trembling</span> <span class='slop-word-item'>muttered</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>blinked</span> <span class='slop-word-item'>snorts</span> <span class='slop-word-item'>exhaled</span> <span class='slop-word-item'>flicker</span> <span class='slop-word-item'>murmurs</span> <span class='slop-word-item'>smirked</span> <span class='slop-word-item'>nodded</span> <span class='slop-word-item'>coiled</span> <span class='slop-word-item'>sharpens</span> <span class='slop-word-item'>guttural</span> <span class='slop-word-item'>softens</span> <span class='slop-word-item'>grins</span> <span class='slop-word-item'>anomalous</span> <span class='slop-word-item'>battered</span> <span class='slop-word-item'>swirling</span> <span class='slop-word-item'>gasped</span> <span class='slop-word-item'>snorted</span> <span class='slop-word-item'>trembled</span> <span class='slop-word-item'>crusted</span> <span class='slop-word-item'>mingling</span> <span class='slop-word-item'>gloved</span>
+</div>
+<h4>Top Bigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>heart pounding (23)</span> <span class='slop-ngram-item'>feels like (19)</span> <span class='slop-ngram-item'>said voice (18)</span> <span class='slop-ngram-item'>said quietly (18)</span> <span class='slop-ngram-item'>next time (18)</span> <span class='slop-ngram-item'>first time (17)</span> <span class='slop-ngram-item'>said softly (16)</span> <span class='slop-ngram-item'>felt like (16)</span> <span class='slop-ngram-item'>say something (15)</span> <span class='slop-ngram-item'>something else (15)</span> <span class='slop-ngram-item'>look like (14)</span> <span class='slop-ngram-item'>says voice (14)</span> <span class='slop-ngram-item'>voice low (13)</span> <span class='slop-ngram-item'>steps closer (13)</span> <span class='slop-ngram-item'>last night (12)</span> <span class='slop-ngram-item'>split second (12)</span> <span class='slop-ngram-item'>got ta (12)</span> <span class='slop-ngram-item'>feel like (12)</span> <span class='slop-ngram-item'>last time (11)</span> <span class='slop-ngram-item'>closed eyes (11)</span> <span class='slop-ngram-item'>something new (11)</span> <span class='slop-ngram-item'>turned back (10)</span> <span class='slop-ngram-item'>someone else (10)</span> <span class='slop-ngram-item'>voice softer (10)</span> <span class='slop-ngram-item'>shook head (10)</span> <span class='slop-ngram-item'>right arm (10)</span> <span class='slop-ngram-item'>another day (10)</span> <span class='slop-ngram-item'>says quietly (10)</span> <span class='slop-ngram-item'>say quietly (10)</span> <span class='slop-ngram-item'>looks like (10)</span>
+</div>
+<h4>Top Trigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>voice barely whisper (7)</span> <span class='slop-ngram-item'>maybe next time (6)</span> <span class='slop-ngram-item'>casting long shadows (6)</span> <span class='slop-ngram-item'>wiped sweat brow (6)</span> <span class='slop-ngram-item'>item object class (5)</span> <span class='slop-ngram-item'>special containment procedures (5)</span> <span class='slop-ngram-item'>turned back toward (3)</span> <span class='slop-ngram-item'>tilted head studying (3)</span> <span class='slop-ngram-item'>voice rough gravel (3)</span> <span class='slop-ngram-item'>maybe one day (3)</span> <span class='slop-ngram-item'>cigarette dangling lips (3)</span> <span class='slop-ngram-item'>eyes sharp appraising (3)</span> <span class='slop-ngram-item'>said voice smooth (3)</span> <span class='slop-ngram-item'>tall man skin (3)</span> <span class='slop-ngram-item'>trying sound casual (3)</span> <span class='slop-ngram-item'>stray lock hair (3)</span> <span class='slop-ngram-item'>shining something fierce (3)</span> <span class='slop-ngram-item'>sweat beading brow (3)</span> <span class='slop-ngram-item'>somewhere deep inside (3)</span> <span class='slop-ngram-item'>last time tried (2)</span> <span class='slop-ngram-item'>pinched bridge nose (2)</span> <span class='slop-ngram-item'>office cavernous hall (2)</span> <span class='slop-ngram-item'>something ancient dangerous (2)</span> <span class='slop-ngram-item'>close enough could (2)</span> <span class='slop-ngram-item'>something else entirely (2)</span> <span class='slop-ngram-item'>spark inside refused (2)</span> <span class='slop-ngram-item'>stubble along jaw (2)</span> <span class='slop-ngram-item'>shadows across face (2)</span> <span class='slop-ngram-item'>said voice trembling (2)</span> <span class='slop-ngram-item'>finally spoke voice (2)</span>
+</div>
+
 ##### RekaAI/reka-flash-3
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/RekaAI__reka-flash-3__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/RekaAI__reka-flash-3__phylo_tree_combined_circular.png' alt='Circular dendrogram for RekaAI/reka-flash-3' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/RekaAI__reka-flash-3__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/RekaAI__reka-flash-3__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for RekaAI/reka-flash-3' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>qwen/qwq-32b (distance=0.671)</div>
@@ -200,6 +313,17 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### qwen/qwq-32b
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/qwen__qwq-32b__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/qwen__qwq-32b__phylo_tree_combined_circular.png' alt='Circular dendrogram for qwen/qwq-32b' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/qwen__qwq-32b__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/qwen__qwq-32b__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for qwen/qwq-32b' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>RekaAI/reka-flash-3 (distance=0.671)</div>
@@ -223,6 +347,17 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### claude-3-7-sonnet-20250219
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/claude-3-7-sonnet-20250219__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/claude-3-7-sonnet-20250219__phylo_tree_combined_circular.png' alt='Circular dendrogram for claude-3-7-sonnet-20250219' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/claude-3-7-sonnet-20250219__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/claude-3-7-sonnet-20250219__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for claude-3-7-sonnet-20250219' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>claude-3-5-sonnet-20241022 (distance=0.754)</div>
@@ -246,6 +381,17 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### google/gemma-3-27b-it
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/google__gemma-3-27b-it__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/google__gemma-3-27b-it__phylo_tree_combined_circular.png' alt='Circular dendrogram for google/gemma-3-27b-it' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/google__gemma-3-27b-it__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/google__gemma-3-27b-it__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for google/gemma-3-27b-it' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.688)</div>
@@ -269,13 +415,24 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### gpt-4.5-preview
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/gpt-4.5-preview__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/gpt-4.5-preview__phylo_tree_combined_circular.png' alt='Circular dendrogram for gpt-4.5-preview' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/gpt-4.5-preview__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/gpt-4.5-preview__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for gpt-4.5-preview' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
+<div class='slop-similar'>openrouter/quasar-alpha (distance=0.772)</div>
 <div class='slop-similar'>qwen/qwq-32b (distance=0.818)</div>
 <div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.820)</div>
 <div class='slop-similar'>gpt-4o-mini (distance=0.827)</div>
 <div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.829)</div>
-<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.830)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -292,13 +449,24 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### CohereForAI/c4ai-command-a-03-2025
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/CohereForAI__c4ai-command-a-03-2025__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/CohereForAI__c4ai-command-a-03-2025__phylo_tree_combined_circular.png' alt='Circular dendrogram for CohereForAI/c4ai-command-a-03-2025' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/CohereForAI__c4ai-command-a-03-2025__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/CohereForAI__c4ai-command-a-03-2025__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for CohereForAI/c4ai-command-a-03-2025' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
+<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.761)</div>
 <div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.768)</div>
 <div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.768)</div>
 <div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.770)</div>
 <div class='slop-similar'>qwen/qwq-32b (distance=0.770)</div>
-<div class='slop-similar'>gpt-4o-mini (distance=0.771)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -315,6 +483,17 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### anthropic/claude-3.5-haiku-20241022
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/anthropic__claude-3.5-haiku-20241022__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/anthropic__claude-3.5-haiku-20241022__phylo_tree_combined_circular.png' alt='Circular dendrogram for anthropic/claude-3.5-haiku-20241022' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/anthropic__claude-3.5-haiku-20241022__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/anthropic__claude-3.5-haiku-20241022__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for anthropic/claude-3.5-haiku-20241022' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>claude-3-5-sonnet-20241022 (distance=0.825)</div>
@@ -338,6 +517,17 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### google/gemma-3-12b-it
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/google__gemma-3-12b-it__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/google__gemma-3-12b-it__phylo_tree_combined_circular.png' alt='Circular dendrogram for google/gemma-3-12b-it' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/google__gemma-3-12b-it__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/google__gemma-3-12b-it__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for google/gemma-3-12b-it' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.625)</div>
@@ -361,6 +551,17 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### sam-paech/Darkest-muse-v1
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/sam-paech__Darkest-muse-v1__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/sam-paech__Darkest-muse-v1__phylo_tree_combined_circular.png' alt='Circular dendrogram for sam-paech/Darkest-muse-v1' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/sam-paech__Darkest-muse-v1__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/sam-paech__Darkest-muse-v1__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for sam-paech/Darkest-muse-v1' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>gemini-2.5-pro-exp-03-25 (distance=0.810)</div>
@@ -384,6 +585,17 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### gemini-2.0-flash-001
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/gemini-2.0-flash-001__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/gemini-2.0-flash-001__phylo_tree_combined_circular.png' alt='Circular dendrogram for gemini-2.0-flash-001' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/gemini-2.0-flash-001__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/gemini-2.0-flash-001__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for gemini-2.0-flash-001' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.703)</div>
@@ -407,6 +619,17 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### allura-org/Gemma-3-Glitter-12B
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/allura-org__Gemma-3-Glitter-12B__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/allura-org__Gemma-3-Glitter-12B__phylo_tree_combined_circular.png' alt='Circular dendrogram for allura-org/Gemma-3-Glitter-12B' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/allura-org__Gemma-3-Glitter-12B__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/allura-org__Gemma-3-Glitter-12B__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for allura-org/Gemma-3-Glitter-12B' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>google/gemma-3-12b-it (distance=0.625)</div>
@@ -430,6 +653,17 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### google/gemma-3-4b-it
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/google__gemma-3-4b-it__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/google__gemma-3-4b-it__phylo_tree_combined_circular.png' alt='Circular dendrogram for google/gemma-3-4b-it' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/google__gemma-3-4b-it__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/google__gemma-3-4b-it__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for google/gemma-3-4b-it' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>google/gemma-3-4b-it:free (distance=0.613)</div>
@@ -453,6 +687,17 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### ifable/gemma-2-Ifable-9B
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/ifable__gemma-2-Ifable-9B__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/ifable__gemma-2-Ifable-9B__phylo_tree_combined_circular.png' alt='Circular dendrogram for ifable/gemma-2-Ifable-9B' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/ifable__gemma-2-Ifable-9B__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/ifable__gemma-2-Ifable-9B__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for ifable/gemma-2-Ifable-9B' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>liquid/lfm-7b (distance=0.818)</div>
@@ -475,14 +720,59 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 <span class='slop-ngram-item'>flicker something akin (13)</span> <span class='slop-ngram-item'>smile touching lips (9)</span> <span class='slop-ngram-item'>eyes like polished (7)</span> <span class='slop-ngram-item'>chuckled sound like (7)</span> <span class='slop-ngram-item'>smile playing lips (6)</span> <span class='slop-ngram-item'>ghost smile touching (6)</span> <span class='slop-ngram-item'>voice low murmur (6)</span> <span class='slop-ngram-item'>felt less like (5)</span> <span class='slop-ngram-item'>like polished obsidian (5)</span> <span class='slop-ngram-item'>like second skin (4)</span> <span class='slop-ngram-item'>scent damp earth (4)</span> <span class='slop-ngram-item'>like dry leaves (4)</span> <span class='slop-ngram-item'>dry leaves skittering (4)</span> <span class='slop-ngram-item'>sent shiver spine (4)</span> <span class='slop-ngram-item'>smirk playing lips (4)</span> <span class='slop-ngram-item'>voice silken rasp (4)</span> <span class='slop-ngram-item'>clung like second (3)</span> <span class='slop-ngram-item'>smile spreading across (3)</span> <span class='slop-ngram-item'>spreading across face (3)</span> <span class='slop-ngram-item'>smile touched lips (3)</span> <span class='slop-ngram-item'>paused ghost smile (3)</span> <span class='slop-ngram-item'>feels less like (3)</span> <span class='slop-ngram-item'>ghost smile playing (3)</span> <span class='slop-ngram-item'>predator assessing prey (3)</span> <span class='slop-ngram-item'>maybe year two (3)</span> <span class='slop-ngram-item'>sound like wind (3)</span> <span class='slop-ngram-item'>carefully constructed facade (3)</span> <span class='slop-ngram-item'>elongated dancing shadows (3)</span> <span class='slop-ngram-item'>metronome marking time (3)</span> <span class='slop-ngram-item'>voice low rumble (3)</span>
 </div>
 
+##### mistralai/mistral-large-2411
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/mistralai__mistral-large-2411__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/mistralai__mistral-large-2411__phylo_tree_combined_circular.png' alt='Circular dendrogram for mistralai/mistral-large-2411' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/mistralai__mistral-large-2411__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/mistralai__mistral-large-2411__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for mistralai/mistral-large-2411' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.660)</div>
+<div class='slop-similar'>mistralai/mistral-small-3.1-24b-instruct-2503 (distance=0.683)</div>
+<div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.708)</div>
+<div class='slop-similar'>openai/gpt-4-0314 (distance=0.721)</div>
+<div class='slop-similar'>anthropic/claude-3-haiku (distance=0.752)</div>
+</div>
+
+<h4>Top Repetitive Words</h4>
+<div class='slop-section-items'>
+<span class='slop-word-item'>vespera</span> <span class='slop-word-item'>elara</span> <span class='slop-word-item'>kael</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>smirks</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>misting</span> <span class='slop-word-item'>astrid</span> <span class='slop-word-item'>grins</span> <span class='slop-word-item'>buzzes</span> <span class='slop-word-item'>hummed</span> <span class='slop-word-item'>lyra</span> <span class='slop-word-item'>twitched</span> <span class='slop-word-item'>gleaming</span> <span class='slop-word-item'>unreadable</span> <span class='slop-word-item'>hesitates</span> <span class='slop-word-item'>grimy</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>addendum</span> <span class='slop-word-item'>nodded</span> <span class='slop-word-item'>nods</span> <span class='slop-word-item'>scoffs</span> <span class='slop-word-item'>flickers</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>grinned</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>inscrutable</span> <span class='slop-word-item'>growls</span> <span class='slop-word-item'>flickering</span> <span class='slop-word-item'>coursing</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>gasps</span> <span class='slop-word-item'>disheveled</span> <span class='slop-word-item'>smirk</span> <span class='slop-word-item'>cacophony</span> <span class='slop-word-item'>evelyn</span> <span class='slop-word-item'>eyebrow</span> <span class='slop-word-item'>sighed</span> <span class='slop-word-item'>scribbling</span> <span class='slop-word-item'>clink</span> <span class='slop-word-item'>figurine</span> <span class='slop-word-item'>rustling</span> <span class='slop-word-item'>glowed</span> <span class='slop-word-item'>containment</span> <span class='slop-word-item'>gesturing</span> <span class='slop-word-item'>echoing</span> <span class='slop-word-item'>glint</span> <span class='slop-word-item'>clatter</span> <span class='slop-word-item'>pounding</span> <span class='slop-word-item'>leaned</span>
+</div>
+<h4>Top Bigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>li wei (80)</span> <span class='slop-ngram-item'>said voice (57)</span> <span class='slop-ngram-item'>heart pounding (45)</span> <span class='slop-ngram-item'>voice low (40)</span> <span class='slop-ngram-item'>deep breath (40)</span> <span class='slop-ngram-item'>says voice (40)</span> <span class='slop-ngram-item'>air thick (38)</span> <span class='slop-ngram-item'>voice barely (38)</span> <span class='slop-ngram-item'>eyes wide (32)</span> <span class='slop-ngram-item'>ca help (31)</span> <span class='slop-ngram-item'>playing lips (29)</span> <span class='slop-ngram-item'>barely whisper (27)</span> <span class='slop-ngram-item'>smile playing (26)</span> <span class='slop-ngram-item'>shake feeling (25)</span> <span class='slop-ngram-item'>small smile (24)</span> <span class='slop-ngram-item'>mind racing (23)</span> <span class='slop-ngram-item'>voice soft (23)</span> <span class='slop-ngram-item'>eyes gleaming (22)</span> <span class='slop-ngram-item'>voice steady (22)</span> <span class='slop-ngram-item'>stark contrast (22)</span> <span class='slop-ngram-item'>maybe maybe (22)</span> <span class='slop-ngram-item'>never leaving (21)</span> <span class='slop-ngram-item'>shook head (21)</span> <span class='slop-ngram-item'>could shake (21)</span> <span class='slop-ngram-item'>asked voice (20)</span> <span class='slop-ngram-item'>eyes never (20)</span> <span class='slop-ngram-item'>could help (19)</span> <span class='slop-ngram-item'>pounding chest (18)</span> <span class='slop-ngram-item'>eyes filled (18)</span> <span class='slop-ngram-item'>looks eyes (17)</span>
+</div>
+<h4>Top Trigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>voice barely whisper (27)</span> <span class='slop-ngram-item'>smile playing lips (23)</span> <span class='slop-ngram-item'>eyes never leaving (20)</span> <span class='slop-ngram-item'>could shake feeling (19)</span> <span class='slop-ngram-item'>heart pounding chest (18)</span> <span class='slop-ngram-item'>small smile playing (15)</span> <span class='slop-ngram-item'>took deep breath (15)</span> <span class='slop-ngram-item'>take deep breath (15)</span> <span class='slop-ngram-item'>said voice barely (13)</span> <span class='slop-ngram-item'>says voice soft (10)</span> <span class='slop-ngram-item'>voice barely audible (10)</span> <span class='slop-ngram-item'>coming ragged gasps (9)</span> <span class='slop-ngram-item'>said voice steady (8)</span> <span class='slop-ngram-item'>one last time (8)</span> <span class='slop-ngram-item'>air thick scent (8)</span> <span class='slop-ngram-item'>asked voice barely (8)</span> <span class='slop-ngram-item'>special containment procedures (8)</span> <span class='slop-ngram-item'>made way back (7)</span> <span class='slop-ngram-item'>voice low growl (7)</span> <span class='slop-ngram-item'>ca help feel (7)</span> <span class='slop-ngram-item'>takes deep breath (7)</span> <span class='slop-ngram-item'>help feel sense (7)</span> <span class='slop-ngram-item'>felt chill run (7)</span> <span class='slop-ngram-item'>chill run spine (7)</span> <span class='slop-ngram-item'>said voice low (6)</span> <span class='slop-ngram-item'>voice low rumble (6)</span> <span class='slop-ngram-item'>ready face whatever (6)</span> <span class='slop-ngram-item'>could help feel (6)</span> <span class='slop-ngram-item'>distant hoot owl (6)</span> <span class='slop-ngram-item'>like distant thunder (6)</span>
+</div>
+
 ##### ToastyPigeon/Gemma-3-Starshine-12B
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/ToastyPigeon__Gemma-3-Starshine-12B__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/ToastyPigeon__Gemma-3-Starshine-12B__phylo_tree_combined_circular.png' alt='Circular dendrogram for ToastyPigeon/Gemma-3-Starshine-12B' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/ToastyPigeon__Gemma-3-Starshine-12B__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/ToastyPigeon__Gemma-3-Starshine-12B__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for ToastyPigeon/Gemma-3-Starshine-12B' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>gemini-2.0-flash-001 (distance=0.724)</div>
 <div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.734)</div>
 <div class='slop-similar'>google/gemma-2-9b-it (distance=0.754)</div>
+<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.764)</div>
 <div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.764)</div>
-<div class='slop-similar'>mistralai/mistral-small-3.1-24b-instruct-2503 (distance=0.774)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -498,60 +788,25 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 <span class='slop-ngram-item'>voice barely whisper (37)</span> <span class='slop-ngram-item'>said voice low (33)</span> <span class='slop-ngram-item'>said voice barely (30)</span> <span class='slop-ngram-item'>voice barely audible (26)</span> <span class='slop-ngram-item'>took deep breath (20)</span> <span class='slop-ngram-item'>heart pounding chest (19)</span> <span class='slop-ngram-item'>said voice trembling (17)</span> <span class='slop-ngram-item'>take deep breath (16)</span> <span class='slop-ngram-item'>asked voice trembling (14)</span> <span class='slop-ngram-item'>said voice soft (13)</span> <span class='slop-ngram-item'>said voice dripping (13)</span> <span class='slop-ngram-item'>smile playing lips (12)</span> <span class='slop-ngram-item'>asked voice barely (11)</span> <span class='slop-ngram-item'>said voice flat (11)</span> <span class='slop-ngram-item'>hair pulled back (10)</span> <span class='slop-ngram-item'>air thick smell (9)</span> <span class='slop-ngram-item'>something else something (9)</span> <span class='slop-ngram-item'>turned walked away (9)</span> <span class='slop-ngram-item'>looked eyes filled (9)</span> <span class='slop-ngram-item'>voice dripping sarcasm (9)</span> <span class='slop-ngram-item'>opened eyes looked (9)</span> <span class='slop-ngram-item'>chill run spine (9)</span> <span class='slop-ngram-item'>leaned forward eyes (9)</span> <span class='slop-ngram-item'>trying keep voice (9)</span> <span class='slop-ngram-item'>said trying sound (9)</span> <span class='slop-ngram-item'>voice trembling slightly (9)</span> <span class='slop-ngram-item'>says voice low (9)</span> <span class='slop-ngram-item'>said shaking head (8)</span> <span class='slop-ngram-item'>could feel heat (8)</span> <span class='slop-ngram-item'>deep breath trying (8)</span>
 </div>
 
-##### gpt-4o-mini
-<h4>Most Similar To:</h4>
-<div class='slop-similar-section'>
-<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.771)</div>
-<div class='slop-similar'>liquid/lfm-7b (distance=0.776)</div>
-<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.790)</div>
-<div class='slop-similar'>anthropic/claude-3-haiku (distance=0.794)</div>
-<div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.794)</div>
-</div>
-
-<h4>Top Repetitive Words</h4>
-<div class='slop-section-items'>
-<span class='slop-word-item'>elara</span> <span class='slop-word-item'>glinted</span> <span class='slop-word-item'>glinting</span> <span class='slop-word-item'>shimmered</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>thrumming</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>keter</span> <span class='slop-word-item'>hargrove</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>furrowed</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>flicker</span> <span class='slop-word-item'>tousled</span> <span class='slop-word-item'>steadier</span> <span class='slop-word-item'>flickering</span> <span class='slop-word-item'>crackles</span> <span class='slop-word-item'>exhilaration</span> <span class='slop-word-item'>steadying</span> <span class='slop-word-item'>glint</span> <span class='slop-word-item'>clinking</span> <span class='slop-word-item'>sparkled</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>igniting</span> <span class='slop-word-item'>mingling</span> <span class='slop-word-item'>ominously</span> <span class='slop-word-item'>gnawed</span> <span class='slop-word-item'>interjected</span> <span class='slop-word-item'>acrid</span> <span class='slop-word-item'>conspiratorial</span> <span class='slop-word-item'>muttered</span> <span class='slop-word-item'>glancing</span> <span class='slop-word-item'>flickers</span> <span class='slop-word-item'>falters</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>trudged</span> <span class='slop-word-item'>hesitates</span> <span class='slop-word-item'>smirking</span> <span class='slop-word-item'>intoxicating</span> <span class='slop-word-item'>mischief</span> <span class='slop-word-item'>echoed</span> <span class='slop-word-item'>smirk</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>cacophony</span> <span class='slop-word-item'>lacing</span> <span class='slop-word-item'>chuckled</span> <span class='slop-word-item'>seeped</span> <span class='slop-word-item'>coursing</span> <span class='slop-word-item'>swirling</span> <span class='slop-word-item'>gaze</span>
-</div>
-<h4>Top Bigrams</h4>
-<div class='slop-section-items'>
-<span class='slop-ngram-item'>air thick (41)</span> <span class='slop-ngram-item'>said voice (39)</span> <span class='slop-ngram-item'>heart racing (38)</span> <span class='slop-ngram-item'>felt like (35)</span> <span class='slop-ngram-item'>heart raced (34)</span> <span class='slop-ngram-item'>shake feeling (30)</span> <span class='slop-ngram-item'>deep breath (29)</span> <span class='slop-ngram-item'>feel like (29)</span> <span class='slop-ngram-item'>replied voice (27)</span> <span class='slop-ngram-item'>feels like (27)</span> <span class='slop-ngram-item'>voice barely (26)</span> <span class='slop-ngram-item'>voice low (25)</span> <span class='slop-ngram-item'>voice steady (20)</span> <span class='slop-ngram-item'>could feel (20)</span> <span class='slop-ngram-item'>barely whisper (20)</span> <span class='slop-ngram-item'>felt weight (18)</span> <span class='slop-ngram-item'>eyes glinting (18)</span> <span class='slop-ngram-item'>around us (17)</span> <span class='slop-ngram-item'>around like (17)</span> <span class='slop-ngram-item'>let see (17)</span> <span class='slop-ngram-item'>voice smooth (17)</span> <span class='slop-ngram-item'>asked voice (16)</span> <span class='slop-ngram-item'>could see (16)</span> <span class='slop-ngram-item'>let go (16)</span> <span class='slop-ngram-item'>look like (16)</span> <span class='slop-ngram-item'>thick scent (16)</span> <span class='slop-ngram-item'>help feel (15)</span> <span class='slop-ngram-item'>heart races (15)</span> <span class='slop-ngram-item'>air like (15)</span> <span class='slop-ngram-item'>stark contrast (15)</span>
-</div>
-<h4>Top Trigrams</h4>
-<div class='slop-section-items'>
-<span class='slop-ngram-item'>voice barely whisper (19)</span> <span class='slop-ngram-item'>air thick scent (13)</span> <span class='slop-ngram-item'>take deep breath (12)</span> <span class='slop-ngram-item'>took deep breath (11)</span> <span class='slop-ngram-item'>eyes glinting mischief (9)</span> <span class='slop-ngram-item'>replied voice barely (8)</span> <span class='slop-ngram-item'>long shadows across (7)</span> <span class='slop-ngram-item'>casting long shadows (7)</span> <span class='slop-ngram-item'>takes step closer (7)</span> <span class='slop-ngram-item'>item object class (6)</span> <span class='slop-ngram-item'>object class keter (6)</span> <span class='slop-ngram-item'>class keter special (6)</span> <span class='slop-ngram-item'>keter special containment (6)</span> <span class='slop-ngram-item'>special containment procedures (6)</span> <span class='slop-ngram-item'>trying sound casual (6)</span> <span class='slop-ngram-item'>said voice low (6)</span> <span class='slop-ngram-item'>sent shiver spine (5)</span> <span class='slop-ngram-item'>closer voice dropping (5)</span> <span class='slop-ngram-item'>wrapping around like (5)</span> <span class='slop-ngram-item'>low sky casting (5)</span> <span class='slop-ngram-item'>said voice smooth (5)</span> <span class='slop-ngram-item'>voice smooth silk (5)</span> <span class='slop-ngram-item'>could almost hear (4)</span> <span class='slop-ngram-item'>casting warm glow (4)</span> <span class='slop-ngram-item'>chill run spine (4)</span> <span class='slop-ngram-item'>shake feeling something (4)</span> <span class='slop-ngram-item'>door swings open (4)</span> <span class='slop-ngram-item'>voice dropping whisper (4)</span> <span class='slop-ngram-item'>voice barely rising (4)</span> <span class='slop-ngram-item'>voice trembling slightly (4)</span>
-</div>
-
-##### google/gemma-2-9b-it
-<h4>Most Similar To:</h4>
-<div class='slop-similar-section'>
-<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.727)</div>
-<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.754)</div>
-<div class='slop-similar'>liquid/lfm-7b (distance=0.754)</div>
-<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.757)</div>
-<div class='slop-similar'>openai/gpt-4-0314 (distance=0.765)</div>
-</div>
-
-<h4>Top Repetitive Words</h4>
-<div class='slop-section-items'>
-<span class='slop-word-item'>aethel</span> <span class='slop-word-item'>elara</span> <span class='slop-word-item'>kaito</span> <span class='slop-word-item'>stammered</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>glinting</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>crackles</span> <span class='slop-word-item'>cloying</span> <span class='slop-word-item'>purred</span> <span class='slop-word-item'>hulking</span> <span class='slop-word-item'>purrs</span> <span class='slop-word-item'>conspiratorial</span> <span class='slop-word-item'>flickering</span> <span class='slop-word-item'>throaty</span> <span class='slop-word-item'>hummed</span> <span class='slop-word-item'>silken</span> <span class='slop-word-item'>rasp</span> <span class='slop-word-item'>scoffs</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>saccharine</span> <span class='slop-word-item'>flicker</span> <span class='slop-word-item'>unreadable</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>throngs</span> <span class='slop-word-item'>wiry</span> <span class='slop-word-item'>mumbled</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>swirling</span> <span class='slop-word-item'>gaze</span> <span class='slop-word-item'>guttural</span> <span class='slop-word-item'>hoarse</span> <span class='slop-word-item'>retorts</span> <span class='slop-word-item'>cacophony</span> <span class='slop-word-item'>muttered</span> <span class='slop-word-item'>obsidian</span> <span class='slop-word-item'>shimmering</span> <span class='slop-word-item'>glint</span> <span class='slop-word-item'>hushed</span> <span class='slop-word-item'>twinkling</span> <span class='slop-word-item'>chuckled</span> <span class='slop-word-item'>laced</span> <span class='slop-word-item'>murmur</span> <span class='slop-word-item'>gravelly</span> <span class='slop-word-item'>trembling</span> <span class='slop-word-item'>shiver</span> <span class='slop-word-item'>gnawing</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>clung</span> <span class='slop-word-item'>whirlwind</span>
-</div>
-<h4>Top Bigrams</h4>
-<div class='slop-section-items'>
-<span class='slop-ngram-item'>said voice (101)</span> <span class='slop-ngram-item'>voice barely (48)</span> <span class='slop-ngram-item'>voice low (48)</span> <span class='slop-ngram-item'>barely whisper (39)</span> <span class='slop-ngram-item'>heart pounding (30)</span> <span class='slop-ngram-item'>air thick (24)</span> <span class='slop-ngram-item'>voice laced (22)</span> <span class='slop-ngram-item'>playing lips (22)</span> <span class='slop-ngram-item'>thick scent (21)</span> <span class='slop-ngram-item'>says voice (21)</span> <span class='slop-ngram-item'>say voice (21)</span> <span class='slop-ngram-item'>asked voice (20)</span> <span class='slop-ngram-item'>felt like (18)</span> <span class='slop-ngram-item'>smile playing (18)</span> <span class='slop-ngram-item'>gaze fixed (17)</span> <span class='slop-ngram-item'>voice trembling (17)</span> <span class='slop-ngram-item'>something else (16)</span> <span class='slop-ngram-item'>voice soft (16)</span> <span class='slop-ngram-item'>pounding chest (16)</span> <span class='slop-ngram-item'>shadows across (16)</span> <span class='slop-ngram-item'>maybe maybe (15)</span> <span class='slop-ngram-item'>dim light (14)</span> <span class='slop-ngram-item'>eyes filled (14)</span> <span class='slop-ngram-item'>around us (14)</span> <span class='slop-ngram-item'>deep breath (13)</span> <span class='slop-ngram-item'>asks voice (13)</span> <span class='slop-ngram-item'>whispered voice (13)</span> <span class='slop-ngram-item'>constant reminder (12)</span> <span class='slop-ngram-item'>eyes wide (12)</span> <span class='slop-ngram-item'>voice dropping (11)</span>
-</div>
-<h4>Top Trigrams</h4>
-<div class='slop-section-items'>
-<span class='slop-ngram-item'>voice barely whisper (39)</span> <span class='slop-ngram-item'>said voice low (19)</span> <span class='slop-ngram-item'>smile playing lips (18)</span> <span class='slop-ngram-item'>heart pounding chest (16)</span> <span class='slop-ngram-item'>said voice barely (11)</span> <span class='slop-ngram-item'>voice dropping conspiratorial (9)</span> <span class='slop-ngram-item'>dropping conspiratorial whisper (9)</span> <span class='slop-ngram-item'>voice barely audible (9)</span> <span class='slop-ngram-item'>air thick scent (9)</span> <span class='slop-ngram-item'>asked voice barely (9)</span> <span class='slop-ngram-item'>something else something (9)</span> <span class='slop-ngram-item'>voice low murmur (9)</span> <span class='slop-ngram-item'>long shadows across (9)</span> <span class='slop-ngram-item'>said voice soft (9)</span> <span class='slop-ngram-item'>casting long shadows (8)</span> <span class='slop-ngram-item'>said voice dropping (7)</span> <span class='slop-ngram-item'>hand instinctively reaching (7)</span> <span class='slop-ngram-item'>take deep breath (7)</span> <span class='slop-ngram-item'>voice low rumble (7)</span> <span class='slop-ngram-item'>sent shiver spine (7)</span> <span class='slop-ngram-item'>said voice laced (7)</span> <span class='slop-ngram-item'>sent shivers spine (7)</span> <span class='slop-ngram-item'>air thick smell (6)</span> <span class='slop-ngram-item'>says voice low (6)</span> <span class='slop-ngram-item'>closer breath warm (6)</span> <span class='slop-ngram-item'>could shake feeling (6)</span> <span class='slop-ngram-item'>air hung heavy (6)</span> <span class='slop-ngram-item'>thick scent sweat (5)</span> <span class='slop-ngram-item'>casting dancing shadows (5)</span> <span class='slop-ngram-item'>air hung thick (5)</span>
-</div>
-
 ##### mistralai/Mistral-Nemo-Instruct-2407
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/mistralai__Mistral-Nemo-Instruct-2407__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/mistralai__Mistral-Nemo-Instruct-2407__phylo_tree_combined_circular.png' alt='Circular dendrogram for mistralai/Mistral-Nemo-Instruct-2407' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/mistralai__Mistral-Nemo-Instruct-2407__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/mistralai__Mistral-Nemo-Instruct-2407__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for mistralai/Mistral-Nemo-Instruct-2407' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
+<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.660)</div>
 <div class='slop-similar'>mistralai/mistral-small-3.1-24b-instruct-2503 (distance=0.686)</div>
 <div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.711)</div>
 <div class='slop-similar'>openai/gpt-4-0314 (distance=0.738)</div>
 <div class='slop-similar'>google/gemma-2-9b-it (distance=0.757)</div>
-<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.764)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -567,7 +822,52 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 <span class='slop-ngram-item'>voice barely whisper (66)</span> <span class='slop-ngram-item'>heart pounding chest (60)</span> <span class='slop-ngram-item'>take deep breath (48)</span> <span class='slop-ngram-item'>said voice barely (26)</span> <span class='slop-ngram-item'>deep breath trying (26)</span> <span class='slop-ngram-item'>smile playing lips (25)</span> <span class='slop-ngram-item'>said voice steady (25)</span> <span class='slop-ngram-item'>eyes meeting mine (22)</span> <span class='slop-ngram-item'>small smile playing (21)</span> <span class='slop-ngram-item'>voice steady despite (21)</span> <span class='slop-ngram-item'>took deep breath (21)</span> <span class='slop-ngram-item'>breath trying calm (20)</span> <span class='slop-ngram-item'>voice barely audible (19)</span> <span class='slop-ngram-item'>chill run spine (19)</span> <span class='slop-ngram-item'>one step time (18)</span> <span class='slop-ngram-item'>eyes never leaving (17)</span> <span class='slop-ngram-item'>felt chill run (17)</span> <span class='slop-ngram-item'>take one step (16)</span> <span class='slop-ngram-item'>step time one (16)</span> <span class='slop-ngram-item'>said voice low (15)</span> <span class='slop-ngram-item'>air thick scent (14)</span> <span class='slop-ngram-item'>leaned back chair (11)</span> <span class='slop-ngram-item'>says voice soft (11)</span> <span class='slop-ngram-item'>laughed sound like (11)</span> <span class='slop-ngram-item'>asked voice barely (11)</span> <span class='slop-ngram-item'>looks eyes meeting (11)</span> <span class='slop-ngram-item'>spreading across face (10)</span> <span class='slop-ngram-item'>find way make (10)</span> <span class='slop-ngram-item'>elara said voice (10)</span> <span class='slop-ngram-item'>like distant thunder (9)</span>
 </div>
 
+##### gpt-4o-mini
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/gpt-4o-mini__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/gpt-4o-mini__phylo_tree_combined_circular.png' alt='Circular dendrogram for gpt-4o-mini' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/gpt-4o-mini__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/gpt-4o-mini__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for gpt-4o-mini' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.771)</div>
+<div class='slop-similar'>liquid/lfm-7b (distance=0.776)</div>
+<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.788)</div>
+<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.790)</div>
+<div class='slop-similar'>anthropic/claude-3-haiku (distance=0.794)</div>
+</div>
+
+<h4>Top Repetitive Words</h4>
+<div class='slop-section-items'>
+<span class='slop-word-item'>elara</span> <span class='slop-word-item'>glinted</span> <span class='slop-word-item'>glinting</span> <span class='slop-word-item'>shimmered</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>thrumming</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>keter</span> <span class='slop-word-item'>hargrove</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>furrowed</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>flicker</span> <span class='slop-word-item'>tousled</span> <span class='slop-word-item'>steadier</span> <span class='slop-word-item'>flickering</span> <span class='slop-word-item'>crackles</span> <span class='slop-word-item'>exhilaration</span> <span class='slop-word-item'>steadying</span> <span class='slop-word-item'>glint</span> <span class='slop-word-item'>clinking</span> <span class='slop-word-item'>sparkled</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>igniting</span> <span class='slop-word-item'>mingling</span> <span class='slop-word-item'>ominously</span> <span class='slop-word-item'>gnawed</span> <span class='slop-word-item'>interjected</span> <span class='slop-word-item'>acrid</span> <span class='slop-word-item'>conspiratorial</span> <span class='slop-word-item'>muttered</span> <span class='slop-word-item'>glancing</span> <span class='slop-word-item'>flickers</span> <span class='slop-word-item'>falters</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>trudged</span> <span class='slop-word-item'>hesitates</span> <span class='slop-word-item'>smirking</span> <span class='slop-word-item'>intoxicating</span> <span class='slop-word-item'>mischief</span> <span class='slop-word-item'>echoed</span> <span class='slop-word-item'>smirk</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>cacophony</span> <span class='slop-word-item'>lacing</span> <span class='slop-word-item'>chuckled</span> <span class='slop-word-item'>seeped</span> <span class='slop-word-item'>coursing</span> <span class='slop-word-item'>swirling</span> <span class='slop-word-item'>gaze</span>
+</div>
+<h4>Top Bigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>air thick (41)</span> <span class='slop-ngram-item'>said voice (39)</span> <span class='slop-ngram-item'>heart racing (38)</span> <span class='slop-ngram-item'>felt like (35)</span> <span class='slop-ngram-item'>heart raced (34)</span> <span class='slop-ngram-item'>shake feeling (30)</span> <span class='slop-ngram-item'>deep breath (29)</span> <span class='slop-ngram-item'>feel like (29)</span> <span class='slop-ngram-item'>replied voice (27)</span> <span class='slop-ngram-item'>feels like (27)</span> <span class='slop-ngram-item'>voice barely (26)</span> <span class='slop-ngram-item'>voice low (25)</span> <span class='slop-ngram-item'>voice steady (20)</span> <span class='slop-ngram-item'>could feel (20)</span> <span class='slop-ngram-item'>barely whisper (20)</span> <span class='slop-ngram-item'>felt weight (18)</span> <span class='slop-ngram-item'>eyes glinting (18)</span> <span class='slop-ngram-item'>around us (17)</span> <span class='slop-ngram-item'>around like (17)</span> <span class='slop-ngram-item'>let see (17)</span> <span class='slop-ngram-item'>voice smooth (17)</span> <span class='slop-ngram-item'>asked voice (16)</span> <span class='slop-ngram-item'>could see (16)</span> <span class='slop-ngram-item'>let go (16)</span> <span class='slop-ngram-item'>look like (16)</span> <span class='slop-ngram-item'>thick scent (16)</span> <span class='slop-ngram-item'>help feel (15)</span> <span class='slop-ngram-item'>heart races (15)</span> <span class='slop-ngram-item'>air like (15)</span> <span class='slop-ngram-item'>stark contrast (15)</span>
+</div>
+<h4>Top Trigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>voice barely whisper (19)</span> <span class='slop-ngram-item'>air thick scent (13)</span> <span class='slop-ngram-item'>take deep breath (12)</span> <span class='slop-ngram-item'>took deep breath (11)</span> <span class='slop-ngram-item'>eyes glinting mischief (9)</span> <span class='slop-ngram-item'>replied voice barely (8)</span> <span class='slop-ngram-item'>long shadows across (7)</span> <span class='slop-ngram-item'>casting long shadows (7)</span> <span class='slop-ngram-item'>takes step closer (7)</span> <span class='slop-ngram-item'>item object class (6)</span> <span class='slop-ngram-item'>object class keter (6)</span> <span class='slop-ngram-item'>class keter special (6)</span> <span class='slop-ngram-item'>keter special containment (6)</span> <span class='slop-ngram-item'>special containment procedures (6)</span> <span class='slop-ngram-item'>trying sound casual (6)</span> <span class='slop-ngram-item'>said voice low (6)</span> <span class='slop-ngram-item'>sent shiver spine (5)</span> <span class='slop-ngram-item'>closer voice dropping (5)</span> <span class='slop-ngram-item'>wrapping around like (5)</span> <span class='slop-ngram-item'>low sky casting (5)</span> <span class='slop-ngram-item'>said voice smooth (5)</span> <span class='slop-ngram-item'>voice smooth silk (5)</span> <span class='slop-ngram-item'>could almost hear (4)</span> <span class='slop-ngram-item'>casting warm glow (4)</span> <span class='slop-ngram-item'>chill run spine (4)</span> <span class='slop-ngram-item'>shake feeling something (4)</span> <span class='slop-ngram-item'>door swings open (4)</span> <span class='slop-ngram-item'>voice dropping whisper (4)</span> <span class='slop-ngram-item'>voice barely rising (4)</span> <span class='slop-ngram-item'>voice trembling slightly (4)</span>
+</div>
+
 ##### meta-llama/llama-3.1-405b-instruct
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.1-405b-instruct__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.1-405b-instruct__phylo_tree_combined_circular.png' alt='Circular dendrogram for meta-llama/llama-3.1-405b-instruct' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.1-405b-instruct__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.1-405b-instruct__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for meta-llama/llama-3.1-405b-instruct' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>meta-llama/llama-3.1-70b-instruct (distance=0.620)</div>
@@ -590,7 +890,52 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 <span class='slop-ngram-item'>could shake feeling (24)</span> <span class='slop-ngram-item'>shiver run spine (19)</span> <span class='slop-ngram-item'>voice barely whisper (17)</span> <span class='slop-ngram-item'>felt shiver run (16)</span> <span class='slop-ngram-item'>heart skipped beat (13)</span> <span class='slop-ngram-item'>said voice low (12)</span> <span class='slop-ngram-item'>made way back (12)</span> <span class='slop-ngram-item'>sun began set (11)</span> <span class='slop-ngram-item'>began set casting (11)</span> <span class='slop-ngram-item'>took deep breath (11)</span> <span class='slop-ngram-item'>eyes never leaving (10)</span> <span class='slop-ngram-item'>casting golden glow (10)</span> <span class='slop-ngram-item'>voice low husky (9)</span> <span class='slop-ngram-item'>voice barely audible (8)</span> <span class='slop-ngram-item'>eyes glinting amusement (8)</span> <span class='slop-ngram-item'>eyes locked onto (8)</span> <span class='slop-ngram-item'>casting eerie shadows (7)</span> <span class='slop-ngram-item'>said voice barely (7)</span> <span class='slop-ngram-item'>set casting golden (7)</span> <span class='slop-ngram-item'>says voice dripping (7)</span> <span class='slop-ngram-item'>flush rise cheeks (6)</span> <span class='slop-ngram-item'>take deep breath (6)</span> <span class='slop-ngram-item'>could help feel (6)</span> <span class='slop-ngram-item'>air thick smell (6)</span> <span class='slop-ngram-item'>smile playing lips (6)</span> <span class='slop-ngram-item'>heart pounding chest (6)</span> <span class='slop-ngram-item'>said voice dripping (6)</span> <span class='slop-ngram-item'>trying sound casual (6)</span> <span class='slop-ngram-item'>takes step closer (6)</span> <span class='slop-ngram-item'>smile grew wider (6)</span>
 </div>
 
+##### google/gemma-2-9b-it
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/google__gemma-2-9b-it__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/google__gemma-2-9b-it__phylo_tree_combined_circular.png' alt='Circular dendrogram for google/gemma-2-9b-it' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/google__gemma-2-9b-it__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/google__gemma-2-9b-it__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for google/gemma-2-9b-it' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.727)</div>
+<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.754)</div>
+<div class='slop-similar'>liquid/lfm-7b (distance=0.754)</div>
+<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.757)</div>
+<div class='slop-similar'>openai/gpt-4-0314 (distance=0.765)</div>
+</div>
+
+<h4>Top Repetitive Words</h4>
+<div class='slop-section-items'>
+<span class='slop-word-item'>aethel</span> <span class='slop-word-item'>elara</span> <span class='slop-word-item'>kaito</span> <span class='slop-word-item'>stammered</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>glinting</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>crackles</span> <span class='slop-word-item'>cloying</span> <span class='slop-word-item'>purred</span> <span class='slop-word-item'>hulking</span> <span class='slop-word-item'>purrs</span> <span class='slop-word-item'>conspiratorial</span> <span class='slop-word-item'>flickering</span> <span class='slop-word-item'>throaty</span> <span class='slop-word-item'>hummed</span> <span class='slop-word-item'>silken</span> <span class='slop-word-item'>rasp</span> <span class='slop-word-item'>scoffs</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>saccharine</span> <span class='slop-word-item'>flicker</span> <span class='slop-word-item'>unreadable</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>throngs</span> <span class='slop-word-item'>wiry</span> <span class='slop-word-item'>mumbled</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>swirling</span> <span class='slop-word-item'>gaze</span> <span class='slop-word-item'>guttural</span> <span class='slop-word-item'>hoarse</span> <span class='slop-word-item'>retorts</span> <span class='slop-word-item'>cacophony</span> <span class='slop-word-item'>muttered</span> <span class='slop-word-item'>obsidian</span> <span class='slop-word-item'>shimmering</span> <span class='slop-word-item'>glint</span> <span class='slop-word-item'>hushed</span> <span class='slop-word-item'>twinkling</span> <span class='slop-word-item'>chuckled</span> <span class='slop-word-item'>laced</span> <span class='slop-word-item'>murmur</span> <span class='slop-word-item'>gravelly</span> <span class='slop-word-item'>trembling</span> <span class='slop-word-item'>shiver</span> <span class='slop-word-item'>gnawing</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>clung</span> <span class='slop-word-item'>whirlwind</span>
+</div>
+<h4>Top Bigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>said voice (101)</span> <span class='slop-ngram-item'>voice barely (48)</span> <span class='slop-ngram-item'>voice low (48)</span> <span class='slop-ngram-item'>barely whisper (39)</span> <span class='slop-ngram-item'>heart pounding (30)</span> <span class='slop-ngram-item'>air thick (24)</span> <span class='slop-ngram-item'>voice laced (22)</span> <span class='slop-ngram-item'>playing lips (22)</span> <span class='slop-ngram-item'>thick scent (21)</span> <span class='slop-ngram-item'>says voice (21)</span> <span class='slop-ngram-item'>say voice (21)</span> <span class='slop-ngram-item'>asked voice (20)</span> <span class='slop-ngram-item'>felt like (18)</span> <span class='slop-ngram-item'>smile playing (18)</span> <span class='slop-ngram-item'>gaze fixed (17)</span> <span class='slop-ngram-item'>voice trembling (17)</span> <span class='slop-ngram-item'>something else (16)</span> <span class='slop-ngram-item'>voice soft (16)</span> <span class='slop-ngram-item'>pounding chest (16)</span> <span class='slop-ngram-item'>shadows across (16)</span> <span class='slop-ngram-item'>maybe maybe (15)</span> <span class='slop-ngram-item'>dim light (14)</span> <span class='slop-ngram-item'>eyes filled (14)</span> <span class='slop-ngram-item'>around us (14)</span> <span class='slop-ngram-item'>deep breath (13)</span> <span class='slop-ngram-item'>asks voice (13)</span> <span class='slop-ngram-item'>whispered voice (13)</span> <span class='slop-ngram-item'>constant reminder (12)</span> <span class='slop-ngram-item'>eyes wide (12)</span> <span class='slop-ngram-item'>voice dropping (11)</span>
+</div>
+<h4>Top Trigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>voice barely whisper (39)</span> <span class='slop-ngram-item'>said voice low (19)</span> <span class='slop-ngram-item'>smile playing lips (18)</span> <span class='slop-ngram-item'>heart pounding chest (16)</span> <span class='slop-ngram-item'>said voice barely (11)</span> <span class='slop-ngram-item'>voice dropping conspiratorial (9)</span> <span class='slop-ngram-item'>dropping conspiratorial whisper (9)</span> <span class='slop-ngram-item'>voice barely audible (9)</span> <span class='slop-ngram-item'>air thick scent (9)</span> <span class='slop-ngram-item'>asked voice barely (9)</span> <span class='slop-ngram-item'>something else something (9)</span> <span class='slop-ngram-item'>voice low murmur (9)</span> <span class='slop-ngram-item'>long shadows across (9)</span> <span class='slop-ngram-item'>said voice soft (9)</span> <span class='slop-ngram-item'>casting long shadows (8)</span> <span class='slop-ngram-item'>said voice dropping (7)</span> <span class='slop-ngram-item'>hand instinctively reaching (7)</span> <span class='slop-ngram-item'>take deep breath (7)</span> <span class='slop-ngram-item'>voice low rumble (7)</span> <span class='slop-ngram-item'>sent shiver spine (7)</span> <span class='slop-ngram-item'>said voice laced (7)</span> <span class='slop-ngram-item'>sent shivers spine (7)</span> <span class='slop-ngram-item'>air thick smell (6)</span> <span class='slop-ngram-item'>says voice low (6)</span> <span class='slop-ngram-item'>closer breath warm (6)</span> <span class='slop-ngram-item'>could shake feeling (6)</span> <span class='slop-ngram-item'>air hung heavy (6)</span> <span class='slop-ngram-item'>thick scent sweat (5)</span> <span class='slop-ngram-item'>casting dancing shadows (5)</span> <span class='slop-ngram-item'>air hung thick (5)</span>
+</div>
+
 ##### liquid/lfm-7b
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/liquid__lfm-7b__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/liquid__lfm-7b__phylo_tree_combined_circular.png' alt='Circular dendrogram for liquid/lfm-7b' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/liquid__lfm-7b__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/liquid__lfm-7b__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for liquid/lfm-7b' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>google/gemma-2-9b-it (distance=0.754)</div>
@@ -613,30 +958,52 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 <span class='slop-ngram-item'>took deep breath (17)</span> <span class='slop-ngram-item'>air thick scent (17)</span> <span class='slop-ngram-item'>casting long shadows (16)</span> <span class='slop-ngram-item'>said voice low (14)</span> <span class='slop-ngram-item'>long shadows across (14)</span> <span class='slop-ngram-item'>smile playing lips (12)</span> <span class='slop-ngram-item'>voice barely whisper (11)</span> <span class='slop-ngram-item'>heart skipped beat (9)</span> <span class='slop-ngram-item'>take deep breath (8)</span> <span class='slop-ngram-item'>something else something (8)</span> <span class='slop-ngram-item'>flicker something akin (8)</span> <span class='slop-ngram-item'>choosing words carefully (8)</span> <span class='slop-ngram-item'>cast long shadows (7)</span> <span class='slop-ngram-item'>voice steady despite (7)</span> <span class='slop-ngram-item'>shiver run spine (7)</span> <span class='slop-ngram-item'>piercing blue eyes (7)</span> <span class='slop-ngram-item'>hung heavy air (6)</span> <span class='slop-ngram-item'>breath warm ear (6)</span> <span class='slop-ngram-item'>eyes never leaving (6)</span> <span class='slop-ngram-item'>eyes locking onto (6)</span> <span class='slop-ngram-item'>said finally voice (6)</span> <span class='slop-ngram-item'>mind already racing (6)</span> <span class='slop-ngram-item'>made way back (6)</span> <span class='slop-ngram-item'>could shake feeling (6)</span> <span class='slop-ngram-item'>voice low husky (6)</span> <span class='slop-ngram-item'>felt shiver run (6)</span> <span class='slop-ngram-item'>eyebrow intrigued despite (6)</span> <span class='slop-ngram-item'>special containment procedures (5)</span> <span class='slop-ngram-item'>eyes crinkling corners (5)</span> <span class='slop-ngram-item'>every word every (5)</span>
 </div>
 
-##### mistralai/mistral-small-3.1-24b-instruct-2503
+##### openai/gpt-4-0314
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/openai__gpt-4-0314__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/openai__gpt-4-0314__phylo_tree_combined_circular.png' alt='Circular dendrogram for openai/gpt-4-0314' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/openai__gpt-4-0314__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/openai__gpt-4-0314__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for openai/gpt-4-0314' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.679)</div>
-<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.686)</div>
-<div class='slop-similar'>openai/gpt-4-0314 (distance=0.756)</div>
-<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.774)</div>
-<div class='slop-similar'>meta-llama/llama-3.1-8b-instruct (distance=0.786)</div>
+<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.721)</div>
+<div class='slop-similar'>anthropic/claude-3-haiku (distance=0.734)</div>
+<div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.735)</div>
+<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.738)</div>
+<div class='slop-similar'>openai/gpt-3.5-turbo-0613 (distance=0.753)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
 <div class='slop-section-items'>
-<span class='slop-word-item'>elara</span> <span class='slop-word-item'>kael</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>steeling</span> <span class='slop-word-item'>gleamed</span> <span class='slop-word-item'>foghorn</span> <span class='slop-word-item'>sparkled</span> <span class='slop-word-item'>furrowed</span> <span class='slop-word-item'>unreadable</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>grunted</span> <span class='slop-word-item'>shivered</span> <span class='slop-word-item'>lyra</span> <span class='slop-word-item'>blackwood</span> <span class='slop-word-item'>chuckled</span> <span class='slop-word-item'>flickering</span> <span class='slop-word-item'>smirk</span> <span class='slop-word-item'>nodded</span> <span class='slop-word-item'>widened</span> <span class='slop-word-item'>sneer</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>fluttered</span> <span class='slop-word-item'>untamed</span> <span class='slop-word-item'>pounding</span> <span class='slop-word-item'>gruff</span> <span class='slop-word-item'>gnawing</span> <span class='slop-word-item'>unyielding</span> <span class='slop-word-item'>clanging</span> <span class='slop-word-item'>hummed</span> <span class='slop-word-item'>addendum</span> <span class='slop-word-item'>burly</span> <span class='slop-word-item'>curled</span> <span class='slop-word-item'>warily</span> <span class='slop-word-item'>belied</span> <span class='slop-word-item'>downcast</span> <span class='slop-word-item'>nods</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>coldness</span> <span class='slop-word-item'>buzzes</span> <span class='slop-word-item'>mournful</span> <span class='slop-word-item'>narrowed</span> <span class='slop-word-item'>disheveled</span> <span class='slop-word-item'>rustling</span> <span class='slop-word-item'>wavering</span> <span class='slop-word-item'>arcane</span> <span class='slop-word-item'>inscrutable</span> <span class='slop-word-item'>leaned</span> <span class='slop-word-item'>grinned</span> <span class='slop-word-item'>gleaming</span>
+<span class='slop-word-item'>renn</span> <span class='slop-word-item'>stammered</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>smirks</span> <span class='slop-word-item'>glinting</span> <span class='slop-word-item'>foghorn</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>hesitates</span> <span class='slop-word-item'>hummed</span> <span class='slop-word-item'>cacophony</span> <span class='slop-word-item'>grudging</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>unreadable</span> <span class='slop-word-item'>sighed</span> <span class='slop-word-item'>glanced</span> <span class='slop-word-item'>grinned</span> <span class='slop-word-item'>dimly</span> <span class='slop-word-item'>nodded</span> <span class='slop-word-item'>flickering</span> <span class='slop-word-item'>containment</span> <span class='slop-word-item'>smirking</span> <span class='slop-word-item'>shiver</span> <span class='slop-word-item'>whispered</span> <span class='slop-word-item'>gleaming</span> <span class='slop-word-item'>flicker</span> <span class='slop-word-item'>unyielding</span> <span class='slop-word-item'>scribbled</span> <span class='slop-word-item'>murmurs</span> <span class='slop-word-item'>flicking</span> <span class='slop-word-item'>piqued</span> <span class='slop-word-item'>makeshift</span> <span class='slop-word-item'>addendum</span> <span class='slop-word-item'>eyebrow</span> <span class='slop-word-item'>aback</span> <span class='slop-word-item'>trembling</span> <span class='slop-word-item'>euclid</span> <span class='slop-word-item'>pounding</span> <span class='slop-word-item'>grins</span> <span class='slop-word-item'>leaned</span> <span class='slop-word-item'>muttered</span> <span class='slop-word-item'>heaving</span> <span class='slop-word-item'>clenched</span> <span class='slop-word-item'>gaze</span> <span class='slop-word-item'>audible</span> <span class='slop-word-item'>narrowing</span> <span class='slop-word-item'>camaraderie</span> <span class='slop-word-item'>unspoken</span> <span class='slop-word-item'>eerie</span>
 </div>
 <h4>Top Bigrams</h4>
 <div class='slop-section-items'>
-<span class='slop-ngram-item'>find way (138)</span> <span class='slop-ngram-item'>deep breath (123)</span> <span class='slop-ngram-item'>eyes never (107)</span> <span class='slop-ngram-item'>said voice (107)</span> <span class='slop-ngram-item'>heart pounding (104)</span> <span class='slop-ngram-item'>never leaving (102)</span> <span class='slop-ngram-item'>must say (94)</span> <span class='slop-ngram-item'>voice barely (70)</span> <span class='slop-ngram-item'>ca help (68)</span> <span class='slop-ngram-item'>says voice (67)</span> <span class='slop-ngram-item'>could feel (65)</span> <span class='slop-ngram-item'>air thick (62)</span> <span class='slop-ngram-item'>barely whisper (62)</span> <span class='slop-ngram-item'>voice low (60)</span> <span class='slop-ngram-item'>voice steady (59)</span> <span class='slop-ngram-item'>leaving face (56)</span> <span class='slop-ngram-item'>take deep (55)</span> <span class='slop-ngram-item'>lips curled (55)</span> <span class='slop-ngram-item'>say quite (55)</span> <span class='slop-ngram-item'>eyes narrowed (54)</span> <span class='slop-ngram-item'>pounding chest (52)</span> <span class='slop-ngram-item'>mind racing (48)</span> <span class='slop-ngram-item'>voice soft (45)</span> <span class='slop-ngram-item'>asked voice (45)</span> <span class='slop-ngram-item'>step closer (40)</span> <span class='slop-ngram-item'>paying price (40)</span> <span class='slop-ngram-item'>breath trying (39)</span> <span class='slop-ngram-item'>say voice (38)</span> <span class='slop-ngram-item'>took deep (37)</span> <span class='slop-ngram-item'>damage done (37)</span>
+<span class='slop-ngram-item'>ca help (68)</span> <span class='slop-ngram-item'>could help (43)</span> <span class='slop-ngram-item'>said voice (43)</span> <span class='slop-ngram-item'>voice barely (39)</span> <span class='slop-ngram-item'>help feel (37)</span> <span class='slop-ngram-item'>voice low (32)</span> <span class='slop-ngram-item'>heart pounding (26)</span> <span class='slop-ngram-item'>deep breath (26)</span> <span class='slop-ngram-item'>barely audible (24)</span> <span class='slop-ngram-item'>could feel (23)</span> <span class='slop-ngram-item'>says voice (21)</span> <span class='slop-ngram-item'>could see (20)</span> <span class='slop-ngram-item'>pounding chest (18)</span> <span class='slop-ngram-item'>find way (17)</span> <span class='slop-ngram-item'>asked voice (17)</span> <span class='slop-ngram-item'>dark eyes (17)</span> <span class='slop-ngram-item'>could shake (17)</span> <span class='slop-ngram-item'>shake feeling (16)</span> <span class='slop-ngram-item'>eyes wide (15)</span> <span class='slop-ngram-item'>made way (15)</span> <span class='slop-ngram-item'>eyes narrowing (15)</span> <span class='slop-ngram-item'>barely whisper (15)</span> <span class='slop-ngram-item'>air thick (14)</span> <span class='slop-ngram-item'>help wonder (14)</span> <span class='slop-ngram-item'>maybe maybe (14)</span> <span class='slop-ngram-item'>containment breach (13)</span> <span class='slop-ngram-item'>voice steady (13)</span> <span class='slop-ngram-item'>knew would (13)</span> <span class='slop-ngram-item'>whispered voice (13)</span> <span class='slop-ngram-item'>voice cold (12)</span>
 </div>
 <h4>Top Trigrams</h4>
 <div class='slop-section-items'>
-<span class='slop-ngram-item'>eyes never leaving (102)</span> <span class='slop-ngram-item'>voice barely whisper (62)</span> <span class='slop-ngram-item'>never leaving face (56)</span> <span class='slop-ngram-item'>take deep breath (55)</span> <span class='slop-ngram-item'>must say quite (55)</span> <span class='slop-ngram-item'>heart pounding chest (51)</span> <span class='slop-ngram-item'>deep breath trying (39)</span> <span class='slop-ngram-item'>took deep breath (37)</span> <span class='slop-ngram-item'>heart sank realized (30)</span> <span class='slop-ngram-item'>air thick scent (29)</span> <span class='slop-ngram-item'>voice steady despite (26)</span> <span class='slop-ngram-item'>elara smile widened (26)</span> <span class='slop-ngram-item'>help feel sense (25)</span> <span class='slop-ngram-item'>says voice soft (25)</span> <span class='slop-ngram-item'>takes deep breath (24)</span> <span class='slop-ngram-item'>say voice barely (23)</span> <span class='slop-ngram-item'>make sound like (22)</span> <span class='slop-ngram-item'>asked voice steady (21)</span> <span class='slop-ngram-item'>said voice low (19)</span> <span class='slop-ngram-item'>barely whisper like (19)</span> <span class='slop-ngram-item'>tears streaming face (19)</span> <span class='slop-ngram-item'>sank realized truth (19)</span> <span class='slop-ngram-item'>lips curled sneer (19)</span> <span class='slop-ngram-item'>deep breath steeling (18)</span> <span class='slop-ngram-item'>ca help feel (17)</span> <span class='slop-ngram-item'>eyes sparkling amusement (17)</span> <span class='slop-ngram-item'>feel tears streaming (17)</span> <span class='slop-ngram-item'>took another step (17)</span> <span class='slop-ngram-item'>another step closer (17)</span> <span class='slop-ngram-item'>lips curled smirk (16)</span>
+<span class='slop-ngram-item'>voice barely audible (22)</span> <span class='slop-ngram-item'>ca help feel (20)</span> <span class='slop-ngram-item'>could help feel (17)</span> <span class='slop-ngram-item'>heart pounding chest (17)</span> <span class='slop-ngram-item'>voice barely whisper (15)</span> <span class='slop-ngram-item'>could shake feeling (15)</span> <span class='slop-ngram-item'>take deep breath (12)</span> <span class='slop-ngram-item'>took deep breath (10)</span> <span class='slop-ngram-item'>ca help wonder (9)</span> <span class='slop-ngram-item'>ca help notice (9)</span> <span class='slop-ngram-item'>whispered voice barely (9)</span> <span class='slop-ngram-item'>said voice barely (8)</span> <span class='slop-ngram-item'>eyes never leaving (8)</span> <span class='slop-ngram-item'>heart pounded chest (8)</span> <span class='slop-ngram-item'>said voice low (8)</span> <span class='slop-ngram-item'>help feel sense (7)</span> <span class='slop-ngram-item'>said voice cold (7)</span> <span class='slop-ngram-item'>leaned back chair (7)</span> <span class='slop-ngram-item'>item object class (6)</span> <span class='slop-ngram-item'>object class euclid (6)</span> <span class='slop-ngram-item'>class euclid special (6)</span> <span class='slop-ngram-item'>euclid special containment (6)</span> <span class='slop-ngram-item'>special containment procedures (6)</span> <span class='slop-ngram-item'>made way back (6)</span> <span class='slop-ngram-item'>casting long shadows (6)</span> <span class='slop-ngram-item'>trying sound casual (6)</span> <span class='slop-ngram-item'>voice low dangerous (5)</span> <span class='slop-ngram-item'>something else something (5)</span> <span class='slop-ngram-item'>ca help think (5)</span> <span class='slop-ngram-item'>focus task hand (5)</span>
 </div>
 
 ##### meta-llama/llama-3.1-70b-instruct
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.1-70b-instruct__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.1-70b-instruct__phylo_tree_combined_circular.png' alt='Circular dendrogram for meta-llama/llama-3.1-70b-instruct' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.1-70b-instruct__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.1-70b-instruct__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for meta-llama/llama-3.1-70b-instruct' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>meta-llama/llama-3.2-3b-instruct (distance=0.602)</div>
@@ -659,7 +1026,86 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 <span class='slop-ngram-item'>shiver run spine (25)</span> <span class='slop-ngram-item'>could shake feeling (21)</span> <span class='slop-ngram-item'>felt shiver run (20)</span> <span class='slop-ngram-item'>voice barely whisper (18)</span> <span class='slop-ngram-item'>take deep breath (17)</span> <span class='slop-ngram-item'>said voice low (15)</span> <span class='slop-ngram-item'>eyes locked onto (13)</span> <span class='slop-ngram-item'>spreading across face (13)</span> <span class='slop-ngram-item'>deep breath try (12)</span> <span class='slop-ngram-item'>took deep breath (12)</span> <span class='slop-ngram-item'>sun began set (10)</span> <span class='slop-ngram-item'>said voice dripping (10)</span> <span class='slop-ngram-item'>heart skipped beat (10)</span> <span class='slop-ngram-item'>eyes never leaving (9)</span> <span class='slop-ngram-item'>eyes glinting amusement (9)</span> <span class='slop-ngram-item'>said voice barely (9)</span> <span class='slop-ngram-item'>smile spreading across (9)</span> <span class='slop-ngram-item'>air thick smell (8)</span> <span class='slop-ngram-item'>voice low husky (8)</span> <span class='slop-ngram-item'>voice low smooth (7)</span> <span class='slop-ngram-item'>said trying sound (7)</span> <span class='slop-ngram-item'>began set casting (7)</span> <span class='slop-ngram-item'>eyes scanning room (7)</span> <span class='slop-ngram-item'>casting long shadows (7)</span> <span class='slop-ngram-item'>mind racing implications (7)</span> <span class='slop-ngram-item'>trying sound casual (6)</span> <span class='slop-ngram-item'>started feel like (6)</span> <span class='slop-ngram-item'>trying sound nonchalant (6)</span> <span class='slop-ngram-item'>eyes sparkled amusement (6)</span> <span class='slop-ngram-item'>casting eerie glow (6)</span>
 </div>
 
+##### mistralai/mistral-small-3.1-24b-instruct-2503
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/mistralai__mistral-small-3.1-24b-instruct-2503__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/mistralai__mistral-small-3.1-24b-instruct-2503__phylo_tree_combined_circular.png' alt='Circular dendrogram for mistralai/mistral-small-3.1-24b-instruct-2503' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/mistralai__mistral-small-3.1-24b-instruct-2503__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/mistralai__mistral-small-3.1-24b-instruct-2503__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for mistralai/mistral-small-3.1-24b-instruct-2503' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.679)</div>
+<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.683)</div>
+<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.686)</div>
+<div class='slop-similar'>openai/gpt-4-0314 (distance=0.756)</div>
+<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.774)</div>
+</div>
+
+<h4>Top Repetitive Words</h4>
+<div class='slop-section-items'>
+<span class='slop-word-item'>elara</span> <span class='slop-word-item'>kael</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>steeling</span> <span class='slop-word-item'>gleamed</span> <span class='slop-word-item'>foghorn</span> <span class='slop-word-item'>sparkled</span> <span class='slop-word-item'>furrowed</span> <span class='slop-word-item'>unreadable</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>grunted</span> <span class='slop-word-item'>shivered</span> <span class='slop-word-item'>lyra</span> <span class='slop-word-item'>blackwood</span> <span class='slop-word-item'>chuckled</span> <span class='slop-word-item'>flickering</span> <span class='slop-word-item'>smirk</span> <span class='slop-word-item'>nodded</span> <span class='slop-word-item'>widened</span> <span class='slop-word-item'>sneer</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>fluttered</span> <span class='slop-word-item'>untamed</span> <span class='slop-word-item'>pounding</span> <span class='slop-word-item'>gruff</span> <span class='slop-word-item'>gnawing</span> <span class='slop-word-item'>unyielding</span> <span class='slop-word-item'>clanging</span> <span class='slop-word-item'>hummed</span> <span class='slop-word-item'>addendum</span> <span class='slop-word-item'>burly</span> <span class='slop-word-item'>curled</span> <span class='slop-word-item'>warily</span> <span class='slop-word-item'>belied</span> <span class='slop-word-item'>downcast</span> <span class='slop-word-item'>nods</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>coldness</span> <span class='slop-word-item'>buzzes</span> <span class='slop-word-item'>mournful</span> <span class='slop-word-item'>narrowed</span> <span class='slop-word-item'>disheveled</span> <span class='slop-word-item'>rustling</span> <span class='slop-word-item'>wavering</span> <span class='slop-word-item'>arcane</span> <span class='slop-word-item'>inscrutable</span> <span class='slop-word-item'>leaned</span> <span class='slop-word-item'>grinned</span> <span class='slop-word-item'>gleaming</span>
+</div>
+<h4>Top Bigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>find way (138)</span> <span class='slop-ngram-item'>deep breath (123)</span> <span class='slop-ngram-item'>eyes never (107)</span> <span class='slop-ngram-item'>said voice (107)</span> <span class='slop-ngram-item'>heart pounding (104)</span> <span class='slop-ngram-item'>never leaving (102)</span> <span class='slop-ngram-item'>must say (94)</span> <span class='slop-ngram-item'>voice barely (70)</span> <span class='slop-ngram-item'>ca help (68)</span> <span class='slop-ngram-item'>says voice (67)</span> <span class='slop-ngram-item'>could feel (65)</span> <span class='slop-ngram-item'>air thick (62)</span> <span class='slop-ngram-item'>barely whisper (62)</span> <span class='slop-ngram-item'>voice low (60)</span> <span class='slop-ngram-item'>voice steady (59)</span> <span class='slop-ngram-item'>leaving face (56)</span> <span class='slop-ngram-item'>take deep (55)</span> <span class='slop-ngram-item'>lips curled (55)</span> <span class='slop-ngram-item'>say quite (55)</span> <span class='slop-ngram-item'>eyes narrowed (54)</span> <span class='slop-ngram-item'>pounding chest (52)</span> <span class='slop-ngram-item'>mind racing (48)</span> <span class='slop-ngram-item'>voice soft (45)</span> <span class='slop-ngram-item'>asked voice (45)</span> <span class='slop-ngram-item'>step closer (40)</span> <span class='slop-ngram-item'>paying price (40)</span> <span class='slop-ngram-item'>breath trying (39)</span> <span class='slop-ngram-item'>say voice (38)</span> <span class='slop-ngram-item'>took deep (37)</span> <span class='slop-ngram-item'>damage done (37)</span>
+</div>
+<h4>Top Trigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>eyes never leaving (102)</span> <span class='slop-ngram-item'>voice barely whisper (62)</span> <span class='slop-ngram-item'>never leaving face (56)</span> <span class='slop-ngram-item'>take deep breath (55)</span> <span class='slop-ngram-item'>must say quite (55)</span> <span class='slop-ngram-item'>heart pounding chest (51)</span> <span class='slop-ngram-item'>deep breath trying (39)</span> <span class='slop-ngram-item'>took deep breath (37)</span> <span class='slop-ngram-item'>heart sank realized (30)</span> <span class='slop-ngram-item'>air thick scent (29)</span> <span class='slop-ngram-item'>voice steady despite (26)</span> <span class='slop-ngram-item'>elara smile widened (26)</span> <span class='slop-ngram-item'>help feel sense (25)</span> <span class='slop-ngram-item'>says voice soft (25)</span> <span class='slop-ngram-item'>takes deep breath (24)</span> <span class='slop-ngram-item'>say voice barely (23)</span> <span class='slop-ngram-item'>make sound like (22)</span> <span class='slop-ngram-item'>asked voice steady (21)</span> <span class='slop-ngram-item'>said voice low (19)</span> <span class='slop-ngram-item'>barely whisper like (19)</span> <span class='slop-ngram-item'>tears streaming face (19)</span> <span class='slop-ngram-item'>sank realized truth (19)</span> <span class='slop-ngram-item'>lips curled sneer (19)</span> <span class='slop-ngram-item'>deep breath steeling (18)</span> <span class='slop-ngram-item'>ca help feel (17)</span> <span class='slop-ngram-item'>eyes sparkling amusement (17)</span> <span class='slop-ngram-item'>feel tears streaming (17)</span> <span class='slop-ngram-item'>took another step (17)</span> <span class='slop-ngram-item'>another step closer (17)</span> <span class='slop-ngram-item'>lips curled smirk (16)</span>
+</div>
+
+##### mistralai/Mistral-Small-24B-Instruct-2501
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/mistralai__Mistral-Small-24B-Instruct-2501__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/mistralai__Mistral-Small-24B-Instruct-2501__phylo_tree_combined_circular.png' alt='Circular dendrogram for mistralai/Mistral-Small-24B-Instruct-2501' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/mistralai__Mistral-Small-24B-Instruct-2501__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/mistralai__Mistral-Small-24B-Instruct-2501__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for mistralai/Mistral-Small-24B-Instruct-2501' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>mistralai/mistral-small-3.1-24b-instruct-2503 (distance=0.679)</div>
+<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.708)</div>
+<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.711)</div>
+<div class='slop-similar'>openai/gpt-4-0314 (distance=0.735)</div>
+<div class='slop-similar'>google/gemma-2-9b-it (distance=0.766)</div>
+</div>
+
+<h4>Top Repetitive Words</h4>
+<div class='slop-section-items'>
+<span class='slop-word-item'>elara</span> <span class='slop-word-item'>steeling</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>kael</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>crackles</span> <span class='slop-word-item'>lyra</span> <span class='slop-word-item'>trickling</span> <span class='slop-word-item'>tensing</span> <span class='slop-word-item'>nodded</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>hummed</span> <span class='slop-word-item'>glinting</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>intoxicating</span> <span class='slop-word-item'>whirlwind</span> <span class='slop-word-item'>sneer</span> <span class='slop-word-item'>palpable</span> <span class='slop-word-item'>allure</span> <span class='slop-word-item'>shiver</span> <span class='slop-word-item'>narrowed</span> <span class='slop-word-item'>flickering</span> <span class='slop-word-item'>unyielding</span> <span class='slop-word-item'>unsettling</span> <span class='slop-word-item'>darting</span> <span class='slop-word-item'>raced</span> <span class='slop-word-item'>grizzled</span> <span class='slop-word-item'>addendum</span> <span class='slop-word-item'>carvings</span> <span class='slop-word-item'>growl</span> <span class='slop-word-item'>chuckled</span> <span class='slop-word-item'>grinned</span> <span class='slop-word-item'>cacophony</span> <span class='slop-word-item'>gripped</span> <span class='slop-word-item'>dimly</span> <span class='slop-word-item'>darted</span> <span class='slop-word-item'>coursing</span> <span class='slop-word-item'>rustling</span> <span class='slop-word-item'>gnawing</span> <span class='slop-word-item'>wavered</span> <span class='slop-word-item'>leaned</span> <span class='slop-word-item'>widened</span> <span class='slop-word-item'>bounty</span> <span class='slop-word-item'>haze</span> <span class='slop-word-item'>gaze</span> <span class='slop-word-item'>trembling</span> <span class='slop-word-item'>smirk</span> <span class='slop-word-item'>clatter</span> <span class='slop-word-item'>grimy</span>
+</div>
+<h4>Top Bigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>deep breath (158)</span> <span class='slop-ngram-item'>voice steady (124)</span> <span class='slop-ngram-item'>said voice (109)</span> <span class='slop-ngram-item'>eyes never (94)</span> <span class='slop-ngram-item'>never leaving (93)</span> <span class='slop-ngram-item'>think might (89)</span> <span class='slop-ngram-item'>mind raced (86)</span> <span class='slop-ngram-item'>eyes narrowed (77)</span> <span class='slop-ngram-item'>air thick (72)</span> <span class='slop-ngram-item'>find way (66)</span> <span class='slop-ngram-item'>stark contrast (64)</span> <span class='slop-ngram-item'>eyes scanning (64)</span> <span class='slop-ngram-item'>take deep (64)</span> <span class='slop-ngram-item'>say something (61)</span> <span class='slop-ngram-item'>took step (59)</span> <span class='slop-ngram-item'>could feel (58)</span> <span class='slop-ngram-item'>voice barely (55)</span> <span class='slop-ngram-item'>took deep (55)</span> <span class='slop-ngram-item'>voice low (54)</span> <span class='slop-ngram-item'>let see (54)</span> <span class='slop-ngram-item'>makes think (53)</span> <span class='slop-ngram-item'>breath trying (49)</span> <span class='slop-ngram-item'>heart pounding (48)</span> <span class='slop-ngram-item'>danger could (47)</span> <span class='slop-ngram-item'>steady despite (47)</span> <span class='slop-ngram-item'>steady need (47)</span> <span class='slop-ngram-item'>stark reminder (46)</span> <span class='slop-ngram-item'>eyes locked (46)</span> <span class='slop-ngram-item'>think wo (46)</span> <span class='slop-ngram-item'>need someone (45)</span>
+</div>
+<h4>Top Trigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>eyes never leaving (93)</span> <span class='slop-ngram-item'>said voice steady (67)</span> <span class='slop-ngram-item'>take deep breath (64)</span> <span class='slop-ngram-item'>took deep breath (55)</span> <span class='slop-ngram-item'>deep breath trying (49)</span> <span class='slop-ngram-item'>voice steady despite (47)</span> <span class='slop-ngram-item'>makes think wo (46)</span> <span class='slop-ngram-item'>voice steady need (46)</span> <span class='slop-ngram-item'>voice barely whisper (38)</span> <span class='slop-ngram-item'>took step back (37)</span> <span class='slop-ngram-item'>could feel presence (36)</span> <span class='slop-ngram-item'>step back eyes (36)</span> <span class='slop-ngram-item'>deep breath steeling (34)</span> <span class='slop-ngram-item'>breath trying steady (32)</span> <span class='slop-ngram-item'>air thick scent (31)</span> <span class='slop-ngram-item'>thoughts whirlwind possibilities (30)</span> <span class='slop-ngram-item'>deep breath try (29)</span> <span class='slop-ngram-item'>heart pounding chest (28)</span> <span class='slop-ngram-item'>breath try steady (28)</span> <span class='slop-ngram-item'>sent shiver spine (25)</span> <span class='slop-ngram-item'>streets slick rain (24)</span> <span class='slop-ngram-item'>could shake feeling (22)</span> <span class='slop-ngram-item'>took step closer (22)</span> <span class='slop-ngram-item'>step closer eyes (20)</span> <span class='slop-ngram-item'>made way back (20)</span> <span class='slop-ngram-item'>voice low growl (19)</span> <span class='slop-ngram-item'>ca help feel (18)</span> <span class='slop-ngram-item'>help feel sense (17)</span> <span class='slop-ngram-item'>chill run spine (17)</span> <span class='slop-ngram-item'>voice barely audible (16)</span>
+</div>
+
 ##### meta-llama/llama-3.1-8b-instruct
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.1-8b-instruct__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.1-8b-instruct__phylo_tree_combined_circular.png' alt='Circular dendrogram for meta-llama/llama-3.1-8b-instruct' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.1-8b-instruct__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.1-8b-instruct__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for meta-llama/llama-3.1-8b-instruct' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>meta-llama/llama-3.2-3b-instruct (distance=0.600)</div>
@@ -682,60 +1128,25 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 <span class='slop-ngram-item'>voice barely whisper (26)</span> <span class='slop-ngram-item'>shiver run spine (22)</span> <span class='slop-ngram-item'>eyes never leaving (21)</span> <span class='slop-ngram-item'>eyes locked onto (19)</span> <span class='slop-ngram-item'>could shake feeling (18)</span> <span class='slop-ngram-item'>felt shiver run (17)</span> <span class='slop-ngram-item'>said voice dripping (14)</span> <span class='slop-ngram-item'>sun began set (13)</span> <span class='slop-ngram-item'>said voice low (13)</span> <span class='slop-ngram-item'>take deep breath (12)</span> <span class='slop-ngram-item'>heart skipped beat (11)</span> <span class='slop-ngram-item'>voice low husky (11)</span> <span class='slop-ngram-item'>eyes scanning room (10)</span> <span class='slop-ngram-item'>voice barely audible (10)</span> <span class='slop-ngram-item'>said voice barely (9)</span> <span class='slop-ngram-item'>began set casting (9)</span> <span class='slop-ngram-item'>took deep breath (9)</span> <span class='slop-ngram-item'>trying sound nonchalant (9)</span> <span class='slop-ngram-item'>made way back (8)</span> <span class='slop-ngram-item'>eyes darting around (8)</span> <span class='slop-ngram-item'>say trying sound (8)</span> <span class='slop-ngram-item'>casting eerie glow (7)</span> <span class='slop-ngram-item'>casting golden glow (7)</span> <span class='slop-ngram-item'>thought aside focusing (7)</span> <span class='slop-ngram-item'>asked voice low (7)</span> <span class='slop-ngram-item'>air thick scent (7)</span> <span class='slop-ngram-item'>eyes crinkling corners (6)</span> <span class='slop-ngram-item'>make mental note (6)</span> <span class='slop-ngram-item'>smile grew wider (6)</span> <span class='slop-ngram-item'>mind racing possibilities (6)</span>
 </div>
 
-##### openai/gpt-4-0314
-<h4>Most Similar To:</h4>
-<div class='slop-similar-section'>
-<div class='slop-similar'>anthropic/claude-3-haiku (distance=0.734)</div>
-<div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.735)</div>
-<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.738)</div>
-<div class='slop-similar'>openai/gpt-3.5-turbo-0613 (distance=0.753)</div>
-<div class='slop-similar'>mistralai/mistral-small-3.1-24b-instruct-2503 (distance=0.756)</div>
-</div>
-
-<h4>Top Repetitive Words</h4>
-<div class='slop-section-items'>
-<span class='slop-word-item'>renn</span> <span class='slop-word-item'>stammered</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>smirks</span> <span class='slop-word-item'>glinting</span> <span class='slop-word-item'>foghorn</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>hesitates</span> <span class='slop-word-item'>hummed</span> <span class='slop-word-item'>cacophony</span> <span class='slop-word-item'>grudging</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>unreadable</span> <span class='slop-word-item'>sighed</span> <span class='slop-word-item'>glanced</span> <span class='slop-word-item'>grinned</span> <span class='slop-word-item'>dimly</span> <span class='slop-word-item'>nodded</span> <span class='slop-word-item'>flickering</span> <span class='slop-word-item'>containment</span> <span class='slop-word-item'>smirking</span> <span class='slop-word-item'>shiver</span> <span class='slop-word-item'>whispered</span> <span class='slop-word-item'>gleaming</span> <span class='slop-word-item'>flicker</span> <span class='slop-word-item'>unyielding</span> <span class='slop-word-item'>scribbled</span> <span class='slop-word-item'>murmurs</span> <span class='slop-word-item'>flicking</span> <span class='slop-word-item'>piqued</span> <span class='slop-word-item'>makeshift</span> <span class='slop-word-item'>addendum</span> <span class='slop-word-item'>eyebrow</span> <span class='slop-word-item'>aback</span> <span class='slop-word-item'>trembling</span> <span class='slop-word-item'>euclid</span> <span class='slop-word-item'>pounding</span> <span class='slop-word-item'>grins</span> <span class='slop-word-item'>leaned</span> <span class='slop-word-item'>muttered</span> <span class='slop-word-item'>heaving</span> <span class='slop-word-item'>clenched</span> <span class='slop-word-item'>gaze</span> <span class='slop-word-item'>audible</span> <span class='slop-word-item'>narrowing</span> <span class='slop-word-item'>camaraderie</span> <span class='slop-word-item'>unspoken</span> <span class='slop-word-item'>eerie</span>
-</div>
-<h4>Top Bigrams</h4>
-<div class='slop-section-items'>
-<span class='slop-ngram-item'>ca help (68)</span> <span class='slop-ngram-item'>could help (43)</span> <span class='slop-ngram-item'>said voice (43)</span> <span class='slop-ngram-item'>voice barely (39)</span> <span class='slop-ngram-item'>help feel (37)</span> <span class='slop-ngram-item'>voice low (32)</span> <span class='slop-ngram-item'>heart pounding (26)</span> <span class='slop-ngram-item'>deep breath (26)</span> <span class='slop-ngram-item'>barely audible (24)</span> <span class='slop-ngram-item'>could feel (23)</span> <span class='slop-ngram-item'>says voice (21)</span> <span class='slop-ngram-item'>could see (20)</span> <span class='slop-ngram-item'>pounding chest (18)</span> <span class='slop-ngram-item'>find way (17)</span> <span class='slop-ngram-item'>asked voice (17)</span> <span class='slop-ngram-item'>dark eyes (17)</span> <span class='slop-ngram-item'>could shake (17)</span> <span class='slop-ngram-item'>shake feeling (16)</span> <span class='slop-ngram-item'>eyes wide (15)</span> <span class='slop-ngram-item'>made way (15)</span> <span class='slop-ngram-item'>eyes narrowing (15)</span> <span class='slop-ngram-item'>barely whisper (15)</span> <span class='slop-ngram-item'>air thick (14)</span> <span class='slop-ngram-item'>help wonder (14)</span> <span class='slop-ngram-item'>maybe maybe (14)</span> <span class='slop-ngram-item'>containment breach (13)</span> <span class='slop-ngram-item'>voice steady (13)</span> <span class='slop-ngram-item'>knew would (13)</span> <span class='slop-ngram-item'>whispered voice (13)</span> <span class='slop-ngram-item'>voice cold (12)</span>
-</div>
-<h4>Top Trigrams</h4>
-<div class='slop-section-items'>
-<span class='slop-ngram-item'>voice barely audible (22)</span> <span class='slop-ngram-item'>ca help feel (20)</span> <span class='slop-ngram-item'>could help feel (17)</span> <span class='slop-ngram-item'>heart pounding chest (17)</span> <span class='slop-ngram-item'>voice barely whisper (15)</span> <span class='slop-ngram-item'>could shake feeling (15)</span> <span class='slop-ngram-item'>take deep breath (12)</span> <span class='slop-ngram-item'>took deep breath (10)</span> <span class='slop-ngram-item'>ca help wonder (9)</span> <span class='slop-ngram-item'>ca help notice (9)</span> <span class='slop-ngram-item'>whispered voice barely (9)</span> <span class='slop-ngram-item'>said voice barely (8)</span> <span class='slop-ngram-item'>eyes never leaving (8)</span> <span class='slop-ngram-item'>heart pounded chest (8)</span> <span class='slop-ngram-item'>said voice low (8)</span> <span class='slop-ngram-item'>help feel sense (7)</span> <span class='slop-ngram-item'>said voice cold (7)</span> <span class='slop-ngram-item'>leaned back chair (7)</span> <span class='slop-ngram-item'>item object class (6)</span> <span class='slop-ngram-item'>object class euclid (6)</span> <span class='slop-ngram-item'>class euclid special (6)</span> <span class='slop-ngram-item'>euclid special containment (6)</span> <span class='slop-ngram-item'>special containment procedures (6)</span> <span class='slop-ngram-item'>made way back (6)</span> <span class='slop-ngram-item'>casting long shadows (6)</span> <span class='slop-ngram-item'>trying sound casual (6)</span> <span class='slop-ngram-item'>voice low dangerous (5)</span> <span class='slop-ngram-item'>something else something (5)</span> <span class='slop-ngram-item'>ca help think (5)</span> <span class='slop-ngram-item'>focus task hand (5)</span>
-</div>
-
-##### mistralai/Mistral-Small-24B-Instruct-2501
-<h4>Most Similar To:</h4>
-<div class='slop-similar-section'>
-<div class='slop-similar'>mistralai/mistral-small-3.1-24b-instruct-2503 (distance=0.679)</div>
-<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.711)</div>
-<div class='slop-similar'>openai/gpt-4-0314 (distance=0.735)</div>
-<div class='slop-similar'>google/gemma-2-9b-it (distance=0.766)</div>
-<div class='slop-similar'>anthropic/claude-3-haiku (distance=0.769)</div>
-</div>
-
-<h4>Top Repetitive Words</h4>
-<div class='slop-section-items'>
-<span class='slop-word-item'>elara</span> <span class='slop-word-item'>steeling</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>kael</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>crackles</span> <span class='slop-word-item'>lyra</span> <span class='slop-word-item'>trickling</span> <span class='slop-word-item'>tensing</span> <span class='slop-word-item'>nodded</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>hummed</span> <span class='slop-word-item'>glinting</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>intoxicating</span> <span class='slop-word-item'>whirlwind</span> <span class='slop-word-item'>sneer</span> <span class='slop-word-item'>palpable</span> <span class='slop-word-item'>allure</span> <span class='slop-word-item'>shiver</span> <span class='slop-word-item'>narrowed</span> <span class='slop-word-item'>flickering</span> <span class='slop-word-item'>unyielding</span> <span class='slop-word-item'>unsettling</span> <span class='slop-word-item'>darting</span> <span class='slop-word-item'>raced</span> <span class='slop-word-item'>grizzled</span> <span class='slop-word-item'>addendum</span> <span class='slop-word-item'>carvings</span> <span class='slop-word-item'>growl</span> <span class='slop-word-item'>chuckled</span> <span class='slop-word-item'>grinned</span> <span class='slop-word-item'>cacophony</span> <span class='slop-word-item'>gripped</span> <span class='slop-word-item'>dimly</span> <span class='slop-word-item'>darted</span> <span class='slop-word-item'>coursing</span> <span class='slop-word-item'>rustling</span> <span class='slop-word-item'>gnawing</span> <span class='slop-word-item'>wavered</span> <span class='slop-word-item'>leaned</span> <span class='slop-word-item'>widened</span> <span class='slop-word-item'>bounty</span> <span class='slop-word-item'>haze</span> <span class='slop-word-item'>gaze</span> <span class='slop-word-item'>trembling</span> <span class='slop-word-item'>smirk</span> <span class='slop-word-item'>clatter</span> <span class='slop-word-item'>grimy</span>
-</div>
-<h4>Top Bigrams</h4>
-<div class='slop-section-items'>
-<span class='slop-ngram-item'>deep breath (158)</span> <span class='slop-ngram-item'>voice steady (124)</span> <span class='slop-ngram-item'>said voice (109)</span> <span class='slop-ngram-item'>eyes never (94)</span> <span class='slop-ngram-item'>never leaving (93)</span> <span class='slop-ngram-item'>think might (89)</span> <span class='slop-ngram-item'>mind raced (86)</span> <span class='slop-ngram-item'>eyes narrowed (77)</span> <span class='slop-ngram-item'>air thick (72)</span> <span class='slop-ngram-item'>find way (66)</span> <span class='slop-ngram-item'>stark contrast (64)</span> <span class='slop-ngram-item'>eyes scanning (64)</span> <span class='slop-ngram-item'>take deep (64)</span> <span class='slop-ngram-item'>say something (61)</span> <span class='slop-ngram-item'>took step (59)</span> <span class='slop-ngram-item'>could feel (58)</span> <span class='slop-ngram-item'>voice barely (55)</span> <span class='slop-ngram-item'>took deep (55)</span> <span class='slop-ngram-item'>voice low (54)</span> <span class='slop-ngram-item'>let see (54)</span> <span class='slop-ngram-item'>makes think (53)</span> <span class='slop-ngram-item'>breath trying (49)</span> <span class='slop-ngram-item'>heart pounding (48)</span> <span class='slop-ngram-item'>danger could (47)</span> <span class='slop-ngram-item'>steady despite (47)</span> <span class='slop-ngram-item'>steady need (47)</span> <span class='slop-ngram-item'>stark reminder (46)</span> <span class='slop-ngram-item'>eyes locked (46)</span> <span class='slop-ngram-item'>think wo (46)</span> <span class='slop-ngram-item'>need someone (45)</span>
-</div>
-<h4>Top Trigrams</h4>
-<div class='slop-section-items'>
-<span class='slop-ngram-item'>eyes never leaving (93)</span> <span class='slop-ngram-item'>said voice steady (67)</span> <span class='slop-ngram-item'>take deep breath (64)</span> <span class='slop-ngram-item'>took deep breath (55)</span> <span class='slop-ngram-item'>deep breath trying (49)</span> <span class='slop-ngram-item'>voice steady despite (47)</span> <span class='slop-ngram-item'>makes think wo (46)</span> <span class='slop-ngram-item'>voice steady need (46)</span> <span class='slop-ngram-item'>voice barely whisper (38)</span> <span class='slop-ngram-item'>took step back (37)</span> <span class='slop-ngram-item'>could feel presence (36)</span> <span class='slop-ngram-item'>step back eyes (36)</span> <span class='slop-ngram-item'>deep breath steeling (34)</span> <span class='slop-ngram-item'>breath trying steady (32)</span> <span class='slop-ngram-item'>air thick scent (31)</span> <span class='slop-ngram-item'>thoughts whirlwind possibilities (30)</span> <span class='slop-ngram-item'>deep breath try (29)</span> <span class='slop-ngram-item'>heart pounding chest (28)</span> <span class='slop-ngram-item'>breath try steady (28)</span> <span class='slop-ngram-item'>sent shiver spine (25)</span> <span class='slop-ngram-item'>streets slick rain (24)</span> <span class='slop-ngram-item'>could shake feeling (22)</span> <span class='slop-ngram-item'>took step closer (22)</span> <span class='slop-ngram-item'>step closer eyes (20)</span> <span class='slop-ngram-item'>made way back (20)</span> <span class='slop-ngram-item'>voice low growl (19)</span> <span class='slop-ngram-item'>ca help feel (18)</span> <span class='slop-ngram-item'>help feel sense (17)</span> <span class='slop-ngram-item'>chill run spine (17)</span> <span class='slop-ngram-item'>voice barely audible (16)</span>
-</div>
-
 ##### anthropic/claude-3-haiku
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/anthropic__claude-3-haiku__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/anthropic__claude-3-haiku__phylo_tree_combined_circular.png' alt='Circular dendrogram for anthropic/claude-3-haiku' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/anthropic__claude-3-haiku__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/anthropic__claude-3-haiku__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for anthropic/claude-3-haiku' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>openai/gpt-4-0314 (distance=0.734)</div>
+<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.752)</div>
 <div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.768)</div>
 <div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.769)</div>
 <div class='slop-similar'>meta-llama/llama-3.1-8b-instruct (distance=0.778)</div>
-<div class='slop-similar'>meta-llama/llama-3.1-405b-instruct (distance=0.780)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -752,6 +1163,17 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### meta-llama/llama-3.2-3b-instruct
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.2-3b-instruct__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.2-3b-instruct__phylo_tree_combined_circular.png' alt='Circular dendrogram for meta-llama/llama-3.2-3b-instruct' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.2-3b-instruct__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.2-3b-instruct__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for meta-llama/llama-3.2-3b-instruct' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>meta-llama/llama-3.1-8b-instruct (distance=0.600)</div>
@@ -775,6 +1197,17 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### openai/gpt-3.5-turbo-0613
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/openai__gpt-3.5-turbo-0613__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/openai__gpt-3.5-turbo-0613__phylo_tree_combined_circular.png' alt='Circular dendrogram for openai/gpt-3.5-turbo-0613' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/openai__gpt-3.5-turbo-0613__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/openai__gpt-3.5-turbo-0613__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for openai/gpt-3.5-turbo-0613' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>openai/gpt-4-0314 (distance=0.753)</div>
@@ -798,6 +1231,17 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 </div>
 
 ##### meta-llama/llama-3.2-1b-instruct
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.2-1b-instruct__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.2-1b-instruct__phylo_tree_combined_circular.png' alt='Circular dendrogram for meta-llama/llama-3.2-1b-instruct' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/meta-llama__llama-3.2-1b-instruct__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/meta-llama__llama-3.2-1b-instruct__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for meta-llama/llama-3.2-1b-instruct' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>meta-llama/llama-3.2-3b-instruct (distance=0.606)</div>
@@ -818,6 +1262,74 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 <h4>Top Trigrams</h4>
 <div class='slop-section-items'>
 <span class='slop-ngram-item'>voice barely whisper (46)</span> <span class='slop-ngram-item'>narrowed mind racing (37)</span> <span class='slop-ngram-item'>eyes narrowed mind (35)</span> <span class='slop-ngram-item'>said voice low (34)</span> <span class='slop-ngram-item'>could shake feeling (34)</span> <span class='slop-ngram-item'>took deep breath (29)</span> <span class='slop-ngram-item'>shiver run spine (27)</span> <span class='slop-ngram-item'>felt shiver run (26)</span> <span class='slop-ngram-item'>take deep breath (25)</span> <span class='slop-ngram-item'>mind racing possibilities (24)</span> <span class='slop-ngram-item'>eyes locked onto (23)</span> <span class='slop-ngram-item'>eyes never leaving (23)</span> <span class='slop-ngram-item'>said voice barely (23)</span> <span class='slop-ngram-item'>eyes widened face (22)</span> <span class='slop-ngram-item'>make feel like (20)</span> <span class='slop-ngram-item'>heart pounding chest (20)</span> <span class='slop-ngram-item'>voice low husky (19)</span> <span class='slop-ngram-item'>said voice dripping (18)</span> <span class='slop-ngram-item'>smile grew wider (17)</span> <span class='slop-ngram-item'>eyes glinting amusement (17)</span> <span class='slop-ngram-item'>smile faltered moment (16)</span> <span class='slop-ngram-item'>eyes seemed bore (15)</span> <span class='slop-ngram-item'>grew wider eyes (15)</span> <span class='slop-ngram-item'>starting feel like (14)</span> <span class='slop-ngram-item'>try push thought (14)</span> <span class='slop-ngram-item'>trying sound casual (14)</span> <span class='slop-ngram-item'>could help feel (14)</span> <span class='slop-ngram-item'>casting eerie glow (13)</span> <span class='slop-ngram-item'>lurking beneath surface (12)</span> <span class='slop-ngram-item'>much longer keep (12)</span>
+</div>
+
+##### google/gemma-3-4b-it:free
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/google__gemma-3-4b-it-free__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/google__gemma-3-4b-it-free__phylo_tree_combined_circular.png' alt='Circular dendrogram for google/gemma-3-4b-it:free' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/google__gemma-3-4b-it-free__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/google__gemma-3-4b-it-free__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for google/gemma-3-4b-it:free' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>google/gemma-3-4b-it (distance=0.613)</div>
+<div class='slop-similar'>google/gemma-3-12b-it (distance=0.696)</div>
+<div class='slop-similar'>google/gemma-3-27b-it (distance=0.719)</div>
+<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.724)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.764)</div>
+</div>
+
+<h4>Top Repetitive Words</h4>
+<div class='slop-section-items'>
+<span class='slop-word-item'>xylos</span> <span class='slop-word-item'>elara</span> <span class='slop-word-item'>unsettlingly</span> <span class='slop-word-item'>unnervingly</span> <span class='slop-word-item'>shimmered</span> <span class='slop-word-item'>prickle</span> <span class='slop-word-item'>disconcertingly</span> <span class='slop-word-item'>chronos</span> <span class='slop-word-item'>imperceptible</span> <span class='slop-word-item'>kenji</span> <span class='slop-word-item'>grunted</span> <span class='slop-word-item'>unreadable</span> <span class='slop-word-item'>unsettling</span> <span class='slop-word-item'>valerius</span> <span class='slop-word-item'>impassive</span> <span class='slop-word-item'>chillingly</span> <span class='slop-word-item'>flicker</span> <span class='slop-word-item'>stammered</span> <span class='slop-word-item'>sputtered</span> <span class='slop-word-item'>insistent</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>mumbled</span> <span class='slop-word-item'>cloying</span> <span class='slop-word-item'>rasp</span> <span class='slop-word-item'>meticulously</span> <span class='slop-word-item'>obsidian</span> <span class='slop-word-item'>disconcerting</span> <span class='slop-word-item'>slicked</span> <span class='slop-word-item'>shimmering</span> <span class='slop-word-item'>silas</span> <span class='slop-word-item'>perceptible</span> <span class='slop-word-item'>retorts</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>cobblestones</span> <span class='slop-word-item'>lyra</span> <span class='slop-word-item'>radiating</span> <span class='slop-word-item'>mournful</span> <span class='slop-word-item'>intricately</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>gesturing</span> <span class='slop-word-item'>labyrinthine</span> <span class='slop-word-item'>pulsed</span> <span class='slop-word-item'>iridescent</span> <span class='slop-word-item'>subtly</span> <span class='slop-word-item'>dampness</span> <span class='slop-word-item'>instinctively</span> <span class='slop-word-item'>dissecting</span> <span class='slop-word-item'>sandalwood</span> <span class='slop-word-item'>impeccably</span>
+</div>
+<h4>Top Bigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>said voice (95)</span> <span class='slop-ngram-item'>voice low (55)</span> <span class='slop-ngram-item'>flicker something (40)</span> <span class='slop-ngram-item'>felt like (35)</span> <span class='slop-ngram-item'>carefully constructed (33)</span> <span class='slop-ngram-item'>says voice (29)</span> <span class='slop-ngram-item'>voice barely (27)</span> <span class='slop-ngram-item'>almost imperceptible (24)</span> <span class='slop-ngram-item'>something else (20)</span> <span class='slop-ngram-item'>playing lips (19)</span> <span class='slop-ngram-item'>smile playing (18)</span> <span class='slop-ngram-item'>something akin (18)</span> <span class='slop-ngram-item'>something vaguely (17)</span> <span class='slop-ngram-item'>voice softer (17)</span> <span class='slop-ngram-item'>barely whisper (17)</span> <span class='slop-ngram-item'>voice laced (16)</span> <span class='slop-ngram-item'>like trying (16)</span> <span class='slop-ngram-item'>asked voice (15)</span> <span class='slop-ngram-item'>look like (15)</span> <span class='slop-ngram-item'>low rumble (14)</span> <span class='slop-ngram-item'>know said (14)</span> <span class='slop-ngram-item'>chilling certainty (13)</span> <span class='slop-ngram-item'>long time (13)</span> <span class='slop-ngram-item'>first time (13)</span> <span class='slop-ngram-item'>something unreadable (13)</span> <span class='slop-ngram-item'>stark contrast (13)</span> <span class='slop-ngram-item'>subtle shift (13)</span> <span class='slop-ngram-item'>metallic tang (12)</span> <span class='slop-ngram-item'>rain continued (12)</span> <span class='slop-ngram-item'>continued fall (12)</span>
+</div>
+<h4>Top Trigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>said voice low (24)</span> <span class='slop-ngram-item'>smile playing lips (18)</span> <span class='slop-ngram-item'>voice barely whisper (17)</span> <span class='slop-ngram-item'>voice low rumble (13)</span> <span class='slop-ngram-item'>rain continued fall (12)</span> <span class='slop-ngram-item'>said voice barely (12)</span> <span class='slop-ngram-item'>flicker something unreadable (11)</span> <span class='slop-ngram-item'>voice barely audible (9)</span> <span class='slop-ngram-item'>something unreadable eyes (8)</span> <span class='slop-ngram-item'>small intricately carved (8)</span> <span class='slop-ngram-item'>voice devoid emotion (8)</span> <span class='slop-ngram-item'>flicker something akin (8)</span> <span class='slop-ngram-item'>something vaguely metallic (7)</span> <span class='slop-ngram-item'>knew chilling certainty (7)</span> <span class='slop-ngram-item'>something else something (7)</span> <span class='slop-ngram-item'>said voice softer (7)</span> <span class='slop-ngram-item'>carefully constructed facade (7)</span> <span class='slop-ngram-item'>hand instinctively moving (7)</span> <span class='slop-ngram-item'>tasting like ash (6)</span> <span class='slop-ngram-item'>continued fall washing (6)</span> <span class='slop-ngram-item'>small almost imperceptible (6)</span> <span class='slop-ngram-item'>air hung thick (6)</span> <span class='slop-ngram-item'>tiny almost imperceptible (6)</span> <span class='slop-ngram-item'>object class euclid (6)</span> <span class='slop-ngram-item'>class euclid special (6)</span> <span class='slop-ngram-item'>euclid special containment (6)</span> <span class='slop-ngram-item'>special containment procedures (6)</span> <span class='slop-ngram-item'>first time day (5)</span> <span class='slop-ngram-item'>small smile playing (5)</span> <span class='slop-ngram-item'>said voice little (5)</span>
+</div>
+
+##### unsloth/gemma-3-12b-it
+<div class='dendrogram-thumbnails'>
+  <a href='results/creative-writing-v3/charts/unsloth__gemma-3-12b-it__phylo_tree_combined_circular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/unsloth__gemma-3-12b-it__phylo_tree_combined_circular.png' alt='Circular dendrogram for unsloth/gemma-3-12b-it' class='dendrogram-thumb circular-thumb' />
+    <span class='dendrogram-caption'>Circular View</span>
+  </a>
+  <a href='results/creative-writing-v3/charts/unsloth__gemma-3-12b-it__phylo_tree_combined_rectangular.png' target='_blank' class='dendrogram-link'>
+    <img src='results/creative-writing-v3/charts/unsloth__gemma-3-12b-it__phylo_tree_combined_rectangular.png' alt='Rectangular dendrogram for unsloth/gemma-3-12b-it' class='dendrogram-thumb rect-thumb' />
+    <span class='dendrogram-caption'>Rectangular View</span>
+  </a>
+</div>
+
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>openai/gpt-3.5-turbo-0613 (distance=0.924)</div>
+<div class='slop-similar'>google/gemma-2-9b-it (distance=0.936)</div>
+<div class='slop-similar'>claude-3-5-sonnet-20241022 (distance=0.936)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.941)</div>
+<div class='slop-similar'>openai/gpt-4-0314 (distance=0.941)</div>
+</div>
+
+<h4>Top Repetitive Words</h4>
+<div class='slop-section-items'>
+<span class='slop-word-item'>squeak</span> <span class='slop-word-item'>unsettling</span> <span class='slop-word-item'>radiating</span> <span class='slop-word-item'>flicker</span> <span class='slop-word-item'>tremor</span> <span class='slop-word-item'>relentless</span> <span class='slop-word-item'>crumbling</span> <span class='slop-word-item'>paused</span> <span class='slop-word-item'>gaze</span> <span class='slop-word-item'>defiance</span> <span class='slop-word-item'>damp</span> <span class='slop-word-item'>adapting</span> <span class='slop-word-item'>scent</span> <span class='slop-word-item'>vulnerability</span> <span class='slop-word-item'>eleanor</span> <span class='slop-word-item'>smiled</span> <span class='slop-word-item'>brutal</span> <span class='slop-word-item'>shadows</span> <span class='slop-word-item'>aimed</span> <span class='slop-word-item'>entities</span> <span class='slop-word-item'>civilization</span> <span class='slop-word-item'>surprisingly</span> <span class='slop-word-item'>marcus</span> <span class='slop-word-item'>judging</span> <span class='slop-word-item'>barely</span> <span class='slop-word-item'>habit</span> <span class='slop-word-item'>sweat</span> <span class='slop-word-item'>subtle</span> <span class='slop-word-item'>desperate</span> <span class='slop-word-item'>hung</span> <span class='slop-word-item'>forcing</span> <span class='slop-word-item'>smile</span> <span class='slop-word-item'>recovered</span> <span class='slop-word-item'>designated</span> <span class='slop-word-item'>arena</span> <span class='slop-word-item'>movements</span> <span class='slop-word-item'>sharp</span> <span class='slop-word-item'>rapid</span> <span class='slop-word-item'>expression</span> <span class='slop-word-item'>silence</span> <span class='slop-word-item'>dust</span> <span class='slop-word-item'>familiar</span> <span class='slop-word-item'>lips</span> <span class='slop-word-item'>stomach</span> <span class='slop-word-item'>voice</span> <span class='slop-word-item'>strike</span> <span class='slop-word-item'>landscape</span> <span class='slop-word-item'>seed</span> <span class='slop-word-item'>silent</span> <span class='slop-word-item'>pattern</span>
+</div>
+<h4>Top Bigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>voice low (6)</span> <span class='slop-ngram-item'>said voice (6)</span> <span class='slop-ngram-item'>something else (5)</span> <span class='slop-ngram-item'>years since (5)</span> <span class='slop-ngram-item'>felt like (4)</span> <span class='slop-ngram-item'>voice barely (4)</span> <span class='slop-ngram-item'>hung air (4)</span> <span class='slop-ngram-item'>leaving behind (3)</span> <span class='slop-ngram-item'>managed voice (3)</span> <span class='slop-ngram-item'>fleeting moment (3)</span> <span class='slop-ngram-item'>closed eyes (3)</span> <span class='slop-ngram-item'>caught glimpse (3)</span> <span class='slop-ngram-item'>hair pulled (3)</span> <span class='slop-ngram-item'>pulled back (3)</span> <span class='slop-ngram-item'>say something (3)</span> <span class='slop-ngram-item'>barely whisper (3)</span> <span class='slop-ngram-item'>extended hand (3)</span> <span class='slop-ngram-item'>hesitated moment (3)</span> <span class='slop-ngram-item'>small smile (3)</span> <span class='slop-ngram-item'>asks voice (3)</span> <span class='slop-ngram-item'>long distorted (3)</span> <span class='slop-ngram-item'>distorted shadows (3)</span> <span class='slop-ngram-item'>little bit (3)</span> <span class='slop-ngram-item'>barely perceptible (3)</span> <span class='slop-ngram-item'>eyes fixed (2)</span> <span class='slop-ngram-item'>ah yes (2)</span> <span class='slop-ngram-item'>like wind (2)</span> <span class='slop-ngram-item'>burst laughing (2)</span> <span class='slop-ngram-item'>slightly less (2)</span> <span class='slop-ngram-item'>carefully constructed (2)</span>
+</div>
+<h4>Top Trigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>hair pulled back (3)</span> <span class='slop-ngram-item'>voice barely whisper (3)</span> <span class='slop-ngram-item'>long distorted shadows (3)</span> <span class='slop-ngram-item'>eyes like chips (2)</span> <span class='slop-ngram-item'>dark hair pulled (2)</span> <span class='slop-ngram-item'>said voice low (2)</span> <span class='slop-ngram-item'>something else something (2)</span>
 </div>
 `
 
