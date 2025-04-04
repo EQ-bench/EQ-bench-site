@@ -16,7 +16,7 @@ gemini-2.0-flash-001,L12,gemini-2.0-flash-001,1.51
 gpt-4o-mini,L5,gpt-4o-mini,1.43
 gpt-4o-2024-11-20,S31,gpt-4o-2024-11-20,1.56
 qwen/qwq-32b,L5|L10|W41|L29,qwq-32b,1.57|1.59|1.60|1.61
-quasar-alpha,W34|W34,quasar-alpha,1.80|1.81
+quasar-alpha,W34|W34|W40,quasar-alpha,1.80|1.81|1.82
 `
 
 const csv_header = [
