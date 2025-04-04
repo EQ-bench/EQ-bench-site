@@ -54,11 +54,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>RekaAI/reka-flash-3 (distance=0.686)</div>
-<div class='slop-similar'>qwen/qwq-32b (distance=0.700)</div>
-<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.772)</div>
-<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.788)</div>
-<div class='slop-similar'>openrouter/quasar-alpha (distance=0.789)</div>
+<div class='slop-similar'>RekaAI/reka-flash-3 (distance=0.701)</div>
+<div class='slop-similar'>qwen/qwq-32b (distance=0.722)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.784)</div>
+<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.837)</div>
+<div class='slop-similar'>openrouter/quasar-alpha (distance=0.851)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -89,10 +89,10 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.726)</div>
-<div class='slop-similar'>chatgpt-4o-latest-2025-01-29 (distance=0.732)</div>
-<div class='slop-similar'>openrouter/quasar-alpha (distance=0.769)</div>
-<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.770)</div>
-<div class='slop-similar'>qwen/qwq-32b (distance=0.771)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-01-29 (distance=0.754)</div>
+<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.762)</div>
+<div class='slop-similar'>openrouter/quasar-alpha (distance=0.765)</div>
+<div class='slop-similar'>qwen/qwq-32b (distance=0.817)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -122,11 +122,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>chatgpt-4o-latest-2025-01-29 (distance=0.690)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-01-29 (distance=0.701)</div>
 <div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.726)</div>
-<div class='slop-similar'>qwen/qwq-32b (distance=0.766)</div>
-<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.768)</div>
-<div class='slop-similar'>deepseek-ai/DeepSeek-R1 (distance=0.772)</div>
+<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.762)</div>
+<div class='slop-similar'>qwen/qwq-32b (distance=0.773)</div>
+<div class='slop-similar'>openrouter/quasar-alpha (distance=0.780)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -156,11 +156,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.753)</div>
-<div class='slop-similar'>google/gemma-3-12b-it (distance=0.767)</div>
-<div class='slop-similar'>google/gemma-3-27b-it (distance=0.778)</div>
-<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.779)</div>
-<div class='slop-similar'>google/gemma-3-4b-it (distance=0.785)</div>
+<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.750)</div>
+<div class='slop-similar'>google/gemma-3-12b-it (distance=0.762)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.784)</div>
+<div class='slop-similar'>google/gemma-3-27b-it (distance=0.784)</div>
+<div class='slop-similar'>google/gemma-3-4b-it (distance=0.792)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -190,11 +190,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.754)</div>
-<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.803)</div>
-<div class='slop-similar'>chatgpt-4o-latest-2025-01-29 (distance=0.824)</div>
-<div class='slop-similar'>anthropic/claude-3.5-haiku-20241022 (distance=0.825)</div>
-<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.825)</div>
+<div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.824)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.860)</div>
+<div class='slop-similar'>openai/gpt-4-0314 (distance=0.864)</div>
+<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.867)</div>
+<div class='slop-similar'>openrouter/quasar-alpha (distance=0.873)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -224,11 +224,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.690)</div>
-<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.732)</div>
-<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.774)</div>
-<div class='slop-similar'>openrouter/quasar-alpha (distance=0.774)</div>
-<div class='slop-similar'>qwen/qwq-32b (distance=0.807)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.701)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.754)</div>
+<div class='slop-similar'>openrouter/quasar-alpha (distance=0.762)</div>
+<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.806)</div>
+<div class='slop-similar'>gpt-4.5-preview (distance=0.841)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -258,11 +258,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.769)</div>
-<div class='slop-similar'>gpt-4.5-preview (distance=0.772)</div>
-<div class='slop-similar'>chatgpt-4o-latest-2025-01-29 (distance=0.774)</div>
-<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.776)</div>
-<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.779)</div>
+<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.738)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-01-29 (distance=0.762)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.765)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.780)</div>
+<div class='slop-similar'>gpt-4.5-preview (distance=0.810)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -292,11 +292,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>qwen/qwq-32b (distance=0.671)</div>
-<div class='slop-similar'>deepseek-ai/DeepSeek-R1 (distance=0.686)</div>
-<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.788)</div>
-<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.789)</div>
-<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.791)</div>
+<div class='slop-similar'>qwen/qwq-32b (distance=0.675)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-R1 (distance=0.701)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.788)</div>
+<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.817)</div>
+<div class='slop-similar'>openrouter/quasar-alpha (distance=0.827)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -326,11 +326,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>RekaAI/reka-flash-3 (distance=0.671)</div>
-<div class='slop-similar'>deepseek-ai/DeepSeek-R1 (distance=0.700)</div>
-<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.766)</div>
-<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.770)</div>
-<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.771)</div>
+<div class='slop-similar'>RekaAI/reka-flash-3 (distance=0.675)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-R1 (distance=0.722)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.773)</div>
+<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.788)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.817)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -360,11 +360,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>claude-3-5-sonnet-20241022 (distance=0.754)</div>
-<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.790)</div>
-<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.792)</div>
-<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.795)</div>
-<div class='slop-similar'>chatgpt-4o-latest-2025-01-29 (distance=0.807)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.817)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.820)</div>
+<div class='slop-similar'>claude-3-5-sonnet-20241022 (distance=0.824)</div>
+<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.827)</div>
+<div class='slop-similar'>gpt-4.5-preview (distance=0.847)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -394,11 +394,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.688)</div>
-<div class='slop-similar'>google/gemma-3-12b-it (distance=0.689)</div>
-<div class='slop-similar'>google/gemma-3-4b-it (distance=0.715)</div>
-<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.717)</div>
-<div class='slop-similar'>gemini-2.5-pro-exp-03-25 (distance=0.778)</div>
+<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.653)</div>
+<div class='slop-similar'>google/gemma-3-12b-it (distance=0.653)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.697)</div>
+<div class='slop-similar'>google/gemma-3-4b-it (distance=0.697)</div>
+<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.784)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -428,11 +428,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>openrouter/quasar-alpha (distance=0.772)</div>
-<div class='slop-similar'>qwen/qwq-32b (distance=0.818)</div>
-<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.820)</div>
-<div class='slop-similar'>gpt-4o-mini (distance=0.827)</div>
-<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.829)</div>
+<div class='slop-similar'>openrouter/quasar-alpha (distance=0.810)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.827)</div>
+<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.827)</div>
+<div class='slop-similar'>gpt-4o-mini (distance=0.834)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-01-29 (distance=0.841)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -462,11 +462,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.761)</div>
-<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.768)</div>
-<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.768)</div>
-<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.770)</div>
-<div class='slop-similar'>qwen/qwq-32b (distance=0.770)</div>
+<div class='slop-similar'>openrouter/quasar-alpha (distance=0.738)</div>
+<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.750)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.762)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.762)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.762)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -496,11 +496,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>claude-3-5-sonnet-20241022 (distance=0.825)</div>
-<div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.844)</div>
-<div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.880)</div>
-<div class='slop-similar'>openai/gpt-4-0314 (distance=0.880)</div>
-<div class='slop-similar'>meta-llama/llama-3.1-405b-instruct (distance=0.884)</div>
+<div class='slop-similar'>claude-3-5-sonnet-20241022 (distance=0.883)</div>
+<div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.886)</div>
+<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.898)</div>
+<div class='slop-similar'>openrouter/quasar-alpha (distance=0.898)</div>
+<div class='slop-similar'>google/gemma-2-9b-it (distance=0.904)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -530,11 +530,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.625)</div>
-<div class='slop-similar'>google/gemma-3-27b-it (distance=0.689)</div>
-<div class='slop-similar'>google/gemma-3-4b-it (distance=0.689)</div>
-<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.712)</div>
-<div class='slop-similar'>gemini-2.5-pro-exp-03-25 (distance=0.767)</div>
+<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.540)</div>
+<div class='slop-similar'>google/gemma-3-4b-it (distance=0.596)</div>
+<div class='slop-similar'>google/gemma-3-27b-it (distance=0.653)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.658)</div>
+<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.758)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -564,11 +564,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>gemini-2.5-pro-exp-03-25 (distance=0.810)</div>
-<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.828)</div>
-<div class='slop-similar'>google/gemma-3-4b-it (distance=0.829)</div>
-<div class='slop-similar'>ifable/gemma-2-Ifable-9B (distance=0.833)</div>
-<div class='slop-similar'>google/gemma-3-12b-it (distance=0.833)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.834)</div>
+<div class='slop-similar'>ifable/gemma-2-Ifable-9B (distance=0.841)</div>
+<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.851)</div>
+<div class='slop-similar'>google/gemma-3-12b-it (distance=0.851)</div>
+<div class='slop-similar'>gemini-2.5-pro-exp-03-25 (distance=0.854)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -598,11 +598,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.703)</div>
-<div class='slop-similar'>google/gemma-3-12b-it (distance=0.712)</div>
-<div class='slop-similar'>google/gemma-3-27b-it (distance=0.717)</div>
-<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.724)</div>
-<div class='slop-similar'>google/gemma-2-9b-it (distance=0.727)</div>
+<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.625)</div>
+<div class='slop-similar'>google/gemma-3-12b-it (distance=0.658)</div>
+<div class='slop-similar'>google/gemma-2-9b-it (distance=0.689)</div>
+<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.697)</div>
+<div class='slop-similar'>google/gemma-3-27b-it (distance=0.697)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -632,11 +632,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>google/gemma-3-12b-it (distance=0.625)</div>
-<div class='slop-similar'>google/gemma-3-27b-it (distance=0.688)</div>
-<div class='slop-similar'>google/gemma-3-4b-it (distance=0.702)</div>
-<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.703)</div>
-<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.734)</div>
+<div class='slop-similar'>google/gemma-3-12b-it (distance=0.540)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.625)</div>
+<div class='slop-similar'>google/gemma-3-27b-it (distance=0.653)</div>
+<div class='slop-similar'>google/gemma-3-4b-it (distance=0.675)</div>
+<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.710)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -666,11 +666,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>google/gemma-3-12b-it (distance=0.689)</div>
-<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.702)</div>
-<div class='slop-similar'>google/gemma-3-27b-it (distance=0.715)</div>
-<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.768)</div>
-<div class='slop-similar'>gemini-2.5-pro-exp-03-25 (distance=0.785)</div>
+<div class='slop-similar'>google/gemma-3-12b-it (distance=0.596)</div>
+<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.675)</div>
+<div class='slop-similar'>google/gemma-3-27b-it (distance=0.697)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.726)</div>
+<div class='slop-similar'>gemini-2.5-pro-exp-03-25 (distance=0.792)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -700,11 +700,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>liquid/lfm-7b (distance=0.818)</div>
-<div class='slop-similar'>google/gemma-3-4b-it (distance=0.829)</div>
-<div class='slop-similar'>google/gemma-3-12b-it (distance=0.829)</div>
-<div class='slop-similar'>sam-paech/Darkest-muse-v1 (distance=0.833)</div>
-<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.836)</div>
+<div class='slop-similar'>google/gemma-2-9b-it (distance=0.817)</div>
+<div class='slop-similar'>liquid/lfm-7b (distance=0.824)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.834)</div>
+<div class='slop-similar'>gemini-2.5-pro-exp-03-25 (distance=0.837)</div>
+<div class='slop-similar'>sam-paech/Darkest-muse-v1 (distance=0.841)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -734,11 +734,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.660)</div>
-<div class='slop-similar'>mistralai/mistral-small-3.1-24b-instruct-2503 (distance=0.683)</div>
-<div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.708)</div>
-<div class='slop-similar'>openai/gpt-4-0314 (distance=0.721)</div>
-<div class='slop-similar'>anthropic/claude-3-haiku (distance=0.752)</div>
+<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.625)</div>
+<div class='slop-similar'>openai/gpt-4-0314 (distance=0.662)</div>
+<div class='slop-similar'>mistralai/mistral-small-3.1-24b-instruct-2503 (distance=0.680)</div>
+<div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.701)</div>
+<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.750)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -768,11 +768,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.724)</div>
-<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.734)</div>
-<div class='slop-similar'>google/gemma-2-9b-it (distance=0.754)</div>
-<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.764)</div>
-<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.764)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.697)</div>
+<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.710)</div>
+<div class='slop-similar'>google/gemma-2-9b-it (distance=0.722)</div>
+<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.722)</div>
+<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.750)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -802,11 +802,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.660)</div>
-<div class='slop-similar'>mistralai/mistral-small-3.1-24b-instruct-2503 (distance=0.686)</div>
-<div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.711)</div>
-<div class='slop-similar'>openai/gpt-4-0314 (distance=0.738)</div>
-<div class='slop-similar'>google/gemma-2-9b-it (distance=0.757)</div>
+<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.625)</div>
+<div class='slop-similar'>mistralai/mistral-small-3.1-24b-instruct-2503 (distance=0.714)</div>
+<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.722)</div>
+<div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.730)</div>
+<div class='slop-similar'>openai/gpt-4-0314 (distance=0.730)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -836,11 +836,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.771)</div>
-<div class='slop-similar'>liquid/lfm-7b (distance=0.776)</div>
+<div class='slop-similar'>liquid/lfm-7b (distance=0.754)</div>
+<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.762)</div>
+<div class='slop-similar'>openai/gpt-4-0314 (distance=0.769)</div>
+<div class='slop-similar'>google/gemma-2-9b-it (distance=0.788)</div>
 <div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.788)</div>
-<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.790)</div>
-<div class='slop-similar'>anthropic/claude-3-haiku (distance=0.794)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -870,11 +870,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>meta-llama/llama-3.1-70b-instruct (distance=0.620)</div>
-<div class='slop-similar'>meta-llama/llama-3.1-8b-instruct (distance=0.629)</div>
-<div class='slop-similar'>meta-llama/llama-3.2-3b-instruct (distance=0.643)</div>
-<div class='slop-similar'>meta-llama/llama-3.2-1b-instruct (distance=0.695)</div>
-<div class='slop-similar'>openai/gpt-4-0314 (distance=0.770)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-70b-instruct (distance=0.529)</div>
+<div class='slop-similar'>meta-llama/llama-3.2-3b-instruct (distance=0.561)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-8b-instruct (distance=0.566)</div>
+<div class='slop-similar'>meta-llama/llama-3.2-1b-instruct (distance=0.621)</div>
+<div class='slop-similar'>openai/gpt-4-0314 (distance=0.746)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -904,11 +904,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.727)</div>
-<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.754)</div>
-<div class='slop-similar'>liquid/lfm-7b (distance=0.754)</div>
-<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.757)</div>
-<div class='slop-similar'>openai/gpt-4-0314 (distance=0.765)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.689)</div>
+<div class='slop-similar'>liquid/lfm-7b (distance=0.701)</div>
+<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.722)</div>
+<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.742)</div>
+<div class='slop-similar'>google/gemma-3-12b-it (distance=0.762)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -938,11 +938,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>google/gemma-2-9b-it (distance=0.754)</div>
-<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.768)</div>
-<div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.776)</div>
-<div class='slop-similar'>gpt-4o-mini (distance=0.776)</div>
-<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.786)</div>
+<div class='slop-similar'>google/gemma-2-9b-it (distance=0.701)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.738)</div>
+<div class='slop-similar'>gpt-4o-mini (distance=0.754)</div>
+<div class='slop-similar'>meta-llama/llama-3.2-3b-instruct (distance=0.758)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-405b-instruct (distance=0.769)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -972,11 +972,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.721)</div>
-<div class='slop-similar'>anthropic/claude-3-haiku (distance=0.734)</div>
-<div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.735)</div>
-<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.738)</div>
-<div class='slop-similar'>openai/gpt-3.5-turbo-0613 (distance=0.753)</div>
+<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.662)</div>
+<div class='slop-similar'>openai/gpt-3.5-turbo-0613 (distance=0.689)</div>
+<div class='slop-similar'>anthropic/claude-3-haiku (distance=0.718)</div>
+<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.730)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-405b-instruct (distance=0.746)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -1006,11 +1006,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>meta-llama/llama-3.2-3b-instruct (distance=0.602)</div>
-<div class='slop-similar'>meta-llama/llama-3.1-8b-instruct (distance=0.614)</div>
-<div class='slop-similar'>meta-llama/llama-3.1-405b-instruct (distance=0.620)</div>
-<div class='slop-similar'>meta-llama/llama-3.2-1b-instruct (distance=0.669)</div>
-<div class='slop-similar'>openai/gpt-4-0314 (distance=0.770)</div>
+<div class='slop-similar'>meta-llama/llama-3.2-3b-instruct (distance=0.524)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-405b-instruct (distance=0.529)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-8b-instruct (distance=0.545)</div>
+<div class='slop-similar'>meta-llama/llama-3.2-1b-instruct (distance=0.571)</div>
+<div class='slop-similar'>openai/gpt-4-0314 (distance=0.750)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -1040,11 +1040,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.679)</div>
-<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.683)</div>
-<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.686)</div>
-<div class='slop-similar'>openai/gpt-4-0314 (distance=0.756)</div>
-<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.774)</div>
+<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.680)</div>
+<div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.689)</div>
+<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.714)</div>
+<div class='slop-similar'>openai/gpt-4-0314 (distance=0.746)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-8b-instruct (distance=0.765)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -1074,11 +1074,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>mistralai/mistral-small-3.1-24b-instruct-2503 (distance=0.679)</div>
-<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.708)</div>
-<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.711)</div>
-<div class='slop-similar'>openai/gpt-4-0314 (distance=0.735)</div>
-<div class='slop-similar'>google/gemma-2-9b-it (distance=0.766)</div>
+<div class='slop-similar'>mistralai/mistral-small-3.1-24b-instruct-2503 (distance=0.689)</div>
+<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.701)</div>
+<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.730)</div>
+<div class='slop-similar'>openai/gpt-4-0314 (distance=0.758)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-8b-instruct (distance=0.777)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -1108,11 +1108,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>meta-llama/llama-3.2-3b-instruct (distance=0.600)</div>
-<div class='slop-similar'>meta-llama/llama-3.1-70b-instruct (distance=0.614)</div>
-<div class='slop-similar'>meta-llama/llama-3.1-405b-instruct (distance=0.629)</div>
-<div class='slop-similar'>meta-llama/llama-3.2-1b-instruct (distance=0.636)</div>
-<div class='slop-similar'>openai/gpt-4-0314 (distance=0.758)</div>
+<div class='slop-similar'>meta-llama/llama-3.2-3b-instruct (distance=0.519)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-70b-instruct (distance=0.545)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-405b-instruct (distance=0.566)</div>
+<div class='slop-similar'>meta-llama/llama-3.2-1b-instruct (distance=0.571)</div>
+<div class='slop-similar'>openai/gpt-4-0314 (distance=0.762)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -1142,11 +1142,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>openai/gpt-4-0314 (distance=0.734)</div>
-<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.752)</div>
-<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.768)</div>
-<div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.769)</div>
-<div class='slop-similar'>meta-llama/llama-3.1-8b-instruct (distance=0.778)</div>
+<div class='slop-similar'>openai/gpt-4-0314 (distance=0.718)</div>
+<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.758)</div>
+<div class='slop-similar'>mistralai/Mistral-Small-24B-Instruct-2501 (distance=0.784)</div>
+<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.795)</div>
+<div class='slop-similar'>openai/gpt-3.5-turbo-0613 (distance=0.799)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -1176,11 +1176,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>meta-llama/llama-3.1-8b-instruct (distance=0.600)</div>
-<div class='slop-similar'>meta-llama/llama-3.1-70b-instruct (distance=0.602)</div>
-<div class='slop-similar'>meta-llama/llama-3.2-1b-instruct (distance=0.606)</div>
-<div class='slop-similar'>meta-llama/llama-3.1-405b-instruct (distance=0.643)</div>
-<div class='slop-similar'>openai/gpt-4-0314 (distance=0.767)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-8b-instruct (distance=0.519)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-70b-instruct (distance=0.524)</div>
+<div class='slop-similar'>meta-llama/llama-3.2-1b-instruct (distance=0.535)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-405b-instruct (distance=0.561)</div>
+<div class='slop-similar'>liquid/lfm-7b (distance=0.758)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -1210,11 +1210,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>openai/gpt-4-0314 (distance=0.753)</div>
-<div class='slop-similar'>meta-llama/llama-3.1-70b-instruct (distance=0.775)</div>
-<div class='slop-similar'>meta-llama/llama-3.1-8b-instruct (distance=0.776)</div>
-<div class='slop-similar'>meta-llama/llama-3.2-3b-instruct (distance=0.785)</div>
-<div class='slop-similar'>anthropic/claude-3-haiku (distance=0.791)</div>
+<div class='slop-similar'>openai/gpt-4-0314 (distance=0.689)</div>
+<div class='slop-similar'>mistralai/mistral-large-2411 (distance=0.758)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-405b-instruct (distance=0.784)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-70b-instruct (distance=0.784)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-8b-instruct (distance=0.792)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -1244,11 +1244,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>meta-llama/llama-3.2-3b-instruct (distance=0.606)</div>
-<div class='slop-similar'>meta-llama/llama-3.1-8b-instruct (distance=0.636)</div>
-<div class='slop-similar'>meta-llama/llama-3.1-70b-instruct (distance=0.669)</div>
-<div class='slop-similar'>meta-llama/llama-3.1-405b-instruct (distance=0.695)</div>
-<div class='slop-similar'>openai/gpt-4-0314 (distance=0.786)</div>
+<div class='slop-similar'>meta-llama/llama-3.2-3b-instruct (distance=0.535)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-70b-instruct (distance=0.571)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-8b-instruct (distance=0.571)</div>
+<div class='slop-similar'>meta-llama/llama-3.1-405b-instruct (distance=0.621)</div>
+<div class='slop-similar'>liquid/lfm-7b (distance=0.773)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -1278,11 +1278,11 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>openai/gpt-3.5-turbo-0613 (distance=0.924)</div>
-<div class='slop-similar'>google/gemma-2-9b-it (distance=0.936)</div>
-<div class='slop-similar'>claude-3-5-sonnet-20241022 (distance=0.936)</div>
-<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.941)</div>
-<div class='slop-similar'>openai/gpt-4-0314 (distance=0.941)</div>
+<div class='slop-similar'>google/gemma-3-12b-it (distance=0.936)</div>
+<div class='slop-similar'>allura-org/Gemma-3-Glitter-12B (distance=0.939)</div>
+<div class='slop-similar'>google/gemma-3-27b-it (distance=0.942)</div>
+<div class='slop-similar'>openai/gpt-3.5-turbo-0613 (distance=0.942)</div>
+<div class='slop-similar'>ToastyPigeon/Gemma-3-Starshine-12B (distance=0.945)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>

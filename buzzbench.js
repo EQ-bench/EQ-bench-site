@@ -19,8 +19,10 @@ Qwen/Qwen2.5-72B-Instruct,45.89,5960.26,45.08,46.7
 grok-2-1212,51.76,6059.62,51.23,52.28
 deepseek-ai/deepseek-r1,62.73,5162.59,62.15,63.32
 microsoft/phi-4,38.67,5201.09,37.7,39.64
-*gemini-2.0-flash-001,54.39,6858.12,53.32,55.46
-*claude-3.7-sonnet-20250219,68.2,6537.55,67.69,68.71`
+gemini-2.0-flash-001,54.39,6858.12,53.32,55.46
+claude-3.7-sonnet-20250219,68.2,6537.55,67.69,68.71
+*quasar-alpha,67.85,7809.31,67.44,68.27
+*chatgpt-4o-latest-2025-03-27,69.11,8326.49,68.03,70.19`
 
 function setupDarkModeToggle() {
     var toggle = document.getElementById('darkModeToggle');
