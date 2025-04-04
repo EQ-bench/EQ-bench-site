@@ -2,13 +2,13 @@
 
 let leaderboardDataCreativeWritingV3 = `model_name,elo_score,creative_writing_score,avg_length,vocab_complexity,slop_score,repetition_score
 deepseek-ai/DeepSeek-R1,1500.0,17.17,5352,29.20,31.21,5.79
-chatgpt-4o-latest-2025-03-27,1380.7,17.15,5956,28.29,24.76,6.70
-deepseek-ai/DeepSeek-V3-0324,1373.8,16.44,4414,24.28,33.02,7.86
-gemini-2.5-pro-exp-03-25,1301.7,17.27,7886,41.00,35.06,6.30
+*chatgpt-4o-latest-2025-03-27,1380.7,17.15,5956,28.29,24.76,6.70
+*deepseek-ai/DeepSeek-V3-0324,1373.8,16.44,4414,24.28,33.02,7.86
+*gemini-2.5-pro-exp-03-25,1301.7,17.27,7886,41.00,35.06,6.30
 claude-3-5-sonnet-20241022,1280.3,16.04,4921,39.27,19.82,5.98
 chatgpt-4o-latest-2025-01-29,1270.1,16.57,5622,29.04,29.09,7.30
-openrouter/quasar-alpha,1266.0,16.694,6671,35.15,30.02,5.74
-RekaAI/reka-flash-3,1256.2,16.26,5225,29.53,37.81,7.01
+*openrouter/quasar-alpha,1266.0,16.694,6671,35.15,30.02,5.74
+*RekaAI/reka-flash-3,1256.2,16.26,5225,29.53,37.81,7.01
 qwen/qwq-32b,1255.5,16.67,6126,29.23,34.74,6.41
 claude-3-7-sonnet-20250219,1247.1,16.73,6327,39.58,23.66,5.46
 google/gemma-3-27b-it,1167.7,16.59,7049,42.62,35.73,9.19
@@ -30,7 +30,7 @@ google/gemma-2-9b-it,748.7,11.33,4120,39.98,67.68,16.78
 liquid/lfm-7b,689.0,12.04,6230,49.84,57.57,10.95
 openai/gpt-4-0314,678.8,11.99,5378,41.81,41.57,12.09
 meta-llama/llama-3.1-70b-instruct,669.9,10.70,4502,39.85,47.79,15.82
-mistralai/mistral-small-3.1-24b-instruct-2503,651.9,10.49,7900,28.80,62.21,24.81
+*mistralai/mistral-small-3.1-24b-instruct-2503,651.9,10.49,7900,28.80,62.21,24.81
 mistralai/Mistral-Small-24B-Instruct-2501,631.1,10.24,7660,32.53,62.86,27.39
 meta-llama/llama-3.1-8b-instruct,627.8,10.81,4709,37.45,53.28,16.56
 anthropic/claude-3-haiku,625.8,11.66,5008,41.11,44.89,10.80
