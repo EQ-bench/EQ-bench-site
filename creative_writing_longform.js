@@ -17,13 +17,13 @@ google/gemma-3-4b-it,47.3,4244,59.42,75.18,21.1,13.12,10.93,10.59,9.85,8.56,8.51
 
 
 // --- New Slop Data ---
-const slopData = `##### google/gemini-2.5-pro-preview-03-25
+const slopData = `##### gemini-2.5-pro-preview-03-25
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>google/gemma-3-27b-it (distance=0.835)</div>
 <div class='slop-similar'>gemini-2.0-flash-001 (distance=0.842)</div>
 <div class='slop-similar'>google/gemma-3-4b-it (distance=0.864)</div>
-<div class='slop-similar'>openrouter/quasar-alpha (distance=0.865)</div>
+<div class='slop-similar'>quasar-alpha (distance=0.865)</div>
 <div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.868)</div>
 </div>
 
@@ -47,7 +47,7 @@ const slopData = `##### google/gemini-2.5-pro-preview-03-25
 <div class='slop-similar'>RekaAI/reka-flash-3 (distance=0.772)</div>
 <div class='slop-similar'>qwen/qwq-32b (distance=0.799)</div>
 <div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.805)</div>
-<div class='slop-similar'>openrouter/quasar-alpha (distance=0.823)</div>
+<div class='slop-similar'>quasar-alpha (distance=0.823)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -67,7 +67,7 @@ const slopData = `##### google/gemini-2.5-pro-preview-03-25
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.865)</div>
-<div class='slop-similar'>google/gemini-2.5-pro-preview-03-25 (distance=0.868)</div>
+<div class='slop-similar'>gemini-2.5-pro-preview-03-25 (distance=0.868)</div>
 <div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.868)</div>
 <div class='slop-similar'>google/gemma-3-27b-it (distance=0.876)</div>
 <div class='slop-similar'>gemini-2.0-flash-001 (distance=0.883)</div>
@@ -93,7 +93,7 @@ const slopData = `##### google/gemini-2.5-pro-preview-03-25
 <div class='slop-similar'>RekaAI/reka-flash-3 (distance=0.838)</div>
 <div class='slop-similar'>qwen/qwq-32b (distance=0.848)</div>
 <div class='slop-similar'>deepseek-ai/DeepSeek-R1 (distance=0.850)</div>
-<div class='slop-similar'>openrouter/quasar-alpha (distance=0.855)</div>
+<div class='slop-similar'>quasar-alpha (distance=0.855)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -115,7 +115,7 @@ const slopData = `##### google/gemini-2.5-pro-preview-03-25
 <div class='slop-similar'>RekaAI/reka-flash-3 (distance=0.712)</div>
 <div class='slop-similar'>qwen/qwq-32b (distance=0.752)</div>
 <div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.755)</div>
-<div class='slop-similar'>openrouter/quasar-alpha (distance=0.812)</div>
+<div class='slop-similar'>quasar-alpha (distance=0.812)</div>
 <div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.850)</div>
 </div>
 
@@ -132,7 +132,7 @@ const slopData = `##### google/gemini-2.5-pro-preview-03-25
 <span class='slop-ngram-item'>word count note (23)</span> <span class='slop-ngram-item'>words chapter would (13)</span> <span class='slop-ngram-item'>chapter would expand (8)</span> <span class='slop-ngram-item'>smile reach eyes (6)</span> <span class='slop-ngram-item'>phone buzzed unknown (5)</span> <span class='slop-ngram-item'>buzzed unknown number (5)</span> <span class='slop-ngram-item'>laugh broken thing (3)</span> <span class='slop-ngram-item'>look like hell (3)</span> <span class='slop-ngram-item'>emergency lights bathed (3)</span> <span class='slop-ngram-item'>tears cutting grime (3)</span> <span class='slop-ngram-item'>air reeked burnt (3)</span> <span class='slop-ngram-item'>count note chapter (3)</span> <span class='slop-ngram-item'>tasted like ash (3)</span> <span class='slop-ngram-item'>snapped book shut (3)</span> <span class='slop-ngram-item'>whispered voice like (2)</span> <span class='slop-ngram-item'>jerked back heart (2)</span> <span class='slop-ngram-item'>laughed sound like (2)</span> <span class='slop-ngram-item'>casting jagged shadows (2)</span> <span class='slop-ngram-item'>smelled like burning (2)</span> <span class='slop-ngram-item'>fingers danced across (2)</span> <span class='slop-ngram-item'>name hung like (2)</span> <span class='slop-ngram-item'>go home move (2)</span> <span class='slop-ngram-item'>split like overripe (2)</span> <span class='slop-ngram-item'>like overripe fruit (2)</span> <span class='slop-ngram-item'>first time years (2)</span> <span class='slop-ngram-item'>rain lashed windows (2)</span> <span class='slop-ngram-item'>shards skittered across (2)</span> <span class='slop-ngram-item'>count note condensed (2)</span> <span class='slop-ngram-item'>count note expanded (2)</span> <span class='slop-ngram-item'>note expanded words (2)</span>
 </div>
 
-##### openrouter/quasar-alpha
+##### quasar-alpha
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>deepseek-ai/DeepSeek-R1 (distance=0.812)</div>
@@ -161,7 +161,7 @@ const slopData = `##### google/gemini-2.5-pro-preview-03-25
 <div class='slop-similar'>RekaAI/reka-flash-3 (distance=0.723)</div>
 <div class='slop-similar'>deepseek-ai/DeepSeek-R1 (distance=0.752)</div>
 <div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.799)</div>
-<div class='slop-similar'>openrouter/quasar-alpha (distance=0.833)</div>
+<div class='slop-similar'>quasar-alpha (distance=0.833)</div>
 <div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.848)</div>
 </div>
 
@@ -183,7 +183,7 @@ const slopData = `##### google/gemini-2.5-pro-preview-03-25
 <div class='slop-similar-section'>
 <div class='slop-similar'>gemini-2.0-flash-001 (distance=0.714)</div>
 <div class='slop-similar'>google/gemma-3-4b-it (distance=0.753)</div>
-<div class='slop-similar'>google/gemini-2.5-pro-preview-03-25 (distance=0.835)</div>
+<div class='slop-similar'>gemini-2.5-pro-preview-03-25 (distance=0.835)</div>
 <div class='slop-similar'>gpt-4o-mini (distance=0.845)</div>
 <div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.876)</div>
 </div>
@@ -206,7 +206,7 @@ const slopData = `##### google/gemini-2.5-pro-preview-03-25
 <div class='slop-similar-section'>
 <div class='slop-similar'>gemini-2.0-flash-001 (distance=0.826)</div>
 <div class='slop-similar'>google/gemma-3-27b-it (distance=0.845)</div>
-<div class='slop-similar'>google/gemini-2.5-pro-preview-03-25 (distance=0.881)</div>
+<div class='slop-similar'>gemini-2.5-pro-preview-03-25 (distance=0.881)</div>
 <div class='slop-similar'>google/gemma-3-4b-it (distance=0.891)</div>
 <div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.895)</div>
 </div>
@@ -230,7 +230,7 @@ const slopData = `##### google/gemini-2.5-pro-preview-03-25
 <div class='slop-similar'>google/gemma-3-27b-it (distance=0.714)</div>
 <div class='slop-similar'>google/gemma-3-4b-it (distance=0.803)</div>
 <div class='slop-similar'>gpt-4o-mini (distance=0.826)</div>
-<div class='slop-similar'>google/gemini-2.5-pro-preview-03-25 (distance=0.842)</div>
+<div class='slop-similar'>gemini-2.5-pro-preview-03-25 (distance=0.842)</div>
 <div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.863)</div>
 </div>
 
@@ -253,7 +253,7 @@ const slopData = `##### google/gemini-2.5-pro-preview-03-25
 <div class='slop-similar'>deepseek-ai/DeepSeek-R1 (distance=0.712)</div>
 <div class='slop-similar'>qwen/qwq-32b (distance=0.723)</div>
 <div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.772)</div>
-<div class='slop-similar'>openrouter/quasar-alpha (distance=0.824)</div>
+<div class='slop-similar'>quasar-alpha (distance=0.824)</div>
 <div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.838)</div>
 </div>
 
@@ -275,7 +275,7 @@ const slopData = `##### google/gemini-2.5-pro-preview-03-25
 <div class='slop-similar-section'>
 <div class='slop-similar'>google/gemma-3-27b-it (distance=0.753)</div>
 <div class='slop-similar'>gemini-2.0-flash-001 (distance=0.803)</div>
-<div class='slop-similar'>google/gemini-2.5-pro-preview-03-25 (distance=0.864)</div>
+<div class='slop-similar'>gemini-2.5-pro-preview-03-25 (distance=0.864)</div>
 <div class='slop-similar'>gpt-4o-mini (distance=0.891)</div>
 <div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.909)</div>
 </div>
@@ -292,6 +292,7 @@ const slopData = `##### google/gemini-2.5-pro-preview-03-25
 <div class='slop-section-items'>
 <span class='slop-ngram-item'>voice barely audible (26)</span> <span class='slop-ngram-item'>said voice low (24)</span> <span class='slop-ngram-item'>said voice barely (22)</span> <span class='slop-ngram-item'>voice barely whisper (22)</span> <span class='slop-ngram-item'>said voice filled (18)</span> <span class='slop-ngram-item'>rain continued fall (18)</span> <span class='slop-ngram-item'>said voice laced (15)</span> <span class='slop-ngram-item'>silas said voice (14)</span> <span class='slop-ngram-item'>voice devoid emotion (12)</span> <span class='slop-ngram-item'>small almost imperceptible (11)</span> <span class='slop-ngram-item'>said voice strained (10)</span> <span class='slop-ngram-item'>growing sense unease (10)</span> <span class='slop-ngram-item'>small intricately carved (10)</span> <span class='slop-ngram-item'>growing sense dread (9)</span> <span class='slop-ngram-item'>felt strange sense (9)</span> <span class='slop-ngram-item'>elias said voice (8)</span> <span class='slop-ngram-item'>continued fall washing (8)</span> <span class='slop-ngram-item'>smile playing lips (8)</span> <span class='slop-ngram-item'>faint almost imperceptible (7)</span> <span class='slop-ngram-item'>chilling realization dawned (7)</span> <span class='slop-ngram-item'>voice laced hint (7)</span> <span class='slop-ngram-item'>said voice firm (7)</span> <span class='slop-ngram-item'>knew chilling certainty (7)</span> <span class='slop-ngram-item'>said voice trembling (7)</span> <span class='slop-ngram-item'>said voice devoid (7)</span> <span class='slop-ngram-item'>persistent grey drizzle (6)</span> <span class='slop-ngram-item'>noticed subtle shift (6)</span> <span class='slop-ngram-item'>voice filled chilling (6)</span> <span class='slop-ngram-item'>noticed small almost (6)</span> <span class='slop-ngram-item'>things best left (6)</span>
 </div>
+
 `;
 
 // creative_writing_longform.js
