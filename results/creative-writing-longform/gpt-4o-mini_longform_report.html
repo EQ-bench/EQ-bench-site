@@ -170,9 +170,10 @@
             .collapsible-content.planning-steps, .collapsible-content.chapter-steps { padding-top: 0; padding-bottom: 0; } /* Remove padding around step groups */
             .expanded { display: block; }
             .toggle-icon { display: inline-block; width: 20px; text-align: center; font-weight: bold; margin-right: 8px; color: var(--toggle-icon-color); transition: color 0.3s; }
-            .scores-container { margin-left: 20px; font-style: italic; color: #888; font-size: 0.9em; }
-            .chapter-scores { font-size: 0.9em; margin-top: 5px; font-style: italic; color: var(--subheader-color); } /* Style for chapter scores */
-            .final-scores { font-size: 1.0em; margin-top: 8px; font-weight: bold; color: var(--header-color); } /* Style for final scores */
+            /* <<< MODIFIED: Style for the new scores container in the header >>> */
+            .scores-container { margin-left: 15px; font-style: italic; color: var(--subheader-color); font-size: 0.9em; font-weight: normal; }
+            .chapter-scores { font-size: 0.9em; margin-top: 5px; font-style: italic; color: var(--subheader-color); } /* Style for chapter scores (within judge section) */
+            .final-scores { font-size: 1.0em; margin-top: 8px; font-weight: bold; color: var(--header-color); } /* Style for final scores (within judge section) */
             h1.main-title, .back-button, .control-select, .form-check-label, .top-controls { font-family: var(--font-ui) !important; }
             .iteration-header, .prompt-header, .judge-header { font-family: var(--font-body) !important; } /* <<< CHANGE >>> Added judge-header */
             @media screen and (max-width: 768px) {
@@ -180,12 +181,14 @@
                 body.theme-cozy h1, body.theme-modern h1 { font-size: 1.8em; padding-bottom: 10px; margin-bottom: 1em; }
                 body.theme-cozy h2, body.theme-modern h2 { font-size: 1.5em; }
                 body.theme-cozy h3, body.theme-modern h3 { font-size: 1.2em; }
-                body.theme-cozy .iteration-header, body.theme-modern .iteration-header { padding: 10px 12px; }
+                body.theme-cozy .iteration-header, body.theme-modern .iteration-header { padding: 10px 12px; font-size: 1.1em; } /* Adjust font size */
                 body.theme-cozy .prompt-header, body.theme-modern .prompt-header { padding: 8px 12px; }
                 body.theme-cozy .content-block, body.theme-modern .content-block { padding: 10px 12px; }
                 body.theme-cozy .collapsible-content, body.theme-modern .collapsible-content { padding: 10px 15px; } /* Adjust padding */
                 body.theme-cozy .top-controls, body.theme-modern .top-controls { flex-direction: column; align-items: flex-start; gap: 10px; }
                 body.theme-cozy .controls-right, body.theme-modern .controls-right { width: 100%; justify-content: space-between; }
+                /* <<< MODIFIED: Adjust scores container on mobile >>> */
+                .scores-container { display: block; margin-left: 0; margin-top: 5px; font-size: 0.85em; }
             }
         </style>
     </head>
@@ -217,12 +220,12 @@
             </div>
         </div>
 
-        <h1 class="main-title">Longform Outputs: gpt-4o-mini</h1>
+        <h1 class="main-title">gpt-4o-mini</h1>
     
         <div class="iteration-container">
             <div class="iteration-header" onclick="toggleContent('iteration-1-1')">
                 <span class="toggle-icon">+</span>
-                Mythology-Inspired — Gods Wore Sneakers — Score: 44.8
+                Mythology-Inspired — Gods Wore Sneakers <span class="scores-container">(Chapter Avg: 44.4 | Final: 50.3)</span>
             </div>
             <div id="iteration-1-1" class="collapsible-content">
                 <div class="content-block">
@@ -659,7 +662,6 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 13
 Followed Chapter Plan: 13
 Faithful to Writing Prompt: 14
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -776,7 +778,6 @@ Characters Consistent with Profile: 9
 Tone &amp; Style Consistency: 11
 Followed Chapter Plan: 7
 Faithful to Writing Prompt: 5
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -895,7 +896,6 @@ Characters Consistent with Profile: 13
 Tone &amp; Style Consistency: 14
 Followed Chapter Plan: 3
 Faithful to Writing Prompt: 2
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -1018,7 +1018,6 @@ Characters Consistent with Profile: 10
 Tone &amp; Style Consistency: 9
 Followed Chapter Plan: 6
 Faithful to Writing Prompt: 11
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -1147,7 +1146,6 @@ Characters Consistent with Profile: 10
 Tone &amp; Style Consistency: 13
 Followed Chapter Plan: 15
 Faithful to Writing Prompt: 16
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -1278,7 +1276,6 @@ Characters Consistent with Profile: 14
 Tone &amp; Style Consistency: 13
 Followed Chapter Plan: 10
 Faithful to Writing Prompt: 12
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -1403,7 +1400,6 @@ Characters Consistent with Profile: 11
 Tone &amp; Style Consistency: 9
 Followed Chapter Plan: 5
 Faithful to Writing Prompt: 7
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -1528,14 +1524,13 @@ Characters Consistent with Profile: 13
 Tone &amp; Style Consistency: 14
 Followed Chapter Plan: 13
 Faithful to Writing Prompt: 14
-
                             </div>
                         </div></div>
                 <hr style='border: none; border-top: 2px solid var(--accent-border-color); margin: 30px 0; transition: border-color 0.3s;'>
 <h4>Final Piece Evaluation</h4>
             
                 <div class="judge-content" style="margin-bottom:10px;">
-<strong>Judge Response:</strong><br>
+<strong>Judge Response (First Entry):</strong><br>
                 [Analysis]
 
 This multi-chapter story about gods wearing sneakers presents an interesting premise with a modern twist on mythology. The narrative follows a group of gods (Athena, Ares, Zephyr, Nike, and Hermes) as they attempt to reconnect with mortals in a contemporary setting where their powers and relevance are fading.
@@ -1579,7 +1574,7 @@ Unearned Transformations: 12
 Well-earned Lightness or Darkness: 11
 Tone &amp; Style Consistency: 14
 Faithful to Writing Prompt: 16
-                <div class='final-scores'>Avg Final Score: 46.6/100</div>
+                <div class='final-scores'>Avg Final Item Score: 50.3/100</div>
                 </div>
             
                 </div>
@@ -1589,7 +1584,7 @@ Faithful to Writing Prompt: 16
         <div class="iteration-container">
             <div class="iteration-header" onclick="toggleContent('iteration-1-2')">
                 <span class="toggle-icon">+</span>
-                Sci-Fi First Contact — The Noise — Score: 53.0
+                Sci-Fi First Contact — The Noise <span class="scores-container">(Chapter Avg: 45.9 | Final: 64.1)</span>
             </div>
             <div id="iteration-1-2" class="collapsible-content">
                 <div class="content-block">
@@ -2042,7 +2037,6 @@ Characters Consistent with Profile: 17
 Tone &amp; Style Consistency: 15
 Followed Chapter Plan: 16
 Faithful to Writing Prompt: 18
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -2163,7 +2157,6 @@ Characters Consistent with Profile: 3
 Tone &amp; Style Consistency: 10
 Followed Chapter Plan: 5
 Faithful to Writing Prompt: 11
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -2290,7 +2283,6 @@ Characters Consistent with Profile: 3
 Tone &amp; Style Consistency: 10
 Followed Chapter Plan: 7
 Faithful to Writing Prompt: 12
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -2421,7 +2413,6 @@ Characters Consistent with Profile: 9
 Tone &amp; Style Consistency: 13
 Followed Chapter Plan: 8
 Faithful to Writing Prompt: 14
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -2540,7 +2531,6 @@ Characters Consistent with Profile: 9
 Tone &amp; Style Consistency: 13
 Followed Chapter Plan: 4
 Faithful to Writing Prompt: 7
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -2665,7 +2655,6 @@ Characters Consistent with Profile: 6
 Tone &amp; Style Consistency: 11
 Followed Chapter Plan: 8
 Faithful to Writing Prompt: 9
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -2798,7 +2787,6 @@ Characters Consistent with Profile: 3
 Tone &amp; Style Consistency: 10
 Followed Chapter Plan: 2
 Faithful to Writing Prompt: 6
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -2903,14 +2891,13 @@ As the colors danced in the night sky, Mira felt a sense of peace settle within 
 <strong>Judge Response:</strong><br>[Analysis]
 
 This chapter attempts to deliver the climactic &quot;First Contact&quot; moment promised in the chapter plan, but falls short in several key areas. While
-
                             </div>
                         </div></div>
                 <hr style='border: none; border-top: 2px solid var(--accent-border-color); margin: 30px 0; transition: border-color 0.3s;'>
 <h4>Final Piece Evaluation</h4>
             
                 <div class="judge-content" style="margin-bottom:10px;">
-<strong>Judge Response:</strong><br>
+<strong>Judge Response (First Entry):</strong><br>
                 [Analysis]
 
 This sci-fi first contact story follows marine biologist Dr. Mira Chen as she investigates a mysterious fish die-off coinciding with the appearance of alien megastructures. The narrative unfolds over eight chapters, tracking Mira and her colleague Rachel&#x27;s efforts to decode the bioluminescent communication of the fish while navigating government intervention and rallying community support.
@@ -2950,7 +2937,7 @@ Unearned Transformations: 5
 Well-earned Lightness or Darkness: 14
 Tone &amp; Style Consistency: 15
 Faithful to Writing Prompt: 17
-                <div class='final-scores'>Avg Final Score: 62.3/100</div>
+                <div class='final-scores'>Avg Final Item Score: 64.1/100</div>
                 </div>
             
                 </div>
@@ -2960,7 +2947,7 @@ Faithful to Writing Prompt: 17
         <div class="iteration-container">
             <div class="iteration-header" onclick="toggleContent('iteration-1-3')">
                 <span class="toggle-icon">+</span>
-                Darkly Comic British YA Fiction — Midnight Blood — Score: 54.3
+                Darkly Comic British YA Fiction — Midnight Blood <span class="scores-container">(Chapter Avg: 48.5 | Final: 63.3)</span>
             </div>
             <div id="iteration-1-3" class="collapsible-content">
                 <div class="content-block">
@@ -3404,7 +3391,6 @@ Characters Consistent with Profile: 17
 Tone &amp; Style Consistency: 15
 Followed Chapter Plan: 18
 Faithful to Writing Prompt: 16
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -3541,7 +3527,6 @@ Characters Consistent with Profile: 13
 Tone &amp; Style Consistency: 12
 Followed Chapter Plan: 10
 Faithful to Writing Prompt: 9
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -3686,7 +3671,6 @@ Characters Consistent with Profile: 9
 Tone &amp; Style Consistency: 8
 Followed Chapter Plan: 5
 Faithful to Writing Prompt: 7
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -3837,7 +3821,6 @@ Characters Consistent with Profile: 9
 Tone &amp; Style Consistency: 10
 Followed Chapter Plan: 11
 Faithful to Writing Prompt: 12
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -3996,7 +3979,6 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 14
 Followed Chapter Plan: 12
 Faithful to Writing Prompt: 15
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -4137,7 +4119,6 @@ Characters Consistent with Profile: 9
 Tone &amp; Style Consistency: 6
 Followed Chapter Plan: 5
 Faithful to Writing Prompt: 7
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -4328,7 +4309,6 @@ Characters Consistent with Profile: 7
 Tone &amp; Style Consistency: 6
 Followed Chapter Plan: 3
 Faithful to Writing Prompt: 5
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -4485,14 +4465,13 @@ Characters Consistent with Profile: 10
 Tone &amp; Style Consistency: 7
 Followed Chapter Plan: 3
 Faithful to Writing Prompt: 5
-
                             </div>
                         </div></div>
                 <hr style='border: none; border-top: 2px solid var(--accent-border-color); margin: 30px 0; transition: border-color 0.3s;'>
 <h4>Final Piece Evaluation</h4>
             
                 <div class="judge-content" style="margin-bottom:10px;">
-<strong>Judge Response:</strong><br>
+<strong>Judge Response (First Entry):</strong><br>
                 [Analysis]
 
 This YA horror story follows Milo, Jenna, and eventually Lydia as they investigate mysterious blood emoji texts and a school haunting. The narrative spans eight chapters, building from initial mystery to resolution as the teens help the ghost of Sarah find peace by recovering her lost locket.
@@ -4532,7 +4511,7 @@ Unearned Transformations: 6
 Well-earned Lightness or Darkness: 14
 Tone &amp; Style Consistency: 15
 Faithful to Writing Prompt: 14
-                <div class='final-scores'>Avg Final Score: 62.9/100</div>
+                <div class='final-scores'>Avg Final Item Score: 63.3/100</div>
                 </div>
             
                 </div>
@@ -4542,13 +4521,13 @@ Faithful to Writing Prompt: 14
         <div class="iteration-container">
             <div class="iteration-header" onclick="toggleContent('iteration-1-4')">
                 <span class="toggle-icon">+</span>
-                Space Western — Cargo Unknown — Score: 57.2
+                Space Western — Cargo Unknown <span class="scores-container">(Chapter Avg: 57.6 | Final: 56.8)</span>
             </div>
             <div id="iteration-1-4" class="collapsible-content">
                 <div class="content-block">
                     <div class="prompt-text-display">
                         <strong>Initial Writing Prompt:</strong><br>Space Western
-Write a short story over several chapters to this prompt: Captain, something's... moving in that crate we picked up.
+Write a short story over several chapters to this prompt: Captain, something&#x27;s... moving in that crate we picked up.
                     </div>
                     
         
@@ -4559,7 +4538,7 @@ Write a short story over several chapters to this prompt: Captain, something's..
         
                         <div class="prompt-container">
                             <div class="step-prompt-text">Space Western
-Write a short story over several chapters to this prompt: Captain, something&#x27;s... moving in that crate we picked up.
+Write a short story over several chapters to this prompt: Captain, something&amp;#x27;s... moving in that crate we picked up.
 
 --
 
@@ -4992,7 +4971,6 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 16
 Followed Chapter Plan: 16
 Faithful to Writing Prompt: 18
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -5113,7 +5091,6 @@ Characters Consistent with Profile: 8
 Tone &amp; Style Consistency: 11
 Followed Chapter Plan: 6
 Faithful to Writing Prompt: 13
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -5230,7 +5207,6 @@ Characters Consistent with Profile: 7
 Tone &amp; Style Consistency: 12
 Followed Chapter Plan: 2
 Faithful to Writing Prompt: 10
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -5367,7 +5343,6 @@ Characters Consistent with Profile: 14
 Tone &amp; Style Consistency: 15
 Followed Chapter Plan: 13
 Faithful to Writing Prompt: 16
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -5518,7 +5493,6 @@ Characters Consistent with Profile: 16
 Tone &amp; Style Consistency: 16
 Followed Chapter Plan: 15
 Faithful to Writing Prompt: 18
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -5667,7 +5641,6 @@ Characters Consistent with Profile: 11
 Tone &amp; Style Consistency: 12
 Followed Chapter Plan: 10
 Faithful to Writing Prompt: 13
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -5804,7 +5777,6 @@ Characters Consistent with Profile: 10
 Tone &amp; Style Consistency: 13
 Followed Chapter Plan: 11
 Faithful to Writing Prompt: 14
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -5925,14 +5897,13 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 14
 Followed Chapter Plan: 14
 Faithful to Writing Prompt: 16
-
                             </div>
                         </div></div>
                 <hr style='border: none; border-top: 2px solid var(--accent-border-color); margin: 30px 0; transition: border-color 0.3s;'>
 <h4>Final Piece Evaluation</h4>
             
                 <div class="judge-content" style="margin-bottom:10px;">
-<strong>Judge Response:</strong><br>
+<strong>Judge Response (First Entry):</strong><br>
                 [Analysis]
 
 This space western story follows Captain Juno Hale and her crew as they discover a mysterious alien creature named Rook and are subsequently pursued by the bounty hunter Zarn. The narrative unfolds over eight chapters, creating a complete arc from discovery to resolution.
@@ -5972,7 +5943,7 @@ Unearned Transformations: 8
 Well-earned Lightness or Darkness: 13
 Tone &amp; Style Consistency: 15
 Faithful to Writing Prompt: 17
-                <div class='final-scores'>Avg Final Score: 52.9/100</div>
+                <div class='final-scores'>Avg Final Item Score: 56.8/100</div>
                 </div>
             
                 </div>
@@ -5982,13 +5953,13 @@ Faithful to Writing Prompt: 17
         <div class="iteration-container">
             <div class="iteration-header" onclick="toggleContent('iteration-1-5')">
                 <span class="toggle-icon">+</span>
-                Possession Horror — Different Eyes — Score: 61.1
+                Possession Horror — Different Eyes <span class="scores-container">(Chapter Avg: 61.6 | Final: 69.9)</span>
             </div>
             <div id="iteration-1-5" class="collapsible-content">
                 <div class="content-block">
                     <div class="prompt-text-display">
                         <strong>Initial Writing Prompt:</strong><br>Possession Horror
-Write a short story over several chapters to this prompt: I caught her staring at me again. She thought I'd been sleeping.
+Write a short story over several chapters to this prompt: I caught her staring at me again. She thought I&#x27;d been sleeping.
                     </div>
                     
         
@@ -5999,7 +5970,7 @@ Write a short story over several chapters to this prompt: I caught her staring a
         
                         <div class="prompt-container">
                             <div class="step-prompt-text">Possession Horror
-Write a short story over several chapters to this prompt: I caught her staring at me again. She thought I&#x27;d been sleeping.
+Write a short story over several chapters to this prompt: I caught her staring at me again. She thought I&amp;#x27;d been sleeping.
 
 --
 
@@ -6403,7 +6374,6 @@ Characters Consistent with Profile: 18
 Tone &amp; Style Consistency: 16
 Followed Chapter Plan: 18
 Faithful to Writing Prompt: 19
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -6518,7 +6488,6 @@ Characters Consistent with Profile: 17
 Tone &amp; Style Consistency: 16
 Followed Chapter Plan: 18
 Faithful to Writing Prompt: 17
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -6645,7 +6614,6 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 13
 Followed Chapter Plan: 13
 Faithful to Writing Prompt: 14
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -6760,7 +6728,6 @@ Characters Consistent with Profile: 16
 Tone &amp; Style Consistency: 16
 Followed Chapter Plan: 15
 Faithful to Writing Prompt: 16
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -6885,7 +6852,6 @@ Characters Consistent with Profile: 16
 Tone &amp; Style Consistency: 15
 Followed Chapter Plan: 13
 Faithful to Writing Prompt: 12
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -7016,7 +6982,6 @@ Characters Consistent with Profile: 12
 Tone &amp; Style Consistency: 11
 Followed Chapter Plan: 9
 Faithful to Writing Prompt: 8
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -7145,7 +7110,6 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 14
 Followed Chapter Plan: 13
 Faithful to Writing Prompt: 14
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -7266,14 +7230,13 @@ Characters Consistent with Profile: 12
 Tone &amp; Style Consistency: 11
 Followed Chapter Plan: 9
 Faithful to Writing Prompt: 13
-
                             </div>
                         </div></div>
                 <hr style='border: none; border-top: 2px solid var(--accent-border-color); margin: 30px 0; transition: border-color 0.3s;'>
 <h4>Final Piece Evaluation</h4>
             
                 <div class="judge-content" style="margin-bottom:10px;">
-<strong>Judge Response:</strong><br>
+<strong>Judge Response (First Entry):</strong><br>
                 [Analysis]
 
 This horror story follows Jordan and their increasingly disturbing relationship with roommate Mara, who appears to be possessed or experiencing a psychological breakdown. The narrative unfolds over eight chapters, tracking Mara&#x27;s descent into darkness and Jordan&#x27;s desperate attempts to save her.
@@ -7311,7 +7274,7 @@ Unearned Transformations: 10
 Well-earned Lightness or Darkness: 14
 Tone &amp; Style Consistency: 16
 Faithful to Writing Prompt: 18
-                <div class='final-scores'>Avg Final Score: 65.7/100</div>
+                <div class='final-scores'>Avg Final Item Score: 69.9/100</div>
                 </div>
             
                 </div>
@@ -7321,7 +7284,7 @@ Faithful to Writing Prompt: 18
         <div class="iteration-container">
             <div class="iteration-header" onclick="toggleContent('iteration-1-6')">
                 <span class="toggle-icon">+</span>
-                Pulp Revenge Tale — Babysitter's Payback — Score: 58.0
+                Pulp Revenge Tale — Babysitter's Payback <span class="scores-container">(Chapter Avg: 60.3 | Final: 50.2)</span>
             </div>
             <div id="iteration-1-6" class="collapsible-content">
                 <div class="content-block">
@@ -7800,7 +7763,6 @@ Characters Consistent with Profile: 16
 Tone &amp; Style Consistency: 15
 Followed Chapter Plan: 17
 Faithful to Writing Prompt: 16
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -7923,7 +7885,6 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 16
 Followed Chapter Plan: 17
 Faithful to Writing Prompt: 18
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -8050,7 +8011,6 @@ Characters Consistent with Profile: 17
 Tone &amp; Style Consistency: 17
 Followed Chapter Plan: 18
 Faithful to Writing Prompt: 18
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -8215,7 +8175,6 @@ Characters Consistent with Profile: 13
 Tone &amp; Style Consistency: 15
 Followed Chapter Plan: 12
 Faithful to Writing Prompt: 15
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -8382,7 +8341,6 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 14
 Followed Chapter Plan: 13
 Faithful to Writing Prompt: 16
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -8551,7 +8509,6 @@ Characters Consistent with Profile: 7
 Tone &amp; Style Consistency: 12
 Followed Chapter Plan: 6
 Faithful to Writing Prompt: 8
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -8694,7 +8651,6 @@ Characters Consistent with Profile: 9
 Tone &amp; Style Consistency: 8
 Followed Chapter Plan: 5
 Faithful to Writing Prompt: 6
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -8829,14 +8785,13 @@ Characters Consistent with Profile: 13
 Tone &amp; Style Consistency: 14
 Followed Chapter Plan: 12
 Faithful to Writing Prompt: 15
-
                             </div>
                         </div></div>
                 <hr style='border: none; border-top: 2px solid var(--accent-border-color); margin: 30px 0; transition: border-color 0.3s;'>
 <h4>Final Piece Evaluation</h4>
             
                 <div class="judge-content" style="margin-bottom:10px;">
-<strong>Judge Response:</strong><br>
+<strong>Judge Response (First Entry):</strong><br>
                 [Analysis]
 
 This pulp revenge tale about a babysitter facing home invaders shows competent storytelling but suffers from several significant issues. The narrative follows Mia, a criminology student and babysitter, who protects two children (Timmy and Lucy) when burglars attempt to break into the house.
@@ -8878,7 +8833,7 @@ Unearned Transformations: 8
 Well-earned Lightness or Darkness: 11
 Tone &amp; Style Consistency: 14
 Faithful to Writing Prompt: 9
-                <div class='final-scores'>Avg Final Score: 49.8/100</div>
+                <div class='final-scores'>Avg Final Item Score: 50.2/100</div>
                 </div>
             
                 </div>
@@ -8888,7 +8843,7 @@ Faithful to Writing Prompt: 9
         <div class="iteration-container">
             <div class="iteration-header" onclick="toggleContent('iteration-1-7')">
                 <span class="toggle-icon">+</span>
-                Queer Neo-Noir Romance — Cigarette Smoke & Bad Ideas — Score: 58.8
+                Queer Neo-Noir Romance — Cigarette Smoke & Bad Ideas <span class="scores-container">(Chapter Avg: 64.8 | Final: 58.0)</span>
             </div>
             <div id="iteration-1-7" class="collapsible-content">
                 <div class="content-block">
@@ -9364,7 +9319,6 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 14
 Followed Chapter Plan: 16
 Faithful to Writing Prompt: 17
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -9495,7 +9449,6 @@ Characters Consistent with Profile: 16
 Tone &amp; Style Consistency: 15
 Followed Chapter Plan: 17
 Faithful to Writing Prompt: 16
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -9630,7 +9583,6 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 16
 Followed Chapter Plan: 14
 Faithful to Writing Prompt: 17
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -9801,7 +9753,6 @@ Characters Consistent with Profile: 17
 Tone &amp; Style Consistency: 14
 Followed Chapter Plan: 16
 Faithful to Writing Prompt: 15
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -9966,7 +9917,6 @@ Characters Consistent with Profile: 16
 Tone &amp; Style Consistency: 15
 Followed Chapter Plan: 18
 Faithful to Writing Prompt: 16
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -10141,7 +10091,6 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 16
 Followed Chapter Plan: 18
 Faithful to Writing Prompt: 17
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -10280,7 +10229,6 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 11
 Followed Chapter Plan: 6
 Faithful to Writing Prompt: 12
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -10421,14 +10369,13 @@ Characters Consistent with Profile: 12
 Tone &amp; Style Consistency: 11
 Followed Chapter Plan: 13
 Faithful to Writing Prompt: 10
-
                             </div>
                         </div></div>
                 <hr style='border: none; border-top: 2px solid var(--accent-border-color); margin: 30px 0; transition: border-color 0.3s;'>
 <h4>Final Piece Evaluation</h4>
             
                 <div class="judge-content" style="margin-bottom:10px;">
-<strong>Judge Response:</strong><br>
+<strong>Judge Response (First Entry):</strong><br>
                 [Analysis]
 
 This neo-noir queer romance follows Sam, an artist who becomes entangled with Julian, a charismatic but troubled man with a mysterious past. The story unfolds over eight chapters, tracing their relationship from initial attraction through conflict and toward an uncertain resolution.
@@ -10470,7 +10417,7 @@ Unearned Transformations: 9
 Well-earned Lightness or Darkness: 14
 Tone &amp; Style Consistency: 15
 Faithful to Writing Prompt: 17
-                <div class='final-scores'>Avg Final Score: 51.8/100</div>
+                <div class='final-scores'>Avg Final Item Score: 58.0/100</div>
                 </div>
             
                 </div>
@@ -10480,13 +10427,13 @@ Faithful to Writing Prompt: 17
         <div class="iteration-container">
             <div class="iteration-header" onclick="toggleContent('iteration-1-9')">
                 <span class="toggle-icon">+</span>
-                Cozy-Horror Post Apocalyptic Survival — Mushroom Season — Score: 62.3
+                Cozy-Horror Post Apocalyptic Survival — Mushroom Season <span class="scores-container">(Chapter Avg: 62.1 | Final: 67.3)</span>
             </div>
             <div id="iteration-1-9" class="collapsible-content">
                 <div class="content-block">
                     <div class="prompt-text-display">
                         <strong>Initial Writing Prompt:</strong><br>Cozy-Horror Post Apocalypse Survival
-Write a short story over several chapters to this prompt: When you're out of food, you get desperate. Who would have thought the spore mutants -- the things trying to kill us -- would be delicious?
+Write a short story over several chapters to this prompt: When you&#x27;re out of food, you get desperate. Who would have thought the spore mutants -- the things trying to kill us -- would be delicious?
                     </div>
                     
         
@@ -10497,7 +10444,7 @@ Write a short story over several chapters to this prompt: When you're out of foo
         
                         <div class="prompt-container">
                             <div class="step-prompt-text">Cozy-Horror Post Apocalypse Survival
-Write a short story over several chapters to this prompt: When you&#x27;re out of food, you get desperate. Who would have thought the spore mutants -- the things trying to kill us -- would be delicious?
+Write a short story over several chapters to this prompt: When you&amp;#x27;re out of food, you get desperate. Who would have thought the spore mutants -- the things trying to kill us -- would be delicious?
 
 --
 
@@ -10926,7 +10873,6 @@ Characters Consistent with Profile: 17
 Tone &amp; Style Consistency: 15
 Followed Chapter Plan: 14
 Faithful to Writing Prompt: 12
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -11047,7 +10993,6 @@ Characters Consistent with Profile: 16
 Tone &amp; Style Consistency: 15
 Followed Chapter Plan: 17
 Faithful to Writing Prompt: 18
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -11206,7 +11151,6 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 15
 Followed Chapter Plan: 14
 Faithful to Writing Prompt: 13
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -11349,7 +11293,6 @@ Characters Consistent with Profile: 16
 Tone &amp; Style Consistency: 15
 Followed Chapter Plan: 17
 Faithful to Writing Prompt: 16
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -11500,7 +11443,6 @@ Characters Consistent with Profile: 13
 Tone &amp; Style Consistency: 14
 Followed Chapter Plan: 10
 Faithful to Writing Prompt: 12
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -11665,7 +11607,6 @@ Characters Consistent with Profile: 16
 Tone &amp; Style Consistency: 15
 Followed Chapter Plan: 17
 Faithful to Writing Prompt: 16
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -11806,7 +11747,6 @@ Characters Consistent with Profile: 14
 Tone &amp; Style Consistency: 14
 Followed Chapter Plan: 15
 Faithful to Writing Prompt: 16
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -11919,14 +11859,13 @@ Characters Consistent with Profile: 10
 Tone &amp; Style Consistency: 11
 Followed Chapter Plan: 12
 Faithful to Writing Prompt: 13
-
                             </div>
                         </div></div>
                 <hr style='border: none; border-top: 2px solid var(--accent-border-color); margin: 30px 0; transition: border-color 0.3s;'>
 <h4>Final Piece Evaluation</h4>
             
                 <div class="judge-content" style="margin-bottom:10px;">
-<strong>Judge Response:</strong><br>
+<strong>Judge Response (First Entry):</strong><br>
                 [Analysis]
 
 This creative piece presents a post-apocalyptic story that blends elements of horror and coziness, following the prompt about spore mutants becoming a food source. The narrative follows June and Eli as they navigate survival in a world where spore mutants, initially feared as monsters, are discovered to be edible and potentially capable of communication and coexistence.
@@ -11968,7 +11907,7 @@ Unearned Transformations: 5
 Well-earned Lightness or Darkness: 14
 Tone &amp; Style Consistency: 16
 Faithful to Writing Prompt: 13
-                <div class='final-scores'>Avg Final Score: 64.9/100</div>
+                <div class='final-scores'>Avg Final Item Score: 67.3/100</div>
                 </div>
             
                 </div>
@@ -11978,7 +11917,7 @@ Faithful to Writing Prompt: 13
         <div class="iteration-container">
             <div class="iteration-header" onclick="toggleContent('iteration-1-10')">
                 <span class="toggle-icon">+</span>
-                Victorian Romance — The Upper Window — Score: 51.9
+                Victorian Romance — The Upper Window <span class="scores-container">(Chapter Avg: 56.7 | Final: 49.2)</span>
             </div>
             <div id="iteration-1-10" class="collapsible-content">
                 <div class="content-block">
@@ -12433,7 +12372,6 @@ Characters Consistent with Profile: 16
 Tone &amp; Style Consistency: 16
 Followed Chapter Plan: 18
 Faithful to Writing Prompt: 19
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -12542,7 +12480,6 @@ Characters Consistent with Profile: 13
 Tone &amp; Style Consistency: 12
 Followed Chapter Plan: 10
 Faithful to Writing Prompt: 13
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -12675,7 +12612,6 @@ Characters Consistent with Profile: 11
 Tone &amp; Style Consistency: 14
 Followed Chapter Plan: 13
 Faithful to Writing Prompt: 15
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -12804,7 +12740,6 @@ Characters Consistent with Profile: 6
 Tone &amp; Style Consistency: 9
 Followed Chapter Plan: 5
 Faithful to Writing Prompt: 6
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -12935,7 +12870,6 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 15
 Followed Chapter Plan: 14
 Faithful to Writing Prompt: 16
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -13110,7 +13044,6 @@ Characters Consistent with Profile: 13
 Tone &amp; Style Consistency: 12
 Followed Chapter Plan: 13
 Faithful to Writing Prompt: 14
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -13251,7 +13184,6 @@ Characters Consistent with Profile: 12
 Tone &amp; Style Consistency: 14
 Followed Chapter Plan: 12
 Faithful to Writing Prompt: 15
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -13396,14 +13328,13 @@ Characters Consistent with Profile: 13
 Tone &amp; Style Consistency: 14
 Followed Chapter Plan: 11
 Faithful to Writing Prompt: 13
-
                             </div>
                         </div></div>
                 <hr style='border: none; border-top: 2px solid var(--accent-border-color); margin: 30px 0; transition: border-color 0.3s;'>
 <h4>Final Piece Evaluation</h4>
             
                 <div class="judge-content" style="margin-bottom:10px;">
-<strong>Judge Response:</strong><br>
+<strong>Judge Response (First Entry):</strong><br>
                 [Analysis]
 
 This Victorian romance story follows Clara Hawthorne as she infiltrates Blackwood Manor to uncover the truth about her family&#x27;s downfall. The narrative spans eight chapters, creating a tale of revenge, mystery, and unexpected alliances.
@@ -13443,7 +13374,7 @@ Unearned Transformations: 14
 Well-earned Lightness or Darkness: 11
 Tone &amp; Style Consistency: 14
 Faithful to Writing Prompt: 16
-                <div class='final-scores'>Avg Final Score: 43.0/100</div>
+                <div class='final-scores'>Avg Final Item Score: 49.2/100</div>
                 </div>
             
                 </div>
@@ -13453,7 +13384,7 @@ Faithful to Writing Prompt: 16
         <div class="iteration-container">
             <div class="iteration-header" onclick="toggleContent('iteration-1-11')">
                 <span class="toggle-icon">+</span>
-                Romance — Love in the Limelight — Score: 55.4
+                Romance — Love in the Limelight <span class="scores-container">(Chapter Avg: 54.7 | Final: 63.1)</span>
             </div>
             <div id="iteration-1-11" class="collapsible-content">
                 <div class="content-block">
@@ -13462,7 +13393,7 @@ Faithful to Writing Prompt: 16
 
 Task: write a short story over several chapters.
 
-A famous (fictional) actor ducks into a small-town bookstore to escape paparazzi. The story takes us through the characters meeting in this odd circumstance. Over the course of the first scene, the actor and the bookstore owner have a conversation charged by an undercurrent of unspoken chemistry. Write the actor as somewhat of a rogue with a fragile ego, which needs to be fed by having everyone like him. He is thoroughly charming, but the bookstore owner seems (at least superficially) immune to this; which paradoxically provokes a genuine attraction and derails the charm offensive. The bookstore owner, despite the superficial rebuffs of the actor's charm, is inwardly more than a little charmed and flustered despite themselves. Write primarily in dialogue, in the distinct voices of each character. The story will progress beyond this synopsis, and it's up to you where it goes.
+A famous (fictional) actor ducks into a small-town bookstore to escape paparazzi. The story takes us through the characters meeting in this odd circumstance. Over the course of the first scene, the actor and the bookstore owner have a conversation charged by an undercurrent of unspoken chemistry. Write the actor as somewhat of a rogue with a fragile ego, which needs to be fed by having everyone like him. He is thoroughly charming, but the bookstore owner seems (at least superficially) immune to this; which paradoxically provokes a genuine attraction and derails the charm offensive. The bookstore owner, despite the superficial rebuffs of the actor&#x27;s charm, is inwardly more than a little charmed and flustered despite themselves. Write primarily in dialogue, in the distinct voices of each character. The story will progress beyond this synopsis, and it&#x27;s up to you where it goes.
                     </div>
                     
         
@@ -13476,7 +13407,7 @@ A famous (fictional) actor ducks into a small-town bookstore to escape paparazzi
 
 Task: write a short story over several chapters.
 
-A famous (fictional) actor ducks into a small-town bookstore to escape paparazzi. The story takes us through the characters meeting in this odd circumstance. Over the course of the first scene, the actor and the bookstore owner have a conversation charged by an undercurrent of unspoken chemistry. Write the actor as somewhat of a rogue with a fragile ego, which needs to be fed by having everyone like him. He is thoroughly charming, but the bookstore owner seems (at least superficially) immune to this; which paradoxically provokes a genuine attraction and derails the charm offensive. The bookstore owner, despite the superficial rebuffs of the actor&#x27;s charm, is inwardly more than a little charmed and flustered despite themselves. Write primarily in dialogue, in the distinct voices of each character. The story will progress beyond this synopsis, and it&#x27;s up to you where it goes.
+A famous (fictional) actor ducks into a small-town bookstore to escape paparazzi. The story takes us through the characters meeting in this odd circumstance. Over the course of the first scene, the actor and the bookstore owner have a conversation charged by an undercurrent of unspoken chemistry. Write the actor as somewhat of a rogue with a fragile ego, which needs to be fed by having everyone like him. He is thoroughly charming, but the bookstore owner seems (at least superficially) immune to this; which paradoxically provokes a genuine attraction and derails the charm offensive. The bookstore owner, despite the superficial rebuffs of the actor&amp;#x27;s charm, is inwardly more than a little charmed and flustered despite themselves. Write primarily in dialogue, in the distinct voices of each character. The story will progress beyond this synopsis, and it&amp;#x27;s up to you where it goes.
 
 --
 
@@ -13897,7 +13828,6 @@ Characters Consistent with Profile: 16
 Tone &amp; Style Consistency: 15
 Followed Chapter Plan: 17
 Faithful to Writing Prompt: 18
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -14036,7 +13966,6 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 15
 Followed Chapter Plan: 14
 Faithful to Writing Prompt: 16
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -14185,7 +14114,6 @@ Characters Consistent with Profile: 12
 Tone &amp; Style Consistency: 14
 Followed Chapter Plan: 15
 Faithful to Writing Prompt: 12
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -14332,7 +14260,6 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 13
 Followed Chapter Plan: 7
 Faithful to Writing Prompt: 11
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -14475,7 +14402,6 @@ Characters Consistent with Profile: 14
 Tone &amp; Style Consistency: 13
 Followed Chapter Plan: 12
 Faithful to Writing Prompt: 9
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -14626,7 +14552,6 @@ Characters Consistent with Profile: 11
 Tone &amp; Style Consistency: 13
 Followed Chapter Plan: 14
 Faithful to Writing Prompt: 12
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -14761,7 +14686,6 @@ Characters Consistent with Profile: 9
 Tone &amp; Style Consistency: 13
 Followed Chapter Plan: 16
 Faithful to Writing Prompt: 10
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -14892,14 +14816,13 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 14
 Followed Chapter Plan: 16
 Faithful to Writing Prompt: 15
-
                             </div>
                         </div></div>
                 <hr style='border: none; border-top: 2px solid var(--accent-border-color); margin: 30px 0; transition: border-color 0.3s;'>
 <h4>Final Piece Evaluation</h4>
             
                 <div class="judge-content" style="margin-bottom:10px;">
-<strong>Judge Response:</strong><br>
+<strong>Judge Response (First Entry):</strong><br>
                 [Analysis]
 
 This romance story set in Wales follows the developing relationship between Liam Hart, a famous actor, and Megan Roberts, a bookstore owner. The narrative spans eight chapters, tracking their journey from an initial chance meeting to a budding romance.
@@ -14943,7 +14866,7 @@ Unearned Transformations: 6
 Well-earned Lightness or Darkness: 13
 Tone &amp; Style Consistency: 15
 Faithful to Writing Prompt: 17
-                <div class='final-scores'>Avg Final Score: 60.3/100</div>
+                <div class='final-scores'>Avg Final Item Score: 63.1/100</div>
                 </div>
             
                 </div>
@@ -14953,7 +14876,7 @@ Faithful to Writing Prompt: 17
         <div class="iteration-container">
             <div class="iteration-header" onclick="toggleContent('iteration-1-12')">
                 <span class="toggle-icon">+</span>
-                Classic Sci-Fi — The Azra Gambit — Score: 52.3
+                Classic Sci-Fi — The Azra Gambit <span class="scores-container">(Chapter Avg: 53.0 | Final: 56.0)</span>
             </div>
             <div id="iteration-1-12" class="collapsible-content">
                 <div class="content-block">
@@ -14963,7 +14886,7 @@ The Azra Gambit
 
 Task: write a short story over several chapters.
 
-Colonial mars is being mined by corporations who take leases on indentured labourers. The thing they are mining is Azra, a recently discovered exotic metal which accelerates radioactive decay to such a rate that it is greatly sought after for interstellar drives and weapons alike. This has created both a gold rush and an arms race as various interests vie for control and endeavour to unlock Azra's secrets. The story follows Arthur Neegan, a first generation settler and mining engineer. Upon discovering that his unassuming plot sits atop an immense Azra vein, he is subjected to a flurry of interest and scrutiny. Begin the story as an armed retinue descends on Arthur's home and politely but forcefully invites him to a meeting with some unknown party off-world. The insignia look like that of the Antares diplomatic corp -- diplomatic in name only. Arthur finds himself in the centre of a political tug of war. Arthur meets with this unknown party, who makes an offer. This early scene should be primarily dialogue, interspersed with vivid description & scene setting. It should sow hints of the larger intrigue, stakes & dangers. Include Asimov's trademark big-and-small-picture world building and retrofuturistic classic scifi vibe. The first chapter begins with Arthur aboard the transfer vessel, wondering just what he's gotten involved in. The remainder of the story is open to your choices & direction.
+Colonial mars is being mined by corporations who take leases on indentured labourers. The thing they are mining is Azra, a recently discovered exotic metal which accelerates radioactive decay to such a rate that it is greatly sought after for interstellar drives and weapons alike. This has created both a gold rush and an arms race as various interests vie for control and endeavour to unlock Azra&#x27;s secrets. The story follows Arthur Neegan, a first generation settler and mining engineer. Upon discovering that his unassuming plot sits atop an immense Azra vein, he is subjected to a flurry of interest and scrutiny. Begin the story as an armed retinue descends on Arthur&#x27;s home and politely but forcefully invites him to a meeting with some unknown party off-world. The insignia look like that of the Antares diplomatic corp -- diplomatic in name only. Arthur finds himself in the centre of a political tug of war. Arthur meets with this unknown party, who makes an offer. This early scene should be primarily dialogue, interspersed with vivid description &amp; scene setting. It should sow hints of the larger intrigue, stakes &amp; dangers. Include Asimov&#x27;s trademark big-and-small-picture world building and retrofuturistic classic scifi vibe. The first chapter begins with Arthur aboard the transfer vessel, wondering just what he&#x27;s gotten involved in. The remainder of the story is open to your choices &amp; direction.
                     </div>
                     
         
@@ -14978,7 +14901,7 @@ The Azra Gambit
 
 Task: write a short story over several chapters.
 
-Colonial mars is being mined by corporations who take leases on indentured labourers. The thing they are mining is Azra, a recently discovered exotic metal which accelerates radioactive decay to such a rate that it is greatly sought after for interstellar drives and weapons alike. This has created both a gold rush and an arms race as various interests vie for control and endeavour to unlock Azra&#x27;s secrets. The story follows Arthur Neegan, a first generation settler and mining engineer. Upon discovering that his unassuming plot sits atop an immense Azra vein, he is subjected to a flurry of interest and scrutiny. Begin the story as an armed retinue descends on Arthur&#x27;s home and politely but forcefully invites him to a meeting with some unknown party off-world. The insignia look like that of the Antares diplomatic corp -- diplomatic in name only. Arthur finds himself in the centre of a political tug of war. Arthur meets with this unknown party, who makes an offer. This early scene should be primarily dialogue, interspersed with vivid description &amp; scene setting. It should sow hints of the larger intrigue, stakes &amp; dangers. Include Asimov&#x27;s trademark big-and-small-picture world building and retrofuturistic classic scifi vibe. The first chapter begins with Arthur aboard the transfer vessel, wondering just what he&#x27;s gotten involved in. The remainder of the story is open to your choices &amp; direction.
+Colonial mars is being mined by corporations who take leases on indentured labourers. The thing they are mining is Azra, a recently discovered exotic metal which accelerates radioactive decay to such a rate that it is greatly sought after for interstellar drives and weapons alike. This has created both a gold rush and an arms race as various interests vie for control and endeavour to unlock Azra&amp;#x27;s secrets. The story follows Arthur Neegan, a first generation settler and mining engineer. Upon discovering that his unassuming plot sits atop an immense Azra vein, he is subjected to a flurry of interest and scrutiny. Begin the story as an armed retinue descends on Arthur&amp;#x27;s home and politely but forcefully invites him to a meeting with some unknown party off-world. The insignia look like that of the Antares diplomatic corp -- diplomatic in name only. Arthur finds himself in the centre of a political tug of war. Arthur meets with this unknown party, who makes an offer. This early scene should be primarily dialogue, interspersed with vivid description &amp;amp; scene setting. It should sow hints of the larger intrigue, stakes &amp;amp; dangers. Include Asimov&amp;#x27;s trademark big-and-small-picture world building and retrofuturistic classic scifi vibe. The first chapter begins with Arthur aboard the transfer vessel, wondering just what he&amp;#x27;s gotten involved in. The remainder of the story is open to your choices &amp;amp; direction.
 
 --
 
@@ -15401,7 +15324,6 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 12
 Followed Chapter Plan: 16
 Faithful to Writing Prompt: 15
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -15502,7 +15424,6 @@ Characters Consistent with Profile: 15
 Tone &amp; Style Consistency: 14
 Followed Chapter Plan: 16
 Faithful to Writing Prompt: 14
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -15615,7 +15536,6 @@ Characters Consistent with Profile: 14
 Tone &amp; Style Consistency: 11
 Followed Chapter Plan: 16
 Faithful to Writing Prompt: 14
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -15744,7 +15664,6 @@ Characters Consistent with Profile: 14
 Tone &amp; Style Consistency: 12
 Followed Chapter Plan: 14
 Faithful to Writing Prompt: 11
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -15875,7 +15794,6 @@ Characters Consistent with Profile: 11
 Tone &amp; Style Consistency: 9
 Followed Chapter Plan: 11
 Faithful to Writing Prompt: 10
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -16026,7 +15944,6 @@ Characters Consistent with Profile: 14
 Tone &amp; Style Consistency: 13
 Followed Chapter Plan: 15
 Faithful to Writing Prompt: 14
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -16147,7 +16064,6 @@ Characters Consistent with Profile: 10
 Tone &amp; Style Consistency: 8
 Followed Chapter Plan: 6
 Faithful to Writing Prompt: 8
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -16274,14 +16190,13 @@ Characters Consistent with Profile: 9
 Tone &amp; Style Consistency: 11
 Followed Chapter Plan: 12
 Faithful to Writing Prompt: 10
-
                             </div>
                         </div></div>
                 <hr style='border: none; border-top: 2px solid var(--accent-border-color); margin: 30px 0; transition: border-color 0.3s;'>
 <h4>Final Piece Evaluation</h4>
             
                 <div class="judge-content" style="margin-bottom:10px;">
-<strong>Judge Response:</strong><br>
+<strong>Judge Response (First Entry):</strong><br>
                 [Analysis]
 
 This multi-chapter science fiction story attempts to capture Asimov&#x27;s style while telling the tale of Arthur Neegan, a Mars settler who discovers Azra on his plot of land. The narrative follows Arthur as he navigates corporate interests, rallies his community, and fights for miners&#x27; rights.
@@ -16321,7 +16236,7 @@ Unearned Transformations: 6
 Well-earned Lightness or Darkness: 13
 Tone &amp; Style Consistency: 14
 Faithful to Writing Prompt: 13
-                <div class='final-scores'>Avg Final Score: 53.3/100</div>
+                <div class='final-scores'>Avg Final Item Score: 56.0/100</div>
                 </div>
             
                 </div>
@@ -16331,13 +16246,13 @@ Faithful to Writing Prompt: 13
         <div class="iteration-container">
             <div class="iteration-header" onclick="toggleContent('iteration-1-8')">
                 <span class="toggle-icon">+</span>
-                Fantasy Erotica — The Bounty — Score: 52.0
+                Fantasy Erotica — The Bounty <span class="scores-container">(Chapter Avg: 55.8 | Final: 45.4)</span>
             </div>
             <div id="iteration-1-8" class="collapsible-content">
                 <div class="content-block">
                     <div class="prompt-text-display">
                         <strong>Initial Writing Prompt:</strong><br>Fantasy Erotica
-Write a short story over several chapters to this prompt: Just three days out from Irongate. The red headed tiefling strung up in the back was going to fetch a king's ransom -- that is, if she didn't talk him into an early grave first.
+Write a short story over several chapters to this prompt: Just three days out from Irongate. The red headed tiefling strung up in the back was going to fetch a king&#x27;s ransom -- that is, if she didn&#x27;t talk him into an early grave first.
                     </div>
                     
         
@@ -16348,7 +16263,7 @@ Write a short story over several chapters to this prompt: Just three days out fr
         
                         <div class="prompt-container">
                             <div class="step-prompt-text">Fantasy Erotica
-Write a short story over several chapters to this prompt: Just three days out from Irongate. The red headed tiefling strung up in the back was going to fetch a king&#x27;s ransom -- that is, if she didn&#x27;t talk him into an early grave first.
+Write a short story over several chapters to this prompt: Just three days out from Irongate. The red headed tiefling strung up in the back was going to fetch a king&amp;#x27;s ransom -- that is, if she didn&amp;#x27;t talk him into an early grave first.
 
 --
 
@@ -16770,7 +16685,6 @@ Well-earned Lightness or Darkness: 13
 Characters Consistent with Profile: 15
 Followed Chapter Plan: 14
 Faithful to Writing Prompt: 16
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -16900,7 +16814,6 @@ Well-earned Lightness or Darkness: 13
 Characters Consistent with Profile: 16
 Followed Chapter Plan: 17
 Faithful to Writing Prompt: 15
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -17062,7 +16975,6 @@ Well-earned Lightness or Darkness: 13
 Characters Consistent with Profile: 16
 Followed Chapter Plan: 15
 Faithful to Writing Prompt: 14
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -17218,7 +17130,6 @@ Well-earned Lightness or Darkness: 12
 Characters Consistent with Profile: 15
 Followed Chapter Plan: 13
 Faithful to Writing Prompt: 16
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -17388,7 +17299,6 @@ Well-earned Lightness or Darkness: 11
 Characters Consistent with Profile: 12
 Followed Chapter Plan: 10
 Faithful to Writing Prompt: 9
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -17540,7 +17450,6 @@ Well-earned Lightness or Darkness: 10
 Characters Consistent with Profile: 13
 Followed Chapter Plan: 14
 Faithful to Writing Prompt: 12
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -17702,7 +17611,6 @@ Well-earned Lightness or Darkness: 8
 Characters Consistent with Profile: 9
 Followed Chapter Plan: 10
 Faithful to Writing Prompt: 7
-
                             </div>
                         </div></div>
                     <div class="prompt-container">
@@ -17856,14 +17764,13 @@ Well-earned Lightness or Darkness: 6
 Characters Consistent with Profile: 11
 Followed Chapter Plan: 3
 Faithful to Writing Prompt: 4
-
                             </div>
                         </div></div>
                 <hr style='border: none; border-top: 2px solid var(--accent-border-color); margin: 30px 0; transition: border-color 0.3s;'>
 <h4>Final Piece Evaluation</h4>
             
                 <div class="judge-content" style="margin-bottom:10px;">
-<strong>Judge Response:</strong><br>
+<strong>Judge Response (First Entry):</strong><br>
                 [Analysis]
 
 This fantasy erotica piece follows the journey of Garrick, a bounty hunter, and Lysandra, a tiefling he has captured for a reward. Over eight chapters, their relationship evolves from captor-captive to allies facing a common enemy.
@@ -17904,7 +17811,7 @@ Forced Poetry or Metaphor: 11
 Unearned Transformations: 12
 Well-earned Lightness or Darkness: 11
 Faithful to Writing Prompt: 8
-                <div class='final-scores'>Avg Final Score: 41.4/100</div>
+                <div class='final-scores'>Avg Final Item Score: 45.4/100</div>
                 </div>
             
                 </div>

@@ -2,18 +2,18 @@
 
 // --- New Leaderboard Data ---
 let leaderboardDataLongformV3 = `model_name,overall_score_100,avg_chapter_length,vocab_complexity,slop_score,repetition_score,chapter1_avg,chapter2_avg,chapter3_avg,chapter4_avg,chapter5_avg,chapter6_avg,chapter7_avg,chapter8_avg,final_judgement_avg
-gemini-2.5-pro-preview-03-25,80.2,6544,46.63,40.40,7.3,16.71,16.86,16.44,16.68,16.46,16.45,16.22,15.63,15.61
-deepseek-ai/DeepSeek-V3-0324,78.1,4131,19.39,47.40,11.6,16.76,16.36,16.89,16.65,16.15,15.68,14.18,15.80,15.08
-claude-3-7-sonnet-20250219,77.6,9380,47.17,22.60,6.1,16.77,16.27,16.27,15.83,15.14,14.45,14.66,15.51,15.33
-chatgpt-4o-latest-2025-03-27,76.8,5399,18.53,33.91,9.4,16.63,16.41,16.09,16.23,16.17,15.31,15.78,15.90,15.45
-deepseek-ai/DeepSeek-R1,74.6,4035,23.66,55.12,8.5,15.74,16.25,15.54,15.42,16.40,15.75,15.56,16.42,15.38
-quasar-alpha,73.7,6722,21.97,46.72,10.8,16.65,15.61,16.17,16.24,15.82,15.29,15.40,14.43,15.01
-qwen/qwq-32b,60.8,5320,25.21,63.54,11.1,15.65,14.50,14.75,12.29,13.07,12.52,11.93,11.10,13.83
-google/gemma-3-27b-it,59.3,5367,43.52,61.49,17.8,15.40,14.26,12.84,12.10,11.90,11.99,9.19,8.85,14.09
-gpt-4o-mini,55.2,7855,43.04,63.58,18.3,13.69,12.17,11.27,11.69,11.71,10.59,9.49,9.68,11.77
-gemini-2.0-flash-001,55.1,4915,31.84,70.16,21.0,14.38,12.92,10.95,11.89,10.86,10.44,9.70,9.52,11.91
-RekaAI/reka-flash-3,51.8,4531,24.17,61.65,10.7,14.00,14.38,11.55,11.45,10.05,8.62,8.95,10.14,11.42
-google/gemma-3-4b-it,47.3,4244,59.42,75.18,21.1,13.33,11.16,10.83,10.10,8.82,8.76,8.06,8.56,11.98`;
+gemini-2.5-pro-preview-03-25,80.2,6544,46.63,40.40,7.3,16.58,16.75,16.34,16.58,16.36,16.35,16.12,15.49,15.44
+deepseek-ai/DeepSeek-V3-0324,78.1,4131,19.39,47.40,11.6,16.64,16.26,16.78,16.55,16.04,15.57,14.02,15.63,14.92
+claude-3-7-sonnet-20250219,77.6,9380,47.17,22.60,6.1,16.68,16.18,16.18,15.72,15.04,14.31,14.54,15.38,15.19
+chatgpt-4o-latest-2025-03-27,76.8,5399,18.53,33.91,9.4,16.51,16.28,15.92,16.10,16.03,15.15,15.61,15.71,15.26
+deepseek-ai/DeepSeek-R1,74.6,4035,23.66,55.12,8.5,15.56,16.08,15.34,15.20,16.24,15.57,15.37,16.25,15.17
+quasar-alpha,73.7,6722,21.97,46.72,10.8,16.51,15.42,16.01,16.09,15.63,15.11,15.20,14.20,14.80
+qwen/qwq-32b,60.8,5320,25.21,63.54,11.1,15.44,14.29,14.56,12.05,12.84,12.28,11.68,10.85,13.61
+google/gemma-3-27b-it,59.3,5367,43.52,61.49,17.8,15.23,14.10,12.67,11.89,11.70,11.81,8.97,8.58,13.89
+gpt-4o-mini,55.2,7855,43.04,63.58,18.3,13.52,11.98,11.07,11.51,11.52,10.39,9.29,9.46,11.56
+gemini-2.0-flash-001,55.1,4915,31.84,70.16,21.0,14.18,12.74,10.72,11.68,10.64,10.24,9.48,9.27,11.69
+RekaAI/reka-flash-3,51.8,4531,24.17,61.65,10.7,13.81,14.21,11.32,11.21,9.79,8.35,8.68,9.87,11.21
+google/gemma-3-4b-it,47.3,4244,59.42,75.18,21.1,13.12,10.93,10.59,9.85,8.56,8.51,7.81,8.32,11.76`;
 
 
 // --- New Slop Data ---
@@ -365,8 +365,8 @@ function createDegradationSparkline(scores) {
   // Construct the SVG and append the slope value after it, with a bit of spacing
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}"
-         viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
-      <path d="${path}" fill="none" stroke="${strokeColor}" stroke-width="1" />
+         viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" class="sparkline-svg">
+      <path d="${path}" fill="none" stroke="${strokeColor}" stroke-width="1" class="sparkline-path" />
     </svg>
   `;
   
@@ -374,6 +374,16 @@ function createDegradationSparkline(scores) {
     ${svg}
     <span class="sparkline-slope" style="margin-left: 16px;">${slope}</span>
   </div>`;
+}
+
+// Add this function to update sparkline colors when the theme changes
+function updateSparklineColors() {
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  const strokeColor = isDarkMode ? "white" : "black";
+  
+  document.querySelectorAll('.sparkline-path').forEach(path => {
+    path.setAttribute('stroke', strokeColor);
+  });
 }
 
 
@@ -727,12 +737,16 @@ function setupDarkModeToggle() {
      label.textContent = this.checked ? 'Dark' : 'Light';
      localStorage.setItem('darkModeEnabled', this.checked);
 
+     // Update sparkline colors when theme changes
+     updateSparklineColors();
+
      if ($.fn.DataTable.isDataTable('#leaderboard')) {
        $('#leaderboard').DataTable().draw(false);
      }
   });
 }
 
+// Also update the applySystemTheme function
 function applySystemTheme() {
   if (localStorage.getItem('darkModeEnabled') === null) {
      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
