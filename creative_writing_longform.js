@@ -1,22 +1,46 @@
 // longform_creative_writing.js
 
 // --- New Leaderboard Data ---
-let leaderboardDataLongformV3 = `model_name,overall_score_100,avg_chapter_length,vocab_complexity,slop_score,repetition_score
-deepseek-ai/DeepSeek-V3-0324,78.1,4131,19.39,47.40,11.6
-claude-3-7-sonnet-20250219,77.6,9380,47.17,22.60,6.1
-chatgpt-4o-latest-2025-03-27,76.8,5399,18.53,33.91,9.4
-deepseek-ai/DeepSeek-R1,74.6,4035,23.66,55.12,8.5
-openrouter/quasar-alpha,73.7,6722,21.97,46.72,10.8
-qwen/qwq-32b,60.8,5320,25.21,63.54,11.1
-google/gemma-3-27b-it,59.3,5367,43.52,61.49,17.8
-gpt-4o-mini,55.2,7855,43.04,63.58,18.3
-gemini-2.0-flash-001,55.1,4915,31.84,70.16,21.0
-RekaAI/reka-flash-3,51.8,4531,24.17,61.65,10.7
-google/gemma-3-4b-it,47.3,4244,59.42,75.18,21.1`;
+let leaderboardDataLongformV3 = `model_name,overall_score_100,avg_chapter_length,vocab_complexity,slop_score,repetition_score,chapter1_avg,chapter2_avg,chapter3_avg,chapter4_avg,chapter5_avg,chapter6_avg,chapter7_avg,chapter8_avg,final_judgement_avg
+gemini-2.5-pro-preview-03-25,80.2,6544,46.63,40.40,7.3,16.71,16.86,16.44,16.68,16.46,16.45,16.22,15.63,15.61
+deepseek-ai/DeepSeek-V3-0324,78.1,4131,19.39,47.40,11.6,16.76,16.36,16.89,16.65,16.15,15.68,14.18,15.80,15.08
+claude-3-7-sonnet-20250219,77.6,9380,47.17,22.60,6.1,16.77,16.27,16.27,15.83,15.14,14.45,14.66,15.51,15.33
+chatgpt-4o-latest-2025-03-27,76.8,5399,18.53,33.91,9.4,16.63,16.41,16.09,16.23,16.17,15.31,15.78,15.90,15.45
+deepseek-ai/DeepSeek-R1,74.6,4035,23.66,55.12,8.5,15.74,16.25,15.54,15.42,16.40,15.75,15.56,16.42,15.38
+quasar-alpha,73.7,6722,21.97,46.72,10.8,16.65,15.61,16.17,16.24,15.82,15.29,15.40,14.43,15.01
+qwen/qwq-32b,60.8,5320,25.21,63.54,11.1,15.65,14.50,14.75,12.29,13.07,12.52,11.93,11.10,13.83
+google/gemma-3-27b-it,59.3,5367,43.52,61.49,17.8,15.40,14.26,12.84,12.10,11.90,11.99,9.19,8.85,14.09
+gpt-4o-mini,55.2,7855,43.04,63.58,18.3,13.69,12.17,11.27,11.69,11.71,10.59,9.49,9.68,11.77
+gemini-2.0-flash-001,55.1,4915,31.84,70.16,21.0,14.38,12.92,10.95,11.89,10.86,10.44,9.70,9.52,11.91
+RekaAI/reka-flash-3,51.8,4531,24.17,61.65,10.7,14.00,14.38,11.55,11.45,10.05,8.62,8.95,10.14,11.42
+google/gemma-3-4b-it,47.3,4244,59.42,75.18,21.1,13.33,11.16,10.83,10.10,8.82,8.76,8.06,8.56,11.98`;
 
 
 // --- New Slop Data ---
-const slopData = `##### deepseek-ai/DeepSeek-V3-0324
+const slopData = `##### google/gemini-2.5-pro-preview-03-25
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>google/gemma-3-27b-it (distance=0.835)</div>
+<div class='slop-similar'>gemini-2.0-flash-001 (distance=0.842)</div>
+<div class='slop-similar'>google/gemma-3-4b-it (distance=0.864)</div>
+<div class='slop-similar'>openrouter/quasar-alpha (distance=0.865)</div>
+<div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.868)</div>
+</div>
+
+<h4>Top Repetitive Words</h4>
+<div class='slop-section-items'>
+<span class='slop-word-item'>elara</span> <span class='slop-word-item'>rostova</span> <span class='slop-word-item'>unnervingly</span> <span class='slop-word-item'>aris</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>warred</span> <span class='slop-word-item'>unlatched</span> <span class='slop-word-item'>vibrated</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>flicker</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>grunted</span> <span class='slop-word-item'>mantelpiece</span> <span class='slop-word-item'>terrifyingly</span> <span class='slop-word-item'>stillness</span> <span class='slop-word-item'>imperceptibly</span> <span class='slop-word-item'>gnawed</span> <span class='slop-word-item'>cloying</span> <span class='slop-word-item'>flinched</span> <span class='slop-word-item'>unreadable</span> <span class='slop-word-item'>impassive</span> <span class='slop-word-item'>hissed</span> <span class='slop-word-item'>faintly</span> <span class='slop-word-item'>grimy</span> <span class='slop-word-item'>hummed</span> <span class='slop-word-item'>muttered</span> <span class='slop-word-item'>creak</span> <span class='slop-word-item'>darted</span> <span class='slop-word-item'>hemlock</span> <span class='slop-word-item'>bookshelves</span> <span class='slop-word-item'>lingered</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>peered</span> <span class='slop-word-item'>rusty</span> <span class='slop-word-item'>floorboards</span> <span class='slop-word-item'>thorne</span> <span class='slop-word-item'>glowed</span> <span class='slop-word-item'>mumbled</span> <span class='slop-word-item'>terran</span> <span class='slop-word-item'>unnaturally</span> <span class='slop-word-item'>gaze</span> <span class='slop-word-item'>laundromat</span> <span class='slop-word-item'>pulsed</span> <span class='slop-word-item'>precariously</span> <span class='slop-word-item'>unnerving</span> <span class='slop-word-item'>liam</span> <span class='slop-word-item'>flickering</span> <span class='slop-word-item'>glanced</span> <span class='slop-word-item'>sparks</span>
+</div>
+<h4>Top Bigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>felt like (52)</span> <span class='slop-ngram-item'>said voice (41)</span> <span class='slop-ngram-item'>looked like (21)</span> <span class='slop-ngram-item'>something else (21)</span> <span class='slop-ngram-item'>burner phone (18)</span> <span class='slop-ngram-item'>eyes wide (16)</span> <span class='slop-ngram-item'>look like (15)</span> <span class='slop-ngram-item'>living room (15)</span> <span class='slop-ngram-item'>less like (14)</span> <span class='slop-ngram-item'>back towards (14)</span> <span class='slop-ngram-item'>right said (13)</span> <span class='slop-ngram-item'>voice low (13)</span> <span class='slop-ngram-item'>like trying (12)</span> <span class='slop-ngram-item'>last night (12)</span> <span class='slop-ngram-item'>dim light (12)</span> <span class='slop-ngram-item'>heart pounding (12)</span> <span class='slop-ngram-item'>leaving behind (12)</span> <span class='slop-ngram-item'>looked back (11)</span> <span class='slop-ngram-item'>could see (11)</span> <span class='slop-ngram-item'>pry bar (11)</span> <span class='slop-ngram-item'>expression unreadable (10)</span> <span class='slop-ngram-item'>began voice (10)</span> <span class='slop-ngram-item'>turning back (10)</span> <span class='slop-ngram-item'>voice tight (10)</span> <span class='slop-ngram-item'>long moment (10)</span> <span class='slop-ngram-item'>eyes fixed (9)</span> <span class='slop-ngram-item'>dark hair (9)</span> <span class='slop-ngram-item'>flicker something (9)</span> <span class='slop-ngram-item'>maybe even (9)</span> <span class='slop-ngram-item'>face pale (9)</span>
+</div>
+<h4>Top Trigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>heart hammered ribs (9)</span> <span class='slop-ngram-item'>said voice low (7)</span> <span class='slop-ngram-item'>looked less like (5)</span> <span class='slop-ngram-item'>felt less like (5)</span> <span class='slop-ngram-item'>smile touched lips (5)</span> <span class='slop-ngram-item'>eyes met mine (4)</span> <span class='slop-ngram-item'>fingers flew across (4)</span> <span class='slop-ngram-item'>gave curt nod (4)</span> <span class='slop-ngram-item'>took deep breath (4)</span> <span class='slop-ngram-item'>said voice tight (4)</span> <span class='slop-ngram-item'>eyes never leaving (4)</span> <span class='slop-ngram-item'>turned head slowly (4)</span> <span class='slop-ngram-item'>blood ran cold (4)</span> <span class='slop-ngram-item'>old man hemlock (4)</span> <span class='slop-ngram-item'>flickering neon sign (3)</span> <span class='slop-ngram-item'>felt like eternity (3)</span> <span class='slop-ngram-item'>right said voice (3)</span> <span class='slop-ngram-item'>knot tightening stomach (3)</span> <span class='slop-ngram-item'>life felt like (3)</span> <span class='slop-ngram-item'>dust motes dancing (3)</span> <span class='slop-ngram-item'>another pause longer (3)</span> <span class='slop-ngram-item'>pause longer time (3)</span> <span class='slop-ngram-item'>said breaking silence (3)</span> <span class='slop-ngram-item'>gaze flickered towards (3)</span> <span class='slop-ngram-item'>creak old house (3)</span> <span class='slop-ngram-item'>squeezed eyes shut (3)</span> <span class='slop-ngram-item'>elara eyes wide (3)</span> <span class='slop-ngram-item'>chapter static line (3)</span> <span class='slop-ngram-item'>elara said voice (3)</span> <span class='slop-ngram-item'>dim light filtering (3)</span>
+</div>
+
+##### deepseek-ai/DeepSeek-V3-0324
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>deepseek-ai/DeepSeek-R1 (distance=0.755)</div>
@@ -43,10 +67,10 @@ const slopData = `##### deepseek-ai/DeepSeek-V3-0324
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.865)</div>
+<div class='slop-similar'>google/gemini-2.5-pro-preview-03-25 (distance=0.868)</div>
 <div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.868)</div>
 <div class='slop-similar'>google/gemma-3-27b-it (distance=0.876)</div>
 <div class='slop-similar'>gemini-2.0-flash-001 (distance=0.883)</div>
-<div class='slop-similar'>qwen/qwq-32b (distance=0.888)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -159,9 +183,9 @@ const slopData = `##### deepseek-ai/DeepSeek-V3-0324
 <div class='slop-similar-section'>
 <div class='slop-similar'>gemini-2.0-flash-001 (distance=0.714)</div>
 <div class='slop-similar'>google/gemma-3-4b-it (distance=0.753)</div>
+<div class='slop-similar'>google/gemini-2.5-pro-preview-03-25 (distance=0.835)</div>
 <div class='slop-similar'>gpt-4o-mini (distance=0.845)</div>
 <div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.876)</div>
-<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.882)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -182,9 +206,9 @@ const slopData = `##### deepseek-ai/DeepSeek-V3-0324
 <div class='slop-similar-section'>
 <div class='slop-similar'>gemini-2.0-flash-001 (distance=0.826)</div>
 <div class='slop-similar'>google/gemma-3-27b-it (distance=0.845)</div>
+<div class='slop-similar'>google/gemini-2.5-pro-preview-03-25 (distance=0.881)</div>
 <div class='slop-similar'>google/gemma-3-4b-it (distance=0.891)</div>
 <div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.895)</div>
-<div class='slop-similar'>openrouter/quasar-alpha (distance=0.904)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -206,8 +230,8 @@ const slopData = `##### deepseek-ai/DeepSeek-V3-0324
 <div class='slop-similar'>google/gemma-3-27b-it (distance=0.714)</div>
 <div class='slop-similar'>google/gemma-3-4b-it (distance=0.803)</div>
 <div class='slop-similar'>gpt-4o-mini (distance=0.826)</div>
+<div class='slop-similar'>google/gemini-2.5-pro-preview-03-25 (distance=0.842)</div>
 <div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.863)</div>
-<div class='slop-similar'>openrouter/quasar-alpha (distance=0.881)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -251,9 +275,9 @@ const slopData = `##### deepseek-ai/DeepSeek-V3-0324
 <div class='slop-similar-section'>
 <div class='slop-similar'>google/gemma-3-27b-it (distance=0.753)</div>
 <div class='slop-similar'>gemini-2.0-flash-001 (distance=0.803)</div>
+<div class='slop-similar'>google/gemini-2.5-pro-preview-03-25 (distance=0.864)</div>
 <div class='slop-similar'>gpt-4o-mini (distance=0.891)</div>
 <div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.909)</div>
-<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.920)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -267,41 +291,456 @@ const slopData = `##### deepseek-ai/DeepSeek-V3-0324
 <h4>Top Trigrams</h4>
 <div class='slop-section-items'>
 <span class='slop-ngram-item'>voice barely audible (26)</span> <span class='slop-ngram-item'>said voice low (24)</span> <span class='slop-ngram-item'>said voice barely (22)</span> <span class='slop-ngram-item'>voice barely whisper (22)</span> <span class='slop-ngram-item'>said voice filled (18)</span> <span class='slop-ngram-item'>rain continued fall (18)</span> <span class='slop-ngram-item'>said voice laced (15)</span> <span class='slop-ngram-item'>silas said voice (14)</span> <span class='slop-ngram-item'>voice devoid emotion (12)</span> <span class='slop-ngram-item'>small almost imperceptible (11)</span> <span class='slop-ngram-item'>said voice strained (10)</span> <span class='slop-ngram-item'>growing sense unease (10)</span> <span class='slop-ngram-item'>small intricately carved (10)</span> <span class='slop-ngram-item'>growing sense dread (9)</span> <span class='slop-ngram-item'>felt strange sense (9)</span> <span class='slop-ngram-item'>elias said voice (8)</span> <span class='slop-ngram-item'>continued fall washing (8)</span> <span class='slop-ngram-item'>smile playing lips (8)</span> <span class='slop-ngram-item'>faint almost imperceptible (7)</span> <span class='slop-ngram-item'>chilling realization dawned (7)</span> <span class='slop-ngram-item'>voice laced hint (7)</span> <span class='slop-ngram-item'>said voice firm (7)</span> <span class='slop-ngram-item'>knew chilling certainty (7)</span> <span class='slop-ngram-item'>said voice trembling (7)</span> <span class='slop-ngram-item'>said voice devoid (7)</span> <span class='slop-ngram-item'>persistent grey drizzle (6)</span> <span class='slop-ngram-item'>noticed subtle shift (6)</span> <span class='slop-ngram-item'>voice filled chilling (6)</span> <span class='slop-ngram-item'>noticed small almost (6)</span> <span class='slop-ngram-item'>things best left (6)</span>
-</div>`;
+</div>
+`;
+
+// creative_writing_longform.js
+
+///////////////////////
+// CSV / SLOP DATA   //
+///////////////////////
+//
+// You can leave these empty or fill them in later. 
+// Just ensure the CSV has these columns (in order):
+//
+//  model_name,
+//  overall_score_100,
+//  avg_chapter_length,
+//  vocab_complexity,
+//  slop_score,
+//  repetition_score,
+//  chapter1_avg,
+//  chapter2_avg,
+//  chapter3_avg,
+//  chapter4_avg,
+//  chapter5_avg,
+//  chapter6_avg,
+//  chapter7_avg,
+//  chapter8_avg,
+//  final_judgement_avg
+//
 
 
-// --- Global Scope Variables ---
-let lastSortedScoreColumn = 4; // Default Score (column index 4)
-// --- End Global Scope Variables ---
+/////////////////////////////
+// SPARKLINE FUNCTION      //
+/////////////////////////////
 
-// --- Dark Mode / Theme / Email Functions (Keep as is) ---
+/**
+ * Creates a minimal inline sparkline (tiny line chart) for the 8 chapter scores.
+ * The x-axis is evenly spaced, and the y-axis scales from 0 (bottom) to the highest chapter score (top).
+ * It also computes the absolute slope (rounded to 3 decimals) between the first and last chapter.
+ * In dark mode, the line is white; otherwise, it is black.
+ *
+ * @param {number[]} scores Array of 8 numeric chapter scores
+ * @returns {string} Inline HTML markup with the SVG sparkline and the slope value
+ */
+function createDegradationSparkline(scores) {
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  const strokeColor = isDarkMode ? "white" : "black";
+
+  // Use only the first 8 scores
+  const data = scores.slice(0, 8).map(s => parseFloat(s) || 0);
+  
+  // Define dimensions
+  const w = 60, h = 20;
+  
+  // Determine the maximum value among the chapter scores (for y scaling)
+  const maxVal = Math.max(...data) || 1; // prevent division by zero
+  
+  // Calculate x-axis step (evenly spaced for 8 points)
+  const stepX = (data.length > 1) ? (w / (data.length - 1)) : w;
+  
+  // Build the SVG path (x is evenly spaced; y scales from h (0 value) to 0 (maxVal))
+  let path = "";
+  data.forEach((val, i) => {
+    const x = i * stepX;
+    const y = h - ((val / maxVal) * h);
+    path += (i === 0) ? `M${x},${y}` : ` L${x},${y}`;
+  });
+  
+  // Compute slope as (last - first) divided by (number of intervals), then take absolute value
+  let slope = (data[data.length - 1] - data[0]) / (data.length - 1);
+  slope = Math.abs(slope).toFixed(3);
+  
+  // Construct the SVG and append the slope value after it, with a bit of spacing
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}"
+         viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+      <path d="${path}" fill="none" stroke="${strokeColor}" stroke-width="1" />
+    </svg>
+  `;
+  
+  return `<div class="sparkline-container" style="display: inline-flex; align-items: center;">
+    ${svg}
+    <span class="sparkline-slope" style="margin-left: 16px;">${slope}</span>
+  </div>`;
+}
+
+
+
+
+///////////////////////
+// SLOP PROFILE PARSE //
+///////////////////////
+
+function parseSlopData(modelName) {
+  if (!slopData || !modelName) {
+      return "<p><i>Slop profile data not available.</i></p>";
+  }
+  const escapedModelName = modelName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const regex = new RegExp(`^#####\\s*${escapedModelName}\\s*$`, 'm');
+  const match = slopData.split(regex); 
+  if (match.length > 1) {
+      const contentAfter = match[1];
+      if (contentAfter) {
+          const nextDelimiterMatch = contentAfter.search(/^#####\s/m);
+          if (nextDelimiterMatch !== -1) {
+              return contentAfter.substring(0, nextDelimiterMatch).trim();
+          } else {
+              return contentAfter.trim();
+          }
+      }
+  }
+  console.warn(`Slop profile not found for model: ${modelName}`);
+  return `<p><i>Slop profile not found for model: ${modelName}</i></p>`;
+}
+
+
+//////////////////////////////
+// DATATABLE + RENDER LOGIC //
+//////////////////////////////
+
+// Keep track of the last column used to display the bar
+let lastSortedScoreColumn = 5; // Where 'Score' lives now (0-based)
+
+function updateScoreBarColors() {
+  const scoreBars = document.querySelectorAll('#leaderboard .score-bar');
+  const isDarkMode = document.body.classList.contains('dark-mode');
+
+  scoreBars.forEach(bar => {
+    if ($(bar).is(':visible')) {
+      const overallIndex = $(bar).closest('tr').index();
+      const totalRows = $('#leaderboard tbody tr').length;
+      if (totalRows === 0) return;
+
+      // Hue gradient from 200 (blue) to 120 (green)
+      const startHue = 200;
+      const endHue = 120;
+      const hueRange = startHue - endHue;
+
+      const startPercent = overallIndex / totalRows;
+      const endPercent = (overallIndex + 1) / totalRows;
+
+      const currentStartHue = startHue - (startPercent * hueRange);
+      const currentEndHue = startHue - (endPercent * hueRange);
+
+      const lightness = isDarkMode ? '50%' : '65%';
+      const saturation = isDarkMode ? '55%' : '50%';
+
+      const startColor = `hsl(${currentStartHue}, ${saturation}, ${lightness})`;
+      const endColor = `hsl(${currentEndHue}, ${saturation}, ${lightness})`;
+
+      bar.style.background = `linear-gradient(to bottom, ${startColor}, ${endColor})`;
+    }
+  });
+}
+
+
+function loadLeaderboardData() {
+  // skip header row, parse lines
+  const lines = leaderboardDataLongformV3.split('\n').slice(1).filter(l => l.trim() !== '');
+
+  // We assume overall_score_100 is on a 0..100 scale
+  const maxScore = 100.0;
+  const baselineScore = 0.0;
+  const scoreRange = maxScore - baselineScore;
+
+  let html = lines.map(row => {
+    // We expect 15 CSV columns:
+    // [0] model_name
+    // [1] overall_score_100
+    // [2] avg_chapter_length
+    // [3] vocab_complexity
+    // [4] slop_score
+    // [5] repetition_score
+    // [6..13] chapter scores
+    // [14] final_judgement_avg
+    let cols = row.split(',');
+    let [
+      modelNameRaw,
+      overallScore100,
+      avgChapterLength,
+      vocabComplexity,
+      slopScore,
+      repetitionScore,
+      ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8,
+      finalJudge
+    ] = cols;
+
+    // Convert to numeric values
+    const scoreNum = parseFloat(overallScore100) || 0;
+    const lengthNum = parseInt(avgChapterLength, 10) || 0;
+    const slopNum = parseFloat(slopScore) || 0;
+    const repNum = parseFloat(repetitionScore) || 0;
+
+    // Gather chapter scores for the sparkline and degradation calculation
+    const chapterScores = [ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8].map(x => parseFloat(x) || 0);
+    // Compute degradation as absolute slope from first to last chapter, divided by number of intervals (7)
+    let degradationVal = Math.abs((chapterScores[chapterScores.length - 1] - chapterScores[0]) / (chapterScores.length - 1));
+
+    const scoreRelative = scoreNum - baselineScore;
+    const scorePct = scoreRange > 0 ? Math.max(0, Math.min(100, (scoreRelative / scoreRange) * 100)) : 0;
+
+    // Minimal formatting for model name
+    let isNsfwModel = modelNameRaw.startsWith('!');
+    let isNewModel  = modelNameRaw.startsWith('*');
+    let currentModelName = modelNameRaw.replace(/^(!|\*)/, '');
+    let displayModelName = currentModelName.split('/').pop();
+    if (isNsfwModel) displayModelName = '🔞' + displayModelName;
+    if (isNewModel)  displayModelName = '🆕' + displayModelName;
+    let modelNameDisplayHTML = currentModelName.includes('/')
+      ? `<a href="https://huggingface.co/${currentModelName}" target="_blank">${displayModelName}</a>`
+      : displayModelName;
+
+    let resultsFn = `results/creative-writing-longform/${currentModelName.replace(/\//g,'__')}_longform_report.html`;
+
+    let scoreBarHTML = `
+      <div class="score-bar-container">
+        <div class="score-bar" style="width: ${scorePct}%; display: none;"></div>
+        <span class="score-text">${scoreNum.toFixed(1)}</span>
+      </div>
+    `;
+
+    let slopInfoIcon = `
+      <span class="slop-info-icon custom-info-icon"
+            data-model-name="${currentModelName}" title="View Slop Profile">i</span>
+    `;
+
+    // Create the degradation sparkline (the function call returns both the SVG and the slope text)
+    let degradationHTML = createDegradationSparkline(chapterScores);
+
+    // Build the row.
+    // Note: We include the computed degradationVal in a data-order attribute
+    return `
+      <tr data-original-score="${scoreNum}"
+          data-vocab="${vocabComplexity}"
+          data-gpt-slop="${slopNum}"
+          data-repetition="${repNum}">
+        <td>
+          <div class="cell-content">
+            ${modelNameDisplayHTML}
+          </div>
+        </td>
+        <td class="mobile-collapsible" data-order="${lengthNum}">
+          <div class="cell-content">
+            ${isNaN(lengthNum) ? '-' : lengthNum.toLocaleString()}
+          </div>
+        </td>
+        <td data-order="${slopNum}">
+          <div class="cell-content">
+            ${slopNum.toFixed(1)}
+            ${slopInfoIcon}
+          </div>
+        </td>
+        <td class="mobile-collapsible" data-order="${repNum}">
+          <div class="cell-content">
+            ${repNum.toFixed(1)}
+          </div>
+        </td>
+        <!-- NEW DEGRADATION column, with data-order for sorting -->
+        <td class="mobile-collapsible" data-order="${degradationVal}">
+          <div class="cell-content">
+            ${degradationHTML}
+          </div>
+        </td>
+        <td data-order="${scoreNum}">
+          <div class="cell-content">
+            ${scoreBarHTML}
+          </div>
+        </td>
+        <td>
+          <div class="cell-content">
+            <a href="${resultsFn}">Samples</a>
+          </div>
+        </td>
+      </tr>
+    `;
+  }).join('');
+
+  document.getElementById('leaderboardBody').innerHTML = html;
+  initializeDataTable();
+}
+
+//////////////////////
+// DATATABLE CONFIG //
+//////////////////////
+
+let dataTableConfig = {
+  order: [[5, "desc"]], // Default sort by Score (column index 5, descending)
+  paging: false,
+  searching: false,
+  info: true,
+  lengthChange: false,
+  columnDefs: [
+    { targets: [1], type: 'num' }, // Length
+    { targets: [2], type: 'num' }, // Slop
+    { targets: [3], type: 'num' }, // Repetition
+    { targets: [4], type: 'num', orderSequence: ["asc", "desc"] }, // Degradation, default asc when sorted
+    { targets: [5], type: 'num', orderSequence: ["desc", "asc"] }, // Score
+    { targets: [6], orderable: false }  // Samples
+  ],
+  dom: "<'d-flex flex-column flex-md-row justify-content-between align-items-center mb-2'<'#toggleMobilePlaceholder'><'ms-md-auto'f>>" +
+       "<'row'<'col-12'tr>>" +
+       "<'row mt-2'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+  drawCallback: function(settings) {
+    let api = this.api();
+    if (!api) return;
+
+    let order = api.order();
+    if (!order || order.length === 0) {
+      order = [[5, 'desc']];
+    }
+    let sortedColIndex = order[0][0];
+    const SCORE_COLUMNS = [5]; 
+    const NON_SCORE_COLUMNS = [0,1,2,3,4,6];
+
+    const tableNode = $(api.table().node());
+    tableNode.find('.score-bar').hide();
+    tableNode.find('th').css('width', '');
+
+    let columnToShowBar = -1;
+    if (SCORE_COLUMNS.includes(sortedColIndex)) {
+      columnToShowBar = sortedColIndex;
+      lastSortedScoreColumn = sortedColIndex;
+    } else if (NON_SCORE_COLUMNS.includes(sortedColIndex) && lastSortedScoreColumn !== null) {
+      columnToShowBar = lastSortedScoreColumn;
+    } else {
+      columnToShowBar = 5;
+      lastSortedScoreColumn = 5;
+    }
+    if (columnToShowBar !== -1) {
+      try {
+        api.rows({ page: 'current' })
+           .nodes()
+           .to$()
+           .find(`td:eq(${columnToShowBar}) .score-bar`)
+           .show();
+        let header = api.column(columnToShowBar).header();
+        if (header) {
+          $(header).css('width', '30%');
+        }
+      } catch (e) {
+        console.error("Error showing score bar or adjusting width:", e);
+      }
+    }
+    updateScoreBarColors();
+  }
+};
+
+
+////////////////////////////
+// MOBILE COLUMN TOGGLING //
+////////////////////////////
+
+let middleStatsExpanded = false;
+function collapseMiddleColumns() {
+  const isMobile = window.innerWidth < 768;
+  // columns 1,3,4 are marked "mobile-collapsible"
+  if (isMobile && !middleStatsExpanded) {
+    $('#leaderboard .mobile-collapsible').hide();
+    $('#toggleMiddleStats').text('Expand Details');
+  } else {
+    $('#leaderboard .mobile-collapsible').show();
+    $('#toggleMiddleStats').text('Hide Details');
+  }
+}
+
+function toggleMiddleStats() {
+  middleStatsExpanded = !middleStatsExpanded;
+  collapseMiddleColumns();
+}
+
+
+/////////////////////
+// INIT / BOOTSTRAP //
+/////////////////////
+
+document.addEventListener('DOMContentLoaded', function() {
+  displayEncodedEmail();
+  applySystemTheme();
+  setupDarkModeToggle();
+
+  if (document.getElementById('leaderboard')) {
+    loadLeaderboardData();
+
+    $(window).on('resize', collapseMiddleColumns);
+    $('#toggleMiddleStats').on('click', toggleMiddleStats);
+
+    setTimeout(collapseMiddleColumns, 50);
+  }
+});
+
+
+function initializeDataTable() {
+  if ($.fn.DataTable.isDataTable('#leaderboard')) {
+    $('#leaderboard').DataTable().destroy();
+    $('#leaderboardBody').off('click', '.slop-info-icon');
+  }
+
+  let table = $('#leaderboard').DataTable(dataTableConfig);
+
+  // Slop icon event
+  $('#leaderboardBody').on('click', '.slop-info-icon', function() {
+    const modelName = $(this).data('model-name');
+    const profileHtml = parseSlopData(modelName);
+    const modalTitle = `Slop Profile: ${modelName.split('/').pop()}`;
+    $('#slopProfileContent').html(profileHtml);
+    $('#slopProfileModalLabel').text(modalTitle);
+
+    const slopModal = new bootstrap.Modal(document.getElementById('slopProfileModal'));
+    slopModal.show();
+  });
+
+  table.one('init.dt', function() {
+    collapseMiddleColumns();
+  });
+}
+
+
+//////////////////////////////
+// THEME / EMAIL HELPERS    //
+//////////////////////////////
+
 function setupDarkModeToggle() {
   var toggle = document.getElementById('darkModeToggle');
   var label = document.getElementById('toggleLabel');
   const savedMode = localStorage.getItem('darkModeEnabled');
+
   if (savedMode) {
      document.body.classList.toggle('dark-mode', savedMode === 'true');
-     toggle.checked = savedMode === 'true';
-     label.textContent = savedMode === 'true' ? 'Dark' : 'Light';
+     toggle.checked = (savedMode === 'true');
+     label.textContent = (savedMode === 'true') ? 'Dark' : 'Light';
   }
+
   toggle.addEventListener('change', function() {
      document.body.classList.toggle('dark-mode', this.checked);
      label.textContent = this.checked ? 'Dark' : 'Light';
      localStorage.setItem('darkModeEnabled', this.checked);
+
      if ($.fn.DataTable.isDataTable('#leaderboard')) {
-        $('#leaderboard').DataTable().draw(false); // Use draw(false) to prevent reset page
+       $('#leaderboard').DataTable().draw(false);
      }
   });
 }
 
 function applySystemTheme() {
   if (localStorage.getItem('darkModeEnabled') === null) {
-     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
      const toggle = document.getElementById('darkModeToggle');
      const label = document.getElementById('toggleLabel');
-     document.body.classList.toggle('dark-mode', prefersDarkMode);
-     toggle.checked = prefersDarkMode;
-     label.textContent = prefersDarkMode ? 'Dark' : 'Light';
+     document.body.classList.toggle('dark-mode', prefersDark);
+     toggle.checked = prefersDark;
+     label.textContent = prefersDark ? 'Dark' : 'Light';
   }
 }
 
@@ -321,314 +760,3 @@ function decodeHtmlEntities(encodedString) {
   textArea.innerHTML = encodedString;
   return textArea.value;
 }
-// --- End Dark Mode / Theme / Email Functions ---
-
-// --- Slop Profile Parsing (Keep as is) ---
-function parseSlopData(modelName) {
-  if (!slopData || !modelName) {
-      return "<p><i>Slop profile data not available.</i></p>";
-  }
-  // Escape modelName for regex safety, especially for names with special chars
-  const escapedModelName = modelName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const regex = new RegExp(`^#####\\s*${escapedModelName}\\s*$`, 'm'); // Match start of line, model name, end of line
-  const match = slopData.split(regex); // Split by the delimiter line
-
-  if (match.length > 1) {
-      const contentAfterDelimiter = match[1];
-      if (contentAfterDelimiter) {
-          const nextDelimiterMatch = contentAfterDelimiter.search(/^#####\s/m);
-          if (nextDelimiterMatch !== -1) {
-              return contentAfterDelimiter.substring(0, nextDelimiterMatch).trim();
-          } else {
-              return contentAfterDelimiter.trim();
-          }
-      }
-  }
-  console.warn(`Slop profile not found for model: ${modelName}`);
-  return `<p><i>Slop profile not found for model: ${modelName}</i></p>`;
-}
-
-// --- NEW Score Bar Color Gradient Logic ---
-function updateScoreBarColors() {
-  const scoreBars = document.querySelectorAll('#leaderboard .score-bar'); // Use a generic class like 'score-bar'
-  const isDarkMode = document.body.classList.contains('dark-mode');
-
-  scoreBars.forEach((bar) => {
-    if ($(bar).is(':visible')) { // Check visibility
-        const overallIndex = $(bar).closest('tr').index();
-        const totalRows = $('#leaderboard tbody tr').length;
-        if (totalRows === 0) return; // Avoid division by zero
-
-        // Blue (200) to Green (120) Gradient
-        const startHue = 200;
-        const endHue = 120;
-        const hueRange = startHue - endHue;
-
-        const startPercent = (overallIndex / totalRows);
-        const endPercent = ((overallIndex + 1) / totalRows);
-
-        const currentStartHue = startHue - (startPercent * hueRange);
-        const currentEndHue = startHue - (endPercent * hueRange);
-
-        const lightness = isDarkMode ? '50%' : '65%'; // Adjust lightness for readability
-        const saturation = isDarkMode ? '55%' : '50%'; // Adjust saturation
-
-        const startColor = `hsl(${currentStartHue}, ${saturation}, ${lightness})`;
-        const endColor = `hsl(${currentEndHue}, ${saturation}, ${lightness})`;
-
-        bar.style.background = `linear-gradient(to bottom, ${startColor}, ${endColor})`;
-    }
-  });
-}
-
-// --- Leaderboard Data Loading & Parsing ---
-function loadLeaderboardData() {
-  const longformRows = leaderboardDataLongformV3.split('\n').slice(1).filter(l => l.trim() !== '');
-
-  // Calculate score range for percentages (0-100)
-  const maxScore = 100.0;
-  const baselineScore = 0.0; // Simple 0-100 scale
-  const scoreRange = maxScore - baselineScore;
-
-  let html = longformRows.map(row => {
-      // Parse the new CSV columns
-      let [modelNameRaw, overallScore100, avgChapterLength, vocabComplexity, slopScore, repetitionScore] = row.split(',');
-
-      const scoreNum = parseFloat(overallScore100);
-      const lengthNum = parseInt(avgChapterLength, 10);
-      const vocabNumRaw = parseFloat(vocabComplexity); // Keep for potential future use
-      const slopNum = (parseFloat(slopScore) / 10.0) / 7.2 * 10; // Keep slop calc consistent
-      const repetitionScoreNum = parseFloat(repetitionScore, 10);
-
-      // Calculate percentage for the score bar
-      const scoreRelativeToBaseline = scoreNum - baselineScore;
-      const scorePercentage = scoreRange > 0 ? Math.max(0, Math.min(100, (scoreRelativeToBaseline / scoreRange) * 100)) : 0;
-
-      // --- Model Name Processing (Keep as is) ---
-      let currentModelName = modelNameRaw;
-      const isNsfwModel = currentModelName.startsWith('!');
-      currentModelName = currentModelName.replace(/^\!/, '');
-      const isNewModel = currentModelName.startsWith('*');
-      currentModelName = currentModelName.replace(/^\*/, '');
-      let displayModelName = currentModelName.split('/').pop();
-      if (isNsfwModel) displayModelName = '🔞' + displayModelName;
-      if (isNewModel) displayModelName = '🆕' + displayModelName;
-      let modelNameDisplayHTML = currentModelName.includes('/')
-          ? `<a href="https://huggingface.co/${currentModelName}" target="_blank">${displayModelName}</a>`
-          : displayModelName;
-
-      // --- Update Sample Link Path ---
-      let modelResultsFn = `results/creative-writing-longform/${currentModelName.replace(/\//g,'__')}_longform_report.html`; // Adjusted path
-
-      // --- Generate Score Bar HTML ---
-      let scoreBarHTML = `<div class="score-bar-container">
-          <div class="score-bar" style="width: ${scorePercentage}%; display: none;"></div>
-          <span class="score-text">${scoreNum.toFixed(1)}</span>
-      </div>`;
-
-      const slopInfoIconUnicode = `
-       <span class="slop-info-icon custom-info-icon" data-model-name="${currentModelName}" title="View Slop Profile">i</span>`;
-
-      // --- Create TR with data-order on TD for new columns ---
-      return `
-  <tr data-original-score="${scoreNum}"
-      data-vocab="${vocabNumRaw}"
-      data-gpt-slop="${slopNum}"
-      data-repetition="${repetitionScoreNum}">
-
-    <td>
-      <div class="cell-content">
-        ${modelNameDisplayHTML}
-      </div>
-    </td>
-
-    <td class="mobile-collapsible" data-order="${lengthNum}">
-      <div class="cell-content">
-        ${isNaN(lengthNum) ? '-' : lengthNum.toLocaleString()}
-      </div>
-    </td>
-
-    <td data-order="${slopNum}">
-      <div class="cell-content">
-        ${slopNum.toFixed(1)}
-        ${slopInfoIconUnicode}
-      </div>
-    </td>
-
-    <td class="mobile-collapsible" data-order="${repetitionScoreNum}">
-      <div class="cell-content">
-        ${isNaN(repetitionScoreNum) ? '-' : repetitionScoreNum.toFixed(1)}
-      </div>
-    </td>
-
-    <td data-order="${scoreNum}">
-      <div class="cell-content">
-        ${scoreBarHTML}
-      </div>
-    </td>
-
-    <td>
-      <div class="cell-content">
-        <a href="${modelResultsFn}">Samples</a>
-      </div>
-    </td>
-  </tr>
-`;
-
-  }).join(''); // End of map loop
-
-  document.getElementById('leaderboardBody').innerHTML = html;
-  initializeDataTable(); // This now includes setting up the event listener
-}
-
-// --- DataTable Configuration ---
-let dataTableConfig = {
-  order: [[4, "desc"]], // Default sort Score (index 4)
-  paging: false,
-  searching: false,
-  info: true,
-  lengthChange: false,
-  columnDefs: [
-    // Define explicit numeric type for sorting
-    { targets: [1], type: 'num' }, // Avg Ch. Len
-    { targets: [2], type: 'num' }, // Slop
-    { targets: [3], type: 'num' }, // Repetition
-    { targets: [4], type: 'num' }, // Score (0-100)
-    // Define sorting sequences
-    { targets: [4], orderSequence: ["desc", "asc"] }, // Score
-    { targets: [1], orderSequence: ["desc", "asc"] }, // Length
-    { targets: [2, 3], orderSequence: ["asc", "desc"] }, // Slop, Repetition (Lower is better)
-    { targets: [5], orderable: false } // Samples column not sortable
-  ],
-  dom: "<'d-flex flex-column flex-md-row justify-content-between align-items-center mb-2'<'#toggleMobilePlaceholder'><'ms-md-auto'f>>" +
-       "<'row'<'col-12'tr>>" +
-       "<'row mt-2'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
-  // drawCallback to manage score bar visibility
-  drawCallback: function(settings) {
-    let api = this.api();
-    if (!api) return;
-    let order = api.order();
-    if (!order || order.length === 0) {
-        order = [[4, 'desc']]; // Fallback to default sort (Score column)
-    }
-
-    let sortedColumnIndex = order[0][0];
-    const SCORE_COLUMNS = [4]; // Index for Score (0-100)
-    const NON_SCORE_COLUMNS = [0, 1, 2, 3, 5]; // Indices for other columns
-
-    const tableNode = $(api.table().node());
-
-    // Hide all score bars initially within this table
-    tableNode.find('.score-bar').hide();
-    // Reset header widths
-    tableNode.find('th').css('width', '');
-
-    let columnToShowBar = -1;
-
-    // Determine which score column's bar to show
-    if (SCORE_COLUMNS.includes(sortedColumnIndex)) {
-        columnToShowBar = sortedColumnIndex;
-        lastSortedScoreColumn = sortedColumnIndex;
-    } else if (NON_SCORE_COLUMNS.includes(sortedColumnIndex) && lastSortedScoreColumn !== null) {
-        columnToShowBar = lastSortedScoreColumn;
-    } else { // Fallback
-        columnToShowBar = 4; // Default to Score column
-        lastSortedScoreColumn = 4;
-    }
-
-    // Show the selected column's score bar and adjust width
-    if (columnToShowBar !== -1) {
-        try {
-            // Show the bar in the target column for all visible rows
-            api.rows({ page: 'current' }).nodes().to$().find(`td:eq(${columnToShowBar}) .score-bar`).show();
-
-            let header = api.column(columnToShowBar).header();
-            if (header) {
-                $(header).css('width', '30%'); // Adjust width as needed
-            }
-        } catch (e) {
-            console.error("Error showing score bar or adjusting width:", e);
-        }
-    }
-
-    // Apply the gradient colors to the *now visible* bars
-    updateScoreBarColors(); // Use the updated color function
-  }
-};
-
-// --- Mobile Column Collapse Logic (Keep as is, check indices) ---
-let middleStatsExpanded = false;
-function collapseMiddleColumns() {
-    const isMobile = window.innerWidth < 768;
-
-    // If on mobile AND not expanded, hide them
-    if (isMobile && !middleStatsExpanded) {
-      $('#leaderboard .mobile-collapsible').hide(); // Targets columns 1 (Length) and 3 (Repetition)
-      $('#toggleMiddleStats').text('Expand Details');
-    } else {
-      $('#leaderboard .mobile-collapsible').show();
-      $('#toggleMiddleStats').text('Hide Details');
-    }
-}
-
-function toggleMiddleStats() {
-    middleStatsExpanded = !middleStatsExpanded;
-    collapseMiddleColumns();
-}
-// --- End Mobile Column Collapse Logic ---
-
-// --- DataTable Initialization ---
-function initializeDataTable() {
-  // Check if DataTable already exists and destroy it
-  if ($.fn.DataTable.isDataTable('#leaderboard')) {
-    $('#leaderboard').DataTable().destroy();
-    $('#leaderboardBody').off('click', '.slop-info-icon'); // Remove previous listener
-  }
-
-  let table = $('#leaderboard').DataTable(dataTableConfig);
-
-  // Add Event Listener for Slop Icons
-  $('#leaderboardBody').on('click', '.slop-info-icon', function() {
-      const modelName = $(this).data('model-name');
-      const profileHtml = parseSlopData(modelName);
-      const modalTitle = `Slop Profile: ${modelName.split('/').pop()}`;
-
-      $('#slopProfileContent').html(profileHtml);
-      $('#slopProfileModalLabel').text(modalTitle);
-
-      const slopModal = new bootstrap.Modal(document.getElementById('slopProfileModal'));
-      slopModal.show();
-  });
-
-  // Initial collapse after table init
-  table.one('init.dt', function () {
-    collapseMiddleColumns();
-    // No setupControls or fixInitialScoreBars needed anymore
-  });
-}
-
-// --- Controls Setup (Simplified - No sliders) ---
-function setupControls() {
-    // Placeholder for future controls if needed
-    // console.log("Controls setup (no sliders active).");
-}
-
-// --- Document Ready ---
-document.addEventListener('DOMContentLoaded', function() {
-    displayEncodedEmail();
-    applySystemTheme();
-    setupDarkModeToggle();
-
-    if (document.getElementById('leaderboard')) {
-      loadLeaderboardData(); // This now calls initializeDataTable internally
-
-      // Bind resize and toggle events directly
-      $(window).on('resize', collapseMiddleColumns);
-      $('#toggleMiddleStats').on('click', toggleMiddleStats);
-
-      // Initial call to collapse columns after a short delay
-      setTimeout(collapseMiddleColumns, 50);
-    }
-});
-
-// --- Removed updateScores function as it's no longer needed ---

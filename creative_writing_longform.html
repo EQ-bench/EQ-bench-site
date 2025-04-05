@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>EQ-Bench Longform Creative Writing Leaderboard</title> <!-- Changed Title -->
+  <title>EQ-Bench Longform Creative Writing Leaderboard</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -15,21 +15,18 @@
     /* == Longform Creative Writing v3 Page Specific Styles == */
     /* ================================================== */
 
-    /* Make sure body has position relative for pseudo-elements */
-    body.longform-creative-writing-page { /* Changed Class */
+    body.longform-creative-writing-page {
       position: relative;
       min-height: 100%;
     }
 
-    /* Background styling - only for Longform Creative Writing page */
-    body.longform-creative-writing-page::before { /* Changed Class */
+    body.longform-creative-writing-page::before {
       content: "";
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      /* Keep existing background or choose a new one */
       background-image: url('./images/bookshelves.jpg');
       background-position: center;
       background-size: cover;
@@ -39,8 +36,7 @@
       pointer-events: none;
     }
 
-    /* Oval mask overlay - only for Longform Creative Writing page */
-    body.longform-creative-writing-page::after { /* Changed Class */
+    body.longform-creative-writing-page::after {
       content: "";
       position: fixed;
       top: 0;
@@ -56,47 +52,43 @@
       pointer-events: none;
     }
 
-    /* Container styling for Longform Creative Writing - semi-transparent */
-    body.longform-creative-writing-page .container { /* Changed Class */
+    body.longform-creative-writing-page .container {
       background-color: rgba(255, 255, 255, 0.76) !important;
       border-radius: 8px;
       padding-top: 1rem;
       padding-bottom: 1rem;
     }
 
-    /* --- Keep most opacity styles the same, just update class --- */
-
-    body.longform-creative-writing-page #leaderboard tbody td { /* Changed Class */
+    body.longform-creative-writing-page #leaderboard tbody td {
       background-color: rgba(255, 255, 255, 0.65) !important;
     }
 
-    body.longform-creative-writing-page #leaderboard.table-striped tbody tr:nth-of-type(odd) td { /* Changed Class */
+    body.longform-creative-writing-page #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
       background-color: rgba(245, 245, 245, 0.65) !important;
     }
 
-    body.longform-creative-writing-page .section { /* Changed Class */
+    body.longform-creative-writing-page .section {
       background-color: rgba(248, 248, 248, 0.75) !important;
       padding: 20px;
       border-radius: 8px;
     }
-    body.longform-creative-writing-page .section .card { /* Changed Class */
+    body.longform-creative-writing-page .section .card {
         background-color: transparent !important;
         border: none !important;
     }
 
-    body.longform-creative-writing-page #leaderboard thead th { /* Changed Class */
+    body.longform-creative-writing-page #leaderboard thead th {
       background-color: rgba(70, 65, 60, 0.85) !important;
       color: white !important;
     }
 
-    /* --- Dark Mode Adjustments --- */
-
-    body.dark-mode.longform-creative-writing-page::before { /* Changed Class */
-        opacity: 0.65;
-        filter: blur(3px);
+    /* Dark mode adjustments */
+    body.dark-mode.longform-creative-writing-page::before {
+      opacity: 0.65;
+      filter: blur(3px);
     }
 
-    body.dark-mode.longform-creative-writing-page::after { /* Changed Class */
+    body.dark-mode.longform-creative-writing-page::after {
       background: radial-gradient(
         ellipse at center,
         rgba(45, 40, 35, 0) 45%,
@@ -104,27 +96,26 @@
       );
     }
 
-    body.dark-mode.longform-creative-writing-page .container { /* Changed Class */
+    body.dark-mode.longform-creative-writing-page .container {
       background-color: rgba(45, 40, 35, 0.75) !important;
     }
 
-    body.dark-mode.longform-creative-writing-page #leaderboard tbody td { /* Changed Class */
+    body.dark-mode.longform-creative-writing-page #leaderboard tbody td {
       background-color: rgba(45, 40, 35, 0.7) !important;
     }
 
-    body.dark-mode.longform-creative-writing-page #leaderboard.table-striped tbody tr:nth-of-type(odd) td { /* Changed Class */
+    body.dark-mode.longform-creative-writing-page #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
       background-color: rgba(55, 50, 45, 0.7) !important;
     }
 
-    body.dark-mode.longform-creative-writing-page .section { /* Changed Class */
+    body.dark-mode.longform-creative-writing-page .section {
       background-color: rgba(50, 45, 40, 0.75) !important;
     }
 
-    body.dark-mode.longform-creative-writing-page #leaderboard thead th { /* Changed Class */
+    body.dark-mode.longform-creative-writing-page #leaderboard thead th {
       background-color: rgba(65, 60, 55, 0.85) !important;
     }
 
-    /* --- Text Shadow for Readability (Keep) --- */
     body.longform-creative-writing-page .container h1,
     body.longform-creative-writing-page .container h2,
     body.longform-creative-writing-page .container h3,
@@ -135,8 +126,7 @@
     body.longform-creative-writing-page .container span,
     body.longform-creative-writing-page .container li,
     body.longform-creative-writing-page .container .alert,
-    body.longform-creative-writing-page .container .dataTables_info
-    {
+    body.longform-creative-writing-page .container .dataTables_info {
       text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
     }
 
@@ -150,119 +140,182 @@
     body.dark-mode.longform-creative-writing-page .container span,
     body.dark-mode.longform-creative-writing-page .container li,
     body.dark-mode.longform-creative-writing-page .container .alert,
-    body.dark-mode.longform-creative-writing-page .container .dataTables_info
-    {
-      text-shadow: 0 0 4px rgba(0, 0, 0, 0.8); /* Slightly stronger shadow for dark mode */
+    body.dark-mode.longform-creative-writing-page .container .dataTables_info {
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
     }
 
-    /* Ensure score text inside bars is also readable */
-    body.longform-creative-writing-page .score-text { /* Changed Class */
-        text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
+    .score-text {
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
     }
-    body.dark-mode.longform-creative-writing-page .score-text { /* Changed Class */
-        text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
-    }
-
-    /* --- Opaque Table / Nav Glow (Light Mode Only) --- */
-    body.longform-creative-writing-page:not(.dark-mode) #leaderboard tbody td { /* Changed Class */
-      background-color: rgba(255, 255, 255, 1) !important; /* Fully opaque */
-    }
-    body.longform-creative-writing-page:not(.dark-mode) #leaderboard.table-striped tbody tr:nth-of-type(odd) td { /* Changed Class */
-      background-color: rgba(245, 245, 245, 1) !important; /* Fully opaque striping */
-    }
-    body.longform-creative-writing-page:not(.dark-mode) .container p:nth-of-type(2)::before, /* Changed Class */
-    body.longform-creative-writing-page:not(.dark-mode) .container p:nth-of-type(3)::before { /* Changed Class */
-      /* ... (keep glow styles) ... */
-      content: ""; position: absolute; top: -3px; left: -10px; right: -10px; bottom: -3px;
-      background-color: rgba(255, 255, 255, 0.4); border-radius: 6px; z-index: -1; filter: blur(1px);
-    }
-    body.longform-creative-writing-page:not(.dark-mode) .container p a, /* Changed Class */
-    body.longform-creative-writing-page:not(.dark-mode) .container p b { /* Changed Class */
-      /* ... (keep text shadow styles) ... */
-       text-shadow: 0 0 3px rgba(255, 255, 255, 0.6), 0 0 6px rgba(255, 255, 255, 0.5), 0 0 9px rgba(255, 255, 255, 0.4), 0 0 12px rgba(255, 255, 255, 0.3);
-    }
-    body.longform-creative-writing-page .container p:nth-of-type(2), /* Changed Class */
-    body.longform-creative-writing-page .container p:nth-of-type(3) { /* Changed Class */
-      display: inline-block; position: relative; z-index: 1;
+    body.dark-mode .score-text {
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
     }
 
-    /* --- Mobile Toggle Button --- */
-    body.longform-creative-writing-page #toggleMiddleStats { /* Changed Class */
-      font-weight: bold; font-size: 1rem; padding: 0.4rem 1rem;
-      background-color: rgba(255, 255, 255, 0.9); border-color: #666; color: #333;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.2); margin-bottom: 0 !important;
-      border-bottom-left-radius: 0; border-bottom-right-radius: 0;
+    body.longform-creative-writing-page:not(.dark-mode) #leaderboard tbody td {
+      background-color: rgba(255, 255, 255, 1) !important;
     }
-    body.longform-creative-writing-page:not(.dark-mode) #toggleMiddleStats { /* Changed Class */
+    body.longform-creative-writing-page:not(.dark-mode) #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
+      background-color: rgba(245, 245, 245, 1) !important;
+    }
+    body.longform-creative-writing-page:not(.dark-mode) .container p:nth-of-type(2)::before,
+    body.longform-creative-writing-page:not(.dark-mode) .container p:nth-of-type(3)::before {
+      content: "";
+      position: absolute;
+      top: -3px;
+      left: -10px;
+      right: -10px;
+      bottom: -3px;
+      background-color: rgba(255, 255, 255, 0.4);
+      border-radius: 6px;
+      z-index: -1;
+      filter: blur(1px);
+    }
+    body.longform-creative-writing-page:not(.dark-mode) .container p a,
+    body.longform-creative-writing-page:not(.dark-mode) .container p b {
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.6), 0 0 6px rgba(255, 255, 255, 0.5), 0 0 9px rgba(255, 255, 255, 0.4), 0 0 12px rgba(255, 255, 255, 0.3);
+    }
+    body.longform-creative-writing-page .container p:nth-of-type(2),
+    body.longform-creative-writing-page .container p:nth-of-type(3) {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+    }
+
+    #toggleMiddleStats {
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 0.4rem 1rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-color: #666;
+      color: #333;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      margin-bottom: 0 !important;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    body.longform-creative-writing-page:not(.dark-mode) #toggleMiddleStats {
       text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
     }
-    body.dark-mode.longform-creative-writing-page #toggleMiddleStats { /* Changed Class */
-      background-color: rgba(45, 40, 35, 0.9); color: #eee; border-color: #888;
+    body.dark-mode.longform-creative-writing-page #toggleMiddleStats {
+      background-color: rgba(45, 40, 35, 0.9);
+      color: #eee;
+      border-color: #888;
     }
-    body.longform-creative-writing-page #leaderboard { /* Changed Class */
+    #leaderboard {
       margin-top: 0 !important;
     }
-    @media (min-width: 768px) { .hide-details-toggle-button { display: none !important; } }
-    @media (max-width: 767px) { .show-details-toggle-button { display: block !important; } }
-
-    /* --- Custom Info Icon --- */
-    .custom-info-icon { /* Keep as is */
-      display: inline-flex; justify-content: center; align-items: center;
-      width: 16px; height: 16px; border-radius: 50%; background-color: transparent;
-      border: 1.5px solid currentColor; color: inherit; margin-left: 5px;
-      cursor: pointer; font-size: 11px; font-weight: bold; font-style: italic;
-      line-height: 1; position: relative; vertical-align: middle;
+    @media (min-width: 768px) {
+      .hide-details-toggle-button {
+        display: none !important;
+      }
     }
-    body:not(.dark-mode) .custom-info-icon { color: var(--bs-link-color, #0d6efd); }
-    body.dark-mode .custom-info-icon { color: #aad; }
-    .custom-info-icon:hover { color: var(--bs-link-hover-color, #0a58ca); }
-    body.dark-mode .custom-info-icon:hover { opacity: 0.8; }
-    /* Target correct column for slop icon */
-    #leaderboard tbody td:nth-child(3) .cell-content .custom-info-icon { margin-top: -1px; }
-    #leaderboard tbody td:nth-child(3) .cell-content { white-space: nowrap; display: flex; align-items: center; }
+    @media (max-width: 767px) {
+      .show-details-toggle-button {
+        display: block !important;
+      }
+    }
 
-    /* --- Modal Styles --- */
-    .modal-content { background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(2px); }
-    body.dark-mode .modal-content { background-color: rgba(50, 49, 48, 0.94); color: #eee; }
-    body.dark-mode .modal-header { border-bottom-color: #2e2e2e; }
-    body.dark-mode .modal-header .modal-title { color: #eee; }
-    body.dark-mode .modal-footer { border-top-color: #2e2e2e; }
-    body.dark-mode .btn-close { filter: invert(1) grayscale(100%) brightness(200%); }
-    /* Slop items in modal */
-    #slopProfileContent .slop-section-items { line-height: 1.8; }
+    .custom-info-icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: transparent;
+      border: 1.5px solid currentColor;
+      color: inherit;
+      margin-left: 5px;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: bold;
+      font-style: italic;
+      line-height: 1;
+      position: relative;
+      vertical-align: middle;
+    }
+    body:not(.dark-mode) .custom-info-icon {
+      color: var(--bs-link-color, #0d6efd);
+    }
+    body.dark-mode .custom-info-icon {
+      color: #aad;
+    }
+    .custom-info-icon:hover {
+      color: var(--bs-link-hover-color, #0a58ca);
+    }
+    body.dark-mode .custom-info-icon:hover {
+      opacity: 0.8;
+    }
+    #leaderboard tbody td:nth-child(3) .cell-content .custom-info-icon {
+      margin-top: -1px;
+    }
+    #leaderboard tbody td:nth-child(3) .cell-content {
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(2px);
+    }
+    body.dark-mode .modal-content {
+      background-color: rgba(50, 49, 48, 0.94);
+      color: #eee;
+    }
+    body.dark-mode .modal-header {
+      border-bottom-color: #2e2e2e;
+    }
+    body.dark-mode .modal-header .modal-title {
+      color: #eee;
+    }
+    body.dark-mode .modal-footer {
+      border-top-color: #2e2e2e;
+    }
+    body.dark-mode .btn-close {
+      filter: invert(1) grayscale(100%) brightness(200%);
+    }
+    #slopProfileContent .slop-section-items {
+      line-height: 1.8;
+    }
     #slopProfileContent .slop-word-item,
     #slopProfileContent .slop-ngram-item {
-      display: inline-block; margin: 2px 4px 2px 0; padding: 2px 6px;
-      border: 1px solid #ccc; border-radius: 4px; background-color: #f0f0f0;
-      font-size: 0.9em; color: #333; white-space: nowrap;
+      display: inline-block;
+      margin: 2px 4px 2px 0;
+      padding: 2px 6px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f0f0f0;
+      font-size: 0.9em;
+      color: #333;
+      white-space: nowrap;
     }
     body.dark-mode #slopProfileContent .slop-word-item,
     body.dark-mode #slopProfileContent .slop-ngram-item {
-      border-color: #666; background-color: #585756; color: #f0f0f0;
+      border-color: #666;
+      background-color: #585756;
+      color: #f0f0f0;
     }
-    .modal-body { color: var(--bs-body-color); }
-    body.dark-mode .modal-body { color: #eee; }
-
-    /* Styling for the similarity section container */
+    .modal-body {
+      color: var(--bs-body-color);
+    }
+    body.dark-mode .modal-body {
+      color: #eee;
+    }
     .slop-similar-section {
       margin-bottom: 15px;
-      line-height: 1.5; /* Reduced from 1.8 */
+      line-height: 1.5;
     }
-
-    /* Style for each similar model item as a ranked list */
     .slop-similar {
       display: block;
-      margin: 2px 0; /* Reduced from 4px 0 */
-      padding: 1px 0; /* Reduced from 2px 0 */
+      margin: 2px 0;
+      padding: 1px 0;
       font-size: 0.95em;
       color: #333;
     }
-
-    /* Counter for automatic ranking */
     .slop-similar-section {
       counter-reset: similarity-rank;
     }
-
     .slop-similar::before {
       counter-increment: similarity-rank;
       content: counter(similarity-rank) ". ";
@@ -270,28 +323,18 @@
       color: #555;
       margin-right: 5px;
     }
-
-    /* Make the distance value slightly muted */
-    .slop-similar .distance {
-      color: #666;
-      font-size: 0.9em;
-    }
-
-    /* Dark mode adjustments */
     body.dark-mode .slop-similar {
       color: #f0f0f0;
     }
-
     body.dark-mode .slop-similar::before {
       color: #bbb;
     }
-
     body.dark-mode .slop-similar .distance {
       color: #aaa;
     }
   </style>
 </head>
-<body class="longform-creative-writing-page"> <!-- Changed Class -->
+<body class="longform-creative-writing-page">
   <div class="container mt-4">
     <div class="form-check form-switch">
       <input class="form-check-input" type="checkbox" id="darkModeToggle">
@@ -300,19 +343,18 @@
     <div class="header">
       <a href="./"><img src="./images/eqbench_logo_sml.png" alt="EQ-bench Logo" class="logo"/></a>
       <div class="header-text">
-        <h1>Longform Creative Writing</h1> <!-- Changed Title -->
+        <h1>Longform Creative Writing</h1>
       </div>
     </div>
     <p>Emotional Intelligence Benchmarks for LLMs</p>
     <p><a href="https://github.com/EQ-bench" target="_blank">Github</a> | <a href="https://arxiv.org/abs/2312.06281" target="_blank">Paper</a> | <span id="email"></span> | <a href="https://twitter.com/sam_paech" target="_blank">Twitter</a> | <a href="about.html">About</a></p>
 
-    <!-- Updated Navigation -->
     <p>
         <a href='index.html'>💙EQ-Bench3</a>
         <span class="nav-separator">|</span>
-        <b>✍️Longform Writing</b> <!-- Added & Made Active -->
+        <b>✍️Longform Writing</b>
         <span class="nav-separator">|</span>
-        <a href='creative_writing.html'>🎨Creative Writing v3</a> <!-- Link to other page -->
+        <a href='creative_writing.html'>🎨Creative Writing v3</a>
         <span class="nav-separator">|</span>
         <a href='judgemark-v2.html'>⚖️Judgemark v2</a>
         <span class="nav-separator">|</span>
@@ -325,9 +367,6 @@
         <a href='eqbench-v2.html'>💗EQ-Bench (Legacy)</a>
     </p>
 
-    <!-- Removed hidden sliders - no longer used for score adjustment here -->
-
-    <!-- Updated Description -->
     An LLM-judged longform creative writing benchmark (v3). <a href="./about.html#longform-creative-writing-v3">Learn more</a>
 
     <button id="toggleMiddleStats" class="btn btn-outline-secondary btn-sm show-details-toggle-button d-none mb-2">
@@ -342,12 +381,14 @@
             <th class="mobile-collapsible">Length</th>
             <th>Slop</th>
             <th class="mobile-collapsible">Repetition</th>
+            <!-- NEW Degradation column -->
+            <th class="mobile-collapsible">Degradation</th>
             <th>Score</th>
             <th>Samples</th>
           </tr>
         </thead>
         <tbody id="leaderboardBody">
-          <!-- Data rows will be added here -->
+          <!-- Data rows injected by JS -->
         </tbody>
       </table>
     </div>
@@ -356,33 +397,42 @@
     <div class="section mt-4" id="metrics-explanation">
       <div class="card bg-card">
         <div class="card-body">
-          <!-- Updated Explanation -->
           <p>For more details about the benchmark, see the <a href="./about.html#longform-creative-writing-v3">About</a> section.</p>
 
-          <h5 class="card-title">Avg Chapter Length</h5>
-          <p>The average character length across all generated chapters for a model in this benchmark.</p>
+          <h5 class="card-title">Length</h5>
+          <p>The average chapter length (chars).</p>
 
           <h5 class="card-title mt-3">Slop Score</h5>
-          <p>The <strong>Slop</strong> column measures the frequency of words/phrases typically overused by LLMs ("GPT-isms") within the generated chapters. The value is calculated by matching the text against a master slop list derived from over-represented words & phrases in outputs from diverse models.</p>
+          <p>The <strong>Slop</strong> column measures the frequency of words/phrases typically overused by LLMs (“GPT-isms”) in each completed chapter. The lower, the better.</p>
 
           <h5 class="card-title mt-3">Repetition Metric</h5>
-          <p>The <strong>Repetition</strong> column measures the tendency of a model to repeat words and phrases across multiple chapters generated for different initial prompts. It sums the frequencies of the top most common words, bigrams, and trigrams that appear across multiple initial writing prompts. Higher values indicate more repetitive output across different tasks.</p>
+          <p>The <strong>Repetition</strong> column measures how strongly a model repeats words/phrases across multiple tasks. Higher means more repetition.</p>
+
+          <h5 class="card-title mt-3">Degradation</h5>
+          <p>A mini-sparkline of the 8 chapter scores (averages) to visually see if the model’s chapter quality drops off as it continues writing. The degradation score is the absolute value of the trendline's gradient.</p>
 
           <h5 class="card-title mt-3">Score (0-100)</h5>
-          <p>The overall score assigned by the judge LLM, scaled to a 0-100 range. This score reflects the weighted average across various criteria evaluated on the planning steps, individual chapters, and the final completed piece.</p>
+          <p>The overall final rating assigned by the judge LLM, scaled to 0–100. Higher is better.</p>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="creative_writing_longform.js" defer></script> <!-- Changed JS filename -->
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1600fe1d3da743c1b311f4e5fee86767"}'></script>
 
-  <!-- Slop Profile Modal (Keep structure) -->
+  <!-- Your main JS file -->
+  <script src="creative_writing_longform.js" defer></script>
+
+  <!-- Cloudflare -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+    data-cf-beacon='{"token": "1600fe1d3da743c1b311f4e5fee86767"}'>
+  </script>
+
+  <!-- Slop Profile Modal -->
   <div class="modal fade" id="slopProfileModal" tabindex="-1" aria-labelledby="slopProfileModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
