@@ -397,7 +397,17 @@
     <div class="section mt-4" id="metrics-explanation">
       <div class="card bg-card">
         <div class="card-body">
-          <p>For more details about the benchmark, see the <a href="./about.html#longform-creative-writing-v3">About</a> section.</p>
+          <h4 class="card-title">Longform Creative Writing Benchmark</h4>
+          <p>This benchmark evaluates several abilities:</p>
+          <ol>
+            <li>Brainstorming & planning out a short story/novella from a minimal prompt</li>
+            <li>Reflect on the plan & revise</li>
+            <li>Write a short story/novella over 8x 1000 word turns</li>
+          </ol>
+
+          <p>Models are typically evaluated via openrouter, using temp=0.7 and min_p=0.1 as the generation settings.</p>
+
+          <p>Outputs are evaluated with a scoring rubric by Claude Sonnet 3.7.</p>
 
           <h5 class="card-title">Length</h5>
           <p>The average chapter length (chars).</p>
