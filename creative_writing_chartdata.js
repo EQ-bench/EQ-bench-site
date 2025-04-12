@@ -3005,39 +3005,39 @@ const chartData = {
         "Believable Characters"
       ],
       "values": [
-        0.04,
-        -0.1,
-        -0.06,
-        -0.05,
-        -0.11,
-        -0.03,
-        -0.11,
-        -0.13,
-        -0.1,
+        0.06,
+        -0.09,
         -0.08,
-        -0.06,
-        0.05,
-        -0.28,
-        0.14,
-        -0.13
+        -0.05,
+        -0.14,
+        -0.05,
+        -0.09,
+        -0.1,
+        -0.09,
+        -0.15,
+        0.04,
+        0.09,
+        -0.3,
+        -0.04,
+        -0.12
       ]
     },
     "strengths": [
       {
-        "criterion": "Avoids Purple Prose",
-        "relativeScore": 0.37
-      },
-      {
         "criterion": "Emotional Depth",
-        "relativeScore": 0.13
+        "relativeScore": 0.23
       },
       {
         "criterion": "Strong Dialogue",
-        "relativeScore": 0.09
+        "relativeScore": 0.14
       },
       {
-        "criterion": "Sentence Flow",
-        "relativeScore": -0.06
+        "criterion": "Descriptive Imagery",
+        "relativeScore": 0.1
+      },
+      {
+        "criterion": "Avoids Purple Prose",
+        "relativeScore": -0.1
       },
       {
         "criterion": "Instruction Following",
@@ -3047,23 +3047,23 @@ const chartData = {
     "weaknesses": [
       {
         "criterion": "Avoids Positivity Bias",
-        "relativeScore": -0.93
+        "relativeScore": -0.99
       },
       {
-        "criterion": "Creativity",
-        "relativeScore": -0.36
-      },
-      {
-        "criterion": "Believable Characters",
-        "relativeScore": -0.34
+        "criterion": "Pacing",
+        "relativeScore": -0.42
       },
       {
         "criterion": "Coherent",
-        "relativeScore": -0.29
+        "relativeScore": -0.37
       },
       {
-        "criterion": "Show-Don't-Tell",
-        "relativeScore": -0.28
+        "criterion": "Believable Characters",
+        "relativeScore": -0.31
+      },
+      {
+        "criterion": "Creativity",
+        "relativeScore": -0.25
       }
     ]
   },
@@ -3123,65 +3123,65 @@ const chartData = {
         "Believable Characters"
       ],
       "values": [
-        0.02,
-        0.09,
-        0.07,
-        0.22,
-        -0.02,
+        -0.03,
+        0.05,
         0.04,
-        0.12,
-        0.08,
+        0.13,
+        -0.07,
+        0.01,
         0.07,
-        -0.19,
-        0.21,
-        0.24,
+        0.02,
+        -0.01,
+        -0.22,
+        0.18,
+        0.2,
+        -0.28,
         -0.29,
-        -0.29,
-        0.15
+        0.12
       ]
     },
     "strengths": [
       {
         "criterion": "Emotional Depth",
-        "relativeScore": 0.76
-      },
-      {
-        "criterion": "Instruction Following",
-        "relativeScore": 0.65
+        "relativeScore": 0.6
       },
       {
         "criterion": "Descriptive Imagery",
-        "relativeScore": 0.64
+        "relativeScore": 0.5
+      },
+      {
+        "criterion": "Instruction Following",
+        "relativeScore": 0.35
       },
       {
         "criterion": "Believable Characters",
-        "relativeScore": 0.41
+        "relativeScore": 0.32
       },
       {
         "criterion": "Show-Don't-Tell",
-        "relativeScore": 0.32
+        "relativeScore": 0.18
       }
     ],
     "weaknesses": [
       {
-        "criterion": "Avoids Positivity Bias",
-        "relativeScore": -0.94
+        "criterion": "Avoids Purple Prose",
+        "relativeScore": -0.96
       },
       {
-        "criterion": "Avoids Purple Prose",
-        "relativeScore": -0.94
+        "criterion": "Avoids Positivity Bias",
+        "relativeScore": -0.9
       },
       {
         "criterion": "Pacing",
-        "relativeScore": -0.55
+        "relativeScore": -0.66
       },
       {
         "criterion": "Coherent",
-        "relativeScore": -0.05
+        "relativeScore": -0.17
       },
       {
         "criterion": "Strong Dialogue",
-        "relativeScore": 0.05
+        "relativeScore": -0.08
       }
     ]
   },
@@ -3241,65 +3241,183 @@ const chartData = {
         "Believable Characters"
       ],
       "values": [
-        0.11,
-        -0.05,
-        0.04,
-        0.34,
-        0.2,
-        0.02,
-        0.07,
-        -0.05,
-        0.03,
-        -0.12,
-        -0.11,
-        -0.1,
-        0.2,
+        0.05,
+        -0.09,
+        -0.01,
         0.25,
-        0.06
+        0.13,
+        -0.03,
+        0.01,
+        -0.09,
+        -0.06,
+        -0.18,
+        -0.11,
+        -0.14,
+        0.16,
+        0.17,
+        0.0
       ]
     },
     "strengths": [
       {
         "criterion": "Instruction Following",
-        "relativeScore": 1.18
+        "relativeScore": 0.76
       },
       {
         "criterion": "Avoids Purple Prose",
-        "relativeScore": 0.77
+        "relativeScore": 0.49
       },
       {
         "criterion": "Avoids Positivity Bias",
-        "relativeScore": 0.57
+        "relativeScore": 0.45
       },
       {
         "criterion": "Coherent",
-        "relativeScore": 0.57
+        "relativeScore": 0.35
       },
       {
         "criterion": "Strong Dialogue",
-        "relativeScore": 0.29
+        "relativeScore": 0.12
       }
     ],
     "weaknesses": [
       {
         "criterion": "Pacing",
-        "relativeScore": -0.33
-      },
-      {
-        "criterion": "Descriptive Imagery",
-        "relativeScore": -0.29
+        "relativeScore": -0.5
       },
       {
         "criterion": "Emotional Depth",
-        "relativeScore": -0.25
+        "relativeScore": -0.38
+      },
+      {
+        "criterion": "Descriptive Imagery",
+        "relativeScore": -0.3
+      },
+      {
+        "criterion": "Creativity",
+        "relativeScore": -0.24
       },
       {
         "criterion": "Elegant Prose",
+        "relativeScore": -0.24
+      }
+    ]
+  },
+  "openai/gpt-4-0314": {
+    "absoluteRadar": {
+      "labels": [
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Consistent Voice & Tone",
+        "Instruction Following",
+        "Coherent",
+        "Sentence Flow",
+        "Show-Don't-Tell",
+        "Creativity",
+        "Avoids Amateurish Prose",
+        "Pacing",
+        "Descriptive Imagery",
+        "Emotional Depth",
+        "Avoids Positivity Bias",
+        "Avoids Purple Prose",
+        "Believable Characters"
+      ],
+      "values": [
+        9.18,
+        11.51,
+        13.98,
+        13.48,
+        15.24,
+        14.06,
+        9.97,
+        9.39,
+        11.6,
+        13.51,
+        11.45,
+        10.23,
+        12.49,
+        14.51,
+        11.44
+      ]
+    },
+    "relativeRadarLog": {
+      "labels": [
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Consistent Voice & Tone",
+        "Instruction Following",
+        "Coherent",
+        "Sentence Flow",
+        "Show-Don't-Tell",
+        "Creativity",
+        "Avoids Amateurish Prose",
+        "Pacing",
+        "Descriptive Imagery",
+        "Emotional Depth",
+        "Avoids Positivity Bias",
+        "Avoids Purple Prose",
+        "Believable Characters"
+      ],
+      "values": [
+        -0.07,
+        0.02,
+        0.07,
+        0.13,
+        0.14,
+        0.07,
+        -0.05,
+        -0.02,
+        0.08,
+        0.24,
+        -0.16,
+        -0.07,
+        0.04,
+        0.27,
+        -0.02
+      ]
+    },
+    "strengths": [
+      {
+        "criterion": "Avoids Purple Prose",
+        "relativeScore": 0.88
+      },
+      {
+        "criterion": "Pacing",
+        "relativeScore": 0.72
+      },
+      {
+        "criterion": "Coherent",
+        "relativeScore": 0.4
+      },
+      {
+        "criterion": "Instruction Following",
+        "relativeScore": 0.33
+      },
+      {
+        "criterion": "Avoids Amateurish Prose",
+        "relativeScore": 0.19
+      }
+    ],
+    "weaknesses": [
+      {
+        "criterion": "Descriptive Imagery",
+        "relativeScore": -0.45
+      },
+      {
+        "criterion": "Strong Dialogue",
+        "relativeScore": -0.18
+      },
+      {
+        "criterion": "Emotional Depth",
+        "relativeScore": -0.17
+      },
+      {
+        "criterion": "Show-Don't-Tell",
         "relativeScore": -0.13
       },
       {
         "criterion": "Creativity",
-        "relativeScore": -0.11
+        "relativeScore": -0.04
       }
     ]
   },
@@ -3359,65 +3477,65 @@ const chartData = {
         "Believable Characters"
       ],
       "values": [
-        0.15,
-        0.12,
-        0.01,
         0.18,
-        0.06,
-        -0.04,
+        0.13,
+        0.02,
+        0.26,
+        0.02,
+        -0.06,
         0.2,
-        0.27,
+        0.3,
         0.23,
-        -0.01,
-        0.34,
-        0.21,
-        -0.02,
-        -0.44,
-        0.1
+        -0.22,
+        0.4,
+        0.27,
+        -0.12,
+        -0.5,
+        0.15
       ]
     },
     "strengths": [
       {
         "criterion": "Descriptive Imagery",
-        "relativeScore": 1.17
+        "relativeScore": 1.51
       },
       {
         "criterion": "Creativity",
-        "relativeScore": 0.86
-      },
-      {
-        "criterion": "Avoids Amateurish Prose",
-        "relativeScore": 0.72
+        "relativeScore": 0.98
       },
       {
         "criterion": "Emotional Depth",
-        "relativeScore": 0.62
+        "relativeScore": 0.85
       },
       {
-        "criterion": "Show-Don't-Tell",
-        "relativeScore": 0.58
+        "criterion": "Instruction Following",
+        "relativeScore": 0.83
+      },
+      {
+        "criterion": "Avoids Amateurish Prose",
+        "relativeScore": 0.69
       }
     ],
     "weaknesses": [
       {
         "criterion": "Avoids Purple Prose",
-        "relativeScore": -1.76
-      },
-      {
-        "criterion": "Sentence Flow",
-        "relativeScore": -0.09
-      },
-      {
-        "criterion": "Avoids Positivity Bias",
-        "relativeScore": -0.05
+        "relativeScore": -2.16
       },
       {
         "criterion": "Pacing",
-        "relativeScore": -0.02
+        "relativeScore": -0.67
       },
       {
-        "criterion": "Consistent Voice & Tone",
-        "relativeScore": 0.02
+        "criterion": "Avoids Positivity Bias",
+        "relativeScore": -0.32
+      },
+      {
+        "criterion": "Sentence Flow",
+        "relativeScore": -0.15
+      },
+      {
+        "criterion": "Coherent",
+        "relativeScore": 0.04
       }
     ]
   },
@@ -3477,65 +3595,183 @@ const chartData = {
         "Believable Characters"
       ],
       "values": [
-        -0.14,
-        -0.1,
-        -0.06,
-        -0.33,
-        0.01,
-        0.04,
         -0.16,
-        -0.23,
-        -0.14,
-        0.27,
+        -0.09,
+        -0.06,
         -0.32,
-        -0.24,
-        0.25,
-        0.37,
-        -0.12
+        -0.02,
+        0.02,
+        -0.18,
+        -0.21,
+        -0.16,
+        0.18,
+        -0.28,
+        -0.22,
+        0.19,
+        0.31,
+        -0.09
       ]
     },
     "strengths": [
       {
         "criterion": "Avoids Purple Prose",
-        "relativeScore": 1.33
-      },
-      {
-        "criterion": "Pacing",
-        "relativeScore": 0.85
+        "relativeScore": 1.05
       },
       {
         "criterion": "Avoids Positivity Bias",
-        "relativeScore": 0.76
+        "relativeScore": 0.54
+      },
+      {
+        "criterion": "Pacing",
+        "relativeScore": 0.5
       },
       {
         "criterion": "Sentence Flow",
-        "relativeScore": 0.1
+        "relativeScore": 0.04
       },
       {
         "criterion": "Coherent",
-        "relativeScore": 0.01
+        "relativeScore": -0.05
       }
     ],
     "weaknesses": [
       {
         "criterion": "Instruction Following",
-        "relativeScore": -1.12
+        "relativeScore": -1.11
       },
       {
         "criterion": "Descriptive Imagery",
-        "relativeScore": -1.07
+        "relativeScore": -0.91
       },
       {
         "criterion": "Emotional Depth",
-        "relativeScore": -0.75
+        "relativeScore": -0.65
       },
       {
         "criterion": "Creativity",
-        "relativeScore": -0.68
+        "relativeScore": -0.64
       },
       {
         "criterion": "Show-Don't-Tell",
-        "relativeScore": -0.43
+        "relativeScore": -0.52
+      }
+    ]
+  },
+  "anthropic/claude-3-haiku": {
+    "absoluteRadar": {
+      "labels": [
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Consistent Voice & Tone",
+        "Instruction Following",
+        "Coherent",
+        "Sentence Flow",
+        "Show-Don't-Tell",
+        "Creativity",
+        "Avoids Amateurish Prose",
+        "Pacing",
+        "Descriptive Imagery",
+        "Emotional Depth",
+        "Avoids Positivity Bias",
+        "Avoids Purple Prose",
+        "Believable Characters"
+      ],
+      "values": [
+        8.68,
+        10.68,
+        13.15,
+        11.9,
+        14.25,
+        13.59,
+        9.45,
+        8.43,
+        10.57,
+        13.41,
+        10.39,
+        9.25,
+        12.51,
+        14.26,
+        10.52
+      ]
+    },
+    "relativeRadarLog": {
+      "labels": [
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Consistent Voice & Tone",
+        "Instruction Following",
+        "Coherent",
+        "Sentence Flow",
+        "Show-Don't-Tell",
+        "Creativity",
+        "Avoids Amateurish Prose",
+        "Pacing",
+        "Descriptive Imagery",
+        "Emotional Depth",
+        "Avoids Positivity Bias",
+        "Avoids Purple Prose",
+        "Believable Characters"
+      ],
+      "values": [
+        0.06,
+        -0.1,
+        -0.09,
+        -0.18,
+        -0.04,
+        0.05,
+        0.08,
+        -0.15,
+        -0.03,
+        0.34,
+        -0.27,
+        -0.15,
+        0.17,
+        0.3,
+        -0.15
+      ]
+    },
+    "strengths": [
+      {
+        "criterion": "Pacing",
+        "relativeScore": 1.21
+      },
+      {
+        "criterion": "Avoids Purple Prose",
+        "relativeScore": 0.98
+      },
+      {
+        "criterion": "Avoids Positivity Bias",
+        "relativeScore": 0.49
+      },
+      {
+        "criterion": "Show-Don't-Tell",
+        "relativeScore": 0.21
+      },
+      {
+        "criterion": "Strong Dialogue",
+        "relativeScore": 0.15
+      }
+    ],
+    "weaknesses": [
+      {
+        "criterion": "Descriptive Imagery",
+        "relativeScore": -0.88
+      },
+      {
+        "criterion": "Instruction Following",
+        "relativeScore": -0.52
+      },
+      {
+        "criterion": "Emotional Depth",
+        "relativeScore": -0.42
+      },
+      {
+        "criterion": "Creativity",
+        "relativeScore": -0.41
+      },
+      {
+        "criterion": "Believable Characters",
+        "relativeScore": -0.41
       }
     ]
   },
@@ -3595,49 +3831,49 @@ const chartData = {
         "Believable Characters"
       ],
       "values": [
-        -0.11,
-        0.02,
-        -0.0,
-        -0.4,
-        -0.15,
-        -0.01,
-        -0.04,
-        -0.04,
-        -0.08,
-        0.22,
-        0.12,
-        -0.03,
+        -0.06,
+        0.08,
+        0.06,
+        -0.34,
         -0.09,
+        0.02,
+        0.02,
+        0.03,
+        -0.01,
+        0.18,
+        0.2,
+        0.04,
+        -0.07,
         -0.15,
-        -0.11
+        -0.04
       ]
     },
     "strengths": [
       {
-        "criterion": "Pacing",
-        "relativeScore": 0.66
+        "criterion": "Descriptive Imagery",
+        "relativeScore": 0.57
       },
       {
-        "criterion": "Descriptive Imagery",
-        "relativeScore": 0.32
+        "criterion": "Pacing",
+        "relativeScore": 0.52
       },
       {
         "criterion": "Elegant Prose",
-        "relativeScore": 0.06
+        "relativeScore": 0.2
       },
       {
         "criterion": "Consistent Voice & Tone",
-        "relativeScore": -0.0
+        "relativeScore": 0.14
       },
       {
-        "criterion": "Sentence Flow",
-        "relativeScore": -0.03
+        "criterion": "Emotional Depth",
+        "relativeScore": 0.1
       }
     ],
     "weaknesses": [
       {
         "criterion": "Instruction Following",
-        "relativeScore": -1.5
+        "relativeScore": -1.18
       },
       {
         "criterion": "Avoids Purple Prose",
@@ -3645,15 +3881,15 @@ const chartData = {
       },
       {
         "criterion": "Coherent",
-        "relativeScore": -0.4
+        "relativeScore": -0.22
       },
       {
-        "criterion": "Believable Characters",
-        "relativeScore": -0.3
+        "criterion": "Avoids Positivity Bias",
+        "relativeScore": -0.17
       },
       {
         "criterion": "Strong Dialogue",
-        "relativeScore": -0.29
+        "relativeScore": -0.14
       }
     ]
   },
@@ -3713,65 +3949,65 @@ const chartData = {
         "Believable Characters"
       ],
       "values": [
-        0.03,
-        -0.02,
-        0.01,
-        0.41,
-        -0.06,
-        -0.07,
-        -0.0,
+        0.08,
         0.04,
+        0.05,
+        0.45,
+        -0.03,
         -0.06,
-        -0.43,
-        0.13,
-        0.11,
-        -0.14,
-        -0.26,
-        0.12
+        0.06,
+        0.14,
+        0.02,
+        -0.46,
+        0.25,
+        0.19,
+        -0.17,
+        -0.35,
+        0.18
       ]
     },
     "strengths": [
       {
         "criterion": "Instruction Following",
-        "relativeScore": 1.58
+        "relativeScore": 1.84
       },
       {
         "criterion": "Descriptive Imagery",
-        "relativeScore": 0.35
-      },
-      {
-        "criterion": "Believable Characters",
-        "relativeScore": 0.32
+        "relativeScore": 0.78
       },
       {
         "criterion": "Emotional Depth",
-        "relativeScore": 0.29
+        "relativeScore": 0.55
+      },
+      {
+        "criterion": "Believable Characters",
+        "relativeScore": 0.51
       },
       {
         "criterion": "Creativity",
-        "relativeScore": 0.11
+        "relativeScore": 0.38
       }
     ],
     "weaknesses": [
       {
         "criterion": "Pacing",
-        "relativeScore": -1.71
+        "relativeScore": -1.91
       },
       {
         "criterion": "Avoids Purple Prose",
-        "relativeScore": -0.82
+        "relativeScore": -1.24
       },
       {
         "criterion": "Avoids Positivity Bias",
-        "relativeScore": -0.39
+        "relativeScore": -0.46
       },
       {
         "criterion": "Sentence Flow",
-        "relativeScore": -0.17
+        "relativeScore": -0.16
       },
       {
-        "criterion": "Avoids Amateurish Prose",
-        "relativeScore": -0.15
+        "criterion": "Coherent",
+        "relativeScore": -0.06
       }
     ]
   },
@@ -3831,57 +4067,57 @@ const chartData = {
         "Believable Characters"
       ],
       "values": [
-        -0.11,
-        -0.03,
-        0.0,
-        -0.15,
-        0.24,
-        0.1,
-        -0.15,
-        -0.08,
+        -0.12,
         -0.01,
-        0.36,
-        -0.24,
-        -0.15,
-        0.15,
+        0.02,
+        -0.16,
+        0.25,
+        0.11,
+        -0.16,
+        -0.07,
+        -0.01,
+        0.35,
+        -0.23,
+        -0.14,
+        0.16,
         0.34,
-        -0.07
+        -0.05
       ]
     },
     "strengths": [
       {
         "criterion": "Pacing",
-        "relativeScore": 1.31
+        "relativeScore": 1.22
       },
       {
         "criterion": "Avoids Purple Prose",
-        "relativeScore": 1.18
+        "relativeScore": 1.2
       },
       {
         "criterion": "Coherent",
-        "relativeScore": 0.74
+        "relativeScore": 0.77
       },
       {
         "criterion": "Avoids Positivity Bias",
-        "relativeScore": 0.4
+        "relativeScore": 0.43
       },
       {
         "criterion": "Sentence Flow",
-        "relativeScore": 0.27
+        "relativeScore": 0.28
       }
     ],
     "weaknesses": [
       {
         "criterion": "Descriptive Imagery",
-        "relativeScore": -0.75
-      },
-      {
-        "criterion": "Instruction Following",
-        "relativeScore": -0.43
+        "relativeScore": -0.71
       },
       {
         "criterion": "Show-Don't-Tell",
-        "relativeScore": -0.41
+        "relativeScore": -0.46
+      },
+      {
+        "criterion": "Instruction Following",
+        "relativeScore": -0.45
       },
       {
         "criterion": "Emotional Depth",
@@ -3889,7 +4125,7 @@ const chartData = {
       },
       {
         "criterion": "Strong Dialogue",
-        "relativeScore": -0.28
+        "relativeScore": -0.32
       }
     ]
   },
@@ -4185,65 +4421,65 @@ const chartData = {
         "Believable Characters"
       ],
       "values": [
-        0.21,
+        0.27,
+        0.18,
+        0.18,
+        0.54,
+        -0.03,
         0.04,
-        -0.01,
-        0.44,
-        -0.3,
-        -0.16,
-        0.22,
-        0.21,
-        0.04,
-        -0.34,
         0.28,
+        0.25,
         0.16,
-        0.04,
-        -0.09,
-        0.17
+        -0.18,
+        0.35,
+        0.27,
+        0.16,
+        0.07,
+        0.29
       ]
     },
     "strengths": [
       {
         "criterion": "Instruction Following",
-        "relativeScore": 1.76
+        "relativeScore": 2.47
       },
       {
         "criterion": "Descriptive Imagery",
-        "relativeScore": 0.92
+        "relativeScore": 1.23
+      },
+      {
+        "criterion": "Believable Characters",
+        "relativeScore": 0.94
       },
       {
         "criterion": "Show-Don't-Tell",
-        "relativeScore": 0.66
+        "relativeScore": 0.9
       },
       {
         "criterion": "Strong Dialogue",
-        "relativeScore": 0.62
-      },
-      {
-        "criterion": "Creativity",
-        "relativeScore": 0.62
+        "relativeScore": 0.87
       }
     ],
     "weaknesses": [
       {
         "criterion": "Pacing",
-        "relativeScore": -1.2
+        "relativeScore": -0.52
       },
       {
         "criterion": "Coherent",
-        "relativeScore": -1.01
+        "relativeScore": -0.07
       },
       {
         "criterion": "Sentence Flow",
-        "relativeScore": -0.45
+        "relativeScore": 0.1
       },
       {
         "criterion": "Avoids Purple Prose",
-        "relativeScore": -0.23
+        "relativeScore": 0.18
       },
       {
-        "criterion": "Consistent Voice & Tone",
-        "relativeScore": -0.02
+        "criterion": "Avoids Positivity Bias",
+        "relativeScore": 0.43
       }
     ]
   },
@@ -4303,65 +4539,65 @@ const chartData = {
         "Believable Characters"
       ],
       "values": [
-        -0.17,
-        -0.17,
-        -0.2,
-        -0.36,
-        -0.1,
-        -0.16,
-        -0.23,
+        -0.06,
+        -0.0,
+        0.01,
         -0.14,
-        -0.17,
-        -0.34,
-        -0.19,
-        -0.21,
-        -0.12,
-        -0.3,
-        -0.21
+        0.25,
+        0.07,
+        -0.14,
+        -0.07,
+        -0.04,
+        -0.15,
+        -0.06,
+        -0.04,
+        0.01,
+        -0.18,
+        -0.02
       ]
     },
     "strengths": [
       {
         "criterion": "Coherent",
-        "relativeScore": -0.26
-      },
-      {
-        "criterion": "Avoids Positivity Bias",
-        "relativeScore": -0.32
-      },
-      {
-        "criterion": "Creativity",
-        "relativeScore": -0.39
+        "relativeScore": 0.79
       },
       {
         "criterion": "Sentence Flow",
-        "relativeScore": -0.45
+        "relativeScore": 0.18
       },
       {
-        "criterion": "Strong Dialogue",
-        "relativeScore": -0.48
+        "criterion": "Avoids Positivity Bias",
+        "relativeScore": 0.03
+      },
+      {
+        "criterion": "Consistent Voice & Tone",
+        "relativeScore": 0.02
+      },
+      {
+        "criterion": "Elegant Prose",
+        "relativeScore": -0.0
       }
     ],
     "weaknesses": [
       {
-        "criterion": "Instruction Following",
-        "relativeScore": -1.29
+        "criterion": "Avoids Purple Prose",
+        "relativeScore": -0.52
       },
       {
         "criterion": "Pacing",
-        "relativeScore": -1.17
-      },
-      {
-        "criterion": "Avoids Purple Prose",
-        "relativeScore": -0.99
+        "relativeScore": -0.41
       },
       {
         "criterion": "Show-Don't-Tell",
-        "relativeScore": -0.7
+        "relativeScore": -0.39
       },
       {
-        "criterion": "Believable Characters",
-        "relativeScore": -0.61
+        "criterion": "Instruction Following",
+        "relativeScore": -0.38
+      },
+      {
+        "criterion": "Creativity",
+        "relativeScore": -0.18
       }
     ]
   },
@@ -4421,65 +4657,183 @@ const chartData = {
         "Believable Characters"
       ],
       "values": [
-        -0.39,
-        -0.34,
-        -0.31,
-        -0.69,
-        0.01,
+        -0.3,
+        -0.19,
         -0.11,
-        -0.4,
-        -0.41,
+        -0.56,
+        0.35,
+        0.16,
         -0.33,
-        0.6,
-        -0.54,
-        -0.42,
-        -0.48,
-        0.37,
-        -0.43
+        -0.35,
+        -0.22,
+        0.67,
+        -0.45,
+        -0.29,
+        -0.4,
+        0.44,
+        -0.29
       ]
     },
     "strengths": [
       {
         "criterion": "Pacing",
-        "relativeScore": 2.99
+        "relativeScore": 3.66
       },
       {
         "criterion": "Avoids Purple Prose",
-        "relativeScore": 1.33
+        "relativeScore": 1.76
       },
       {
         "criterion": "Coherent",
-        "relativeScore": 0.03
+        "relativeScore": 1.25
       },
       {
         "criterion": "Sentence Flow",
-        "relativeScore": -0.28
+        "relativeScore": 0.45
       },
       {
         "criterion": "Consistent Voice & Tone",
-        "relativeScore": -1.06
+        "relativeScore": -0.3
       }
     ],
     "weaknesses": [
       {
         "criterion": "Instruction Following",
-        "relativeScore": -3.93
+        "relativeScore": -2.64
       },
       {
         "criterion": "Descriptive Imagery",
-        "relativeScore": -2.45
+        "relativeScore": -1.84
       },
       {
         "criterion": "Avoids Positivity Bias",
-        "relativeScore": -1.99
+        "relativeScore": -1.53
       },
       {
-        "criterion": "Believable Characters",
-        "relativeScore": -1.71
+        "criterion": "Creativity",
+        "relativeScore": -1.26
       },
       {
-        "criterion": "Emotional Depth",
-        "relativeScore": -1.63
+        "criterion": "Show-Don't-Tell",
+        "relativeScore": -1.12
+      }
+    ]
+  },
+  "meta-llama/llama-3.2-1b-instruct": {
+    "absoluteRadar": {
+      "labels": [
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Consistent Voice & Tone",
+        "Instruction Following",
+        "Coherent",
+        "Sentence Flow",
+        "Show-Don't-Tell",
+        "Creativity",
+        "Avoids Amateurish Prose",
+        "Pacing",
+        "Descriptive Imagery",
+        "Emotional Depth",
+        "Avoids Positivity Bias",
+        "Avoids Purple Prose",
+        "Believable Characters"
+      ],
+      "values": [
+        5.48,
+        6.93,
+        8.92,
+        6.03,
+        7.19,
+        8.97,
+        6.05,
+        6.24,
+        6.75,
+        6.8,
+        7.49,
+        5.58,
+        8.38,
+        10.43,
+        6.59
+      ]
+    },
+    "relativeRadarLog": {
+      "labels": [
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Consistent Voice & Tone",
+        "Instruction Following",
+        "Coherent",
+        "Sentence Flow",
+        "Show-Don't-Tell",
+        "Creativity",
+        "Avoids Amateurish Prose",
+        "Pacing",
+        "Descriptive Imagery",
+        "Emotional Depth",
+        "Avoids Positivity Bias",
+        "Avoids Purple Prose",
+        "Believable Characters"
+      ],
+      "values": [
+        -0.35,
+        -0.47,
+        -0.55,
+        -0.65,
+        -0.77,
+        -0.57,
+        -0.3,
+        -0.21,
+        -0.4,
+        -0.67,
+        -0.38,
+        -0.47,
+        -0.33,
+        -0.51,
+        -0.51
+      ]
+    },
+    "strengths": [
+      {
+        "criterion": "Creativity",
+        "relativeScore": -0.63
+      },
+      {
+        "criterion": "Show-Don't-Tell",
+        "relativeScore": -1.01
+      },
+      {
+        "criterion": "Avoids Positivity Bias",
+        "relativeScore": -1.12
+      },
+      {
+        "criterion": "Strong Dialogue",
+        "relativeScore": -1.22
+      },
+      {
+        "criterion": "Descriptive Imagery",
+        "relativeScore": -1.41
+      }
+    ],
+    "weaknesses": [
+      {
+        "criterion": "Coherent",
+        "relativeScore": -4.84
+      },
+      {
+        "criterion": "Pacing",
+        "relativeScore": -3.73
+      },
+      {
+        "criterion": "Instruction Following",
+        "relativeScore": -3.5
+      },
+      {
+        "criterion": "Sentence Flow",
+        "relativeScore": -2.74
+      },
+      {
+        "criterion": "Consistent Voice & Tone",
+        "relativeScore": -2.53
       }
     ]
   }
