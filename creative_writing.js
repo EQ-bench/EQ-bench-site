@@ -1696,7 +1696,7 @@ function showAbilitiesModal(modelName) {
         r: {
           beginAtZero: false,
           min: -0.6,
-          max: 0.6,
+          max: 0.4,
           ticks: {
             color: axisColor,
             backdropColor: 'transparent',
