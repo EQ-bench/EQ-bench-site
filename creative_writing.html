@@ -29,12 +29,11 @@
       left: 0;
       width: 100%;
       height: 100%;
-      /* --- Updated image path and visibility --- */
       background-image: url('./images/bookshelves.jpg');
       background-position: center;
       background-size: cover;
-      filter: blur(3px); /* Reduced blur */
-      opacity: 0.75;     /* Increased opacity */
+      filter: blur(3px);
+      opacity: 0.75;
       z-index: -2;
       pointer-events: none;
     }
@@ -47,11 +46,10 @@
       left: 0;
       width: 100%;
       height: 100%;
-      /* --- Softened vignette --- */
       background: radial-gradient(
         ellipse at center,
-        rgba(255, 255, 255, 0) 45%,  /* Start fade later */
-        rgba(255, 255, 255, 0.9) 90% /* End fade later and not fully opaque */
+        rgba(255, 255, 255, 0) 45%,
+        rgba(255, 255, 255, 0.9) 90%
       );
       z-index: -1;
       pointer-events: none;
@@ -59,7 +57,7 @@
 
     /* Container styling for Creative Writing - semi-transparent */
     body.creative-writing-page .container {
-      background-color: rgba(255, 255, 255, 0.76) !important; /* Slightly more opaque */
+      background-color: rgba(255, 255, 255, 0.76) !important;
       border-radius: 8px;
       padding-top: 1rem;
       padding-bottom: 1rem;
@@ -70,14 +68,13 @@
       background-color: rgba(255, 255, 255, 0.65) !important;
     }
 
-    /* Ensure the striped effect is maintained with opacity */
     body.creative-writing-page #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
-      background-color: rgba(245, 245, 245, 0.65) !important; /* Use a slightly distinct light grey */
+      background-color: rgba(245, 245, 245, 0.65) !important;
     }
 
     /* Explanation section opacity */
     body.creative-writing-page .section {
-      background-color: rgba(248, 248, 248, 0.75) !important; /* Consistent with container */
+      background-color: rgba(248, 248, 248, 0.75) !important;
       padding: 20px;
       border-radius: 8px;
     }
@@ -86,55 +83,47 @@
         border: none !important;
     }
 
-
-    /* Make sure table headers are readable */
+    /* Table headers */
     body.creative-writing-page #leaderboard thead th {
-      background-color: rgba(70, 65, 60, 0.85) !important; /* Slightly warmer dark header */
+      background-color: rgba(70, 65, 60, 0.85) !important;
       color: white !important;
     }
 
-    /* --- Dark Mode Adjustments - Warmer Tones & Visibility --- */
-
+    /* --- Dark Mode Adjustments --- */
     body.dark-mode.creative-writing-page::before {
-        opacity: 0.65;      /* Increased dark mode background visibility */
-        filter: blur(3px); /* Reduced blur */
+      opacity: 0.65;
+      filter: blur(3px);
     }
 
     body.dark-mode.creative-writing-page::after {
-      /* --- Warmer, softer dark vignette --- */
       background: radial-gradient(
         ellipse at center,
-        rgba(45, 40, 35, 0) 45%,  /* Start fade later (using warm dark base) */
-        rgba(45, 40, 35, 0.9) 90% /* End fade later/softer (using warm dark base) */
+        rgba(45, 40, 35, 0) 45%,
+        rgba(45, 40, 35, 0.9) 90%
       );
     }
 
     body.dark-mode.creative-writing-page .container {
-      /* --- Warmer dark brown base --- */
       background-color: rgba(45, 40, 35, 0.75) !important;
     }
 
     body.dark-mode.creative-writing-page #leaderboard tbody td {
-      /* --- Warmer dark brown base for cells --- */
       background-color: rgba(45, 40, 35, 0.7) !important;
     }
 
     body.dark-mode.creative-writing-page #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
-      /* --- Slightly lighter warm brown for striping --- */
       background-color: rgba(55, 50, 45, 0.7) !important;
     }
 
     body.dark-mode.creative-writing-page .section {
-      /* --- Warmer dark brown for section --- */
       background-color: rgba(50, 45, 40, 0.75) !important;
     }
 
     body.dark-mode.creative-writing-page #leaderboard thead th {
-      /* --- Adjusted dark header for consistency --- */
       background-color: rgba(65, 60, 55, 0.85) !important;
     }
 
-    /* Ensure text is readable against semi-transparent backgrounds (Keep Text Shadow) */
+    /* Ensure text is readable */
     body.creative-writing-page .container h1,
     body.creative-writing-page .container h2,
     body.creative-writing-page .container h3,
@@ -162,39 +151,37 @@
     body.dark-mode.creative-writing-page .container .alert,
     body.dark-mode.creative-writing-page .container .dataTables_info
     {
-      text-shadow: 0 0 4px rgba(0, 0, 0, 0.8); /* Slightly stronger shadow for dark mode */
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
     }
 
-    /* Ensure score text inside bars is also readable */
+    /* Score text inside bars */
     body.creative-writing-page .score-text {
-        text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
     }
     body.dark-mode.creative-writing-page .score-text {
-        text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
     }
 
-    /* Adjust slider appearance slightly for better visibility */
+    /* Sliders */
     body.creative-writing-page .form-range::-webkit-slider-thumb {
-        background-color: #666; /* Slightly darker */
+      background-color: #666;
     }
     body.creative-writing-page .form-range::-moz-range-thumb {
-        background-color: #666;
+      background-color: #666;
     }
     body.dark-mode.creative-writing-page .form-range::-webkit-slider-thumb {
-        background-color: #ccc; /* Slightly lighter */
+      background-color: #ccc;
     }
     body.dark-mode.creative-writing-page .form-range::-moz-range-thumb {
-        background-color: #ccc;
+      background-color: #ccc;
     }
 
-
-    /* 1. Make the datatable not transparent at all in light mode only */
+    /* 1. Opaque table in light mode */
     body.creative-writing-page:not(.dark-mode) #leaderboard tbody td {
-      background-color: rgba(255, 255, 255, 1) !important; /* Fully opaque */
+      background-color: rgba(255, 255, 255, 1) !important;
     }
-
     body.creative-writing-page:not(.dark-mode) #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
-      background-color: rgba(245, 245, 245, 1) !important; /* Fully opaque striping */
+      background-color: rgba(245, 245, 245, 1) !important;
     }
 
     /* 2. Background glow for nav sections - light mode only */
@@ -222,7 +209,6 @@
         0 0 12px rgba(255, 255, 255, 0.3);
     }
 
-    /* Don't forget to keep the paragraph display:inline-block for both modes */
     body.creative-writing-page .container p:nth-of-type(2),
     body.creative-writing-page .container p:nth-of-type(3) {
       display: inline-block;
@@ -230,12 +216,8 @@
       z-index: 1;
     }
 
-
-
-
-    /* Make the toggle button more prominent and position it better */
+    /* Middle stats toggle button */
     body.creative-writing-page #toggleMiddleStats {
-      /* Improve button visibility */
       font-weight: bold;
       font-size: 1rem;
       padding: 0.4rem 1rem;
@@ -243,45 +225,33 @@
       border-color: #666;
       color: #333;
       box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-
-      /* Position directly on top of table */
-      margin-bottom: 0 !important; /* Remove the bottom margin */
-      border-bottom-left-radius: 0; /* Blend with table top */
-      border-bottom-right-radius: 0; /* Blend with table top */
+      margin-bottom: 0 !important;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
-
-    /* Add a light glow in light mode */
     body.creative-writing-page:not(.dark-mode) #toggleMiddleStats {
       text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
     }
-
-    /* Dark mode adjustments */
     body.dark-mode.creative-writing-page #toggleMiddleStats {
       background-color: rgba(45, 40, 35, 0.9);
       color: #eee;
       border-color: #888;
     }
-
-    /* Remove any top margin from the table to ensure no gap */
     body.creative-writing-page #leaderboard {
       margin-top: 0 !important;
     }
-
     @media (min-width: 768px) {
       .hide-details-toggle-button {
         display: none !important;
       }
     }
-
     @media (max-width: 767px) {
       .show-details-toggle-button {
         display: block !important;
       }
     }
 
-
-
-    /* Custom Info Icon using pure CSS - improved alignment and color matching */
+    /* Info icons */
     .custom-info-icon {
       display: inline-flex;
       justify-content: center;
@@ -290,8 +260,8 @@
       height: 16px;
       border-radius: 50%;
       background-color: transparent;
-      border: 1.5px solid currentColor; /* Uses the current text color */
-      color: inherit; /* Inherits text color from parent */
+      border: 1.5px solid currentColor;
+      color: inherit;
       margin-left: 5px;
       cursor: pointer;
       font-size: 11px;
@@ -299,126 +269,163 @@
       font-style: italic;
       line-height: 1;
       position: relative;
-      /* Improved vertical alignment to match text */
       vertical-align: middle;
-      /*top: -0.5px;*/
     }
-
-    /* Ensures the icon picks up the correct color in both modes */
     body:not(.dark-mode) .custom-info-icon {
       color: var(--bs-link-color, #0d6efd);
     }
-
-    /* Match dark mode link colors from your stylesheet */
     body.dark-mode .custom-info-icon {
-      color: #aad; /* Same as your 'body.dark-mode a' color */
+      color: #aad;
     }
-
-    /* Hover effect */
     .custom-info-icon:hover {
       color: var(--bs-link-hover-color, #0a58ca);
     }
 
-    /* Dark mode hover using your theme colors */
+
+    /* Improved chart icon with even spacing */
+    .chart-icon {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 3px;
+      background-color: transparent;
+      border: 1px solid currentColor;
+      color: inherit;
+      margin-left: 5px;
+      cursor: pointer;
+      position: relative;
+      vertical-align: middle;
+    }
+
+    /* First bar (left) */
+    .chart-icon::before {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 3px;
+      width: 2px;
+      height: 5px;
+      background-color: currentColor;
+    }
+
+    /* Second bar (middle) */
+    .chart-icon::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 7px;
+      width: 2px;
+      height: 8px;
+      background-color: currentColor;
+    }
+
+    /* Third bar (right) */
+    .chart-icon span::before {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 11px;
+      width: 2px;
+      height: 6px;
+      background-color: currentColor;
+    }
+
+    /* Light Mode Specific */
+    body:not(.dark-mode) .chart-icon {
+      color: var(--bs-link-color, #0d6efd);
+    }
+
+    body:not(.dark-mode) .chart-icon:hover {
+      color: var(--bs-link-hover-color, #0a58ca);
+    }
+
+    /* Dark Mode Specific */
+    body.dark-mode .chart-icon {
+      color: #aad;
+    }
+
+    body.dark-mode .chart-icon:hover {
+      opacity: 0.8;
+    }
+
+
     body.dark-mode .custom-info-icon:hover {
-      opacity: 0.8; /* Simple hover effect for dark mode */
+      opacity: 0.8;
     }
-
-    /* Ensure proper alignment within flex container */
     #leaderboard tbody td:nth-child(3) .cell-content .custom-info-icon {
-      margin-top: -1px; /* Fine-tune vertical position in flex container */
+      margin-top: -1px;
+    }
+    #leaderboard tbody td:nth-child(3) .cell-content {
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
     }
 
-    /* Prevent wrapping in the Slop column cell */
-    #leaderboard tbody td:nth-child(3) .cell-content { /* Target content div in 3rd TD */
-        white-space: nowrap;
-        display: flex; /* Use flex to keep score and icon together */
-        align-items: center; /* Vertically align items in flex container */
-    }
-
-
-    /* Styling for items within the modal (from Python output) */
+    /* Slop profile styling */
     #slopProfileContent .slop-section-items {
-        line-height: 1.8; /* Increase line height for wrapped spans */
+      line-height: 1.8;
     }
-
     #slopProfileContent .slop-word-item,
     #slopProfileContent .slop-ngram-item {
-      display: inline-block; /* Allows margin/padding and wrapping */
-      margin: 2px 4px 2px 0; /* Spacing around items */
+      display: inline-block;
+      margin: 2px 4px 2px 0;
       padding: 2px 6px;
       border: 1px solid #ccc;
       border-radius: 4px;
       background-color: #f0f0f0;
       font-size: 0.9em;
-      color: #333; /* Ensure text color contrasts with background */
-      white-space: nowrap; /* Prevent breaking within a single item */
+      color: #333;
+      white-space: nowrap;
     }
 
-    /* --- Modal Styling --- */
+    /* No more transparency in modal background */
     .modal-content {
-        /* Reduced transparency */
-        background-color: rgba(255, 255, 255, 0.95); /* Light mode: less transparent white */
-        backdrop-filter: blur(2px); /* Optional: Reduce blur slightly */
+      background-color: #fff !important;
     }
-
-    /* Dark mode styling for modal */
     body.dark-mode .modal-content {
-        /* Reduced transparency */
-        background-color: rgba(50, 49, 48, 0.94); /* Dark mode: less transparent dark */
-        color: #eee; /* Ensure text is light */
+      background-color: #333 !important;
+      color: #eee;
     }
     body.dark-mode .modal-header {
-        border-bottom-color: #2e2e2e; /* Darker border */
+      border-bottom-color: #2e2e2e;
     }
-    /* Ensure dark mode modal title is light */
     body.dark-mode .modal-header .modal-title {
-        color: #eee; /* Or use a light variable */
+      color: #eee;
     }
     body.dark-mode .modal-footer {
-        border-top-color: #2e2e2e; /* Darker border */
+      border-top-color: #2e2e2e;
     }
     body.dark-mode .btn-close {
-        filter: invert(1) grayscale(100%) brightness(200%); /* Make close button visible */
+      filter: invert(1) grayscale(100%) brightness(200%);
     }
-
-    /* Dark mode styling for modal items */
     body.dark-mode #slopProfileContent .slop-word-item,
     body.dark-mode #slopProfileContent .slop-ngram-item {
-      border-color: #666; /* Slightly lighter border */
-      background-color: #585756; /* Lighter than modal background, adjust as needed */
-      color: #f0f0f0; /* Light text */
+      border-color: #666;
+      background-color: #585756;
+      color: #f0f0f0;
     }
-
-    /* Ensure modal body text color is correct */
     .modal-body {
-        color: var(--bs-body-color); /* Use Bootstrap body color */
+      color: var(--bs-body-color);
     }
-    /* This rule might be redundant if the above works, but added for safety */
     body.dark-mode .modal-body {
-        color: #eee;
+      color: #eee;
     }
 
-    /* Styling for the similarity section container */
+    /* Similar items */
     .slop-similar-section {
       margin-bottom: 15px;
-      line-height: 1.5; /* Reduced from 1.8 */
+      line-height: 1.5;
     }
-
-    /* Style for each similar model item as a ranked list */
     .slop-similar {
       display: block;
-      margin: 2px 0; /* Reduced from 4px 0 */
-      padding: 1px 0; /* Reduced from 2px 0 */
+      margin: 2px 0;
+      padding: 1px 0;
       font-size: 0.95em;
       color: #333;
     }
-
-    /* Counter for automatic ranking */
     .slop-similar-section {
       counter-reset: similarity-rank;
     }
-
     .slop-similar::before {
       counter-increment: similarity-rank;
       content: counter(similarity-rank) ". ";
@@ -426,79 +433,69 @@
       color: #555;
       margin-right: 5px;
     }
-
-    /* Make the distance value slightly muted */
     .slop-similar .distance {
       color: #666;
       font-size: 0.9em;
     }
-
-    /* Dark mode adjustments */
     body.dark-mode .slop-similar {
       color: #f0f0f0;
     }
-
     body.dark-mode .slop-similar::before {
       color: #bbb;
     }
-
     body.dark-mode .slop-similar .distance {
       color: #aaa;
     }
 
-
-    /* Dendrogram thumbnails styling */
+    /* Dendrogram thumbnails */
     .dendrogram-thumbnails {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 15px;
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
     }
-
     .dendrogram-link {
-        display: flex;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: var(--link-color);
+      transition: transform 0.2s;
+    }
+    .dendrogram-link:hover {
+      transform: scale(1.05);
+    }
+    .dendrogram-thumb {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      background-color: var(--container-bg);
+    }
+    .dendrogram-caption {
+      font-size: 0.8em;
+      margin-top: 5px;
+      text-align: center;
+    }
+    body.dark-mode .dendrogram-thumb {
+      border-color: var(--accent-border-color);
+      background-color: var(--container-bg);
+    }
+    @media screen and (max-width: 768px) {
+      .dendrogram-thumbnails {
         flex-direction: column;
         align-items: center;
-        text-decoration: none;
-        color: var(--link-color);
-        transition: transform 0.2s;
+      }
+      .dendrogram-thumb {
+        width: 100px;
+        height: 100px;
+      }
     }
 
-    .dendrogram-link:hover {
-        transform: scale(1.05);
-    }
-
-    .dendrogram-thumb {
-        width: 120px;
-        height: 120px;
-        object-fit: contain;
-        border: 1px solid var(--border-color);
-        border-radius: 4px;
-        background-color: var(--container-bg);
-    }
-
-    .dendrogram-caption {
-        font-size: 0.8em;
-        margin-top: 5px;
-        text-align: center;
-    }
-
-    /* Dark mode adjustments */
-    body.dark-mode .dendrogram-thumb {
-        border-color: var(--accent-border-color);
-        background-color: var(--container-bg);
-    }
-
-    /* Mobile responsiveness */
-    @media screen and (max-width: 768px) {
-        .dendrogram-thumbnails {
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .dendrogram-thumb {
-            width: 100px;
-            height: 100px;
-        }
+    #absolute-radar-container, #relative-radar-container {
+      width: 100%; 
+      max-width: 600px; /* adjust as needed */
+      height: 300px; /* make height less than width for a more rectangular shape */
     }
   </style>
 </head>
@@ -536,9 +533,8 @@
     </p>
   
 
-    <!-- Added mb-3 for spacing -->
     <div class="d-flex align-items-start mb-3 d-none">
-      <!-- Vocab Control Slider (Hidden) -->
+      <!-- Hidden Vocab Control Slider -->
       <div class="vocab-control-container me-3 d-none">
         <div class="vocab-control-label">
           <label for="vocabControlSlider">Vocab Control: <span id="vocabControlValue">0%</span></label>
@@ -548,7 +544,7 @@
         </div>
       </div>
 
-      <!-- GPT-Slop Control Slider -->
+      <!-- Hidden GPT-Slop Control Slider -->
       <div class="gpt-slop-control-container d-none">
         <div class="gpt-slop-control-label">
           <label for="gptSlopControlSlider">GPT-Slop Control: <span id="gptSlopControlValue">0%</span></label>
@@ -565,62 +561,104 @@
         Expand Details
     </button>
 
-    <!-- Table will be initialized here by JS, including mobile toggle button -->
     <div class="table-responsive">
-      <!-- Added style width 100% -->
       <table id="leaderboard" class="table table-striped table-bordered" style="width:100%;">
         <thead>
           <tr>
             <th>Model</th>
             <th class="mobile-collapsible">Length</th>
-            <th>Slop</th>
-            <th class="mobile-collapsible">Repetition</th> <!-- Changed from Vocab* -->
+            <th class="mobile-collapsible">Slop</th>
+            <th class="mobile-collapsible">Repetition</th>
+            <!-- New column "Abilities" -->
+            <th>Abilities</th>
             <th class="mobile-collapsible">Rubric Score</th>
             <th>Elo Score</th>
             <th></th>
           </tr>
         </thead>
         <tbody id="leaderboardBody">
-          <!-- Data rows will be added here -->
+          <!-- Rows injected by creative_writing.js -->
         </tbody>
       </table>
     </div>
     <br>
     <hr>
-    <div class="section mt-4" id="metrics-explanation"> <!-- Changed ID -->
+    <div class="section mt-4" id="metrics-explanation">
       <div class="card bg-card">
         <div class="card-body">
           <p>For more details about the benchmark, see the <a href="./about.html#creative-writing-v3">About</a> section.</p>
 
-          <h5 class="card-title">Repetition Metric</h5> <!-- Changed Title -->
-          <p>The <strong>Repetition</strong> column measures the tendency of a model to repeat words and phrases in the outputs generated for this benchmark. It sums the frequencies of the top most common words, bigrams and trigrams that appear in the text. Higher values indicate more repetitive output.</p>          
+          <h5 class="card-title">Repetition Metric</h5>
+          <p>The <strong>Repetition</strong> column measures the tendency of a model to repeat words and phrases in the outputs generated for this benchmark. It sums the frequencies of the top most common words, bigrams and trigrams that appear in the text. Higher values indicate more repetitive output.</p>
+
           <h5 class="card-title mt-3">Slop Score</h5>
-          <p>The <strong>Slop</strong> column measures the frequency of words/phrases typically overused by LLMs ("GPT-isms"). The value is calculated by matching the text against a master slop list which is derived from over-represented words & phrases in outputs from a diverse set of models.</p>
+          <p>The <strong>Slop</strong> column measures the frequency of words/phrases typically overused by LLMs ("GPT-isms"). The value is calculated by matching the text against a master slop list derived from over-represented words & phrases in outputs from many models.</p>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Include jQuery/DataTables/Bootstrap as before -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Added defer attribute -->
-  <script src="creative_writing.js?v=1.0.5" defer></script>
+
+  <!-- NEW: Load Chart.js (v4) for the Abilities Modal charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+
+  <!-- Your existing main script -->
+  <script defer src="creative_writing_chartdata.js?v=1.0.5"></script>
+  <script defer src="creative_writing.js?v=1.0.5"></script>
+
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1600fe1d3da743c1b311f4e5fee86767"}'></script>
 
-  <!-- Slop Profile Modal -->
+  <!-- Slop Profile Modal (unchanged) -->
   <div class="modal fade" id="slopProfileModal" tabindex="-1" aria-labelledby="slopProfileModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg"> <!-- modal-lg for wider content -->
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="slopProfileModalLabel">Slop Profile</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <div id="slopProfileContent">
-            <!-- Slop profile HTML will be injected here -->
-            Loading...
+          <div id="slopProfileContent">Loading...</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Abilities Charts Modal -->
+  <div class="modal fade" id="abilitiesProfileModal" tabindex="-1" aria-labelledby="abilitiesProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="abilitiesProfileModalLabel">Abilities Overview</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="abilitiesProfileContent">
+          <!-- Four charts: two radars, two bar charts side by side -->
+          <!-- We'll wrap each chart in a container with max-width 800px -->
+          <div class="chart-container mb-4" style="max-width: 800px; margin: 0 auto;">
+            <canvas id="abilitiesAbsoluteRadar"></canvas>
+          </div>
+          <div class="chart-container mb-4" style="max-width: 800px; margin: 0 auto;">
+            <canvas id="abilitiesRelativeRadar"></canvas>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="chart-container" style="max-width: 800px; margin: 0 auto;">
+                <canvas id="abilitiesStrengthsChart"></canvas>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="chart-container" style="max-width: 800px; margin: 0 auto;">
+                <canvas id="abilitiesWeaknessesChart"></canvas>
+              </div>
+            </div>
           </div>
         </div>
         <div class="modal-footer">
@@ -629,5 +667,6 @@
       </div>
     </div>
   </div>
+
 </body>
 </html>

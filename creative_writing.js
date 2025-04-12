@@ -1473,7 +1473,10 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 <span class='slop-ngram-item'>hair pulled back (3)</span> <span class='slop-ngram-item'>voice barely whisper (3)</span> <span class='slop-ngram-item'>long distorted shadows (3)</span> <span class='slop-ngram-item'>eyes like chips (2)</span> <span class='slop-ngram-item'>dark hair pulled (2)</span> <span class='slop-ngram-item'>said voice low (2)</span> <span class='slop-ngram-item'>something else something (2)</span>
 </div>
 `
-
+//
+//  creative_writing.js
+//  (With chart improvements and no other changes)
+//
 
 // --- Global Scope Variables ---
 let eloScores = [];
@@ -1482,7 +1485,13 @@ let maxEloScore;
 let maxRubricScore;
 let baselineEloScore;
 let baselineRubricScore;
-let lastSortedScoreColumn = 5; // Default Elo (column index 5)
+let lastSortedScoreColumn = 6; // Because Elo is column index 6 now
+
+// Chart.js references:
+let abilitiesAbsoluteRadarChart = null;
+let abilitiesRelativeRadarChart = null;
+let abilitiesStrengthsChart = null;
+let abilitiesWeaknessesChart = null;
 // --- End Global Scope Variables ---
 
 // --- Dark Mode / Theme / Email Functions ---
@@ -1491,28 +1500,28 @@ function setupDarkModeToggle() {
   var label = document.getElementById('toggleLabel');
   const savedMode = localStorage.getItem('darkModeEnabled');
   if (savedMode) {
-     document.body.classList.toggle('dark-mode', savedMode === 'true');
-     toggle.checked = savedMode === 'true';
-     label.textContent = savedMode === 'true' ? 'Dark' : 'Light';
+    document.body.classList.toggle('dark-mode', savedMode === 'true');
+    toggle.checked = (savedMode === 'true');
+    label.textContent = (savedMode === 'true') ? 'Dark' : 'Light';
   }
   toggle.addEventListener('change', function() {
-     document.body.classList.toggle('dark-mode', this.checked);
-     label.textContent = this.checked ? 'Dark' : 'Light';
-     localStorage.setItem('darkModeEnabled', this.checked);
-     if ($.fn.DataTable.isDataTable('#leaderboard')) {
-        $('#leaderboard').DataTable().draw(false); // Use draw(false) to prevent reset page
-     }
+    document.body.classList.toggle('dark-mode', this.checked);
+    label.textContent = this.checked ? 'Dark' : 'Light';
+    localStorage.setItem('darkModeEnabled', this.checked);
+    if ($.fn.DataTable.isDataTable('#leaderboard')) {
+      $('#leaderboard').DataTable().draw(false);
+    }
   });
 }
 
 function applySystemTheme() {
   if (localStorage.getItem('darkModeEnabled') === null) {
-     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-     const toggle = document.getElementById('darkModeToggle');
-     const label = document.getElementById('toggleLabel');
-     document.body.classList.toggle('dark-mode', prefersDarkMode);
-     toggle.checked = prefersDarkMode;
-     label.textContent = prefersDarkMode ? 'Dark' : 'Light';
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const toggle = document.getElementById('darkModeToggle');
+    const label = document.getElementById('toggleLabel');
+    document.body.classList.toggle('dark-mode', prefersDarkMode);
+    toggle.checked = prefersDarkMode;
+    label.textContent = prefersDarkMode ? 'Dark' : 'Light';
   }
 }
 
@@ -1534,512 +1543,709 @@ function decodeHtmlEntities(encodedString) {
 }
 // --- End Dark Mode / Theme / Email Functions ---
 
-
 function parseSlopData(modelName) {
   if (!slopData || !modelName) {
-      return "<p><i>Slop profile data not available.</i></p>";
+    return "<p><i>Slop profile data not available.</i></p>";
   }
-  // Escape modelName for regex safety, especially for names with special chars
   const escapedModelName = modelName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const regex = new RegExp(`^#####\\s*${escapedModelName}\\s*$`, 'm'); // Match start of line, model name, end of line
-  const match = slopData.split(regex); // Split by the delimiter line
+  const regex = new RegExp(`^#####\\s*${escapedModelName}\\s*$`, 'm');
+  const match = slopData.split(regex);
 
   if (match.length > 1) {
-      // The content we want is after the matched delimiter line
-      const contentAfterDelimiter = match[1];
-      if (contentAfterDelimiter) {
-          // Find the next delimiter or end of string
-          const nextDelimiterMatch = contentAfterDelimiter.search(/^#####\s/m);
-          if (nextDelimiterMatch !== -1) {
-              return contentAfterDelimiter.substring(0, nextDelimiterMatch).trim();
-          } else {
-              // It's the last model in the string
-              return contentAfterDelimiter.trim();
-          }
+    const contentAfterDelimiter = match[1];
+    if (contentAfterDelimiter) {
+      const nextDelimiterMatch = contentAfterDelimiter.search(/^#####\s/m);
+      if (nextDelimiterMatch !== -1) {
+        return contentAfterDelimiter.substring(0, nextDelimiterMatch).trim();
+      } else {
+        return contentAfterDelimiter.trim();
       }
+    }
   }
   console.warn(`Slop profile not found for model: ${modelName}`);
   return `<p><i>Slop profile not found for model: ${modelName}</i></p>`;
 }
 
+function showAbilitiesModal(modelName) {
+  if (typeof chartData === 'undefined' || !chartData[modelName]) {
+    console.warn("No chart data found for: ", modelName);
+    document.getElementById('abilitiesProfileContent').innerHTML =
+      `<p><i>No abilities data for ${modelName}</i></p>`;
+    const abilitiesModal = new bootstrap.Modal(document.getElementById('abilitiesProfileModal'));
+    abilitiesModal.show();
+    return;
+  }
+  const data = chartData[modelName];
 
-// Gradient logic (applies to visible bars)
+  // Destroy existing charts if any
+  if (abilitiesAbsoluteRadarChart) abilitiesAbsoluteRadarChart.destroy();
+  if (abilitiesRelativeRadarChart) abilitiesRelativeRadarChart.destroy();
+  if (abilitiesStrengthsChart) abilitiesStrengthsChart.destroy();
+  if (abilitiesWeaknessesChart) abilitiesWeaknessesChart.destroy();
+
+  // Re-inject canvas with responsive layout
+  document.getElementById('abilitiesProfileContent').innerHTML = `
+  <!-- Radar charts in a responsive row -->
+  <div class="row mb-4">
+    <div class="col-lg-6 mb-4 mb-lg-0">
+      <div class="chart-container" style="position: relative; height: auto; aspect-ratio: 1.6/1;">
+        <canvas id="abilitiesAbsoluteRadar"></canvas>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="chart-container" style="position: relative; height: auto; aspect-ratio: 1.6/1;">
+        <canvas id="abilitiesRelativeRadar"></canvas>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bar charts row - already responsive -->
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="chart-container" style="max-width: 800px; margin: 0 auto;">
+        <canvas id="abilitiesStrengthsChart"></canvas>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="chart-container" style="max-width: 800px; margin: 0 auto;">
+        <canvas id="abilitiesWeaknessesChart"></canvas>
+      </div>
+    </div>
+  </div>
+  `;
+
+  // Check dark mode
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  const axisColor = isDarkMode ? '#eee' : '#333';
+  const gridColor = isDarkMode ? '#666' : '#ccc';
+
+  // Get contexts
+  const ctxAbs = document.getElementById('abilitiesAbsoluteRadar').getContext('2d');
+  const ctxRel = document.getElementById('abilitiesRelativeRadar').getContext('2d');
+  const ctxStr = document.getElementById('abilitiesStrengthsChart').getContext('2d');
+  const ctxWeak = document.getElementById('abilitiesWeaknessesChart').getContext('2d');
+
+  // (1) Absolute Radar
+  abilitiesAbsoluteRadarChart = new Chart(ctxAbs, {
+    type: 'radar',
+    data: {
+      labels: data.absoluteRadar.labels,
+      datasets: [{
+        label: 'Absolute Score',
+        data: data.absoluteRadar.values,
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        pointBackgroundColor: 'rgba(54, 162, 235, 1)'
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: {
+        duration: 0 // Set animation duration to 0 to disable animations
+      },
+      scales: {
+        r: {
+          beginAtZero: true,
+          suggestedMin: 0,
+          suggestedMax: 20,
+          ticks: {
+            color: axisColor,
+            backdropColor: 'transparent',
+            showLabelBackdrop: false
+          },
+          pointLabels: { color: axisColor },
+          grid: { color: gridColor },
+          angleLines: { color: gridColor }
+        }
+      },
+      plugins: {
+        title: {
+          display: true,
+          text: 'Absolute Scores',
+          color: axisColor,
+          font: {
+            size: 20
+          }
+        },
+        legend: { display: false, labels: { color: axisColor } }
+      }
+    }
+  });
+
+  // (2) Relative Radar
+  abilitiesRelativeRadarChart = new Chart(ctxRel, {
+    type: 'radar',
+    data: {
+      labels: data.relativeRadarLog.labels,
+      datasets: [{
+        label: 'Relative (Log Scale)',
+        data: data.relativeRadarLog.values,
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        pointBackgroundColor: 'rgba(75, 192, 192, 1)'
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: {
+        duration: 0 // Set animation duration to 0 to disable animations
+      },
+      scales: {
+        r: {
+          beginAtZero: false,
+          min: -0.6,
+          max: 0.6,
+          ticks: {
+            color: axisColor,
+            backdropColor: 'transparent',
+            showLabelBackdrop: false
+          },
+          pointLabels: { color: axisColor },
+          grid: { color: gridColor },
+          angleLines: { color: gridColor }
+        }
+      },
+      plugins: {
+        title: {
+          display: true,
+          text: 'Relative Scores',
+          color: axisColor,
+          font: {
+            size: 20
+          }
+        },
+        legend: { display: false, labels: { color: axisColor } }
+      }
+    }
+  });
+
+  // (3) Strengths
+  const strengthsLabels = data.strengths.map(x => x.criterion);
+  const strengthsValues = data.strengths.map(x => x.relativeScore);
+  abilitiesStrengthsChart = new Chart(ctxStr, {
+    type: 'bar',
+    data: {
+      labels: strengthsLabels,
+      datasets: [{
+        label: 'Strength (Rel)',
+        data: strengthsValues,
+        backgroundColor: 'rgba(54, 162, 235, 0.8)'
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      animation: {
+        duration: 0 // Set animation duration to 0 to disable animations
+      },
+      plugins: {
+        title: {
+          display: true,
+          text: 'Strengths',
+          color: axisColor,
+          font: {
+            size: 20
+          }
+        },
+        legend: { display: false }
+      },
+      scales: {
+        x: {
+          beginAtZero: true,
+          ticks: { color: axisColor },
+          grid: { color: gridColor }
+        },
+        y: {
+          ticks: { color: axisColor },
+          grid: { color: gridColor }
+        }
+      }
+    }
+  });
+
+
+// (4) Weaknesses
+// Create a new scoped block with new variable names to avoid any conflicts
+{
+  const weaknessesLabels = data.weaknesses.map(x => x.criterion);
+  const weaknessesValues = data.weaknesses.map(x => x.relativeScore);
+  
+  // Use different variable names to avoid any potential conflicts
+  const weaknessesReversedLabels = [...weaknessesLabels].reverse();
+  const weaknessesReversedValues = [...weaknessesValues].reverse();
+  
+  abilitiesWeaknessesChart = new Chart(ctxWeak, {
+    type: 'bar',
+    data: {
+      labels: weaknessesReversedLabels,
+      datasets: [{
+        label: 'Weakness (Rel)',
+        data: weaknessesReversedValues,
+        backgroundColor: 'rgba(255, 99, 132, 0.8)'
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      animation: {
+        duration: 0 // Set animation duration to 0 to disable animations
+      },
+      plugins: {
+        title: {
+          display: true,
+          text: 'Weaknesses',
+          color: axisColor,
+          font: {
+            size: 20
+          }
+        },
+        legend: { display: false }
+      },
+      scales: {
+        x: {
+          beginAtZero: true,
+          ticks: { color: axisColor },
+          grid: { color: gridColor }
+        },
+        y: {
+          ticks: { color: axisColor },
+          grid: { color: gridColor }
+        }
+      }
+    }
+  });
+}
+
+  // Show the modal
+  const abilitiesModal = new bootstrap.Modal(document.getElementById('abilitiesProfileModal'));
+  document.getElementById('abilitiesProfileModalLabel').textContent = `Abilities Overview: ${modelName}`;
+  abilitiesModal.show();
+}
+
+// Gradient logic for visible bars
 function updateScoreBarColorsV3() {
   const scoreBars = document.querySelectorAll('#leaderboard .creative-writing-score-bar');
   const isDarkMode = document.body.classList.contains('dark-mode');
 
   scoreBars.forEach((bar) => {
-    if ($(bar).is(':visible')) { // Check visibility
-        const overallIndex = $(bar).closest('tr').index();
-        const totalRows = $('#leaderboard tbody tr').length;
-        if (totalRows === 0) return; // Avoid division by zero
+    if ($(bar).is(':visible')) {
+      const overallIndex = $(bar).closest('tr').index();
+      const totalRows = $('#leaderboard tbody tr').length;
+      if (totalRows === 0) return;
 
-        const startPercent = (overallIndex / totalRows);
-        const endPercent = ((overallIndex + 1) / totalRows);
-        const lightness = isDarkMode ? '50%' : '80%';
-        const startColor = `hsl(${startPercent * 360}, 40%, ${lightness})`;
-        const endColor = `hsl(${endPercent * 360}, 40%, ${lightness})`;
-        bar.style.background = `linear-gradient(to bottom, ${startColor}, ${endColor})`;
+      const startPercent = (overallIndex / totalRows);
+      const endPercent = ((overallIndex + 1) / totalRows);
+      const lightness = isDarkMode ? '50%' : '80%';
+      const startColor = `hsl(${startPercent * 360}, 40%, ${lightness})`;
+      const endColor = `hsl(${endPercent * 360}, 40%, ${lightness})`;
+      bar.style.background = `linear-gradient(to bottom, ${startColor}, ${endColor})`;
     }
   });
 }
 
 function loadLeaderboardData() {
-  const creativeWritingRows = leaderboardDataCreativeWritingV3.split('\n').slice(1).filter(l => l.trim() !== '');
+  const creativeWritingRows = leaderboardDataCreativeWritingV3
+    .split('\n')
+    .slice(1)
+    .filter(l => l.trim() !== '');
 
-  // Find original min/max Elo scores for rescaling
   const originalEloScores = creativeWritingRows.map(row => parseFloat(row.split(',')[1])).filter(s => !isNaN(s));
   const originalMaxElo = Math.max(...originalEloScores);
   const originalMinElo = Math.min(...originalEloScores);
 
-  // Populate global score arrays with scaled values
   eloScores = originalEloScores.map(score => {
-      const scaleFactor = (1500 - 200) / (originalMaxElo - originalMinElo);
-      return 200 + (score - originalMinElo) * scaleFactor;
+    const scaleFactor = (1500 - 200) / (originalMaxElo - originalMinElo);
+    return 200 + (score - originalMinElo) * scaleFactor;
   });
 
-  // Scale rubric scores by multiplying by 5
+  // Scale rubric by * 5
   rubricScores = creativeWritingRows.map(row => parseFloat(row.split(',')[2]) * 5).filter(s => !isNaN(s));
 
-  // Calculate global max/baseline values
   maxEloScore = eloScores.length > 0 ? Math.max(...eloScores) : 1500;
   maxRubricScore = rubricScores.length > 0 ? Math.max(...rubricScores) : 100;
   baselineEloScore = eloScores.length > 0 ? Math.min(400, Math.min(...eloScores) - 50) : 150;
   baselineRubricScore = rubricScores.length > 0 ? Math.max(0, Math.min(...rubricScores) - 1) : 30;
 
   let html = creativeWritingRows.map(row => {
-      // Destructure including the new repetition_score
-      let [modelNameRaw, eloScore, creativeWritingScore, avgLength, vocabComplexity, slopScore, repetitionScore] = row.split(',');
+    let [
+      modelNameRaw,
+      eloScore,
+      creativeWritingScore,
+      avgLength,
+      vocabComplexity,
+      slopScore,
+      repetitionScore
+    ] = row.split(',');
 
-      // Get model scores and scale them
-      const originalEloScoreNum = parseFloat(eloScore);
-      const originalRubricScoreNum = parseFloat(creativeWritingScore);
+    const originalEloScoreNum = parseFloat(eloScore);
+    const originalRubricScoreNum = parseFloat(creativeWritingScore);
+    const eloScaleFactor = (1500 - 200) / (originalMaxElo - originalMinElo);
+    const eloScoreNum = 200 + (originalEloScoreNum - originalMinElo) * eloScaleFactor;
+    const rubricScoreNum = originalRubricScoreNum * 5;
 
-      // Scale Elo score to new range (1500 to 200)
-      const eloScaleFactor = (1500 - 200) / (originalMaxElo - originalMinElo);
-      const eloScoreNum = 200 + (originalEloScoreNum - originalMinElo) * eloScaleFactor;
+    let vocabNum = parseFloat(vocabComplexity) / 10;
+    vocabNum = Math.min((vocabNum / 7.0) * 10, 10);
 
-      // Scale rubric score by multiplying by 5
-      const rubricScoreNum = originalRubricScoreNum * 5;
+    const slopNum = (parseFloat(slopScore) / 10.0) / 7.2 * 10;
+    const lengthNum = parseInt(avgLength, 10);
+    const repetitionScoreNum = parseFloat(repetitionScore, 10);
 
-      // Keep vocab processing logic even though column is hidden
-      let vocabNum = parseFloat(vocabComplexity) / 10; // Divide by 10
-      vocabNum = Math.min((vocabNum / 7.0) * 10, 10)
+    const eloScoreRange = maxEloScore - baselineEloScore;
+    const eloScoreRelativeToBaseline = eloScoreNum - baselineEloScore;
+    const eloScorePercentage = eloScoreRange > 0
+      ? Math.max(0, Math.min(100, (eloScoreRelativeToBaseline / eloScoreRange) * 100))
+      : 0;
 
-      const slopNum = (parseFloat(slopScore) / 10.0) / 7.2 * 10;
-      const lengthNum = parseInt(avgLength, 10);
-      const repetitionScoreNum = parseFloat(repetitionScore, 10); // Parse repetition score
+    const rubricScoreRange = maxRubricScore - baselineRubricScore;
+    const rubricScoreRelativeToBaseline = rubricScoreNum - baselineRubricScore;
+    const rubricScorePercentage = rubricScoreRange > 0
+      ? Math.max(0, Math.min(100, (rubricScoreRelativeToBaseline / rubricScoreRange) * 100))
+      : 0;
 
-      // Initial percentages for width (will be updated by updateScores if needed)
-      const eloScoreRange = maxEloScore - baselineEloScore;
-      const eloScoreRelativeToBaseline = eloScoreNum - baselineEloScore;
-      const eloScorePercentage = eloScoreRange > 0 ? Math.max(0, Math.min(100, (eloScoreRelativeToBaseline / eloScoreRange) * 100)) : 0;
+    let currentModelName = modelNameRaw;
+    const isNsfwModel = currentModelName.startsWith('!');
+    currentModelName = currentModelName.replace(/^\!/, '');
+    const isNewModel = currentModelName.startsWith('*');
+    currentModelName = currentModelName.replace(/^\*/, '');
 
-      // Use scaled rubric score for percentage calculation
-      const rubricScoreRange = maxRubricScore - baselineRubricScore; // These are already scaled in the global variables
-      const rubricScoreRelativeToBaseline = rubricScoreNum - baselineRubricScore;
-      const rubricScorePercentage = rubricScoreRange > 0 ? Math.max(0, Math.min(100, (rubricScoreRelativeToBaseline / rubricScoreRange) * 100)) : 0;
+    let displayModelName = currentModelName.split('/').pop();
+    if (isNsfwModel) displayModelName = '🔞' + displayModelName;
+    if (isNewModel) displayModelName = '🆕' + displayModelName;
 
-      // --- Model Name Processing ---
-      let currentModelName = modelNameRaw; // Keep original for data lookup
-      const isNsfwModel = currentModelName.startsWith('!');
-      currentModelName = currentModelName.replace(/^\!/, '');
-      const isNewModel = currentModelName.startsWith('*');
-      currentModelName = currentModelName.replace(/^\*/, '');
+    let modelNameDisplayHTML = currentModelName.includes('/')
+      ? `<a href="https://huggingface.co/${currentModelName}" target="_blank">${displayModelName}</a>`
+      : displayModelName;
 
-      let displayModelName = currentModelName.split('/').pop();
-      if (isNsfwModel) displayModelName = '🔞' + displayModelName;
-      if (isNewModel) displayModelName = '🆕' + displayModelName;
+    let modelResultsFn = `results/creative-writing-v3/${currentModelName.replace(/\//g,'__')}.html`;
 
-      let modelNameDisplayHTML = currentModelName.includes('/')
-          ? `<a href="https://huggingface.co/${currentModelName}" target="_blank">${displayModelName}</a>`
-          : displayModelName; // Use displayModelName here
-
-      let modelResultsFn = `results/creative-writing-v3/${currentModelName.replace(/\//g,'__')}.html`;
-
-      // --- Generate Bar Structure for BOTH score columns directly in TD ---
-      let scoreBarEloHTML = `<div class="score-bar-container">
-          <div class="creative-writing-score-bar" style="width: ${eloScorePercentage}%; display: none;"></div>
-          <span class="score-text">${eloScoreNum.toFixed(1)}</span>
+    let scoreBarEloHTML = `
+      <div class="score-bar-container">
+        <div class="creative-writing-score-bar" style="width: ${eloScorePercentage}%; display: none;"></div>
+        <span class="score-text">${eloScoreNum.toFixed(1)}</span>
       </div>`;
-      let scoreBarRubricHTML = `<div class="score-bar-container">
-           <div class="creative-writing-score-bar" style="width: ${rubricScorePercentage}%; display: none;"></div>
-           <span class="score-text">${rubricScoreNum.toFixed(2)}</span>
-       </div>`;
-      
-       const slopInfoIconUnicode = `
-       <span class="slop-info-icon custom-info-icon" data-model-name="${currentModelName}" title="View Slop Profile">i</span>`;
 
-      // --- Create TR with data-order on TD and necessary data attributes ---
-      return `
-  <tr data-original-elo-score="${eloScoreNum}"
-      data-original-rubric-score="${rubricScoreNum}"
-      data-vocab="${vocabNum}"
-      data-gpt-slop="${slopNum}"
-      data-repetition="${repetitionScoreNum}">
+    let scoreBarRubricHTML = `
+      <div class="score-bar-container">
+        <div class="creative-writing-score-bar" style="width: ${rubricScorePercentage}%; display: none;"></div>
+        <span class="score-text">${rubricScoreNum.toFixed(2)}</span>
+      </div>`;
 
-    <td>
-      <div class="cell-content">
-        ${modelNameDisplayHTML} <!-- Use HTML version -->
-      </div>
-    </td>
+    const slopInfoIconUnicode = `
+      <span class="slop-info-icon custom-info-icon" data-model-name="${currentModelName}" title="View Slop Profile">i</span>`;
+    //const abilitiesInfoIcon = `
+    //  <span class="abilities-info-icon custom-info-icon" data-model-name="${currentModelName}" title="View Abilities Charts">i</span>`;
+    const abilitiesInfoIcon = `
+      <span class="abilities-info-icon chart-icon" data-model-name="${currentModelName}" title="View Abilities Charts"><span></span></span>`;
 
-    <td class="mobile-collapsible" data-order="${lengthNum}">
-      <div class="cell-content">
-        ${isNaN(lengthNum) ? '-' : lengthNum}
-      </div>
-    </td>
+    return `
+      <tr data-original-elo-score="${eloScoreNum}"
+          data-original-rubric-score="${rubricScoreNum}"
+          data-vocab="${vocabNum}"
+          data-gpt-slop="${slopNum}"
+          data-repetition="${repetitionScoreNum}">
 
-    <td data-order="${slopNum}">
-      <div class="cell-content"> <!-- Content wrapper for flex -->
-        ${slopNum.toFixed(1)}
-        ${slopInfoIconUnicode} <!-- Use the Unicode icon span -->
-      </div>
-    </td>
+        <td>
+          <div class="cell-content">
+            ${modelNameDisplayHTML}
+          </div>
+        </td>
 
-    <td class="mobile-collapsible" data-order="${repetitionScoreNum}">
-      <div class="cell-content">
-        ${isNaN(repetitionScoreNum) ? '-' : repetitionScoreNum.toFixed(1)}
-      </div>
-    </td>
+        <td class="mobile-collapsible" data-order="${lengthNum}">
+          <div class="cell-content">
+            ${isNaN(lengthNum) ? '-' : lengthNum}
+          </div>
+        </td>
 
-    <td class="mobile-collapsible" data-order="${rubricScoreNum}">
-      <div class="cell-content">
-        ${scoreBarRubricHTML}
-      </div>
-    </td>
+        <td class="mobile-collapsible" data-order="${slopNum}">
+          <div class="cell-content">
+            ${slopNum.toFixed(1)}
+            ${slopInfoIconUnicode}
+          </div>
+        </td>
 
-    <td data-order="${eloScoreNum}">
-      <div class="cell-content">
-        ${scoreBarEloHTML}
-      </div>
-    </td>
+        <td class="mobile-collapsible" data-order="${repetitionScoreNum}">
+          <div class="cell-content">
+            ${isNaN(repetitionScoreNum) ? '-' : repetitionScoreNum.toFixed(1)}
+          </div>
+        </td>
 
-    <td>
-      <div class="cell-content">
-        <a href="${modelResultsFn}">Sample</a>
-      </div>
-    </td>
-  </tr>
-`;
+        <!-- Abilities column -->
+        <td>
+          <div class="cell-content">
+            ${abilitiesInfoIcon}
+          </div>
+        </td>
 
-  }).join(''); // End of map loop
+        <td class="mobile-collapsible" data-order="${rubricScoreNum}">
+          <div class="cell-content">
+            ${scoreBarRubricHTML}
+          </div>
+        </td>
+
+        <td data-order="${eloScoreNum}">
+          <div class="cell-content">
+            ${scoreBarEloHTML}
+          </div>
+        </td>
+
+        <td>
+          <div class="cell-content">
+            <a href="${modelResultsFn}">Sample</a>
+          </div>
+        </td>
+      </tr>
+    `;
+  }).join('');
 
   document.getElementById('leaderboardBody').innerHTML = html;
-  initializeDataTable(); // This now includes setting up the event listener
+  initializeDataTable();
 }
 
-// DataTable configuration
+// DataTable config
 let dataTableConfig = {
-  order: [[5, "desc"]], // Default sort Elo
+  order: [[6, "desc"]], // Elo is at column index 6
   paging: false,
   searching: false,
   info: true,
   lengthChange: false,
   columnDefs: [
-    // Define explicit numeric type for sorting
     { targets: [1], type: 'num' }, // Length
     { targets: [2], type: 'num' }, // Slop
-    { targets: [3], type: 'num' }, // Repetition (was Vocab)
-    { targets: [4], type: 'num' }, // Rubric Score
-    { targets: [5], type: 'num' }, // Elo Score
-    // Define sorting sequences
-    { targets: [4, 5], orderSequence: ["desc", "asc"] }, // Rubric, Elo
-    { targets: [1, 2], orderSequence: ["desc", "asc"] }, // Length, Slop
-    { targets: [3], orderSequence: ["asc", "desc"] }, // Repetition (Lower is better, sort ASC first)
+    { targets: [3], type: 'num' }, // Repetition
+    // 4 is Abilities (not numeric)
+    { targets: [5], type: 'num' }, // Rubric Score
+    { targets: [6], type: 'num' }, // Elo Score
+    { targets: [5, 6], orderSequence: ["desc","asc"] }, // Rubric, Elo
+    { targets: [1,2], orderSequence: ["desc","asc"] },  // Length, Slop
+    { targets: [3], orderSequence: ["asc","desc"] }     // Repetition
   ],
   dom: "<'d-flex flex-column flex-md-row justify-content-between align-items-center mb-2'<'#toggleMobilePlaceholder'><'ms-md-auto'f>>" +
        "<'row'<'col-12'tr>>" +
        "<'row mt-2'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
-  // drawCallback aligned with eqbench.js logic
+
   drawCallback: function(settings) {
     let api = this.api();
     if (!api) return;
     let order = api.order();
     if (!order || order.length === 0) {
-        order = [[5, 'desc']]; // Fallback to default sort
+      order = [[6, 'desc']];
     }
 
     let sortedColumnIndex = order[0][0];
-    const SCORE_COLUMNS = [4, 5]; // Indices for Rubric Score, Elo Score
-    const NON_SCORE_COLUMNS = [0, 1, 2, 3, 6]; // Indices for other columns (incl. Repetition at index 3)
+
+    const SCORE_COLUMNS = [5, 6];
+    const NON_SCORE_COLUMNS = [0,1,2,3,4,7];
 
     const tableNode = $(api.table().node());
-
-    // Hide all score bars initially within this table
     tableNode.find('.creative-writing-score-bar').hide();
-    // Reset header widths
     tableNode.find('th').css('width', '');
 
     let columnToShowBar = -1;
-
-    // Determine which score column's bar to show
     if (SCORE_COLUMNS.includes(sortedColumnIndex)) {
-        columnToShowBar = sortedColumnIndex;
-        lastSortedScoreColumn = sortedColumnIndex;
+      columnToShowBar = sortedColumnIndex;
+      lastSortedScoreColumn = sortedColumnIndex;
     } else if (NON_SCORE_COLUMNS.includes(sortedColumnIndex) && lastSortedScoreColumn !== null) {
-        columnToShowBar = lastSortedScoreColumn;
-    } else { // Fallback
-        columnToShowBar = 5;
-        lastSortedScoreColumn = 5;
+      columnToShowBar = lastSortedScoreColumn;
+    } else {
+      columnToShowBar = 6;
+      lastSortedScoreColumn = 6;
     }
 
-    // Show the selected column's score bar and adjust width
     if (columnToShowBar !== -1) {
-        try {
-            // Show the bar in the target column for all visible rows
-            // Use api().rows() to get nodes for current page/view
-            api.rows({ page: 'current' }).nodes().to$().find(`td:eq(${columnToShowBar}) .creative-writing-score-bar`).show();
-
-            let header = api.column(columnToShowBar).header();
-            if (header) {
-                $(header).css('width', '30%');
-            }
-        } catch (e) {
-            console.error("Error showing score bar or adjusting width:", e);
+      try {
+        api.rows({ page: 'current' })
+           .nodes()
+           .to$()
+           .find(`td:eq(${columnToShowBar}) .creative-writing-score-bar`)
+           .show();
+        let header = api.column(columnToShowBar).header();
+        if (header) {
+          $(header).css('width', '30%');
         }
+      } catch (e) {
+        console.error("Error showing score bar or adjusting width:", e);
+      }
     }
-
-    // Apply the gradient colors to the *now visible* bars
     updateScoreBarColorsV3();
   }
 };
 
-// --- Mobile Column Collapse Logic ---
 let middleStatsExpanded = false;
 function collapseMiddleColumns() {
-    const isMobile = window.innerWidth < 768;
-
-    // If on mobile AND not expanded, hide them
-    if (isMobile && !middleStatsExpanded) {
-      $('#leaderboard .mobile-collapsible').hide();
-      $('#toggleMiddleStats').text('Expand Details');
-    } else {
-      $('#leaderboard .mobile-collapsible').show();
-      $('#toggleMiddleStats').text('Hide Details');
-    }
+  const isMobile = window.innerWidth < 768;
+  if (isMobile && !middleStatsExpanded) {
+    $('#leaderboard .mobile-collapsible').hide();
+    $('#toggleMiddleStats').text('Expand Details');
+  } else {
+    $('#leaderboard .mobile-collapsible').show();
+    $('#toggleMiddleStats').text('Hide Details');
   }
+}
+function toggleMiddleStats() {
+  middleStatsExpanded = !middleStatsExpanded;
+  collapseMiddleColumns();
+}
 
-  function toggleMiddleStats() {
-    middleStatsExpanded = !middleStatsExpanded;
-    collapseMiddleColumns();
-  }
-
-  // --- End Mobile Column Collapse Logic ---
-
-// Add this function to ensure initial score bars use scaled values
 function fixInitialScoreBars() {
-    // Wait until the table is fully initialized
-    setTimeout(() => {
-      // Apply updateScores to set initial bar widths and values based on slider settings
-      if ($.fn.DataTable.isDataTable('#leaderboard')) {
-        updateScores();
-      }
-    }, 200); // Small delay to ensure DOM is ready
-  }
-
-
+  setTimeout(() => {
+    if ($.fn.DataTable.isDataTable('#leaderboard')) {
+      updateScores();
+    }
+  }, 200);
+}
 
 function initializeDataTable() {
-  // Check if DataTable already exists and destroy it
   if ($.fn.DataTable.isDataTable('#leaderboard')) {
     $('#leaderboard').DataTable().destroy();
-    // IMPORTANT: Remove previous event listener to avoid duplicates
     $('#leaderboardBody').off('click', '.slop-info-icon');
+    $('#leaderboardBody').off('click', '.abilities-info-icon');
   }
-
   let table = $('#leaderboard').DataTable(dataTableConfig);
 
-  // --- Add Event Listener for Slop Icons (using delegation) ---
   $('#leaderboardBody').on('click', '.slop-info-icon', function() {
-      const modelName = $(this).data('model-name');
-      const profileHtml = parseSlopData(modelName);
-      const modalTitle = `Slop Profile: ${modelName.split('/').pop()}`; // Use shorter name for title
-
-      // Update modal content and title
-      $('#slopProfileContent').html(profileHtml);
-      $('#slopProfileModalLabel').text(modalTitle);
-
-      // Show the modal using Bootstrap 5 API
-      const slopModal = new bootstrap.Modal(document.getElementById('slopProfileModal'));
-      slopModal.show();
+    const modelName = $(this).data('model-name');
+    const profileHtml = parseSlopData(modelName);
+    const modalTitle = `Slop Profile: ${modelName.split('/').pop()}`;
+    $('#slopProfileContent').html(profileHtml);
+    $('#slopProfileModalLabel').text(modalTitle);
+    const slopModal = new bootstrap.Modal(document.getElementById('slopProfileModal'));
+    slopModal.show();
   });
 
-  // Still call collapseMiddleColumns after table initialization
-  table.one('init.dt', function () {
+  // Abilities icon
+  $('#leaderboardBody').on('click', '.abilities-info-icon', function() {
+    const modelName = $(this).data('model-name');
+    showAbilitiesModal(modelName);
+  });
+
+  table.one('init.dt', function() {
     collapseMiddleColumns();
-    setupControls(); // Setup sliders
-    fixInitialScoreBars(); // Apply initial slider values visually
+    setupControls();
+    fixInitialScoreBars();
   });
 }
-
-
 
 function setupControls() {
-    // Keep references even if hidden, in case logic is reused
-    const vocabSlider = document.getElementById('vocabControlSlider');
-    const vocabSliderValueLabel = document.getElementById('vocabControlValue');
-    const gptSlopSlider = document.getElementById('gptSlopControlSlider');
-    const gptSlopSliderValueLabel = document.getElementById('gptSlopControlValue');
+  const vocabSlider = document.getElementById('vocabControlSlider');
+  const vocabSliderValueLabel = document.getElementById('vocabControlValue');
+  const gptSlopSlider = document.getElementById('gptSlopControlSlider');
+  const gptSlopSliderValueLabel = document.getElementById('gptSlopControlValue');
 
-    // Check if elements exist before proceeding
-    if (!gptSlopSlider) {
-      console.error("Required control sliders not found");
-      return;
-    }
-
-    // Set initial label values (only for visible sliders)
-    if (gptSlopSliderValueLabel) {
-        gptSlopSliderValueLabel.textContent = `${gptSlopSlider.value}%`;
-    }
-    // Don't set label for hidden vocab slider
-
-    // Add event listeners for sliders (only if they don't already have listeners)
-    // Keep vocab listener logic, it just won't fire if slider is hidden
-    if (vocabSlider && !vocabSlider.hasListeners) {
-      vocabSlider.oninput = function() {
-        if (vocabSliderValueLabel) vocabSliderValueLabel.textContent = `${this.value}%`;
-        updateScores();
-      };
-      vocabSlider.hasListeners = true;
-    }
-
-
-    if (gptSlopSlider && !gptSlopSlider.hasListeners) {
-      gptSlopSlider.oninput = function() {
-        if (gptSlopSliderValueLabel) gptSlopSliderValueLabel.textContent = `${this.value}%`;
-        updateScores();
-      };
-      gptSlopSlider.hasListeners = true;
-    }
-
-    // Initial call to apply slider values
-    updateScores();
+  if (!gptSlopSlider) {
+    console.error("Required control sliders not found");
+    return;
+  }
+  if (gptSlopSliderValueLabel) {
+    gptSlopSliderValueLabel.textContent = `${gptSlopSlider.value}%`;
   }
 
-
-function normalizeVocabComplexity(value) {
-    // Use same range values as original code
-    const minVocab = 4.5;
-    const maxVocab = 10.0;
-
-    // Clamp the value to the min-max range
-    const clampedValue = Math.max(minVocab, Math.min(maxVocab, value));
-
-    // Normalize to 0-1 range (1 is high complexity, 0 is low)
-    return Math.pow((clampedValue - minVocab) / (maxVocab - minVocab), 2);
+  if (vocabSlider && !vocabSlider.hasListeners) {
+    vocabSlider.oninput = function() {
+      if (vocabSliderValueLabel) vocabSliderValueLabel.textContent = `${this.value}%`;
+      updateScores();
+    };
+    vocabSlider.hasListeners = true;
+  }
+  if (gptSlopSlider && !gptSlopSlider.hasListeners) {
+    gptSlopSlider.oninput = function() {
+      if (gptSlopSliderValueLabel) gptSlopSliderValueLabel.textContent = `${this.value}%`;
+      updateScores();
+    };
+    gptSlopSlider.hasListeners = true;
+  }
+  updateScores();
 }
 
+function normalizeVocabComplexity(value) {
+  const minVocab = 4.5;
+  const maxVocab = 10.0;
+  const clampedValue = Math.max(minVocab, Math.min(maxVocab, value));
+  return Math.pow((clampedValue - minVocab) / (maxVocab - minVocab), 2);
+}
 function calculateAverageGptSlop() {
-    const gptSlops = Array.from(document.querySelectorAll('#leaderboardBody tr'))
-        .map(row => parseFloat(row.getAttribute('data-gpt-slop')))
-        .filter(val => !isNaN(val));
-
-    return gptSlops.length > 0 ?
-        gptSlops.reduce((a, b) => a + b, 0) / gptSlops.length :
-        1;
+  const gptSlops = Array.from(document.querySelectorAll('#leaderboardBody tr'))
+    .map(row => parseFloat(row.getAttribute('data-gpt-slop')))
+    .filter(val => !isNaN(val));
+  return gptSlops.length > 0
+    ? gptSlops.reduce((a, b) => a + b, 0) / gptSlops.length
+    : 1;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    displayEncodedEmail();
-    applySystemTheme();
-    setupDarkModeToggle();
+  displayEncodedEmail();
+  applySystemTheme();
+  setupDarkModeToggle();
 
-    if (document.getElementById('leaderboard')) {
-      loadLeaderboardData(); // Calls initializeDataTable
-      // setupControls() is called within initializeDataTable's init.dt event
+  if (document.getElementById('leaderboard')) {
+    loadLeaderboardData();
+    $(window).on('resize', collapseMiddleColumns);
+    $('#toggleMiddleStats').on('click', toggleMiddleStats);
+    setTimeout(collapseMiddleColumns, 50);
+  }
+});
 
-      // Directly bind the event handlers here, outside of any other function
-      $(window).on('resize', collapseMiddleColumns);
-      $('#toggleMiddleStats').on('click', toggleMiddleStats);
+function updateScores() {
+  const vocabPercentage = document.getElementById('vocabControlSlider')
+    ? document.getElementById('vocabControlSlider').value
+    : 0;
+  const gptSlopPercentage = document.getElementById('gptSlopControlSlider').value;
 
-      // Initial call to collapse columns
-      setTimeout(collapseMiddleColumns, 50); // Give time for DataTable to initialize
+  const vocabAdjustmentFactor = parseFloat(vocabPercentage) / 100;
+  const gptSlopAdjustmentFactor = 0.30 * parseFloat(gptSlopPercentage) / 100;
+  const avgGptSlop = calculateAverageGptSlop();
+  const table = $('#leaderboard').DataTable();
+
+  $('#leaderboardBody tr').each(function() {
+    const row = $(this);
+    const modelGptSlop = parseFloat(row.attr('data-gpt-slop'));
+    const vocabComplexity = parseFloat(row.attr('data-vocab'));
+    const originalEloScore = parseFloat(row.attr('data-original-elo-score'));
+    const originalRubricScore = parseFloat(row.attr('data-original-rubric-score'));
+
+    let vocabAdjustment = 0;
+    if (!isNaN(vocabComplexity)) {
+      const normalizedVocab = normalizeVocabComplexity(vocabComplexity);
+      vocabAdjustment = -12.0 * normalizedVocab * vocabAdjustmentFactor;
     }
+
+    let gptSlopRatio = !isNaN(modelGptSlop) ? (modelGptSlop / avgGptSlop) : 1;
+    if (gptSlopRatio < 0.34) {
+      gptSlopRatio = 0.34;
+    }
+    let gptSlopMultiplier = 1.0;
+    if (gptSlopRatio > 1) {
+      gptSlopMultiplier = 1 - (Math.log(gptSlopRatio) * gptSlopAdjustmentFactor);
+      gptSlopMultiplier = Math.max(gptSlopMultiplier, 0.85);
+    } else {
+      gptSlopMultiplier = 1 + (Math.log(1.5 / (gptSlopRatio + 0.5)) * gptSlopAdjustmentFactor);
+      gptSlopMultiplier = Math.min(gptSlopMultiplier, 1.02);
+    }
+
+    const adjustedEloScore = originalEloScore * gptSlopMultiplier + 15 * vocabAdjustment;
+    const adjustedRubricScore = originalRubricScore * gptSlopMultiplier + vocabAdjustment;
+
+    row.find('td:eq(6)')
+       .attr('data-order', adjustedEloScore.toFixed(1))
+       .find('.score-text').text(adjustedEloScore.toFixed(1));
+
+    row.find('td:eq(5)')
+       .attr('data-order', adjustedRubricScore.toFixed(2))
+       .find('.score-text').text(adjustedRubricScore.toFixed(2));
+
+    const eloPercentage = Math.max(0, Math.min(100,
+      ((adjustedEloScore - baselineEloScore) / (maxEloScore - baselineEloScore)) * 100
+    ));
+    const rubricPercentage = Math.max(0, Math.min(100,
+      ((adjustedRubricScore - baselineRubricScore) / (maxRubricScore - baselineRubricScore)) * 100
+    ));
+
+    row.find('td:eq(6) .creative-writing-score-bar').css('width', `${eloPercentage}%`);
+    row.find('td:eq(5) .creative-writing-score-bar').css('width', `${rubricPercentage}%`);
   });
 
-
-
-  function updateScores() {
-    // 1) Read slider values (Read vocab even if hidden)
-    const vocabPercentage = document.getElementById('vocabControlSlider') ? document.getElementById('vocabControlSlider').value : 0; // Default to 0 if slider removed
-    const gptSlopPercentage = document.getElementById('gptSlopControlSlider').value;
-
-    // 2) Calculate adjustment factors (Keep vocab factor calculation)
-    const vocabAdjustmentFactor = parseFloat(vocabPercentage) / 100;
-    const gptSlopAdjustmentFactor = 0.30 * parseFloat(gptSlopPercentage) / 100;
-
-    const avgGptSlop = calculateAverageGptSlop();
-
-    // 3) Get the *existing* DataTable instance
-    const table = $('#leaderboard').DataTable();
-
-    // 4) Loop over each row in the tbody
-    $('#leaderboardBody tr').each(function() {
-        const row = $(this);
-        const modelGptSlop = parseFloat(row.attr('data-gpt-slop'));
-        const vocabComplexity = parseFloat(row.attr('data-vocab')); // Still read vocab data
-        const originalEloScore = parseFloat(row.attr('data-original-elo-score'));
-        const originalRubricScore = parseFloat(row.attr('data-original-rubric-score'));
-        // Repetition score is not used in adjustments yet, but could be read here if needed:
-        // const repetitionScore = parseFloat(row.attr('data-repetition'));
-
-        // --- (A) Compute your adjustments (Keep vocab adjustment logic) ---
-        let vocabAdjustment = 0;
-        if (!isNaN(vocabComplexity)) {
-            const normalizedVocab = normalizeVocabComplexity(vocabComplexity);
-            // Multiply by -12 and scale by vocabAdjustmentFactor
-            vocabAdjustment = -12.0 * normalizedVocab * vocabAdjustmentFactor;
-        }
-
-        let gptSlopRatio = !isNaN(modelGptSlop) ? (modelGptSlop / avgGptSlop) : 1;
-        if (gptSlopRatio < 0.34) {
-            gptSlopRatio = 0.34;
-        }
-        let gptSlopMultiplier = 1.0;
-        if (gptSlopRatio > 1) {
-            // Penalize higher GPT-slop
-            gptSlopMultiplier = 1 - (Math.log(gptSlopRatio) * gptSlopAdjustmentFactor);
-            gptSlopMultiplier = Math.max(gptSlopMultiplier, 0.85);
-        } else {
-            // Reward lower GPT-slop
-            gptSlopMultiplier = 1 + (Math.log(1.5 / (gptSlopRatio + 0.5)) * gptSlopAdjustmentFactor);
-            gptSlopMultiplier = Math.min(gptSlopMultiplier, 1.02);
-        }
-
-        // --- (B) Apply them to get new scores (Still includes vocabAdjustment) ---
-        const adjustedEloScore = originalEloScore * gptSlopMultiplier + 15 * vocabAdjustment;
-        const adjustedRubricScore = originalRubricScore * gptSlopMultiplier + vocabAdjustment;
-
-        // --- (C) Update each cell's `data-order` and displayed text ---
-        // Elo Score (index 5)
-        row.find('td:eq(5)')
-           .attr('data-order', adjustedEloScore.toFixed(1))
-           .find('.score-text').text(adjustedEloScore.toFixed(1));
-
-        // Rubric Score (index 4)
-        row.find('td:eq(4)')
-           .attr('data-order', adjustedRubricScore.toFixed(2))
-           .find('.score-text').text(adjustedRubricScore.toFixed(2));
-
-        // Repetition score (index 3) and others are not adjusted by sliders, so no update needed here
-
-        // --- (D) Update the bar widths based on your global maxEloScore / maxRubricScore ---
-        // Use adjusted scores for bar width calculation
-        const eloPercentage = Math.max(0, Math.min(100, ((adjustedEloScore - baselineEloScore) / (maxEloScore - baselineEloScore)) * 100));
-        const rubricPercentage = Math.max(0, Math.min(100, ((adjustedRubricScore - baselineRubricScore) / (maxRubricScore - baselineRubricScore)) * 100));
-
-
-        row.find('td:eq(5) .creative-writing-score-bar').css('width', `${eloPercentage}%`);
-        row.find('td:eq(4) .creative-writing-score-bar').css('width', `${rubricPercentage}%`);
-    });
-
-    // 5) Tell DataTables “we changed row data—recheck sorting”
-    table.rows().invalidate();
-
-    // 6) Redraw the table (false = stay on the same page)
-    table.draw(false);
-
-    // 7) Finally, refresh your color gradients or any final styling
-    updateScoreBarColorsV3();
+  table.rows().invalidate();
+  table.draw(false);
+  updateScoreBarColorsV3();
 }
