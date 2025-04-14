@@ -497,6 +497,158 @@
       max-width: 600px; /* adjust as needed */
       height: 300px; /* make height less than width for a more rectangular shape */
     }
+
+    /* Enhance the existing middle screen size media query */
+    @media (min-width: 768px) and (max-width: 991px) {
+      /* Container width (already in your code) */
+      .container {
+        width: 95%;
+        max-width: none;
+      }
+      
+      /* Double row height evenly like in mobile view */
+      #leaderboard tbody td {
+        padding: 0;
+        white-space: normal; /* allow text wrapping */
+        vertical-align: middle;
+      }
+      
+      /* The nested .cell-content block to enforce min-height */
+      #leaderboard tbody td .cell-content {
+        display: flex;
+        align-items: center;
+        min-height: 3.5em;
+        line-height: 1.3em;
+        width: 100%;
+        padding: 0.4em;
+        box-sizing: border-box;
+      }
+      
+      /* Make model column narrower and wrap text */
+      #leaderboard tbody td:first-child {
+        max-width: 150px;
+        white-space: normal;
+        word-wrap: break-word;
+      }
+      
+      /* Ensure score bars adjust properly */
+      #leaderboard tbody td .cell-content .score-bar-container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+      }
+    }
+
+
+
+
+    #leaderboard tbody td:nth-child(6) .cell-content {
+       white-space: nowrap;
+       display: flex;
+       align-items: center;
+    }
+
+    #leaderboard tbody td:nth-child(5) .cell-content {
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Ensure modal chart canvas has some height */
+    #styleChart {
+        min-height: 450px; /* Adjust as needed */
+    }
+
+
+
+
+    #styleCloudContainer {
+      width: 100%;
+      /* Adjust height as needed, make it responsive */
+      height: 400px;
+      min-height: 300px;
+      max-height: 60vh; /* Limit height on tall screens */
+      border: 1px solid var(--border-color, #ccc); /* Optional border */
+      border-radius: 4px;
+      position: relative; /* Needed for potential internal absolute positioning by library */
+      margin-bottom: 1rem; /* Add some space below */
+    }
+    body.dark-mode #styleCloudContainer {
+       border-color: var(--accent-border-color, #555);
+    }
+
+
+
+    @media (min-width: 768px) and (max-width: 991px) {
+      .modal-xl .row .col-lg-6 {
+        width: 100%; /* Make columns stack at medium size */
+      }
+      
+      .modal-xl .chart-container {
+        max-width: 100%;
+        height: 300px !important; /* Force height for bar charts */
+      }
+      
+      .modal-xl .chart-container[style*="aspect-ratio"] {
+        height: 0 !important;
+        padding-bottom: 62.5% !important; /* This creates a 1.6:1 aspect ratio */
+      }
+    }
+
+
+
+    /* Responsive adjustments for medium-sized screens */
+    @media (min-width: 768px) and (max-width: 991px) {
+      /* Force charts to stack in medium view */
+      #abilitiesProfileModal .modal-xl .row .col-lg-6 {
+        width: 100%;
+        margin-bottom: 1.5rem;
+      }
+      
+      /* Set fixed height for bar charts */
+      #abilitiesProfileModal .chart-container {
+        max-width: 100%; 
+        height: 300px !important;
+      }
+      
+      /* Special handling for radar charts with aspect ratio */
+      #abilitiesProfileModal .chart-container[style*="aspect-ratio"] {
+        height: 0 !important;
+        padding-bottom: 62.5% !important; /* Creates a 1.6:1 aspect ratio */
+        position: relative;
+      }
+      
+      #abilitiesProfileModal .chart-container[style*="aspect-ratio"] canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    /* Ensure modals can grow taller on smaller screens */
+    @media (max-height: 700px) {
+      #abilitiesProfileModal .modal-body {
+        max-height: 70vh;
+        overflow-y: auto;
+      }
+    }
+
+    /* Improve chart responsiveness */
+    .chart-container {
+      position: relative;
+      width: 100%;
+      transition: height 0.3s ease;
+    }
+
+    /* Make sure modal can be wider on large screens */
+    @media (min-width: 992px) {
+      .modal-xl {
+        max-width: 1140px;
+      }
+    }
   </style>
 </head>
 <body class="creative-writing-page">
@@ -571,6 +723,7 @@
             <th class="mobile-collapsible">Repetition</th>
             <!-- New column "Abilities" -->
             <th>Abilities</th>
+            <th class="mobile-collapsible">Style</th>
             <th class="mobile-collapsible">Rubric Score</th>
             <th>Elo Score</th>
             <th></th>
@@ -604,11 +757,13 @@
   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- NEW: Load Chart.js (v4) for the Abilities Modal charts -->
+  <!-- Load Chart.js (v4) for the Abilities Modal charts -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/wordcloud@1.2.2/src/wordcloud2.min.js"></script>
 
-  <!-- Your existing main script -->
+  <!-- main script -->
   <script defer src="creative_writing_chartdata.js?v=1.0.5"></script>
+  <script defer src="creative_writing_chartdata_style.js?v=1.0.5"></script>
   <script defer src="creative_writing.js?v=1.0.5"></script>
 
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1600fe1d3da743c1b311f4e5fee86767"}'></script>
@@ -660,6 +815,26 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Style Profile Modal -->
+  <div class="modal fade" id="styleProfileModal" tabindex="-1" aria-labelledby="styleProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="styleProfileModalLabel">Style Profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="styleProfileContent">
+          <!-- Container for the word cloud -->
+          <div id="styleCloudContainer"></div>
+          <p class="text-muted small mt-2">Word size represents association strength.</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

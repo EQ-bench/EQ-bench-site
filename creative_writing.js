@@ -1475,7 +1475,7 @@ const slopData = `##### deepseek-ai/DeepSeek-R1
 `
 //
 //  creative_writing.js
-//  (With chart improvements and no other changes)
+//  (Version 1.0.6 - Includes Style Profile column and chart)
 //
 
 // --- Global Scope Variables ---
@@ -1485,13 +1485,14 @@ let maxEloScore;
 let maxRubricScore;
 let baselineEloScore;
 let baselineRubricScore;
-let lastSortedScoreColumn = 6; // Because Elo is column index 6 now
+let lastSortedScoreColumn = 7; // Default sort is Elo, which is now column index 7
 
 // Chart.js references:
 let abilitiesAbsoluteRadarChart = null;
 let abilitiesRelativeRadarChart = null;
 let abilitiesStrengthsChart = null;
 let abilitiesWeaknessesChart = null;
+let styleChart = null; // Style chart instance
 // --- End Global Scope Variables ---
 
 // --- Dark Mode / Theme / Email Functions ---
@@ -1503,18 +1504,24 @@ function setupDarkModeToggle() {
     document.body.classList.toggle('dark-mode', savedMode === 'true');
     toggle.checked = (savedMode === 'true');
     label.textContent = (savedMode === 'true') ? 'Dark' : 'Light';
+  } else {
+    // Apply system theme only if no preference is saved
+    applySystemTheme();
   }
   toggle.addEventListener('change', function() {
     document.body.classList.toggle('dark-mode', this.checked);
     label.textContent = this.checked ? 'Dark' : 'Light';
     localStorage.setItem('darkModeEnabled', this.checked);
+    // Redraw table to apply potential dark mode styles within cells/charts
     if ($.fn.DataTable.isDataTable('#leaderboard')) {
       $('#leaderboard').DataTable().draw(false);
     }
+    // If modals are open, potentially update chart colors (more complex, might skip for now)
   });
 }
 
 function applySystemTheme() {
+  // This function is now primarily called initially if no setting exists
   if (localStorage.getItem('darkModeEnabled') === null) {
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const toggle = document.getElementById('darkModeToggle');
@@ -1522,6 +1529,7 @@ function applySystemTheme() {
     document.body.classList.toggle('dark-mode', prefersDarkMode);
     toggle.checked = prefersDarkMode;
     label.textContent = prefersDarkMode ? 'Dark' : 'Light';
+    // Don't save to localStorage here, let user toggle explicitly save it
   }
 }
 
@@ -1543,29 +1551,39 @@ function decodeHtmlEntities(encodedString) {
 }
 // --- End Dark Mode / Theme / Email Functions ---
 
+// --- Slop Profile Functions ---
 function parseSlopData(modelName) {
-  if (!slopData || !modelName) {
+  if (typeof slopData === 'undefined' || !slopData || !modelName) {
     return "<p><i>Slop profile data not available.</i></p>";
   }
+  // Escape special regex characters in model name
   const escapedModelName = modelName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const regex = new RegExp(`^#####\\s*${escapedModelName}\\s*$`, 'm');
+  // Regex to find the start of the model's section (case-insensitive matching for robustness)
+  const regex = new RegExp(`^#####\\s*${escapedModelName}\\s*$`, 'im');
   const match = slopData.split(regex);
 
   if (match.length > 1) {
+    // Content is the part after the first match
     const contentAfterDelimiter = match[1];
     if (contentAfterDelimiter) {
+      // Find the start of the *next* model's section
       const nextDelimiterMatch = contentAfterDelimiter.search(/^#####\s/m);
       if (nextDelimiterMatch !== -1) {
+        // Return content up to the next delimiter
         return contentAfterDelimiter.substring(0, nextDelimiterMatch).trim();
       } else {
+        // This is the last model in the file
         return contentAfterDelimiter.trim();
       }
     }
   }
+  // Fallback if model not found
   console.warn(`Slop profile not found for model: ${modelName}`);
   return `<p><i>Slop profile not found for model: ${modelName}</i></p>`;
 }
+// --- End Slop Profile Functions ---
 
+// --- Abilities Modal Function (UPDATED) ---
 function showAbilitiesModal(modelName) {
   if (typeof chartData === 'undefined' || !chartData[modelName]) {
     console.warn("No chart data found for: ", modelName);
@@ -1583,9 +1601,9 @@ function showAbilitiesModal(modelName) {
   if (abilitiesStrengthsChart) abilitiesStrengthsChart.destroy();
   if (abilitiesWeaknessesChart) abilitiesWeaknessesChart.destroy();
 
-  // Re-inject canvas with responsive layout
+  // Re-inject canvas elements to ensure clean state
+  // UPDATED: Add responsive classes and better container structure
   document.getElementById('abilitiesProfileContent').innerHTML = `
-  <!-- Radar charts in a responsive row -->
   <div class="row mb-4">
     <div class="col-lg-6 mb-4 mb-lg-0">
       <div class="chart-container" style="position: relative; height: auto; aspect-ratio: 1.6/1;">
@@ -1598,34 +1616,34 @@ function showAbilitiesModal(modelName) {
       </div>
     </div>
   </div>
-  
-  <!-- Bar charts row - already responsive -->
   <div class="row">
-    <div class="col-md-6 mb-4">
-      <div class="chart-container" style="max-width: 800px; margin: 0 auto;">
+    <div class="col-md-12 col-lg-6 mb-4">
+      <div class="chart-container" style="position: relative; height: 200px;">
         <canvas id="abilitiesStrengthsChart"></canvas>
       </div>
     </div>
-    <div class="col-md-6 mb-4">
-      <div class="chart-container" style="max-width: 800px; margin: 0 auto;">
+    <div class="col-md-12 col-lg-6 mb-4">
+      <div class="chart-container" style="position: relative; height: 200px;">
         <canvas id="abilitiesWeaknessesChart"></canvas>
       </div>
     </div>
   </div>
   `;
 
-  // Check dark mode
+  // Check dark mode for colors
   const isDarkMode = document.body.classList.contains('dark-mode');
   const axisColor = isDarkMode ? '#eee' : '#333';
   const gridColor = isDarkMode ? '#666' : '#ccc';
+  const titleColor = isDarkMode ? '#eee' : '#333';
+  const pointLabelColor = isDarkMode ? '#ddd' : '#444';
 
-  // Get contexts
+  // Get contexts after re-injecting canvas
   const ctxAbs = document.getElementById('abilitiesAbsoluteRadar').getContext('2d');
   const ctxRel = document.getElementById('abilitiesRelativeRadar').getContext('2d');
   const ctxStr = document.getElementById('abilitiesStrengthsChart').getContext('2d');
   const ctxWeak = document.getElementById('abilitiesWeaknessesChart').getContext('2d');
 
-  // (1) Absolute Radar
+  // (1) Absolute Radar Chart
   abilitiesAbsoluteRadarChart = new Chart(ctxAbs, {
     type: 'radar',
     data: {
@@ -1635,93 +1653,72 @@ function showAbilitiesModal(modelName) {
         data: data.absoluteRadar.values,
         backgroundColor: 'rgba(54, 162, 235, 0.2)',
         borderColor: 'rgba(54, 162, 235, 1)',
-        pointBackgroundColor: 'rgba(54, 162, 235, 1)'
+        pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(54, 162, 235, 1)'
       }]
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      animation: {
-        duration: 0 // Set animation duration to 0 to disable animations
-      },
+      animation: { duration: 0 },
       scales: {
         r: {
           beginAtZero: true,
           suggestedMin: 0,
-          suggestedMax: 20,
-          ticks: {
-            color: axisColor,
-            backdropColor: 'transparent',
-            showLabelBackdrop: false
-          },
-          pointLabels: { color: axisColor },
+          suggestedMax: 20, // Or dynamically calculate based on data max
+          ticks: { color: axisColor, backdropColor: 'transparent', showLabelBackdrop: false },
+          pointLabels: { color: pointLabelColor, font: { size: 11 } },
           grid: { color: gridColor },
           angleLines: { color: gridColor }
         }
       },
       plugins: {
-        title: {
-          display: true,
-          text: 'Absolute Scores',
-          color: axisColor,
-          font: {
-            size: 20
-          }
-        },
-        legend: { display: false, labels: { color: axisColor } }
+        title: { display: true, text: 'Absolute Scores', color: titleColor, font: { size: 16 } },
+        legend: { display: false }
       }
     }
   });
 
-  // (2) Relative Radar
+  // (2) Relative Radar Chart - keeping same setup as before
   abilitiesRelativeRadarChart = new Chart(ctxRel, {
     type: 'radar',
     data: {
       labels: data.relativeRadarLog.labels,
       datasets: [{
-        label: 'Relative (Log Scale)',
+        label: 'Relative Score (Log Scale)',
         data: data.relativeRadarLog.values,
         backgroundColor: 'rgba(75, 192, 192, 0.2)',
         borderColor: 'rgba(75, 192, 192, 1)',
-        pointBackgroundColor: 'rgba(75, 192, 192, 1)'
+        pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(75, 192, 192, 1)'
       }]
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      animation: {
-        duration: 0 // Set animation duration to 0 to disable animations
-      },
+      animation: { duration: 0 },
       scales: {
         r: {
-          beginAtZero: false,
           min: -0.6,
           max: 0.4,
-          ticks: {
-            color: axisColor,
-            backdropColor: 'transparent',
-            showLabelBackdrop: false
-          },
-          pointLabels: { color: axisColor },
+          ticks: { color: axisColor, backdropColor: 'transparent', showLabelBackdrop: false },
+          pointLabels: { color: pointLabelColor, font: { size: 11 } },
           grid: { color: gridColor },
           angleLines: { color: gridColor }
         }
       },
       plugins: {
-        title: {
-          display: true,
-          text: 'Relative Scores',
-          color: axisColor,
-          font: {
-            size: 20
-          }
-        },
-        legend: { display: false, labels: { color: axisColor } }
+        title: { display: true, text: 'Relative Scores', color: titleColor, font: { size: 16 } },
+        legend: { display: false }
       }
     }
   });
 
-  // (3) Strengths
+  // (3) Strengths Bar Chart
   const strengthsLabels = data.strengths.map(x => x.criterion);
   const strengthsValues = data.strengths.map(x => x.relativeScore);
   abilitiesStrengthsChart = new Chart(ctxStr, {
@@ -1729,523 +1726,830 @@ function showAbilitiesModal(modelName) {
     data: {
       labels: strengthsLabels,
       datasets: [{
-        label: 'Strength (Rel)',
+        label: 'Relative Strength',
         data: strengthsValues,
-        backgroundColor: 'rgba(54, 162, 235, 0.8)'
+        backgroundColor: 'rgba(54, 162, 235, 0.8)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
       }]
     },
     options: {
       indexAxis: 'y',
       responsive: true,
-      animation: {
-        duration: 0 // Set animation duration to 0 to disable animations
-      },
+      maintainAspectRatio: false, // Allow height to be set by container
+      animation: { duration: 0 },
       plugins: {
-        title: {
-          display: true,
-          text: 'Strengths',
-          color: axisColor,
-          font: {
-            size: 20
-          }
-        },
+        title: { display: true, text: 'Strengths', color: titleColor, font: { size: 16 } },
         legend: { display: false }
       },
       scales: {
-        x: {
-          beginAtZero: true,
-          ticks: { color: axisColor },
-          grid: { color: gridColor }
-        },
-        y: {
-          ticks: { color: axisColor },
-          grid: { color: gridColor }
-        }
+        x: { beginAtZero: true, ticks: { color: axisColor }, grid: { color: gridColor } },
+        y: { ticks: { color: axisColor }, grid: { display: false } }
       }
     }
   });
 
-
-// (4) Weaknesses
-// Create a new scoped block with new variable names to avoid any conflicts
-{
+  // (4) Weaknesses Bar Chart
   const weaknessesLabels = data.weaknesses.map(x => x.criterion);
   const weaknessesValues = data.weaknesses.map(x => x.relativeScore);
-  
-  // Use different variable names to avoid any potential conflicts
+  // Reverse for display order (weakest at top)
   const weaknessesReversedLabels = [...weaknessesLabels].reverse();
   const weaknessesReversedValues = [...weaknessesValues].reverse();
-  
   abilitiesWeaknessesChart = new Chart(ctxWeak, {
     type: 'bar',
     data: {
       labels: weaknessesReversedLabels,
       datasets: [{
-        label: 'Weakness (Rel)',
+        label: 'Relative Weakness',
         data: weaknessesReversedValues,
-        backgroundColor: 'rgba(255, 99, 132, 0.8)'
+        backgroundColor: 'rgba(255, 99, 132, 0.8)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
       }]
     },
     options: {
       indexAxis: 'y',
       responsive: true,
-      animation: {
-        duration: 0 // Set animation duration to 0 to disable animations
-      },
+      maintainAspectRatio: false, // Allow height to be set by container
+      animation: { duration: 0 },
       plugins: {
-        title: {
-          display: true,
-          text: 'Weaknesses',
-          color: axisColor,
-          font: {
-            size: 20
-          }
-        },
+        title: { display: true, text: 'Weaknesses', color: titleColor, font: { size: 16 } },
         legend: { display: false }
       },
       scales: {
-        x: {
-          beginAtZero: true,
-          ticks: { color: axisColor },
-          grid: { color: gridColor }
-        },
-        y: {
-          ticks: { color: axisColor },
-          grid: { color: gridColor }
-        }
+        x: { beginAtZero: true, ticks: { color: axisColor }, grid: { color: gridColor } },
+        y: { ticks: { color: axisColor }, grid: { display: false } }
       }
     }
   });
-}
+
+  // Add resize event listener to handle responsive behavior
+  window.removeEventListener('resize', resizeModalCharts);
+  window.addEventListener('resize', resizeModalCharts);
 
   // Show the modal
   const abilitiesModal = new bootstrap.Modal(document.getElementById('abilitiesProfileModal'));
   document.getElementById('abilitiesProfileModalLabel').textContent = `Abilities Overview: ${modelName}`;
   abilitiesModal.show();
+  
+  // Modal shown event to force chart resize
+  document.getElementById('abilitiesProfileModal').addEventListener('shown.bs.modal', function() {
+    resizeModalCharts();
+  });
 }
 
-// Gradient logic for visible bars
+// Add a new function to handle chart resize when window size changes
+function resizeModalCharts() {
+  if (abilitiesAbsoluteRadarChart) abilitiesAbsoluteRadarChart.resize();
+  if (abilitiesRelativeRadarChart) abilitiesRelativeRadarChart.resize();
+  if (abilitiesStrengthsChart) abilitiesStrengthsChart.resize();
+  if (abilitiesWeaknessesChart) abilitiesWeaknessesChart.resize();
+}
+
+
+
+
+// --- Style Modal Function ---
+// --- Style Modal Function (REWRITTEN for Word Cloud - with Modal Event Fix) ---
+function showStyleModal(modelName) {
+  const contentElement = document.getElementById('styleProfileContent');
+  const modalTitleElement = document.getElementById('styleProfileModalLabel');
+  const styleModalElement = document.getElementById('styleProfileModal'); // Get modal element
+
+  // Ensure elements exist
+  if (!contentElement || !modalTitleElement || !styleModalElement) {
+      console.error("Style modal elements not found!");
+      return;
+  }
+
+  // Get the Bootstrap Modal instance
+  const styleModal = bootstrap.Modal.getOrCreateInstance(styleModalElement);
+
+  // --- Prepare Content Area ---
+  // Set loading message initially
+  contentElement.innerHTML = `
+      <div id="styleCloudContainer" style="width: 100%; height: 500px; min-height: 300px; max-height: 60vh; border: 1px solid var(--border-color, #ccc); border-radius: 4px; position: relative; margin-bottom: 1rem;">
+          <p class="text-center p-3"><i>Loading style data...</i></p>
+      </div>
+      <p> </p>`;
+  const containerElement = document.getElementById('styleCloudContainer'); // Get container AFTER setting innerHTML
+
+  // --- Check Data Availability ---
+  if (typeof styleAssociationData === 'undefined' || !styleAssociationData[modelName] || !styleAssociationData[modelName].mostFavored || styleAssociationData[modelName].mostFavored.length === 0) {
+      console.warn("No style data found or empty for: ", modelName);
+      if (containerElement) {
+          containerElement.innerHTML = `<p class="text-center p-3"><i>No style profile data available for ${modelName}.</i></p>`;
+      }
+      modalTitleElement.textContent = `Style Profile: ${modelName}`;
+      styleModal.show(); // Show modal even if no data
+      return;
+  }
+
+  // --- Prepare Data (outside the event listener) ---
+  const data = styleAssociationData[modelName].mostFavored;
+  const filteredData = data.filter(item => item.word.toLowerCase() !== "crisp");
+
+  const topTraits = filteredData
+      .sort((a, b) => b.strength - a.strength)
+      .slice(0, 40);
+
+  const strengths = topTraits.map(item => item.strength);
+  const minStrength = Math.min(...strengths);
+  const maxStrength = Math.max(...strengths);
+  const minFontSize = 10;
+  const maxFontSize = 65;
+
+  const listData = topTraits.map(item => {
+      let size;
+      if (maxStrength === minStrength) {
+          size = (minFontSize + maxFontSize) / 2;
+      } else {
+          const scale = (item.strength - minStrength) / (maxStrength - minStrength);
+          size = minFontSize + scale * (maxFontSize - minFontSize);
+      }
+      size = Math.max(size, minFontSize);
+      // Filter out empty words just in case
+      const word = typeof item.word === 'string' ? item.word.trim() : '';
+      return word ? [word, Math.round(size)] : null;
+  }).filter(item => item !== null); // Remove null entries from filtered words
+
+  if (listData.length === 0) {
+       console.warn("No valid words left after filtering for: ", modelName);
+       if (containerElement) {
+          containerElement.innerHTML = `<p class="text-center p-3"><i>No valid style traits found for ${modelName}.</i></p>`;
+       }
+       modalTitleElement.textContent = `Style Profile: ${modelName}`;
+       styleModal.show();
+       return;
+  }
+
+
+  // --- Prepare Options (outside the event listener) ---
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  const cloudBgColor = isDarkMode ? '#333' : '#fff';
+  const cloudColor = isDarkMode ? 'random-light' : 'random-dark';
+
+  const options = {
+      list: listData,
+      gridSize: Math.round(16 * maxFontSize / 60),
+      weightFactor: 1,
+      fontFamily: 'sans-serif',
+      color: cloudColor,
+      backgroundColor: cloudBgColor,
+      rotateRatio: 0.0,
+      minSize: 5,
+      drawOutOfBound: false,      
+      hover: (item, dimension, event) => {
+          if (item) {
+              const originalStrength = styleAssociationData[modelName].mostFavored.find(t => t.word === item[0])?.strength;
+              if (originalStrength !== undefined) {
+                  event.target.title = `${item[0]}: ${originalStrength.toFixed(5)}`;
+              }
+          } else {
+               event.target.title = '';
+          }
+      },
+      click: (item, dimension, event) => {
+          if (item) console.log(item[0] + ': ' + item[1]);
+      }
+  };
+
+  // --- Event Listener to Generate Cloud AFTER Modal is Shown ---
+  // Remove previous listener if any (important!)
+  styleModalElement.removeEventListener('shown.bs.modal', generateCloud);
+
+  // Define the function to be called by the listener
+  function generateCloud() {
+      // Need to get container again inside listener scope? Maybe not needed if containerElement is accessible.
+      const currentContainer = document.getElementById('styleCloudContainer');
+      if (!currentContainer) {
+          console.error("Container element not found inside shown.bs.modal listener");
+          return;
+      }
+      try {
+          if (typeof WordCloud !== 'undefined') {
+              currentContainer.innerHTML = ''; // Clear loading message
+              WordCloud(currentContainer, options);
+          } else {
+              console.error("WordCloud library is not loaded.");
+              currentContainer.innerHTML = '<p class="text-danger text-center p-3">Error: WordCloud library not loaded.</p>';
+          }
+      } catch (error) {
+          console.error("Error generating word cloud:", error);
+          currentContainer.innerHTML = '<p class="text-danger text-center p-3">Error generating word cloud.</p>';
+      }
+      // IMPORTANT: Remove the listener after it runs once to prevent duplicates
+      styleModalElement.removeEventListener('shown.bs.modal', generateCloud);
+  }
+
+  // Add the event listener
+  styleModalElement.addEventListener('shown.bs.modal', generateCloud, { once: true }); // Use { once: true } for cleaner removal
+
+  // --- Show the Modal ---
+  modalTitleElement.textContent = `Style Profile: ${modelName}`;
+  styleModal.show();
+}
+// --- End Style Modal Function ---
+// --- End Style Modal Function ---
+
+// --- Gradient logic for visible bars ---
 function updateScoreBarColorsV3() {
   const scoreBars = document.querySelectorAll('#leaderboard .creative-writing-score-bar');
   const isDarkMode = document.body.classList.contains('dark-mode');
 
   scoreBars.forEach((bar) => {
-    if ($(bar).is(':visible')) {
-      const overallIndex = $(bar).closest('tr').index();
-      const totalRows = $('#leaderboard tbody tr').length;
+    // Check if the bar itself is visible (display: block or inline-block etc., not none)
+    if (bar.offsetParent !== null) { // A common way to check visibility
+      const row = bar.closest('tr');
+      if (!row) return;
+
+      // Get the current displayed index (might change with filtering/paging if enabled)
+      // For non-paged tables, index() is usually reliable for visual order
+      const overallIndex = $(row).index();
+      const totalRows = $('#leaderboard tbody tr:visible').length; // Count only visible rows
       if (totalRows === 0) return;
 
+      // Calculate gradient based on visual position
       const startPercent = (overallIndex / totalRows);
       const endPercent = ((overallIndex + 1) / totalRows);
-      const lightness = isDarkMode ? '50%' : '80%';
-      const startColor = `hsl(${startPercent * 360}, 40%, ${lightness})`;
-      const endColor = `hsl(${endPercent * 360}, 40%, ${lightness})`;
-      bar.style.background = `linear-gradient(to bottom, ${startColor}, ${endColor})`;
+
+      // Adjust lightness based on dark mode
+      const lightness = isDarkMode ? '50%' : '80%'; // Example lightness values
+      const saturation = isDarkMode ? '50%' : '60%'; // Example saturation
+
+      // Generate HSL colors for a smooth rainbow effect
+      const startColor = `hsl(${startPercent * 360}, ${saturation}, ${lightness})`;
+      const endColor = `hsl(${endPercent * 360}, ${saturation}, ${lightness})`;
+
+      // Apply gradient
+      bar.style.background = `linear-gradient(to right, ${startColor}, ${endColor})`;
     }
   });
 }
+// --- End Gradient logic ---
 
 function loadLeaderboardData() {
+  // Ensure the data variable exists
+  if (typeof leaderboardDataCreativeWritingV3 === 'undefined') {
+      console.error("leaderboardDataCreativeWritingV3 is not defined. Make sure the data file is loaded.");
+      document.getElementById('leaderboardBody').innerHTML = '<tr><td colspan="9">Error loading leaderboard data.</td></tr>';
+      return;
+  }
+
   const creativeWritingRows = leaderboardDataCreativeWritingV3
     .split('\n')
-    .slice(1)
-    .filter(l => l.trim() !== '');
+    .slice(1) // Skip header row
+    .filter(l => l.trim() !== ''); // Remove empty lines
 
+  if (creativeWritingRows.length === 0) {
+      document.getElementById('leaderboardBody').innerHTML = '<tr><td colspan="9">No leaderboard data available.</td></tr>';
+      return; // No data to process
+  }
+
+  // --- Elo/Rubric Scaling ---
   const originalEloScores = creativeWritingRows.map(row => parseFloat(row.split(',')[1])).filter(s => !isNaN(s));
-  const originalMaxElo = Math.max(...originalEloScores);
-  const originalMinElo = Math.min(...originalEloScores);
+  const originalRubricScores = creativeWritingRows.map(row => parseFloat(row.split(',')[2])).filter(s => !isNaN(s)); // Get original rubric for scaling
 
-  eloScores = originalEloScores.map(score => {
-    const scaleFactor = (1500 - 200) / (originalMaxElo - originalMinElo);
-    return 200 + (score - originalMinElo) * scaleFactor;
+  // Handle cases with no valid scores
+  const originalMaxElo = originalEloScores.length > 0 ? Math.max(...originalEloScores) : 1200; // Default max if empty
+  const originalMinElo = originalEloScores.length > 0 ? Math.min(...originalEloScores) : 800; // Default min if empty
+  const originalMaxRubric = originalRubricScores.length > 0 ? Math.max(...originalRubricScores) : 20; // Use original scale max
+  const originalMinRubric = originalRubricScores.length > 0 ? Math.min(...originalRubricScores) : 0; // Use original scale min
+
+  // Avoid division by zero if all scores are the same
+  const eloRange = (originalMaxElo - originalMinElo) || 1;
+  const rubricRange = (originalMaxRubric - originalMinRubric) || 1;
+
+  // Calculate scaled scores globally for consistency
+  eloScores = creativeWritingRows.map(row => {
+      const score = parseFloat(row.split(',')[1]);
+      if (isNaN(score)) return 200; // Default low score for missing data
+      const scaleFactor = (1500 - 200) / eloRange;
+      return 200 + (score - originalMinElo) * scaleFactor;
   });
 
-  // Scale rubric by * 5
-  rubricScores = creativeWritingRows.map(row => parseFloat(row.split(',')[2]) * 5).filter(s => !isNaN(s));
+  rubricScores = creativeWritingRows.map(row => {
+      const score = parseFloat(row.split(',')[2]);
+      if (isNaN(score)) return 0; // Default low score
+      // Scale rubric by * 5 AFTER getting min/max on original scale
+      return score * 5;
+  });
 
+  // Determine global max/min for bars based on SCALED scores
   maxEloScore = eloScores.length > 0 ? Math.max(...eloScores) : 1500;
-  maxRubricScore = rubricScores.length > 0 ? Math.max(...rubricScores) : 100;
-  baselineEloScore = eloScores.length > 0 ? Math.min(400, Math.min(...eloScores) - 50) : 150;
-  baselineRubricScore = rubricScores.length > 0 ? Math.max(0, Math.min(...rubricScores) - 1) : 30;
+  maxRubricScore = rubricScores.length > 0 ? Math.max(...rubricScores) : 100; // Max is 20 * 5 = 100
+  // Set baselines relative to scaled scores
+  baselineEloScore = eloScores.length > 0 ? Math.max(150, Math.min(...eloScores) - 50) : 150; // Ensure baseline isn't negative
+  baselineRubricScore = rubricScores.length > 0 ? Math.max(0, Math.min(...rubricScores) - 5) : 0; // Baseline for 0-100 scale
 
-  let html = creativeWritingRows.map(row => {
+  // --- End Scaling ---
+
+  let html = creativeWritingRows.map((row, index) => { // Use index to access pre-calculated scaled scores
     let [
       modelNameRaw,
-      eloScore,
-      creativeWritingScore,
+      _originalElo, // We use the scaled version now
+      _originalRubric, // We use the scaled version now
       avgLength,
       vocabComplexity,
       slopScore,
       repetitionScore
     ] = row.split(',');
 
-    const originalEloScoreNum = parseFloat(eloScore);
-    const originalRubricScoreNum = parseFloat(creativeWritingScore);
-    const eloScaleFactor = (1500 - 200) / (originalMaxElo - originalMinElo);
-    const eloScoreNum = 200 + (originalEloScoreNum - originalMinElo) * eloScaleFactor;
-    const rubricScoreNum = originalRubricScoreNum * 5;
+    // --- Use pre-calculated scaled scores ---
+    const eloScoreNum = eloScores[index];
+    const rubricScoreNum = rubricScores[index];
+    // --- End Score Calculation ---
 
-    let vocabNum = parseFloat(vocabComplexity) / 10;
-    vocabNum = Math.min((vocabNum / 7.0) * 10, 10);
+    // --- Other Metric Calculations ---
+    let vocabNum = parseFloat(vocabComplexity) / 10; // Assuming vocab is 0-100 scale? Adjust if needed.
+    vocabNum = isNaN(vocabNum) ? 0 : Math.min((vocabNum / 7.0) * 10, 10); // Normalize example
 
-    const slopNum = (parseFloat(slopScore) / 10.0) / 7.2 * 10;
+    const slopNumRaw = parseFloat(slopScore);
+    const slopNum = isNaN(slopNumRaw) ? 0 : (slopNumRaw / 10.0) / 7.2 * 10; // Normalize example
+
     const lengthNum = parseInt(avgLength, 10);
-    const repetitionScoreNum = parseFloat(repetitionScore, 10);
+    const repetitionScoreNum = parseFloat(repetitionScore);
+    // --- End Other Metric Calculations ---
 
-    const eloScoreRange = maxEloScore - baselineEloScore;
+    // --- Calculate Percentages for Bars (using scaled scores and baselines) ---
+    const eloScoreRangeForBar = (maxEloScore - baselineEloScore) || 1; // Avoid division by zero
     const eloScoreRelativeToBaseline = eloScoreNum - baselineEloScore;
-    const eloScorePercentage = eloScoreRange > 0
-      ? Math.max(0, Math.min(100, (eloScoreRelativeToBaseline / eloScoreRange) * 100))
-      : 0;
+    const eloScorePercentage = Math.max(0, Math.min(100, (eloScoreRelativeToBaseline / eloScoreRangeForBar) * 100));
 
-    const rubricScoreRange = maxRubricScore - baselineRubricScore;
+    const rubricScoreRangeForBar = (maxRubricScore - baselineRubricScore) || 1; // Avoid division by zero
     const rubricScoreRelativeToBaseline = rubricScoreNum - baselineRubricScore;
-    const rubricScorePercentage = rubricScoreRange > 0
-      ? Math.max(0, Math.min(100, (rubricScoreRelativeToBaseline / rubricScoreRange) * 100))
-      : 0;
+    const rubricScorePercentage = Math.max(0, Math.min(100, (rubricScoreRelativeToBaseline / rubricScoreRangeForBar) * 100));
+    // --- End Percentage Calculation ---
 
-    let currentModelName = modelNameRaw;
+    // --- Model Name Handling ---
+    let currentModelName = modelNameRaw.trim(); // Trim whitespace
     const isNsfwModel = currentModelName.startsWith('!');
-    currentModelName = currentModelName.replace(/^\!/, '');
+    currentModelName = currentModelName.replace(/^!/, '');
     const isNewModel = currentModelName.startsWith('*');
     currentModelName = currentModelName.replace(/^\*/, '');
 
-    let displayModelName = currentModelName.split('/').pop();
-    if (isNsfwModel) displayModelName = '🔞' + displayModelName;
-    if (isNewModel) displayModelName = '🆕' + displayModelName;
+    let displayModelName = currentModelName.split('/').pop(); // Get last part if path
+    if (isNsfwModel) displayModelName = '🔞 ' + displayModelName;
+    if (isNewModel) displayModelName = '🆕 ' + displayModelName;
 
-    let modelNameDisplayHTML = currentModelName.includes('/')
-      ? `<a href="https://huggingface.co/${currentModelName}" target="_blank">${displayModelName}</a>`
-      : displayModelName;
+    let modelNameDisplayHTML = displayModelName; // Default to plain text
+    if (currentModelName.includes('/')) {
+        // Only add link if it looks like a Hugging Face repo ID
+        modelNameDisplayHTML = `<a href="https://huggingface.co/${currentModelName}" target="_blank" rel="noopener noreferrer">${displayModelName}</a>`;
+    }
 
-    let modelResultsFn = `results/creative-writing-v3/${currentModelName.replace(/\//g,'__')}.html`;
+    // Generate results link (ensure model name is filesystem-safe)
+    let safeModelName = currentModelName.replace(/\//g, '__').replace(/[^a-zA-Z0-9_.-]/g, '_');
+    let modelResultsFn = `results/creative-writing-v3/${safeModelName}.html`;
+    // --- End Model Name Handling ---
 
+    // --- Score Bar HTML ---
     let scoreBarEloHTML = `
       <div class="score-bar-container">
-        <div class="creative-writing-score-bar" style="width: ${eloScorePercentage}%; display: none;"></div>
+        <div class="creative-writing-score-bar" style="width: ${eloScorePercentage.toFixed(1)}%; display: none;"></div>
         <span class="score-text">${eloScoreNum.toFixed(1)}</span>
       </div>`;
 
     let scoreBarRubricHTML = `
       <div class="score-bar-container">
-        <div class="creative-writing-score-bar" style="width: ${rubricScorePercentage}%; display: none;"></div>
+        <div class="creative-writing-score-bar" style="width: ${rubricScorePercentage.toFixed(1)}%; display: none;"></div>
         <span class="score-text">${rubricScoreNum.toFixed(2)}</span>
       </div>`;
+    // --- End Score Bar HTML ---
 
+    // --- Icon Definitions ---
     const slopInfoIconUnicode = `
       <span class="slop-info-icon custom-info-icon" data-model-name="${currentModelName}" title="View Slop Profile">i</span>`;
-    //const abilitiesInfoIcon = `
-    //  <span class="abilities-info-icon custom-info-icon" data-model-name="${currentModelName}" title="View Abilities Charts">i</span>`;
     const abilitiesInfoIcon = `
       <span class="abilities-info-icon chart-icon" data-model-name="${currentModelName}" title="View Abilities Charts"><span></span></span>`;
+    const styleInfoIcon = `
+      <span class="style-info-icon chart-icon" data-model-name="${currentModelName}" title="View Style Profile"><span></span></span>`;
+    // --- End Icon Definitions ---
 
+    // --- Row HTML Generation (Updated Structure) ---
     return `
-      <tr data-original-elo-score="${eloScoreNum}"
+      <tr data-model-name-full="${currentModelName}"
+          data-original-elo-score="${eloScoreNum}"
           data-original-rubric-score="${rubricScoreNum}"
           data-vocab="${vocabNum}"
           data-gpt-slop="${slopNum}"
           data-repetition="${repetitionScoreNum}">
 
-        <td>
+        <td> <!-- Col 0: Model -->
           <div class="cell-content">
             ${modelNameDisplayHTML}
           </div>
         </td>
 
-        <td class="mobile-collapsible" data-order="${lengthNum}">
+        <td class="mobile-collapsible" data-order="${isNaN(lengthNum) ? -1 : lengthNum}"> <!-- Col 1: Length -->
           <div class="cell-content">
             ${isNaN(lengthNum) ? '-' : lengthNum}
           </div>
         </td>
 
-        <td class="mobile-collapsible" data-order="${slopNum}">
+        <td class="mobile-collapsible" data-order="${slopNum.toFixed(1)}"> <!-- Col 2: Slop -->
           <div class="cell-content">
             ${slopNum.toFixed(1)}
             ${slopInfoIconUnicode}
           </div>
         </td>
 
-        <td class="mobile-collapsible" data-order="${repetitionScoreNum}">
+        <td class="mobile-collapsible" data-order="${isNaN(repetitionScoreNum) ? -1 : repetitionScoreNum.toFixed(1)}"> <!-- Col 3: Repetition -->
           <div class="cell-content">
             ${isNaN(repetitionScoreNum) ? '-' : repetitionScoreNum.toFixed(1)}
           </div>
         </td>
 
-        <!-- Abilities column -->
-        <td>
+        <td> <!-- Col 4: Abilities -->
           <div class="cell-content">
             ${abilitiesInfoIcon}
           </div>
         </td>
 
-        <td class="mobile-collapsible" data-order="${rubricScoreNum}">
+        <td class="mobile-collapsible">
+          <div class="cell-content">
+            ${styleInfoIcon}
+          </div>
+        </td>
+
+        <td class="mobile-collapsible" data-order="${rubricScoreNum.toFixed(2)}"> <!-- Col 6: Rubric Score -->
           <div class="cell-content">
             ${scoreBarRubricHTML}
           </div>
         </td>
 
-        <td data-order="${eloScoreNum}">
+        <td data-order="${eloScoreNum.toFixed(1)}"> <!-- Col 7: Elo Score -->
           <div class="cell-content">
             ${scoreBarEloHTML}
           </div>
         </td>
 
-        <td>
+        <td> <!-- Col 8: Sample Link -->
           <div class="cell-content">
-            <a href="${modelResultsFn}">Sample</a>
+            <a href="${modelResultsFn}" target="_blank">Sample</a>
           </div>
         </td>
       </tr>
     `;
+    // --- End Row HTML Generation ---
   }).join('');
 
   document.getElementById('leaderboardBody').innerHTML = html;
-  initializeDataTable();
+  initializeDataTable(); // Initialize DataTable after adding rows
 }
 
-// DataTable config
+// --- DataTable config (Updated Indices) ---
 let dataTableConfig = {
-  order: [[6, "desc"]], // Elo is at column index 6
-  paging: false,
-  searching: false,
-  info: true,
-  lengthChange: false,
+  order: [[7, "desc"]], // Default sort by Elo (now index 7)
+  paging: false, // Keep paging disabled
+  searching: false, // Keep search disabled
+  info: true, // Show 'Showing X of Y entries'
+  lengthChange: false, // Hide 'Show X entries' dropdown
   columnDefs: [
+    // Target indices adjusted for the new "Style" column at index 5
+    { targets: [0], type: 'string' }, // Model Name
     { targets: [1], type: 'num' }, // Length
     { targets: [2], type: 'num' }, // Slop
     { targets: [3], type: 'num' }, // Repetition
-    // 4 is Abilities (not numeric)
-    { targets: [5], type: 'num' }, // Rubric Score
-    { targets: [6], type: 'num' }, // Elo Score
-    { targets: [5, 6], orderSequence: ["desc","asc"] }, // Rubric, Elo
-    { targets: [1,2], orderSequence: ["desc","asc"] },  // Length, Slop
-    { targets: [3], orderSequence: ["asc","desc"] }     // Repetition
-  ],
-  dom: "<'d-flex flex-column flex-md-row justify-content-between align-items-center mb-2'<'#toggleMobilePlaceholder'><'ms-md-auto'f>>" +
-       "<'row'<'col-12'tr>>" +
-       "<'row mt-2'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+    { targets: [4, 5], orderable: false }, // Abilities, Style (icons, not sortable)
+    { targets: [6], type: 'num' }, // Rubric Score (was 5)
+    { targets: [7], type: 'num' }, // Elo Score (was 6)
+    { targets: [8], orderable: false }, // Sample Link (not sortable)
 
+    // Define sorting directions
+    { targets: [6, 7], orderSequence: ["desc", "asc"] }, // Rubric, Elo (desc first)
+    { targets: [1, 2], orderSequence: ["desc", "asc"] }, // Length, Slop (desc first)
+    { targets: [3], orderSequence: ["asc", "desc"] }     // Repetition (asc first - less is better)
+  ],
+  // Custom DOM layout for placing elements
+  dom: "<'d-flex flex-column flex-md-row justify-content-between align-items-center mb-2'<'#toggleMobilePlaceholder'><'ms-md-auto'f>>" + // Placeholder for toggle, filter (though search is false)
+       "<'row'<'col-12'tr>>" + // Table row
+       "<'row mt-2'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>", // Info and pagination (though paging is false)
+
+  // Callback after table draw
   drawCallback: function(settings) {
     let api = this.api();
-    if (!api) return;
+    if (!api || api.rows().count() === 0) return; // Exit if no API or no rows
+
     let order = api.order();
+    // Ensure order is set, default to Elo if somehow lost
     if (!order || order.length === 0) {
-      order = [[6, 'desc']];
+      order = [[7, 'desc']]; // Default to Elo (index 7)
+      api.order(order).draw(false); // Apply default order if needed
+      return; // Redraw will trigger callback again
     }
 
     let sortedColumnIndex = order[0][0];
 
-    const SCORE_COLUMNS = [5, 6];
-    const NON_SCORE_COLUMNS = [0,1,2,3,4,7];
+    // Updated indices for score columns
+    const SCORE_COLUMNS = [6, 7]; // Rubric, Elo
+    const NON_SCORE_COLUMNS = [0, 1, 2, 3, 4, 5, 8]; // All other columns
 
     const tableNode = $(api.table().node());
+    // Hide all score bars initially
     tableNode.find('.creative-writing-score-bar').hide();
-    tableNode.find('th').css('width', '');
+    // Reset header widths (might be needed if previously set)
+    tableNode.find('thead th').css('width', '');
 
     let columnToShowBar = -1;
+    // Determine which score bar to show based on current sort
     if (SCORE_COLUMNS.includes(sortedColumnIndex)) {
       columnToShowBar = sortedColumnIndex;
-      lastSortedScoreColumn = sortedColumnIndex;
+      lastSortedScoreColumn = sortedColumnIndex; // Remember the last score column sorted
     } else if (NON_SCORE_COLUMNS.includes(sortedColumnIndex) && lastSortedScoreColumn !== null) {
+      // If sorting a non-score column, show the bar of the *last sorted* score column
       columnToShowBar = lastSortedScoreColumn;
     } else {
-      columnToShowBar = 6;
-      lastSortedScoreColumn = 6;
+      // Default to showing Elo bar if no score column was previously sorted or remembered
+      columnToShowBar = 7; // Elo index
+      lastSortedScoreColumn = 7;
     }
 
+    // Show the selected score bar and adjust header width
     if (columnToShowBar !== -1) {
       try {
-        api.rows({ page: 'current' })
+        // Use :eq() selector to target the correct TD index
+        api.rows({ page: 'current' }) // Ensure it works with paging if ever enabled
            .nodes()
-           .to$()
+           .to$() // Convert to jQuery object
            .find(`td:eq(${columnToShowBar}) .creative-writing-score-bar`)
            .show();
+
+        // Adjust the width of the corresponding header for visual emphasis
         let header = api.column(columnToShowBar).header();
         if (header) {
-          $(header).css('width', '30%');
+          $(header).css('width', '30%'); // Make the sorted score column wider
         }
       } catch (e) {
-        console.error("Error showing score bar or adjusting width:", e);
+        console.error("Error showing score bar or adjusting header width:", e);
       }
     }
+    // Update the gradient colors after showing/hiding bars
     updateScoreBarColorsV3();
   }
 };
+// --- End DataTable config ---
 
-let middleStatsExpanded = false;
+// --- Mobile Collapse Logic ---
+let middleStatsExpanded = false; // Track state for mobile toggle
+
 function collapseMiddleColumns() {
-  const isMobile = window.innerWidth < 768;
-  if (isMobile && !middleStatsExpanded) {
-    $('#leaderboard .mobile-collapsible').hide();
-    $('#toggleMiddleStats').text('Expand Details');
+  const isMobile = window.innerWidth < 768; // Define mobile breakpoint
+  const toggleButton = $('#toggleMiddleStats');
+
+  if (isMobile) {
+      // Show the toggle button only on mobile
+      toggleButton.removeClass('d-none').addClass('show-details-toggle-button');
+      if (!middleStatsExpanded) {
+          // If mobile and not expanded, hide collapsible columns
+          $('#leaderboard .mobile-collapsible').hide();
+          toggleButton.text('Expand Details');
+      } else {
+          // If mobile and expanded, show collapsible columns
+          $('#leaderboard .mobile-collapsible').show();
+          toggleButton.text('Hide Details');
+      }
   } else {
-    $('#leaderboard .mobile-collapsible').show();
-    $('#toggleMiddleStats').text('Hide Details');
+      // On desktop, hide the toggle button and always show columns
+      toggleButton.addClass('d-none').removeClass('show-details-toggle-button');
+      $('#leaderboard .mobile-collapsible').show();
+  }
+  // Ensure DataTable adjusts layout if columns shown/hidden
+  if ($.fn.DataTable.isDataTable('#leaderboard')) {
+      $('#leaderboard').DataTable().columns.adjust();
   }
 }
-function toggleMiddleStats() {
-  middleStatsExpanded = !middleStatsExpanded;
-  collapseMiddleColumns();
-}
 
+function toggleMiddleStats() {
+  middleStatsExpanded = !middleStatsExpanded; // Flip the state
+  collapseMiddleColumns(); // Re-apply visibility based on new state
+}
+// --- End Mobile Collapse Logic ---
+
+// --- Initial Score Bar Fix ---
 function fixInitialScoreBars() {
+  // Delay slightly to ensure DataTable has finished its initial draw
   setTimeout(() => {
     if ($.fn.DataTable.isDataTable('#leaderboard')) {
-      updateScores();
+      // Trigger a redraw which will call drawCallback and show the correct bars
+      $('#leaderboard').DataTable().draw(false);
     }
-  }, 200);
+  }, 50); // Short delay
 }
+// --- End Initial Score Bar Fix ---
 
+// --- DataTable Initialization ---
 function initializeDataTable() {
+  // Destroy existing table if it exists to prevent conflicts
   if ($.fn.DataTable.isDataTable('#leaderboard')) {
     $('#leaderboard').DataTable().destroy();
+    // IMPORTANT: Unbind previous listeners to avoid duplicates
     $('#leaderboardBody').off('click', '.slop-info-icon');
     $('#leaderboardBody').off('click', '.abilities-info-icon');
+    $('#leaderboardBody').off('click', '.style-info-icon');
   }
+
+  // Initialize the DataTable with the configuration
   let table = $('#leaderboard').DataTable(dataTableConfig);
 
+  // --- Event Listeners for Icons ---
+  // Slop icon listener
   $('#leaderboardBody').on('click', '.slop-info-icon', function() {
     const modelName = $(this).data('model-name');
-    const profileHtml = parseSlopData(modelName);
-    const modalTitle = `Slop Profile: ${modelName.split('/').pop()}`;
-    $('#slopProfileContent').html(profileHtml);
-    $('#slopProfileModalLabel').text(modalTitle);
-    const slopModal = new bootstrap.Modal(document.getElementById('slopProfileModal'));
+    const profileHtml = parseSlopData(modelName); // Get the parsed slop text
+    const modalTitle = `Slop Profile: ${modelName.split('/').pop()}`; // Use short name for title
+    $('#slopProfileContent').html(profileHtml); // Set modal content
+    $('#slopProfileModalLabel').text(modalTitle); // Set modal title
+    // Use Bootstrap's JS to get the modal instance and show it
+    const slopModal = bootstrap.Modal.getOrCreateInstance(document.getElementById('slopProfileModal'));
     slopModal.show();
   });
 
-  // Abilities icon
+  // Abilities icon listener
   $('#leaderboardBody').on('click', '.abilities-info-icon', function() {
     const modelName = $(this).data('model-name');
-    showAbilitiesModal(modelName);
+    showAbilitiesModal(modelName); // Call the function to create charts and show modal
   });
 
+  // Style icon listener
+  $('#leaderboardBody').on('click', '.style-info-icon', function() {
+    const modelName = $(this).data('model-name');
+    showStyleModal(modelName); // Call the function to create chart and show modal
+  });
+  // --- End Event Listeners ---
+
+  // Perform actions once the table is fully initialized
   table.one('init.dt', function() {
-    collapseMiddleColumns();
-    setupControls();
-    fixInitialScoreBars();
+    collapseMiddleColumns(); // Set initial mobile column visibility
+    setupControls(); // Setup sliders (if any were active)
+    fixInitialScoreBars(); // Ensure default score bars are shown correctly
   });
 }
+// --- End DataTable Initialization ---
 
+// --- Control Setup (Sliders - currently hidden but logic remains) ---
 function setupControls() {
   const vocabSlider = document.getElementById('vocabControlSlider');
   const vocabSliderValueLabel = document.getElementById('vocabControlValue');
   const gptSlopSlider = document.getElementById('gptSlopControlSlider');
   const gptSlopSliderValueLabel = document.getElementById('gptSlopControlValue');
 
-  if (!gptSlopSlider) {
-    console.error("Required control sliders not found");
-    return;
-  }
-  if (gptSlopSliderValueLabel) {
-    gptSlopSliderValueLabel.textContent = `${gptSlopSlider.value}%`;
+  // Check if sliders exist before adding listeners
+  if (vocabSlider && vocabSliderValueLabel) {
+      vocabSliderValueLabel.textContent = `${vocabSlider.value}%`; // Set initial value display
+      if (!vocabSlider.hasListeners) { // Prevent adding multiple listeners
+          vocabSlider.oninput = function() {
+              vocabSliderValueLabel.textContent = `${this.value}%`;
+              updateScores(); // Recalculate scores when slider changes
+          };
+          vocabSlider.hasListeners = true;
+      }
   }
 
-  if (vocabSlider && !vocabSlider.hasListeners) {
-    vocabSlider.oninput = function() {
-      if (vocabSliderValueLabel) vocabSliderValueLabel.textContent = `${this.value}%`;
-      updateScores();
-    };
-    vocabSlider.hasListeners = true;
+  if (gptSlopSlider && gptSlopSliderValueLabel) {
+      gptSlopSliderValueLabel.textContent = `${gptSlopSlider.value}%`; // Set initial value display
+      if (!gptSlopSlider.hasListeners) { // Prevent adding multiple listeners
+          gptSlopSlider.oninput = function() {
+              gptSlopSliderValueLabel.textContent = `${this.value}%`;
+              updateScores(); // Recalculate scores when slider changes
+          };
+          gptSlopSlider.hasListeners = true;
+      }
   }
-  if (gptSlopSlider && !gptSlopSlider.hasListeners) {
-    gptSlopSlider.oninput = function() {
-      if (gptSlopSliderValueLabel) gptSlopSliderValueLabel.textContent = `${this.value}%`;
-      updateScores();
-    };
-    gptSlopSlider.hasListeners = true;
-  }
-  updateScores();
+  // Initial score calculation based on default slider values (if sliders are used)
+  // updateScores(); // Call this if sliders affect the initial view
 }
+// --- End Control Setup ---
 
+// --- Vocab/Slop Normalization/Calculation (Used by updateScores if sliders active) ---
 function normalizeVocabComplexity(value) {
-  const minVocab = 4.5;
-  const maxVocab = 10.0;
+  // Example normalization: scale 0-10 vocab score non-linearly
+  const minVocab = 4.5; // Assumed minimum meaningful vocab score
+  const maxVocab = 10.0; // Assumed maximum
+  if (isNaN(value)) return 0;
   const clampedValue = Math.max(minVocab, Math.min(maxVocab, value));
+  // Apply power scaling (e.g., ^2) to emphasize differences at higher end
   return Math.pow((clampedValue - minVocab) / (maxVocab - minVocab), 2);
 }
+
 function calculateAverageGptSlop() {
+  // Calculate average slop across all models currently in the table
   const gptSlops = Array.from(document.querySelectorAll('#leaderboardBody tr'))
     .map(row => parseFloat(row.getAttribute('data-gpt-slop')))
-    .filter(val => !isNaN(val));
-  return gptSlops.length > 0
-    ? gptSlops.reduce((a, b) => a + b, 0) / gptSlops.length
-    : 1;
+    .filter(val => !isNaN(val)); // Filter out NaN values
+
+  if (gptSlops.length === 0) return 1; // Avoid division by zero, return neutral value
+
+  const average = gptSlops.reduce((a, b) => a + b, 0) / gptSlops.length;
+  return average === 0 ? 1 : average; // Avoid returning 0 if all slops are 0
 }
+// --- End Vocab/Slop Normalization/Calculation ---
 
+// --- DOMContentLoaded ---
 document.addEventListener('DOMContentLoaded', function() {
-  displayEncodedEmail();
-  applySystemTheme();
-  setupDarkModeToggle();
+  displayEncodedEmail(); // Decode and display contact email
+  setupDarkModeToggle(); // Setup dark mode toggle and apply initial theme
 
+  // Check if the leaderboard container exists before trying to load data
   if (document.getElementById('leaderboard')) {
-    loadLeaderboardData();
+    loadLeaderboardData(); // Load data and build the table HTML
+
+    // Setup responsive behavior for mobile columns
     $(window).on('resize', collapseMiddleColumns);
     $('#toggleMiddleStats').on('click', toggleMiddleStats);
+
+    // Initial check for mobile columns after a short delay
     setTimeout(collapseMiddleColumns, 50);
+  } else {
+      console.error("Leaderboard container not found in the DOM.");
   }
 });
+// --- End DOMContentLoaded ---
 
+// --- Score Update Logic (For Sliders - currently inactive but functional) ---
 function updateScores() {
-  const vocabPercentage = document.getElementById('vocabControlSlider')
-    ? document.getElementById('vocabControlSlider').value
-    : 0;
-  const gptSlopPercentage = document.getElementById('gptSlopControlSlider').value;
+  // Get current slider values (default to 0 if sliders don't exist)
+  const vocabPercentage = document.getElementById('vocabControlSlider')?.value ?? 0;
+  const gptSlopPercentage = document.getElementById('gptSlopControlSlider')?.value ?? 0;
 
+  // Calculate adjustment factors based on slider percentages
   const vocabAdjustmentFactor = parseFloat(vocabPercentage) / 100;
+  // GPT Slop adjustment might have a different scale factor (e.g., 0.30)
   const gptSlopAdjustmentFactor = 0.30 * parseFloat(gptSlopPercentage) / 100;
+
+  // Calculate average slop for relative adjustments
   const avgGptSlop = calculateAverageGptSlop();
   const table = $('#leaderboard').DataTable();
 
+  // Iterate over each row in the table body
   $('#leaderboardBody tr').each(function() {
     const row = $(this);
+    // Retrieve original scores and metrics stored in data attributes
     const modelGptSlop = parseFloat(row.attr('data-gpt-slop'));
     const vocabComplexity = parseFloat(row.attr('data-vocab'));
     const originalEloScore = parseFloat(row.attr('data-original-elo-score'));
     const originalRubricScore = parseFloat(row.attr('data-original-rubric-score'));
 
+    // --- Calculate Adjustments ---
     let vocabAdjustment = 0;
-    if (!isNaN(vocabComplexity)) {
+    if (!isNaN(vocabComplexity) && vocabAdjustmentFactor > 0) {
       const normalizedVocab = normalizeVocabComplexity(vocabComplexity);
-      vocabAdjustment = -12.0 * normalizedVocab * vocabAdjustmentFactor;
+      // Example: Penalize lower vocab more heavily, scaled by slider
+      vocabAdjustment = -12.0 * (1 - normalizedVocab) * vocabAdjustmentFactor; // Adjust penalty logic as needed
     }
 
-    let gptSlopRatio = !isNaN(modelGptSlop) ? (modelGptSlop / avgGptSlop) : 1;
-    if (gptSlopRatio < 0.34) {
-      gptSlopRatio = 0.34;
-    }
     let gptSlopMultiplier = 1.0;
-    if (gptSlopRatio > 1) {
-      gptSlopMultiplier = 1 - (Math.log(gptSlopRatio) * gptSlopAdjustmentFactor);
-      gptSlopMultiplier = Math.max(gptSlopMultiplier, 0.85);
-    } else {
-      gptSlopMultiplier = 1 + (Math.log(1.5 / (gptSlopRatio + 0.5)) * gptSlopAdjustmentFactor);
-      gptSlopMultiplier = Math.min(gptSlopMultiplier, 1.02);
+    if (!isNaN(modelGptSlop) && gptSlopAdjustmentFactor > 0 && avgGptSlop !== 0) {
+        let gptSlopRatio = modelGptSlop / avgGptSlop;
+        // Apply logarithmic scaling for diminishing returns/penalties
+        // Penalize models with higher-than-average slop
+        if (gptSlopRatio > 1) {
+            gptSlopMultiplier = 1 - (Math.log(gptSlopRatio) * gptSlopAdjustmentFactor);
+            gptSlopMultiplier = Math.max(gptSlopMultiplier, 0.85); // Cap penalty
+        }
+        // Optionally, slightly reward models with lower-than-average slop
+        // else if (gptSlopRatio < 1) {
+        //     gptSlopMultiplier = 1 + (Math.log(1 / gptSlopRatio) * gptSlopAdjustmentFactor * 0.5); // Smaller reward factor
+        //     gptSlopMultiplier = Math.min(gptSlopMultiplier, 1.05); // Cap reward
+        // }
     }
+    // --- End Adjustment Calculation ---
 
-    const adjustedEloScore = originalEloScore * gptSlopMultiplier + 15 * vocabAdjustment;
+    // Calculate final adjusted scores
+    const adjustedEloScore = originalEloScore * gptSlopMultiplier + vocabAdjustment * 15; // Apply adjustments (scaling factors might differ)
     const adjustedRubricScore = originalRubricScore * gptSlopMultiplier + vocabAdjustment;
 
-    row.find('td:eq(6)')
-       .attr('data-order', adjustedEloScore.toFixed(1))
-       .find('.score-text').text(adjustedEloScore.toFixed(1));
+    // --- Update Table Cells (Indices are correct: Elo=7, Rubric=6) ---
+    // Update Elo Score cell (index 7)
+    const eloCell = row.find('td:eq(7)');
+    eloCell.attr('data-order', adjustedEloScore.toFixed(1)); // Update sort data
+    eloCell.find('.score-text').text(adjustedEloScore.toFixed(1)); // Update displayed text
 
-    row.find('td:eq(5)')
-       .attr('data-order', adjustedRubricScore.toFixed(2))
-       .find('.score-text').text(adjustedRubricScore.toFixed(2));
+    // Update Rubric Score cell (index 6)
+    const rubricCell = row.find('td:eq(6)');
+    rubricCell.attr('data-order', adjustedRubricScore.toFixed(2)); // Update sort data
+    rubricCell.find('.score-text').text(adjustedRubricScore.toFixed(2)); // Update displayed text
 
+    // --- Update Score Bar Widths ---
+    const eloScoreRangeForBar = (maxEloScore - baselineEloScore) || 1;
     const eloPercentage = Math.max(0, Math.min(100,
-      ((adjustedEloScore - baselineEloScore) / (maxEloScore - baselineEloScore)) * 100
+      ((adjustedEloScore - baselineEloScore) / eloScoreRangeForBar) * 100
     ));
+    const rubricScoreRangeForBar = (maxRubricScore - baselineRubricScore) || 1;
     const rubricPercentage = Math.max(0, Math.min(100,
-      ((adjustedRubricScore - baselineRubricScore) / (maxRubricScore - baselineRubricScore)) * 100
+      ((adjustedRubricScore - baselineRubricScore) / rubricScoreRangeForBar) * 100
     ));
 
-    row.find('td:eq(6) .creative-writing-score-bar').css('width', `${eloPercentage}%`);
-    row.find('td:eq(5) .creative-writing-score-bar').css('width', `${rubricPercentage}%`);
+    // Update width of bars in the correct cells
+    eloCell.find('.creative-writing-score-bar').css('width', `${eloPercentage.toFixed(1)}%`);
+    rubricCell.find('.creative-writing-score-bar').css('width', `${rubricPercentage.toFixed(1)}%`);
+    // --- End Update Score Bar Widths ---
   });
 
-  table.rows().invalidate();
-  table.draw(false);
-  updateScoreBarColorsV3();
+  // Invalidate DataTables internal data cache and redraw the table
+  // 'data' invalidation is important when data-order attributes change
+  table.rows().invalidate('data').draw(false); // 'false' preserves paging position
+
+  // updateScoreBarColorsV3(); // Redraw gradients (already called in drawCallback)
 }
+// --- End Score Update Logic ---
