@@ -23,7 +23,8 @@ gemini-2.0-flash-001,54.39,6858.12,53.32,55.46
 claude-3.7-sonnet-20250219,68.2,6537.55,67.69,68.71
 quasar-alpha,67.85,7809.31,67.44,68.27
 *chatgpt-4o-latest-2025-03-27,69.11,8326.49,68.03,70.19
-*gpt-4.1,67.1,7108.21,66.35,67.86`
+*gpt-4.1,67.1,7108.21,66.35,67.86
+*gemini-2.5-pro-preview-03-25,71.09,10555.93,69.58,72.59`
 
 function setupDarkModeToggle() {
     var toggle = document.getElementById('darkModeToggle');
