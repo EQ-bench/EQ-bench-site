@@ -33,8 +33,9 @@ claude-3-7-sonnet-20250219,81.54,0.912,0.773,0.889,$54.73
 qwen/qwq-32b,66.11,0.84,0.564,0.873,$3.23
 quasar-alpha,83.4,0.918,0.795,0.905,$0
 *gemini-2.5-pro-preview-03-25,80.11,0.902,0.759,0.869,$60.19
-*gpt-4.1-mini,76.33,0.905,0.685,0.935,$5.021
-*opencompass/CompassJudger-1-32B-Instruct,40.72,0.574,0.27,0.788,`
+*gpt-4.1-mini,76.33,0.905,0.685,0.935,$5.02
+*opencompass/CompassJudger-1-32B-Instruct,40.72,0.574,0.27,0.788,
+*gemini-2.5-flash-preview,76.48,0.893,0.711,0.853,$1.80`
 
 const csv_header = [
   "model",
