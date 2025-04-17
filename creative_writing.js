@@ -2246,34 +2246,34 @@ function loadLeaderboardData() {
           </div>
         </td>
 
-        <td class="mobile-collapsible" data-order="${isNaN(lengthNum) ? -1 : lengthNum}"> <!-- Col 1: Length -->
+        <td> <!-- Col 1: Abilities -->
           <div class="cell-content">
-            ${isNaN(lengthNum) ? '-' : lengthNum}
+            ${abilitiesInfoIcon}
           </div>
         </td>
 
-        <td class="mobile-collapsible" data-order="${slopNum.toFixed(1)}"> <!-- Col 2: Slop -->
+        <td class="mobile-collapsible"> <!-- Col 2: Style -->
+          <div class="cell-content">
+            ${styleInfoIcon}
+          </div>
+        </td>
+
+        <td class="mobile-collapsible" data-order="${slopNum.toFixed(1)}"> <!-- Col 3: Slop -->
           <div class="cell-content">
             ${slopNum.toFixed(1)}
             ${slopInfoIconUnicode}
           </div>
         </td>
 
-        <td class="mobile-collapsible" data-order="${isNaN(repetitionScoreNum) ? -1 : repetitionScoreNum.toFixed(1)}"> <!-- Col 3: Repetition -->
+        <td class="mobile-collapsible" data-order="${isNaN(repetitionScoreNum) ? -1 : repetitionScoreNum.toFixed(1)}"> <!-- Col 4: Repetition -->
           <div class="cell-content">
             ${isNaN(repetitionScoreNum) ? '-' : repetitionScoreNum.toFixed(1)}
           </div>
         </td>
 
-        <td> <!-- Col 4: Abilities -->
+        <td class="mobile-collapsible" data-order="${isNaN(lengthNum) ? -1 : lengthNum}"> <!-- Col 5: Length -->
           <div class="cell-content">
-            ${abilitiesInfoIcon}
-          </div>
-        </td>
-
-        <td class="mobile-collapsible">
-          <div class="cell-content">
-            ${styleInfoIcon}
+            ${isNaN(lengthNum) ? '-' : lengthNum}
           </div>
         </td>
 
@@ -2305,91 +2305,83 @@ function loadLeaderboardData() {
 
 // --- DataTable config (Updated Indices) ---
 let dataTableConfig = {
+  autoWidth: false, 
   order: [[7, "desc"]], // Default sort by Elo (now index 7)
-  paging: false, // Keep paging disabled
-  searching: false, // Keep search disabled
-  info: true, // Show 'Showing X of Y entries'
-  lengthChange: false, // Hide 'Show X entries' dropdown
+  paging: false,
+  searching: false,
+  info: true,
+  lengthChange: false,
   columnDefs: [
-    // Target indices adjusted for the new "Style" column at index 5
+    // New column index order: 
+    // 0: Model Name, 1: Abilities, 2: Style, 3: Slop, 4: Repetition, 5: Length, 6: Rubric, 7: Elo, 8: Sample
     { targets: [0], type: 'string' }, // Model Name
-    { targets: [1], type: 'num' }, // Length
-    { targets: [2], type: 'num' }, // Slop
-    { targets: [3], type: 'num' }, // Repetition
-    { targets: [4, 5], orderable: false }, // Abilities, Style (icons, not sortable)
-    { targets: [6], type: 'num' }, // Rubric Score (was 5)
-    { targets: [7], type: 'num' }, // Elo Score (was 6)
+    { targets: [1, 2], orderable: false }, // Abilities, Style (icons, not sortable)
+    { targets: [3], type: 'num' }, // Slop
+    { targets: [4], type: 'num' }, // Repetition
+    { targets: [5], type: 'num' }, // Length
+    { targets: [6], type: 'num' }, // Rubric Score
+    { targets: [7], type: 'num' }, // Elo Score
     { targets: [8], orderable: false }, // Sample Link (not sortable)
 
     // Define sorting directions
     { targets: [6, 7], orderSequence: ["desc", "asc"] }, // Rubric, Elo (desc first)
-    { targets: [1, 2], orderSequence: ["desc", "asc"] }, // Length, Slop (desc first)
-    { targets: [3], orderSequence: ["asc", "desc"] }     // Repetition (asc first - less is better)
+    { targets: [3, 5], orderSequence: ["desc", "asc"] }, // Slop, Length (desc first)
+    { targets: [4], orderSequence: ["asc", "desc"] }     // Repetition (asc first - less is better)
   ],
-  // Custom DOM layout for placing elements
-  dom: "<'d-flex flex-column flex-md-row justify-content-between align-items-center mb-2'<'#toggleMobilePlaceholder'><'ms-md-auto'f>>" + // Placeholder for toggle, filter (though search is false)
-       "<'row'<'col-12'tr>>" + // Table row
-       "<'row mt-2'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>", // Info and pagination (though paging is false)
+  // Custom DOM layout unchanged
+  dom: "<'d-flex flex-column flex-md-row justify-content-between align-items-center mb-2'<'#toggleMobilePlaceholder'><'ms-md-auto'f>>" +
+       "<'row'<'col-12'tr>>" +
+       "<'row mt-2'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
 
   // Callback after table draw
   drawCallback: function(settings) {
     let api = this.api();
-    if (!api || api.rows().count() === 0) return; // Exit if no API or no rows
+    if (!api || api.rows().count() === 0) return;
 
     let order = api.order();
-    // Ensure order is set, default to Elo if somehow lost
     if (!order || order.length === 0) {
-      order = [[7, 'desc']]; // Default to Elo (index 7)
-      api.order(order).draw(false); // Apply default order if needed
-      return; // Redraw will trigger callback again
+      order = [[7, 'desc']]; // Default to Elo (index 7 in new order)
+      api.order(order).draw(false);
+      return;
     }
 
     let sortedColumnIndex = order[0][0];
 
     // Updated indices for score columns
-    const SCORE_COLUMNS = [6, 7]; // Rubric, Elo
+    const SCORE_COLUMNS = [6, 7]; // Rubric, Elo (new indices)
     const NON_SCORE_COLUMNS = [0, 1, 2, 3, 4, 5, 8]; // All other columns
 
     const tableNode = $(api.table().node());
-    // Hide all score bars initially
     tableNode.find('.creative-writing-score-bar').hide();
-    // Reset header widths (might be needed if previously set)
     tableNode.find('thead th').css('width', '');
 
     let columnToShowBar = -1;
-    // Determine which score bar to show based on current sort
     if (SCORE_COLUMNS.includes(sortedColumnIndex)) {
       columnToShowBar = sortedColumnIndex;
-      lastSortedScoreColumn = sortedColumnIndex; // Remember the last score column sorted
+      lastSortedScoreColumn = sortedColumnIndex;
     } else if (NON_SCORE_COLUMNS.includes(sortedColumnIndex) && lastSortedScoreColumn !== null) {
-      // If sorting a non-score column, show the bar of the *last sorted* score column
       columnToShowBar = lastSortedScoreColumn;
     } else {
-      // Default to showing Elo bar if no score column was previously sorted or remembered
-      columnToShowBar = 7; // Elo index
+      columnToShowBar = 7; // Elo index in new order
       lastSortedScoreColumn = 7;
     }
 
-    // Show the selected score bar and adjust header width
     if (columnToShowBar !== -1) {
       try {
-        // Use :eq() selector to target the correct TD index
-        api.rows({ page: 'current' }) // Ensure it works with paging if ever enabled
+        api.rows({ page: 'current' })
            .nodes()
-           .to$() // Convert to jQuery object
+           .to$()
            .find(`td:eq(${columnToShowBar}) .creative-writing-score-bar`)
            .show();
 
-        // Adjust the width of the corresponding header for visual emphasis
         let header = api.column(columnToShowBar).header();
         if (header) {
-          $(header).css('width', '30%'); // Make the sorted score column wider
+          $(header).css('width', '30%');
         }
       } catch (e) {
         console.error("Error showing score bar or adjusting header width:", e);
       }
     }
-    // Update the gradient colors after showing/hiding bars
     updateScoreBarColorsV3();
   }
 };
@@ -2573,69 +2565,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // --- Score Update Logic (For Sliders - currently inactive but functional) ---
 function updateScores() {
-  // Get current slider values (default to 0 if sliders don't exist)
   const vocabPercentage = document.getElementById('vocabControlSlider')?.value ?? 0;
   const gptSlopPercentage = document.getElementById('gptSlopControlSlider')?.value ?? 0;
 
-  // Calculate adjustment factors based on slider percentages
   const vocabAdjustmentFactor = parseFloat(vocabPercentage) / 100;
-  // GPT Slop adjustment might have a different scale factor (e.g., 0.30)
   const gptSlopAdjustmentFactor = 0.30 * parseFloat(gptSlopPercentage) / 100;
 
-  // Calculate average slop for relative adjustments
   const avgGptSlop = calculateAverageGptSlop();
   const table = $('#leaderboard').DataTable();
 
-  // Iterate over each row in the table body
   $('#leaderboardBody tr').each(function() {
     const row = $(this);
-    // Retrieve original scores and metrics stored in data attributes
     const modelGptSlop = parseFloat(row.attr('data-gpt-slop'));
     const vocabComplexity = parseFloat(row.attr('data-vocab'));
     const originalEloScore = parseFloat(row.attr('data-original-elo-score'));
     const originalRubricScore = parseFloat(row.attr('data-original-rubric-score'));
 
-    // --- Calculate Adjustments ---
     let vocabAdjustment = 0;
     if (!isNaN(vocabComplexity) && vocabAdjustmentFactor > 0) {
       const normalizedVocab = normalizeVocabComplexity(vocabComplexity);
-      // Example: Penalize lower vocab more heavily, scaled by slider
-      vocabAdjustment = -12.0 * (1 - normalizedVocab) * vocabAdjustmentFactor; // Adjust penalty logic as needed
+      vocabAdjustment = -12.0 * (1 - normalizedVocab) * vocabAdjustmentFactor;
     }
 
     let gptSlopMultiplier = 1.0;
     if (!isNaN(modelGptSlop) && gptSlopAdjustmentFactor > 0 && avgGptSlop !== 0) {
         let gptSlopRatio = modelGptSlop / avgGptSlop;
-        // Apply logarithmic scaling for diminishing returns/penalties
-        // Penalize models with higher-than-average slop
         if (gptSlopRatio > 1) {
             gptSlopMultiplier = 1 - (Math.log(gptSlopRatio) * gptSlopAdjustmentFactor);
-            gptSlopMultiplier = Math.max(gptSlopMultiplier, 0.85); // Cap penalty
+            gptSlopMultiplier = Math.max(gptSlopMultiplier, 0.85);
         }
-        // Optionally, slightly reward models with lower-than-average slop
-        // else if (gptSlopRatio < 1) {
-        //     gptSlopMultiplier = 1 + (Math.log(1 / gptSlopRatio) * gptSlopAdjustmentFactor * 0.5); // Smaller reward factor
-        //     gptSlopMultiplier = Math.min(gptSlopMultiplier, 1.05); // Cap reward
-        // }
     }
-    // --- End Adjustment Calculation ---
 
-    // Calculate final adjusted scores
-    const adjustedEloScore = originalEloScore * gptSlopMultiplier + vocabAdjustment * 15; // Apply adjustments (scaling factors might differ)
+    const adjustedEloScore = originalEloScore * gptSlopMultiplier + vocabAdjustment * 15;
     const adjustedRubricScore = originalRubricScore * gptSlopMultiplier + vocabAdjustment;
 
-    // --- Update Table Cells (Indices are correct: Elo=7, Rubric=6) ---
-    // Update Elo Score cell (index 7)
+    // Update Elo Score cell (now index 7)
     const eloCell = row.find('td:eq(7)');
-    eloCell.attr('data-order', adjustedEloScore.toFixed(1)); // Update sort data
-    eloCell.find('.score-text').text(adjustedEloScore.toFixed(1)); // Update displayed text
+    eloCell.attr('data-order', adjustedEloScore.toFixed(1));
+    eloCell.find('.score-text').text(adjustedEloScore.toFixed(1));
 
-    // Update Rubric Score cell (index 6)
+    // Update Rubric Score cell (now index 6)
     const rubricCell = row.find('td:eq(6)');
-    rubricCell.attr('data-order', adjustedRubricScore.toFixed(2)); // Update sort data
-    rubricCell.find('.score-text').text(adjustedRubricScore.toFixed(2)); // Update displayed text
+    rubricCell.attr('data-order', adjustedRubricScore.toFixed(2));
+    rubricCell.find('.score-text').text(adjustedRubricScore.toFixed(2));
 
-    // --- Update Score Bar Widths ---
     const eloScoreRangeForBar = (maxEloScore - baselineEloScore) || 1;
     const eloPercentage = Math.max(0, Math.min(100,
       ((adjustedEloScore - baselineEloScore) / eloScoreRangeForBar) * 100
@@ -2645,16 +2618,10 @@ function updateScores() {
       ((adjustedRubricScore - baselineRubricScore) / rubricScoreRangeForBar) * 100
     ));
 
-    // Update width of bars in the correct cells
     eloCell.find('.creative-writing-score-bar').css('width', `${eloPercentage.toFixed(1)}%`);
     rubricCell.find('.creative-writing-score-bar').css('width', `${rubricPercentage.toFixed(1)}%`);
-    // --- End Update Score Bar Widths ---
   });
 
-  // Invalidate DataTables internal data cache and redraw the table
-  // 'data' invalidation is important when data-order attributes change
-  table.rows().invalidate('data').draw(false); // 'false' preserves paging position
-
-  // updateScoreBarColorsV3(); // Redraw gradients (already called in drawCallback)
+  table.rows().invalidate('data').draw(false);
 }
 // --- End Score Update Logic ---

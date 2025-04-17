@@ -352,10 +352,10 @@
     body.dark-mode .custom-info-icon:hover {
       opacity: 0.8;
     }
-    #leaderboard tbody td:nth-child(3) .cell-content .custom-info-icon {
+    #leaderboard tbody td:nth-child(4) .cell-content .custom-info-icon {
       margin-top: -1px;
     }
-    #leaderboard tbody td:nth-child(3) .cell-content {
+    #leaderboard tbody td:nth-child(4) .cell-content {
       white-space: nowrap;
       display: flex;
       align-items: center;
@@ -543,13 +543,13 @@
 
 
 
-    #leaderboard tbody td:nth-child(6) .cell-content {
+    #leaderboard tbody td:nth-child(2) .cell-content {
        white-space: nowrap;
        display: flex;
        align-items: center;
     }
 
-    #leaderboard tbody td:nth-child(5) .cell-content {
+    #leaderboard tbody td:nth-child(3) .cell-content {
       white-space: nowrap;
       display: flex;
       align-items: center;
@@ -649,6 +649,18 @@
         max-width: 1140px;
       }
     }
+
+/* Container sizing to prevent jumpy behavior */
+@media (min-width: 768px) {
+  .container {
+    width: 95% !important; 
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+
+
   </style>
 </head>
 <body class="creative-writing-page">
@@ -718,12 +730,11 @@
         <thead>
           <tr>
             <th>Model</th>
-            <th class="mobile-collapsible">Length</th>
-            <th class="mobile-collapsible">Slop</th>
-            <th class="mobile-collapsible">Repetition</th>
-            <!-- New column "Abilities" -->
             <th>Abilities</th>
             <th class="mobile-collapsible">Style</th>
+            <th class="mobile-collapsible">Slop</th>
+            <th class="mobile-collapsible">Repetition</th>
+            <th class="mobile-collapsible">Length</th>
             <th class="mobile-collapsible">Rubric Score</th>
             <th>Elo Score</th>
             <th></th>
