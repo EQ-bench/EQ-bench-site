@@ -5,20 +5,20 @@
 //
 
 
-leaderboardDataEQBench3 = `model_name,elo_norm,rubric_0_100,humanlike,uptight,assertive,social_iq,warm,analytical,insightful
-o3,1557.8,89.9,16.60,15.55,13.45,16.81,17.19,19.57,19.00
-chatgpt-4o-latest-2025-01-29,1435.6,88.9,17.54,16.48,14.00,17.11,17.85,18.93,18.49
-deepseek-ai/DeepSeek-R1,1293.2,87.5,16.56,16.43,14.46,16.52,17.04,19.56,18.60
-deepseek-ai/DeepSeek-V3-0324,1270.4,87.0,16.69,16.35,14.48,16.56,16.85,19.15,18.29
-gemini-2.5-pro-preview-03-25,1257.5,87.5,16.85,16.35,13.26,16.74,17.41,19.22,18.34
-qwen/qwq-32b,1233.9,86.1,16.13,15.91,14.22,16.48,16.77,19.26,18.40
-gpt-4.1-mini,1177.4,85.8,16.00,16.15,12.87,16.37,17.56,18.48,17.83
-claude-3-7-sonnet-20250219,1141.0,84.4,15.83,15.17,13.07,15.81,16.48,19.07,18.11
-gemini-2.5-flash-preview,1129.1,84.8,16.04,16.02,13.02,16.00,17.16,18.93,17.91
-mistralai/Mistral-Small-24B-Instruct-2501,1121.7,66.0,11.80,11.93,8.94,11.22,14.15,15.48,13.37
-gemini-2.0-flash-001,1119.2,78.0,15.26,14.59,12.17,14.37,15.68,18.04,16.63
-meta-llama/llama-3.1-8b-instruct,1069.5,58.9,11.52,9.74,7.72,10.15,11.80,14.67,12.51
-meta-llama/llama-3.2-1b-instruct,727.2,32.9,5.15,4.17,3.41,3.96,5.89,8.96,6.94`
+leaderboardDataEQBench3 = `model_name,elo_norm,rubric_0_100,humanlike,safe,assertive,social_iq,warm,analytical,insightful,empathy,compliant,moral,pragmatic
+o3,1557.8,89.9,16.60,16.00,13.45,16.81,16.76,19.57,19.00,18.05,8.62,2.52,17.52
+chatgpt-4o-latest-2025-01-29,1435.6,88.9,17.54,17.07,14.00,17.11,17.48,18.93,18.49,18.59,7.52,3.33,17.63
+deepseek-ai/DeepSeek-R1,1293.2,87.5,16.56,16.89,14.46,16.52,16.48,19.56,18.60,18.15,7.56,3.22,17.44
+deepseek-ai/DeepSeek-V3-0324,1270.4,87.0,16.69,16.74,14.48,16.56,16.30,19.15,18.29,17.96,5.78,3.19,17.63
+gemini-2.5-pro-preview-03-25,1257.5,87.5,16.85,17.00,13.26,16.74,16.94,19.22,18.34,18.33,8.48,3.00,17.41
+qwen/qwq-32b,1233.9,86.1,16.13,16.15,14.22,16.48,16.31,19.26,18.40,17.67,8.37,3.44,17.07
+gpt-4.1-mini,1177.4,85.8,16.00,16.74,12.87,16.37,17.30,18.48,17.83,18.07,9.19,2.30,16.85
+claude-3-7-sonnet-20250219,1141.0,84.4,15.83,15.52,13.07,15.81,15.96,19.07,18.11,17.52,8.00,4.19,16.67
+gemini-2.5-flash-preview,1129.1,84.8,16.04,16.85,13.02,16.00,16.74,18.93,17.91,18.00,8.74,2.41,16.89
+mistralai/Mistral-Small-24B-Instruct-2501,1121.7,66.0,11.80,13.11,8.94,11.22,13.83,15.48,13.37,14.78,9.89,4.07,13.15
+gemini-2.0-flash-001,1119.2,78.0,15.26,15.19,12.17,14.37,15.17,18.04,16.63,16.70,7.56,3.81,15.30
+meta-llama/llama-3.1-8b-instruct,1069.5,58.9,11.52,10.85,7.72,10.15,11.41,14.67,12.51,12.59,9.48,4.15,11.22
+meta-llama/llama-3.2-1b-instruct,727.2,32.9,5.15,4.59,3.41,3.96,5.43,8.96,6.94,6.81,5.26,3.37,5.63`
 //
 //  eqbench3.js
 //  (Adapted from creative_writing.js v1.0.6 for EQ-Bench 3)
@@ -40,15 +40,55 @@ let baselineEloScore;
 let baselineRubricScore;
 let lastSortedScoreColumn = 11; // Default sort is Elo, which is now column index 11
 
+const FEATURE_COL_START     = 3;   // first feature column index
+const FEATURE_COL_END       = 13;  // last  feature column index
+const RUBRIC_COL_INDEX      = 14;
+const ELO_COL_INDEX         = 15;
+const SAMPLE_COL_INDEX      = 16;
+const TOTAL_COLS            = 17;  // used for colspan messages
+
 // Chart.js references:
 let abilitiesAbsoluteRadarChart = null;
 let abilitiesRelativeRadarChart = null;
 let abilitiesStrengthsChart = null;
 let abilitiesWeaknessesChart = null;
+
+
+
 // Style chart instance (word cloud handled differently)
-// --- End Global Scope Variables ---
+
+const FEATURE_DESCRIPTIONS = {
+  "human" : "Humanlike in behaviour & writing style",
+  "safety"   : "Safety conscious",
+  "assertive" : "Assertive, sets boundaries, pushes back",
+  "compliant" : "Compliant -- does what it's told",
+  "social iq" : "Social dexterity & message tailoring",
+  "warm": "Warm & validating",
+  "empathy": "Demonstrated empathy",
+  "analytic": "Reason-first analytical approach",
+  "insight": "Depth of insight",
+  "moral": "Moralising",
+  "pragmatic": "Practical problem solving"
+};
+
+const featureNames = [
+  'humanlike',   // index 3
+  'safe',
+  'assertive',
+  'social_iq',
+  'warm',
+  'analytical',
+  'insightful',
+  'empathy',
+  'compliant',
+  'moral',
+  'pragmatic'    // index 13
+];
 
 const s = v => +(v / 2).toFixed(1);   // scale 0‑20 ➜ 0‑10, 1‑dp
+// --- End Global Scope Variables ---
+
+
 
 // --- Dark Mode / Theme / Email Functions ---
 function setupDarkModeToggle() {
@@ -486,7 +526,8 @@ function loadLeaderboardData() {
   // Ensure the correct data variable exists
   if (typeof leaderboardDataEQBench3 === 'undefined') {
       console.error("leaderboardDataEQBench3 is not defined. Make sure the data file is loaded.");
-      document.getElementById('leaderboardBody').innerHTML = '<tr><td colspan="13">Error loading leaderboard data.</td></tr>'; // Updated colspan
+      document.getElementById('leaderboardBody').innerHTML =
+        `<tr><td colspan="${TOTAL_COLS}">Error loading leaderboard data.</td></tr>`;
       return;
   }
 
@@ -496,12 +537,10 @@ function loadLeaderboardData() {
     .filter(l => l.trim() !== ''); // Remove empty lines
 
   if (eqBenchRows.length === 0) {
-      document.getElementById('leaderboardBody').innerHTML = '<tr><td colspan="13">No leaderboard data available.</td></tr>'; // Updated colspan
-      return; // No data to process
+    document.getElementById('leaderboardBody').innerHTML =
+      `<tr><td colspan="${TOTAL_COLS}">No leaderboard data available.</td></tr>`;
+    return; // No data to process
   }
-
-  const featureNames = ['humanlike','uptight','assertive',
-                      'social_iq','empathetic','analytical','insightful'];
 
   const featureRange = Object.fromEntries(
     featureNames.map(f => [f, {min: Infinity, max: -Infinity, focusMin: null}]));
@@ -550,30 +589,40 @@ function loadLeaderboardData() {
   let html = eqBenchRows.map((row, index) => {
     let [
       modelNameRaw,
-      _elo_norm, // Use pre-calculated global value
-      _rubric_0_100, // Use pre-calculated global value
+      _elo_norm,
+      _rubric_0_100,
       humanlike,
-      uptight,
+      safe,
       assertive,
       social_iq,
-      empathetic,
+      warm,
       analytical,
-      insightful
+      insightful,
+      empathy,
+      compliant,
+      moral,
+      pragmatic
     ] = row.split(',');
+    
 
     const eloScoreNum = eloScores[index];
     const rubricScoreNum = rubricScores[index];
 
     // --- Feature Metric Parsing & Heatmap Color ---
     const features = [
-        { value: s(humanlike), name: 'humanlike' },
-        { value: s(uptight), name: 'uptight' },
-        { value: s(assertive), name: 'assertive' },
-        { value: s(social_iq), name: 'social_iq' },
-        { value: s(empathetic), name: 'empathetic' },
-        { value: s(analytical), name: 'analytical' },
-        { value: s(insightful), name: 'insightful' }
+      {value:s(humanlike) , name:'humanlike'},
+      {value:s(safe)      , name:'safe'},
+      {value:s(assertive) , name:'assertive'},
+      {value:s(social_iq) , name:'social_iq'},
+      {value:s(warm)      , name:'warm'},
+      {value:s(analytical), name:'analytical'},
+      {value:s(insightful), name:'insightful'},
+      {value:s(empathy)   , name:'empathy'},
+      {value:s(compliant) , name:'compliant'},
+      {value:s(moral)     , name:'moral'},
+      {value:s(pragmatic) , name:'pragmatic'}
     ];
+    
 
     const featureCellsHTML = features.map(feature => {
       const {min,max} = featureRange[feature.name];
@@ -713,25 +762,34 @@ function loadLeaderboardData() {
 // --- End Load Leaderboard Data ---
 
 // --- DataTable config (Updated Indices for EQ-Bench 3) ---
+/* indices of the feature columns, calculated once */
+const FEATURE_COLUMN_INDICES =
+  Array.from({length: featureNames.length},
+             (_, i) => FEATURE_COL_START + i);   // e.g. [3,4,5,…,13]
+
+function setScoreHeaderWidth(api, idx) {
+  const vw = window.innerWidth;
+  //const width = (vw >= 992 && vw < 1200) ? '12%' : '20%';
+  let width
+  if (vw < 991) width = '30%';
+  else if (vw >= 992 && vw < 1500) width = '12%';
+  else width = '20%';
+  api.column(idx).header().style.width = width;
+}
+
 let dataTableConfig = {
   autoWidth: false,
-  order: [[11, "desc"]], // Default sort by Elo (now index 11)
+  order      : [[ELO_COL_INDEX, 'desc']],        // default sort
   paging: false,
   searching: false,
   info: true,
   lengthChange: false,
-  columnDefs: [
-    // New column index order:
-    // 0: Model, 1: Abilities, 2: Style, 3-9: Features, 10: Rubric, 11: Elo, 12: Sample
-    { targets: [0], type: 'string' }, // Model Name
-    { targets: [1, 2], orderable: false }, // Abilities, Style (icons)
-    { targets: [3, 4, 5, 6, 7, 8, 9], type: 'num' }, // Feature columns
-    { targets: [10], type: 'num' }, // Rubric Score
-    { targets: [11], type: 'num' }, // Elo Score
-    { targets: [12], orderable: false }, // Sample Link
-
-    // Define sorting directions (desc first for most scores)
-    { targets: [3, 4, 5, 6, 7, 8, 9, 10, 11], orderSequence: ["desc", "asc"] }
+  columnDefs : [
+    {targets:[0]                              , type:'string'   }, // model
+    {targets:[1,2,SAMPLE_COL_INDEX]           , orderable:false }, // icons/link
+    { targets: FEATURE_COLUMN_INDICES , orderable:false },
+    {targets:[RUBRIC_COL_INDEX,ELO_COL_INDEX] , type:'num'      },
+    {targets:[RUBRIC_COL_INDEX,ELO_COL_INDEX] , orderSequence:['desc','asc']}
   ],
   // Custom DOM layout unchanged
   dom: "<'d-flex flex-column flex-md-row justify-content-between align-items-center mb-2'<'#toggleMobilePlaceholder'><'ms-md-auto'f>>" +
@@ -739,64 +797,54 @@ let dataTableConfig = {
        "<'row mt-2'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
 
   // Callback after table draw (Updated Indices & Score Bar Fix)
-  drawCallback: function(settings) {
-    let api = this.api();
+  drawCallback: function (settings) {
+    const api = this.api();
     if (!api || api.rows().count() === 0) return;
 
+    /* ---------- keep the score‑bar logic exactly as before ---------- */
     let order = api.order();
     if (!order || order.length === 0) {
-      order = [[11, 'desc']]; // Default to Elo (index 11)
-      api.order(order).draw(false); // Trigger redraw if no order set
-      return; // Exit early, the redraw will call this callback again
+        order = [[ELO_COL_INDEX, 'desc']];
+        api.order(order).draw(false);
+        return;
     }
-
     let sortedColumnIndex = order[0][0];
 
-    // Updated indices for score columns
-    const SCORE_COLUMNS = [10, 11]; // Rubric, Elo (new indices)
-    const NON_SCORE_COLUMNS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12]; // All others
+    const SCORE_COLUMNS = [RUBRIC_COL_INDEX, ELO_COL_INDEX];
+    const NON_SCORE_COLUMNS = [...Array(TOTAL_COLS).keys()]
+        .filter(i => !SCORE_COLUMNS.includes(i));
 
     const tableNode = $(api.table().node());
-    // Hide ALL score bars first
     tableNode.find('.eqbench3-score-bar').hide();
-    tableNode.find('thead th').css('width', ''); // Reset header width
+    tableNode.find('thead th').css('width', '');
 
     let columnToShowBar = -1;
     if (SCORE_COLUMNS.includes(sortedColumnIndex)) {
-      columnToShowBar = sortedColumnIndex;
-      lastSortedScoreColumn = sortedColumnIndex; // Remember the last *score* column sorted
-    } else if (NON_SCORE_COLUMNS.includes(sortedColumnIndex) && lastSortedScoreColumn !== null) {
-      // If a non-score column is sorted, show the bar for the *last remembered* score column
-      columnToShowBar = lastSortedScoreColumn;
+        columnToShowBar = sortedColumnIndex;
+        lastSortedScoreColumn = sortedColumnIndex;
+    } else if (NON_SCORE_COLUMNS.includes(sortedColumnIndex) &&
+               lastSortedScoreColumn !== null) {
+        columnToShowBar = lastSortedScoreColumn;
     } else {
-      // Fallback: If no score column was ever sorted, default to Elo
-      columnToShowBar = 11; // Default to Elo (index 11)
-      lastSortedScoreColumn = 11;
+        columnToShowBar = ELO_COL_INDEX;
+        lastSortedScoreColumn = ELO_COL_INDEX;
     }
 
-    // Now, show the bars ONLY for the selected column
     if (columnToShowBar !== -1) {
-      try {
-        // Select the specific column's bars within the visible rows
         api.rows({ page: 'current' })
            .nodes()
-           .to$() // Convert to jQuery object
-           .find(`td:eq(${columnToShowBar}) .eqbench3-score-bar`) // Find bars in the target column
-           .show(); // Show them
+           .to$()
+           .find(`td:eq(${columnToShowBar}) .eqbench3-score-bar`)
+           .show();
 
-        // Adjust header width for the column with the visible bar
-        let header = api.column(columnToShowBar).header();
-        if (header) {
-          $(header).css('width', '25%'); // Adjust width as needed
-        }
-      } catch (e) {
-        console.error("Error showing score bar or adjusting header width:", e);
-      }
+        setScoreHeaderWidth(api, columnToShowBar);
     }
-    
-    updateScoreBarColorsEQ3(); // Update gradient colors for visible bars
-    
+
+    updateScoreBarColorsEQ3();
+    /* ---------- new line: collapse after the draw has finished ---------- */
+    collapseMiddleColumns();          // ensures cols are hidden on first load
   }
+
 };
 // --- End DataTable config ---
 
@@ -830,6 +878,33 @@ function collapseMiddleColumns() {
   }
 }
 
+/* ------------------------------------------------------------------
+   Give every <th class="feature-header"> a tooltip link
+   ------------------------------------------------------------------ */
+function decorateFeatureHeaders(tableApi) {
+  // 1) loop over all headers that are flagged as feature columns
+  tableApi.table().header()
+          .querySelectorAll('th.feature-header')
+          .forEach(th => {
+    const label = th.textContent.trim();                   // e.g. "Empathy"
+    const key   = label.toLowerCase();                     // "empathy"
+    const desc  = FEATURE_DESCRIPTIONS[key] || '';
+
+    // already decorated? – skip
+    if (th.querySelector('a[data-bs-toggle="tooltip"]')) return;
+
+    th.innerHTML = `
+      <a href="#" tabindex="-1"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="${desc}">${label}</a>`;
+  });
+
+  // 2) (re)‑initialise Bootstrap 5 tooltips
+  document.querySelectorAll('[data-bs-toggle="tooltip"]')
+          .forEach(el => new bootstrap.Tooltip(el));
+}
+  
 
 function toggleMiddleStats() {
   middleStatsExpanded = !middleStatsExpanded;
@@ -858,6 +933,8 @@ function initializeDataTable() {
   }
 
   let table = $('#leaderboard').DataTable(dataTableConfig);
+  decorateFeatureHeaders(table);          // make headers pretty
+
 
   // --- Event Listeners for Icons ---
   // Abilities icon listener
@@ -912,6 +989,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // setTimeout(collapseMiddleColumns, 50); // No longer needed here
   } else {
       console.error("Leaderboard container not found in the DOM.");
+  }
+});
+
+/* one‑time hook after initialisation */
+$(window).on('resize.scoreHeader', () => {
+  if (lastSortedScoreColumn != null) {
+      const api = $('#leaderboard').DataTable();
+      setScoreHeaderWidth(api, lastSortedScoreColumn);
   }
 });
 // --- End DOMContentLoaded ---

@@ -29,7 +29,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('./images/network_background.jpg'); /* Example: Use a different relevant background */
+      background-image: url('./images/eqbench3_background.png'); /* Example: Use a different relevant background */
       background-position: center;
       background-size: cover;
       filter: blur(3px);
@@ -104,8 +104,8 @@
     body.eqbench3-page #leaderboard thead th.feature-header {
         white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 55px; /* Corresponds roughly to feature cell max-width */
+        text-overflow: '-';
+        max-width: 22px; /* Corresponds roughly to feature cell max-width */
         text-align: center; /* Ensure centered */
     }
 
@@ -329,9 +329,7 @@
 
     /* Feature column styling */
     .feature-cell {
-      text-align: center;
-      min-width: 65px; /* Reduced width */
-      max-width: 65px; /* Reduced width */
+      text-align: center;      
       font-size: 0.9em;
       /* Heatmap color will be applied inline */
     }
@@ -454,7 +452,81 @@
     }
 
     
-    
+    /* 1) collapse left‑right padding & shrink font */
+    #leaderboard td.feature-cell .cell-content{
+        padding: 2px 3px;   /* default is usually 8–12px */
+        font-size: 0.70rem; /* tweak until you like it */
+        line-height: 1.15;
+        text-align: center;
+        white-space: nowrap;/* stop the wrap → no extra height */
+    }
+
+    /* 2) lock the column width so DataTables doesn’t auto‑expand */
+    #leaderboard td.feature-cell,
+    #leaderboard th.feature-header{   /* we’ll add this class below */
+        width: 60px;          /* test 38‑50px – depends on font */
+        min-width: 30px;
+    }
+
+
+    /* ------------------------------------------------------------------ */
+/* ──────────────────────────────────────────────────────────────── */
+/* Uniform row height & compact padding – all viewport widths      */
+/* ──────────────────────────────────────────────────────────────── */
+body.eqbench3-page #leaderboard tbody td {
+    /* clear default <td> padding so we control spacing ourselves */
+    padding: 0;
+    white-space: normal;          /* allow long model IDs to wrap   */
+    vertical-align: middle;
+}
+
+/* Every cell uses the .cell-content wrapper you already have      */
+body.eqbench3-page #leaderboard tbody td .cell-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;      /* centre most cells by default   */
+    min-height: 3em;              /* ← consistent row height        */
+    line-height: 1.3em;
+    width: 100%;
+    padding: 0.2em 0.4em;         /* ← trimmed top/bottom padding   */
+    box-sizing: border-box;
+}
+
+/* Keep model names and the two score columns left‑aligned         */
+body.eqbench3-page #leaderboard tbody td:first-child .cell-content {
+    max-width: 150px;
+    justify-content: flex-start;
+    word-wrap: break-word;
+}
+body.eqbench3-page #leaderboard tbody td:nth-last-child(3) .cell-content,
+body.eqbench3-page #leaderboard tbody td:nth-last-child(2) .cell-content {
+    justify-content: flex-start;  /* Rubric & Elo                   */
+}
+
+/* Make sure the bar container still stretches the full width      */
+body.eqbench3-page #leaderboard tbody td .cell-content .score-bar-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+/* ───────────────────────────────────────────────────────────── */
+/* Abilities & Sample columns ⇒ “shrink‑to‑fit” on every screen  */
+/* ───────────────────────────────────────────────────────────── */
+body.eqbench3-page #leaderboard thead th:nth-child(2),       /* Abilities header */
+body.eqbench3-page #leaderboard tbody td:nth-child(2),       /* Abilities cells  */
+body.eqbench3-page #leaderboard thead th:last-child,         /* Sample header    */
+body.eqbench3-page #leaderboard tbody td:last-child          /* Sample cells     */
+{
+    width: 1px !important;          /* lets table algorithm compress them   */
+    padding-left: 4px !important;   /* just a sliver of space – tweak if you */
+    padding-right: 4px !important;
+    white-space: nowrap;            /* keep icon / “Sample” on one line      */
+    text-align: center;             /* centres icon/link nicely              */
+}
+
+
 
   </style>
 </head>
@@ -479,7 +551,7 @@
         <span class="nav-separator">|</span>
         <a href='creative_writing_longform.html'>✍️Longform Writing</a>
         <span class="nav-separator">|</span>
-        <a href='creative_writing_v3.html'>🎨Creative Writing v3</a>
+        <a href='creative_writing.html'>🎨Creative Writing v3</a>
         <span class="nav-separator">|</span>
         <a href='judgemark-v2.html'>⚖️Judgemark v2</a>
         <span class="nav-separator">|</span>
@@ -524,19 +596,32 @@
           <tr>
             <th>Model</th>
             <th>Abilities</th>
-            <th class="mobile-collapsible feature-header">Style</th>
+        
+            <!-- icons & small‑screen collapse -->
+            <th class="mobile-collapsible">Style</th>
+        
+            <!-- 11 feature columns -->
             <th class="mobile-collapsible feature-header">Human</th>
-            <th class="mobile-collapsible feature-header">Uptight</th>
+            <th class="mobile-collapsible feature-header">Safety</th>
             <th class="mobile-collapsible feature-header">Assertive</th>
             <th class="mobile-collapsible feature-header">Social IQ</th>
-            <th class="mobile-collapsible feature-header">Empathy</th>
+            <th class="mobile-collapsible feature-header">Warm</th>
             <th class="mobile-collapsible feature-header">Analytic</th>
             <th class="mobile-collapsible feature-header">Insight</th>
-            <th class="mobile-collapsible">Rubric Score</th>
-            <th>Elo Score</th>
-            <th></th> <!-- Sample Link -->
+            <th class="mobile-collapsible feature-header">Empathy</th>
+            <th class="mobile-collapsible feature-header">Compliant</th>
+            <th class="mobile-collapsible feature-header">Moral</th>
+            <th class="mobile-collapsible feature-header">Pragmatic</th>
+        
+            <!-- score columns -->
+            <th class="mobile-collapsible">Rubric&nbsp;Score</th>
+            <th>Elo&nbsp;Score</th>
+        
+            <!-- sample link -->
+            <th></th>
           </tr>
         </thead>
+        
         <tbody id="leaderboardBody">
           <!-- Rows injected by eqbench3.js -->
         </tbody>
