@@ -677,7 +677,7 @@ function loadLeaderboardData() {
           </div>
         </td>
 
-        <td> <!-- Col 2: Style -->
+        <td class="mobile-collapsible"> <!-- Col 2: Style -->
           <div class="cell-content">
             ${styleInfoIcon}
           </div>
