@@ -6,20 +6,19 @@
 
 
 leaderboardDataEQBench3 = `model_name,elo_norm,rubric_0_100,humanlike,uptight,assertive,social_iq,warm,analytical,insightful
-chatgpt-4o-latest-2025-01-29,1516.2,86.0,15.47,9.28,11.64,16.85,17.54,17.91,17.93
-deepseek-ai/DeepSeek-R1,1412.6,83.6,14.76,9.19,12.71,16.30,16.14,17.96,18.23
-gpt-4.1,1342.4,82.9,14.96,9.00,11.15,15.94,17.03,17.59,17.65
-deepseek-ai/DeepSeek-V3-0324,1322.8,85.8,15.81,9.35,13.19,16.84,16.94,17.93,18.02
-gemini-2.5-pro-preview-03-25,1309.2,85.7,15.45,9.24,11.65,16.69,16.97,17.94,18.03
-qwen/qwq-32b,1226.9,82.0,14.96,9.50,12.29,16.21,16.07,17.47,17.77
-google/gemma-3-27b-it,1214.4,75.8,13.99,9.62,11.31,14.85,15.22,16.30,16.12
-gpt-4.1-mini,1186.1,79.2,14.38,8.99,10.70,15.45,16.59,16.64,16.35
-gemini-2.5-flash-preview,1139.5,77.6,14.29,8.49,10.34,15.20,15.84,16.61,16.38
-claude-3-7-sonnet-20250219,1133.8,79.2,13.84,9.10,11.30,15.32,15.86,16.96,17.12
-claude-3-5-sonnet-20241022,1103.3,74.5,13.19,9.54,11.39,14.62,14.51,16.20,16.20
-google/gemma-3-4b-it,1070.7,75.9,14.43,9.49,11.71,14.34,14.82,16.88,17.27
-gemini-2.0-flash-001,945.2,59.5,12.71,8.03,9.21,11.69,12.43,13.05,12.15
-mistralai/Mistral-Small-3.1-24B-Instruct-2503,787.1,53.4,10.59,7.36,6.44,10.26,12.49,12.15,10.40`
+o3,1557.8,89.9,16.60,15.55,13.45,16.81,17.19,19.57,19.00
+chatgpt-4o-latest-2025-01-29,1435.6,88.9,17.54,16.48,14.00,17.11,17.85,18.93,18.49
+deepseek-ai/DeepSeek-R1,1293.2,87.5,16.56,16.43,14.46,16.52,17.04,19.56,18.60
+deepseek-ai/DeepSeek-V3-0324,1270.4,87.0,16.69,16.35,14.48,16.56,16.85,19.15,18.29
+gemini-2.5-pro-preview-03-25,1257.5,87.5,16.85,16.35,13.26,16.74,17.41,19.22,18.34
+qwen/qwq-32b,1233.9,86.1,16.13,15.91,14.22,16.48,16.77,19.26,18.40
+gpt-4.1-mini,1177.4,85.8,16.00,16.15,12.87,16.37,17.56,18.48,17.83
+claude-3-7-sonnet-20250219,1141.0,84.4,15.83,15.17,13.07,15.81,16.48,19.07,18.11
+gemini-2.5-flash-preview,1129.1,84.8,16.04,16.02,13.02,16.00,17.16,18.93,17.91
+mistralai/Mistral-Small-24B-Instruct-2501,1121.7,66.0,11.80,11.93,8.94,11.22,14.15,15.48,13.37
+gemini-2.0-flash-001,1119.2,78.0,15.26,14.59,12.17,14.37,15.68,18.04,16.63
+meta-llama/llama-3.1-8b-instruct,1069.5,58.9,11.52,9.74,7.72,10.15,11.80,14.67,12.51
+meta-llama/llama-3.2-1b-instruct,727.2,32.9,5.15,4.17,3.41,3.96,5.89,8.96,6.94`
 //
 //  eqbench3.js
 //  (Adapted from creative_writing.js v1.0.6 for EQ-Bench 3)
@@ -446,6 +445,11 @@ function getHeatmapColor(value,isDarkMode,minVal,maxVal){
 
 
 // --- Gradient logic for visible bars (Blue gradient) ---
+// ─── Heat‑map midpoint ─────────────────────────────────────
+// Portion of the score span where we split the hue range 50‑50
+// 0.85 ⇒ top 15 % consumes half the colours.
+const HEATMAP_MIDPOINT = 0.85;
+
 function updateScoreBarColorsEQ3() {
   const scoreBars = document.querySelectorAll('#leaderboard .eqbench3-score-bar'); // Use specific class
   const isDarkMode = document.body.classList.contains('dark-mode');
@@ -500,7 +504,9 @@ function loadLeaderboardData() {
                       'social_iq','empathetic','analytical','insightful'];
 
   const featureRange = Object.fromEntries(
-        featureNames.map(f=>[f,{min:Infinity,max:-Infinity}]));
+    featureNames.map(f => [f, {min: Infinity, max: -Infinity, focusMin: null}]));
+                  
+
 
   // gather min & max for each feature column
   eqBenchRows.forEach(r=>{
@@ -570,25 +576,35 @@ function loadLeaderboardData() {
     ];
 
     const featureCellsHTML = features.map(feature => {
-        const {min,max} = featureRange[feature.name];
-        const t = Number.isFinite(feature.value) && max !== min
-          ? (feature.value - min) / (max - min)
-          : 0;
+      const {min,max} = featureRange[feature.name];
+      let t = Number.isFinite(feature.value) && max !== min
+        ? (feature.value - min) / (max - min)
+        : 0;
+      
+      t = Math.min(1, Math.max(0, t));      // clamp
+      
+      // Piece‑wise remap so 0‑0.85 → 0‑0.5 and 0.85‑1 → 0.5‑1
+      if (t <= HEATMAP_MIDPOINT) {
+        t = (t / HEATMAP_MIDPOINT) * 0.5;
+      } else {
+        t = 0.5 + ((t - HEATMAP_MIDPOINT) / (1 - HEATMAP_MIDPOINT)) * 0.5;
+      }
+    
 
-        // One‑line colour lookup
-        const bgColor = isDarkMode
-          ? pastelPlasma(t, { wash: 0.4, alpha: 0.5 /* maybe reverse:true */ })
-          : pastelPlasma(t, { wash: 0.4, alpha: 0.2 });
-        const displayValue = isNaN(feature.value) ? '-' : feature.value.toFixed(1);
-        const orderValue = isNaN(feature.value) ? -1 : feature.value.toFixed(1);
-        return `
-            <td class="mobile-collapsible feature-cell"
-                data-order="${orderValue}"
-                style="background-color: ${bgColor} !important;">
-              <div class="cell-content">
-                ${displayValue}
-              </div>
-            </td>`;
+      // One‑line colour lookup
+      const bgColor = isDarkMode
+        ? pastelPlasma(t, { wash: 0.4, alpha: 0.7})
+        : pastelPlasma(t, { wash: 0.4, alpha: 0.2 });
+      const displayValue = isNaN(feature.value) ? '-' : feature.value.toFixed(1);
+      const orderValue = isNaN(feature.value) ? -1 : feature.value.toFixed(1);
+      return `
+          <td class="mobile-collapsible feature-cell"
+              data-order="${orderValue}"
+              style="background-color: ${bgColor} !important;">
+            <div class="cell-content">
+              ${displayValue}
+            </div>
+          </td>`;
     }).join('');
     // --- End Feature Metric Parsing & Heatmap Color ---
 
