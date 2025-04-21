@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EQ-Bench 3 Leaderboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <style>
+    /* ======================================= */
+    /* == EQ-Bench 3 Page Specific Styles == */
+    /* ======================================= */
+
+    /* Make sure body has position relative for pseudo-elements */
+    body.eqbench3-page {
+      position: relative;
+      min-height: 100%;
+    }
+
+    /* Background styling - only for EQ-Bench 3 page */
+    body.eqbench3-page::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('./images/network_background.jpg'); /* Example: Use a different relevant background */
+      background-position: center;
+      background-size: cover;
+      filter: blur(3px);
+      opacity: 0.75;
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    /* Oval mask overlay - only for EQ-Bench 3 page */
+    body.eqbench3-page::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 0) 45%,
+        rgba(255, 255, 255, 0.9) 90%
+      );
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* Container styling for EQ-Bench 3 - semi-transparent */
+    body.eqbench3-page .container {
+      background-color: rgba(255, 255, 255, 0.78) !important; /* Slightly less transparent */
+      border-radius: 8px;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    /* Table cells opacity */
+    body.eqbench3-page #leaderboard tbody td {
+      background-color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    body.eqbench3-page #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
+      background-color: rgba(245, 245, 245, 0.7) !important;
+    }
+
+    /* Explanation section opacity */
+    body.eqbench3-page .section {
+      background-color: rgba(248, 248, 248, 0.8) !important;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    body.eqbench3-page .section .card {
+        background-color: transparent !important;
+        border: none !important;
+    }
+
+    /* Table headers */
+    body.eqbench3-page #leaderboard thead th {
+      background-color: rgba(60, 70, 80, 0.85) !important; /* Slightly different color */
+      color: white !important;
+      font-size: 0.9em; /* Consistent smaller font size for all headers */
+      text-align: center; /* Center all headers by default */
+      vertical-align: middle;
+    }
+    /* Left align specific headers */
+     body.eqbench3-page #leaderboard thead th:first-child, /* Model */
+     body.eqbench3-page #leaderboard thead th:nth-last-child(3), /* Rubric */
+     body.eqbench3-page #leaderboard thead th:nth-last-child(2) /* Elo */
+     {
+        text-align: left;
+     }
+
+
+    /* Feature Header Truncation & Width */
+    body.eqbench3-page #leaderboard thead th.feature-header {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 55px; /* Corresponds roughly to feature cell max-width */
+        text-align: center; /* Ensure centered */
+    }
+
+
+    /* --- Dark Mode Adjustments --- */
+    body.dark-mode.eqbench3-page::before {
+      opacity: 0.65;
+      filter: blur(3px);
+    }
+
+    body.dark-mode.eqbench3-page::after {
+      background: radial-gradient(
+        ellipse at center,
+        rgba(35, 40, 45, 0) 45%, /* Darker base */
+        rgba(35, 40, 45, 0.9) 90%
+      );
+    }
+
+    body.dark-mode.eqbench3-page .container {
+      background-color: rgba(35, 40, 45, 0.78) !important;
+    }
+
+    body.dark-mode.eqbench3-page #leaderboard tbody td {
+      background-color: rgba(35, 40, 45, 0.7) !important;
+    }
+
+    body.dark-mode.eqbench3-page #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
+      background-color: rgba(45, 50, 55, 0.7) !important;
+    }
+
+    body.dark-mode.eqbench3-page .section {
+      background-color: rgba(40, 45, 50, 0.8) !important;
+    }
+
+    body.dark-mode.eqbench3-page #leaderboard thead th {
+      background-color: rgba(55, 65, 75, 0.85) !important;
+    }
+
+    /* Ensure text is readable */
+    body.eqbench3-page .container h1,
+    body.eqbench3-page .container h2,
+    body.eqbench3-page .container h3,
+    body.eqbench3-page .container h5,
+    body.eqbench3-page .container p,
+    body.eqbench3-page .container label,
+    body.eqbench3-page .container a,
+    body.eqbench3-page .container span,
+    body.eqbench3-page .container li,
+    body.eqbench3-page .container .alert,
+    body.eqbench3-page .container .dataTables_info
+    {
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
+    }
+
+    body.dark-mode.eqbench3-page .container h1,
+    body.dark-mode.eqbench3-page .container h2,
+    body.dark-mode.eqbench3-page .container h3,
+    body.dark-mode.eqbench3-page .container h5,
+    body.dark-mode.eqbench3-page .container p,
+    body.dark-mode.eqbench3-page .container label,
+    body.dark-mode.eqbench3-page .container a,
+    body.dark-mode.eqbench3-page .container span,
+    body.dark-mode.eqbench3-page .container li,
+    body.dark-mode.eqbench3-page .container .alert,
+    body.dark-mode.eqbench3-page .container .dataTables_info
+    {
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Score text inside bars */
+    body.eqbench3-page .score-text {
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
+    }
+    body.dark-mode.eqbench3-page .score-text {
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Sliders (kept hidden) */
+    body.eqbench3-page .form-range::-webkit-slider-thumb { background-color: #666; }
+    body.eqbench3-page .form-range::-moz-range-thumb { background-color: #666; }
+    body.dark-mode.eqbench3-page .form-range::-webkit-slider-thumb { background-color: #ccc; }
+    body.dark-mode.eqbench3-page .form-range::-moz-range-thumb { background-color: #ccc; }
+
+    /* 1. Opaque table in light mode */
+    body.eqbench3-page:not(.dark-mode) #leaderboard tbody td {
+      background-color: rgba(255, 255, 255, 1) !important;
+    }
+    body.eqbench3-page:not(.dark-mode) #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
+      background-color: rgba(245, 245, 245, 1) !important;
+    }
+
+    /* 2. Background glow for nav sections - light mode only */
+    body.eqbench3-page:not(.dark-mode) .container p:nth-of-type(2)::before,
+    body.eqbench3-page:not(.dark-mode) .container p:nth-of-type(3)::before {
+      content: "";
+      position: absolute;
+      top: -3px;
+      left: -10px;
+      right: -10px;
+      bottom: -3px;
+      background-color: rgba(255, 255, 255, 0.4);
+      border-radius: 6px;
+      z-index: -1;
+      filter: blur(1px);
+    }
+
+    /* 3. Text shadows on nav items - light mode only */
+    body.eqbench3-page:not(.dark-mode) .container p a,
+    body.eqbench3-page:not(.dark-mode) .container p b {
+      text-shadow:
+        0 0 3px rgba(255, 255, 255, 0.6),
+        0 0 6px rgba(255, 255, 255, 0.5),
+        0 0 9px rgba(255, 255, 255, 0.4),
+        0 0 12px rgba(255, 255, 255, 0.3);
+    }
+
+    body.eqbench3-page .container p:nth-of-type(2),
+    body.eqbench3-page .container p:nth-of-type(3) {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Middle stats toggle button */
+    body.eqbench3-page #toggleMiddleStats {
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 0.4rem 1rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-color: #666;
+      color: #333;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      margin-bottom: 0 !important;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    body.eqbench3-page:not(.dark-mode) #toggleMiddleStats {
+      text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+    }
+    body.dark-mode.eqbench3-page #toggleMiddleStats {
+      background-color: rgba(35, 40, 45, 0.9);
+      color: #eee;
+      border-color: #888;
+    }
+    body.eqbench3-page #leaderboard {
+      margin-top: 0 !important;
+    }
+    @media (min-width: 768px) {
+      .hide-details-toggle-button { display: none !important; }
+    }
+    @media (max-width: 767px) {
+      .show-details-toggle-button { display: block !important; }
+    }
+
+    /* Info icons (keep generic) */
+    .custom-info-icon { /* No changes needed */ }
+
+    /* Chart Icon CSS (Copied from creative_writing.html to ensure correctness) */
+    .chart-icon {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 3px;
+      background-color: transparent;
+      border: 1px solid currentColor;
+      color: inherit;
+      margin-left: 5px;
+      cursor: pointer;
+      position: relative;
+      vertical-align: middle;
+    }
+    .chart-icon::before { /* First bar (left) */
+      content: ""; position: absolute; bottom: 2px; left: 3px; width: 2px; height: 5px; background-color: currentColor;
+    }
+    .chart-icon::after { /* Second bar (middle) */
+      content: ""; position: absolute; bottom: 2px; left: 7px; width: 2px; height: 8px; background-color: currentColor;
+    }
+    .chart-icon span::before { /* Third bar (right) */
+      content: ""; position: absolute; bottom: 2px; left: 11px; width: 2px; height: 6px; background-color: currentColor;
+    }
+    body:not(.dark-mode) .chart-icon { color: var(--bs-link-color, #0d6efd); }
+    body.dark-mode .chart-icon { color: #aad; }
+    .chart-icon:hover { opacity: 0.8; }
+    body:not(.dark-mode) .custom-info-icon { color: var(--bs-link-color, #0d6efd); }
+    body.dark-mode .custom-info-icon { color: #aad; }
+    .custom-info-icon:hover { color: var(--bs-link-hover-color, #0a58ca); }
+    body.dark-mode .custom-info-icon:hover { opacity: 0.8; }
+
+
+    /* Cell content alignment */
+    #leaderboard tbody td .cell-content {
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center content in feature cells */
+      min-height: 2.5em; /* Ensure consistent row height */
+      padding: 0.4em;
+      box-sizing: border-box; /* Include padding in height */
+    }
+    /* Left align model name */
+    #leaderboard tbody td:first-child .cell-content {
+      justify-content: flex-start;
+      white-space: normal; /* Allow model name wrapping by default */
+      word-wrap: break-word;
+    }
+    /* Center icons */
+    #leaderboard tbody td:nth-child(2) .cell-content, /* Abilities */
+    #leaderboard tbody td:nth-child(3) .cell-content { /* Style */
+      justify-content: center;
+    }
+    /* Left align score bars */
+    #leaderboard tbody td:nth-last-child(3) .cell-content, /* Rubric */
+    #leaderboard tbody td:nth-last-child(2) .cell-content { /* Elo */
+       justify-content: flex-start;
+       white-space: nowrap; /* Prevent wrapping inside score cell */
+    }
+    /* Center sample link */
+     #leaderboard tbody td:last-child .cell-content {
+        justify-content: center;
+     }
+
+    /* Feature column styling */
+    .feature-cell {
+      text-align: center;
+      min-width: 65px; /* Reduced width */
+      max-width: 65px; /* Reduced width */
+      font-size: 0.9em;
+      /* Heatmap color will be applied inline */
+    }
+    /* Ensure heatmap text is readable */
+    .feature-cell .cell-content {
+        color: #212529; /* Default dark text for light backgrounds */
+        text-shadow: 0 0 1px rgba(255, 255, 255, 0.5); /* Subtle shadow for light bg */
+    }
+    body.dark-mode .feature-cell .cell-content {
+        color: #dee2e6; /* Default light text for dark backgrounds */
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.6); /* Subtle shadow for dark bg */
+    }
+
+
+    /* --- score bars : apply at every viewport width --- */
+    .score-bar-container{
+        display:flex;
+        align-items:center;
+        gap:.5em;
+        flex:1 1 auto;      /* let it stretch within the cell */
+    }
+
+
+
+
+    /* Modal styling (keep generic) */
+    .modal-content { background-color: #fff !important; }
+    body.dark-mode .modal-content { background-color: #333 !important; color: #eee; }
+    body.dark-mode .modal-header { border-bottom-color: #2e2e2e; }
+    body.dark-mode .modal-header .modal-title { color: #eee; }
+    body.dark-mode .modal-footer { border-top-color: #2e2e2e; }
+    body.dark-mode .btn-close { filter: invert(1) grayscale(100%) brightness(200%); }
+    .modal-body { color: var(--bs-body-color); }
+    body.dark-mode .modal-body { color: #eee; }
+
+    /* Style Cloud specific */
+    #styleCloudContainer {
+      width: 100%; height: 400px; min-height: 300px; max-height: 60vh;
+      border: 1px solid var(--border-color, #ccc); border-radius: 4px;
+      position: relative; margin-bottom: 1rem;
+    }
+    body.dark-mode #styleCloudContainer { border-color: var(--accent-border-color, #555); }
+
+    /* Abilities Chart specific */
+    #abilitiesProfileModal .chart-container { position: relative; width: 100%; transition: height 0.3s ease; }
+    #abilitiesAbsoluteRadar, #abilitiesRelativeRadar { min-height: 300px; }
+    #abilitiesStrengthsChart, #abilitiesWeaknessesChart { min-height: 200px; }
+
+    /* Responsive adjustments for medium-sized screens (768px - 991px) */
+    @media (min-width: 768px) and (max-width: 991px) {
+      .container { width: 95%; max-width: none; }
+
+      /* Double row height */
+      #leaderboard tbody td {
+        padding: 0;
+        white-space: normal; /* Allow wrapping */
+        vertical-align: middle;
+      }
+      #leaderboard tbody td .cell-content {
+        min-height: 3.5em; /* Increased height */
+        line-height: 1.3em;
+        width: 100%;
+        padding: 0.4em;
+        box-sizing: border-box;
+        justify-content: center; /* Center most content */
+      }
+      /* Model name specific adjustments */
+      #leaderboard tbody td:first-child .cell-content {
+        max-width: 150px; /* Limit width */
+        white-space: normal; /* Ensure wrapping */
+        word-wrap: break-word;
+        justify-content: flex-start; /* Keep left-aligned */
+      }
+      /* Keep scores left-aligned */
+      #leaderboard tbody td:nth-last-child(3) .cell-content, /* Rubric */
+      #leaderboard tbody td:nth-last-child(2) .cell-content { /* Elo */
+         justify-content: flex-start;
+      }
+      /* Ensure score bars adjust */
+      #leaderboard tbody td .cell-content .score-bar-container {
+        flex: 1; display: flex; align-items: center; gap: 0.5em;
+      }
+
+
+
+      /* Modal chart stacking */
+      #abilitiesProfileModal .modal-xl .row .col-lg-6 {
+        width: 100%; margin-bottom: 1.5rem;
+      }
+      #abilitiesProfileModal .chart-container {
+        max-width: 100%; height: 300px !important;
+      }
+      #abilitiesProfileModal .chart-container[style*="aspect-ratio"] {
+        height: 0 !important; padding-bottom: 62.5% !important; position: relative;
+      }
+       #abilitiesProfileModal .chart-container[style*="aspect-ratio"] canvas {
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      }
+    }
+
+    /* Ensure modals can grow taller on smaller screens */
+    @media (max-height: 700px) {
+      #abilitiesProfileModal .modal-body,
+      #styleProfileModal .modal-body {
+        max-height: 70vh; overflow-y: auto;
+      }
+    }
+
+    /* Make sure modal can be wider on large screens */
+    @media (min-width: 992px) {
+      .modal-xl { max-width: 1140px; }
+      .modal-lg { max-width: 800px; }
+    }
+
+    /* Container sizing to prevent jumpy behavior */
+    @media (min-width: 768px) {
+      .container {
+        width: 95% !important; max-width: 1400px; margin: 0 auto;
+      }
+    }
+
+    
+    
+
+  </style>
+</head>
+<body class="eqbench3-page">
+  <div class="container mt-4">
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" id="darkModeToggle">
+      <label class="form-check-label" for="darkModeToggle" id="toggleLabel">Light</label>
+    </div>
+    <div class="header">
+      <a href="./"><img src="./images/eqbench_logo_sml.png" alt="EQ-bench Logo" class="logo"/></a>
+      <div class="header-text">
+        <h1>EQ-Bench 3</h1>
+      </div>
+    </div>
+    <p>Emotional Intelligence Benchmarks for LLMs</p>
+    <p><a href="https://github.com/EQ-bench" target="_blank">Github</a> | <a href="https://arxiv.org/abs/2312.06281" target="_blank">Paper</a> | <span id="email"></span> | <a href="https://twitter.com/sam_paech" target="_blank">Twitter</a> | <a href="about.html">About</a></p>
+
+    <!-- Updated Navigation -->
+    <p>
+        <b>💙EQ-Bench3</b>
+        <span class="nav-separator">|</span>
+        <a href='creative_writing_longform.html'>✍️Longform Writing</a>
+        <span class="nav-separator">|</span>
+        <a href='creative_writing_v3.html'>🎨Creative Writing v3</a>
+        <span class="nav-separator">|</span>
+        <a href='judgemark-v2.html'>⚖️Judgemark v2</a>
+        <span class="nav-separator">|</span>
+        <a href='buzzbench.html'>🎤BuzzBench</a>
+        <span class="nav-separator">|</span>
+        <a href='diplobench.html'>🌍DiploBench</a>
+        <span class="nav-separator">|</span>
+        <a href='creative_writing_v2.html'>🎨Creative Writing (Legacy)</a>
+        <span class="nav-separator">|</span>
+        <a href='eqbench-v2.html'>💗EQ-Bench (Legacy)</a>
+    </p>
+
+    <!-- Hidden Sliders (kept for structure, but unused) -->
+    <div class="d-flex align-items-start mb-3 d-none">
+      <div class="vocab-control-container me-3 d-none">
+        <div class="vocab-control-label">
+          <label for="vocabControlSlider">Vocab Control: <span id="vocabControlValue">0%</span></label>
+        </div>
+        <div class="vocab-control-slider">
+          <input type="range" class="form-range custom-width-slider" min="0" max="100" value="0" id="vocabControlSlider">
+        </div>
+      </div>
+      <div class="gpt-slop-control-container d-none">
+        <div class="gpt-slop-control-label">
+          <label for="gptSlopControlSlider">GPT-Slop Control: <span id="gptSlopControlValue">0%</span></label>
+        </div>
+        <div class="gpt-slop-control-slider">
+          <input type="range" class="form-range custom-width-slider" min="0" max="100" value="0" id="gptSlopControlSlider">
+        </div>
+      </div>
+    </div>
+
+    <p>An LLM-judged benchmark measuring emotional intelligence facets (v3). <a href="./about.html#eq-bench-v3">Learn more</a></p>
+
+    <button id="toggleMiddleStats" class="btn btn-outline-secondary btn-sm show-details-toggle-button d-none mb-2">
+        Expand Details
+    </button>
+
+    <div class="table-responsive">
+      <table id="leaderboard" class="table table-striped table-bordered" style="width:100%;">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Abilities</th>
+            <th>Style</th>
+            <th class="mobile-collapsible feature-header">Human</th>
+            <th class="mobile-collapsible feature-header">Uptight</th>
+            <th class="mobile-collapsible feature-header">Assertive</th>
+            <th class="mobile-collapsible feature-header">Social IQ</th>
+            <th class="mobile-collapsible feature-header">Empathy</th>
+            <th class="mobile-collapsible feature-header">Analytic</th>
+            <th class="mobile-collapsible feature-header">Insight</th>
+            <th class="mobile-collapsible">Rubric Score</th>
+            <th>Elo Score</th>
+            <th></th> <!-- Sample Link -->
+          </tr>
+        </thead>
+        <tbody id="leaderboardBody">
+          <!-- Rows injected by eqbench3.js -->
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <hr>
+    <div class="section mt-4" id="metrics-explanation">
+      <div class="card bg-card">
+        <div class="card-body">
+          <p>For more details about the benchmark, see the <a href="./about.html#eq-bench-v3">About</a> section.</p>
+          <h5 class="card-title">Metrics</h5>
+          <p>The leaderboard displays several metrics:</p>
+          <ul>
+              <li><strong>Abilities/Style Icons:</strong> Click the chart icons (<span class="chart-icon"><span></span></span>) to view detailed breakdowns of model abilities (radar/bar charts) and stylistic tendencies (word cloud).</li>
+              <li><strong>Feature Columns (Humanlike, Uptight, etc.):</strong> These represent scores (typically 0-20) assigned by the judge LLM based on specific criteria related to emotional intelligence facets. Higher scores generally indicate stronger presence of that trait in the model's responses for this benchmark. Cells are colored as a heatmap based on the score (light yellow for low, light blue for high).</li>
+              <li><strong>Rubric Score:</strong> An overall quality score (0-100) derived from the judge LLM's assessment based on a detailed rubric.</li>
+              <li><strong>Elo Score:</strong> A relative ranking score calculated using the Bradley-Terry model based on pairwise comparisons between models judged on the same prompts. Higher scores indicate better performance relative to other models in the benchmark.</li>
+              <li><strong>Sample Link:</strong> Provides access to example outputs generated by the model for this benchmark.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include jQuery/DataTables/Bootstrap as before -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Load Chart.js (v4) for the Abilities Modal charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/wordcloud@1.2.2/src/wordcloud2.min.js"></script>
+
+  <!-- Main script (UPDATED NAMES & VERSION) -->
+  <script defer src="eqbench3_chartdata.js?v=1.0.1"></script>
+  <script defer src="eqbench3_chartdata_style.js?v=1.0.1"></script>
+  <script defer src="eqbench3.js?v=1.0.1"></script>
+
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1600fe1d3da743c1b311f4e5fee86767"}'></script>
+
+  <!-- Slop Profile Modal (Kept in HTML, but unused by eqbench3.js) -->
+  <div class="modal fade" id="slopProfileModal" tabindex="-1" aria-labelledby="slopProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="slopProfileModalLabel">Slop Profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="slopProfileContent">Loading...</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Abilities Charts Modal (Structure unchanged) -->
+  <div class="modal fade" id="abilitiesProfileModal" tabindex="-1" aria-labelledby="abilitiesProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="abilitiesProfileModalLabel">Abilities Overview</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="abilitiesProfileContent">
+          <!-- Charts injected by JS -->
+           <div class="row mb-4">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+              <div class="chart-container" style="position: relative; height: auto; aspect-ratio: 1.6/1;">
+                <canvas id="abilitiesAbsoluteRadar"></canvas>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="chart-container" style="position: relative; height: auto; aspect-ratio: 1.6/1;">
+                <canvas id="abilitiesRelativeRadar"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-lg-6 mb-4">
+              <div class="chart-container" style="position: relative; height: 200px;">
+                <canvas id="abilitiesStrengthsChart"></canvas>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-6 mb-4">
+              <div class="chart-container" style="position: relative; height: 200px;">
+                <canvas id="abilitiesWeaknessesChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Style Profile Modal (Structure unchanged) -->
+  <div class="modal fade" id="styleProfileModal" tabindex="-1" aria-labelledby="styleProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="styleProfileModalLabel">Style Profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="styleProfileContent">
+          <!-- Container for the word cloud -->
+          <div id="styleCloudContainer"></div>
+          <p class="text-muted small mt-2">Word size represents association strength.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
