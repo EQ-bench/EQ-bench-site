@@ -635,7 +635,7 @@ function loadLeaderboardData() {
     }
 
     let safeModelName = currentModelName.replace(/\//g, '__').replace(/[^a-zA-Z0-9_-]/g, '-');
-    let modelResultsFn = `results/_eqbench3/${safeModelName}.html`.toLowerCase();
+    let modelResultsFn = `results/eqbench3_reports/${safeModelName}.html`.toLowerCase();
     // --- End Model Name Handling ---
 
     // --- Score Bar HTML (Use new class name, ensure display: none initially) ---
