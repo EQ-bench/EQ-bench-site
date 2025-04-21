@@ -541,7 +541,7 @@ function loadLeaderboardData() {
 
   maxEloScore = originalEloScores.length > 0 ? Math.max(...originalEloScores) : 1500;
   maxRubricScore = 100; // Rubric is fixed 0-100 scale
-  baselineEloScore = originalEloScores.length > 0 ? Math.max(800, Math.min(...originalEloScores) - 50) : 800;
+  baselineEloScore = 0; //originalEloScores.length > 0 ? Math.max(800, Math.min(...originalEloScores) - 50) : 800;
   baselineRubricScore = 0; // Rubric baseline is 0
   // --- End Scaling ---
 
