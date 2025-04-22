@@ -54,7 +54,7 @@
 		<div class="toc">
 			<ul>
 				 <li><a href="#about">How to Submit</a></li>
-				 <li><a href="#eq-bench">EQ-Bench</a></li>
+				 <li><a href="#eq-bench-3">EQ-Bench</a></li>
 				 <li><a href="#magi-hard">MAGI-Hard</a></li>
 				 <li><a href="#creative-writing">Creative Writing</a></li>
 				 <li><a href="#judgemark">Judgemark</a></li>
@@ -76,106 +76,124 @@
 			</p>
 			<p>We will then verify the result on our end and add to the leaderboard. This project is self funded so please respect that we don't have unlimited compute!</p>
 		</div>
-		<div id="eq-bench3" class="section">
+		<div id="eq-bench-3" class="section">
 			<h3>💙EQ‑Bench 3</h3>
 
 			<!-- ─────────────────────────  WHAT'S NEW  ───────────────────────── -->
 			<p><strong>What changed in v3?</strong>  
-			   The original (2023) single‑turn “rate the feelings” test was already saturating: top models could brute‑force sentiment matching without genuine perspective‑taking.  
-			   <em>EQ‑Bench 3</em> is a ground‑up redesign aimed at <u>pragmatic emotional intelligence</u> in messy, real‑world conflict mediation.</p>
+			   The original (2023) single‑turn “rate the feelings” test was saturating, unable to distinguish between ability levels of top models.
+			   <em>EQ‑Bench 3</em> is a ground‑up redesign assessing a range of <u>active emotional intelligence abilities</u> in challenging role-play scenarios. The outputs are judged by GPT-4.1.</p>
 
 			<ul>
-				<li><b>Multi‑turn role‑play.</b>  Each item is a three‑act dispute between two characters.  
-					The <code>test model</code> plays the mediator and must navigate escalating, sometimes manipulative behaviour.</li>
-				<li><b>Eight head‑to‑head judging criteria.</b>  
-					Depth of Insight, Human Perspective, Causal Attribution, Theory of Mind, Compassion, Reading Between the Lines, Correctness, Overall EQ.</li>
-				<li><b>Rubric scores <em>plus</em> Glicko Elo.</b>  Absolute rubric numbers for feature tracking, followed by pairwise Elo for fine ranking.</li>
-				<li><b>No ceiling effects.</b> 42 disputes × 3 turns = 126 judging items; o3 tops out at ≈ 1558 Elo with >500 pts headroom remaining.</li>
-				<li><b>Cheap & reproducible.</b> One full 3‑iteration run costs ≈ $6 on OpenRouter; rubric‑only ≈ $2.</li>
+				<li><b>Multi‑turn role‑play.</b>  The majority of test items are comprised of a three‑turn roleplay with the "user" providing canned responses to move the scenario along and inject challenges. 
+					In some of these scenarios, the <code>test model</code> plays the mediator in a conflict mediation session, and must handle escalating, sometimes manipulative behaviour. Other scenarios involve navigating messy relationship drama, high stakes workplace situations, and parenting decisions.</li>
+				<li><b>"I'm thinking & feeling" and "They're thinking & feeling"</b> blocks are required with each response, so the model can demonstrate its emotional processing, reasoning and theory of mind. After each roleplay, the test model debriefs, giving further insight into its understanding.</li>
+				<li><b>Analysis tasks</b> are included, which encourage the model to go deep analysing a scenario using technical language & academic grounding.</li>
+				<li><b>Rubric scoring <em>plus</em> pairwise elo.</b> The benchmark returns two results: one based on scoring items individually to a rubric (set of criteria), like a teacher grades a paper. And the elo score, which is based on head-to-head matchups between models. If you are running the benchmark yourself, you can choose either/both, depending on your requirement.</li>
+				<li><b>Cost.</b> One iteration of rubric + elo costs ≈ $10 on OpenRouter; rubric‑only ≈ $3. These are the judging costs, on top of whatever the test model inference costs.</li>
 			</ul>
 
 			<!-- ─────────────────────────  TWO‑PASS PIPELINE  ───────────────────────── -->
 			<h4>Pipeline overview</h4>
 			<ol>
-				<li><b>Rubric stage — absolute scoring.</b>  
-					Claude 3.7 Sonnet grades every mediator reply against a 20‑point rubric and outputs 0‑10 scores.  
-					This gives feature‑level deltas and lets you skip Elo if you just need diagnostics.</li>
-				<li><b>Pairwise stage → Glicko Elo.</b>  
-					The same replies are compared head‑to‑head on the eight criteria above.  
-					Margins (“+ … +++++”) are mapped to weighted Glicko updates to produce the leaderboard Elo.</li>
+				<li><b>Data generation</b>
+					The model is presented with a series of prompts, typically initiating a roleplay of a challenging emotionally rich scenario. The prompts are all pre-written, in such a way as to move the scenario along and add twists, challenges & misdirection. The model is prompted to preface its responses with introspective blocks detailing what it's thinking & feeling (in character) and what the other character is thinking & feeling. The roleplay concludes with the model conducting a debrief and self-evaluation.
+				<li><b>Rubric stage</b>  
+					GPT-4.1 grades the roleplay transcript & self-debrief against an in-depth scoring rubric. Some of these scored traits & abilities are aggregated into the final "rubric score" and some are used to provide visibility on the model's tendencies.</li>
+				<li><b>Pairwise stage</b>  
+					The same transcripts are compared head‑to‑head (again judged by GPT-4.1). The judge is instructed to select which model is stronger on several abilities, using a 1-5 "+" notation to denote the strength of the win on each criteria.
+					Since the sparse elo solver we're using (Glicko) doesn't handle win margins, we map the win margin to a *number of wins/losses*, allowing more discriminative power per test item.</li>
 			</ol>
 
 			<h5>Rubric criteria</h5>
 			<pre class="code-block"><code>
-demonstrated_empathy      pragmatic_ei          depth_of_insight
-social_dexterity          emotional_reasoning   message_tailoring
-boundary_setting          safety_conscious      moralising
-sycophantic               compliant             challenging
-warmth                    validating            analytical
-reactive                  conversational        humanlike
-subtext_identification    intellectual_grounding
-correctness
+				Demonstrated Empathy       Pragmatic EI             Depth of Insight
+				Social Dexterity           Emotional Reasoning      Message Tailoring
+				Boundary Setting           Safety Conscious         Moralising
+				Sycophantic                Compliant                Challenging
+				Warmth                     Validating               Analytical
+				Reactive                   Conversational           Humanlike
 			</code></pre>
 
-			<p><strong>Ignored for the rubric total:</strong>  
-			   warmth, validating, challenging, analytical, conversational, playing_assigned_role.  
-			   They are still logged for analysis but do not affect the numeric score.</p>
+			<p>Note: Only the following criteria are used to compute the rubric score: Demonstrated Empathy, Pragmatic EI, Depth of Insight, Social Dexterity, Emotional Reasoning, Message Tailoring</p>
 
-			<!-- ─────────────────────────  DETAILED JUDGING PIPELINE  ───────────────────────── -->
-			<h4>Judging flow</h4>
-			<ol>
-				<li>Generate replies for 42 disputes × 3 turns at <code>temperature = 0.7</code>, <code>min_p = 0.1</code>.</li>
-				<li>Rubric‑grade each reply → JSON with per‑criterion scores.</li>
-				<li>Select two neighbouring leaderboard models per turn, ask judge to pick winners with “+…+++++” margin.</li>
-				<li>Convert plus‑count → integer margin 1–5; feed to custom Glicko solver.</li>
-				<li>Iterate until Elo <em>Δ</em> &lt; 1 pt; anchor scale (DeepSeek‑R1 = 1500, Mistral‑3B = 200).</li>
-			</ol>
+			<h5>Pairwise criteria</h5>
+			<pre class="code-block"><code>
+				1. Demonstrated empathy (not just performative)
+				2. Pragmatic EI
+				3. Depth of insight
+				4. Social dexterity
+				5. Emotional reasoning
+				6. Appropriate validation and/or challenging for the scene
+				7. Message tailoring: Appropriate targeting of response to where the user is at
+				8. Overall EQ
+			</code></pre>
 
 			<!-- ─────────────────────────  BIAS MITIGATION  ───────────────────────── -->
 			<h4>Bias mitigation</h4>
 			<ul>
-				<li><b>Length bias.</b> Mediator replies truncated to 2048 tokens before judging.</li>
-				<li><b>Position bias.</b> Every matchup judged twice (A|B and B|A) and averaged.</li>
-				<li><b>Agreement / sycophancy bias.</b> Scenarios reward boundary‑setting over people‑pleasing.</li>
+				<li><b>Length bias.</b> For pairwise judgements, responses are truncated to standardised lengths before judging. The truncation point is chosen so that nearly all outputs will be truncated, aiming for an even playing field. Truncating outputs is not ideal, but length bias is such a strong factor in pairwise eval that we opt to sacrifice some of the generated output for the sake of minimising this biasing effect. We find this to be the least-bad option, and in practice find that it doesn't sacrifice discriminative power.
+					For the rubric eval, *discriminative power* is a more scarce resource and length bias is much less pronounced, so we retain the full length of the outputs.</li>
+				<li><b>Position bias.</b> In pairwise, every matchup is judged twice (A|B and B|A) and averaged.</li>
+				<li><b>Named participant bias.</b> We mitigate any biases from naming the models in the pairwise evalution by giving them arbitrary designators (A0488 and A0493).</li>
 			</ul>
+
+			<h4>Biases not controlled for</h4>
+			<ul>
+				<li><b>Judge self-bias / family bias:</b> We use GPT-4.1 as the judge for all outputs. This may introduce some bias where the judge prefers its own outputs or those of similar models. This is currently not quantified or adjusted for in this eval. Judge self bias can be in the range of 0-10% depending on the task (sometimes even negative bias!). It would be nice to mitigate this bias by using an ensemble of diverse judges, but alas, this is a self funded leaderboard, and judge ensembles are $$$.</li>
+				<li><b>Other judge biases:</b> LLM judges can have varying biases in how they rate: verbosity, positivity, political, cultural etc. We don't control for these possible biases; they are just a part of LLM judging, as personal biases are part of human judging. Subjective evals are a messy business! Set your expectations accordingly.</li>
+			</ul>
+
 
 			<!-- ─────────────────────────  EXAMPLE PROMPT  ───────────────────────── -->
 			<details>
 				<summary><strong>Example pairwise judging prompt</strong></summary>
-				<pre><code>Compare the relative ability of each respondent on these criteria:
-1. Depth of insight
-2. Human perspective
-3. Causal attribution
-4. Theory of mind
-5. Compassion
-6. Reading between the lines
-7. Correctness
+				<pre><code>
+[RESPONDENT A0493]
+{conversation_history_A}
+[/RESPONDENT A0493]
+
+[RESPONDENT A0488]
+{conversation_history_B}
+[/RESPONDENT A0488]
+
+Your task is to critically examine two respondents role-playing a challenging scenario (from Respondents A0493 and A0488), and decide which displays each trait more strongly.
+
+Compare the relative ability of each respondent on these criteria:
+1. Demonstrated empathy (not just performative)
+2. Pragmatic EI
+3. Depth of insight
+4. Social dexterity
+5. Emotional reasoning
+6. Appropriate validation and/or challenging for the scene
+7. Message tailoring: Appropriate targeting of response to where the user is at
 8. Overall EQ
+
+Notes on the scenario to assist judging:
+{scenario_notes}
 
 Judging instructions:
 - You must always pick a winner for each criterion (no draws).
-- Use “+ / ++ / +++ / ++++ / +++++” after the winner code to show margin.
-- Judge only what is present; ignore truncation.
+- For the "winner & disparity rating" output, use a plus-based scale (“+” / “++” / “+++” / “++++” / “+++++”) after indicating the winner’s code (A0493 or A0488) to show how strongly they win that criterion.
+  - For example, "A0391++" means A0391 is somewhat stronger, while "A0986+++++" means A0986 is overwhelmingly stronger.
+- Responses are commonly truncated to standardise output length. Simply judge what is there.
+- Be aware that a highly detailed, detached analytical response to the user is not always appropriate in the context of an organic chat or a role play. This isn't a hard & fast rule; use your judgement.
+- The "assistant" messages as well as the debrief are authored by the assistant. Base your evaluation on the EQ displayed in their roleplay and their self assessment.
+- The user messages are always canned; don't judge them at all, your only focus is on the assistant.
 				</code></pre>
 			</details>
 
 			<!-- ─────────────────────────  LIMITATIONS  ───────────────────────── -->
 			<h4>Limitations & interpretation</h4>
 			<p>
-				EQ‑Bench 3 is still judged by an LLM and thus inherits self‑bias, verbosity fetish, and cultural priors.  
-				Read the sample transcripts; treat scores as <em>relative</em>, not absolute truth.
+				EQ‑Bench 3 is a *subjective eval* judged by a LLM.
+				As such, the results should be considered roughly indicative but not absolute truth.
+				The sample transcripts are provided so you can make your own judgements.
 			</p>
 
 			<!-- ─────────────────────────  HOW TO RUN  ───────────────────────── -->
-			<h4>Run it yourself</h4>
-			<p>Clone <a href="https://github.com/EQ-bench/eqbench3" target="_blank">github.com/EQ‑bench/eqbench3</a>, set your API keys, then:</p>
-			<pre class="code-block"><code># rubric only (≈ $2)
-python eqbench3.py --test-model llama-3-8b --no-elo
-
-# full run (rubric + Elo, ≈ $6)
-python eqbench3.py --test-model llama-3-8b
-			</code></pre>
-			<p>Results are written to <code>runs/&lt;model&gt;.json</code>; a helper notebook plots criterion deltas and Elo history.</p>
+			<h4>Source code</h4>
+			<p><em>Coming soon.</em></p>			
 		</div>
 
 		
