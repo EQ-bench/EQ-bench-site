@@ -84,7 +84,7 @@ const FEATURE_DESCRIPTIONS = {
   "empathy": "Demonstrated empathy",
   "analytic": "Reason-first analytical approach",
   "insight": "Depth of insight",
-  "moral": "Moralising",
+  "moralising": "Moralising",
   "pragmatic": "Practical problem solving"
 };
 
