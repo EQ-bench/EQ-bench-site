@@ -77,52 +77,107 @@
 			<p>We will then verify the result on our end and add to the leaderboard. This project is self funded so please respect that we don't have unlimited compute!</p>
 		</div>
 		<div id="eq-bench3" class="section">
-			<h3>💙EQ-Bench 3</h3>
-			<p>EQ-Bench 3 is an Emotional Intelligence benchmark focused on active conflict mediation skills. It evaluates the ability of language models to navigate complex emotional territory in challenging and diverse scenarios.</p>
-			
-			<p>The benchmark employs a set of conflict scenarios where the model must mediate between two or more parties with conflicting interests, emotional states, and communication patterns. Unlike the original EQ-Bench which assesses the ability to predict emotional states, EQ-Bench 3 targets active emotional intelligence abilities.</p>
-			
-			<p><strong>Methodology:</strong></p>
-			<ul>
-				<li><strong>Test Structure:</strong> The benchmark runs multi-turn conversations (up to 21 turns) between the test model (acting as conflict mediator) and actor models (playing clients or disputants). The actor model we use is gemini-2.0-flash-001. Each scenario includes detailed character profiles with specific emotional states and backgrounds.</li>
-				
-				<li><strong>Assessment Criteria:</strong> We score models on:
-					<ul>
-						<li>Basic emotional intelligence skills (recognizing emotions, showing empathy)</li>
-						<li>Professional skills specific to therapy or mediation</li>
-						<li>Avoiding serious professional mistakes</li>
-					</ul>
-				</li>
-				
-				<li><strong>How It Works:</strong> The benchmark uses three models:
-					<ul>
-						<li>Test model: The AI being evaluated</li>
-						<li>Actor model: Plays realistic clients or disputants</li>
-						<li>Judge model: Claude-3.7-Sonnet scores the test model's performance</li>
-					</ul>
-				</li>
-				
-				<li><strong>Scoring:</strong> The final score combines:
-					<ul>
-						<li>Scores across multiple skill areas</li>
-						<li>A count of identified mis-steps and how serious they were</li>
-					</ul>
-				</li>
-			</ul>
-			
-			<p>Beyond just scores, the judge provides a critical analysis of specific errors, rating them as minor, moderate, or serious. This helps identify exactly where and how models struggle in realistic professional conversations.</p>
+			<h3>💙EQ‑Bench 3</h3>
 
-			<p><b>Judge Self-Bias</b></p>
-			<p>A common concern raised about LLM-judge evals is that the judge might be biased, particularly towards its own outputs. To understand this effect we benchmarked the top models with two judges: Sonnet-3.7 (the judge we use for the leaderboard), and gpt-4o-2024-11-20.</p>
-			<p>Here are the results from these two judge models rating the top models (including themselves) in the EQ-Bench3 task:</p>
-			<a href="./images/eqbench3-judge-comparison.png" class="lightbox">
-				<img src="./images/eqbench3-judge-comparison.png" style="width: 900px; max-width: 100%; height: auto;" />
-			  </a>
-			<p>While this is a limited comparison, we don't see any significant self-bias to be evident for these two judges. In fact, their scoring is nearly identical.</p>
-			
-			<p>Code and full documentation will be available in the EQ-Bench repository soon.</p>
-			<br>
+			<!-- ─────────────────────────  WHAT'S NEW  ───────────────────────── -->
+			<p><strong>What changed in v3?</strong>  
+			   The original (2023) single‑turn “rate the feelings” test was already saturating: top models could brute‑force sentiment matching without genuine perspective‑taking.  
+			   <em>EQ‑Bench 3</em> is a ground‑up redesign aimed at <u>pragmatic emotional intelligence</u> in messy, real‑world conflict mediation.</p>
+
+			<ul>
+				<li><b>Multi‑turn role‑play.</b>  Each item is a three‑act dispute between two characters.  
+					The <code>test model</code> plays the mediator and must navigate escalating, sometimes manipulative behaviour.</li>
+				<li><b>Eight head‑to‑head judging criteria.</b>  
+					Depth of Insight, Human Perspective, Causal Attribution, Theory of Mind, Compassion, Reading Between the Lines, Correctness, Overall EQ.</li>
+				<li><b>Rubric scores <em>plus</em> Glicko Elo.</b>  Absolute rubric numbers for feature tracking, followed by pairwise Elo for fine ranking.</li>
+				<li><b>No ceiling effects.</b> 42 disputes × 3 turns = 126 judging items; o3 tops out at ≈ 1558 Elo with >500 pts headroom remaining.</li>
+				<li><b>Cheap & reproducible.</b> One full 3‑iteration run costs ≈ $6 on OpenRouter; rubric‑only ≈ $2.</li>
+			</ul>
+
+			<!-- ─────────────────────────  TWO‑PASS PIPELINE  ───────────────────────── -->
+			<h4>Pipeline overview</h4>
+			<ol>
+				<li><b>Rubric stage — absolute scoring.</b>  
+					Claude 3.7 Sonnet grades every mediator reply against a 20‑point rubric and outputs 0‑10 scores.  
+					This gives feature‑level deltas and lets you skip Elo if you just need diagnostics.</li>
+				<li><b>Pairwise stage → Glicko Elo.</b>  
+					The same replies are compared head‑to‑head on the eight criteria above.  
+					Margins (“+ … +++++”) are mapped to weighted Glicko updates to produce the leaderboard Elo.</li>
+			</ol>
+
+			<h5>Rubric criteria</h5>
+			<pre class="code-block"><code>
+demonstrated_empathy      pragmatic_ei          depth_of_insight
+social_dexterity          emotional_reasoning   message_tailoring
+boundary_setting          safety_conscious      moralising
+sycophantic               compliant             challenging
+warmth                    validating            analytical
+reactive                  conversational        humanlike
+subtext_identification    intellectual_grounding
+correctness
+			</code></pre>
+
+			<p><strong>Ignored for the rubric total:</strong>  
+			   warmth, validating, challenging, analytical, conversational, playing_assigned_role.  
+			   They are still logged for analysis but do not affect the numeric score.</p>
+
+			<!-- ─────────────────────────  DETAILED JUDGING PIPELINE  ───────────────────────── -->
+			<h4>Judging flow</h4>
+			<ol>
+				<li>Generate replies for 42 disputes × 3 turns at <code>temperature = 0.7</code>, <code>min_p = 0.1</code>.</li>
+				<li>Rubric‑grade each reply → JSON with per‑criterion scores.</li>
+				<li>Select two neighbouring leaderboard models per turn, ask judge to pick winners with “+…+++++” margin.</li>
+				<li>Convert plus‑count → integer margin 1–5; feed to custom Glicko solver.</li>
+				<li>Iterate until Elo <em>Δ</em> &lt; 1 pt; anchor scale (DeepSeek‑R1 = 1500, Mistral‑3B = 200).</li>
+			</ol>
+
+			<!-- ─────────────────────────  BIAS MITIGATION  ───────────────────────── -->
+			<h4>Bias mitigation</h4>
+			<ul>
+				<li><b>Length bias.</b> Mediator replies truncated to 2048 tokens before judging.</li>
+				<li><b>Position bias.</b> Every matchup judged twice (A|B and B|A) and averaged.</li>
+				<li><b>Agreement / sycophancy bias.</b> Scenarios reward boundary‑setting over people‑pleasing.</li>
+			</ul>
+
+			<!-- ─────────────────────────  EXAMPLE PROMPT  ───────────────────────── -->
+			<details>
+				<summary><strong>Example pairwise judging prompt</strong></summary>
+				<pre><code>Compare the relative ability of each respondent on these criteria:
+1. Depth of insight
+2. Human perspective
+3. Causal attribution
+4. Theory of mind
+5. Compassion
+6. Reading between the lines
+7. Correctness
+8. Overall EQ
+
+Judging instructions:
+- You must always pick a winner for each criterion (no draws).
+- Use “+ / ++ / +++ / ++++ / +++++” after the winner code to show margin.
+- Judge only what is present; ignore truncation.
+				</code></pre>
+			</details>
+
+			<!-- ─────────────────────────  LIMITATIONS  ───────────────────────── -->
+			<h4>Limitations & interpretation</h4>
+			<p>
+				EQ‑Bench 3 is still judged by an LLM and thus inherits self‑bias, verbosity fetish, and cultural priors.  
+				Read the sample transcripts; treat scores as <em>relative</em>, not absolute truth.
+			</p>
+
+			<!-- ─────────────────────────  HOW TO RUN  ───────────────────────── -->
+			<h4>Run it yourself</h4>
+			<p>Clone <a href="https://github.com/EQ-bench/eqbench3" target="_blank">github.com/EQ‑bench/eqbench3</a>, set your API keys, then:</p>
+			<pre class="code-block"><code># rubric only (≈ $2)
+python eqbench3.py --test-model llama-3-8b --no-elo
+
+# full run (rubric + Elo, ≈ $6)
+python eqbench3.py --test-model llama-3-8b
+			</code></pre>
+			<p>Results are written to <code>runs/&lt;model&gt;.json</code>; a helper notebook plots criterion deltas and Elo history.</p>
 		</div>
+
 		
 		
 		

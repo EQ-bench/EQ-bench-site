@@ -29,7 +29,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('./images/eqbench3_background.png'); /* Example: Use a different relevant background */
+      background-image: url('./images/eqbench3_backgroundx.png'); /* Example: Use a different relevant background */
       background-position: center;
       background-size: cover;
       filter: blur(3px);
@@ -494,7 +494,7 @@ body.eqbench3-page #leaderboard tbody td .cell-content {
 
 /* Keep model names and the two score columns left‑aligned         */
 body.eqbench3-page #leaderboard tbody td:first-child .cell-content {
-    max-width: 150px;
+    max-width: none !important;
     justify-content: flex-start;
     word-wrap: break-word;
 }
@@ -525,6 +525,19 @@ body.eqbench3-page #leaderboard tbody td:last-child          /* Sample cells    
     white-space: nowrap;            /* keep icon / “Sample” on one line      */
     text-align: center;             /* centres icon/link nicely              */
 }
+
+
+
+/* ── Force white text on the clickable feature‑column headers ───────────── */
+body.eqbench3-page #leaderboard thead th.feature-header a {
+    color: #fff !important;            /* white in both light & dark modes   */
+    text-shadow: none !important;      /* kill the light‑mode white glow   */
+}
+body.eqbench3-page #leaderboard thead th.feature-header a:hover,
+body.eqbench3-page #leaderboard thead th.feature-header a:focus {
+    color: #fff !important;            /* keep it white on hover / focus     */
+}
+
 
 
 
@@ -596,10 +609,6 @@ body.eqbench3-page #leaderboard tbody td:last-child          /* Sample cells    
           <tr>
             <th>Model</th>
             <th>Abilities</th>
-        
-            <!-- icons & small‑screen collapse -->
-            <th class="mobile-collapsible">Style</th>
-        
             <!-- 11 feature columns -->
             <th class="mobile-collapsible feature-header">Human</th>
             <th class="mobile-collapsible feature-header">Safety</th>

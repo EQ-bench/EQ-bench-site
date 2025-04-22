@@ -38,14 +38,14 @@ let maxEloScore;
 let maxRubricScore;
 let baselineEloScore;
 let baselineRubricScore;
-let lastSortedScoreColumn = 11; // Default sort is Elo, which is now column index 11
+let lastSortedScoreColumn = 10; // Default sort is Elo, which is now column index 11
 
-const FEATURE_COL_START     = 3;   // first feature column index
-const FEATURE_COL_END       = 13;  // last  feature column index
-const RUBRIC_COL_INDEX      = 14;
-const ELO_COL_INDEX         = 15;
-const SAMPLE_COL_INDEX      = 16;
-const TOTAL_COLS            = 17;  // used for colspan messages
+const FEATURE_COL_START     = 2;   // first feature column index
+const FEATURE_COL_END       = 12;  // last  feature column index
+const RUBRIC_COL_INDEX      = 13;
+const ELO_COL_INDEX         = 14;
+const SAMPLE_COL_INDEX      = 15;
+const TOTAL_COLS            = 16;  // used for colspan messages
 
 // Chart.js references:
 let abilitiesAbsoluteRadarChart = null;
@@ -109,6 +109,7 @@ function setupDarkModeToggle() {
     if ($.fn.DataTable.isDataTable('#leaderboard')) {
       // Redraw needed to update heatmap colors and score bar gradients
       $('#leaderboard').DataTable().rows().invalidate('data').draw(false);
+      updateFeatureHeatmapColors();
     }
     // Update open modal chart colors if needed (complex, might require chart recreation)
   });
@@ -124,6 +125,19 @@ function applySystemTheme() {
     label.textContent = prefersDarkMode ? 'Dark' : 'Light';
   }
 }
+
+function updateFeatureHeatmapColors() {
+  const dark = document.body.classList.contains('dark-mode');
+  document.querySelectorAll('#leaderboard td.feature-cell').forEach(td => {
+    const t = parseFloat(td.dataset.heat);
+    if (isNaN(t)) return;
+    const col = dark
+      ? pastelPlasma(t, { wash:0.4, alpha:0.7 })
+      : pastelPlasma(t, { wash:0.4, alpha:0.4 });
+    td.style.setProperty('background-color', col, 'important');  // 👈
+  });
+}
+
 
 function displayEncodedEmail() {
   var encodedUser = 'contact';
@@ -647,13 +661,13 @@ function loadLeaderboardData() {
       const displayValue = isNaN(feature.value) ? '-' : feature.value.toFixed(1);
       const orderValue = isNaN(feature.value) ? -1 : feature.value.toFixed(1);
       return `
-          <td class="mobile-collapsible feature-cell"
-              data-order="${orderValue}"
-              style="background-color: ${bgColor} !important;">
-            <div class="cell-content">
-              ${displayValue}
-            </div>
-          </td>`;
+  <td class="mobile-collapsible feature-cell"
+      data-order="${orderValue}"
+      data-heat="${t}"
+      style="background-color: ${bgColor} !important;">   <!-- ← space added -->
+    <div class="cell-content">${displayValue}</div>
+  </td>`;
+
     }).join('');
     // --- End Feature Metric Parsing & Heatmap Color ---
 
@@ -709,6 +723,14 @@ function loadLeaderboardData() {
     // --- End Icon Definitions ---
 
     // --- Row HTML Generation (Updated Structure for EQ-Bench 3) ---
+    /*
+    putting this here for now:
+    <td class="mobile-collapsible"> <!-- Col 2: Style -->
+          <div class="cell-content">
+            ${styleInfoIcon}
+          </div>
+        </td>
+    */
     return `
       <tr data-model-name-full="${currentModelName}"
           data-original-elo-score="${eloScoreNum}"
@@ -726,11 +748,9 @@ function loadLeaderboardData() {
           </div>
         </td>
 
-        <td class="mobile-collapsible"> <!-- Col 2: Style -->
-          <div class="cell-content">
-            ${styleInfoIcon}
-          </div>
-        </td>
+        
+        
+        
 
         ${featureCellsHTML} <!-- Inject feature cells with heatmap -->
 
@@ -843,6 +863,8 @@ let dataTableConfig = {
     updateScoreBarColorsEQ3();
     /* ---------- new line: collapse after the draw has finished ---------- */
     collapseMiddleColumns();          // ensures cols are hidden on first load
+    updateFeatureHeatmapColors();
+
   }
 
 };
@@ -953,7 +975,10 @@ function initializeDataTable() {
   table.one('init.dt', function() {
     collapseMiddleColumns(); // Set initial mobile column visibility
     fixInitialScoreBars(); // Ensure default score bars are shown correctly
+    updateFeatureHeatmapColors();
   });
+
+  table.on('draw.dt', updateFeatureHeatmapColors);
 }
 // --- End DataTable Initialization ---
 
