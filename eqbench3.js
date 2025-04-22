@@ -6,19 +6,25 @@
 
 
 leaderboardDataEQBench3 = `model_name,elo_norm,rubric_0_100,humanlike,safe,assertive,social_iq,warm,analytical,insightful,empathy,compliant,moral,pragmatic
-o3,1557.8,89.9,16.60,16.00,13.45,16.81,16.76,19.57,19.00,18.05,8.62,2.52,17.52
-chatgpt-4o-latest-2025-01-29,1435.6,88.9,17.54,17.07,14.00,17.11,17.48,18.93,18.49,18.59,7.52,3.33,17.63
-deepseek-ai/DeepSeek-R1,1293.2,87.5,16.56,16.89,14.46,16.52,16.48,19.56,18.60,18.15,7.56,3.22,17.44
-deepseek-ai/DeepSeek-V3-0324,1270.4,87.0,16.69,16.74,14.48,16.56,16.30,19.15,18.29,17.96,5.78,3.19,17.63
-gemini-2.5-pro-preview-03-25,1257.5,87.5,16.85,17.00,13.26,16.74,16.94,19.22,18.34,18.33,8.48,3.00,17.41
-qwen/qwq-32b,1233.9,86.1,16.13,16.15,14.22,16.48,16.31,19.26,18.40,17.67,8.37,3.44,17.07
-gpt-4.1-mini,1177.4,85.8,16.00,16.74,12.87,16.37,17.30,18.48,17.83,18.07,9.19,2.30,16.85
-claude-3-7-sonnet-20250219,1141.0,84.4,15.83,15.52,13.07,15.81,15.96,19.07,18.11,17.52,8.00,4.19,16.67
-gemini-2.5-flash-preview,1129.1,84.8,16.04,16.85,13.02,16.00,16.74,18.93,17.91,18.00,8.74,2.41,16.89
-mistralai/Mistral-Small-24B-Instruct-2501,1121.7,66.0,11.80,13.11,8.94,11.22,13.83,15.48,13.37,14.78,9.89,4.07,13.15
-gemini-2.0-flash-001,1119.2,78.0,15.26,15.19,12.17,14.37,15.17,18.04,16.63,16.70,7.56,3.81,15.30
-meta-llama/llama-3.1-8b-instruct,1069.5,58.9,11.52,10.85,7.72,10.15,11.41,14.67,12.51,12.59,9.48,4.15,11.22
-meta-llama/llama-3.2-1b-instruct,727.2,32.9,5.15,4.59,3.41,3.96,5.43,8.96,6.94,6.81,5.26,3.37,5.63`
+o3,1500.0,90.2,16.44,16.17,13.56,16.88,16.75,19.58,19.03,18.08,8.50,2.46,17.58
+chatgpt-4o-latest-2025-01-29,1324.7,89.2,17.54,17.07,14.00,16.94,17.48,18.93,18.49,18.59,7.52,3.33,17.63
+gpt-4.1,1269.7,87.8,17.06,16.11,12.48,16.43,17.20,18.67,18.43,18.30,9.00,3.26,17.00
+deepseek-ai/DeepSeek-R1,1259.5,87.7,16.56,16.89,14.46,16.44,16.48,19.56,18.60,18.15,7.56,3.22,17.44
+deepseek-ai/DeepSeek-V3-0324,1252.2,87.4,16.69,16.74,14.48,16.50,16.30,19.15,18.29,17.96,5.78,3.19,17.63
+gemini-2.5-pro-preview-03-25,1238.0,87.6,16.85,17.00,13.26,16.57,16.94,19.22,18.34,18.33,8.48,3.00,17.41
+qwen/qwq-32b,1232.9,86.2,16.13,16.15,14.22,16.15,16.31,19.26,18.40,17.67,8.37,3.44,17.07
+gpt-4.1-mini,1178.4,86.0,16.00,16.74,12.87,16.06,17.30,18.48,17.83,18.07,9.19,2.30,16.85
+openai/o4-mini,1151.8,77.2,13.09,15.41,11.26,13.28,13.98,18.00,16.40,14.67,9.93,3.00,15.96
+grok-3-beta,1124.4,84.2,16.48,16.07,12.02,15.70,16.54,18.48,17.54,17.59,9.33,2.33,16.59
+gemini-2.5-flash-preview,1085.3,85.2,16.04,16.85,13.02,15.89,16.74,18.93,17.91,18.00,8.74,2.41,16.89
+claude-3-7-sonnet-20250219,1036.9,84.5,15.83,15.52,13.07,15.65,15.96,19.07,18.11,17.52,8.00,4.19,16.67
+gemini-2.0-flash-001,967.1,78.2,15.26,15.19,12.17,14.15,15.17,18.04,16.63,16.70,7.56,3.81,15.30
+mistralai/Mistral-Small-24B-Instruct-2501,853.5,66.2,11.80,13.11,8.94,11.28,13.83,15.48,13.37,14.78,9.89,4.07,13.15
+qwen/qwen-2.5-72b-instruct,852.8,73.9,13.19,13.59,9.65,12.91,14.72,17.26,15.40,15.85,9.48,3.04,15.00
+meta-llama/Llama-4-Maverick-17B-128E-Instruct,820.4,65.0,11.76,12.37,8.28,11.28,12.98,15.81,13.37,14.41,9.15,3.00,12.93
+meta-llama/llama-3.1-8b-instruct,738.3,59.1,11.52,10.85,7.72,10.02,11.41,14.67,12.51,12.59,9.48,4.15,11.22
+meta-llama/Llama-4-Scout-17B-16E-Instruct,710.3,62.0,11.02,11.56,7.30,10.63,12.44,14.26,12.34,13.33,10.30,2.52,12.22
+meta-llama/llama-3.2-1b-instruct,200.0,32.5,5.15,4.59,3.41,4.13,5.43,8.96,6.94,6.81,5.26,3.37,5.63`
 //
 //  eqbench3.js
 //  (Adapted from creative_writing.js v1.0.6 for EQ-Bench 3)
@@ -31,7 +37,7 @@ meta-llama/llama-3.2-1b-instruct,727.2,32.9,5.15,4.59,3.41,3.96,5.43,8.96,6.94,6
 //
 
 // --- Global Scope Variables ---
-const MOBILE_BREAKPOINT = 992;
+const MOBILE_BREAKPOINT = 1050;
 let eloScores = [];
 let rubricScores = [];
 let maxEloScore;
@@ -53,6 +59,17 @@ let abilitiesRelativeRadarChart = null;
 let abilitiesStrengthsChart = null;
 let abilitiesWeaknessesChart = null;
 
+/* ---- Heat‑map scaling anchors ----
+   Each pair is [input_t , output_t].
+   Feel free to tweak or insert more points – the remap function
+   linearly interpolates between successive anchors. */
+   const HEATMAP_SCALE_MAP = [
+    [0.00, 0.00],
+    //[0.30, 0.15],
+    [0.30, 0.10],
+    [0.8, 0.50],
+    [1.00, 1.00],
+  ];
 
 
 // Style chart instance (word cloud handled differently)
@@ -495,14 +512,26 @@ function getHeatmapColor(value,isDarkMode,minVal,maxVal){
     const color2 = isDarkMode ? heatmapColorDark2 : heatmapColorLight2;
     return interpolateColor(value, minVal, maxVal, color1, color2);
 }
+
+/* Clamp t∈[0,1], locate the segment, then linear‑interpolate. */
+function remapHeatValue(t) {
+  t = Math.min(1, Math.max(0, t));         // clamp
+  for (let i = 1; i < HEATMAP_SCALE_MAP.length; i++) {
+    const [x0, y0] = HEATMAP_SCALE_MAP[i - 1];
+    const [x1, y1] = HEATMAP_SCALE_MAP[i];
+    if (t <= x1) {
+      const f = (t - x0) / (x1 - x0);
+      return y0 + f * (y1 - y0);
+    }
+  }
+  return HEATMAP_SCALE_MAP.at(-1)[1];      // fallback (t==1)
+}
 // --- End Heatmap Color Interpolation ---
 
 
 // --- Gradient logic for visible bars (Blue gradient) ---
 // ─── Heat‑map midpoint ─────────────────────────────────────
-// Portion of the score span where we split the hue range 50‑50
-// 0.85 ⇒ top 15 % consumes half the colours.
-const HEATMAP_MIDPOINT = 0.85;
+
 
 function updateScoreBarColorsEQ3() {
   const scoreBars = document.querySelectorAll('#leaderboard .eqbench3-score-bar'); // Use specific class
@@ -646,12 +675,7 @@ function loadLeaderboardData() {
       
       t = Math.min(1, Math.max(0, t));      // clamp
       
-      // Piece‑wise remap so 0‑0.85 → 0‑0.5 and 0.85‑1 → 0.5‑1
-      if (t <= HEATMAP_MIDPOINT) {
-        t = (t / HEATMAP_MIDPOINT) * 0.5;
-      } else {
-        t = 0.5 + ((t - HEATMAP_MIDPOINT) / (1 - HEATMAP_MIDPOINT)) * 0.5;
-      }
+      t = remapHeatValue(t);
     
 
       // One‑line colour lookup
@@ -791,8 +815,8 @@ function setScoreHeaderWidth(api, idx) {
   const vw = window.innerWidth;
   //const width = (vw >= 992 && vw < 1200) ? '12%' : '20%';
   let width
-  if (vw < 991) width = '30%';
-  else if (vw >= 992 && vw < 1500) width = '12%';
+  if (vw < MOBILE_BREAKPOINT) width = '30%';
+  else if (vw >= MOBILE_BREAKPOINT && vw < 1500) width = '12%';
   else width = '20%';
   api.column(idx).header().style.width = width;
 }
