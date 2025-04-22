@@ -457,6 +457,26 @@ function showStyleModal(modelName) {
 }
 // --- End Style Modal Function ---
 
+/* ── Build the linear‑gradient for the legend bar ─────────────── */
+function refreshHeatmapLegend() {
+  const bar = document.querySelector('#heatmapLegend .legend-bar');
+  if (!bar) return;
+
+  const dark = document.body.classList.contains('dark-mode');
+  const steps = 20;                   // resolution of the gradient
+  const colours = [];
+
+  for (let i = 0; i <= steps; i++){
+      const t0 = i / steps;           // 0‑1 raw range
+      const t  = t0;   // respect the custom ramp
+      const col = dark
+          ? pastelPlasma(t, {wash:0.4, alpha:0.7})
+          : pastelPlasma(t, {wash:0.4, alpha:0.4});
+      colours.push(col);
+  }
+  bar.style.background = `linear-gradient(to right, ${colours.join(',')})`;
+}
+
 // --- Heatmap Color Interpolation ---
 function interpolateColor(value, min, max, color1, color2) {
   // Ensure value is within bounds
@@ -900,19 +920,23 @@ let middleStatsExpanded = false;
 function collapseMiddleColumns() {
   const isMobile = window.innerWidth < MOBILE_BREAKPOINT;
   const toggleButton = $('#toggleMiddleStats');
+  const legend = $('#heatmapLegend');   // ← NEW
 
   if (isMobile) {
-      toggleButton.removeClass('d-none').addClass('show-details-toggle-button');
+      toggleButton.removeClass('d-none').addClass('show-details-toggle-button');      
       if (!middleStatsExpanded) {
           $('#leaderboard .mobile-collapsible').hide();
           toggleButton.text('Expand Details');
+          legend.addClass('d-none');
       } else {
           $('#leaderboard .mobile-collapsible').show();
           toggleButton.text('Hide Details');
+          legend.removeClass('d-none');
       }
   } else {
       // On desktop (and wider than mobile breakpoint), always show columns
       toggleButton.addClass('d-none').removeClass('show-details-toggle-button');
+      legend.removeClass('d-none');
       $('#leaderboard .mobile-collapsible').show();
   }
   // Adjust DataTable layout AFTER showing/hiding columns
@@ -1027,6 +1051,8 @@ function setupControls() {
 document.addEventListener('DOMContentLoaded', function() {
   displayEncodedEmail();
   setupDarkModeToggle();
+  refreshHeatmapLegend();     // draw legend once everything is ready
+
 
   if (document.getElementById('leaderboard')) {
     loadLeaderboardData(); // Load data and build table
