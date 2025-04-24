@@ -123,27 +123,26 @@
 			  </style>
 
 			<h3>💙EQ‑Bench 3</h3>
-
-
-			<!-- ─────────────────────────  WHAT & WHY  ───────────────────────── -->
 			<!-- ─────────────────────────  WHAT & WHY  ───────────────────────── -->
 			<p><strong>What is EQ-Bench 3?</strong><br>
-				EQ-Bench 3 is LLM-judged test evaluating active emotional intelligence abilities, understanding, insight, warmth, and other EI related traits.
-				The test places the evaluated model into challenging role-plays involving messy relationship drama, parenting decisions, conflict mediation, high stakes workplace situations. The model must:
+				EQ-Bench 3 is a LLM-judged test evaluating active emotional intelligence abilities, understanding, insight, warmth, and interpersonal skills.
+				The test places the evaluated model into challenging role-plays involving messy relationship drama, parenting decisions, conflict mediation, and high stakes workplace situations. The model must:
 				<em>(a)</em> respond in character,  
 				<em>(b)</em> spell out what it thinks everyone is feeling, and  
 				<em>(c)</em> debrief its own performance.
-				The test is constructed measure EQ abilities in isolation (i.e. minimal conflation with other abilities like reasoning or long context performance).
+				The test is constructed to measure EQ abilities in isolation (i.e. minimal conflation with other abilities like reasoning or long context performance).
 			</p>
 
 			<p><strong>Why measure this?</strong><br>
-				Few evals are not targeting "soft skills". Part of the reason is that subjective abilities are difficult & messy to measure. EQ-Bench intends to be an automated vibe-check for these human-oriented traits and abilities.
+				Few evals are targeting "soft skills". Part of the reason is that subjective abilities are difficult & messy to measure. EQ-Bench intends to be an automated vibe-check for these human-oriented traits and abilities.
 				
-				Figuring out how to meaningfully assess these abilities is nontrivial and still an unsolved problem. Many approaches are *not discriminative* -- they don't effectively separate models by the underlying abilities. Our approach makes inroads by encoding a high degree of challenge into the roleplay scenarios, and by providing visibility on several EQ-related traits & tendencies. Our Elo ranking is cost efficient and should have headroom to scale to future models with stronger abilities.</p>
+				Figuring out how to meaningfully assess these abilities is nontrivial and still unsolved. It's surprisingly hard to come up with test questions that weaker models obviously fail at. This is because models are trained to be very good at *saying the right thing*. This is especially true for *subjective evals* like this, which don't have ground truth factual answers.
+				Our approach makes inroads into this problem by encoding a high degree of challenge into the roleplay scenarios. We trialled several question formats & topics, empirically selecting those with the highest discriminative power.</p>
 
 			<p><strong>What a higher score means in practice</strong><br>
-				If a model has a high Elo score, it means it's beating its neighbours in matchups where its roleplay transcripts are compared to the neighbour's transcripts for a given scenario.
-				To beat its neighbour, it has to score higher on several criteria, as evaluated by GPT-4.1 (the judge). The criteria in the pairwise judgements are listed below.
+				If a model has a high Elo score, it means it's beating its neighbours in matchups.
+				To beat its neighbour, it has to score higher on several criteria (insight, social dexterity, etc), as evaluated by GPT-4.1. The full criteria evaluated in the pairwise judgements are listed below.
+				The resulting Elo score represents a holistic view on the model's abilities: empathy, analytical understanding, social dexterity, deep insight, pragmatism. A model has to be strong across all these dimensions to be at the top of the leaderboard.
 			</p>
 
 
@@ -152,14 +151,15 @@
 			<h4>How it works</h4>
 			<ol>
 				<li><b>Multi-turn role-play.</b>
-					Each test scenario contains three pre-written prompts. The “user” messages set up the scenario, and subsequently inject conflict or misdirection, while the <code>assistant</code> (the evaluated model) must reply in-character.  
+					The test set contains 35 scenarios, most of which constitute pre-written prompts spanning 3 turns. The <code>user</code> messages set up the scenario, and subsequently inject conflict or misdirection, while the <code>assistant</code> (the evaluated model) must reply in-character.  
 					Every assistant reply starts with two introspection blocks:
-					<code>I’m thinking & feeling</code> and <code>They’re thinking & feeling</code>, exposing the model’s reasoning and ToM.</li>
+					"I’m thinking & feeling" and "They’re thinking & feeling", exposing the model’s reasoning and ToM.</li>
 
 				<li><b>Rubric pass.</b>  
 					GPT-4.1 reads the full transcript + self-debrief and scores several criteria (e.g. Demonstrated Empathy, Depth of Insight, Boundary Setting).
-					Only some of these criteria are aggregated into the “rubric score”; the rest are to give visibility on style & tendencies.
-					When running the benchmark, users may choose to run only the rubric evaluation, or only Elo, or both. The rubric eval is about 3x cheaper and provides *absolute scores*, but is *less discriminative*.
+					Only some of these criteria are aggregated into the “rubric score” (0-100); the rest are to give visibility on style & tendencies.
+					When running the benchmark, users may choose to run only the rubric evaluation, or only Elo, or both. The rubric eval is about 3x cheaper and provides *absolute scores*, but is *less discriminative* at the top ability range.
+					The rubric score is not shown on the leaderboard; it's available when running the benchmark.
 				</li>
 
 				<li><b>Pairwise pass.</b>  
@@ -171,9 +171,10 @@
 			<!-- ─────────────────────────  COST  ───────────────────────── -->
 			<h4>Cost</h4>
 			<ul>
-				<li>One full cycle (rubric + pairwise) ≈ US$10 on OpenRouter.</li>
+				<li>One full benchmark run (rubric + pairwise) ≈ US$10 on OpenRouter.</li>
 				<li>Rubric-only ≈ US$3.</li>
 				<li>This doesn't include inference cost for the evaluated model.</li>
+				<li>Our modified Glicko Elo ranking is cost efficient & will scale well. It should have headroom for future models with stronger abilities.</li>
 			</ul>
 
 
@@ -201,18 +202,18 @@
 			</div>
 			</div>
 
-			<p>Note: Only the following criteria are used to compute the rubric score: Demonstrated Empathy, Pragmatic EI, Depth of Insight, Social Dexterity, Emotional Reasoning, Message Tailoring</p>
+			<p>Note: Some criteria do not count towards score. The rubric score is calculated from: Demonstrated Empathy, Pragmatic EI, Depth of Insight, Social Dexterity, Emotional Reasoning, Message Tailoring</p>
 
 			<h5>Pairwise criteria</h5>
 			<div class="criteria-block">
 			<ol class="criteria-list">
-				<li>Demonstrated empathy (not just performative)</li>
+				<li>Demonstrated empathy</li>
 				<li>Pragmatic EI</li>
 				<li>Depth of insight</li>
 				<li>Social dexterity</li>
 				<li>Emotional reasoning</li>
 				<li>Appropriate validation and/or challenging for the scene</li>
-				<li>Message tailoring: Appropriate targeting of response to where the user is at</li>
+				<li>Message tailoring</li>
 				<li>Overall EQ</li>
 			</ol>
 			</div>
@@ -228,58 +229,71 @@
 
 			<h4>Biases not controlled for</h4>
 			<ul>
-				<li><b>Judge self-bias / family bias:</b> We use GPT-4.1 as the judge for all outputs. This may introduce some bias where the judge prefers its own outputs or those of similar models. This is currently not quantified or adjusted for in this eval. Judge self bias can be in the range of 0-10% depending on the task (sometimes even negative bias!). It would be nice to mitigate this bias by using an ensemble of diverse judges, but alas, this is a self funded leaderboard, and judge ensembles are $$$.</li>
-				<li><b>Other judge biases:</b> LLM judges can have varying biases in how they rate: verbosity, positivity, political, cultural etc. We don't control for these possible biases; they are just a part of LLM judging, as personal biases are part of human judging. Subjective evals are a messy business! Set your expectations accordingly.</li>
+				<li><b>Judge self-bias / family bias:</b> We use GPT-4.1 as the judge for all outputs. This may introduce some bias where the judge prefers its own outputs or those of similar models. This is currently not quantified or adjusted for in this eval. Judge self bias can be in the range of 0-10% depending on the task (sometimes even negative bias!). It would be nice to mitigate this bias by using an ensemble of diverse judges, but alas, this is a self funded leaderboard, and judge ensembles are expensive.</li>
+				<li><b>Other judge biases:</b> LLM judges can have varying biases in how they rate: verbosity, positivity, political, cultural. We don't control for these possible biases; they are just a part of LLM judging, as personal biases are part of human judging. Subjective evals are a messy business! Set your expectations accordingly.</li>
 			</ul>
 
 
 			<!-- ─────────────────────────  EXAMPLE PROMPT  ───────────────────────── -->
-			<details>
-				<summary><strong>Example pairwise judging prompt</strong></summary>
-				<pre><code>
-[RESPONDENT A0493]
-{conversation_history_A}
-[/RESPONDENT A0493]
+			<h4>Example pairwise judging prompt</h4>
+			<div class="judging-prompt">
+				<div class="prompt-content">
+				  [RESPONDENT A0493]<br>
+				  {conversation_history_A}<br>
+				  [/RESPONDENT A0493]<br>
+					<br>
+				  [RESPONDENT A0488]<br>
+				  {conversation_history_B}<br>
+				  [/RESPONDENT A0488]<br>
+				  
+			  
+				  <p><strong>Your task is to critically examine two respondents role-playing a challenging scenario</strong> (from Respondents A0493 and A0488), and decide which displays each trait more strongly.</p>
+			  
+				  <p><strong>Compare the relative ability of each respondent on these criteria:</strong></p>
+				  <ol>
+					<li>Demonstrated empathy (not just performative)</li>
+					<li>Pragmatic EI</li>
+					<li>Depth of insight</li>
+					<li>Social dexterity</li>
+					<li>Emotional reasoning</li>
+					<li>Appropriate validation and/or challenging for the scene</li>
+					<li>Message tailoring: Appropriate targeting of response to where the user is at</li>
+					<li>Overall EQ</li>
+				  </ol>
+			  
+				  <p><strong>Notes on the scenario to assist judging:</strong><br>
+				  {scenario_notes}</p>
+			  
+				  <p><strong>Judging instructions:</strong></p>
+				  <ul>
+					<li>You must always pick a winner for each criterion (no draws).</li>
+					<li>For the <em>"winner & disparity rating"</em> output, use a plus-based scale (“+” / “++” / “+++” / “++++” / “+++++”) after indicating the winner’s code (A0493 or A0488) to show how strongly they win that criterion.
+					  <ul>
+						<li>For example, <code>"A0391++"</code> means A0391 is somewhat stronger, while <code>"A0986+++++"</code> means A0986 is overwhelmingly stronger.</li>
+					  </ul>
+					</li>
+					<li>Responses are commonly truncated to standardise output length. Simply judge what is there.</li>
+					<li>Be aware that a highly detailed, detached analytical response to the user is not always appropriate in the context of an organic chat or a role play. This isn't a hard & fast rule; use your judgement.</li>
+					<li>The "assistant" messages as well as the debrief are authored by the assistant. Base your evaluation on the EQ displayed in their roleplay and their self assessment.</li>
+					<li>The user messages are always canned; don't judge them at all, your only focus is on the assistant.</li>
+				  </ul>
+				</div>
+			  </div>
+			  
 
-[RESPONDENT A0488]
-{conversation_history_B}
-[/RESPONDENT A0488]
-
-Your task is to critically examine two respondents role-playing a challenging scenario (from Respondents A0493 and A0488), and decide which displays each trait more strongly.
-
-Compare the relative ability of each respondent on these criteria:
-1. Demonstrated empathy (not just performative)
-2. Pragmatic EI
-3. Depth of insight
-4. Social dexterity
-5. Emotional reasoning
-6. Appropriate validation and/or challenging for the scene
-7. Message tailoring: Appropriate targeting of response to where the user is at
-8. Overall EQ
-
-Notes on the scenario to assist judging:
-{scenario_notes}
-
-Judging instructions:
-- You must always pick a winner for each criterion (no draws).
-- For the "winner & disparity rating" output, use a plus-based scale (“+” / “++” / “+++” / “++++” / “+++++”) after indicating the winner’s code (A0493 or A0488) to show how strongly they win that criterion.
-  - For example, "A0391++" means A0391 is somewhat stronger, while "A0986+++++" means A0986 is overwhelmingly stronger.
-- Responses are commonly truncated to standardise output length. Simply judge what is there.
-- Be aware that a highly detailed, detached analytical response to the user is not always appropriate in the context of an organic chat or a role play. This isn't a hard & fast rule; use your judgement.
-- The "assistant" messages as well as the debrief are authored by the assistant. Base your evaluation on the EQ displayed in their roleplay and their self assessment.
-- The user messages are always canned; don't judge them at all, your only focus is on the assistant.
-				</code></pre>
-			</details>
+			<br>
 
 			<!-- ─────────────────────────  LIMITATIONS  ───────────────────────── -->
 			<h4>Limitations & interpretation</h4>
 			<p>
-				EQ‑Bench 3 is a *subjective eval* judged by a LLM.
+				EQ‑Bench 3 is a <strong>subjective evaluation</strong> judged by a LLM.
 				As such, the results should be considered roughly indicative but not absolute truth.
 				The sample transcripts are provided so you can make your own judgements.
 				Several test items target typical LLM failure modes, like over-cautiousness from safety training. This may cause some models to be penalised more than others.
 				The Elo score isn't representing any one aspect of EQ in isolation. Rather, it's a holistic representation of active social abilities, insight, empathy and analytical understanding.				
 			</p>
+			<p>Emotional Intelligence or EQ doesn't have any ground truth or agreed upon definitions in the literature or colloquially. However there is a rich breadth of ideas about what constitutes <em>emotional intelligence</em>, which we drew on when deciding which abilities to target. This benchmark doesn't represent any one theory or formulation of EQ</p>
+			<p>The benchmark eschews *comprehensiveness* for *discriminative power*. Most language models will ace most questions typically asked on a written EQ test, which means including those low-mid difficulty questions dilutes our ability to tell models apart. Our approach of selecting for highly challenging questions may have a narrowing or biasing effect on the dimensions of EQ that are assessed. That said -- the response format & topic selection ought to give reasonably broad coverage.</p>
 
 			<!-- ─────────────────────────  HOW TO RUN  ───────────────────────── -->
 			<h4>Source code</h4>
