@@ -313,11 +313,8 @@
     }
     /* Center icons */
     #leaderboard tbody td:nth-child(2) .cell-content, /* Abilities */
-    #leaderboard tbody td:nth-child(3) .cell-content { /* Style */
-      justify-content: center;
-    }
+
     /* Left align score bars */
-    #leaderboard tbody td:nth-last-child(3) .cell-content, /* Rubric */
     #leaderboard tbody td:nth-last-child(2) .cell-content { /* Elo */
        justify-content: flex-start;
        white-space: nowrap; /* Prevent wrapping inside score cell */
@@ -335,13 +332,19 @@
     }
     /* Ensure heatmap text is readable */
     .feature-cell .cell-content {
-        color: #212529; /* Default dark text for light backgrounds */
-        text-shadow: 0 0 1px rgba(255, 255, 255, 0.5); /* Subtle shadow for light bg */
+        color: #212529;
+        
+        
     }
     body.dark-mode .feature-cell .cell-content {
-        color: #dee2e6; /* Default light text for dark backgrounds */
-        text-shadow: 0 0 2px rgba(0, 0, 0, 0.6); /* Subtle shadow for dark bg */
-    }
+    color: #dee2e6;
+    /* even, thin, hard-defined shadow all around */
+    text-shadow: 
+        -1px -1px 0px rgba(0,0,0,0.5),  /* top-left */
+        1px -1px 0px rgba(0,0,0,0.5),   /* top-right */
+        -1px 1px 0px rgba(0,0,0,0.5),   /* bottom-left */
+        1px 1px 0px rgba(0,0,0,0.5);    /* bottom-right */
+}
 
 
     /* --- score bars : apply at every viewport width --- */
@@ -404,7 +407,6 @@
         justify-content: flex-start; /* Keep left-aligned */
       }
       /* Keep scores left-aligned */
-      #leaderboard tbody td:nth-last-child(3) .cell-content, /* Rubric */
       #leaderboard tbody td:nth-last-child(2) .cell-content { /* Elo */
          justify-content: flex-start;
       }
@@ -498,7 +500,7 @@ body.eqbench3-page #leaderboard tbody td:first-child .cell-content {
     justify-content: flex-start;
     word-wrap: break-word;
 }
-body.eqbench3-page #leaderboard tbody td:nth-last-child(3) .cell-content,
+
 body.eqbench3-page #leaderboard tbody td:nth-last-child(2) .cell-content {
     justify-content: flex-start;  /* Rubric & Elo                   */
 }
@@ -555,6 +557,9 @@ body.dark-mode.eqbench3-page .heatmap-legend .legend-bar{
     border-color: rgba(255,255,255,.25);
 }
 
+#leaderboard.table-striped tbody tr:nth-of-type(odd) td.feature-cell {
+    background-color: transparent !important;
+}
 
   </style>
 </head>
@@ -663,7 +668,7 @@ body.dark-mode.eqbench3-page .heatmap-legend .legend-bar{
     <div class="section mt-4" id="metrics-explanation">
       <div class="card bg-card">
         <div class="card-body">
-          <p>For more details about the benchmark, see the <a href="./about.html#eq-bench-v3">About</a> section.</p>
+          <p>For more details about the benchmark, see the <a href="./about.html#eq-bench-3">About</a> section.</p>
           <h5 class="card-title">Metrics</h5>
           <p>The leaderboard displays several metrics:</p>
           <ul>

@@ -124,71 +124,48 @@
 
 			<h3>💙EQ‑Bench 3</h3>
 
-			<!-- ─────────────────────────  WHAT'S NEW  ───────────────────────── -->
-			<p><strong>What changed in v3?</strong>  
-			   The original (2023) single‑turn “rate the feelings” test was saturating, unable to distinguish between ability levels of top models.
-			   <em>EQ‑Bench 3</em> is a ground‑up redesign assessing a range of <u>active emotional intelligence abilities</u> in challenging role-play scenarios. The outputs are judged by GPT-4.1.</p>
-
-			<ul>
-				<li><b>Multi‑turn role‑play.</b>  The majority of test items are comprised of a three‑turn roleplay with the "user" providing canned responses to move the scenario along and inject challenges. 
-					In some of these scenarios, the <code>test model</code> plays the mediator in a conflict mediation session, and must handle escalating, sometimes manipulative behaviour. Other scenarios involve navigating messy relationship drama, high stakes workplace situations, and parenting decisions.</li>
-				<li><b>"I'm thinking & feeling" and "They're thinking & feeling"</b> blocks are required with each response, so the model can demonstrate its emotional processing, reasoning and theory of mind. After each roleplay, the test model debriefs, giving further insight into its understanding.</li>
-				<li><b>Analysis tasks</b> are included, which encourage the model to go deep analysing a scenario using technical language & academic grounding.</li>
-				<li><b>Rubric scoring <em>plus</em> pairwise elo.</b> The benchmark returns two results: one based on scoring items individually to a rubric (set of criteria), like a teacher grades a paper. And the elo score, which is based on head-to-head matchups between models. If you are running the benchmark yourself, you can choose either/both, depending on your requirement.</li>
-				<li><b>Cost.</b> One iteration of rubric + elo costs ≈ $10 on OpenRouter; rubric‑only ≈ $3. These are the judging costs, on top of whatever the test model inference costs.</li>
-			</ul>
-
-			<!-- ─────────────────────────  TWO‑PASS PIPELINE  ───────────────────────── -->
-			<h4>Pipeline overview</h4>
-			<ol>
-				<li><b>Data generation</b>
-					The model is presented with a series of prompts, typically initiating a roleplay of a challenging emotionally rich scenario. The prompts are all pre-written, in such a way as to move the scenario along and add twists, challenges & misdirection. The model is prompted to preface its responses with introspective blocks detailing what it's thinking & feeling (in character) and what the other character is thinking & feeling. The roleplay concludes with the model conducting a debrief and self-evaluation.
-				<li><b>Rubric stage</b>  
-					GPT-4.1 grades the roleplay transcript & self-debrief against an in-depth scoring rubric. Some of these scored traits & abilities are aggregated into the final "rubric score" and some are used to provide visibility on the model's tendencies.</li>
-				<li><b>Pairwise stage</b>  
-					The same transcripts are compared head‑to‑head (again judged by GPT-4.1). The judge is instructed to select which model is stronger on several abilities, using a 1-5 "+" notation to denote the strength of the win on each criteria.
-					Since the sparse elo solver we're using (Glicko) doesn't handle win margins, we map the win margin to a *number of wins/losses*, allowing more discriminative power per test item.</li>
-			</ol>
-
-
-
 
 			<!-- ─────────────────────────  WHAT & WHY  ───────────────────────── -->
 			<!-- ─────────────────────────  WHAT & WHY  ───────────────────────── -->
-			<p><strong>What is EQ-Bench&nbsp;3?</strong><br>
-				EQ-Bench 3 is a stress test for real-time emotional intelligence.  
-				Each item drops the model into a live role-play—workplace blow-ups, family stand-offs, high-stakes apologies—and asks it to:
+			<p><strong>What is EQ-Bench 3?</strong><br>
+				EQ-Bench 3 is LLM-judged test evaluating active emotional intelligence abilities, understanding, insight, warmth, and other EI related traits.
+				The test places the evaluated model into challenging role-plays involving messy relationship drama, parenting decisions, conflict mediation, high stakes workplace situations. The model must:
 				<em>(a)</em> respond in character,  
 				<em>(b)</em> spell out what it thinks everyone is feeling, and  
-				<em>(c)</em> debrief its own performance.  
-				A rubric pass scores empathy, insight, boundary setting, and related traits; a pairwise pass pits transcripts against those from other models to reveal finer ability gaps.</p>
+				<em>(c)</em> debrief its own performance.
+				The test is constructed measure EQ abilities in isolation (i.e. minimal conflation with other abilities like reasoning or long context performance).
+			</p>
 
 			<p><strong>Why measure this?</strong><br>
-				Text agents are now asked to mediate conflicts, guide anxious users, and give feedback that lands without condescension.  
-				Knowledge and logic tests say little about those situations.  
-				EQ-Bench 3 isolates the emotional layer so we can see which models keep conversations constructive under pressure and which slip into rote “therapy-bot” chatter.</p>
+				Few evals are not targeting "soft skills". Part of the reason is that subjective abilities are difficult & messy to measure. EQ-Bench intends to be an automated vibe-check for these human-oriented traits and abilities.
+				
+				Figuring out how to meaningfully assess these abilities is nontrivial and still an unsolved problem. Many approaches are *not discriminative* -- they don't effectively separate models by the underlying abilities. Our approach makes inroads by encoding a high degree of challenge into the roleplay scenarios, and by providing visibility on several EQ-related traits & tendencies. Our Elo ranking is cost efficient and should have headroom to scale to future models with stronger abilities.</p>
 
 			<p><strong>What a higher score means in practice</strong><br>
-				A model with a stronger EQ-Bench score is more likely to spot subtext, steer dialogue away from escalation, and blend empathy with pragmatic suggestions instead of flooding the chat with generic reassurance.</p>
+				If a model has a high Elo score, it means it's beating its neighbours in matchups where its roleplay transcripts are compared to the neighbour's transcripts for a given scenario.
+				To beat its neighbour, it has to score higher on several criteria, as evaluated by GPT-4.1 (the judge). The criteria in the pairwise judgements are listed below.
+			</p>
 
 
 
 			<!-- ─────────────────────────  HOW IT WORKS  ───────────────────────── -->
 			<h4>How it works</h4>
 			<ol>
-				<li><b>Multi-turn role-play generation.</b>  
-					Each prompt drives a three-turn exchange.  The “user” messages are canned to inject conflict or misdirection, while the <code>test model</code> must reply in-character.  
+				<li><b>Multi-turn role-play.</b>
+					Each test scenario contains three pre-written prompts. The “user” messages set up the scenario, and subsequently inject conflict or misdirection, while the <code>assistant</code> (the evaluated model) must reply in-character.  
 					Every assistant reply starts with two introspection blocks:
 					<code>I’m thinking & feeling</code> and <code>They’re thinking & feeling</code>, exposing the model’s reasoning and ToM.</li>
 
 				<li><b>Rubric pass.</b>  
-					GPT-4.1 reads the full transcript + self-debrief and scores 20 criteria (e.g. Demonstrated Empathy, Depth of Insight, Boundary Setting).  
-					Only six criteria feed into the aggregate “rubric score”; the rest surface style or safety tendencies for inspection.</li>
+					GPT-4.1 reads the full transcript + self-debrief and scores several criteria (e.g. Demonstrated Empathy, Depth of Insight, Boundary Setting).
+					Only some of these criteria are aggregated into the “rubric score”; the rest are to give visibility on style & tendencies.
+					When running the benchmark, users may choose to run only the rubric evaluation, or only Elo, or both. The rubric eval is about 3x cheaper and provides *absolute scores*, but is *less discriminative*.
+				</li>
 
 				<li><b>Pairwise pass.</b>  
-					The same transcripts are compared head-to-head.  
-					The judge outputs a winner for eight EQ traits, using “+ … +++++” to signal win margin.  
-					Margins are mapped to extra wins/losses so Glicko can resolve finer gradients.</li>
+					The roleplay transcripts are compared head-to-head and judged on several criteria by GPT-4.1.
+					The judge outputs a winner for eight EQ traits (see below), using “+ … +++++” to signal win margin.
+					Win margins are mapped to extra wins/losses to provide the Glicko Elo solver more discriminate power per test item (since by default it only supports win/loss, not margins).</li>
 			</ol>
 
 			<!-- ─────────────────────────  COST  ───────────────────────── -->
@@ -196,7 +173,7 @@
 			<ul>
 				<li>One full cycle (rubric + pairwise) ≈ US$10 on OpenRouter.</li>
 				<li>Rubric-only ≈ US$3.</li>
-				<li>Figures exclude inference cost for the test model.</li>
+				<li>This doesn't include inference cost for the evaluated model.</li>
 			</ul>
 
 
@@ -300,6 +277,8 @@ Judging instructions:
 				EQ‑Bench 3 is a *subjective eval* judged by a LLM.
 				As such, the results should be considered roughly indicative but not absolute truth.
 				The sample transcripts are provided so you can make your own judgements.
+				Several test items target typical LLM failure modes, like over-cautiousness from safety training. This may cause some models to be penalised more than others.
+				The Elo score isn't representing any one aspect of EQ in isolation. Rather, it's a holistic representation of active social abilities, insight, empathy and analytical understanding.				
 			</p>
 
 			<!-- ─────────────────────────  HOW TO RUN  ───────────────────────── -->
