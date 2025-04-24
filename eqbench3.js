@@ -50,10 +50,10 @@ let lastSortedScoreColumn = 10; // Default sort is Elo, which is now column inde
 
 const FEATURE_COL_START     = 2;   // first feature column index
 const FEATURE_COL_END       = 12;  // last  feature column index
-const RUBRIC_COL_INDEX      = 13;
-const ELO_COL_INDEX         = 14;
-const SAMPLE_COL_INDEX      = 15;
-const TOTAL_COLS            = 16;  // used for colspan messages
+//const RUBRIC_COL_INDEX      = 13;
+const ELO_COL_INDEX         = 13;
+const SAMPLE_COL_INDEX      = 14;
+const TOTAL_COLS            = 15;  // used for colspan messages
 
 // Chart.js references:
 let abilitiesAbsoluteRadarChart = null;
@@ -131,6 +131,7 @@ function setupDarkModeToggle() {
       // Redraw needed to update heatmap colors and score bar gradients
       $('#leaderboard').DataTable().rows().invalidate('data').draw(false);
       updateFeatureHeatmapColors();
+      refreshHeatmapLegend();
     }
     // Update open modal chart colors if needed (complex, might require chart recreation)
   });
@@ -474,8 +475,8 @@ function refreshHeatmapLegend() {
       const t0 = i / steps;           // 0‑1 raw range
       const t  = t0;   // respect the custom ramp
       const col = dark
-          ? pastelPlasma(t, {wash:0.4, alpha:0.7})
-          : pastelPlasma(t, {wash:0.4, alpha:0.4});
+          ? pastelPlasma(t, {wash:0.2, alpha:0.8})
+          : pastelPlasma(t, {wash:0.2, alpha:0.5});
       colours.push(col);
   }
   bar.style.background = `linear-gradient(to right, ${colours.join(',')})`;
@@ -780,6 +781,12 @@ function loadLeaderboardData() {
             ${styleInfoIcon}
           </div>
         </td>
+
+    <td class="mobile-collapsible" data-order="${rubricScoreNum.toFixed(1)}"> <!-- Col 10: Rubric Score -->
+          <div class="cell-content">
+            ${scoreBarRubricHTML}
+          </div>
+        </td>
     */
     return `
       <tr data-model-name-full="${currentModelName}"
@@ -804,11 +811,7 @@ function loadLeaderboardData() {
 
         ${featureCellsHTML} <!-- Inject feature cells with heatmap -->
 
-        <td class="mobile-collapsible" data-order="${rubricScoreNum.toFixed(1)}"> <!-- Col 10: Rubric Score -->
-          <div class="cell-content">
-            ${scoreBarRubricHTML}
-          </div>
-        </td>
+        
 
         <td data-order="${eloScoreNum.toFixed(1)}"> <!-- Col 11: Elo Score -->
           <div class="cell-content">
@@ -856,10 +859,13 @@ let dataTableConfig = {
   lengthChange: false,
   columnDefs : [
     {targets:[0]                              , type:'string'   }, // model
-    {targets:[1,2,SAMPLE_COL_INDEX]           , orderable:false }, // icons/link
-    { targets: FEATURE_COLUMN_INDICES , orderable:false },
-    {targets:[RUBRIC_COL_INDEX,ELO_COL_INDEX] , type:'num'      },
-    {targets:[RUBRIC_COL_INDEX,ELO_COL_INDEX] , orderSequence:['desc','asc']}
+    {targets:[1,SAMPLE_COL_INDEX]           , orderable:false }, // icons/link
+    { targets: FEATURE_COLUMN_INDICES , orderable:true },
+    //{targets:[RUBRIC_COL_INDEX,ELO_COL_INDEX] , type:'num'      },
+    //{targets:[RUBRIC_COL_INDEX,ELO_COL_INDEX] , orderSequence:['desc','asc']}
+    {targets:[ELO_COL_INDEX] , type:'num'      },
+    {targets:[ELO_COL_INDEX] , orderSequence:['desc','asc']},
+    {targets:FEATURE_COLUMN_INDICES , orderSequence:['desc','asc']}
   ],
   // Custom DOM layout unchanged
   dom: "<'d-flex flex-column flex-md-row justify-content-between align-items-center mb-2'<'#toggleMobilePlaceholder'><'ms-md-auto'f>>" +
@@ -880,7 +886,8 @@ let dataTableConfig = {
     }
     let sortedColumnIndex = order[0][0];
 
-    const SCORE_COLUMNS = [RUBRIC_COL_INDEX, ELO_COL_INDEX];
+    //const SCORE_COLUMNS = [RUBRIC_COL_INDEX, ELO_COL_INDEX];
+    const SCORE_COLUMNS = [ELO_COL_INDEX];
     const NON_SCORE_COLUMNS = [...Array(TOTAL_COLS).keys()]
         .filter(i => !SCORE_COLUMNS.includes(i));
 

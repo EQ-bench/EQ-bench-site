@@ -77,6 +77,51 @@
 			<p>We will then verify the result on our end and add to the leaderboard. This project is self funded so please respect that we don't have unlimited compute!</p>
 		</div>
 		<div id="eq-bench-3" class="section">
+			<style>
+				.criteria-block {
+				  background-color: var(--bg-color, #f8f9fa);
+				  border: 1px solid var(--border-color, #dee2e6);
+				  border-radius: 0.25rem;
+				  padding: 1rem;
+				  margin-bottom: 1.5rem;
+				  font-family: monospace;
+				  color: var(--text-color, #212529);
+				}
+			  
+				.criteria-grid {
+				  display: grid;
+				  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+				  gap: 0.5rem;
+				}
+			  
+				.criteria-item {
+				  padding: 0.25rem 0;
+				}
+			  
+				.criteria-list {
+				  margin: 0;
+				  padding-left: 1.5rem;
+				}
+			  
+				.criteria-list li {
+				  padding: 0.25rem 0;
+				}
+			  
+				/* Dark mode compatibility */
+				.dark-mode .criteria-block, [data-theme="dark"] .criteria-block {
+				  --bg-color: #2d3238;
+				  --border-color: #495057;
+				  --text-color: #e9ecef;
+				}
+			  
+				/* Responsive adjustments */
+				@media (max-width: 576px) {
+				  .criteria-grid {
+					grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+				  }
+				}
+			  </style>
+
 			<h3>💙EQ‑Bench 3</h3>
 
 			<!-- ─────────────────────────  WHAT'S NEW  ───────────────────────── -->
@@ -105,29 +150,95 @@
 					Since the sparse elo solver we're using (Glicko) doesn't handle win margins, we map the win margin to a *number of wins/losses*, allowing more discriminative power per test item.</li>
 			</ol>
 
+
+
+
+			<!-- ─────────────────────────  WHAT & WHY  ───────────────────────── -->
+			<!-- ─────────────────────────  WHAT & WHY  ───────────────────────── -->
+			<p><strong>What is EQ-Bench&nbsp;3?</strong><br>
+				EQ-Bench 3 is a stress test for real-time emotional intelligence.  
+				Each item drops the model into a live role-play—workplace blow-ups, family stand-offs, high-stakes apologies—and asks it to:
+				<em>(a)</em> respond in character,  
+				<em>(b)</em> spell out what it thinks everyone is feeling, and  
+				<em>(c)</em> debrief its own performance.  
+				A rubric pass scores empathy, insight, boundary setting, and related traits; a pairwise pass pits transcripts against those from other models to reveal finer ability gaps.</p>
+
+			<p><strong>Why measure this?</strong><br>
+				Text agents are now asked to mediate conflicts, guide anxious users, and give feedback that lands without condescension.  
+				Knowledge and logic tests say little about those situations.  
+				EQ-Bench 3 isolates the emotional layer so we can see which models keep conversations constructive under pressure and which slip into rote “therapy-bot” chatter.</p>
+
+			<p><strong>What a higher score means in practice</strong><br>
+				A model with a stronger EQ-Bench score is more likely to spot subtext, steer dialogue away from escalation, and blend empathy with pragmatic suggestions instead of flooding the chat with generic reassurance.</p>
+
+
+
+			<!-- ─────────────────────────  HOW IT WORKS  ───────────────────────── -->
+			<h4>How it works</h4>
+			<ol>
+				<li><b>Multi-turn role-play generation.</b>  
+					Each prompt drives a three-turn exchange.  The “user” messages are canned to inject conflict or misdirection, while the <code>test model</code> must reply in-character.  
+					Every assistant reply starts with two introspection blocks:
+					<code>I’m thinking & feeling</code> and <code>They’re thinking & feeling</code>, exposing the model’s reasoning and ToM.</li>
+
+				<li><b>Rubric pass.</b>  
+					GPT-4.1 reads the full transcript + self-debrief and scores 20 criteria (e.g. Demonstrated Empathy, Depth of Insight, Boundary Setting).  
+					Only six criteria feed into the aggregate “rubric score”; the rest surface style or safety tendencies for inspection.</li>
+
+				<li><b>Pairwise pass.</b>  
+					The same transcripts are compared head-to-head.  
+					The judge outputs a winner for eight EQ traits, using “+ … +++++” to signal win margin.  
+					Margins are mapped to extra wins/losses so Glicko can resolve finer gradients.</li>
+			</ol>
+
+			<!-- ─────────────────────────  COST  ───────────────────────── -->
+			<h4>Cost</h4>
+			<ul>
+				<li>One full cycle (rubric + pairwise) ≈ US$10 on OpenRouter.</li>
+				<li>Rubric-only ≈ US$3.</li>
+				<li>Figures exclude inference cost for the test model.</li>
+			</ul>
+
+
 			<h5>Rubric criteria</h5>
-			<pre class="code-block"><code>
-				Demonstrated Empathy       Pragmatic EI             Depth of Insight
-				Social Dexterity           Emotional Reasoning      Message Tailoring
-				Boundary Setting           Safety Conscious         Moralising
-				Sycophantic                Compliant                Challenging
-				Warmth                     Validating               Analytical
-				Reactive                   Conversational           Humanlike
-			</code></pre>
+			<div class="criteria-block">
+			<div class="criteria-grid">
+				<div class="criteria-item">Demonstrated Empathy</div>
+				<div class="criteria-item">Pragmatic EI</div>
+				<div class="criteria-item">Depth of Insight</div>
+				<div class="criteria-item">Social Dexterity</div>
+				<div class="criteria-item">Emotional Reasoning</div>
+				<div class="criteria-item">Message Tailoring</div>
+				<div class="criteria-item">Boundary Setting</div>
+				<div class="criteria-item">Safety Conscious</div>
+				<div class="criteria-item">Moralising</div>
+				<div class="criteria-item">Sycophantic</div>
+				<div class="criteria-item">Compliant</div>
+				<div class="criteria-item">Challenging</div>
+				<div class="criteria-item">Warmth</div>
+				<div class="criteria-item">Validating</div>
+				<div class="criteria-item">Analytical</div>
+				<div class="criteria-item">Reactive</div>
+				<div class="criteria-item">Conversational</div>
+				<div class="criteria-item">Humanlike</div>
+			</div>
+			</div>
 
 			<p>Note: Only the following criteria are used to compute the rubric score: Demonstrated Empathy, Pragmatic EI, Depth of Insight, Social Dexterity, Emotional Reasoning, Message Tailoring</p>
 
 			<h5>Pairwise criteria</h5>
-			<pre class="code-block"><code>
-				1. Demonstrated empathy (not just performative)
-				2. Pragmatic EI
-				3. Depth of insight
-				4. Social dexterity
-				5. Emotional reasoning
-				6. Appropriate validation and/or challenging for the scene
-				7. Message tailoring: Appropriate targeting of response to where the user is at
-				8. Overall EQ
-			</code></pre>
+			<div class="criteria-block">
+			<ol class="criteria-list">
+				<li>Demonstrated empathy (not just performative)</li>
+				<li>Pragmatic EI</li>
+				<li>Depth of insight</li>
+				<li>Social dexterity</li>
+				<li>Emotional reasoning</li>
+				<li>Appropriate validation and/or challenging for the scene</li>
+				<li>Message tailoring: Appropriate targeting of response to where the user is at</li>
+				<li>Overall EQ</li>
+			</ol>
+			</div>
 
 			<!-- ─────────────────────────  BIAS MITIGATION  ───────────────────────── -->
 			<h4>Bias mitigation</h4>

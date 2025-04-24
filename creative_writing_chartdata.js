@@ -2,34 +2,34 @@ const chartData = {
   "o3": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        18.49,
-        18.73,
-        17.11,
-        15.95,
-        17.0,
-        17.12,
         17.95,
-        16.87,
         19.09,
-        17.69,
+        18.49,
         17.75,
+        17.69,
+        17.11,
+        16.87,
+        17.12,
+        17.0,
+        15.95,
+        18.73,
         16.81,
         18.04,
         16.57,
@@ -38,34 +38,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
+        0.3,
+        0.19,
         0.23,
-        0.18,
+        0.19,
+        0.3,
         0.36,
+        0.32,
+        0.29,
+        0.18,
         0.41,
         0.18,
-        0.29,
-        0.3,
-        0.32,
-        0.19,
-        0.3,
-        0.19,
         0.26,
         0.21,
         0.12,
@@ -120,34 +120,34 @@ const chartData = {
   "gemini-2.5-pro-exp-03-25": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        18.08,
-        18.6,
-        16.29,
-        15.05,
-        16.78,
-        16.47,
         17.45,
-        16.48,
         18.71,
-        17.25,
+        18.08,
         17.39,
+        17.25,
+        16.29,
+        16.48,
+        16.47,
+        16.78,
+        15.05,
+        18.6,
         16.51,
         18.07,
         16.27,
@@ -156,34 +156,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
+        0.19,
+        0.07,
         0.1,
-        0.15,
+        0.07,
+        0.19,
         0.16,
-        0.22,
-        0.11,
-        0.11,
-        0.19,
         0.24,
-        0.07,
-        0.19,
-        0.07,
+        0.11,
+        0.11,
+        0.22,
+        0.15,
         0.2,
         0.23,
         -0.03,
@@ -238,34 +238,34 @@ const chartData = {
   "deepseek-ai/DeepSeek-R1": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        18.08,
-        18.34,
-        16.47,
-        14.92,
-        16.79,
-        16.82,
         17.39,
-        16.06,
         18.48,
-        17.1,
+        18.08,
         17.58,
+        17.1,
+        16.47,
+        16.06,
+        16.82,
+        16.79,
+        14.92,
+        18.34,
         16.29,
         17.61,
         16.65,
@@ -274,34 +274,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.11,
-        0.06,
-        0.23,
-        0.2,
-        0.11,
-        0.23,
         0.19,
-        0.12,
         0.02,
-        0.16,
+        0.11,
         0.14,
+        0.16,
+        0.23,
+        0.12,
+        0.23,
+        0.11,
+        0.2,
+        0.06,
         0.15,
         0.08,
         0.11,
@@ -356,34 +356,34 @@ const chartData = {
   "chatgpt-4o-latest-2025-03-27": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        17.98,
-        18.42,
-        16.17,
-        14.65,
-        16.74,
-        16.42,
         17.19,
-        16.2,
         18.7,
-        16.97,
+        17.98,
         17.5,
+        16.97,
+        16.17,
+        16.2,
+        16.42,
+        16.74,
+        14.65,
+        18.42,
         16.15,
         17.49,
         16.59,
@@ -392,34 +392,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.08,
-        0.09,
-        0.15,
-        0.13,
-        0.1,
-        0.11,
         0.14,
+        0.11,
+        0.08,
+        0.12,
+        0.12,
+        0.15,
         0.19,
         0.11,
-        0.12,
-        0.12,
+        0.1,
+        0.13,
+        0.09,
         0.11,
         0.04,
         0.11,
@@ -474,34 +474,34 @@ const chartData = {
   "optimus-alpha": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        17.83,
-        18.21,
-        15.84,
-        14.22,
-        16.45,
-        16.16,
         16.81,
-        15.88,
         18.51,
-        16.7,
+        17.83,
         17.24,
+        16.7,
+        15.84,
+        15.88,
+        16.16,
+        16.45,
+        14.22,
+        18.21,
         15.81,
         17.37,
         16.49,
@@ -510,34 +510,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.03,
-        0.01,
-        0.04,
-        -0.03,
-        -0.01,
-        0.03,
         -0.0,
-        0.09,
         0.05,
         0.03,
         0.03,
+        0.03,
+        0.04,
+        0.09,
+        0.03,
+        -0.01,
+        -0.03,
+        0.01,
         -0.02,
         -0.01,
         0.09,
@@ -592,34 +592,34 @@ const chartData = {
   "gpt-4.1": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        17.83,
-        18.23,
-        15.98,
-        14.32,
-        16.5,
-        16.17,
         17.04,
-        15.97,
         18.65,
-        16.77,
+        17.83,
         17.26,
+        16.77,
+        15.98,
+        15.97,
+        16.17,
+        16.5,
+        14.32,
+        18.23,
         15.87,
         17.38,
         16.5,
@@ -628,34 +628,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
+        0.1,
+        0.1,
         0.04,
-        0.03,
-        0.12,
-        0.04,
-        0.03,
         0.05,
-        0.1,
-        0.15,
-        0.1,
         0.08,
+        0.12,
+        0.15,
         0.05,
+        0.03,
+        0.04,
+        0.03,
         0.03,
         0.01,
         0.1,
@@ -710,34 +710,34 @@ const chartData = {
   "quasar-alpha": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        17.73,
-        18.27,
-        15.76,
-        14.16,
-        16.45,
-        16.01,
         16.81,
-        15.97,
         18.64,
-        16.61,
+        17.73,
         17.07,
+        16.61,
+        15.76,
+        15.97,
+        16.01,
+        16.45,
+        14.16,
+        18.27,
         16.05,
         17.22,
         16.06,
@@ -746,34 +746,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.01,
-        0.07,
-        0.03,
-        -0.04,
-        0.04,
         0.0,
-        0.0,
-        0.16,
         0.12,
-        0.02,
+        0.01,
         -0.01,
+        0.02,
+        0.03,
+        0.16,
+        0.0,
+        0.04,
+        -0.04,
+        0.07,
         0.1,
         -0.05,
         -0.03,
@@ -828,34 +828,34 @@ const chartData = {
   "grok-3-beta": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        17.61,
-        18.22,
-        15.48,
-        14.07,
-        16.29,
-        15.74,
         16.85,
-        15.74,
         18.56,
-        16.5,
+        17.61,
         16.88,
+        16.5,
+        15.48,
+        15.74,
+        15.74,
+        16.29,
+        14.07,
+        18.22,
         15.99,
         17.69,
         15.62,
@@ -864,34 +864,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        -0.03,
-        0.07,
-        -0.08,
-        -0.07,
-        -0.02,
-        -0.1,
         0.03,
-        0.1,
         0.11,
+        -0.03,
+        -0.08,
         -0.01,
         -0.08,
+        0.1,
+        -0.1,
+        -0.02,
+        -0.07,
+        0.07,
         0.09,
         0.16,
         -0.17,
@@ -946,34 +946,34 @@ const chartData = {
   "claude-3-7-sonnet-20250219": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        17.7,
-        18.24,
-        15.41,
-        14.16,
-        16.49,
-        16.04,
         16.39,
-        15.39,
         18.43,
-        16.58,
+        17.7,
         17.23,
+        16.58,
+        15.41,
+        15.39,
+        16.04,
+        16.49,
+        14.16,
+        18.24,
         15.63,
         17.06,
         16.86,
@@ -982,33 +982,33 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
+        -0.14,
+        0.06,
         0.02,
         0.08,
+        0.04,
         -0.08,
         -0.02,
+        0.04,
         0.08,
-        0.04,
-        -0.14,
         -0.02,
-        0.06,
-        0.04,
         0.08,
         -0.05,
         -0.08,
@@ -1064,34 +1064,34 @@ const chartData = {
   "qwen/qwq-32b": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        17.65,
-        17.72,
-        15.52,
-        14.35,
-        16.32,
-        15.94,
         16.89,
-        15.07,
         18.48,
-        16.33,
+        17.65,
         16.93,
+        16.33,
+        15.52,
+        15.07,
+        15.94,
+        16.32,
+        14.35,
+        17.72,
         15.74,
         17.0,
         15.83,
@@ -1100,34 +1100,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.01,
-        -0.12,
-        -0.02,
-        0.07,
-        0.02,
-        0.01,
         0.06,
-        -0.12,
         0.1,
-        -0.06,
+        0.01,
         -0.03,
+        -0.06,
+        -0.02,
+        -0.12,
+        0.01,
+        0.02,
+        0.07,
+        -0.12,
         0.02,
         -0.09,
         -0.08,
@@ -1182,34 +1182,34 @@ const chartData = {
   "google/gemma-3-27b-it": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        17.52,
-        17.87,
-        15.04,
-        13.96,
-        16.19,
-        15.77,
         16.56,
-        14.85,
         18.33,
-        16.31,
+        17.52,
         16.85,
+        16.31,
+        15.04,
+        14.85,
+        15.77,
+        16.19,
+        13.96,
+        17.87,
         15.78,
         17.16,
         15.73,
@@ -1218,33 +1218,33 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        -0.04,
-        -0.05,
-        -0.17,
-        -0.07,
-        -0.03,
-        -0.04,
         -0.06,
-        -0.17,
         0.05,
+        -0.04,
         -0.05,
+        -0.05,
+        -0.17,
+        -0.17,
+        -0.04,
+        -0.03,
+        -0.07,
         -0.05,
         0.05,
         -0.01,
@@ -1300,34 +1300,34 @@ const chartData = {
   "chatgpt-4o-latest-2025-01-29": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        17.53,
-        18.0,
-        15.43,
-        13.54,
-        16.33,
-        15.83,
         16.09,
-        15.21,
         17.86,
-        16.21,
+        17.53,
         17.03,
+        16.21,
+        15.43,
+        15.21,
+        15.83,
+        16.33,
+        13.54,
+        18.0,
         15.19,
         17.16,
         16.74,
@@ -1336,34 +1336,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.0,
-        0.03,
-        0.02,
-        -0.17,
-        0.06,
-        0.03,
         -0.18,
-        0.01,
         -0.11,
-        -0.05,
+        0.0,
         0.05,
+        -0.05,
+        0.02,
+        0.01,
+        0.03,
+        0.06,
+        -0.17,
+        0.03,
         -0.15,
         0.02,
         0.26,
@@ -1418,34 +1418,34 @@ const chartData = {
   "deepseek-ai/DeepSeek-V3-0324": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        17.49,
-        17.98,
-        15.43,
-        13.58,
-        16.46,
-        15.89,
         16.08,
-        15.13,
         17.11,
-        16.16,
+        17.49,
         17.18,
+        16.16,
+        15.43,
+        15.13,
+        15.89,
+        16.46,
+        13.58,
+        17.98,
         15.03,
         17.25,
         16.88,
@@ -1454,34 +1454,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.01,
-        0.05,
-        0.05,
-        -0.12,
-        0.12,
-        0.08,
         -0.15,
-        0.01,
         -0.3,
-        -0.03,
+        0.01,
         0.12,
+        -0.03,
+        0.05,
+        0.01,
+        0.08,
+        0.12,
+        -0.12,
+        0.05,
         -0.16,
         0.09,
         0.29,
@@ -1536,34 +1536,34 @@ const chartData = {
   "gpt-4.5-preview": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        17.4,
-        18.08,
-        15.16,
-        13.53,
-        16.31,
-        15.57,
         16.23,
-        15.07,
         18.39,
-        16.14,
+        17.4,
         16.86,
+        16.14,
+        15.16,
+        15.07,
+        15.57,
+        16.31,
+        13.53,
+        18.08,
         15.39,
         17.19,
         15.86,
@@ -1572,34 +1572,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.0,
-        0.11,
-        -0.02,
-        -0.1,
-        0.09,
-        -0.01,
         -0.06,
-        0.04,
         0.15,
-        -0.0,
+        0.0,
         0.03,
+        -0.0,
+        -0.02,
+        0.04,
+        -0.01,
+        0.09,
+        -0.1,
+        0.11,
         0.02,
         0.09,
         -0.03,
@@ -1654,34 +1654,34 @@ const chartData = {
   "gemini-2.5-flash-preview": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        17.44,
-        17.99,
-        15.06,
-        13.78,
-        15.94,
-        15.5,
         16.53,
-        15.02,
         18.11,
-        16.25,
+        17.44,
         16.69,
+        16.25,
+        15.06,
+        15.02,
+        15.5,
+        15.94,
+        13.78,
+        17.99,
         15.46,
         17.12,
         15.65,
@@ -1690,34 +1690,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
+        0.08,
+        0.08,
         0.06,
-        0.1,
-        -0.03,
         0.01,
-        -0.03,
-        0.0,
         0.08,
+        -0.03,
         0.07,
-        0.08,
-        0.08,
+        0.0,
+        -0.03,
         0.01,
+        0.1,
         0.07,
         0.09,
         -0.04,
@@ -1772,34 +1772,34 @@ const chartData = {
   "CohereForAI/c4ai-command-a-03-2025": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        17.38,
-        17.81,
-        14.96,
-        13.53,
-        16.0,
-        15.35,
         16.32,
-        14.58,
         18.21,
-        15.88,
+        17.38,
         16.72,
+        15.88,
+        14.96,
+        14.58,
+        15.35,
+        16.0,
+        13.53,
+        17.81,
         15.27,
         16.79,
         15.64,
@@ -1808,38 +1808,38 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.07,
+        0.01,
+        0.14,
         0.06,
-        -0.01,
-        -0.05,
-        0.05,
-        -0.02,
-        0.03,
-        -0.04,
-        0.15,
-        -0.02,
-        0.05,
         0.04,
-        -0.02,
-        -0.01,
-        0.02
+        -0.04,
+        -0.03,
+        -0.07,
+        -0.03,
+        0.05,
+        -0.08,
+        0.06,
+        0.02,
+        -0.03,
+        -0.0,
+        -0.0
       ]
     },
     "strengths": [
@@ -1848,20 +1848,20 @@ const chartData = {
         "relativeScore": 1.0
       },
       {
-        "criterion": "Consistent Voice & Tone",
-        "relativeScore": 0.33
+        "criterion": "Coherent",
+        "relativeScore": 0.39
       },
       {
-        "criterion": "Coherent",
+        "criterion": "Consistent Voice & Tone",
+        "relativeScore": 0.39
+      },
+      {
+        "criterion": "Pacing",
         "relativeScore": 0.29
       },
       {
         "criterion": "Sentence Flow",
-        "relativeScore": 0.22
-      },
-      {
-        "criterion": "Pacing",
-        "relativeScore": 0.18
+        "relativeScore": 0.29
       }
     ],
     "weaknesses": [
@@ -1871,53 +1871,53 @@ const chartData = {
       },
       {
         "criterion": "Strong Dialogue",
-        "relativeScore": -0.82
+        "relativeScore": -0.96
       },
       {
         "criterion": "Avoids Amateurish Prose",
-        "relativeScore": -0.57
+        "relativeScore": -0.48
+      },
+      {
+        "criterion": "Show-Don't-Tell",
+        "relativeScore": -0.42
       },
       {
         "criterion": "Avoids Positivity Bias",
-        "relativeScore": -0.56
-      },
-      {
-        "criterion": "Elegant Prose",
-        "relativeScore": -0.46
+        "relativeScore": -0.36
       }
     ]
   },
   "sam-paech/Darkest-muse-v1": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        17.39,
-        17.1,
-        15.64,
-        14.34,
-        15.1,
-        15.31,
         17.06,
-        14.99,
         17.22,
-        16.08,
+        17.39,
         16.28,
+        16.08,
+        15.64,
+        14.99,
+        15.31,
+        15.1,
+        14.34,
+        17.1,
         15.58,
         17.14,
         14.18,
@@ -1926,38 +1926,38 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.11,
-        -0.18,
-        0.27,
-        0.27,
-        -0.24,
-        0.03,
-        0.3,
-        0.19,
-        -0.17,
-        0.12,
-        -0.09,
-        0.2,
+        0.28,
+        -0.19,
+        0.1,
+        -0.1,
+        0.09,
+        0.25,
         0.16,
+        0.01,
+        -0.24,
+        0.25,
+        -0.18,
+        0.18,
+        0.14,
         -0.39,
-        0.12
+        0.09
       ]
     },
     "strengths": [
@@ -1966,20 +1966,20 @@ const chartData = {
         "relativeScore": 1.0
       },
       {
+        "criterion": "Show-Don't-Tell",
+        "relativeScore": 0.81
+      },
+      {
         "criterion": "Creativity",
         "relativeScore": 0.8
       },
       {
-        "criterion": "Show-Don't-Tell",
-        "relativeScore": 0.79
-      },
-      {
         "criterion": "Emotional Depth",
-        "relativeScore": 0.4
+        "relativeScore": 0.39
       },
       {
         "criterion": "Strong Dialogue",
-        "relativeScore": 0.32
+        "relativeScore": 0.29
       }
     ],
     "weaknesses": [
@@ -1989,15 +1989,15 @@ const chartData = {
       },
       {
         "criterion": "Pacing",
-        "relativeScore": -0.59
-      },
-      {
-        "criterion": "Coherent",
-        "relativeScore": -0.46
+        "relativeScore": -0.57
       },
       {
         "criterion": "Instruction Following",
         "relativeScore": -0.46
+      },
+      {
+        "criterion": "Coherent",
+        "relativeScore": -0.45
       },
       {
         "criterion": "Sentence Flow",
@@ -2008,34 +2008,34 @@ const chartData = {
   "RekaAI/reka-flash-3": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        17.27,
-        17.33,
-        15.3,
-        14.17,
-        15.98,
-        15.58,
         16.53,
-        14.58,
         17.62,
-        16.0,
+        17.27,
         16.57,
+        16.0,
+        15.3,
+        14.58,
+        15.58,
+        15.98,
+        14.17,
+        17.33,
         15.18,
         16.3,
         15.52,
@@ -2044,38 +2044,38 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.12,
-        -0.06,
-        0.23,
-        0.27,
-        0.12,
         0.18,
-        0.21,
-        0.13,
-        0.03,
-        0.14,
-        0.07,
-        0.13,
-        -0.1,
-        0.02,
-        0.07
+        0.01,
+        0.09,
+        0.06,
+        0.11,
+        0.2,
+        0.09,
+        0.16,
+        0.11,
+        0.24,
+        -0.08,
+        0.1,
+        -0.14,
+        0.01,
+        0.04
       ]
     },
     "strengths": [
@@ -2085,19 +2085,19 @@ const chartData = {
       },
       {
         "criterion": "Show-Don't-Tell",
-        "relativeScore": 0.7
+        "relativeScore": 0.71
       },
       {
         "criterion": "Descriptive Imagery",
-        "relativeScore": 0.56
+        "relativeScore": 0.52
       },
       {
         "criterion": "Elegant Prose",
-        "relativeScore": 0.36
+        "relativeScore": 0.39
       },
       {
         "criterion": "Avoids Amateurish Prose",
-        "relativeScore": 0.12
+        "relativeScore": 0.11
       }
     ],
     "weaknesses": [
@@ -2107,15 +2107,15 @@ const chartData = {
       },
       {
         "criterion": "Coherent",
-        "relativeScore": -0.8
-      },
-      {
-        "criterion": "Avoids Purple Prose",
-        "relativeScore": -0.48
+        "relativeScore": -0.69
       },
       {
         "criterion": "Instruction Following",
-        "relativeScore": -0.44
+        "relativeScore": -0.34
+      },
+      {
+        "criterion": "Avoids Purple Prose",
+        "relativeScore": -0.33
       },
       {
         "criterion": "Believable Characters",
@@ -2126,34 +2126,34 @@ const chartData = {
   "google/gemma-3-12b-it": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        17.1,
-        17.66,
-        14.51,
-        13.55,
-        15.77,
-        15.17,
         15.93,
-        14.28,
         18.11,
-        15.83,
+        17.1,
         16.49,
+        15.83,
+        14.51,
+        14.28,
+        15.17,
+        15.77,
+        13.55,
+        17.66,
         15.21,
         16.85,
         15.73,
@@ -2162,38 +2162,38 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.1,
-        0.11,
         0.02,
-        0.13,
-        0.09,
-        0.09,
-        0.07,
-        0.1,
-        0.24,
-        0.14,
+        0.22,
         0.08,
-        0.2,
-        0.18,
+        0.06,
+        0.11,
+        -0.03,
+        0.06,
+        0.06,
+        0.08,
+        0.1,
+        0.1,
+        0.17,
+        0.14,
         0.12,
-        0.16
+        0.12
       ]
     },
     "strengths": [
@@ -2203,19 +2203,19 @@ const chartData = {
       },
       {
         "criterion": "Emotional Depth",
-        "relativeScore": 0.68
+        "relativeScore": 0.52
       },
       {
         "criterion": "Avoids Positivity Bias",
-        "relativeScore": 0.5
+        "relativeScore": 0.34
       },
       {
         "criterion": "Believable Characters",
-        "relativeScore": 0.31
+        "relativeScore": 0.17
       },
       {
-        "criterion": "Avoids Amateurish Prose",
-        "relativeScore": 0.23
+        "criterion": "Avoids Purple Prose",
+        "relativeScore": 0.17
       }
     ],
     "weaknesses": [
@@ -2225,53 +2225,53 @@ const chartData = {
       },
       {
         "criterion": "Descriptive Imagery",
-        "relativeScore": -0.5
+        "relativeScore": -0.68
       },
       {
         "criterion": "Sentence Flow",
-        "relativeScore": -0.4
-      },
-      {
-        "criterion": "Pacing",
-        "relativeScore": -0.31
+        "relativeScore": -0.34
       },
       {
         "criterion": "Elegant Prose",
-        "relativeScore": -0.24
+        "relativeScore": -0.33
+      },
+      {
+        "criterion": "Strong Dialogue",
+        "relativeScore": -0.32
       }
     ]
   },
   "google/gemma-3-4b-it": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        17.08,
-        17.5,
-        14.79,
-        13.71,
-        15.67,
-        15.53,
         16.62,
-        14.18,
         17.55,
-        16.0,
+        17.08,
         16.62,
+        16.0,
+        14.79,
+        14.18,
+        15.53,
+        15.67,
+        13.71,
+        17.5,
         15.19,
         16.58,
         15.18,
@@ -2280,38 +2280,38 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
+        0.29,
+        0.09,
+        0.12,
         0.15,
-        0.11,
-        0.2,
+        0.22,
+        0.15,
+        0.09,
         0.23,
         0.09,
-        0.25,
-        0.32,
-        0.16,
-        0.17,
-        0.25,
-        0.17,
-        0.26,
-        0.14,
+        0.2,
+        0.08,
+        0.21,
+        0.1,
         -0.07,
-        0.22
+        0.18
       ]
     },
     "strengths": [
@@ -2320,20 +2320,20 @@ const chartData = {
         "relativeScore": 1.0
       },
       {
-        "criterion": "Emotional Depth",
+        "criterion": "Elegant Prose",
         "relativeScore": 0.56
       },
       {
-        "criterion": "Elegant Prose",
-        "relativeScore": 0.51
+        "criterion": "Avoids Amateurish Prose",
+        "relativeScore": 0.46
       },
       {
-        "criterion": "Avoids Amateurish Prose",
-        "relativeScore": 0.49
+        "criterion": "Emotional Depth",
+        "relativeScore": 0.42
       },
       {
         "criterion": "Creativity",
-        "relativeScore": 0.36
+        "relativeScore": 0.32
       }
     ],
     "weaknesses": [
@@ -2342,54 +2342,54 @@ const chartData = {
         "relativeScore": -1.0
       },
       {
-        "criterion": "Pacing",
-        "relativeScore": -0.39
-      },
-      {
         "criterion": "Coherent",
-        "relativeScore": -0.3
+        "relativeScore": -0.36
       },
       {
-        "criterion": "Avoids Positivity Bias",
-        "relativeScore": -0.13
+        "criterion": "Pacing",
+        "relativeScore": -0.33
       },
       {
-        "criterion": "Consistent Voice & Tone",
-        "relativeScore": -0.12
+        "criterion": "Instruction Following",
+        "relativeScore": -0.33
+      },
+      {
+        "criterion": "Strong Dialogue",
+        "relativeScore": -0.28
       }
     ]
   },
   "allura-org/Gemma-3-Glitter-12B": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        16.94,
-        17.4,
-        14.37,
-        13.24,
-        15.66,
-        14.91,
         15.76,
-        14.23,
         17.9,
-        15.64,
+        16.94,
         16.26,
+        15.64,
+        14.37,
+        14.23,
+        14.91,
+        15.66,
+        13.24,
+        17.4,
         14.9,
         16.47,
         15.5,
@@ -2398,38 +2398,38 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.15,
-        0.12,
-        0.14,
-        0.16,
-        0.14,
-        0.13,
-        0.15,
-        0.24,
-        0.31,
-        0.21,
-        0.09,
-        0.24,
-        0.18,
         0.1,
-        0.23
+        0.28,
+        0.12,
+        0.06,
+        0.17,
+        0.09,
+        0.2,
+        0.08,
+        0.12,
+        0.1,
+        0.09,
+        0.2,
+        0.12,
+        0.09,
+        0.18
       ]
     },
     "strengths": [
@@ -2438,20 +2438,20 @@ const chartData = {
         "relativeScore": 1.0
       },
       {
-        "criterion": "Strong Dialogue",
-        "relativeScore": 0.51
+        "criterion": "Emotional Depth",
+        "relativeScore": 0.44
       },
       {
-        "criterion": "Emotional Depth",
-        "relativeScore": 0.49
+        "criterion": "Strong Dialogue",
+        "relativeScore": 0.43
       },
       {
         "criterion": "Believable Characters",
-        "relativeScore": 0.42
+        "relativeScore": 0.36
       },
       {
         "criterion": "Avoids Amateurish Prose",
-        "relativeScore": 0.31
+        "relativeScore": 0.25
       }
     ],
     "weaknesses": [
@@ -2460,54 +2460,54 @@ const chartData = {
         "relativeScore": -1.0
       },
       {
-        "criterion": "Avoids Purple Prose",
-        "relativeScore": -0.85
+        "criterion": "Elegant Prose",
+        "relativeScore": -0.59
       },
       {
         "criterion": "Coherent",
-        "relativeScore": -0.58
+        "relativeScore": -0.55
       },
       {
-        "criterion": "Elegant Prose",
-        "relativeScore": -0.41
+        "criterion": "Show-Don't-Tell",
+        "relativeScore": -0.53
       },
       {
-        "criterion": "Pacing",
-        "relativeScore": -0.19
+        "criterion": "Avoids Purple Prose",
+        "relativeScore": -0.47
       }
     ]
   },
   "gemini-2.0-flash-001": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        16.94,
-        17.5,
-        14.32,
-        12.98,
-        15.66,
-        14.86,
         15.61,
-        14.04,
         17.53,
-        15.36,
+        16.94,
         16.47,
+        15.36,
+        14.32,
+        14.04,
+        14.86,
+        15.66,
+        12.98,
+        17.5,
         14.76,
         16.54,
         15.72,
@@ -2516,38 +2516,38 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.2,
-        0.19,
-        0.19,
-        0.13,
-        0.19,
+        0.11,
+        0.24,
         0.17,
-        0.16,
-        0.25,
-        0.28,
-        0.19,
+        0.17,
+        0.15,
+        0.14,
         0.2,
-        0.26,
-        0.27,
-        0.21,
-        0.23
+        0.13,
+        0.17,
+        0.08,
+        0.17,
+        0.22,
+        0.22,
+        0.19,
+        0.19
       ]
     },
     "strengths": [
@@ -2556,20 +2556,20 @@ const chartData = {
         "relativeScore": 1.0
       },
       {
-        "criterion": "Avoids Positivity Bias",
-        "relativeScore": 0.88
+        "criterion": "Emotional Depth",
+        "relativeScore": 0.63
       },
       {
-        "criterion": "Emotional Depth",
-        "relativeScore": 0.7
+        "criterion": "Avoids Positivity Bias",
+        "relativeScore": 0.62
       },
       {
         "criterion": "Strong Dialogue",
-        "relativeScore": 0.67
+        "relativeScore": 0.44
       },
       {
         "criterion": "Believable Characters",
-        "relativeScore": 0.4
+        "relativeScore": 0.3
       }
     ],
     "weaknesses": [
@@ -2579,53 +2579,53 @@ const chartData = {
       },
       {
         "criterion": "Descriptive Imagery",
-        "relativeScore": -0.63
+        "relativeScore": -0.66
       },
       {
         "criterion": "Elegant Prose",
-        "relativeScore": -0.42
+        "relativeScore": -0.4
       },
       {
         "criterion": "Show-Don't-Tell",
-        "relativeScore": -0.13
+        "relativeScore": -0.31
       },
       {
         "criterion": "Avoids Amateurish Prose",
-        "relativeScore": -0.13
+        "relativeScore": -0.28
       }
     ]
   },
   "claude-3-5-sonnet-20241022": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        16.78,
-        17.34,
-        14.69,
-        12.94,
-        16.1,
-        14.89,
         15.15,
-        14.64,
         16.98,
-        15.43,
+        16.78,
         16.54,
+        15.43,
+        14.69,
+        14.64,
+        14.89,
+        16.1,
+        12.94,
+        17.34,
         14.17,
         16.38,
         16.62,
@@ -2634,48 +2634,48 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
+        -0.02,
+        0.14,
+        0.17,
+        0.23,
+        0.22,
+        0.31,
+        0.4,
         0.2,
-        0.18,
-        0.34,
-        0.18,
-        0.35,
-        0.24,
-        0.06,
-        0.43,
-        0.18,
-        0.27,
-        0.26,
+        0.33,
+        0.12,
         0.16,
-        0.28,
+        0.09,
+        0.24,
         0.43,
-        0.23
+        0.18
       ]
     },
     "strengths": [
       {
-        "criterion": "Strong Dialogue",
+        "criterion": "Avoids Purple Prose",
         "relativeScore": 1.0
       },
       {
-        "criterion": "Avoids Purple Prose",
-        "relativeScore": 0.98
+        "criterion": "Strong Dialogue",
+        "relativeScore": 0.85
       },
       {
         "criterion": "Pacing",
@@ -2683,11 +2683,11 @@ const chartData = {
       },
       {
         "criterion": "Show-Don't-Tell",
-        "relativeScore": 0.49
+        "relativeScore": 0.41
       },
       {
         "criterion": "Avoids Positivity Bias",
-        "relativeScore": 0.19
+        "relativeScore": 0.16
       }
     ],
     "weaknesses": [
@@ -2697,53 +2697,53 @@ const chartData = {
       },
       {
         "criterion": "Emotional Depth",
-        "relativeScore": -0.5
+        "relativeScore": -0.56
       },
       {
         "criterion": "Creativity",
-        "relativeScore": -0.38
+        "relativeScore": -0.4
       },
       {
         "criterion": "Instruction Following",
-        "relativeScore": -0.35
+        "relativeScore": -0.33
       },
       {
         "criterion": "Coherent",
-        "relativeScore": -0.34
+        "relativeScore": -0.2
       }
     ]
   },
   "gpt-4.1-mini": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        16.65,
-        17.3,
-        14.16,
-        12.8,
         15.4,
+        17.21,
+        16.65,
+        16.23,
+        15.1,
+        14.16,
+        13.49,
         14.75,
         15.4,
-        13.49,
-        17.21,
-        15.1,
-        16.23,
+        12.8,
+        17.3,
         14.03,
         16.08,
         15.65,
@@ -2752,60 +2752,60 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.21,
-        0.21,
-        0.28,
-        0.2,
-        0.21,
+        0.16,
         0.25,
-        0.22,
-        0.25,
-        0.29,
-        0.24,
-        0.21,
         0.18,
-        0.26,
+        0.19,
+        0.19,
+        0.23,
+        0.2,
+        0.22,
+        0.2,
+        0.14,
+        0.19,
+        0.12,
+        0.21,
         0.25,
-        0.24
+        0.2
       ]
     },
     "strengths": [
       {
-        "criterion": "Instruction Following",
+        "criterion": "Avoids Purple Prose",
         "relativeScore": 1.0
       },
       {
+        "criterion": "Instruction Following",
+        "relativeScore": 0.95
+      },
+      {
         "criterion": "Show-Don't-Tell",
-        "relativeScore": 0.85
-      },
-      {
-        "criterion": "Avoids Positivity Bias",
-        "relativeScore": 0.43
-      },
-      {
-        "criterion": "Strong Dialogue",
-        "relativeScore": 0.29
+        "relativeScore": 0.66
       },
       {
         "criterion": "Elegant Prose",
-        "relativeScore": 0.29
+        "relativeScore": 0.36
+      },
+      {
+        "criterion": "Avoids Positivity Bias",
+        "relativeScore": 0.32
       }
     ],
     "weaknesses": [
@@ -2815,53 +2815,53 @@ const chartData = {
       },
       {
         "criterion": "Creativity",
-        "relativeScore": -0.79
+        "relativeScore": -0.74
       },
       {
-        "criterion": "Coherent",
-        "relativeScore": -0.57
+        "criterion": "Descriptive Imagery",
+        "relativeScore": -0.56
       },
       {
         "criterion": "Consistent Voice & Tone",
-        "relativeScore": -0.55
+        "relativeScore": -0.27
       },
       {
-        "criterion": "Pacing",
-        "relativeScore": -0.54
+        "criterion": "Coherent",
+        "relativeScore": -0.14
       }
     ]
   },
   "ifable/gemma-2-Ifable-9B": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        16.23,
-        16.67,
-        14.82,
-        14.01,
-        14.81,
-        14.32,
         16.71,
-        13.85,
         17.05,
-        15.23,
+        16.23,
         14.71,
+        15.23,
+        14.82,
+        13.85,
+        14.32,
+        14.81,
+        14.01,
+        16.67,
         15.01,
         16.43,
         12.47,
@@ -2870,38 +2870,38 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.14,
-        0.05,
-        0.45,
         0.48,
-        0.08,
-        0.19,
-        0.5,
-        0.39,
-        0.31,
-        0.32,
-        -0.26,
-        0.44,
-        0.39,
-        -0.52,
-        0.38
+        0.27,
+        0.09,
+        -0.28,
+        0.28,
+        0.43,
+        0.35,
+        0.15,
+        0.04,
+        0.46,
+        0.0,
+        0.41,
+        0.35,
+        -0.54,
+        0.35
       ]
     },
     "strengths": [
@@ -2911,19 +2911,19 @@ const chartData = {
       },
       {
         "criterion": "Creativity",
-        "relativeScore": 0.84
+        "relativeScore": 0.83
       },
       {
         "criterion": "Show-Don't-Tell",
-        "relativeScore": 0.69
+        "relativeScore": 0.67
       },
       {
         "criterion": "Emotional Depth",
-        "relativeScore": 0.63
+        "relativeScore": 0.6
       },
       {
         "criterion": "Avoids Positivity Bias",
-        "relativeScore": 0.34
+        "relativeScore": 0.29
       }
     ],
     "weaknesses": [
@@ -2933,53 +2933,171 @@ const chartData = {
       },
       {
         "criterion": "Sentence Flow",
-        "relativeScore": -0.55
+        "relativeScore": -0.54
       },
       {
         "criterion": "Coherent",
-        "relativeScore": -0.28
+        "relativeScore": -0.27
       },
       {
         "criterion": "Pacing",
-        "relativeScore": -0.25
+        "relativeScore": -0.24
       },
       {
         "criterion": "Consistent Voice & Tone",
-        "relativeScore": -0.21
+        "relativeScore": -0.2
       }
     ]
   },
-  "gpt-4.1-nano": {
+  "THUDM/GLM-4-32B-0414": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        15.94,
-        16.76,
-        12.87,
-        11.98,
-        14.34,
-        13.91,
+        15.78,
+        16.84,
+        16.39,
+        15.98,
+        15.04,
+        13.93,
+        13.67,
+        14.45,
+        14.38,
+        13.17,
+        16.88,
+        14.44,
+        16.14,
+        14.65,
+        15.12
+      ]
+    },
+    "relativeRadarLog": {
+      "labels": [
+        "Descriptive Imagery",
+        "Instruction Following",
+        "Consistent Voice & Tone",
+        "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
+        "Emotional Depth",
+        "Avoids Positivity Bias",
+        "Avoids Purple Prose",
+        "Believable Characters"
+      ],
+      "values": [
+        0.35,
+        0.27,
+        0.2,
+        0.19,
+        0.29,
+        0.29,
+        0.37,
+        0.24,
+        -0.07,
+        0.33,
+        0.14,
+        0.35,
+        0.34,
+        -0.0,
+        0.31
+      ]
+    },
+    "strengths": [
+      {
+        "criterion": "Strong Dialogue",
+        "relativeScore": 1.0
+      },
+      {
+        "criterion": "Descriptive Imagery",
+        "relativeScore": 0.79
+      },
+      {
+        "criterion": "Emotional Depth",
+        "relativeScore": 0.76
+      },
+      {
+        "criterion": "Avoids Positivity Bias",
+        "relativeScore": 0.63
+      },
+      {
+        "criterion": "Creativity",
+        "relativeScore": 0.55
+      }
+    ],
+    "weaknesses": [
+      {
+        "criterion": "Pacing",
+        "relativeScore": -1.0
+      },
+      {
+        "criterion": "Avoids Purple Prose",
+        "relativeScore": -0.85
+      },
+      {
+        "criterion": "Coherent",
+        "relativeScore": -0.5
+      },
+      {
+        "criterion": "Sentence Flow",
+        "relativeScore": -0.34
+      },
+      {
+        "criterion": "Consistent Voice & Tone",
+        "relativeScore": -0.33
+      }
+    ]
+  },
+  "gpt-4.1-nano": {
+    "absoluteRadar": {
+      "labels": [
+        "Descriptive Imagery",
+        "Instruction Following",
+        "Consistent Voice & Tone",
+        "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
+        "Emotional Depth",
+        "Avoids Positivity Bias",
+        "Avoids Purple Prose",
+        "Believable Characters"
+      ],
+      "values": [
         14.62,
-        12.0,
         16.1,
-        14.3,
+        15.94,
         15.61,
+        14.3,
+        12.87,
+        12.0,
+        13.91,
+        14.34,
+        11.98,
+        16.76,
         13.07,
         15.82,
         14.8,
@@ -2988,38 +3106,38 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.1,
-        0.14,
-        0.04,
+        0.12,
+        0.15,
+        0.12,
+        0.13,
+        0.16,
         0.06,
         -0.05,
-        0.13,
-        0.11,
-        -0.06,
-        0.13,
         0.14,
-        0.11,
-        0.02,
-        0.31,
+        -0.02,
         0.07,
-        0.11
+        0.16,
+        0.04,
+        0.32,
+        0.09,
+        0.12
       ]
     },
     "strengths": [
@@ -3028,20 +3146,20 @@ const chartData = {
         "relativeScore": 1.0
       },
       {
-        "criterion": "Avoids Amateurish Prose",
-        "relativeScore": 0.15
-      },
-      {
         "criterion": "Coherent",
-        "relativeScore": 0.15
+        "relativeScore": 0.16
       },
       {
-        "criterion": "Elegant Prose",
-        "relativeScore": 0.09
+        "criterion": "Avoids Amateurish Prose",
+        "relativeScore": 0.16
       },
       {
         "criterion": "Instruction Following",
-        "relativeScore": 0.08
+        "relativeScore": 0.12
+      },
+      {
+        "criterion": "Elegant Prose",
+        "relativeScore": 0.1
       }
     ],
     "weaknesses": [
@@ -3051,7 +3169,7 @@ const chartData = {
       },
       {
         "criterion": "Pacing",
-        "relativeScore": -0.92
+        "relativeScore": -0.83
       },
       {
         "criterion": "Emotional Depth",
@@ -3059,45 +3177,45 @@ const chartData = {
       },
       {
         "criterion": "Show-Don't-Tell",
-        "relativeScore": -0.42
+        "relativeScore": -0.39
       },
       {
         "criterion": "Creativity",
-        "relativeScore": -0.31
+        "relativeScore": -0.36
       }
     ]
   },
   "gpt-4o-mini": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        15.46,
-        16.42,
-        12.67,
-        11.51,
-        14.43,
-        13.33,
         14.11,
-        11.81,
         15.99,
-        13.69,
+        15.46,
         15.19,
+        13.69,
+        12.67,
+        11.81,
+        13.33,
+        14.43,
+        11.51,
+        16.42,
         12.86,
         14.82,
         14.42,
@@ -3106,38 +3224,38 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        -0.01,
-        0.08,
-        0.07,
-        -0.04,
-        0.04,
-        -0.01,
-        0.02,
-        -0.03,
+        0.05,
         0.19,
         0.01,
-        0.0,
-        0.06,
+        0.01,
+        0.03,
+        0.1,
+        -0.0,
+        0.01,
+        0.05,
+        -0.01,
+        0.09,
         0.08,
+        0.09,
         -0.07,
-        -0.02
+        -0.0
       ]
     },
     "strengths": [
@@ -3146,20 +3264,20 @@ const chartData = {
         "relativeScore": 1.0
       },
       {
-        "criterion": "Coherent",
-        "relativeScore": 0.36
+        "criterion": "Show-Don't-Tell",
+        "relativeScore": 0.37
       },
       {
         "criterion": "Avoids Positivity Bias",
-        "relativeScore": 0.33
+        "relativeScore": 0.35
       },
       {
-        "criterion": "Show-Don't-Tell",
-        "relativeScore": 0.28
+        "criterion": "Coherent",
+        "relativeScore": 0.3
       },
       {
         "criterion": "Emotional Depth",
-        "relativeScore": 0.23
+        "relativeScore": 0.25
       }
     ],
     "weaknesses": [
@@ -3169,53 +3287,53 @@ const chartData = {
       },
       {
         "criterion": "Creativity",
-        "relativeScore": -0.59
-      },
-      {
-        "criterion": "Strong Dialogue",
-        "relativeScore": -0.46
+        "relativeScore": -0.39
       },
       {
         "criterion": "Believable Characters",
-        "relativeScore": -0.42
+        "relativeScore": -0.31
+      },
+      {
+        "criterion": "Strong Dialogue",
+        "relativeScore": -0.27
       },
       {
         "criterion": "Elegant Prose",
-        "relativeScore": -0.26
+        "relativeScore": -0.22
       }
     ]
   },
   "mistralai/Pixtral-Large-Instruct-2411": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        15.14,
-        16.11,
-        11.86,
-        10.84,
-        13.68,
-        12.73,
         13.36,
-        10.95,
         16.08,
-        13.07,
+        15.14,
         15.02,
+        13.07,
+        11.86,
+        10.95,
+        12.73,
+        13.68,
+        10.84,
+        16.11,
         12.26,
         13.84,
         14.46,
@@ -3224,38 +3342,38 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
+        -0.15,
+        0.3,
+        -0.05,
+        0.0,
+        -0.11,
+        -0.11,
+        -0.2,
+        -0.14,
+        -0.17,
+        -0.16,
+        0.03,
         -0.06,
-        0.02,
-        -0.13,
-        -0.18,
         -0.19,
-        -0.16,
-        -0.16,
-        -0.21,
-        0.29,
-        -0.13,
-        -0.01,
-        -0.08,
-        -0.19,
-        -0.02,
-        -0.07
+        -0.0,
+        -0.06
       ]
     },
     "strengths": [
@@ -3265,11 +3383,11 @@ const chartData = {
       },
       {
         "criterion": "Coherent",
-        "relativeScore": 0.3
+        "relativeScore": 0.28
       },
       {
         "criterion": "Sentence Flow",
-        "relativeScore": 0.25
+        "relativeScore": 0.23
       },
       {
         "criterion": "Avoids Purple Prose",
@@ -3277,7 +3395,7 @@ const chartData = {
       },
       {
         "criterion": "Consistent Voice & Tone",
-        "relativeScore": 0.14
+        "relativeScore": 0.13
       }
     ],
     "weaknesses": [
@@ -3287,11 +3405,11 @@ const chartData = {
       },
       {
         "criterion": "Avoids Positivity Bias",
-        "relativeScore": -0.8
+        "relativeScore": -0.93
       },
       {
         "criterion": "Pacing",
-        "relativeScore": -0.78
+        "relativeScore": -0.67
       },
       {
         "criterion": "Creativity",
@@ -3299,41 +3417,41 @@ const chartData = {
       },
       {
         "criterion": "Descriptive Imagery",
-        "relativeScore": -0.39
+        "relativeScore": -0.43
       }
     ]
   },
   "mistralai/mistral-large-2411": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        14.83,
-        16.06,
-        11.71,
-        10.94,
-        14.15,
-        12.56,
         13.04,
-        11.22,
         15.56,
-        12.99,
+        14.83,
         14.85,
+        12.99,
+        11.71,
+        11.22,
+        12.56,
+        14.15,
+        10.94,
+        16.06,
         11.93,
         13.67,
         14.77,
@@ -3342,38 +3460,38 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        -0.1,
-        0.07,
-        -0.08,
-        -0.05,
-        0.09,
-        -0.13,
         -0.18,
-        -0.01,
-        0.21,
-        -0.05,
-        -0.01,
-        -0.1,
-        -0.17,
-        0.16,
-        -0.13
+        0.23,
+        -0.09,
+        0.01,
+        -0.04,
+        -0.07,
+        0.01,
+        -0.12,
+        0.11,
+        -0.04,
+        0.09,
+        -0.08,
+        -0.16,
+        0.17,
+        -0.12
       ]
     },
     "strengths": [
@@ -3387,7 +3505,7 @@ const chartData = {
       },
       {
         "criterion": "Pacing",
-        "relativeScore": 0.48
+        "relativeScore": 0.52
       },
       {
         "criterion": "Coherent",
@@ -3405,53 +3523,53 @@ const chartData = {
       },
       {
         "criterion": "Avoids Positivity Bias",
-        "relativeScore": -0.93
+        "relativeScore": -0.86
       },
       {
         "criterion": "Elegant Prose",
-        "relativeScore": -0.6
+        "relativeScore": -0.54
       },
       {
         "criterion": "Believable Characters",
-        "relativeScore": -0.58
+        "relativeScore": -0.52
       },
       {
         "criterion": "Consistent Voice & Tone",
-        "relativeScore": -0.35
+        "relativeScore": -0.3
       }
     ]
   },
   "anthropic/claude-3.5-haiku-20241022": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        14.56,
-        15.15,
-        10.56,
-        10.53,
-        14.16,
-        12.56,
         12.52,
-        9.63,
         11.64,
-        12.3,
+        14.56,
         14.44,
+        12.3,
+        10.56,
+        9.63,
+        12.56,
+        14.16,
+        10.53,
+        15.15,
         10.55,
         13.66,
         14.67,
@@ -3460,38 +3578,38 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        -0.13,
-        -0.2,
-        -0.32,
-        -0.1,
-        0.15,
-        -0.05,
-        -0.25,
-        -0.37,
+        -0.24,
         -0.62,
-        -0.19,
-        -0.11,
-        -0.38,
-        -0.1,
-        0.15,
-        -0.29
+        -0.12,
+        -0.09,
+        -0.18,
+        -0.31,
+        -0.37,
+        -0.03,
+        0.17,
+        -0.09,
+        -0.2,
+        -0.37,
+        -0.09,
+        0.16,
+        -0.28
       ]
     },
     "strengths": [
@@ -3501,7 +3619,7 @@ const chartData = {
       },
       {
         "criterion": "Avoids Purple Prose",
-        "relativeScore": 1.0
+        "relativeScore": 0.96
       },
       {
         "criterion": "Elegant Prose",
@@ -3509,11 +3627,11 @@ const chartData = {
       },
       {
         "criterion": "Avoids Positivity Bias",
-        "relativeScore": 0.3
+        "relativeScore": 0.26
       },
       {
         "criterion": "Creativity",
-        "relativeScore": 0.29
+        "relativeScore": 0.26
       }
     ],
     "weaknesses": [
@@ -3523,11 +3641,11 @@ const chartData = {
       },
       {
         "criterion": "Emotional Depth",
-        "relativeScore": -0.31
+        "relativeScore": -0.32
       },
       {
         "criterion": "Strong Dialogue",
-        "relativeScore": -0.31
+        "relativeScore": -0.32
       },
       {
         "criterion": "Show-Don't-Tell",
@@ -3542,34 +3660,34 @@ const chartData = {
   "ToastyPigeon/Gemma-3-Starshine-12B": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        14.28,
-        15.12,
-        10.64,
-        9.98,
-        13.02,
-        11.92,
         12.64,
-        10.21,
         13.97,
-        12.02,
+        14.28,
         14.3,
+        12.02,
+        10.64,
+        10.21,
+        11.92,
+        13.02,
+        9.98,
+        15.12,
         11.34,
         12.1,
         14.19,
@@ -3578,37 +3696,37 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        -0.15,
-        -0.15,
-        -0.22,
-        -0.19,
-        -0.19,
-        -0.18,
         -0.12,
-        -0.15,
+        -0.13,
         -0.14,
-        -0.18,
         -0.09,
-        -0.09,
+        -0.17,
+        -0.22,
+        -0.14,
+        -0.17,
+        -0.17,
+        -0.19,
+        -0.15,
+        -0.08,
         -0.42,
-        0.01,
+        0.02,
         -0.23
       ]
     },
@@ -3619,19 +3737,19 @@ const chartData = {
       },
       {
         "criterion": "Emotional Depth",
-        "relativeScore": 0.47
+        "relativeScore": 0.45
       },
       {
         "criterion": "Sentence Flow",
-        "relativeScore": 0.44
+        "relativeScore": 0.4
       },
       {
         "criterion": "Descriptive Imagery",
-        "relativeScore": 0.27
+        "relativeScore": 0.2
       },
       {
         "criterion": "Instruction Following",
-        "relativeScore": 0.08
+        "relativeScore": 0.13
       }
     ],
     "weaknesses": [
@@ -3641,7 +3759,7 @@ const chartData = {
       },
       {
         "criterion": "Believable Characters",
-        "relativeScore": -0.24
+        "relativeScore": -0.23
       },
       {
         "criterion": "Show-Don't-Tell",
@@ -3649,45 +3767,45 @@ const chartData = {
       },
       {
         "criterion": "Creativity",
-        "relativeScore": -0.11
+        "relativeScore": -0.13
       },
       {
-        "criterion": "Pacing",
-        "relativeScore": -0.09
+        "criterion": "Elegant Prose",
+        "relativeScore": -0.08
       }
     ]
   },
   "mistralai/Mistral-Nemo-Instruct-2407": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        14.32,
-        15.1,
-        10.76,
-        10.12,
-        12.61,
-        12.07,
         12.92,
-        9.81,
         14.01,
-        12.02,
+        14.32,
         14.24,
+        12.02,
+        10.76,
+        9.81,
+        12.07,
+        12.61,
+        10.12,
+        15.1,
         11.45,
         11.93,
         13.05,
@@ -3696,38 +3814,38 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
+        0.09,
+        -0.01,
+        -0.05,
+        -0.03,
         -0.06,
         -0.08,
-        -0.09,
-        -0.05,
-        -0.22,
-        -0.04,
-        0.1,
-        -0.18,
+        -0.17,
         -0.03,
-        -0.07,
-        -0.04,
-        0.08,
+        -0.2,
+        -0.05,
+        -0.06,
+        0.09,
         -0.4,
-        -0.3,
-        -0.05
+        -0.29,
+        -0.04
       ]
     },
     "strengths": [
@@ -3737,19 +3855,19 @@ const chartData = {
       },
       {
         "criterion": "Emotional Depth",
-        "relativeScore": 0.9
+        "relativeScore": 0.96
       },
       {
         "criterion": "Instruction Following",
-        "relativeScore": 0.19
+        "relativeScore": 0.27
       },
       {
         "criterion": "Sentence Flow",
-        "relativeScore": 0.11
+        "relativeScore": 0.16
       },
       {
         "criterion": "Elegant Prose",
-        "relativeScore": 0.11
+        "relativeScore": 0.15
       }
     ],
     "weaknesses": [
@@ -3759,53 +3877,53 @@ const chartData = {
       },
       {
         "criterion": "Avoids Purple Prose",
-        "relativeScore": -0.63
+        "relativeScore": -0.6
       },
       {
         "criterion": "Pacing",
-        "relativeScore": -0.37
+        "relativeScore": -0.33
       },
       {
         "criterion": "Strong Dialogue",
-        "relativeScore": -0.27
+        "relativeScore": -0.26
       },
       {
         "criterion": "Show-Don't-Tell",
-        "relativeScore": -0.06
+        "relativeScore": -0.05
       }
     ]
   },
   "meta-llama/Llama-4-Maverick-17B-128E-Instruct": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        14.02,
-        15.32,
-        10.25,
-        9.52,
-        12.56,
-        11.52,
         11.89,
-        9.58,
         13.81,
-        11.55,
+        14.02,
         13.98,
+        11.55,
+        10.25,
+        9.58,
+        11.52,
+        12.56,
+        9.52,
+        15.32,
         10.23,
         12.95,
         14.24,
@@ -3814,37 +3932,37 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        -0.08,
-        0.12,
-        -0.16,
-        -0.18,
-        -0.15,
-        -0.15,
         -0.2,
-        -0.15,
         0.0,
-        -0.13,
-        -0.06,
-        -0.24,
+        -0.08,
         -0.05,
-        0.15,
+        -0.12,
+        -0.15,
+        -0.14,
+        -0.14,
+        -0.12,
+        -0.18,
+        0.13,
+        -0.25,
+        -0.05,
+        0.18,
         -0.15
       ]
     },
@@ -3855,19 +3973,19 @@ const chartData = {
       },
       {
         "criterion": "Coherent",
-        "relativeScore": 0.9
+        "relativeScore": 0.81
       },
       {
         "criterion": "Instruction Following",
-        "relativeScore": 0.5
-      },
-      {
-        "criterion": "Avoids Positivity Bias",
-        "relativeScore": 0.33
+        "relativeScore": 0.41
       },
       {
         "criterion": "Sentence Flow",
-        "relativeScore": 0.33
+        "relativeScore": 0.26
+      },
+      {
+        "criterion": "Avoids Positivity Bias",
+        "relativeScore": 0.25
       }
     ],
     "weaknesses": [
@@ -3877,53 +3995,53 @@ const chartData = {
       },
       {
         "criterion": "Descriptive Imagery",
-        "relativeScore": -0.47
+        "relativeScore": -0.62
       },
       {
         "criterion": "Creativity",
-        "relativeScore": -0.28
+        "relativeScore": -0.42
       },
       {
         "criterion": "Show-Don't-Tell",
-        "relativeScore": -0.13
+        "relativeScore": -0.18
       },
       {
-        "criterion": "Strong Dialogue",
-        "relativeScore": -0.08
+        "criterion": "Believable Characters",
+        "relativeScore": -0.16
       }
     ]
   },
   "openai/gpt-4-0314": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        13.98,
-        15.24,
-        9.97,
-        9.39,
-        13.51,
-        11.51,
         11.45,
-        9.18,
         13.48,
-        11.6,
+        13.98,
         14.06,
+        11.6,
+        9.97,
+        9.18,
+        11.51,
+        13.51,
+        9.39,
+        15.24,
         10.23,
         12.49,
         14.51,
@@ -3932,37 +4050,37 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.01,
-        0.17,
-        -0.13,
-        -0.13,
-        0.28,
-        -0.05,
-        -0.23,
-        -0.16,
+        -0.24,
         0.02,
-        0.03,
+        0.01,
         0.08,
+        0.03,
+        -0.13,
+        -0.16,
+        -0.05,
+        0.3,
+        -0.13,
+        0.18,
         -0.16,
         -0.11,
-        0.28,
+        0.3,
         -0.13
       ]
     },
@@ -3977,15 +4095,15 @@ const chartData = {
       },
       {
         "criterion": "Coherent",
-        "relativeScore": 0.59
+        "relativeScore": 0.57
       },
       {
         "criterion": "Sentence Flow",
-        "relativeScore": 0.31
+        "relativeScore": 0.29
       },
       {
         "criterion": "Avoids Amateurish Prose",
-        "relativeScore": 0.18
+        "relativeScore": 0.17
       }
     ],
     "weaknesses": [
@@ -3995,53 +4113,53 @@ const chartData = {
       },
       {
         "criterion": "Strong Dialogue",
-        "relativeScore": -0.54
+        "relativeScore": -0.55
       },
       {
         "criterion": "Emotional Depth",
-        "relativeScore": -0.52
+        "relativeScore": -0.55
       },
       {
-        "criterion": "Show-Don't-Tell",
+        "criterion": "Creativity",
         "relativeScore": -0.39
       },
       {
-        "criterion": "Believable Characters",
-        "relativeScore": -0.36
+        "criterion": "Show-Don't-Tell",
+        "relativeScore": -0.37
       }
     ]
   },
   "liquid/lfm-7b": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        13.74,
-        14.76,
-        10.35,
-        10.07,
-        12.23,
-        11.61,
         12.96,
-        9.48,
         13.48,
-        11.78,
+        13.74,
         13.66,
+        11.78,
+        10.35,
+        9.48,
+        11.61,
+        12.23,
+        10.07,
+        14.76,
         10.84,
         12.08,
         11.72,
@@ -4050,38 +4168,38 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.02,
-        0.1,
-        0.16,
-        0.24,
-        -0.1,
-        0.12,
-        0.35,
-        0.1,
+        0.36,
         0.19,
+        0.02,
+        -0.03,
         0.21,
-        -0.0,
-        0.2,
+        0.18,
+        0.1,
+        0.12,
+        -0.1,
+        0.25,
+        0.09,
+        0.21,
         -0.12,
-        -0.46,
-        0.08
+        -0.48,
+        0.09
       ]
     },
     "strengths": [
@@ -4091,11 +4209,11 @@ const chartData = {
       },
       {
         "criterion": "Creativity",
-        "relativeScore": 0.47
+        "relativeScore": 0.49
       },
       {
         "criterion": "Avoids Amateurish Prose",
-        "relativeScore": 0.38
+        "relativeScore": 0.36
       },
       {
         "criterion": "Emotional Depth",
@@ -4103,7 +4221,7 @@ const chartData = {
       },
       {
         "criterion": "Instruction Following",
-        "relativeScore": 0.28
+        "relativeScore": 0.27
       }
     ],
     "weaknesses": [
@@ -4113,53 +4231,53 @@ const chartData = {
       },
       {
         "criterion": "Avoids Positivity Bias",
-        "relativeScore": -0.27
+        "relativeScore": -0.25
       },
       {
         "criterion": "Pacing",
-        "relativeScore": -0.24
+        "relativeScore": -0.22
       },
       {
         "criterion": "Sentence Flow",
-        "relativeScore": -0.12
+        "relativeScore": -0.14
       },
       {
         "criterion": "Consistent Voice & Tone",
-        "relativeScore": -0.09
+        "relativeScore": -0.1
       }
     ]
   },
   "meta-llama/llama-3.1-405b-instruct": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        13.38,
-        14.48,
-        9.12,
-        8.46,
-        12.85,
-        10.88,
         10.65,
-        8.45,
         11.73,
-        10.51,
+        13.38,
         13.64,
+        10.51,
+        9.12,
+        8.45,
+        10.88,
+        12.85,
+        8.46,
+        14.48,
         9.28,
         12.73,
         14.35,
@@ -4168,34 +4286,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.01,
-        0.15,
-        -0.15,
-        -0.2,
-        0.25,
-        -0.04,
         -0.23,
-        -0.15,
         -0.24,
-        -0.11,
+        0.01,
         0.1,
+        -0.11,
+        -0.15,
+        -0.15,
+        -0.04,
+        0.25,
+        -0.2,
+        0.15,
         -0.2,
         0.25,
         0.29,
@@ -4250,34 +4368,34 @@ const chartData = {
   "anthropic/claude-3-haiku": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        13.15,
-        14.25,
-        9.45,
-        8.43,
-        13.41,
-        10.68,
         10.39,
-        8.68,
         11.9,
-        10.57,
+        13.15,
         13.59,
+        10.57,
+        9.45,
+        8.68,
+        10.68,
+        13.41,
+        8.43,
+        14.25,
         9.25,
         12.51,
         14.26,
@@ -4286,33 +4404,33 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
+        -0.26,
+        -0.14,
         -0.03,
         0.12,
-        0.05,
-        -0.16,
-        0.4,
-        -0.06,
-        -0.26,
-        -0.0,
-        -0.14,
         -0.01,
+        0.05,
+        -0.0,
+        -0.06,
+        0.4,
+        -0.16,
         0.12,
         -0.16,
         0.24,
@@ -4368,34 +4486,34 @@ const chartData = {
   "google/gemma-2-9b-it": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        13.26,
-        13.91,
-        9.05,
-        8.64,
-        12.46,
-        10.85,
         11.4,
-        8.19,
         10.98,
-        10.3,
+        13.26,
         13.33,
+        10.3,
+        9.05,
+        8.19,
+        10.85,
+        12.46,
+        8.64,
+        13.91,
         9.47,
         11.8,
         12.86,
@@ -4404,34 +4522,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        0.07,
-        0.04,
-        -0.05,
-        -0.04,
-        0.21,
-        0.07,
         0.15,
-        -0.13,
         -0.33,
-        -0.06,
         0.07,
+        0.07,
+        -0.06,
+        -0.05,
+        -0.13,
+        0.07,
+        0.21,
+        -0.04,
+        0.04,
         -0.02,
         0.06,
         -0.17,
@@ -4486,34 +4604,34 @@ const chartData = {
   "meta-llama/Llama-4-Scout-17B-16E-Instruct": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        13.06,
-        13.69,
-        8.8,
-        8.53,
-        9.96,
-        10.5,
         11.23,
-        8.21,
         13.39,
-        9.98,
+        13.06,
         12.96,
+        9.98,
+        8.8,
+        8.21,
+        10.5,
+        9.96,
+        8.53,
+        13.69,
         9.56,
         11.31,
         12.19,
@@ -4522,34 +4640,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
+        0.14,
+        0.42,
         0.03,
-        0.0,
+        -0.05,
+        -0.12,
         -0.09,
+        -0.08,
         -0.03,
         -0.46,
         -0.03,
-        0.14,
-        -0.08,
-        0.42,
-        -0.12,
-        -0.05,
+        0.0,
         0.08,
         -0.09,
         -0.32,
@@ -4604,34 +4722,34 @@ const chartData = {
   "meta-llama/llama-3.1-70b-instruct": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        12.8,
-        14.02,
-        8.14,
-        7.96,
-        12.19,
-        10.2,
         9.9,
-        7.65,
         11.46,
-        9.68,
+        12.8,
         13.07,
+        9.68,
+        8.14,
+        7.65,
+        10.2,
+        12.19,
+        7.96,
+        14.02,
         8.63,
         11.75,
         14.04,
@@ -4640,34 +4758,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        -0.03,
-        0.18,
-        -0.25,
-        -0.19,
-        0.2,
-        -0.1,
         -0.28,
-        -0.21,
         -0.07,
-        -0.17,
+        -0.03,
         0.05,
+        -0.17,
+        -0.25,
+        -0.21,
+        -0.1,
+        0.2,
+        -0.19,
+        0.18,
         -0.21,
         0.13,
         0.29,
@@ -4722,34 +4840,34 @@ const chartData = {
   "meta-llama/llama-3.1-8b-instruct": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        12.58,
-        13.57,
-        8.17,
-        7.9,
-        10.99,
-        10.07,
         9.81,
-        7.53,
         10.99,
-        9.5,
+        12.58,
         12.85,
+        9.5,
+        8.17,
+        7.53,
+        10.07,
+        10.99,
+        7.9,
+        13.57,
         8.65,
         11.39,
         13.1,
@@ -4758,34 +4876,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        -0.08,
-        0.06,
-        -0.21,
-        -0.17,
-        -0.18,
-        -0.1,
         -0.27,
-        -0.22,
         -0.23,
-        -0.18,
+        -0.08,
         -0.01,
+        -0.18,
+        -0.21,
+        -0.22,
+        -0.1,
+        -0.18,
+        -0.17,
+        0.06,
         -0.18,
         0.05,
         0.02,
@@ -4840,34 +4958,34 @@ const chartData = {
   "mistralai/mistral-small-3.1-24b-instruct-2503": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        12.48,
-        12.25,
-        7.99,
-        7.53,
-        9.31,
-        9.74,
         10.56,
-        7.53,
+        12.21,
+        12.48,
         12.21,
         8.99,
-        12.21,
+        7.99,
+        7.53,
+        9.74,
+        9.31,
+        7.53,
+        12.25,
         8.75,
         10.46,
         11.98,
@@ -4876,34 +4994,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        -0.08,
-        -0.33,
-        -0.22,
-        -0.24,
-        -0.51,
-        -0.18,
         0.03,
-        -0.17,
         0.25,
-        -0.29,
+        -0.08,
         -0.21,
+        -0.29,
+        -0.22,
+        -0.17,
+        -0.18,
+        -0.51,
+        -0.24,
+        -0.33,
         -0.09,
         -0.26,
         -0.32,
@@ -4958,34 +5076,34 @@ const chartData = {
   "mistralai/Mistral-Small-24B-Instruct-2501": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        12.02,
-        11.81,
-        8.14,
-        7.84,
-        9.68,
-        9.53,
         10.26,
-        7.65,
         12.01,
-        8.9,
+        12.02,
         11.83,
+        8.9,
+        8.14,
+        7.65,
+        9.53,
+        9.68,
+        7.84,
+        11.81,
         8.48,
         10.43,
         12.65,
@@ -4994,34 +5112,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        -0.2,
-        -0.4,
-        -0.13,
-        -0.1,
-        -0.43,
-        -0.2,
         -0.03,
-        -0.09,
         0.25,
-        -0.27,
+        -0.2,
         -0.28,
+        -0.27,
+        -0.13,
+        -0.09,
+        -0.2,
+        -0.43,
+        -0.1,
+        -0.4,
         -0.12,
         -0.25,
         -0.13,
@@ -5076,34 +5194,34 @@ const chartData = {
   "meta-llama/llama-3.2-3b-instruct": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        11.41,
-        12.18,
-        6.92,
-        6.9,
-        9.44,
-        8.9,
         8.97,
-        6.65,
         9.32,
-        8.25,
+        11.41,
         11.68,
+        8.25,
+        6.92,
+        6.65,
+        8.9,
+        9.44,
+        6.9,
+        12.18,
         7.52,
         9.81,
         11.81,
@@ -5112,33 +5230,33 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
+        -0.37,
+        -0.47,
         -0.33,
         -0.29,
+        -0.38,
         -0.4,
+        -0.34,
         -0.34,
         -0.46,
         -0.34,
-        -0.37,
-        -0.34,
-        -0.47,
-        -0.38,
         -0.29,
         -0.35,
         -0.37,
@@ -5194,34 +5312,34 @@ const chartData = {
   "openai/gpt-3.5-turbo-0613": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        10.91,
-        12.11,
-        6.16,
-        5.87,
-        12.47,
-        8.22,
         7.48,
-        5.81,
         7.26,
-        7.56,
+        10.91,
         11.62,
+        7.56,
+        6.16,
+        5.81,
+        8.22,
+        12.47,
+        5.87,
+        12.11,
         6.62,
         8.24,
         13.48,
@@ -5230,34 +5348,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        -0.4,
-        -0.26,
-        -0.51,
-        -0.5,
-        0.42,
-        -0.44,
         -0.59,
-        -0.47,
         -0.7,
-        -0.48,
+        -0.4,
         -0.28,
+        -0.48,
+        -0.51,
+        -0.47,
+        -0.44,
+        0.42,
+        -0.5,
+        -0.26,
         -0.49,
         -0.59,
         0.26,
@@ -5312,34 +5430,34 @@ const chartData = {
   "meta-llama/llama-3.2-1b-instruct": {
     "absoluteRadar": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        8.92,
-        7.19,
-        6.05,
-        6.24,
-        6.8,
-        6.93,
         7.49,
-        5.48,
         6.03,
-        6.75,
+        8.92,
         8.97,
+        6.75,
+        6.05,
+        5.48,
+        6.93,
+        6.8,
+        6.24,
+        7.19,
         5.58,
         8.38,
         10.43,
@@ -5348,34 +5466,34 @@ const chartData = {
     },
     "relativeRadarLog": {
       "labels": [
-        "Consistent Voice & Tone",
-        "Coherent",
-        "Show-Don't-Tell",
-        "Creativity",
-        "Pacing",
-        "Elegant Prose",
         "Descriptive Imagery",
-        "Strong Dialogue",
         "Instruction Following",
-        "Avoids Amateurish Prose",
+        "Consistent Voice & Tone",
         "Sentence Flow",
+        "Avoids Amateurish Prose",
+        "Show-Don't-Tell",
+        "Strong Dialogue",
+        "Elegant Prose",
+        "Pacing",
+        "Creativity",
+        "Coherent",
         "Emotional Depth",
         "Avoids Positivity Bias",
         "Avoids Purple Prose",
         "Believable Characters"
       ],
       "values": [
-        -0.66,
-        -0.85,
-        -0.5,
-        -0.41,
-        -0.74,
-        -0.61,
         -0.55,
-        -0.5,
         -0.78,
-        -0.57,
+        -0.66,
         -0.67,
+        -0.57,
+        -0.5,
+        -0.5,
+        -0.61,
+        -0.74,
+        -0.41,
+        -0.85,
         -0.61,
         -0.56,
         -0.56,
