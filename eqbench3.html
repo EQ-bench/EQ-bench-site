@@ -89,7 +89,6 @@
     }
     /* Left align specific headers */
      body.eqbench3-page #leaderboard thead th:first-child, /* Model */
-     body.eqbench3-page #leaderboard thead th:nth-last-child(3), /* Rubric */
      body.eqbench3-page #leaderboard thead th:nth-last-child(2) /* Elo */
      {
         text-align: left;
@@ -137,7 +136,7 @@
       background-color: rgba(55, 65, 75, 0.85) !important;
     }
 
-    
+
 
     /* Ensure text is readable */
     body.eqbench3-page .container h1,
@@ -173,6 +172,8 @@
     /* Score text inside bars */
     body.eqbench3-page .score-text {
       text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
+      position: relative; /* Ensure text is above error bar */
+      z-index: 3;
     }
     body.dark-mode.eqbench3-page .score-text {
       text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
@@ -296,6 +297,7 @@
       min-height: 2.5em; /* Ensure consistent row height */
       padding: 0.4em;
       box-sizing: border-box; /* Include padding in height */
+      position: relative; /* Needed for score bar container */
     }
     /* Left align model name */
     #leaderboard tbody td:first-child .cell-content {
@@ -304,7 +306,7 @@
       word-wrap: break-word;
     }
     /* Center icons */
-    #leaderboard tbody td:nth-child(2) .cell-content, /* Abilities */
+    #leaderboard tbody td:nth-child(2) .cell-content {} /* Abilities */
 
     /* Left align score bars */
     #leaderboard tbody td:nth-last-child(2) .cell-content { /* Elo */
@@ -318,25 +320,25 @@
 
     /* Feature column styling */
     .feature-cell {
-      text-align: center;      
+      text-align: center;
       font-size: 0.9em;
       /* Heatmap color will be applied inline */
     }
     /* Ensure heatmap text is readable */
     .feature-cell .cell-content {
         color: #212529;
-        
-        
+
+
     }
     body.dark-mode .feature-cell .cell-content {
-    color: #dee2e6;
-    /* even, thin, hard-defined shadow all around */
-    text-shadow: 
-        -1px -1px 0px rgba(0,0,0,0.5),  /* top-left */
-        1px -1px 0px rgba(0,0,0,0.5),   /* top-right */
-        -1px 1px 0px rgba(0,0,0,0.5),   /* bottom-left */
-        1px 1px 0px rgba(0,0,0,0.5);    /* bottom-right */
-}
+        color: #dee2e6;
+        /* even, thin, hard-defined shadow all around */
+        text-shadow:
+            -1px -1px 0px rgba(0,0,0,0.5),  /* top-left */
+            1px -1px 0px rgba(0,0,0,0.5),   /* top-right */
+            -1px 1px 0px rgba(0,0,0,0.5),   /* bottom-left */
+            1px 1px 0px rgba(0,0,0,0.5);    /* bottom-right */
+    }
 
 
     /* --- score bars : apply at every viewport width --- */
@@ -345,9 +347,30 @@
         align-items:center;
         gap:.5em;
         flex:1 1 auto;      /* let it stretch within the cell */
+        position: relative; /* Keep this as it establishes the context */
+        height: 100%; /* Keep existing height rules */
+        min-height: 1.5em; /* Keep existing height rules */
     }
 
 
+
+    /* --- Error Bar Styling --- */
+    .error-bar {
+      position: absolute;
+      top: 50%; /* Center vertically */
+      height: 4px; /* Thickness of the error bar */
+      background-color: rgba(0, 0, 0, 0.4); /* Default for light mode */
+      transform: translateY(-50%);
+      z-index: 2; /* Behind text and main bar gradient */
+      border-radius: 1px;
+      pointer-events: none; /* Don't interfere with clicks */
+      display: none; /* Hidden by default, shown by JS */
+    }
+
+    body.dark-mode .error-bar {
+      background-color: rgba(255, 255, 255, 0.4); /* Lighter for dark mode */
+    }
+    /* --- End Error Bar Styling --- */
 
 
     /* Modal styling (keep generic) */
@@ -373,8 +396,8 @@
     #abilitiesAbsoluteRadar, #abilitiesRelativeRadar { min-height: 300px; }
     #abilitiesStrengthsChart, #abilitiesWeaknessesChart { min-height: 200px; }
 
-    /* Responsive adjustments for medium-sized screens (768px - 991px) */
-    @media (min-width: 768px) and (max-width: 1049) {
+    /* Responsive adjustments for medium-sized screens (768px - 1049px) */
+    @media (min-width: 768px) and (max-width: 1049px) {
       .container { width: 95%; max-width: none; }
 
       /* Double row height */
@@ -433,7 +456,7 @@
     }
 
     /* Make sure modal can be wider on large screens */
-    @media (min-width: 1050) {
+    @media (min-width: 1050px) {
       .modal-xl { max-width: 1140px; }
       .modal-lg { max-width: 800px; }
     }
@@ -445,7 +468,7 @@
       }
     }
 
-    
+
     /* 1) collapse left‑right padding & shrink font */
     #leaderboard td.feature-cell .cell-content{
         padding: 2px 3px;   /* default is usually 8–12px */
@@ -494,7 +517,7 @@ body.eqbench3-page #leaderboard tbody td:first-child .cell-content {
 }
 
 body.eqbench3-page #leaderboard tbody td:nth-last-child(2) .cell-content {
-    justify-content: flex-start;  /* Rubric & Elo                   */
+    justify-content: flex-start;  /* Elo Score Column               */
 }
 
 /* Make sure the bar container still stretches the full width      */
@@ -526,10 +549,12 @@ body.eqbench3-page #leaderboard tbody td:last-child          /* Sample cells    
 body.eqbench3-page #leaderboard thead th.feature-header a {
     color: #fff !important;            /* white in both light & dark modes   */
     text-shadow: none !important;      /* kill the light‑mode white glow   */
+    text-decoration: none;             /* Remove underline */
 }
 body.eqbench3-page #leaderboard thead th.feature-header a:hover,
 body.eqbench3-page #leaderboard thead th.feature-header a:focus {
     color: #fff !important;            /* keep it white on hover / focus     */
+    text-decoration: none;             /* Remove underline */
 }
 
 
@@ -626,30 +651,24 @@ body.eqbench3-page.dark-mode #leaderboard.table-striped > tbody > tr:nth-of-type
       <table id="leaderboard" class="table table-striped table-bordered" style="width:100%;">
         <thead>
           <tr>
-            <th>Model</th>
-            <th>Abilities</th>
-            <!-- 11 feature columns -->
-            <th class="mobile-collapsible feature-header">Humanlike</th>
-            <th class="mobile-collapsible feature-header">Safety</th>
-            <th class="mobile-collapsible feature-header">Assertive</th>
-            <th class="mobile-collapsible feature-header">Social IQ</th>
-            <th class="mobile-collapsible feature-header">Warm</th>
-            <th class="mobile-collapsible feature-header">Analytic</th>
-            <th class="mobile-collapsible feature-header">Insight</th>
-            <th class="mobile-collapsible feature-header">Empathy</th>
-            <th class="mobile-collapsible feature-header">Compliant</th>
-            <th class="mobile-collapsible feature-header">Moralising</th>
-            <th class="mobile-collapsible feature-header">Pragmatic</th>
-        
-            <!-- score columns -->
-            <!-- <th class="mobile-collapsible">Rubric&nbsp;Score</th> -->
-            <th>Elo&nbsp;Score</th>
-        
-            <!-- sample link -->
-            <th></th>
+            <!-- Col 0 --><th>Model</th>
+            <!-- Col 1 --><th>Abilities</th>
+            <!-- Col 2 --><th class="mobile-collapsible feature-header">Humanlike</th>
+            <!-- Col 3 --><th class="mobile-collapsible feature-header">Safety</th>
+            <!-- Col 4 --><th class="mobile-collapsible feature-header">Assertive</th>
+            <!-- Col 5 --><th class="mobile-collapsible feature-header">Social IQ</th>
+            <!-- Col 6 --><th class="mobile-collapsible feature-header">Warm</th>
+            <!-- Col 7 --><th class="mobile-collapsible feature-header">Analytic</th>
+            <!-- Col 8 --><th class="mobile-collapsible feature-header">Insight</th>
+            <!-- Col 9 --><th class="mobile-collapsible feature-header">Empathy</th>
+            <!-- Col 10 --><th class="mobile-collapsible feature-header">Compliant</th>
+            <!-- Col 11 --><th class="mobile-collapsible feature-header">Moralising</th>
+            <!-- Col 12 --><th class="mobile-collapsible feature-header">Pragmatic</th>
+            <!-- Col 13 --><th>Elo Score</th>
+            <!-- Col 14 --><th></th> <!-- Sample Link -->
           </tr>
         </thead>
-        
+
         <tbody id="leaderboardBody">
           <!-- Rows injected by eqbench3.js -->
         </tbody>
@@ -665,8 +684,8 @@ body.eqbench3-page.dark-mode #leaderboard.table-striped > tbody > tr:nth-of-type
           <p>The leaderboard displays several metrics:</p>
           <ul>
               <li><strong>Abilities:</strong> Click the chart icon (<span class="chart-icon"><span></span></span>) to view detailed breakdowns of model abilities (radar/bar charts).</li>
-              <li><strong>Feature Columns (Humanlike, Safety, etc.):</strong> These represent scores assigned by the LLM judge based on specific criteria related to emotional intelligence facets.</li>
-              <li><strong>Elo Score:</strong> A relative ranking score calculated using the Bradley-Terry model based on pairwise comparisons between models judged on the same prompts.</li>
+              <li><strong>Feature Columns (Humanlike, Safety, etc.):</strong> These represent scores assigned by the LLM judge based on specific criteria related to emotional intelligence facets. Scores range 0-10. Heatmap indicates score relative to other models for that feature (Low=Purple, High=Yellow).</li>
+              <li><strong>Elo Score:</strong> A relative ranking score calculated using the Bradley-Terry model based on pairwise comparisons between models judged on the same prompts. Higher is better. The thin bar behind the score indicates the 95% confidence interval.</li>
               <li><strong>Sample Link:</strong> Provides access to example outputs generated by the model for this benchmark.</li>
           </ul>
         </div>
@@ -687,7 +706,7 @@ body.eqbench3-page.dark-mode #leaderboard.table-striped > tbody > tr:nth-of-type
   <!-- Main script (UPDATED NAMES & VERSION) -->
   <script defer src="eqbench3_chartdata.js?v=1.0.1"></script>
   <script defer src="eqbench3_chartdata_style.js?v=1.0.1"></script>
-  <script defer src="eqbench3.js?v=1.0.1"></script>
+  <script defer src="eqbench3.js?v=1.0.2"></script> <!-- Version Bumped -->
 
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1600fe1d3da743c1b311f4e5fee86767"}'></script>
 
@@ -751,7 +770,7 @@ body.eqbench3-page.dark-mode #leaderboard.table-striped > tbody > tr:nth-of-type
     </div>
   </div>
 
-  <!-- Style Profile Modal (Structure unchanged) -->
+  <!-- Style Profile Modal (Structure unchanged, but icon removed from table) -->
   <div class="modal fade" id="styleProfileModal" tabindex="-1" aria-labelledby="styleProfileModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">

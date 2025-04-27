@@ -135,7 +135,8 @@
 
 			<h3>💙EQ‑Bench 3</h3>
 			<!-- ─────────────────────────  WHAT & WHY  ───────────────────────── -->
-			<p><strong>What is EQ-Bench 3?</strong><br>
+			<h4>What is EQ-Bench 3?</h4>
+			<p>
 				EQ-Bench 3 is a LLM-judged test (judged by Claude Sonnet 3.7) evaluating active emotional intelligence abilities, understanding, insight, warmth, and interpersonal skills.
 				The test places the evaluated model into challenging role-plays involving messy relationship drama, parenting decisions, conflict mediation, and high stakes workplace situations. The model must:
 				<em>(a)</em> respond in character,  
@@ -144,16 +145,18 @@
 				The test is constructed to measure EQ abilities in isolation (i.e. minimal conflation with other abilities like reasoning or long context performance).
 			</p>
 
-			<p><strong>Why measure this?</strong><br>
+			<h4>Why measure this?</h4>
+			<p>
 				Few evals are targeting "soft skills". Part of the reason is that subjective abilities are difficult & messy to measure. EQ-Bench intends to be an automated vibe-check for these human-oriented traits and abilities.
 				
 				Figuring out how to meaningfully assess these abilities is nontrivial and still unsolved. It's surprisingly hard to come up with test questions that weaker models obviously fail at. This is because models are trained to be very good at *saying the right thing*. This is especially true for *subjective evals* like this, which don't have ground truth factual answers.
 				Our approach makes inroads into this problem by encoding a high degree of challenge into the roleplay scenarios. We trialled several question formats & topics, empirically selecting those with the highest discriminative power.</p>
 
-			<p><strong>What a higher score means in practice</strong><br>
-				If a model has a high Elo score, it means it's beating its neighbours in matchups.
+			<h4>What a higher score means in practice</h4>
+			<p>
+				The Elo score represents whether a model "wins" at having higher EQ than its neighbours, according to the judge.
 				To beat its neighbour, it has to score higher on several criteria (insight, social dexterity, etc), as evaluated by Sonnet 3.7. The full criteria evaluated in the pairwise judgements are listed below.
-				The resulting Elo score represents a holistic view on the model's abilities: empathy, analytical understanding, social dexterity, deep insight, pragmatism. A model has to be strong across all these dimensions to be at the top of the leaderboard.
+				The resulting Elo score represents a holistic view on the model's abilities: empathy, analytical understanding, social dexterity, deep insight, pragmatism, etc. A model has to be strong across all these dimensions to be at the top of the leaderboard.
 			</p>
 
 
@@ -211,7 +214,7 @@
 
 
 
-			<h5>Rubric criteria</h5>
+			<h4>Rubric criteria</h5>
 			<div class="criteria-block">
 			<div class="criteria-grid">
 				<div class="criteria-item">Demonstrated Empathy</div>
@@ -237,7 +240,7 @@
 			<p>Note: Some criteria do not count towards score. The rubric score is calculated from: Demonstrated Empathy, Pragmatic EI, Depth of Insight, Social Dexterity, Emotional Reasoning, Message Tailoring</p>
 
 
-			<h5>Pairwise criteria</h5>
+			<h4>Pairwise criteria</h5>
 			<div class="criteria-block">
 			<ol class="criteria-list">
 				<li>Demonstrated empathy</li>

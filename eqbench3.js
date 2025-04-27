@@ -1,7 +1,7 @@
 //
 //  eqbench3.js
 //  (Adapted from creative_writing.js v1.0.6 for EQ-Bench 3)
-//  (Version 1.0.0)
+//  (Version 1.0.2 - Added Elo error bars)
 //
 
 
@@ -31,32 +31,21 @@ mistralai/Mistral-Small-24B-Instruct-2501,577.2,62.8,12.25,14.92,10.81,12.08,13.
 meta-llama/Llama-4-Scout-17B-16E-Instruct,468.2,56.2,11.90,14.54,10.42,10.73,12.06,14.62,11.47,12.73,14.92,8.88,11.62,435.9,500.6
 google/gemma-2-9b-it,426.5,45.9,8.64,12.52,6.82,7.72,10.14,10.76,9.07,10.08,12.52,6.84,8.64,389.3,463.7
 meta-llama/llama-3.2-1b-instruct,200.0,21.9,4.37,9.31,3.87,2.85,5.54,6.92,4.87,4.81,9.62,7.38,3.62,146.9,253.1`
-//
-//  eqbench3.js
-//  (Adapted from creative_writing.js v1.0.6 for EQ-Bench 3)
-//  (Version 1.0.1 - Added Heatmap, Fixed Score Bars, Responsive Rows)
-//
-//
-//  eqbench3.js
-//  (Adapted from creative_writing.js v1.0.6 for EQ-Bench 3)
-//  (Version 1.0.1 - Added heatmap, fixed score bars, responsive height)
-//
 
 // --- Global Scope Variables ---
 const MOBILE_BREAKPOINT = 1050;
-let eloScores = [];
-let rubricScores = [];
+// let eloScores = []; // No longer needed, parse directly
+// let rubricScores = []; // No longer needed, parse directly
 let maxEloScore;
 let maxRubricScore;
 let baselineEloScore;
 let baselineRubricScore;
-let lastSortedScoreColumn = 10; // Default sort is Elo, which is now column index 11
+let lastSortedScoreColumn = 13; // Default sort is Elo, which is now column index 13
 
-const FEATURE_COL_START     = 2;   // first feature column index
-const FEATURE_COL_END       = 12;  // last  feature column index
-//const RUBRIC_COL_INDEX      = 13;
-const ELO_COL_INDEX         = 13;
-const SAMPLE_COL_INDEX      = 14;
+const FEATURE_COL_START     = 2;   // first feature column index (Table index)
+const FEATURE_COL_END       = 12;  // last  feature column index (Table index)
+const ELO_COL_INDEX         = 13;  // Table index for Elo Score column
+const SAMPLE_COL_INDEX      = 14;  // Table index for Sample Link column
 const TOTAL_COLS            = 15;  // used for colspan messages
 
 // Chart.js references:
@@ -69,22 +58,6 @@ let abilitiesWeaknessesChart = null;
    Each pair is [input_t , output_t].
    Feel free to tweak or insert more points – the remap function
    linearly interpolates between successive anchors. */
-const _HEATMAP_SCALE_MAP = [
-  [0.00, 0.00],
-  [0.30, 0.10],
-  [0.80, 0.50],
-  [0.95, 0.80],   // new knee: expand 0.80-0.95 to 0.50-0.80
-  [1.00, 1.00]
-];
-
-const __HEATMAP_SCALE_MAP = [
-  [0.00, 0.00],
-  [0.30, 0.15],
-  [0.60, 0.40],
-  [0.85, 0.70],   // new knee: expand 0.80-0.95 to 0.50-0.80
-  [1.00, 1.00]
-];
-
 const HEATMAP_SCALE_MAP = [
   [0.00, 0.00],
   //[0.30, 0.2],
@@ -94,7 +67,7 @@ const HEATMAP_SCALE_MAP = [
 ];
 
 const LINEAR_HEATMAP_FEATURES = [
-  "compliant", "moral"  
+  "compliant", "moral"
 ];
 
 // Style chart instance (word cloud handled differently)
@@ -114,17 +87,17 @@ const FEATURE_DESCRIPTIONS = {
 };
 
 const featureNames = [
-  'humanlike',   // index 3
-  'safe',
-  'assertive',
-  'social_iq',
-  'warm',
-  'analytical',
-  'insightful',
-  'empathy',
-  'compliant',
-  'moral',
-  'pragmatic'    // index 13
+  'humanlike',   // index 3 in data
+  'safe',        // index 4
+  'assertive',   // index 5
+  'social_iq',   // index 6
+  'warm',        // index 7
+  'analytical',  // index 8
+  'insightful',  // index 9
+  'empathy',     // index 10
+  'compliant',   // index 11
+  'moral',       // index 12
+  'pragmatic'    // index 13
 ];
 
 /* 0-20  ➜  0-10,  rounded to 1 dp – uses integer math to avoid FP quirks */
@@ -530,7 +503,7 @@ const plasmaStops = [
   { t: 1.00, rgb:[255, 187,  60] }   // amber (was neon yellow)
 ];
 
-  
+
   /* linear interpolation between the two neighbouring stops */
 function plasmaColor(t){               // t ∈ [0,1]
   t = Math.min(1, Math.max(0, t));     // clamp
@@ -548,8 +521,6 @@ function pastelPlasma(
   t,
   { wash = 0.4, alpha = 1, popCutoff = 0.99, popBoost = 0.02 } = {}
 ) {
-  console.log(t);
-
   // If the value is in the top band, make the colour pop by reducing wash
   const effectiveWash = t >= popCutoff
     ? Math.max(0, wash - popBoost)  // never let wash go negative
@@ -608,7 +579,7 @@ function updateScoreBarColorsEQ3() {
       const colorFn = isDarkMode
             ? (t) => pastelPlasma(t,{wash:0.1,alpha:0.9})                             // full strength
             : (t) => pastelPlasma(t,{wash:0.6,alpha:1}); // 60 % white mix
-      
+
       const startColor = colorFn(1 - startPercent);   // remember: reversed
       const endColor   = colorFn(1 - endPercent);
 
@@ -618,7 +589,7 @@ function updateScoreBarColorsEQ3() {
 }
 // --- End Gradient logic ---
 
-// --- Load Leaderboard Data (ADAPTED FOR EQ-BENCH 3 CSV + Heatmap) ---
+// --- Load Leaderboard Data (ADAPTED FOR EQ-BENCH 3 CSV + Heatmap + Error Bars) ---
 function loadLeaderboardData() {
   // Ensure the correct data variable exists
   if (typeof leaderboardDataEQBench3 === 'undefined') {
@@ -641,14 +612,14 @@ function loadLeaderboardData() {
 
   const featureRange = Object.fromEntries(
     featureNames.map(f => [f, {min: Infinity, max: -Infinity, focusMin: null}]));
-                  
+
 
 
   // gather min & max for each feature column
   eqBenchRows.forEach(r=>{
     const parts = r.split(',');
     featureNames.forEach((f,idx)=>{
-      const v = s(parseFloat(parts[3 + idx]));
+      const v = s(parseFloat(parts[3 + idx])); // Features start at data index 3
       if(!isNaN(v)){
           featureRange[f].min = Math.min(featureRange[f].min, v);
           featureRange[f].max = Math.max(featureRange[f].max, v);
@@ -656,28 +627,18 @@ function loadLeaderboardData() {
     });
   });
 
-  // --- Elo/Rubric Scaling ---
+  // --- Elo/Rubric Scaling (Adjusted for Error Bars) ---
   const originalEloScores = eqBenchRows.map(row => parseFloat(row.split(',')[1])).filter(s => !isNaN(s));
   const originalRubricScores = eqBenchRows.map(row => parseFloat(row.split(',')[2])).filter(s => !isNaN(s)); // Rubric is already 0-100
+  const ciHighScores = eqBenchRows.map(row => parseFloat(row.split(',')[15])).filter(s => !isNaN(s)); // Index 15 for ci_high_norm
 
-  const originalMaxElo = originalEloScores.length > 0 ? Math.max(...originalEloScores) : 1200;
-  const originalMinElo = originalEloScores.length > 0 ? Math.min(...originalEloScores) : 800;
+  const originalMaxElo = originalEloScores.length > 0 ? Math.max(...originalEloScores) : 1500;
+  const maxCiHighNorm = ciHighScores.length > 0 ? Math.max(...ciHighScores) : originalMaxElo; // Use originalMaxElo as fallback
 
-  eloScores = eqBenchRows.map(row => {
-    const score = parseFloat(row.split(',')[1]);
-    return isNaN(score) ? 800 : score; // Default Elo
-  });
-
-  rubricScores = eqBenchRows.map(row => {
-      const score = parseFloat(row.split(',')[2]);
-      return isNaN(score) ? 0 : score; // Default Rubric (0-100 scale)
-  });
-
-
-
-  maxEloScore = originalEloScores.length > 0 ? Math.max(...originalEloScores) : 1500;
+  // Use the maximum CI high value to set the scale range for Elo bars
+  maxEloScore = Math.max(originalMaxElo, maxCiHighNorm);
   maxRubricScore = 100; // Rubric is fixed 0-100 scale
-  baselineEloScore = 0; //originalEloScores.length > 0 ? Math.max(800, Math.min(...originalEloScores) - 50) : 800;
+  baselineEloScore = 0; // Keep baseline at 0 for simplicity with error bars
   baselineRubricScore = 0; // Rubric baseline is 0
   // --- End Scaling ---
 
@@ -685,25 +646,29 @@ function loadLeaderboardData() {
 
   let html = eqBenchRows.map((row, index) => {
     let [
-      modelNameRaw,
-      _elo_norm,
-      _rubric_0_100,
-      humanlike,
-      safe,
-      assertive,
-      social_iq,
-      warm,
-      analytical,
-      insightful,
-      empathy,
-      compliant,
-      moral,
-      pragmatic
+      modelNameRaw, // 0
+      _elo_norm, // 1
+      _rubric_0_100, // 2
+      humanlike, // 3
+      safe, // 4
+      assertive, // 5
+      social_iq, // 6
+      warm, // 7
+      analytical, // 8
+      insightful, // 9
+      empathy, // 10
+      compliant, // 11
+      moral, // 12
+      pragmatic, // 13
+      ci_low_norm, // 14
+      ci_high_norm // 15
     ] = row.split(',');
-    
 
-    const eloScoreNum = eloScores[index];
-    const rubricScoreNum = rubricScores[index];
+    const eloScoreNum = parseFloat(_elo_norm);
+    const rubricScoreNum = parseFloat(_rubric_0_100); // Not displayed in table
+    const ciLowNum = parseFloat(ci_low_norm);
+    const ciHighNum = parseFloat(ci_high_norm);
+
 
     // --- Feature Metric Parsing & Heatmap Color ---
     const features = [
@@ -719,21 +684,20 @@ function loadLeaderboardData() {
       {value:s(moral)     , name:'moral'},
       {value:s(pragmatic) , name:'pragmatic'}
     ];
-    
+
 
     const featureCellsHTML = features.map(feature => {
       const {min,max} = featureRange[feature.name];
-      console.log(feature.value);
       let t = Number.isFinite(feature.value) && max !== min
         ? (feature.value - min) / (max - min)
         : 0;
-      
+
       t = Math.min(1, Math.max(0, t));      // clamp
-      
+
       if (!LINEAR_HEATMAP_FEATURES.includes(feature.name)) {
         t = remapHeatValue(t);        // nonlinear ramp
       }
-    
+
 
       // One‑line colour lookup
       const bgColor = isDarkMode
@@ -752,14 +716,20 @@ function loadLeaderboardData() {
     }).join('');
     // --- End Feature Metric Parsing & Heatmap Color ---
 
-    // --- Calculate Percentages for Bars ---
-    const eloScoreRangeForBar = (maxEloScore - baselineEloScore) || 1;
+    // --- Calculate Percentages for Bars (Elo with Error Bar) ---
+    const eloScoreRangeForBar = (maxEloScore - baselineEloScore) || 1; // Use updated maxEloScore
     const eloScoreRelativeToBaseline = eloScoreNum - baselineEloScore;
-    const eloScorePercentage = Math.max(0, Math.min(100, (eloScoreRelativeToBaseline / eloScoreRangeForBar) * 100));
+    const eloScorePercentage = isNaN(eloScoreNum) ? 0 : Math.max(0, Math.min(100, (eloScoreRelativeToBaseline / eloScoreRangeForBar) * 100));
 
+    // Calculate error bar positions based on the same scale
+    const errorBarLeftPercent = isNaN(ciLowNum) ? 0 : Math.max(0, Math.min(100, ((ciLowNum - baselineEloScore) / eloScoreRangeForBar) * 100));
+    const errorBarRightPercent = isNaN(ciHighNum) ? 0 : Math.max(0, Math.min(100, ((ciHighNum - baselineEloScore) / eloScoreRangeForBar) * 100));
+    const errorBarWidthPercent = Math.max(0, errorBarRightPercent - errorBarLeftPercent); // Ensure width is not negative
+
+    // Rubric score percentage (not displayed, but kept for potential future use)
     const rubricScoreRangeForBar = (maxRubricScore - baselineRubricScore) || 1; // Range is 100
     const rubricScoreRelativeToBaseline = rubricScoreNum - baselineRubricScore;
-    const rubricScorePercentage = Math.max(0, Math.min(100, (rubricScoreRelativeToBaseline / rubricScoreRangeForBar) * 100));
+    const rubricScorePercentage = isNaN(rubricScoreNum) ? 0 : Math.max(0, Math.min(100, (rubricScoreRelativeToBaseline / rubricScoreRangeForBar) * 100));
     // --- End Percentage Calculation ---
 
     // --- Model Name Handling ---
@@ -782,42 +752,30 @@ function loadLeaderboardData() {
     let modelResultsFn = `results/eqbench3_reports/${safeModelName}.html`.toLowerCase();
     // --- End Model Name Handling ---
 
-    // --- Score Bar HTML (Use new class name, ensure display: none initially) ---
+    // --- Score Bar HTML (Elo with Error Bar) ---
     let scoreBarEloHTML = `
       <div class="score-bar-container">
-        <div class="eqbench3-score-bar" style="width: ${eloScorePercentage.toFixed(1)}%;" display:none;></div>
-        <span class="score-text">${eloScoreNum.toFixed(1)}</span>
+        <div class="eqbench3-score-bar" style="width: ${eloScorePercentage.toFixed(1)}%; display:none;"></div>
+        ${!isNaN(ciLowNum) && !isNaN(ciHighNum) ? `<div class="error-bar" style="left: ${errorBarLeftPercent.toFixed(2)}%; width: ${errorBarWidthPercent.toFixed(2)}%; display:none;"></div>` : ''}
+        <span class="score-text">${isNaN(eloScoreNum) ? '-' : eloScoreNum.toFixed(1)}</span>
       </div>`;
 
-    let scoreBarRubricHTML = `
-      <div class="score-bar-container">
-        <div class="eqbench3-score-bar" style="width: ${rubricScorePercentage.toFixed(1)}%;" display:none;></div>
-        <span class="score-text">${rubricScoreNum.toFixed(1)}</span>
-      </div>`;
+    // Rubric score bar (not displayed)
+    // let scoreBarRubricHTML = `
+    //   <div class="score-bar-container">
+    //     <div class="eqbench3-score-bar" style="width: ${rubricScorePercentage.toFixed(1)}%; display:none;"></div>
+    //     <span class="score-text">${isNaN(rubricScoreNum) ? '-' : rubricScoreNum.toFixed(1)}</span>
+    //   </div>`;
     // --- End Score Bar HTML ---
 
     // --- Icon Definitions ---
     const abilitiesInfoIcon = `
       <span class="abilities-info-icon chart-icon" data-model-name="${currentModelName}" title="View Abilities Charts"><span></span></span>`;
-    const styleInfoIcon = `
-      <span class="style-info-icon chart-icon" data-model-name="${currentModelName}" title="View Style Profile"><span></span></span>`;
+    // const styleInfoIcon = `
+    //   <span class="style-info-icon chart-icon" data-model-name="${currentModelName}" title="View Style Profile"><span></span></span>`;
     // --- End Icon Definitions ---
 
     // --- Row HTML Generation (Updated Structure for EQ-Bench 3) ---
-    /*
-    putting this here for now:
-    <td class="mobile-collapsible"> <!-- Col 2: Style -->
-          <div class="cell-content">
-            ${styleInfoIcon}
-          </div>
-        </td>
-
-    <td class="mobile-collapsible" data-order="${rubricScoreNum.toFixed(1)}"> <!-- Col 10: Rubric Score -->
-          <div class="cell-content">
-            ${scoreBarRubricHTML}
-          </div>
-        </td>
-    */
     return `
       <tr data-model-name-full="${currentModelName}"
           data-original-elo-score="${eloScoreNum}"
@@ -835,21 +793,15 @@ function loadLeaderboardData() {
           </div>
         </td>
 
-        
-        
-        
+        ${featureCellsHTML} <!-- Inject feature cells (Cols 2-12) -->
 
-        ${featureCellsHTML} <!-- Inject feature cells with heatmap -->
-
-        
-
-        <td data-order="${eloScoreNum.toFixed(1)}"> <!-- Col 11: Elo Score -->
+        <td data-order="${isNaN(eloScoreNum) ? -Infinity : eloScoreNum.toFixed(1)}"> <!-- Col 13: Elo Score -->
           <div class="cell-content">
             ${scoreBarEloHTML}
           </div>
         </td>
 
-        <td> <!-- Col 12: Sample Link -->
+        <td> <!-- Col 14: Sample Link -->
           <div class="cell-content">
             <a href="${modelResultsFn}">Sample</a>
           </div>
@@ -868,91 +820,99 @@ function loadLeaderboardData() {
 /* indices of the feature columns, calculated once */
 const FEATURE_COLUMN_INDICES =
   Array.from({length: featureNames.length},
-             (_, i) => FEATURE_COL_START + i);   // e.g. [3,4,5,…,13]
+             (_, i) => FEATURE_COL_START + i);   // e.g. [2,3,4,…,12]
 
 function setScoreHeaderWidth(api, idx) {
   const vw = window.innerWidth;
-  //const width = (vw >= 992 && vw < 1200) ? '12%' : '20%';
-  let width
+  let width;
   if (vw < MOBILE_BREAKPOINT) width = '30%';
   else if (vw >= MOBILE_BREAKPOINT && vw < 1300) width = '12%';
   else width = '20%';
-  api.column(idx).header().style.width = width;
+  // Ensure the header exists before trying to style it
+  const header = api.column(idx).header();
+  if (header) {
+      header.style.width = width;
+  }
 }
+
 
 let dataTableConfig = {
   autoWidth: false,
-  order      : [[ELO_COL_INDEX, 'desc']],        // default sort
+  order      : [[ELO_COL_INDEX, 'desc']],        // default sort by Elo (Table index 13)
   paging: false,
   searching: false,
   info: true,
   lengthChange: false,
   columnDefs : [
     {targets:[0]                              , type:'string'   }, // model
-    {targets:[1,SAMPLE_COL_INDEX]           , orderable:false }, // icons/link
-    { targets: FEATURE_COLUMN_INDICES , orderable:true },
-    //{targets:[RUBRIC_COL_INDEX,ELO_COL_INDEX] , type:'num'      },
-    //{targets:[RUBRIC_COL_INDEX,ELO_COL_INDEX] , orderSequence:['desc','asc']}
-    {targets:[ELO_COL_INDEX] , type:'num'      },
-    {targets:[ELO_COL_INDEX] , orderSequence:['desc','asc']},
-    {targets:FEATURE_COLUMN_INDICES , orderSequence:['desc','asc']}
+    {targets:[1,SAMPLE_COL_INDEX]             , orderable:false }, // icons/link
+    { targets: FEATURE_COLUMN_INDICES         , orderable:true }, // Features (Table indices 2-12)
+    {targets:[ELO_COL_INDEX]                  , type:'num'      }, // Elo (Table index 13)
+    {targets:[ELO_COL_INDEX]                  , orderSequence:['desc','asc']},
+    {targets:FEATURE_COLUMN_INDICES           , orderSequence:['desc','asc']}
   ],
   // Custom DOM layout unchanged
   dom: "<'d-flex flex-column flex-md-row justify-content-between align-items-center mb-2'<'#toggleMobilePlaceholder'><'ms-md-auto'f>>" +
        "<'row'<'col-12'tr>>" +
        "<'row mt-2'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
 
-  // Callback after table draw (Updated Indices & Score Bar Fix)
+  // Callback after table draw (Updated Indices & Score Bar/Error Bar Fix)
   drawCallback: function (settings) {
     const api = this.api();
     if (!api || api.rows().count() === 0) return;
 
-    /* ---------- keep the score‑bar logic exactly as before ---------- */
+    /* ---------- Handle score bar and error bar visibility ---------- */
     let order = api.order();
     if (!order || order.length === 0) {
-        order = [[ELO_COL_INDEX, 'desc']];
-        api.order(order).draw(false);
-        return;
+        order = [[ELO_COL_INDEX, 'desc']]; // Default to Elo sort if no order set
+        api.order(order).draw(false); // Apply default order and redraw
+        return; // Exit early, redraw will call drawCallback again
     }
     let sortedColumnIndex = order[0][0];
 
-    //const SCORE_COLUMNS = [RUBRIC_COL_INDEX, ELO_COL_INDEX];
-    const SCORE_COLUMNS = [ELO_COL_INDEX];
+    const SCORE_COLUMNS = [ELO_COL_INDEX]; // Only Elo has bars now
     const NON_SCORE_COLUMNS = [...Array(TOTAL_COLS).keys()]
         .filter(i => !SCORE_COLUMNS.includes(i));
 
     const tableNode = $(api.table().node());
-    tableNode.find('.eqbench3-score-bar').hide();
-    tableNode.find('thead th').css('width', '');
+    // Hide ALL score bars and error bars initially on each draw
+    tableNode.find('.eqbench3-score-bar, .error-bar').hide();
+    tableNode.find('thead th').css('width', ''); // Reset header widths
 
     let columnToShowBar = -1;
+    // Determine which score column's bars (and error bars) should be visible
     if (SCORE_COLUMNS.includes(sortedColumnIndex)) {
+        // If sorted by a score column, show its bars
         columnToShowBar = sortedColumnIndex;
-        lastSortedScoreColumn = sortedColumnIndex;
+        lastSortedScoreColumn = sortedColumnIndex; // Remember this score column
     } else if (NON_SCORE_COLUMNS.includes(sortedColumnIndex) &&
-               lastSortedScoreColumn !== null) {
+               lastSortedScoreColumn !== null && SCORE_COLUMNS.includes(lastSortedScoreColumn)) {
+        // If sorted by a non-score column, show bars for the *last sorted* score column
         columnToShowBar = lastSortedScoreColumn;
     } else {
+        // Fallback: If no relevant sort or last sort, default to showing Elo bars
         columnToShowBar = ELO_COL_INDEX;
         lastSortedScoreColumn = ELO_COL_INDEX;
     }
 
+    // Show the bars and error bars for the determined column
     if (columnToShowBar !== -1) {
         api.rows({ page: 'current' })
            .nodes()
            .to$()
-           .find(`td:eq(${columnToShowBar}) .eqbench3-score-bar`)
-           .show();
+           .find(`td:eq(${columnToShowBar}) .score-bar-container`) // Target the container
+           .children('.eqbench3-score-bar, .error-bar') // Select both bar and error bar
+           .show(); // Show them
 
-        setScoreHeaderWidth(api, columnToShowBar);
+        setScoreHeaderWidth(api, columnToShowBar); // Set the width for the header of the visible score column
     }
+    /* ---------- End bar visibility logic ---------- */
 
-    updateScoreBarColorsEQ3();
-    /* ---------- new line: collapse after the draw has finished ---------- */
-    collapseMiddleColumns();          // ensures cols are hidden on first load
-    updateFeatureHeatmapColors();
-
+    updateScoreBarColorsEQ3(); // Apply gradient colors to visible score bars
+    collapseMiddleColumns(); // Handle mobile column collapsing
+    updateFeatureHeatmapColors(); // Apply heatmap colors
   }
+
 
 };
 // --- End DataTable config ---
@@ -966,7 +926,7 @@ function collapseMiddleColumns() {
   const legend = $('#heatmapLegend');   // ← NEW
 
   if (isMobile) {
-      toggleButton.removeClass('d-none').addClass('show-details-toggle-button');      
+      toggleButton.removeClass('d-none').addClass('show-details-toggle-button');
       if (!middleStatsExpanded) {
           $('#leaderboard .mobile-collapsible').hide();
           toggleButton.text('Expand Details');
@@ -1000,7 +960,7 @@ function decorateFeatureHeaders(tableApi) {
           .querySelectorAll('th.feature-header')
           .forEach(th => {
     const label = th.textContent.trim();                   // e.g. "Empathy"
-    const key   = label.toLowerCase();                     // "empathy"
+    const key   = label.toLowerCase().replace(' ','');     // "empathy", "socialiq"
     const desc  = FEATURE_DESCRIPTIONS[key] || '';
 
     // already decorated? – skip
@@ -1014,10 +974,15 @@ function decorateFeatureHeaders(tableApi) {
   });
 
   // 2) (re)‑initialise Bootstrap 5 tooltips
-  document.querySelectorAll('[data-bs-toggle="tooltip"]')
-          .forEach(el => new bootstrap.Tooltip(el));
+  // Ensure Bootstrap is loaded before trying to initialize tooltips
+    if (typeof bootstrap !== 'undefined' && typeof bootstrap.Tooltip !== 'undefined') {
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+                .forEach(el => new bootstrap.Tooltip(el));
+    } else {
+        console.warn("Bootstrap Tooltip component not found. Skipping initialization.");
+    }
 }
-  
+
 
 function toggleMiddleStats() {
   middleStatsExpanded = !middleStatsExpanded;
@@ -1056,11 +1021,11 @@ function initializeDataTable() {
     showAbilitiesModal(modelName);
   });
 
-  // Style icon listener
-  $('#leaderboardBody').on('click', '.style-info-icon', function() {
-    const modelName = $(this).data('model-name');
-    showStyleModal(modelName);
-  });
+  // Style icon listener (If re-enabled later)
+  // $('#leaderboardBody').on('click', '.style-info-icon', function() {
+  //   const modelName = $(this).data('model-name');
+  //   showStyleModal(modelName);
+  // });
   // --- End Event Listeners ---
 
   table.one('init.dt', function() {
@@ -1069,7 +1034,10 @@ function initializeDataTable() {
     updateFeatureHeatmapColors();
   });
 
-  table.on('draw.dt', updateFeatureHeatmapColors);
+  table.on('draw.dt', function() {
+      updateFeatureHeatmapColors(); // Ensure heatmap colors update on redraw
+      // Note: Score bar colors and visibility are handled within drawCallback now
+  });
 }
 // --- End DataTable Initialization ---
 
@@ -1112,9 +1080,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* one‑time hook after initialisation */
 $(window).on('resize.scoreHeader', () => {
-  if (lastSortedScoreColumn != null) {
+  if (lastSortedScoreColumn != null && $.fn.DataTable.isDataTable('#leaderboard')) {
       const api = $('#leaderboard').DataTable();
-      setScoreHeaderWidth(api, lastSortedScoreColumn);
+      // Check if the column index is valid before setting width
+      if (api.column(lastSortedScoreColumn).header()) {
+          setScoreHeaderWidth(api, lastSortedScoreColumn);
+      }
   }
 });
 // --- End DOMContentLoaded ---
