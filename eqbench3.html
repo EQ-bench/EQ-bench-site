@@ -68,10 +68,6 @@
       background-color: rgba(255, 255, 255, 0.7) !important;
     }
 
-    body.eqbench3-page #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
-      background-color: rgba(245, 245, 245, 0.7) !important;
-    }
-
     /* Explanation section opacity */
     body.eqbench3-page .section {
       background-color: rgba(248, 248, 248, 0.8) !important;
@@ -132,9 +128,6 @@
       background-color: rgba(35, 40, 45, 0.7) !important;
     }
 
-    body.dark-mode.eqbench3-page #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
-      background-color: rgba(45, 50, 55, 0.7) !important;
-    }
 
     body.dark-mode.eqbench3-page .section {
       background-color: rgba(40, 45, 50, 0.8) !important;
@@ -143,6 +136,8 @@
     body.dark-mode.eqbench3-page #leaderboard thead th {
       background-color: rgba(55, 65, 75, 0.85) !important;
     }
+
+    
 
     /* Ensure text is readable */
     body.eqbench3-page .container h1,
@@ -192,9 +187,6 @@
     /* 1. Opaque table in light mode */
     body.eqbench3-page:not(.dark-mode) #leaderboard tbody td {
       background-color: rgba(255, 255, 255, 1) !important;
-    }
-    body.eqbench3-page:not(.dark-mode) #leaderboard.table-striped tbody tr:nth-of-type(odd) td {
-      background-color: rgba(245, 245, 245, 1) !important;
     }
 
     /* 2. Background glow for nav sections - light mode only */
@@ -561,6 +553,26 @@ body.dark-mode.eqbench3-page .heatmap-legend .legend-bar{
     background-color: transparent !important;
 }
 
+/* light mode */
+body.eqbench3-page #leaderboard.table-striped tbody tr:nth-of-type(odd) td:not(.feature-cell) {
+    background-color: rgba(245, 245, 245, 0.7) !important;
+}
+
+/* dark mode */
+body.dark-mode.eqbench3-page #leaderboard.table-striped tbody tr:nth-of-type(odd) td:not(.feature-cell) {
+    background-color: rgba(45, 50, 55, 0.7) !important;
+}
+#leaderboard.table-striped tbody tr > td.feature-cell {
+    --bs-table-accent-bg: transparent !important;   /* zero-out the stripe colour */
+    box-shadow: none !important;                    /* belt-and-braces */
+}
+/* ── neutralise the site-wide dark-mode stripes **only** on this page ── */
+body.eqbench3-page.dark-mode #leaderboard.table-striped > tbody > tr:nth-of-type(odd),
+body.eqbench3-page.dark-mode #leaderboard.table-striped > tbody > tr:nth-of-type(even){
+    background-color: transparent !important;   /* let per-cell colours show */
+}
+
+
   </style>
 </head>
 <body class="eqbench3-page">
@@ -597,27 +609,7 @@ body.dark-mode.eqbench3-page .heatmap-legend .legend-bar{
         <a href='eqbench-v2.html'>💗EQ-Bench (Legacy)</a>
     </p>
 
-    <!-- Hidden Sliders (kept for structure, but unused) -->
-    <div class="d-flex align-items-start mb-3 d-none">
-      <div class="vocab-control-container me-3 d-none">
-        <div class="vocab-control-label">
-          <label for="vocabControlSlider">Vocab Control: <span id="vocabControlValue">0%</span></label>
-        </div>
-        <div class="vocab-control-slider">
-          <input type="range" class="form-range custom-width-slider" min="0" max="100" value="0" id="vocabControlSlider">
-        </div>
-      </div>
-      <div class="gpt-slop-control-container d-none">
-        <div class="gpt-slop-control-label">
-          <label for="gptSlopControlSlider">GPT-Slop Control: <span id="gptSlopControlValue">0%</span></label>
-        </div>
-        <div class="gpt-slop-control-slider">
-          <input type="range" class="form-range custom-width-slider" min="0" max="100" value="0" id="gptSlopControlSlider">
-        </div>
-      </div>
-    </div>
-
-    <p>A benchmark measuring emotional intelligence in challenging roleplays, judged by GPT-4.1. <a href="./about.html#eq-bench-3">Learn more</a></p>
+    <p>A benchmark measuring emotional intelligence in challenging roleplays, judged by Sonnet 3.7. <a href="./about.html#eq-bench-3">Learn more</a></p>
 
     <button id="toggleMiddleStats" class="btn btn-outline-secondary btn-sm show-details-toggle-button d-none mb-2">
         Expand Details
@@ -637,7 +629,7 @@ body.dark-mode.eqbench3-page .heatmap-legend .legend-bar{
             <th>Model</th>
             <th>Abilities</th>
             <!-- 11 feature columns -->
-            <th class="mobile-collapsible feature-header">Human</th>
+            <th class="mobile-collapsible feature-header">Humanlike</th>
             <th class="mobile-collapsible feature-header">Safety</th>
             <th class="mobile-collapsible feature-header">Assertive</th>
             <th class="mobile-collapsible feature-header">Social IQ</th>

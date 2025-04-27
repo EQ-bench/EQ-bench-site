@@ -5,29 +5,32 @@
 //
 
 
-leaderboardDataEQBench3 = `model_name,elo_norm,rubric_0_100,humanlike,safe,assertive,social_iq,warm,analytical,insightful,empathy,compliant,moral,pragmatic
-o3,1500.0,90.2,16.44,16.17,13.56,16.88,16.75,19.58,19.03,18.08,8.50,2.46,17.58
-chatgpt-4o-latest-2025-01-29,1316.5,89.2,17.54,17.07,14.00,16.94,17.48,18.93,18.49,18.59,7.52,3.33,17.63
-deepseek-ai/DeepSeek-R1,1258.0,87.7,16.56,16.89,14.46,16.44,16.48,19.56,18.60,18.15,7.56,3.22,17.44
-gpt-4.1,1258.0,87.8,17.06,16.11,12.48,16.43,17.20,18.67,18.43,18.30,9.00,3.26,17.00
-deepseek-ai/DeepSeek-V3-0324,1255.0,87.4,16.69,16.74,14.48,16.50,16.30,19.15,18.29,17.96,5.78,3.19,17.63
-qwen/qwq-32b,1250.4,86.2,16.13,16.15,14.22,16.15,16.31,19.26,18.40,17.67,8.37,3.44,17.07
-gemini-2.5-pro-preview-03-25,1247.5,87.6,16.85,17.00,13.26,16.57,16.94,19.22,18.34,18.33,8.48,3.00,17.41
-gpt-4.1-mini,1205.0,86.0,16.00,16.74,12.87,16.06,17.30,18.48,17.83,18.07,9.19,2.30,16.85
-openai/o4-mini,1150.2,77.2,13.09,15.41,11.26,13.28,13.98,18.00,16.40,14.67,9.93,3.00,15.96
-google/gemma-3-27b-it,1132.9,83.1,15.96,16.70,14.20,15.19,15.11,18.74,17.80,17.19,7.93,5.11,16.44
-gpt-4.5-preview-2025-02-27,1113.4,83.2,15.06,15.67,12.17,15.02,16.30,18.41,17.60,17.41,9.07,3.33,15.96
-grok-3-beta,1066.3,84.2,16.48,16.07,12.02,15.70,16.54,18.48,17.54,17.59,9.33,2.33,16.59
-gemini-2.5-flash-preview,1059.5,85.2,16.04,16.85,13.02,15.89,16.74,18.93,17.91,18.00,8.74,2.41,16.89
-claude-3-7-sonnet-20250219,1027.4,84.5,15.83,15.52,13.07,15.65,15.96,19.07,18.11,17.52,8.00,4.19,16.67
-gemini-2.0-flash-001,960.6,78.2,15.26,15.19,12.17,14.15,15.17,18.04,16.63,16.70,7.56,3.81,15.30
-google/gemma-3-4b-it,926.4,67.8,11.93,13.96,11.31,11.17,12.00,16.56,15.00,13.19,8.52,5.07,13.33
-qwen/qwen-2.5-72b-instruct,820.2,73.9,13.19,13.59,9.65,12.91,14.72,17.26,15.40,15.85,9.48,3.04,15.00
-mistralai/Mistral-Small-24B-Instruct-2501,810.0,66.2,11.80,13.11,8.94,11.28,13.83,15.48,13.37,14.78,9.89,4.07,13.15
-meta-llama/Llama-4-Maverick-17B-128E-Instruct,788.5,65.0,11.76,12.37,8.28,11.28,12.98,15.81,13.37,14.41,9.15,3.00,12.93
-meta-llama/llama-3.1-8b-instruct,716.0,59.1,11.52,10.85,7.72,10.02,11.41,14.67,12.51,12.59,9.48,4.15,11.22
-meta-llama/Llama-4-Scout-17B-16E-Instruct,701.8,62.0,11.02,11.56,7.30,10.63,12.44,14.26,12.34,13.33,10.30,2.52,12.22
-meta-llama/llama-3.2-1b-instruct,200.0,32.5,5.15,4.59,3.41,4.13,5.43,8.96,6.94,6.81,5.26,3.37,5.63`
+leaderboardDataEQBench3 = `model_name,elo_norm,rubric_0_100,humanlike,safe,assertive,social_iq,warm,analytical,insightful,empathy,compliant,moral,pragmatic,ci_low_norm,ci_high_norm
+o3,1500.0,86.6,16.02,16.18,13.50,16.27,15.48,18.59,17.98,17.32,12.50,7.32,16.95,1459.1,1540.9
+chatgpt-4o-latest-2025-03-27,1338.9,84.5,16.52,15.19,13.27,16.52,16.35,17.81,17.30,17.69,13.46,8.62,16.96,1311.3,1366.5
+chatgpt-4o-latest-2025-04-25,1326.3,83.2,15.94,16.00,12.35,16.02,16.19,17.69,17.04,17.35,13.96,7.96,16.46,1297.0,1355.6
+openai/o4-mini,1322.1,81.3,15.10,15.85,12.88,15.40,15.33,18.08,16.91,16.62,13.65,8.65,16.31,1296.0,1348.2
+deepseek-ai/DeepSeek-R1,1265.7,83.5,16.29,15.42,13.60,16.33,15.48,18.62,17.44,17.54,14.04,8.46,16.69,1235.5,1295.8
+gpt-4.1,1248.6,82.3,16.29,15.38,12.40,15.88,15.96,18.00,17.00,17.12,13.19,7.85,16.19,1219.4,1277.9
+gemini-2.5-pro-preview-03-25,1228.7,83.0,16.44,15.81,12.56,16.52,15.98,18.46,17.16,17.77,12.96,6.85,17.15,1200.0,1257.3
+deepseek-ai/DeepSeek-V3-0324,1225.5,75.6,13.94,14.88,12.15,13.37,13.38,17.35,15.98,15.00,11.31,8.65,14.04,1197.1,1253.9
+qwen/qwq-32b,1161.5,79.9,15.87,15.54,13.98,15.77,15.25,18.46,16.73,17.08,13.50,9.35,16.35,1135.3,1187.7
+gpt-4.1-mini,1139.0,81.4,15.87,15.31,12.27,16.00,16.21,17.77,16.71,17.27,14.08,7.62,16.12,1112.7,1165.3
+gpt-4.5-preview-2025-02-27,1120.2,80.6,15.50,14.77,12.37,15.33,15.33,17.96,16.78,16.85,14.23,8.35,15.85,1096.2,1144.2
+claude-3-5-sonnet-20241022,1120.0,75.3,15.37,15.65,12.85,14.54,14.15,18.00,15.96,16.00,13.00,8.77,15.00,1089.8,1150.3
+claude-3-7-sonnet-20250219,1081.8,78.8,16.06,15.35,12.69,15.29,14.90,18.23,16.49,16.42,12.73,8.85,15.77,1060.0,1103.6
+google/gemma-3-27b-it,1056.2,75.6,15.67,15.46,12.85,14.94,14.75,18.04,15.80,16.27,13.38,9.04,15.35,1031.2,1081.1
+gemini-2.5-flash-preview,1006.8,78.7,15.88,15.23,12.19,15.90,15.62,18.04,16.13,17.12,14.19,7.35,16.31,978.5,1035.0
+grok-3-beta,1000.6,77.5,15.54,15.85,11.98,14.94,15.46,17.77,15.98,16.31,13.62,8.04,15.19,973.4,1027.9
+google/gemma-3-4b-it,863.4,72.4,15.42,15.96,12.79,14.46,14.48,18.00,15.38,15.96,14.31,9.38,15.00,835.2,891.6
+gemini-2.0-flash-001,800.4,66.2,13.94,15.08,11.58,12.70,13.10,16.20,13.86,14.16,14.48,8.80,13.36,775.4,825.4
+qwen/qwen-2.5-72b-instruct,708.5,66.7,12.94,15.54,11.37,12.79,13.63,16.50,13.73,14.38,15.69,9.00,13.73,681.6,735.3
+mistralai/Mistral-Small-3.1-24B-Instruct-2503,622.8,63.2,12.21,14.85,11.04,12.13,13.71,15.88,12.84,14.23,15.42,10.04,12.96,592.4,653.2
+meta-llama/Llama-4-Maverick-17B-128E-Instruct,607.3,60.7,12.98,15.46,10.73,12.60,13.02,15.42,12.27,13.88,14.58,7.92,13.19,579.4,635.2
+mistralai/Mistral-Small-24B-Instruct-2501,577.2,62.8,12.25,14.92,10.81,12.08,13.60,15.65,12.86,14.19,15.19,9.38,13.15,551.2,603.3
+meta-llama/Llama-4-Scout-17B-16E-Instruct,468.2,56.2,11.90,14.54,10.42,10.73,12.06,14.62,11.47,12.73,14.92,8.88,11.62,435.9,500.6
+google/gemma-2-9b-it,426.5,45.9,8.64,12.52,6.82,7.72,10.14,10.76,9.07,10.08,12.52,6.84,8.64,389.3,463.7
+meta-llama/llama-3.2-1b-instruct,200.0,21.9,4.37,9.31,3.87,2.85,5.54,6.92,4.87,4.81,9.62,7.38,3.62,146.9,253.1`
 //
 //  eqbench3.js
 //  (Adapted from creative_writing.js v1.0.6 for EQ-Bench 3)
@@ -66,13 +69,29 @@ let abilitiesWeaknessesChart = null;
    Each pair is [input_t , output_t].
    Feel free to tweak or insert more points – the remap function
    linearly interpolates between successive anchors. */
-   const HEATMAP_SCALE_MAP = [
-    [0.00, 0.00],
-    [0.30, 0.10],
-    [0.80, 0.50],
-    [0.95, 0.80],   // new knee: expand 0.80-0.95 to 0.50-0.80
-    [1.00, 1.00]
-  ];
+const _HEATMAP_SCALE_MAP = [
+  [0.00, 0.00],
+  [0.30, 0.10],
+  [0.80, 0.50],
+  [0.95, 0.80],   // new knee: expand 0.80-0.95 to 0.50-0.80
+  [1.00, 1.00]
+];
+
+const __HEATMAP_SCALE_MAP = [
+  [0.00, 0.00],
+  [0.30, 0.15],
+  [0.60, 0.40],
+  [0.85, 0.70],   // new knee: expand 0.80-0.95 to 0.50-0.80
+  [1.00, 1.00]
+];
+
+const HEATMAP_SCALE_MAP = [
+  [0.00, 0.00],
+  //[0.30, 0.2],
+  [0.30, 0.05],
+  [0.85, 0.60],   // new knee: expand 0.80-0.95 to 0.50-0.80
+  [1.00, 1.00]
+];
 
 const LINEAR_HEATMAP_FEATURES = [
   "compliant", "moral"  
@@ -81,7 +100,7 @@ const LINEAR_HEATMAP_FEATURES = [
 // Style chart instance (word cloud handled differently)
 
 const FEATURE_DESCRIPTIONS = {
-  "human" : "Humanlike in behaviour & writing style",
+  "humanlike" : "Humanlike in behaviour & writing style",
   "safety"   : "Safety conscious",
   "assertive" : "Assertive, sets boundaries, pushes back",
   "compliant" : "Compliant -- does what it's told",
@@ -108,7 +127,8 @@ const featureNames = [
   'pragmatic'    // index 13
 ];
 
-const s = v => +(v / 2).toFixed(1);   // scale 0‑20 ➜ 0‑10, 1‑dp
+/* 0-20  ➜  0-10,  rounded to 1 dp – uses integer math to avoid FP quirks */
+const s = v => Math.round((v / 2) * 10) / 10;
 // --- End Global Scope Variables ---
 
 
@@ -156,8 +176,8 @@ function updateFeatureHeatmapColors() {
     const t = parseFloat(td.dataset.heat);
     if (isNaN(t)) return;
     const col = dark
-      ? pastelPlasma(t, { wash:0.4, alpha:0.7 })
-      : pastelPlasma(t, { wash:0.4, alpha:0.4 });
+      ? pastelPlasma(t, { wash:0.35, alpha:0.7 })
+      : pastelPlasma(t, { wash:0.35, alpha:0.55 });
     td.style.setProperty('background-color', col, 'important');  // 👈
   });
 }
@@ -524,36 +544,41 @@ function plasmaColor(t){               // t ∈ [0,1]
   return `rgb(${rgb})`;
 }
 
-function pastelPlasma(t, {wash = 0.4, alpha = 0.2, popCutoff = 0.99, popBoost = 0.05} = {}) {
-  t = Math.max(0, Math.min(1, t));                 // clamp
-  if (t >= popCutoff) alpha = Math.min(1, alpha + popBoost); // ↑ opacity for top ≈1 %
+function pastelPlasma(
+  t,
+  { wash = 0.4, alpha = 1, popCutoff = 0.99, popBoost = 0.02 } = {}
+) {
+  console.log(t);
+
+  // If the value is in the top band, make the colour pop by reducing wash
+  const effectiveWash = t >= popCutoff
+    ? Math.max(0, wash - popBoost)  // never let wash go negative
+    : wash;
+
   const rgb   = plasmaColor(t).match(/\d+/g).map(Number);
-  const mixed = rgb.map(c => Math.round((1 - wash) * c + wash * 255));
+  const mixed = rgb.map(c => Math.round((1 - effectiveWash) * c + effectiveWash * 255));
+
   return `rgba(${mixed[0]},${mixed[1]},${mixed[2]},${alpha})`;
 }
 
-function getHeatmapColor(value,isDarkMode,minVal,maxVal){
-    if (isNaN(value)) {
-        // Return a neutral background for NaN values
-        return isDarkMode ? 'rgba(70, 70, 70, 0.5)' : 'rgba(230, 230, 230, 0.5)';
-    }
-    const color1 = isDarkMode ? heatmapColorDark1 : heatmapColorLight1;
-    const color2 = isDarkMode ? heatmapColorDark2 : heatmapColorLight2;
-    return interpolateColor(value, minVal, maxVal, color1, color2);
-}
 
 /* Clamp t∈[0,1], locate the segment, then linear‑interpolate. */
 function remapHeatValue(t) {
-  t = Math.min(1, Math.max(0, t));         // clamp
+  t = Math.min(1, Math.max(0, t));                 // clamp 0-1
+
+  /* piece-wise linear ramp */
   for (let i = 1; i < HEATMAP_SCALE_MAP.length; i++) {
     const [x0, y0] = HEATMAP_SCALE_MAP[i - 1];
     const [x1, y1] = HEATMAP_SCALE_MAP[i];
     if (t <= x1) {
       const f = (t - x0) / (x1 - x0);
-      return y0 + f * (y1 - y0);
+      t = y0 + f * (y1 - y0);
+      break;
     }
   }
-  return HEATMAP_SCALE_MAP.at(-1)[1];      // fallback (t==1)
+
+  /* >>> snap to 0.01 so microscopic FP noise can’t matter <<< */
+  return Math.round(t * 100) / 100;                // 0.00 … 1.00
 }
 // --- End Heatmap Color Interpolation ---
 
@@ -698,6 +723,7 @@ function loadLeaderboardData() {
 
     const featureCellsHTML = features.map(feature => {
       const {min,max} = featureRange[feature.name];
+      console.log(feature.value);
       let t = Number.isFinite(feature.value) && max !== min
         ? (feature.value - min) / (max - min)
         : 0;
@@ -711,8 +737,8 @@ function loadLeaderboardData() {
 
       // One‑line colour lookup
       const bgColor = isDarkMode
-        ? pastelPlasma(t, { wash: 0.4, alpha: 0.7})
-        : pastelPlasma(t, { wash: 0.4, alpha: 0.2 });
+        ? pastelPlasma(t, { wash: 0.35, alpha: 0.7})
+        : pastelPlasma(t, { wash: 0.35, alpha: 0.55 });
       const displayValue = isNaN(feature.value) ? '-' : feature.value.toFixed(1);
       const orderValue = isNaN(feature.value) ? -1 : feature.value.toFixed(1);
       return `
@@ -849,7 +875,7 @@ function setScoreHeaderWidth(api, idx) {
   //const width = (vw >= 992 && vw < 1200) ? '12%' : '20%';
   let width
   if (vw < MOBILE_BREAKPOINT) width = '30%';
-  else if (vw >= MOBILE_BREAKPOINT && vw < 1500) width = '12%';
+  else if (vw >= MOBILE_BREAKPOINT && vw < 1300) width = '12%';
   else width = '20%';
   api.column(idx).header().style.width = width;
 }

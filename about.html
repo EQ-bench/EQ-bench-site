@@ -8,8 +8,11 @@
 	<!-- DataTables Bootstrap CSS -->		
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.3/simple-lightbox.min.css" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.3/simple-lightbox.min.js"></script>
+	<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="pragma" content="no-cache">
 </head>
@@ -120,12 +123,20 @@
 					grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 				  }
 				}
+
+				/* Ensures any analysis images scale cleanly within the content column */
+				.analysis-img {
+					max-width: 100%;
+					height: auto;
+					display: block;
+					margin: 0.5rem 0;
+				}
 			  </style>
 
 			<h3>💙EQ‑Bench 3</h3>
 			<!-- ─────────────────────────  WHAT & WHY  ───────────────────────── -->
 			<p><strong>What is EQ-Bench 3?</strong><br>
-				EQ-Bench 3 is a LLM-judged test evaluating active emotional intelligence abilities, understanding, insight, warmth, and interpersonal skills.
+				EQ-Bench 3 is a LLM-judged test (judged by Claude Sonnet 3.7) evaluating active emotional intelligence abilities, understanding, insight, warmth, and interpersonal skills.
 				The test places the evaluated model into challenging role-plays involving messy relationship drama, parenting decisions, conflict mediation, and high stakes workplace situations. The model must:
 				<em>(a)</em> respond in character,  
 				<em>(b)</em> spell out what it thinks everyone is feeling, and  
@@ -141,7 +152,7 @@
 
 			<p><strong>What a higher score means in practice</strong><br>
 				If a model has a high Elo score, it means it's beating its neighbours in matchups.
-				To beat its neighbour, it has to score higher on several criteria (insight, social dexterity, etc), as evaluated by GPT-4.1. The full criteria evaluated in the pairwise judgements are listed below.
+				To beat its neighbour, it has to score higher on several criteria (insight, social dexterity, etc), as evaluated by Sonnet 3.7. The full criteria evaluated in the pairwise judgements are listed below.
 				The resulting Elo score represents a holistic view on the model's abilities: empathy, analytical understanding, social dexterity, deep insight, pragmatism. A model has to be strong across all these dimensions to be at the top of the leaderboard.
 			</p>
 
@@ -151,31 +162,53 @@
 			<h4>How it works</h4>
 			<ol>
 				<li><b>Multi-turn role-play.</b>
-					The test set contains 35 scenarios, most of which constitute pre-written prompts spanning 3 turns. The <code>user</code> messages set up the scenario, and subsequently inject conflict or misdirection, while the <code>assistant</code> (the evaluated model) must reply in-character.  
+					The test set contains 45 scenarios, most of which constitute pre-written prompts spanning 3 turns. The <code>user</code> messages set up the scenario, and subsequently inject conflict or misdirection, while the <code>assistant</code> (the evaluated model) must reply in-character.  
 					Every assistant reply starts with two introspection blocks:
-					"I’m thinking & feeling" and "They’re thinking & feeling", exposing the model’s reasoning and ToM.</li>
+					"I’m thinking & feeling" and "They’re thinking & feeling", exposing the model’s reasoning and theory-of-mind understanding.</li>
+				
+				<li><b>Analysis tasks.</b>
+					The test set also contains several analytical tasks, instructing the evaluated model to identify compelling aspects in a provided roleplay transcript and to "go deep" analysing them. These tasks test psychological insight, emotional reasoning, theory of mind and academic grounding.</li>
 
 				<li><b>Rubric pass.</b>  
-					GPT-4.1 reads the full transcript + self-debrief and scores several criteria (e.g. Demonstrated Empathy, Depth of Insight, Boundary Setting).
+					Sonnet 3.7 reads the full transcript + self-debrief and scores several criteria (e.g. Demonstrated Empathy, Depth of Insight, Boundary Setting).
 					Only some of these criteria are aggregated into the “rubric score” (0-100); the rest are to give visibility on style & tendencies.
 					When running the benchmark, users may choose to run only the rubric evaluation, or only Elo, or both. The rubric eval is about 3x cheaper and provides *absolute scores*, but is *less discriminative* at the top ability range.
 					The rubric score is not shown on the leaderboard; it's available when running the benchmark.
 				</li>
 
 				<li><b>Pairwise pass.</b>  
-					The roleplay transcripts are compared head-to-head and judged on several criteria by GPT-4.1.
-					The judge outputs a winner for eight EQ traits (see below), using “+ … +++++” to signal win margin.
-					Win margins are mapped to extra wins/losses to provide the Glicko Elo solver more discriminate power per test item (since by default it only supports win/loss, not margins).</li>
+					The roleplay transcripts are compared head-to-head and judged on several criteria by Sonnet 3.7.
+					The judge outputs a winner for eight criteria (see below for full list), using “+ … +++++” to denote the win margin.
+					Win margins are mapped to extra wins/losses to provide the Trueskill Elo solver more discriminate power per test item (since by default it only supports win/loss, not margins). Several rounds of matchups are conducted, moving from sparse to dense sampling, until ranks stabilise.</li>
+
+				<li><b>Score normalisation.</b> 
+					Elo scores are relative and shift around when new models are added. To compensate for this, we scale the scores by anchoring to a top & bottom reference model: o3 = 1500, llama-3.2-1b = 200.
+					Rubric scores don't have this issue and are not normalised.
 			</ol>
 
 			<!-- ─────────────────────────  COST  ───────────────────────── -->
 			<h4>Cost</h4>
 			<ul>
-				<li>One full benchmark run (rubric + pairwise) ≈ US$10 on OpenRouter.</li>
-				<li>Rubric-only ≈ US$3.</li>
-				<li>This doesn't include inference cost for the evaluated model.</li>
-				<li>Our modified Glicko Elo ranking is cost efficient & will scale well. It should have headroom for future models with stronger abilities.</li>
+				<li>One full benchmark run (rubric + pairwise) ≈ US$8 on OpenRouter.</li>
+				<li>Rubric-only ≈ US$1 per iteration.</li>
+				<li>These costs represent the judging costs; inference costs for the evaluated model will vary.</li>
+				<li>Our modified Trueskill Elo ranking is cost efficient & will scale well. It should have headroom for future models with stronger abilities.</li>
 			</ul>
+
+
+			<h4>Elo vs Rubric Distribution</h4>
+			<p>
+			The rubric score has a different distribution to the Elo score. The Elo score is more discriminative at the top-mid ability range (scores don't bunch up as much).
+			</p>
+
+			<a href="images/rubric-vs-elo.png"
+			data-lightbox="rubric-vs-elo"
+			data-title="Elo-ordered (left) vs Rubric-ordered (right) horizontal bar charts">
+			<img src="images/rubric-vs-elo.png"
+				alt="Side-by-side bar charts comparing Elo and rubric rankings"
+				class="analysis-img">
+			</a>
+
 
 
 			<h5>Rubric criteria</h5>
@@ -190,7 +223,6 @@
 				<div class="criteria-item">Boundary Setting</div>
 				<div class="criteria-item">Safety Conscious</div>
 				<div class="criteria-item">Moralising</div>
-				<div class="criteria-item">Sycophantic</div>
 				<div class="criteria-item">Compliant</div>
 				<div class="criteria-item">Challenging</div>
 				<div class="criteria-item">Warmth</div>
@@ -203,6 +235,7 @@
 			</div>
 
 			<p>Note: Some criteria do not count towards score. The rubric score is calculated from: Demonstrated Empathy, Pragmatic EI, Depth of Insight, Social Dexterity, Emotional Reasoning, Message Tailoring</p>
+
 
 			<h5>Pairwise criteria</h5>
 			<div class="criteria-block">
@@ -218,18 +251,58 @@
 			</ol>
 			</div>
 
+			<h4>Judge Bias Analysis</h4>
+			<p>
+			We plot scores (elo & rubric) judged by Sonnet 3.7 against those judged by GPT-4.1 to inspect consistency and highlight potential judge-specific biases.
+			Click to view full size.
+			</p>
+			<p><strong>Elo Bias Comparison</strong></p>
+			<a href="images/judge-bias.png"
+			data-lightbox="judge-bias"
+			data-title="Scatter plot showing judge bias: Sonnet 3.7 judge vs GPT-4.1 judge">
+			<img src="images/judge-bias.png"
+				alt="Judge bias (elo) scatter plot"
+				class="analysis-img">
+			</a>
+
+			<p><strong>Rubric Bias Comparison</strong></p>
+			<a href="images/judge-bias-rubric.png"
+			data-lightbox="judge-bias-rubric"
+			data-title="Scatter plot showing judge bias: Sonnet 3.7 judge vs GPT-4.1 judge">
+			<img src="images/judge-bias-rubric.png"
+				alt="Judge bias (rubric) scatter plot"
+				class="analysis-img">
+			</a>
+
+
+			<!-- ─────────────────────────  RUBRIC VARIANCE  ───────────────────────── -->
+			<br>
+			<h4>Rubric eval variance</h4>
+			<p>
+			Running the rubric part of EQ-Bench on its own (no pairwise), we ran 10x iterations scoring <strong>gemini-2.5-flash-preview</strong> to check for per-iteration consistency. The evaluated model uses temp=0.7, min_p=0.1 for its generations, so its outputs are significantly different with each iteration. To mitigate variance we recommend running ~5 iterations to stabilise scores.
+			</p>
+
+			<p class="rubric-values" style="font-family:monospace;margin:.25rem 0;">
+			77.80&nbsp;77.60&nbsp;76.35&nbsp;78.70&nbsp;78.55&nbsp;76.85&nbsp;78.50&nbsp;77.70&nbsp;77.35&nbsp;77.70
+			</p>		
+
+			<p style="margin:0; font-size:0.9em;">
+			Mean&nbsp;77.71&nbsp;&nbsp;|&nbsp;&nbsp;Std&nbsp;dev&nbsp;0.75&nbsp;&nbsp;|&nbsp;&nbsp;Range&nbsp;76.35–78.70
+			</p>
+			<br>
+
 			<!-- ─────────────────────────  BIAS MITIGATION  ───────────────────────── -->
 			<h4>Bias mitigation</h4>
 			<ul>
 				<li><b>Length bias.</b> For pairwise judgements, responses are truncated to standardised lengths before judging. The truncation point is chosen so that nearly all outputs will be truncated, aiming for an even playing field. Truncating outputs is not ideal, but length bias is such a strong factor in pairwise eval that we opt to sacrifice some of the generated output for the sake of minimising this biasing effect. We find this to be the least-bad option, and in practice find that it doesn't sacrifice discriminative power.
-					For the rubric eval, *discriminative power* is a more scarce resource and length bias is much less pronounced, so we retain the full length of the outputs.</li>
+					However, for the <em>rubric eval</em>, discriminative power is a more scarce resource and length bias is much less pronounced, so in rubric scoring we retain the full length of the outputs.</li>
 				<li><b>Position bias.</b> In pairwise, every matchup is judged twice (A|B and B|A) and averaged.</li>
 				<li><b>Named participant bias.</b> We mitigate any biases from naming the models in the pairwise evalution by giving them arbitrary designators (A0488 and A0493).</li>
 			</ul>
 
 			<h4>Biases not controlled for</h4>
 			<ul>
-				<li><b>Judge self-bias / family bias:</b> We use GPT-4.1 as the judge for all outputs. This may introduce some bias where the judge prefers its own outputs or those of similar models. This is currently not quantified or adjusted for in this eval. Judge self bias can be in the range of 0-10% depending on the task (sometimes even negative bias!). It would be nice to mitigate this bias by using an ensemble of diverse judges, but alas, this is a self funded leaderboard, and judge ensembles are expensive.</li>
+				<li><b>Judge self-bias / family bias:</b> We use Sonnet 3.7 as the judge for all outputs. This may introduce some bias where the judge prefers its own outputs or those of similar models. This is currently not quantified or adjusted for in this eval. Judge self bias can be in the range of 0-10% depending on the task (sometimes even negative bias!). It would be nice to mitigate this bias by using an ensemble of diverse judges, but alas, this is a self funded leaderboard, and judge ensembles are expensive.</li>
 				<li><b>Other judge biases:</b> LLM judges can have varying biases in how they rate: verbosity, positivity, political, cultural. We don't control for these possible biases; they are just a part of LLM judging, as personal biases are part of human judging. Subjective evals are a messy business! Set your expectations accordingly.</li>
 			</ul>
 
@@ -286,14 +359,14 @@
 			<!-- ─────────────────────────  LIMITATIONS  ───────────────────────── -->
 			<h4>Limitations & interpretation</h4>
 			<p>
-				EQ‑Bench 3 is a <strong>subjective evaluation</strong> judged by a LLM.
+				EQ‑Bench 3 is a <strong>subjective evaluation</strong> judged by a LLM (Sonnet 3.7).
 				As such, the results should be considered roughly indicative but not absolute truth.
 				The sample transcripts are provided so you can make your own judgements.
 				Several test items target typical LLM failure modes, like over-cautiousness from safety training. This may cause some models to be penalised more than others.
 				The Elo score isn't representing any one aspect of EQ in isolation. Rather, it's a holistic representation of active social abilities, insight, empathy and analytical understanding.				
 			</p>
-			<p>Emotional Intelligence or EQ doesn't have any ground truth or agreed upon definitions in the literature or colloquially. However there is a rich breadth of ideas about what constitutes <em>emotional intelligence</em>, which we drew on when deciding which abilities to target. This benchmark doesn't represent any one theory or formulation of EQ</p>
-			<p>The benchmark eschews *comprehensiveness* for *discriminative power*. Most language models will ace most questions typically asked on a written EQ test, which means including those low-mid difficulty questions dilutes our ability to tell models apart. Our approach of selecting for highly challenging questions may have a narrowing or biasing effect on the dimensions of EQ that are assessed. That said -- the response format & topic selection ought to give reasonably broad coverage.</p>
+			<p>Emotional Intelligence or EQ doesn't have any ground truth or agreed upon definitions in the literature or colloquially. However there is a rich breadth of ideas about what constitutes <em>emotional intelligence</em>, which were drawn from when formulating test items. It should be noted that this benchmark doesn't represent any one theory or formulation of EQ.</p>
+			<p>The benchmark eschews *comprehensiveness* for *discriminative power*. Most language models will ace most questions typically asked on a written EQ test, which means including those low-mid difficulty questions dilutes our ability to tell models apart. Our approach of selecting for highly challenging questions may have a narrowing or biasing effect on the dimensions of EQ that are assessed.</p>
 
 			<!-- ─────────────────────────  HOW TO RUN  ───────────────────────── -->
 			<h4>Source code</h4>
@@ -784,11 +857,7 @@ Coefficient of Variation: 0.0181
 	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 	<script src="eqbench3.js"></script>
-	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-		  new SimpleLightbox('.lightbox');
-		});
-	</script>
+
 	<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1600fe1d3da743c1b311f4e5fee86767"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
