@@ -33,7 +33,8 @@ o3,77.5,7493,32.82,33.03,4.3,16.30,16.41,16.49,16.45,16.47,16.39,15.99,16.58,16.
 *qwen/qwen3-235b-a22b,71.5,4788,22.58,56.94,10.7,16.17,15.24,15.48,15.34,14.76,15.27,14.73,14.44,13.91
 *qwen/qwen3-32b,58.5,4646,21.06,63.65,19.9,14.47,13.77,12.60,12.28,12.51,12.50,11.50,10.57,10.92
 *qwen/qwen3-30b-a3b,57.0,5334,22.75,78.32,30.1,14.95,13.18,13.44,12.43,12.13,11.35,10.94,9.12,9.83
-*qwen/qwen3-14b,53.3,5368,24.32,83.54,38.6,14.74,12.84,12.75,10.41,11.18,9.61,9.70,8.39,9.66`;
+*qwen/qwen3-14b,53.3,5368,24.32,83.54,38.6,14.74,12.84,12.75,10.41,11.18,9.61,9.70,8.39,9.66
+qwen/qwen-2.5-72b-instruct,53.0,9320,37.53,59.00,22.5,11.91,11.49,11.26,11.02,11.00,10.11,9.23,8.35,9.33`;
 
 
 // --- New Slop Data ---
@@ -501,10 +502,10 @@ const slopData = `##### gemini-2.5-pro-preview-03-25
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.803)</div>
+<div class='slop-similar'>qwen/qwen-2.5-72b-instruct (distance=0.803)</div>
 <div class='slop-similar'>aion-labs/aion-rp-llama-3.1-8b (distance=0.814)</div>
 <div class='slop-similar'>gpt-4.1-nano (distance=0.821)</div>
 <div class='slop-similar'>gemini-2.0-flash-001 (distance=0.826)</div>
-<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.830)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -564,6 +565,29 @@ const slopData = `##### gemini-2.5-pro-preview-03-25
 <h4>Top Trigrams</h4>
 <div class='slop-section-items'>
 <span class='slop-ngram-item'>voice barely whisper (61)</span> <span class='slop-ngram-item'>said voice low (54)</span> <span class='slop-ngram-item'>eyes filled something (54)</span> <span class='slop-ngram-item'>first time sure (52)</span> <span class='slop-ngram-item'>fingers tightened around (47)</span> <span class='slop-ngram-item'>something looked like (47)</span> <span class='slop-ngram-item'>said voice barely (39)</span> <span class='slop-ngram-item'>filled something looked (37)</span> <span class='slop-ngram-item'>air thick scent (33)</span> <span class='slop-ngram-item'>heart pounded chest (28)</span> <span class='slop-ngram-item'>thought daughter way (24)</span> <span class='slop-ngram-item'>man spent life (22)</span> <span class='slop-ngram-item'>first time years (21)</span> <span class='slop-ngram-item'>pounded chest wanted (21)</span> <span class='slop-ngram-item'>voice quiet almost (20)</span> <span class='slop-ngram-item'>stepped closer voice (18)</span> <span class='slop-ngram-item'>stepped forward voice (18)</span> <span class='slop-ngram-item'>something else something (18)</span> <span class='slop-ngram-item'>mind racing spent (18)</span> <span class='slop-ngram-item'>door creaked open (18)</span> <span class='slop-ngram-item'>moment world seemed (16)</span> <span class='slop-ngram-item'>looked like hope (15)</span> <span class='slop-ngram-item'>said voice steady (14)</span> <span class='slop-ngram-item'>casting long shadows (14)</span> <span class='slop-ngram-item'>eyes wide something (13)</span> <span class='slop-ngram-item'>lips parted words (13)</span> <span class='slop-ngram-item'>knew one thing (12)</span> <span class='slop-ngram-item'>door slammed shut (12)</span> <span class='slop-ngram-item'>said voice trembling (12)</span> <span class='slop-ngram-item'>long shadows across (12)</span>
+</div>
+
+##### qwen/qwen-2.5-72b-instruct
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>gpt-4o-mini (distance=0.803)</div>
+<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.813)</div>
+<div class='slop-similar'>meta-llama/Llama-4-Maverick-17B-128E-Instruct (distance=0.817)</div>
+<div class='slop-similar'>mistralai/Mistral-Nemo-Instruct-2407 (distance=0.817)</div>
+<div class='slop-similar'>meta-llama/Llama-4-Scout-17B-16E-Instruct (distance=0.825)</div>
+</div>
+
+<h4>Top Repetitive Words</h4>
+<div class='slop-section-items'>
+<span class='slop-word-item'>elara</span> <span class='slop-word-item'>lila</span> <span class='slop-word-item'>furrowing</span> <span class='slop-word-item'>nodded</span> <span class='slop-word-item'>thorne</span> <span class='slop-word-item'>ached</span> <span class='slop-word-item'>sparkled</span> <span class='slop-word-item'>jasper</span> <span class='slop-word-item'>glinted</span> <span class='slop-word-item'>unease</span> <span class='slop-word-item'>gleamed</span> <span class='slop-word-item'>blackwood</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>eliza</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>rourke</span> <span class='slop-word-item'>hawthorne</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>furrowed</span> <span class='slop-word-item'>trembled</span> <span class='slop-word-item'>lily</span> <span class='slop-word-item'>fidgeting</span> <span class='slop-word-item'>lena</span> <span class='slop-word-item'>tousled</span> <span class='slop-word-item'>dimly</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>softened</span> <span class='slop-word-item'>raced</span> <span class='slop-word-item'>widened</span> <span class='slop-word-item'>darted</span> <span class='slop-word-item'>buzzed</span> <span class='slop-word-item'>sneered</span> <span class='slop-word-item'>sighed</span> <span class='slop-word-item'>tinged</span> <span class='slop-word-item'>loomed</span> <span class='slop-word-item'>piqued</span> <span class='slop-word-item'>murmured</span> <span class='slop-word-item'>lunged</span> <span class='slop-word-item'>swelled</span> <span class='slop-word-item'>twinkling</span> <span class='slop-word-item'>fraught</span> <span class='slop-word-item'>darting</span> <span class='slop-word-item'>glanced</span> <span class='slop-word-item'>pounding</span> <span class='slop-word-item'>whirl</span> <span class='slop-word-item'>leaned</span> <span class='slop-word-item'>imperceptible</span> <span class='slop-word-item'>voss</span> <span class='slop-word-item'>clutched</span> <span class='slop-word-item'>unwavering</span>
+</div>
+<h4>Top Bigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>said voice (193)</span> <span class='slop-ngram-item'>voice steady (148)</span> <span class='slop-ngram-item'>find way (124)</span> <span class='slop-ngram-item'>felt sense (92)</span> <span class='slop-ngram-item'>need find (88)</span> <span class='slop-ngram-item'>nodded eyes (85)</span> <span class='slop-ngram-item'>felt mix (82)</span> <span class='slop-ngram-item'>deep breath (81)</span> <span class='slop-ngram-item'>mind raced (80)</span> <span class='slop-ngram-item'>need careful (75)</span> <span class='slop-ngram-item'>made way (74)</span> <span class='slop-ngram-item'>eyes scanning (73)</span> <span class='slop-ngram-item'>expression serious (73)</span> <span class='slop-ngram-item'>mind racing (72)</span> <span class='slop-ngram-item'>nodded expression (68)</span> <span class='slop-ngram-item'>ready face (64)</span> <span class='slop-ngram-item'>air thick (62)</span> <span class='slop-ngram-item'>eyes widened (62)</span> <span class='slop-ngram-item'>took deep (59)</span> <span class='slop-ngram-item'>eyes filled (59)</span> <span class='slop-ngram-item'>eyes met (59)</span> <span class='slop-ngram-item'>voice low (56)</span> <span class='slop-ngram-item'>make sure (55)</span> <span class='slop-ngram-item'>stepped forward (54)</span> <span class='slop-ngram-item'>asked voice (51)</span> <span class='slop-ngram-item'>heart pounding (51)</span> <span class='slop-ngram-item'>could let (51)</span> <span class='slop-ngram-item'>mix excitement (50)</span> <span class='slop-ngram-item'>heart raced (49)</span> <span class='slop-ngram-item'>face whatever (49)</span>
+</div>
+<h4>Top Trigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>took deep breath (58)</span> <span class='slop-ngram-item'>said voice steady (57)</span> <span class='slop-ngram-item'>nodded expression serious (29)</span> <span class='slop-ngram-item'>ready face whatever (29)</span> <span class='slop-ngram-item'>face whatever came (27)</span> <span class='slop-ngram-item'>said voice low (27)</span> <span class='slop-ngram-item'>eyes locking onto (27)</span> <span class='slop-ngram-item'>one step time (25)</span> <span class='slop-ngram-item'>heart skipped beat (25)</span> <span class='slop-ngram-item'>air thick scent (24)</span> <span class='slop-ngram-item'>whatever came next (23)</span> <span class='slop-ngram-item'>need act fast (23)</span> <span class='slop-ngram-item'>said voice firm (22)</span> <span class='slop-ngram-item'>made way back (21)</span> <span class='slop-ngram-item'>said voice filled (21)</span> <span class='slop-ngram-item'>mind racing possibilities (20)</span> <span class='slop-ngram-item'>need find way (20)</span> <span class='slop-ngram-item'>nodded mind racing (19)</span> <span class='slop-ngram-item'>could shake feeling (19)</span> <span class='slop-ngram-item'>eyes locked onto (19)</span> <span class='slop-ngram-item'>felt growing sense (18)</span> <span class='slop-ngram-item'>nodded mind already (17)</span> <span class='slop-ngram-item'>make real difference (17)</span> <span class='slop-ngram-item'>determined find way (17)</span> <span class='slop-ngram-item'>knew road ahead (16)</span> <span class='slop-ngram-item'>mind raced possibilities (16)</span> <span class='slop-ngram-item'>eyes filled mix (16)</span> <span class='slop-ngram-item'>nodded voice steady (15)</span> <span class='slop-ngram-item'>stakes higher ever (15)</span> <span class='slop-ngram-item'>mind whirl thoughts (15)</span>
 </div>
 
 ##### RekaAI/reka-flash-3
@@ -686,9 +710,9 @@ const slopData = `##### gemini-2.5-pro-preview-03-25
 <div class='slop-similar-section'>
 <div class='slop-similar'>aion-labs/aion-rp-llama-3.1-8b (distance=0.805)</div>
 <div class='slop-similar'>meta-llama/Llama-4-Maverick-17B-128E-Instruct (distance=0.813)</div>
+<div class='slop-similar'>qwen/qwen-2.5-72b-instruct (distance=0.817)</div>
 <div class='slop-similar'>gemini-2.0-flash-001 (distance=0.818)</div>
 <div class='slop-similar'>meta-llama/Llama-4-Scout-17B-16E-Instruct (distance=0.820)</div>
-<div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.821)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
