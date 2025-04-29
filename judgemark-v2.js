@@ -32,10 +32,12 @@ gemini-2.0-flash-001,64.59,0.797,0.556,0.853,$1.09
 claude-3-7-sonnet-20250219,81.54,0.912,0.773,0.889,$54.73
 qwen/qwq-32b,66.11,0.84,0.564,0.873,$3.23
 quasar-alpha,83.4,0.918,0.795,0.905,$0
-*gemini-2.5-pro-preview-03-25,80.11,0.902,0.759,0.869,$60.19
-*gpt-4.1-mini,76.33,0.905,0.685,0.935,$5.02
+gemini-2.5-pro-preview-03-25,80.11,0.902,0.759,0.869,$60.19
+gpt-4.1-mini,76.33,0.905,0.685,0.935,$5.02
 *opencompass/CompassJudger-1-32B-Instruct,40.72,0.574,0.27,0.788,
-*gemini-2.5-flash-preview,76.48,0.893,0.711,0.853,$1.80`
+*gemini-2.5-flash-preview,76.48,0.893,0.711,0.853,$1.80,
+*qwen/qwen3-235b-a22b,73.92,0.882,0.669,0.876,$2.40
+*qwen/qwen3-235b-a22b:thinking,70.36,0.863,0.624,0.863,$3.45`
 
 const csv_header = [
   "model",
@@ -197,9 +199,12 @@ function loadLeaderboardDataV2() {
     const isNewModel = model.startsWith('*');
     model = model.replace(/^\*/, '');
 
-    let displayModel = model.includes('/')
-      ? `<a href="https://huggingface.co/${model}" target="_blank">${model.split('/').pop()}</a>`
-      : model;
+    let displayModel = model;
+    if (model.includes('/')) {
+      // Strip “:…” so the link points to the base repo
+      const hfRepoPath = model.split(':')[0]; // keep text before first colon
+      displayModel = `<a href="https://huggingface.co/${hfRepoPath}" target="_blank" rel="noopener noreferrer">${model}</a>`;
+    }
 
     if (isNewModel) {
       displayModel = '🆕' + displayModel

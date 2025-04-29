@@ -305,7 +305,7 @@
 
 			<h4>Biases not controlled for</h4>
 			<ul>
-				<li><b>Judge self-bias / family bias:</b> We use Sonnet 3.7 as the judge for all outputs. This may introduce some bias where the judge prefers its own outputs or those of similar models. This is currently not quantified or adjusted for in this eval. Judge self bias can be in the range of 0-10% depending on the task (sometimes even negative bias!). It would be nice to mitigate this bias by using an ensemble of diverse judges, but alas, this is a self funded leaderboard, and judge ensembles are expensive.</li>
+				<li><b>Judge self-bias / family bias:</b> We use Sonnet 3.7 as the judge for all outputs. This may introduce some bias where the judge prefers its own outputs or those of similar models. This is currently not quantified or adjusted for in this eval. Judge self bias can be in the range of 0-10% depending on the task (sometimes even negative bias!). Per our comparison of sonnet-3.7 vs gpt-4.1 as judge (see above), we see some minor discrepancies, e.g. sonnet 3.7 favouring itself by a small margin. However the discrepancies are small, with no clear pattern of self or family bias. The indications are that self or family bias are not strong factors in this eval.</li>
 				<li><b>Other judge biases:</b> LLM judges can have varying biases in how they rate: verbosity, positivity, political, cultural. We don't control for these possible biases; they are just a part of LLM judging, as personal biases are part of human judging. Subjective evals are a messy business! Set your expectations accordingly.</li>
 			</ul>
 
