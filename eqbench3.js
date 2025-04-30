@@ -139,6 +139,25 @@ function setupDarkModeToggle() {
   });
 }
 
+function cloneHeaderToFooter() {
+  const theadRow = document.querySelector('#leaderboard thead tr');
+  if (!theadRow) return;
+
+  const tfoot = document.querySelector('#leaderboard tfoot') || document.createElement('tfoot');
+  // wipe any previous clone
+  tfoot.innerHTML = '';
+
+  // deep-clone to preserve classes & data- attributes
+  const footerRow = theadRow.cloneNode(true);
+  tfoot.appendChild(footerRow);
+
+  // append only if we just created the tfoot
+  if (!tfoot.parentElement) {
+    document.getElementById('leaderboard').appendChild(tfoot);
+  }
+}
+
+
 function applySystemTheme() {
   if (localStorage.getItem('darkModeEnabled') === null) {
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -961,17 +980,21 @@ function collapseMiddleColumns() {
 /* ------------------------------------------------------------------
    Give every <th class="feature-header"> a tooltip link
    ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------
+   Give every <th class="feature-header"> a tooltip link
+   ------------------------------------------------------------------ */
 function decorateFeatureHeaders(tableApi) {
-  // 1) loop over all headers that are flagged as feature columns
-  tableApi.table().header()
-          .querySelectorAll('th.feature-header')
-          .forEach(th => {
+  // 1) loop over all headers (thead AND tfoot) that are flagged as feature columns
+  const tableNode = tableApi.table().node(); // Get the main table element
+  tableNode.querySelectorAll('thead th.feature-header, tfoot th.feature-header') // <--- SELECT FROM BOTH THEAD AND TFOOT
+            .forEach(th => {
     const label = th.textContent.trim();                   // e.g. "Empathy"
+
+    // Check if it's already decorated (important to avoid infinite loops if called multiple times)
+    if (th.querySelector('a[data-bs-toggle="tooltip"]')) return;
+
     const key   = label.toLowerCase().replace(/\s+/g, '_');  // "social_iq"
     const desc  = FEATURE_DESCRIPTIONS[key] || '';
-
-    // already decorated? – skip
-    if (th.querySelector('a[data-bs-toggle="tooltip"]')) return;
 
     th.innerHTML = `
       <a href="#" tabindex="-1"
@@ -983,6 +1006,15 @@ function decorateFeatureHeaders(tableApi) {
   // 2) (re)‑initialise Bootstrap 5 tooltips
   // Ensure Bootstrap is loaded before trying to initialize tooltips
     if (typeof bootstrap !== 'undefined' && typeof bootstrap.Tooltip !== 'undefined') {
+        // Destroy existing tooltips first to prevent duplicates if re-run
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+                .forEach(el => {
+                    const existingTooltip = bootstrap.Tooltip.getInstance(el);
+                    if (existingTooltip) {
+                        existingTooltip.dispose();
+                    }
+                });
+        // Initialize new tooltips
         document.querySelectorAll('[data-bs-toggle="tooltip"]')
                 .forEach(el => new bootstrap.Tooltip(el));
     } else {
@@ -1016,6 +1048,8 @@ function initializeDataTable() {
     $('#leaderboardBody').off('click', '.abilities-info-icon');
     $('#leaderboardBody').off('click', '.style-info-icon');
   }
+
+  cloneHeaderToFooter();
 
   let table = $('#leaderboard').DataTable(dataTableConfig);
   decorateFeatureHeaders(table);          // make headers pretty
