@@ -608,6 +608,44 @@ body.eqbench3-page #leaderboard tfoot th {
                               /* very narrow screens            */
 }
 
+
+/* ── Row select + inline header ────────────────────────────────────── */
+
+/* pointer cursor only on feature cells (not entire row) */
+body.eqbench3-page #leaderboard tbody td.feature-cell { cursor: pointer; }
+
+/* border-only highlight on the whole row */
+body.eqbench3-page #leaderboard tbody tr.selected-row{
+  outline: 2px solid #ffffff;      /* light-mode mid-grey */
+  outline-offset: -2px;
+}
+body.dark-mode.eqbench3-page #leaderboard tbody tr.selected-row{
+  outline: 2px solid #c1c1c1;      /* white in dark mode  */
+  outline-offset: -2px;
+}
+
+/* sticky inline header cloned from thead */
+body.eqbench3-page #leaderboard tbody tr.floating-header-row th{
+  position: sticky; top: 0; z-index: 3;
+  background-color: rgba(60,70,80,.90) !important; color:#fff !important;
+  font-size: 0.9em;               /* same as main header  */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: '-';
+}
+body.dark-mode.eqbench3-page #leaderboard tbody tr.floating-header-row th{
+  background-color: rgba(55,65,75,.90) !important;
+}
+
+/* feature headers still truncate */
+body.eqbench3-page #leaderboard tbody tr.floating-header-row th.feature-header{
+  max-width: 22px;
+}
+
+
+
+
+
   </style>
 </head>
 <body class="eqbench3-page">

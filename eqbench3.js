@@ -884,7 +884,15 @@ let dataTableConfig = {
 
   // Callback after table draw (Updated Indices & Score Bar/Error Bar Fix)
   drawCallback: function (settings) {
+
+
+
     const api = this.api();
+    /* wipe any inline header + selection created by the previous draw */
+    $('#leaderboard .floating-header-row').remove();
+    api.rows().nodes().to$().removeClass('selected-row');
+
+
     if (!api || api.rows().count() === 0) return;
 
     /* ---------- Handle score bar and error bar visibility ---------- */
@@ -1080,6 +1088,38 @@ function initializeDataTable() {
       updateFeatureHeatmapColors(); // Ensure heatmap colors update on redraw
       // Note: Score bar colors and visibility are handled within drawCallback now
   });
+
+  /* Row-select ➜ highlight + inline header   (only when a feature-cell is clicked) */
+  $('#leaderboard tbody').on('click','tr',function (e){
+    const $cell = $(e.target).closest('td');
+    /* proceed only if the clicked cell is one of the feature columns */
+    if (!$cell.hasClass('feature-cell')) return;
+
+    const $table = $('#leaderboard');
+    const api    = $table.DataTable();
+    const $row   = $(this);
+
+    /* ignore clicks on the synthetic header row itself */
+    if ($row.hasClass('floating-header-row')) return;
+
+    const alreadySelected = $row.hasClass('selected-row');
+
+    /* clear any previous selection & inline header */
+    $table.find('.floating-header-row').remove();
+    api.rows().nodes().to$().removeClass('selected-row');
+
+    if (alreadySelected) return;          /* toggle off on second click */
+
+    /* mark new selection */
+    $row.addClass('selected-row');
+
+    /* clone the visible header row and insert it just above the clicked row */
+    const $clone = $table.find('thead tr').first().clone()
+                        .addClass('floating-header-row');
+    $row.before($clone);
+  });
+
+
 }
 // --- End DataTable Initialization ---
 
