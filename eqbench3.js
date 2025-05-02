@@ -997,10 +997,11 @@ function decorateFeatureHeaders(tableApi) {
     const desc  = FEATURE_DESCRIPTIONS[key] || '';
 
     th.innerHTML = `
-      <a href="#" tabindex="-1"
+    <span class="feature-tooltip"
+          tabindex="-1"
           data-bs-toggle="tooltip"
           data-bs-placement="top"
-          title="${desc}">${label}</a>`;
+          title="${desc}">${label}</span>`;
   });
 
   // 2) (re)‑initialise Bootstrap 5 tooltips
