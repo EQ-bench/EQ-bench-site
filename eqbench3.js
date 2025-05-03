@@ -1113,10 +1113,14 @@ function initializeDataTable() {
     /* mark new selection */
     $row.addClass('selected-row');
 
-    /* clone the visible header row and insert it just above the clicked row */
-    const $clone = $table.find('thead tr').first().clone()
-                        .addClass('floating-header-row');
-    $row.before($clone);
+    /* Only add an inline header when there’s at least one visible row above.
+      (Prevents a duplicate header when the very first row is selected.) */
+    if ($row.prevAll('tr:visible').length) {
+      const $clone = $table.find('thead tr').first().clone()
+                          .addClass('floating-header-row');
+      $row.before($clone);
+    }
+
   });
 
 

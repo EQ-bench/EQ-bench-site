@@ -57,7 +57,14 @@
 		<div class="toc">
 			<ul>
 				 <li><a href="#about">How to Submit</a></li>
-				 <li><a href="#eq-bench-3">EQ-Bench</a></li>
+				 <li>
+					EQ-Bench 3:
+					<a href="#short-version-header" class="toc-link">Short</a>
+					|
+					<a href="#long-version-header"  class="toc-link">Long</a>
+				  </li>
+				  
+				 <li><a href="#eq-bench">EQ-Bench</a></li>
 				 <li><a href="#magi-hard">MAGI-Hard</a></li>
 				 <li><a href="#creative-writing">Creative Writing</a></li>
 				 <li><a href="#judgemark">Judgemark</a></li>
@@ -79,311 +86,886 @@
 			</p>
 			<p>We will then verify the result on our end and add to the leaderboard. This project is self funded so please respect that we don't have unlimited compute!</p>
 		</div>
-		<div id="eq-bench-3" class="section">
-			<style>
-				.criteria-block {
-				  background-color: var(--bg-color, #f8f9fa);
-				  border: 1px solid var(--border-color, #dee2e6);
-				  border-radius: 0.25rem;
-				  padding: 1rem;
-				  margin-bottom: 1.5rem;
-				  font-family: monospace;
-				  color: var(--text-color, #212529);
+		
+
+
+
+
+		<style>
+			/* Define theme colors (adjust as needed) */
+			:root {
+				--bs-primary: #0d6efd;
+				--bs-info: #0dcaf0;
+				/* Dark mode equivalents */
+				--bs-primary-dark: #6ea8fe;
+				--bs-info-dark: #6edff6;
+				/* Default background/text colors (used in some blocks) */
+				--bg-color: #f8f9fa;
+				--border-color: #dee2e6; /* Adjusted from judging prompt's #6c757d for broader use */
+				--text-color: #212529;
+				--heading-color: #343a40;
+				/* Subtle variations for nested blocks */
+				--bg-color-subtle: #f8f9fa;
+				--border-color-subtle: #dee2e6;
+			}
+		
+			/* Dark Mode Root Variables */
+			.dark-mode, [data-theme="dark"] {
+				--bg-color: #2d3238;
+				--border-color: #495057; /* Adjusted from judging prompt's #90a4ae */
+				--text-color: #e9ecef;
+				--heading-color: #f8f9fa;
+				--bg-color-subtle: #3a4148;
+				--border-color-subtle: #495057;
+			}
+		
+			/* Accordion Styling */
+			.accordion-container {
+				margin-bottom: 1.5rem; /* Add some space below the accordion */
+			}
+		
+			.accordion-header {
+				cursor: pointer;
+				padding: 0.75rem 1.25rem;
+				background-color: var(--accordion-header-bg, #e9ecef); /* Use CSS variables for theme compatibility */
+				border: 1px solid var(--accordion-border-color, #dee2e6);
+				margin-top: 0.5rem;
+				margin-bottom: 0; /* Remove bottom margin to connect with content */
+				font-weight: bold;
+				position: relative; /* Needed for absolute positioning of indicator */
+				border-radius: 0.25rem 0.25rem 0 0; /* Round top corners */
+				transition: background-color 0.2s ease-in-out;
+			}
+		
+			.accordion-header:hover {
+				background-color: var(--accordion-header-hover-bg, #d1d9e0);
+			}
+		
+			.accordion-content {
+				padding: 1rem 1.25rem;
+				border: 1px solid var(--accordion-border-color, #dee2e6);
+				border-top: none; /* Remove top border as header has bottom border */
+				display: none; /* Hidden by default */
+				background-color: var(--accordion-content-bg, #ffffff); /* Content background */
+				border-radius: 0 0 0.25rem 0.25rem; /* Round bottom corners */
+				margin-bottom: 0.5rem; /* Space below content when open */
+			}
+		
+			.accordion-header.active {
+				background-color: var(--accordion-header-active-bg, #d1d9e0);
+				border-bottom-left-radius: 0; /* Flatten bottom corners when active */
+				border-bottom-right-radius: 0;
+			}
+		
+			.accordion-content.active {
+				display: block; /* Show when active */
+			}
+		
+			.accordion-indicator {
+				position: absolute;
+				right: 1.25rem;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 1.2em;
+				font-weight: bold;
+				transition: transform 0.2s ease-in-out;
+			}
+		
+			/* Indicator symbols */
+			.accordion-header:not(.active) .accordion-indicator::before {
+				content: '+';
+			}
+		
+			.accordion-header.active .accordion-indicator::before {
+				content: '−'; /* Minus sign */
+			}
+		
+		
+			/* Dark Mode Accordion Adjustments */
+			.dark-mode .accordion-header, [data-theme="dark"] .accordion-header {
+				--accordion-header-bg: #343a40;
+				--accordion-border-color: #495057;
+				color: #e9ecef;
+			}
+		
+			.dark-mode .accordion-header:hover, [data-theme="dark"] .accordion-header:hover {
+				--accordion-header-hover-bg: #495057;
+			}
+		
+			.dark-mode .accordion-header.active, [data-theme="dark"] .accordion-header.active {
+				--accordion-header-active-bg: #495057;
+			}
+		
+			.dark-mode .accordion-content, [data-theme="dark"] .accordion-content {
+				--accordion-content-bg: #2d3238;
+				--accordion-border-color: #495057;
+				color: #e9ecef;
+			}
+		
+			/* Ensure nested elements inherit dark mode colors if needed */
+			.dark-mode .accordion-content p,
+			.dark-mode .accordion-content li,
+			.dark-mode .accordion-content h4,
+			.dark-mode .accordion-content h5, /* Added h5 */
+			.dark-mode .accordion-content pre,
+			.dark-mode .accordion-content code,
+			.dark-mode .accordion-content strong, /* Added strong */
+			[data-theme="dark"] .accordion-content p,
+			[data-theme="dark"] .accordion-content li,
+			[data-theme="dark"] .accordion-content h4,
+			[data-theme="dark"] .accordion-content h5, /* Added h5 */
+			[data-theme="dark"] .accordion-content pre,
+			[data-theme="dark"] .accordion-content code,
+			[data-theme="dark"] .accordion-content strong { /* Added strong */
+				color: inherit; /* Inherit from .accordion-content */
+			}
+		
+		
+			/* Styles specific to EQ-Bench 3 section content */
+		
+			/* General Content Styling */
+			.long-version-content h4 {
+				margin-top: 1.5rem; /* Add space above main headings */
+				margin-bottom: 0.75rem;
+			}
+			.long-version-content h4:first-of-type {
+				margin-top: 0; /* No extra top margin for the very first heading */
+			}
+			.analysis-img {
+				max-width: 100%;
+				height: auto;
+				display: block;
+				margin: 1rem 0; /* Adjusted margin */
+				border: 1px solid var(--border-color-subtle);
+				border-radius: 0.25rem;
+			}
+		
+			/* Intro Paragraph Styling */
+			.long-version-content .intro-paragraph {
+				font-size: 1.05em; /* Slightly larger intro text */
+				margin-bottom: 1.5rem;
+			}
+		
+			/* Key Points List Styling */
+			.long-version-content .key-points-list {
+				list-style: none; /* Remove default bullets */
+				padding-left: 0;
+				margin-bottom: 1.5rem;
+			}
+			.long-version-content .key-points-list li {
+				padding: 0.5rem 0 0.5rem 1.5rem;
+				position: relative;
+				margin-bottom: 0.25rem;
+				border-left: 3px solid var(--accordion-header-bg, #e9ecef); /* Use theme color */
+			}
+			.long-version-content .key-points-list li::before {
+				content: '✓'; /* Checkmark or other symbol */
+				position: absolute;
+				left: 0.25rem;
+				top: 0.5rem; /* Adjust vertical alignment */
+				color: var(--bs-primary);
+				font-weight: bold;
+			}
+			/* Dark mode adjustments for key points list */
+			.dark-mode .long-version-content .key-points-list li,
+			[data-theme="dark"] .long-version-content .key-points-list li {
+				border-left-color: var(--accordion-header-active-bg, #495057); /* Use active header bg for contrast */
+			}
+			.dark-mode .long-version-content .key-points-list li::before,
+			[data-theme="dark"] .long-version-content .key-points-list li::before {
+				color: var(--bs-primary-dark);
+			}
+		
+			/* Problem Comparison Grid */
+			.problem-comparison-container {
+				display: grid;
+				grid-template-columns: 1fr; /* Default to single column */
+				gap: 1rem;
+				margin: 1.5rem 0;
+			}
+			@media (min-width: 768px) { /* Apply two columns on medium screens and up */
+				.problem-comparison-container {
+					grid-template-columns: 1fr 1fr;
 				}
-			  
+			}
+			.problem-category {
+				background-color: var(--bg-color-subtle);
+				border: 1px solid var(--border-color-subtle);
+				border-radius: 0.25rem;
+				padding: 1rem;
+			}
+			.problem-category h5 {
+				margin-top: 0;
+				margin-bottom: 0.75rem;
+				font-weight: 600;
+				border-bottom: 1px solid var(--border-color-subtle);
+				padding-bottom: 0.5rem;
+				color: var(--heading-color); /* Ensure heading color */
+			}
+			.problem-category ul {
+				padding-left: 1.25rem;
+				margin-bottom: 0;
+			}
+			.problem-category ul li {
+				margin-bottom: 0.3rem;
+			}
+			/* Dark mode handled by root variables and inheritance */
+		
+			/* EQ-Bench Approach Callout */
+			.eq-bench-approach {
+				background-color: var(--accordion-content-bg, #ffffff); /* Match content background */
+				border-left: 4px solid var(--bs-info); /* Use an accent color */
+				padding: 1rem 1rem 1rem 1.5rem;
+				margin: 1.5rem 0;
+				border-radius: 0 0.25rem 0.25rem 0;
+			}
+			/* Dark mode adjustments for approach callout */
+			.dark-mode .eq-bench-approach,
+			[data-theme="dark"] .eq-bench-approach {
+				background-color: var(--accordion-content-bg, #2d3238);
+				border-left-color: var(--bs-info-dark);
+			}
+		
+			/* Authoring Process Block */
+			.authoring-process {
+				margin-top: 1rem; /* Space before this section */
+				padding: 1rem;
+				background-color: var(--bg-color-subtle);
+				border: 1px solid var(--border-color-subtle);
+				border-radius: 0.25rem;
+			}
+			.authoring-process ol {
+				margin-top: 0.75rem;
+				padding-left: 1.5rem;
+			}
+			.authoring-process ol li {
+				margin-bottom: 0.5rem;
+			}
+			/* Dark mode handled by root variables */
+		
+			/* Task Archetypes List (within Authoring Process) */
+			.task-archetypes {
+				margin-top: 1rem;
+				padding-top: 1rem;
+				border-top: 1px dashed var(--border-color-subtle); /* Separator within the block */
+			}
+			.task-archetypes ul {
+				list-style-type: disc;
+				padding-left: 1.5rem;
+			}
+			.task-archetypes ul li {
+				margin-bottom: 0.4rem;
+			}
+			/* Dark mode handled by root variables */
+		
+			/* Score Meaning Block */
+			.score-meaning {
+				margin-top: 1.5rem;
+				padding: 1rem;
+				background-color: var(--bg-color-subtle);
+				border: 1px solid var(--border-color-subtle);
+				border-radius: 0.25rem;
+			}
+			.score-meaning p:first-child {
+				margin-top: 0;
+			}
+			.score-meaning strong {
+				color: var(--heading-color); /* Make strong text stand out a bit */
+			}
+			/* Dark mode handled by root variables and inheritance */
+		
+		
+			/* Criteria Block Styling (Original) */
+			.criteria-block {
+				background-color: var(--bg-color); /* Use root variable */
+				border: 1px solid var(--border-color); /* Use root variable */
+				border-radius: 0.25rem;
+				padding: 1rem;
+				margin-bottom: 1.5rem;
+				font-family: monospace;
+				color: var(--text-color); /* Use root variable */
+			}
+			.criteria-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+				gap: 0.5rem;
+			}
+			.criteria-item {
+				padding: 0.25rem 0;
+			}
+			.criteria-list {
+				margin: 0;
+				padding-left: 1.5rem;
+			}
+			.criteria-list li {
+				padding: 0.25rem 0;
+			}
+			@media (max-width: 576px) {
 				.criteria-grid {
-				  display: grid;
-				  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-				  gap: 0.5rem;
-				}
-			  
-				.criteria-item {
-				  padding: 0.25rem 0;
-				}
-			  
-				.criteria-list {
-				  margin: 0;
-				  padding-left: 1.5rem;
-				}
-			  
-				.criteria-list li {
-				  padding: 0.25rem 0;
-				}
-			  
-				/* Dark mode compatibility */
-				.dark-mode .criteria-block, [data-theme="dark"] .criteria-block {
-				  --bg-color: #2d3238;
-				  --border-color: #495057;
-				  --text-color: #e9ecef;
-				}
-			  
-				/* Responsive adjustments */
-				@media (max-width: 576px) {
-				  .criteria-grid {
 					grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-				  }
 				}
+			}
+			/* Dark mode handled by root variables */
+			/* Specific dark mode overrides if needed (original had slightly different colors) */
+			.dark-mode .criteria-block, [data-theme="dark"] .criteria-block {
+				--bg-color: #3a4148; /* Slightly different background for nested blocks */
+				--border-color: #5a636b;
+				--text-color: #ced4da;
+				background-color: var(--bg-color); /* Apply local override */
+				border-color: var(--border-color);
+				color: var(--text-color);
+			}
+		
+		
+			/* Judging Prompt Styling (Original) */
+			.judging-prompt {
+				background-color: var(--bg-color); /* Use root variable */
+				border: 2px solid var(--border-color); /* Use root variable, maybe adjust thickness/color if needed */
+				padding: 1.5rem;
+				margin: 1.5rem 0;
+				border-radius: 0.25rem;
+				color: var(--text-color); /* Use root variable */
+				font-family: monospace;
+			}
+			.judging-prompt h4 { /* This targets h4 inside judging prompt */
+				margin-top: 0;
+				color: var(--heading-color); /* Use root variable */
+				font-weight: 600;
+			}
+			.prompt-content {
+				margin-left: 0.5rem; /* Keep original */
+			}
+			.prompt-content .raw-list {
+				padding-left: 1.5rem;
+				margin-bottom: 0.5rem;
+				white-space: pre-wrap;
+			}
+			.prompt-content p {
+				margin-top: 1.25rem; /* Keep original */
+			}
+			/* Dark mode handled by root variables */
+			/* Specific dark mode overrides if needed (original had different colors) */
+			.dark-mode .judging-prompt, [data-theme="dark"] .judging-prompt {
+				--bg-color: #3a4148;
+				--border-color: #788aa3; /* Adjusted border */
+				--text-color: #ced4da;
+				--heading-color: #e9ecef;
+				background-color: var(--bg-color); /* Apply local override */
+				border-color: var(--border-color);
+				color: var(--text-color);
+			}
+			.dark-mode .judging-prompt h4, [data-theme="dark"] .judging-prompt h4 {
+				color: var(--heading-color); /* Apply local override */
+			}
+		
+		
+			/* Adversarial Table Styling (Original) */
+			.adversarial-table {
+				width: 100%; /* Ensure table takes full width */
+				margin-bottom: 1rem; /* Consistent margin */
+				border: 1px solid var(--border-color); /* Use root variable */
+				border-collapse: collapse; /* Cleaner look */
+			}
+			.adversarial-table th,
+			.adversarial-table td {
+				padding: 0.4rem 0.55rem; /* Slightly more padding */
+				vertical-align: middle;
+				font-size: 0.85rem;
+				border: 1px solid var(--border-color); /* Use root variable */
+				text-align: left; /* Default alignment */
+				color: var(--text-color); /* Use root variable */
+			}
+			.adversarial-table thead th {
+				font-weight: bold;
+				background-color: var(--bg-color-subtle); /* Use subtle bg */
+				color: var(--heading-color); /* Use heading color */
+			}
+			.adversarial-table tbody tr:nth-child(even) {
+				background-color: var(--bg-color-subtle); /* Use subtle bg */
+			}
+			/* Dark Mode Adversarial Table Adjustments */
+			.dark-mode .adversarial-table, [data-theme="dark"] .adversarial-table {
+				border-color: #5a636b; /* Specific dark border */
+			}
+			.dark-mode .adversarial-table th,
+			.dark-mode .adversarial-table td,
+			[data-theme="dark"] .adversarial-table th,
+			[data-theme="dark"] .adversarial-table td {
+				color: #ced4da; /* Specific dark text */
+				border-color: #5a636b; /* Specific dark border */
+			}
+			.dark-mode .adversarial-table thead th,
+			[data-theme="dark"] .adversarial-table thead th {
+				background-color: #495057; /* Darker header for table */
+				color: #f8f9fa; /* Lighter text for header */
+			}
+			.dark-mode .adversarial-table tbody tr:nth-child(even),
+			[data-theme="dark"] .adversarial-table tbody tr:nth-child(even) {
+				background-color: #3a4148; /* Slightly different even row */
+			}
+		
+		</style>
 
-				/* Ensures any analysis images scale cleanly within the content column */
-				.analysis-img {
-					max-width: 100%;
-					height: auto;
-					display: block;
-					margin: 0.5rem 0;
-				}
-			  </style>
 
+		<div id="eq-bench-3" class="section">
 			<h3>💙EQ‑Bench 3</h3>
-			<!-- ─────────────────────────  WHAT & WHY  ───────────────────────── -->
-			<h4>What is EQ-Bench 3?</h4>
-			<p>
-				EQ-Bench 3 is a LLM-judged test (judged by Claude Sonnet 3.7) evaluating active emotional intelligence abilities, understanding, insight, warmth, and interpersonal skills.
-				The test places the evaluated model into challenging role-plays involving messy relationship drama, parenting decisions, conflict mediation, and high stakes workplace situations. The model must:
-				<em>(a)</em> respond in character,  
-				<em>(b)</em> spell out what it thinks everyone is feeling, and  
-				<em>(c)</em> debrief its own performance.
-				The test is constructed to measure EQ abilities in isolation (i.e. minimal conflation with other abilities like reasoning or long context performance).
-			</p>
 
-			<h4>Why measure this?</h4>
-			<p>
-				Few evals are targeting "soft skills". Part of the reason is that subjective abilities are difficult & messy to measure. EQ-Bench intends to be an automated vibe-check for these human-oriented traits and abilities.
-				
-				Figuring out how to meaningfully assess these abilities is nontrivial and still unsolved. It's surprisingly hard to come up with test questions that weaker models obviously fail at. This is because models are trained to be very good at *saying the right thing*. This is especially true for *subjective evals* like this, which don't have ground truth factual answers.
-				Our approach makes inroads into this problem by encoding a high degree of challenge into the roleplay scenarios. We trialled several question formats & topics, empirically selecting those with the highest discriminative power.</p>
-
-			<h4>What a higher score means in practice</h4>
-			<p>
-				The Elo score represents whether a model "wins" at having higher EQ than its neighbours, according to the judge.
-				To beat its neighbour, it has to score higher on several criteria (insight, social dexterity, etc), as evaluated by Sonnet 3.7. The full criteria evaluated in the pairwise judgements are listed below.
-				The resulting Elo score represents a holistic view on the model's abilities: empathy, analytical understanding, social dexterity, deep insight, pragmatism, etc. A model has to be strong across all these dimensions to be at the top of the leaderboard.
-			</p>
-
-
-
-			<!-- ─────────────────────────  HOW IT WORKS  ───────────────────────── -->
-			<h4>How it works</h4>
-			<ol>
-				<li><b>Multi-turn role-play.</b>
-					The test set contains 45 scenarios, most of which constitute pre-written prompts spanning 3 turns. The <code>user</code> messages set up the scenario, and subsequently inject conflict or misdirection, while the <code>assistant</code> (the evaluated model) must reply in-character.  
-					Every assistant reply starts with two introspection blocks:
-					"I’m thinking & feeling" and "They’re thinking & feeling", exposing the model’s reasoning and theory-of-mind understanding.</li>
-				
-				<li><b>Analysis tasks.</b>
-					The test set also contains several analytical tasks, instructing the evaluated model to identify compelling aspects in a provided roleplay transcript and to "go deep" analysing them. These tasks test psychological insight, emotional reasoning, theory of mind and academic grounding.</li>
-
-				<li><b>Rubric pass.</b>  
-					Sonnet 3.7 reads the full transcript + self-debrief and scores several criteria (e.g. Demonstrated Empathy, Depth of Insight, Boundary Setting).
-					Only some of these criteria are aggregated into the “rubric score” (0-100); the rest are to give visibility on style & tendencies.
-					When running the benchmark, users may choose to run only the rubric evaluation, or only Elo, or both. The rubric eval is about 3x cheaper and provides *absolute scores*, but is *less discriminative* at the top ability range.
-					The rubric score is not shown on the leaderboard; it's available when running the benchmark.
-				</li>
-
-				<li><b>Pairwise pass.</b>  
-					The roleplay transcripts are compared head-to-head and judged on several criteria by Sonnet 3.7.
-					The judge outputs a winner for eight criteria (see below for full list), using “+ … +++++” to denote the win margin.
-					Win margins are mapped to extra wins/losses to provide the Trueskill Elo solver more discriminate power per test item (since by default it only supports win/loss, not margins). Several rounds of matchups are conducted, moving from sparse to dense sampling, until ranks stabilise.</li>
-
-				<li><b>Score normalisation.</b> 
-					Elo scores are relative and shift around when new models are added. To compensate for this, we scale the scores by anchoring to a top & bottom reference model: o3 = 1500, llama-3.2-1b = 200.
-					Rubric scores don't have this issue and are not normalised.
-			</ol>
-
-			<!-- ─────────────────────────  COST  ───────────────────────── -->
-			<h4>Cost</h4>
-			<ul>
-				<li>One full benchmark run (rubric + pairwise) ≈ US$8 on OpenRouter.</li>
-				<li>Rubric-only ≈ US$1 per iteration.</li>
-				<li>These costs represent the judging costs; inference costs for the evaluated model will vary.</li>
-				<li>Our modified Trueskill Elo ranking is cost efficient & will scale well. It should have headroom for future models with stronger abilities.</li>
-			</ul>
-
-
-			<h4>Elo vs Rubric Distribution</h4>
-			<p>
-			The rubric score has a different distribution to the Elo score. The Elo score is more discriminative at the top-mid ability range (scores don't bunch up as much).
-			</p>
-
-			<a href="images/rubric-vs-elo.png"
-			data-lightbox="rubric-vs-elo"
-			data-title="Elo-ordered (left) vs Rubric-ordered (right) horizontal bar charts">
-			<img src="images/rubric-vs-elo.png"
-				alt="Side-by-side bar charts comparing Elo and rubric rankings"
-				class="analysis-img">
-			</a>
-
-
-
-			<h4>Rubric criteria</h5>
-			<div class="criteria-block">
-			<div class="criteria-grid">
-				<div class="criteria-item">Demonstrated Empathy</div>
-				<div class="criteria-item">Pragmatic EI</div>
-				<div class="criteria-item">Depth of Insight</div>
-				<div class="criteria-item">Social Dexterity</div>
-				<div class="criteria-item">Emotional Reasoning</div>
-				<div class="criteria-item">Message Tailoring</div>
-				<div class="criteria-item">Boundary Setting</div>
-				<div class="criteria-item">Safety Conscious</div>
-				<div class="criteria-item">Moralising</div>
-				<div class="criteria-item">Compliant</div>
-				<div class="criteria-item">Challenging</div>
-				<div class="criteria-item">Warmth</div>
-				<div class="criteria-item">Validating</div>
-				<div class="criteria-item">Analytical</div>
-				<div class="criteria-item">Reactive</div>
-				<div class="criteria-item">Conversational</div>
-				<div class="criteria-item">Humanlike</div>
-			</div>
-			</div>
-
-			<p>Note: Some criteria do not count towards score. The rubric score is calculated from: Demonstrated Empathy, Pragmatic EI, Depth of Insight, Social Dexterity, Emotional Reasoning, Message Tailoring</p>
-
-
-			<h4>Pairwise criteria</h5>
-			<div class="criteria-block">
-			<ol class="criteria-list">
-				<li>Demonstrated empathy</li>
-				<li>Pragmatic EI</li>
-				<li>Depth of insight</li>
-				<li>Social dexterity</li>
-				<li>Emotional reasoning</li>
-				<li>Appropriate validation and/or challenging for the scene</li>
-				<li>Message tailoring</li>
-				<li>Overall EQ</li>
-			</ol>
-			</div>
-
-			<h4>Judge Bias Analysis</h4>
-			<p>
-			We plot scores (elo & rubric) judged by Sonnet 3.7 against those judged by GPT-4.1 to inspect consistency and highlight potential judge-specific biases.
-			Click to view full size.
-			</p>
-			<p><strong>Elo Bias Comparison</strong></p>
-			<a href="images/judge-bias.png"
-			data-lightbox="judge-bias"
-			data-title="Scatter plot showing judge bias: Sonnet 3.7 judge vs GPT-4.1 judge">
-			<img src="images/judge-bias.png"
-				alt="Judge bias (elo) scatter plot"
-				class="analysis-img">
-			</a>
-
-			<p><strong>Rubric Bias Comparison</strong></p>
-			<a href="images/judge-bias-rubric.png"
-			data-lightbox="judge-bias-rubric"
-			data-title="Scatter plot showing judge bias: Sonnet 3.7 judge vs GPT-4.1 judge">
-			<img src="images/judge-bias-rubric.png"
-				alt="Judge bias (rubric) scatter plot"
-				class="analysis-img">
-			</a>
-
-
-			<!-- ─────────────────────────  RUBRIC VARIANCE  ───────────────────────── -->
-			<br>
-			<h4>Rubric eval variance</h4>
-			<p>
-			Running the rubric part of EQ-Bench on its own (no pairwise), we ran 10x iterations scoring <strong>gemini-2.5-flash-preview</strong> to check for per-iteration consistency. The evaluated model uses temp=0.7, min_p=0.1 for its generations, so its outputs are significantly different with each iteration. To mitigate variance we recommend running ~5 iterations to stabilise scores.
-			</p>
-
-			<p class="rubric-values" style="font-family:monospace;margin:.25rem 0;">
-			77.80&nbsp;77.60&nbsp;76.35&nbsp;78.70&nbsp;78.55&nbsp;76.85&nbsp;78.50&nbsp;77.70&nbsp;77.35&nbsp;77.70
-			</p>		
-
-			<p style="margin:0; font-size:0.9em;">
-			Mean&nbsp;77.71&nbsp;&nbsp;|&nbsp;&nbsp;Std&nbsp;dev&nbsp;0.75&nbsp;&nbsp;|&nbsp;&nbsp;Range&nbsp;76.35–78.70
-			</p>
-			<br>
-
-			<!-- ─────────────────────────  BIAS MITIGATION  ───────────────────────── -->
-			<h4>Bias mitigation</h4>
-			<ul>
-				<li><b>Length bias.</b> For pairwise judgements, responses are truncated to standardised lengths before judging. The truncation point is chosen so that nearly all outputs will be truncated, aiming for an even playing field. Truncating outputs is not ideal, but length bias is such a strong factor in pairwise eval that we opt to sacrifice some of the generated output for the sake of minimising this biasing effect. We find this to be the least-bad option, and in practice find that it doesn't sacrifice discriminative power.
-					However, for the <em>rubric eval</em>, discriminative power is a more scarce resource and length bias is much less pronounced, so in rubric scoring we retain the full length of the outputs.</li>
-				<li><b>Position bias.</b> In pairwise, every matchup is judged twice (A|B and B|A) and averaged.</li>
-				<li><b>Named participant bias.</b> We mitigate any biases from naming the models in the pairwise evalution by giving them arbitrary designators (A0488 and A0493).</li>
-			</ul>
-
-			<h4>Biases not controlled for</h4>
-			<ul>
-				<li><b>Judge self-bias / family bias:</b> We use Sonnet 3.7 as the judge for all outputs. This may introduce some bias where the judge prefers its own outputs or those of similar models. This is currently not quantified or adjusted for in this eval. Judge self bias can be in the range of 0-10% depending on the task (sometimes even negative bias!). Per our comparison of sonnet-3.7 vs gpt-4.1 as judge (see above), we see some minor discrepancies, e.g. sonnet 3.7 favouring itself by a small margin. However the discrepancies are small, with no clear pattern of self or family bias. The indications are that self or family bias are not strong factors in this eval.</li>
-				<li><b>Other judge biases:</b> LLM judges can have varying biases in how they rate: verbosity, positivity, political, cultural. We don't control for these possible biases; they are just a part of LLM judging, as personal biases are part of human judging. Subjective evals are a messy business! Set your expectations accordingly.</li>
-			</ul>
-
-
-			<!-- ─────────────────────────  EXAMPLE PROMPT  ───────────────────────── -->
-			<h4>Example pairwise judging prompt</h4>
-			<div class="judging-prompt">
-				<div class="prompt-content">
-				  [RESPONDENT A0493]<br>
-				  {conversation_history_A}<br>
-				  [/RESPONDENT A0493]<br>
-					<br>
-				  [RESPONDENT A0488]<br>
-				  {conversation_history_B}<br>
-				  [/RESPONDENT A0488]<br>
-				  
-			  
-				  <p><strong>Your task is to critically examine two respondents role-playing a challenging scenario</strong> (from Respondents A0493 and A0488), and decide which displays each trait more strongly.</p>
-			  
-				  <p><strong>Compare the relative ability of each respondent on these criteria:</strong></p>
-				  <ol>
-					<li>Demonstrated empathy (not just performative)</li>
-					<li>Pragmatic EI</li>
-					<li>Depth of insight</li>
-					<li>Social dexterity</li>
-					<li>Emotional reasoning</li>
-					<li>Appropriate validation and/or challenging for the scene</li>
-					<li>Message tailoring: Appropriate targeting of response to where the user is at</li>
-					<li>Overall EQ</li>
-				  </ol>
-			  
-				  <p><strong>Notes on the scenario to assist judging:</strong><br>
-				  {scenario_notes}</p>
-			  
-				  <p><strong>Judging instructions:</strong></p>
-				  <ul>
-					<li>You must always pick a winner for each criterion (no draws).</li>
-					<li>For the <em>"winner & disparity rating"</em> output, use a plus-based scale (“+” / “++” / “+++” / “++++” / “+++++”) after indicating the winner’s code (A0493 or A0488) to show how strongly they win that criterion.
-					  <ul>
-						<li>For example, <code>"A0391++"</code> means A0391 is somewhat stronger, while <code>"A0986+++++"</code> means A0986 is overwhelmingly stronger.</li>
-					  </ul>
-					</li>
-					<li>Responses are commonly truncated to standardise output length. Simply judge what is there.</li>
-					<li>Be aware that a highly detailed, detached analytical response to the user is not always appropriate in the context of an organic chat or a role play. This isn't a hard & fast rule; use your judgement.</li>
-					<li>The "assistant" messages as well as the debrief are authored by the assistant. Base your evaluation on the EQ displayed in their roleplay and their self assessment.</li>
-					<li>The user messages are always canned; don't judge them at all, your only focus is on the assistant.</li>
-				  </ul>
+			<div class="accordion-container">
+				<!-- Short Version -->
+				<h4 class="accordion-header" id="short-version-header">
+					Short Version (TL;DR)
+					<span class="accordion-indicator"></span>
+				</h4>
+				<div class="accordion-content" id="short-version-content">
+					<p>
+						<strong>EQ-Bench 3</strong> is an LLM-judged benchmark (using Claude Sonnet 3.7) that tests emotional intelligence (EQ) through challenging role-plays and analysis tasks. It measures empathy, social skills, and insight in scenarios like relationship conflicts and workplace dilemmas.
+					</p>
+					<p>
+						<strong>Why?</strong> Standard EQ tests are too easy for LLMs, and existing benchmarks often miss nuanced social skills crucial for human-AI interaction. EQ-Bench 3 uses difficult, free-form role-plays to better discriminate between models.
+					</p>
+					<p>
+						<strong>How it works:</strong> Models respond in-character, explain their reasoning ("I'm thinking/feeling..."), and debrief. Responses are judged via a detailed rubric and pairwise comparisons (Elo rating) against other models. Elo scores are normalized (o3=1500, llama-3.2-1b=200).
+					</p>
+					<p>
+						<strong>Key Features:</strong> Focuses on active EQ, uses challenging/discriminative scenarios, provides both rubric scores (absolute, less discriminative) and Elo scores (relative, more discriminative), includes bias mitigation (length truncation for Elo, position bias control), and offers full transcripts. Costs ~$10-15 per full run.
+					</p>
+					<p><em>Click "Long Version" below for full details on methodology, criteria, bias analysis, and limitations.</em></p>
 				</div>
-			  </div>
-			  
 
-			<br>
+				<!-- Long Version (Contains all the original detailed content) -->
+				<h4 class="accordion-header" id="long-version-header">
+					Long Version (Full Details)
+					<span class="accordion-indicator"></span>
+				</h4>
+				<div class="accordion-content" id="long-version-content">
 
-			<!-- ─────────────────────────  LIMITATIONS  ───────────────────────── -->
-			<h4>Limitations & interpretation</h4>
-			<p>
-				EQ‑Bench 3 is a <strong>subjective evaluation</strong> judged by a LLM (Sonnet 3.7).
-				As such, the results should be considered roughly indicative but not absolute truth.
-				The sample transcripts are provided so you can make your own judgements.
-				Several test items target typical LLM failure modes, like over-cautiousness from safety training. This may cause some models to be penalised more than others.
-				The Elo score isn't representing any one aspect of EQ in isolation. Rather, it's a holistic representation of active social abilities, insight, empathy and analytical understanding.				
-			</p>
-			<p>Emotional Intelligence or EQ doesn't have any ground truth or agreed upon definitions in the literature or colloquially. However there is a rich breadth of ideas about what constitutes <em>emotional intelligence</em>, which were drawn from when formulating test items. It should be noted that this benchmark doesn't represent any one theory or formulation of EQ.</p>
-			<p>The benchmark eschews *comprehensiveness* for *discriminative power*. Most language models will ace most questions typically asked on a written EQ test, which means including those low-mid difficulty questions dilutes our ability to tell models apart. Our approach of selecting for highly challenging questions may have a narrowing or biasing effect on the dimensions of EQ that are assessed.</p>
+					<!-- ─────────────────────────  WHAT & WHY  ───────────────────────── -->
+					<h4>What is EQ-Bench 3?</h4>
+					<p class="intro-paragraph">
+						EQ-Bench 3 is a LLM-judged test (judged by <strong>Claude Sonnet 3.7</strong>) evaluating active <strong>emotional intelligence</strong> abilities, understanding, insight, empathy, and interpersonal skills.
+					</p>
+					<p>
+						The test places the evaluated model into <strong>challenging role-plays</strong> involving messy relationship drama, parenting decisions, conflict mediation, and high stakes workplace situations. The model must:
+					</p>
+					<ul class="key-points-list">
+						<li><em>(a)</em> spell out what it thinks everyone is feeling,</li>
+						<li><em>(b)</em> respond in character, and</li>
+						<li><em>(c)</em> debrief its own performance.</li>
+					</ul>
+					<p>
+						The test is constructed to measure EQ abilities in isolation (i.e. minimal conflation with other abilities like reasoning or long context performance).
+					</p>
+
+					<h4>Why measure this?</h4>
+					<p>
+						Few evals are targeting "soft skills" around emotional intelligence and social skills, despite these being extremely important aspects to human-AI interactions. Part of the reason is that subjective abilities are difficult & messy to measure. EQ-Bench intends to provide an <strong>automated evaluation</strong> of these abilities, and a reliable vibe-check for these human-oriented traits and abilities.
+					</p>
+					<p>
+						Figuring out how to meaningfully assess these abilities is nontrivial and still unsolved. It's surprisingly hard to come up with test questions that weaker models obviously fail at. This is because models are trained to be very good at *saying the right thing*. This is especially true for *subjective evals* like this, which don't have ground truth factual answers.
+						Our approach makes inroads into this problem by encoding a high degree of challenge into the roleplay scenarios.
+					</p>
+
+					<!-- ─────────────────────────  THE PROBLEM  ───────────────────────── -->
+					<h4>The Problem</h4>
+
+					<div class="problem-comparison-container">
+						<div class="problem-category">
+							<h5>Traditional (human) EQ tests:</h5>
+							<ul>
+								<li>typically easy for llms</li>
+								<li>results not very interpretable</li>
+								<li>don't test active abilities</li>
+								<li>don't probe eq deeply</li>
+							</ul>
+						</div>
+						<div class="problem-category">
+							<h5>Typical LLM EQ tests:</h5>
+							<ul>
+								<li>test narrow abilities (like emotion identification, ethical dilemmas, behaviour appropriateness)</li>
+								<li>abstracted from real use cases</li>
+								<li>not challenging enough to be discriminative in top ability range</li>
+								<li>constrained to the EI level encoded in the question & gold answer</li>
+								<li>treat subjective questions as though they have factual correct/incorrect answers</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="eq-bench-approach">
+						<p>
+							<strong>EQ‑Bench3 aims to address all these points</strong> with a selection of challenging roleplay scenarios, in which the evaluated model interact organically like it would with a user or in a real situation. The output format is structured, requiring the model to elucidate what it's thinking & feeling, what the other person is thinking and feeling, and then give its response. But within this structure, it's free to write what it likes. It's this free‑form nature of the assessment task that gives us a lot of signal to assess understanding and abilities with every test item. Unlike a multiple‑choice EQ quiz, the roleplay format closely mirrors how the chatbot interacts with users in real‑world usage. <strong>We provide the full transcripts for each assessed model on the leaderboard, for visibility on how the model handled the roleplays & analysis tasks.</strong>
+						</p>
+					</div>
+
+
+					<!-- ──────────────────  HOW THE TEST SET WAS AUTHORED  ────────────────── -->
+					<h4>How the test set was authored</h4>
+
+					<div class="authoring-process">
+						<p>
+							The test went through several prototypes, most of which were discarded due to not being <strong>sufficiently discriminative</strong> for reliable rankings with good separability. Since traditional EQ test questions are typically far too easy for llms, we needed to come up with tasks that encode higher degrees of difficulty. The <em>kind</em> of difficulty is important too: we could for example create arbitrarily difficult <em>Theory of Mind</em> tasks involving multiple agents and n‑th order perspective taking. But that would strongly conflate the thing we are measuring with reasoning and memory abilities, which is not what we are aiming to assess. We want to isolate EQ abilities.
+						</p>
+						<p><strong>The iterative process went like this:</strong></p>
+						<ol>
+							<li>select a candidate task (e.g. therapy session roleplays)</li>
+							<li>evaluate a set of models with varying abilities on the task</li>
+							<li>see how well the results separate the models, and how well the rankings line up with performance on other evals</li>
+						</ol>
+						<p>
+							This eliminative process helped us to surface tasks & topics that are truly challenging and discriminative for the llms we are testing.
+						</p>
+						<div class="task-archetypes">
+							<p><strong>The final set of task archetypes we settled on were:</strong></p>
+							<ul>
+								<li>Challenging 3‑turn roleplays, often including some misdirection via unreliable narration, or towards common failure modes (like stakes recognition, safety overcompensation, over‑validating or under‑validating). These prompts were hand‑written by us and iterated on.</li>
+								<li>Mediation roleplays: the evaluated model plays a mediator in a 3‑turn roleplay with disputants. Each turn, the disputants add challenges and surprises (these responses are prewritten and always the same). These prompts were generated with the help of llms, and then edited & filtered by us.</li>
+								<li>Pure analysis, digging into some of the above roleplay outputs.</li>
+							</ul>
+						</div>
+						<p>
+							These task archetypes cover a cross‑section of EQ abilities: <strong>active social skills, insight, empathy, and deep analytical understanding.</strong>
+						</p>
+					</div>
+
+
+					<div class="score-meaning">
+						<h4>What a higher score means in practice</h4>
+						<p>
+							The <strong>Elo score</strong> represents whether a model "wins" at having higher EQ than its neighbours, according to the judge.
+							To beat its neighbour, it has to score higher on several criteria (insight, social dexterity, etc), as evaluated by Sonnet 3.7. The full criteria evaluated in the pairwise judgements are listed below.
+						</p>
+						<p>
+							The resulting Elo score represents a <strong>holistic view</strong> on the model's abilities: empathy, analytical understanding, social dexterity, deep insight, pragmatism, etc. A model has to be strong across all these dimensions to be at the top of the leaderboard.
+						</p>
+					</div>
+
+
+					<!-- ─────────────────────────  HOW IT WORKS  ───────────────────────── -->
+					<h4>How it works</h4>
+					<ol>
+						<li><b>Multi-turn role-play.</b>
+							The test set contains 45 scenarios, most of which constitute pre-written prompts spanning 3 turns. The <code>user</code> messages set up the scenario, and subsequently inject conflict or misdirection, while the <code>assistant</code> (the evaluated model) must reply in-character.
+							Every assistant reply starts with two introspection blocks:
+							"I’m thinking & feeling" and "They’re thinking & feeling", exposing the model’s reasoning and theory-of-mind understanding.</li>
+
+						<li><b>Analysis tasks.</b>
+							The test set also contains several analytical tasks, instructing the evaluated model to identify compelling aspects in a provided roleplay transcript and to "go deep" analysing them. These tasks test psychological insight, emotional reasoning, theory of mind and academic grounding.</li>
+
+						<li><b>Rubric pass.</b>
+							Sonnet 3.7 reads the full transcript + self-debrief and scores several criteria (e.g. Demonstrated Empathy, Depth of Insight, Boundary Setting).
+							Only some of these criteria are aggregated into the “rubric score” (0-100); the rest are to give visibility on style & tendencies.
+							When running the benchmark, users may choose to run only the rubric evaluation, or only Elo, or both. The rubric eval is about 3x cheaper and provides *absolute scores*, but is *less discriminative* at the top ability range.
+							The rubric score is not shown on the leaderboard; it's available when running the benchmark.
+						</li>
+
+						<li><b>Pairwise pass.</b>
+							The roleplay transcripts are compared head-to-head and judged on several criteria by Sonnet 3.7.
+							The judge outputs a winner for eight criteria (see below for full list), using “+ … +++++” to denote the win margin.
+							Win margins are mapped to extra wins/losses to provide the Trueskill Elo solver more discriminate power per test item (since by default it only supports win/loss, not margins). Several rounds of matchups are conducted, moving from sparse to dense sampling, until ranks stabilise.</li>
+
+						<li><b>Score normalisation.</b>
+							Elo scores are relative and shift around when new models are added. To mitigate this, we scale the scores by anchoring to a top & bottom reference model: o3 = 1500, llama-3.2-1b = 200.
+							Rubric scores don't have this issue and are not normalised.
+					</ol>
+
+					<!-- ─────────────────────────  COST  ───────────────────────── -->
+					<h4>Cost</h4>
+					<ul>
+						<li>One full benchmark run (rubric + pairwise) ≈ US$10-15 on OpenRouter.</li>
+						<li>Rubric-only ≈ US$1.5 per iteration.</li>
+						<li>These costs represent the judging costs; inference costs for the evaluated model will vary.</li>
+						<li>Our modified Trueskill Elo ranking is cost efficient compared to other Elo matchup variants. It should scale well to future models with stronger abilities.</li>
+					</ul>
+
+
+					<h4>Elo vs Rubric Distribution</h4>
+					<p>
+					The rubric score has a different distribution to the Elo score. The Elo score is more discriminative at the top-mid ability range (scores don't bunch up as much).
+					</p>
+
+					<a href="images/rubric-vs-elo.png"
+					data-lightbox="rubric-vs-elo"
+					data-title="Elo-ordered (left) vs Rubric-ordered (right) horizontal bar charts">
+					<img src="images/rubric-vs-elo.png"
+						alt="Side-by-side bar charts comparing Elo and rubric rankings"
+						class="analysis-img">
+					</a>
+
+
+
+					<h4>Rubric criteria</h4>
+					<div class="criteria-block">
+					<div class="criteria-grid">
+						<div class="criteria-item">Demonstrated Empathy</div>
+						<div class="criteria-item">Pragmatic EI</div>
+						<div class="criteria-item">Depth of Insight</div>
+						<div class="criteria-item">Social Dexterity</div>
+						<div class="criteria-item">Emotional Reasoning</div>
+						<div class="criteria-item">Message Tailoring</div>
+						<div class="criteria-item">Boundary Setting</div>
+						<div class="criteria-item">Safety Conscious</div>
+						<div class="criteria-item">Moralising</div>
+						<div class="criteria-item">Compliant</div>
+						<div class="criteria-item">Challenging</div>
+						<div class="criteria-item">Warmth</div>
+						<div class="criteria-item">Validating</div>
+						<div class="criteria-item">Analytical</div>
+						<div class="criteria-item">Reactive</div>
+						<div class="criteria-item">Conversational</div>
+						<div class="criteria-item">Humanlike</div>
+					</div>
+					</div>
+
+					<p>Note: Some rubric criteria do not count towards the final score; they are assessed to get visibility on style & tendencies. The rubric score is calculated from: Demonstrated Empathy, Pragmatic EI, Depth of Insight, Social Dexterity, Emotional Reasoning, Message Tailoring</p>
+
+
+					<h4>Pairwise criteria</h4>
+					<p>We use a leaner set of criteria for pairwise evaluation, since we don't need to include all the "personality" probes from the rubric eval that are displayed on the leaderboard.</p>
+					<div class="criteria-block">
+					<ol class="criteria-list">
+						<li>Demonstrated empathy</li>
+						<li>Pragmatic EI</li>
+						<li>Depth of insight</li>
+						<li>Social dexterity</li>
+						<li>Emotional reasoning</li>
+						<li>Appropriate validation and/or challenging for the scene</li>
+						<li>Message tailoring</li>
+						<li>Overall EQ</li>
+					</ol>
+					</div>
+
+					<h4>Judge Bias Analysis</h4>
+					<p>
+					We plot scores (Elo & rubric) judged by Sonnet 3.7 against those judged by GPT-4.1 to inspect consistency and highlight potential judge-specific biases.
+					Click to view full size.
+					</p>
+					<p><strong>Elo Bias Comparison</strong></p>
+					<a href="images/judge-bias.png"
+					data-lightbox="judge-bias"
+					data-title="Scatter plot showing judge bias: Sonnet 3.7 judge vs GPT-4.1 judge">
+					<img src="images/judge-bias.png"
+						alt="Judge bias (elo) scatter plot"
+						class="analysis-img">
+					</a>
+
+					<p><strong>Rubric Bias Comparison</strong></p>
+					<a href="images/judge-bias-rubric.png"
+					data-lightbox="judge-bias-rubric"
+					data-title="Scatter plot showing judge bias: Sonnet 3.7 judge vs GPT-4.1 judge">
+					<img src="images/judge-bias-rubric.png"
+						alt="Judge bias (rubric) scatter plot"
+						class="analysis-img">
+					</a>
+
+
+					<!-- ─────────────────────────  RUBRIC VARIANCE  ───────────────────────── -->
+					<br>
+					<h4>Rubric score repeatability</h4>
+					<p>
+					Running the rubric part of EQ-Bench on its own (no pairwise elo), we ran 10x iterations scoring <strong>gemini-2.5-flash-preview</strong> to check for per-iteration consistency. For this validation we used sonnet-3.7 as judge. The evaluated model uses temp=0.7, min_p=0.1 for its generations, so its outputs are significantly different with each iteration.
+					</p>
+
+					<p class="rubric-values" style="font-family:monospace;margin:.25rem 0;">
+					77.80 77.60 76.35 78.70 78.55 76.85 78.50 77.70 77.35 77.70
+					</p>
+					<p style="margin:0; font-size:0.9em;">
+					Mean 77.71  |  Std dev 0.75  |  Range 76.35–78.70
+					</p>
+					<p>Interpretation: The degree of variance in scores is not large, but to mitigate variance we recommend running 5+ iterations to stabilise scores closer to the true mean.
+
+					<h4>Elo repeatability</h4>
+					<p>
+						To examine Elo repeatability, we ran several iterations of the full benchmark, evaluating gemini-2.5-flash-preview. The Elo matchups were against two anchor models, and also itself (the baseline). For this test, we used gemini-2.5-flash-preview as judge, for cost reasons. We expect sonnet 3.7, which is the judge used on the leaderboard, will have a tighter spread of values. If you have the budget for it, Elo scores & rankings can be stabilised further by simply running the benchmark with <code>--iterations n</code>.
+					</p>
+					<a href="images/eqbench3_elo_repeatability.png"
+					data-lightbox="eqbench3_elo_repeatability"
+					data-title="EQBench3 Elo repeatability over several iterations">
+					<img src="images/eqbench3_elo_repeatability.png"
+						alt="EQBench3 Elo Repeatability Plot"
+						class="analysis-img">
+					</a>
+
+					<br>
+
+					<!-- ─────────────────────────  BIAS MITIGATION  ───────────────────────── -->
+					<h4>Bias mitigation</h4>
+					<ul>
+						<li><b>Length bias.</b> For pairwise judgements, responses are truncated to standardised lengths before judging. The truncation point is chosen so that nearly all outputs will be truncated, aiming for an even playing field. Truncating outputs is not ideal, but length bias is such a strong factor in pairwise eval that we opt to sacrifice some of the generated output for the sake of minimising this biasing effect. We find this to be the least-bad option, and in practice find that it doesn't sacrifice discriminative power.
+							However, for the <em>rubric eval</em>, discriminative power is a more scarce resource and length bias is much less pronounced, so in rubric scoring we retain the full length of the outputs.</li>
+						<li><b>Position bias.</b> In pairwise, every matchup is judged twice (A|B and B|A) and averaged.</li>
+						<li><b>Named participant bias.</b> We mitigate any biases from naming the models in the pairwise evalution by giving them arbitrary designators (A0488 and A0493).</li>
+					</ul>
+
+					<h4>Biases not controlled for</h4>
+					<ul>
+						<li><b>Judge self-bias / family bias:</b> We use Sonnet 3.7 as the judge for all outputs. This may introduce some bias where the judge prefers its own outputs or those of similar models. This is currently not quantified or adjusted for in this eval. Judge self bias can be in the range of 0-10% depending on the task (sometimes even negative bias!). Per our comparison of sonnet-3.7 vs gpt-4.1 as judge (see above), we see some minor discrepancies, e.g. sonnet 3.7 favouring itself by a small margin. However the discrepancies are small, with no clear pattern of self or family bias. The indications are that self or family bias are not strong factors in this eval.</li>
+						<li><b>Other judge biases:</b> LLM judges can have varying biases in how they rate: verbosity, positivity, political, cultural. We don't control for these possible biases; they are just a part of LLM judging, as personal biases are part of human judging. Subjective evals are a messy business! Set your expectations accordingly.</li>
+					</ul>
+
+
+					<!-- ─────────────────────────  EXAMPLE PROMPT  ───────────────────────── -->
+					<h4>Example pairwise judging prompt</h4>
+					<div class="judging-prompt">
+						<div class="prompt-content">
+						[RESPONDENT A0493]<br>
+						{conversation_history_A}<br>
+						[/RESPONDENT A0493]<br>
+							<br>
+						[RESPONDENT A0488]<br>
+						{conversation_history_B}<br>
+						[/RESPONDENT A0488]<br>
+
+
+						<p><strong>Your task is to critically examine two respondents role-playing a challenging scenario</strong> (from Respondents A0493 and A0488), and decide which displays each trait more strongly.</p>
+
+						<p><strong>Compare the relative ability of each respondent on these criteria:</strong></p>
+						<ol>
+							<li>Demonstrated empathy (not just performative)</li>
+							<li>Pragmatic EI</li>
+							<li>Depth of insight</li>
+							<li>Social dexterity</li>
+							<li>Emotional reasoning</li>
+							<li>Appropriate validation and/or challenging for the scene</li>
+							<li>Message tailoring: Appropriate targeting of response to where the user is at</li>
+							<li>Overall EQ</li>
+						</ol>
+
+						<p><strong>Notes on the scenario to assist judging:</strong><br>
+						{scenario_notes}</p>
+
+						<p><strong>Judging instructions:</strong></p>
+						<ul>
+							<li>You must always pick a winner for each criterion (no draws).</li>
+							<li>For the <em>"winner & disparity rating"</em> output, use a plus-based scale (“+” / “++” / “+++” / “++++” / “+++++”) after indicating the winner’s code (A0493 or A0488) to show how strongly they win that criterion.
+							<ul>
+								<li>For example, <code>"A0391++"</code> means A0391 is somewhat stronger, while <code>"A0986+++++"</code> means A0986 is overwhelmingly stronger.</li>
+							</ul>
+							</li>
+							<li>Responses are commonly truncated to standardise output length. Simply judge what is there.</li>
+							<li>Be aware that a highly detailed, detached analytical response to the user is not always appropriate in the context of an organic chat or a role play. This isn't a hard & fast rule; use your judgement.</li>
+							<li>The "assistant" messages as well as the debrief are authored by the assistant. Base your evaluation on the EQ displayed in their roleplay and their self assessment.</li>
+							<li>The user messages are always canned; don't judge them at all, your only focus is on the assistant.</li>
+						</ul>
+						</div>
+					</div>
+
+
+					<br>
+
+					<h4>Adversarial Prompting</h4>
+					<p>Several adversarial prompting strategies were attempted, to probe whether the judge can be trivially exploited for higher scores. Note that the pairwise (Elo) evaluation pipeline truncates outputs to a standardised length before judging, but the rubric evaluation does not.
+					</p>
+					<p>Each of these probes was repeated for 10 iterations, with the average of these results shown. We use gemini-2.5-flash as judge, to keep costs manageable.</p>
+					<!-- 1️⃣ Gemini-Flash experiments -->
+					<p class="small mb-2">
+					<strong>Test model:</strong> google/gemini-2.5-flash-preview  | 
+					<strong>Judge:</strong> google/gemini-2.5-flash-preview<br>
+					<table class="table table-sm table-bordered adversarial-table mb-4">
+					<thead class="table-light">
+						<tr>
+						<th style="width:55%">Prompt tweak (short label)</th>
+						<th style="width:22%">Rubric Δ %</th>
+						<th style="width:23%">Elo Δ %</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<td>Be <em>extremely warm & validating</em></td>
+						<td class="text-danger">−0.25 %</td>
+						<td class="text-success">+0.76 %</td>
+						</tr>
+						<tr>
+						<td>Be <em>challenging</em> where appropriate</td>
+						<td class="text-danger">−0.06 %</td>
+						<td class="text-danger">−0.17 %</td>
+						</tr>
+						<tr>
+						<td>Be <em>strongly challenging</em> <strong>or</strong> <em>warmly validating</em> as appropriate</td>
+						<td class="text-danger">−0.52 %</td>
+						<td class="text-danger">−1.32 %</td>
+						</tr>
+						<tr>
+						<td>Be <em>strongly challenging</em></td>
+						<td class="text-danger">−1.08 %</td>
+						<td class="text-danger">−2.04 %</td>
+						</tr>
+						<tr>
+						<td>Respond <em>concisely</em> (no bloat)</td>
+						<td class="text-danger">−0.60 %</td>
+						<td class="text-danger">−0.41 %</td>
+						</tr>
+						<tr>
+						<td>Respond in <em>100 words per section</em></td>
+						<td class="text-danger">−3.02 %</td>
+						<td class="text-danger">−4.69 %</td>
+						</tr>
+						<tr>
+							<td>Write <em>extremely thorough & lengthy</em> responses</td>
+							<td class="text-danger">−0.16 %</td>
+							<td class="text-danger">-0.49 %</td>
+						</tr>
+					</tbody>
+					</table>
+
+					<!-- 2️⃣ “Worst-case” probe: DeepSeek-R1 vs Sonnet judge -->
+					<p>We selected the most promising adversarial probe for inflating scores, and applied it to a "worst case" model. That being deepseek r1, whose baseline scores are relatively low on warmth & validation, so is most likely to benefit from a system prompt instructing it to express these traits strongly. We repeat this test 5x, using sonnet-3.7 as judge to align with leaderboard conditions:</p>
+					<p class="small mb-2">
+					<strong>Test model:</strong> deepseek/deepseek-r1  | 
+					<strong>Judge:</strong> anthropic/claude-3.7-sonnet
+					</p>
+
+					<table class="table table-sm table-bordered adversarial-table mb-4">
+					<thead class="table-light">
+						<tr>
+						<th style="width:55%">Prompt tweak (short label)</th>
+						<th style="width:22%">Rubric Δ %</th>
+						<th style="width:23%">Elo Δ %</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<td>Be <em>extremely warm & validating</em></td>
+						<td class="text-success">+1.30 %</td>
+						<td class="text-success">+2.80 %</td>
+						</tr>
+					</tbody>
+					</table>
+
+					<p><strong>Interpretation:</strong> The judge appears to prefer r1's outputs when it's been instructed to be "extremely warm & validating" in its responses to the other roleplay participant. This might represent a bias with the judge, or a genuine improvement in its responses (since baseline r1 scored low on warmth & validation). In these brief tests, we intentionally tried to engineer worst cases for exploiting the eval to trivially inflate scores. Prompt perturbations of this sort are known to produce large swings in other evals (in the order of 5+%). The highest uplift we saw (1.3% for rubric and 2.8% for elo) is significant, but not indicative of a strongly exploitable vector. This suggests the eval is robust to exploitation at least in these directions we tested.</p>
+					<p>Note that we only tested potential exploits by injecting instructions into the system prompt. Further exploration is needed to examine whether the eval is exploitable through fine tuning.</p>
+
+					<!-- ─────────────────────────  LIMITATIONS  ───────────────────────── -->
+					<h4>Limitations</h4>
+					<p>
+						EQ‑Bench 3 is a <strong>subjective evaluation</strong> judged by a LLM (Sonnet 3.7).
+						As such, the results should be considered roughly indicative but not absolute truth.
+						The sample transcripts are provided so you can make your own judgements.
+						Several test items target typical LLM failure modes, like over-cautiousness from safety training. This may cause some models to be penalised more than others.
+						The Elo score isn't representing any one aspect of EQ in isolation. Rather, it's a holistic representation of active social abilities, insight, empathy and analytical understanding.
+					</p>
+					<p>Emotional Intelligence or EQ doesn't have any ground truth or agreed upon definitions in the literature or colloquially. However there is a rich breadth of ideas about what constitutes <em>emotional intelligence</em>, which were drawn from when formulating test items. It should be noted that this benchmark doesn't represent any one theory or formulation of EQ.</p>
+					<p>The test set is relatively small (45 items) and eschews *comprehensiveness* for *discriminative power*. We took the approach of authoring a small number of highly challenging test items, because traditional EQ test questions are far too easy for modern LLMs and so not discriminative. We compensate for the small test set size by having each assessment be multi-turn, producing a lot of assessable signal in the form of per-response internal thoughts and a self-debrief. We also use a modification of the Trueskill Elo solver that allows it to incorporate win margins, providing better discriminative power per test item.</p>
+
+				</div> <!-- End Long Version Content -->
+			</div> <!-- End Accordion Container -->
 
 			<!-- ─────────────────────────  HOW TO RUN  ───────────────────────── -->
+			<!-- Moved outside the accordion -->
 			<h4>Source code</h4>
-			<p><em>Coming soon.</em></p>			
-		</div>
+			<p><a href="https://github.com/EQ-bench/eqbench3" target="_blank">https://github.com/EQ-bench/eqbench3</a></p>
+		</div> <!-- End EQ-Bench 3 Section -->
+
+
+
+
 
 		
 		
 		
 		<div id="eq-bench" class="section">
-			<h3>💗EQ-Bench</h3>
+			<h3>💗EQ-Bench (legacy)</h3>
 			<p>EQ-Bench is a benchmark for language models designed to assess emotional intelligence.</p>
 			<p>Why emotional intelligence? One reason is that it represents a subset of abilities that are important for the user experience, and which isn't explicitly tested by other benchmarks. Another reason is that it's not trivial to improve scores by fine tuning for the benchmark, which makes it harder to "game" the leaderboard.</p>
-			<p>EQ-Bench is a little different from traditional psychometric tests. It uses a specific question format, in which the subject has to read a dialogue then rate the intensity of possible emotional responses of one of the characters. Every question is interpretative and assesses the ability to predict the magnitude of the 4 presented emotions. The test is graded without the need for a judge (so there is no length bias). It's cheap to run (only 171 questions), and produces results that correlate strongly with human preference (Arena ELO) and multi-domain benchmarks like MMLU.</p>
+			<p>EQ-Bench is a little different from traditional psychometric tests. It uses a specific question format, in which the subject has to read a dialogue then rate the intensity of possible emotional responses of one of the characters. Every question is interpretative and assesses the ability to predict the magnitude of the 4 presented emotions. The test is graded without the need for a judge (so there is no length bias). It's cheap to run (only 171 questions), and produces results that correlate strongly with human preference (Arena Elo) and multi-domain benchmarks like MMLU.</p>
 			<p>You can run the benchmark on your own models or validate the leaderboard scores using the code in the github repo above.</p>
 			<p>If you would like to see a model on the leaderboard, get in touch and suggest it!</p>
 			<br>
@@ -683,7 +1265,7 @@ Coefficient of Variation: 0.0181
 			  <strong>Final Judgemark Score</strong>:  
 			  After scoring all stories from multiple writers, we track how the judge’s ratings compare to known references 
 			  and how well they separate the better texts from weaker ones. We also measure how consistently the judge’s 
-			  rankings repeat if we prompt it again, and compute correlation with human preference rankings (per <a href="https://lmarena.ai/" target="_blank">Chatbot Arena</a> ELO scores).
+			  rankings repeat if we prompt it again, and compute correlation with human preference rankings (per <a href="https://lmarena.ai/" target="_blank">Chatbot Arena</a> Elo scores).
 			  The final Judgemark formula is a weighted sum of these computed metrics. See the formula at the bottom of the leaderboard page <a href="/judgemark-v2.html">here.</a>
 			</p>
 		  
@@ -854,6 +1436,126 @@ Coefficient of Variation: 0.0181
 		<hr>
 	</div>
 	</div>
+
+
+	<script>
+		$(document).ready(function() {
+			// Accordion Logic
+			$('.accordion-header').on('click', function() {
+				const $thisHeader = $(this);
+				const $thisContent = $thisHeader.next('.accordion-content');
+		
+				// If this header is already active, do nothing (or optionally collapse it)
+				// To collapse if clicked again, uncomment the next lines:
+				// if ($thisHeader.hasClass('active')) {
+				//     $thisHeader.removeClass('active');
+				//     $thisContent.removeClass('active').slideUp(300); // Use slideUp for animation
+				//     return;
+				// }
+		
+				// If we want only one section open at a time:
+				const $container = $thisHeader.closest('.accordion-container');
+				const $activeHeader = $container.find('.accordion-header.active');
+				const $activeContent = $container.find('.accordion-content.active');
+		
+				// Deactivate and hide the currently active section (if it's not the one clicked)
+				if ($activeHeader.length > 0 && !$activeHeader.is($thisHeader)) {
+					$activeHeader.removeClass('active');
+					// $activeContent.removeClass('active').slideUp(300); // Use slideUp for animation
+					$activeContent.removeClass('active'); // Use this if not using slideUp/Down
+				}
+		
+				// Activate and show the clicked section
+				$thisHeader.addClass('active');
+				$thisContent.addClass('active').show();    // ← ensures it’s visible
+
+			});
+
+			const deepLink = window.location.hash;   // e.g. "#long-version-header"
+
+
+
+			function openAccordion(headerId) {
+				const $hdr = $('#' + headerId);
+				if ($hdr.length && !$hdr.hasClass('active')) $hdr.trigger('click');
+				}
+
+				// respond to in-page TOC clicks
+				$('.toc-link').on('click', function (e) {
+				e.preventDefault();                          // keep control of timing
+				const targetId = this.getAttribute('href').substring(1);
+
+				openAccordion(targetId);                     // expand the right panel
+
+				// scroll only after layout has updated
+				setTimeout(() => {
+					document.getElementById(targetId)
+							.scrollIntoView({behavior:'smooth', block:'start'});
+					history.pushState(null, '', '#' + targetId);   // update URL bar
+				}, 50);                                        // 50 ms is plenty
+				});
+
+
+				// always show the Short Version panel on first load
+				openAccordion('short-version-header');
+
+				// honour deep links (only when there *is* a hash in the URL)
+				if (deepLink) {
+				openAccordion(deepLink.substring(1));                 // expand the right panel
+				setTimeout(() => {
+					document
+					.querySelector(deepLink)
+					.scrollIntoView({behavior: 'smooth', block: 'start'});
+				}, 0);
+			}
+
+
+
+			// --- initial open panel, honouring any #hash in the URL ---			
+			openAccordion(initialHash.substring(1));   // open + show
+
+
+		
+			// --- Keep your existing dark mode toggle and email script ---
+			const darkModeToggle = document.getElementById('darkModeToggle');
+			const toggleLabel = document.getElementById('toggleLabel');
+			const currentTheme = localStorage.getItem('theme');
+		
+			if (currentTheme === 'dark') {
+				document.body.classList.add('dark-mode');
+				darkModeToggle.checked = true;
+				toggleLabel.textContent = 'Dark';
+			} else {
+				toggleLabel.textContent = 'Light';
+			}
+		
+			darkModeToggle.addEventListener('change', function() {
+				if (this.checked) {
+					document.body.classList.add('dark-mode');
+					localStorage.setItem('theme', 'dark');
+					toggleLabel.textContent = 'Dark';
+				} else {
+					document.body.classList.remove('dark-mode');
+					localStorage.setItem('theme', 'light');
+					toggleLabel.textContent = 'Light';
+				}
+			});
+		
+			// Email obfuscation
+			var eml = "sam.paech";
+			var dom = "gmail.com";
+			document.getElementById("email").innerHTML = '<a href="mailto:' + eml + '@' + dom + '">' + 'Email' + '</a>';
+		
+			// Expando for citations
+			$('#expando-btn').on('click', function() {
+				$('.expando-content').slideToggle();
+			});
+			$('.expando-content').hide(); // Initially hide citations
+		
+		});
+	</script>
+
+
 
 	<!-- jQuery and Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

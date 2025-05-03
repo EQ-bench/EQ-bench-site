@@ -302,7 +302,7 @@
     .error-bar {
       position: absolute;
       top: 50%; /* Center vertically */
-      height: 4px; /* Thickness of the error bar */
+      height: 2px; /* Thickness of the error bar */
       background-color: rgba(0, 0, 0, 0.4); /* Default for light mode */
       transform: translateY(-50%);
       z-index: 2; /* Behind text and main bar gradient */
@@ -614,15 +614,24 @@ body.eqbench3-page #leaderboard tfoot th {
 /* pointer cursor only on feature cells (not entire row) */
 body.eqbench3-page #leaderboard tbody td.feature-cell { cursor: pointer; }
 
-/* border-only highlight on the whole row */
+/* one-piece row highlight – inset, 50 % transparent, shows over every cell  */
 body.eqbench3-page #leaderboard tbody tr.selected-row{
-  outline: 2px solid #ffffff;      /* light-mode mid-grey */
-  outline-offset: -2px;
+  position: relative;                       /* anchor the pseudo-element   */
 }
-body.dark-mode.eqbench3-page #leaderboard tbody tr.selected-row{
-  outline: 2px solid #c1c1c1;      /* white in dark mode  */
-  outline-offset: -2px;
+
+/* draw the border after all the cells so nothing can cover it */
+body.eqbench3-page #leaderboard tbody tr.selected-row::after{
+  content: "";
+  position: absolute;
+  inset: 0;                                 /* full width & height of row */
+  border: 2px solid rgba(150,150,150,.5);   /* light-mode, 50 % opacity   */
+  pointer-events: none;                     /* keep row clickable         */
 }
+
+body.dark-mode.eqbench3-page #leaderboard tbody tr.selected-row::after{
+  border-color: rgba(255,255,255,.2);       /* white, 50 % opacity        */
+}
+
 
 /* sticky inline header cloned from thead */
 body.eqbench3-page #leaderboard tbody tr.floating-header-row th{
