@@ -91,7 +91,13 @@
      body.eqbench3-page #leaderboard thead th:first-child, /* Model */
      body.eqbench3-page #leaderboard thead th:nth-last-child(2) /* Elo */
      {
-        text-align: left;
+        text-align: left;        
+     }
+
+     body.eqbench3-page #leaderboard thead th:nth-last-child(2) /* Elo */
+     {
+      width: 100%;
+
      }
 
 
@@ -353,14 +359,14 @@
       #leaderboard tbody td .cell-content {
         min-height: 3.5em; /* Increased height */
         line-height: 1.3em;
-        width: 100%;
+        /*width: 100%;*/
         padding: 0.4em;
         box-sizing: border-box;
         justify-content: center; /* Center most content */
       }
       /* Model name specific adjustments */
       #leaderboard tbody td:first-child .cell-content {
-        max-width: 150px; /* Limit width */
+        max-width: 180px; /* Limit width */
         white-space: normal; /* Ensure wrapping */
         word-wrap: break-word;
         justify-content: flex-start; /* Keep left-aligned */
@@ -448,20 +454,21 @@ body.eqbench3-page #leaderboard tbody td .cell-content {
     justify-content: center;      /* centre most cells by default   */
     min-height: 3em;              /* ← consistent row height        */
     line-height: 1.3em;
-    width: 100%;
+    /*width: 100%;*/
     padding: 0.2em 0.4em;         /* ← trimmed top/bottom padding   */
     box-sizing: border-box;
 }
 
 /* Keep model names and the two score columns left‑aligned         */
 body.eqbench3-page #leaderboard tbody td:first-child .cell-content {
-    max-width: none !important;
+    max-width: 180px;
+    min-width: 180px;
     justify-content: flex-start;
     word-wrap: break-word;
 }
 
 body.eqbench3-page #leaderboard tbody td:nth-last-child(2) .cell-content {
-    justify-content: flex-start;  /* Elo Score Column               */
+    justify-content: flex-start;  /* Elo Score Column               */    
 }
 
 /* Make sure the bar container still stretches the full width      */
@@ -476,9 +483,7 @@ body.eqbench3-page #leaderboard tbody td .cell-content .score-bar-container {
 /* Abilities & Sample columns ⇒ “shrink‑to‑fit” on every screen  */
 /* ───────────────────────────────────────────────────────────── */
 body.eqbench3-page #leaderboard thead th:nth-child(2),       /* Abilities header */
-body.eqbench3-page #leaderboard tbody td:nth-child(2),       /* Abilities cells  */
-body.eqbench3-page #leaderboard thead th:last-child,         /* Sample header    */
-body.eqbench3-page #leaderboard tbody td:last-child          /* Sample cells     */
+body.eqbench3-page #leaderboard tbody td:nth-child(2)       /* Abilities cells  */
 {
     width: 1px !important;          /* lets table algorithm compress them   */
     padding-left: 4px !important;   /* just a sliver of space – tweak if you */
@@ -652,6 +657,15 @@ body.eqbench3-page #leaderboard tbody tr.floating-header-row th.feature-header{
 }
 
 
+/* invisible zero-height row that fixes the stripe parity */
+#leaderboard tbody tr.stripe-buffer-row,
+#leaderboard tbody tr.stripe-buffer-row td {
+  height: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  visibility: hidden;     /* keeps it out of sight but in the DOM flow */
+}
+
 
 
 
@@ -705,7 +719,7 @@ body.eqbench3-page #leaderboard tbody tr.floating-header-row th.feature-header{
     </div>
 
     <div class="table-responsive">
-      <table id="leaderboard" class="table table-striped table-bordered"> <!-- style="width:100%;" removed, handled by CSS -->
+      <table id="leaderboard" class="table table-striped table-bordered">
         <thead>
           <tr>
             <!-- Col 0 --><th>Model</th>
