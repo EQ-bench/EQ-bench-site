@@ -250,13 +250,12 @@
       position: relative; /* Needed for score bar container */
     }
     /* Left align model name */
-    #leaderboard tbody td:first-child .cell-content {
-      justify-content: flex-start;
-      white-space: normal; /* Allow model name wrapping by default */
-      word-wrap: break-word;
+    #leaderboard tbody td:first-child .cell-content{
+        flex: 1 1 auto;   /* take whatever space is available, shrink if needed */
+        min-width: 0;     /* allow shrinking inside the flex row                */
+        max-width: none;  /* remove the 180 px corset                            */
+        gap: .3rem;       /* keeps a little space between name and chart icon   */
     }
-    /* Center icons */
-    #leaderboard tbody td:nth-child(2) .cell-content {} /* Abilities */
 
     /* Left align score bars */
     #leaderboard tbody td:nth-last-child(2) .cell-content { /* Elo */
@@ -365,12 +364,7 @@
         justify-content: center; /* Center most content */
       }
       /* Model name specific adjustments */
-      #leaderboard tbody td:first-child .cell-content {
-        max-width: 180px; /* Limit width */
-        white-space: normal; /* Ensure wrapping */
-        word-wrap: break-word;
-        justify-content: flex-start; /* Keep left-aligned */
-      }
+
       /* Keep scores left-aligned */
       #leaderboard tbody td:nth-last-child(2) .cell-content { /* Elo */
          justify-content: flex-start;
@@ -461,10 +455,16 @@ body.eqbench3-page #leaderboard tbody td .cell-content {
 
 /* Keep model names and the two score columns left‑aligned         */
 body.eqbench3-page #leaderboard tbody td:first-child .cell-content {
-    max-width: 180px;
-    min-width: 180px;
+    /*max-width: 180px;*/
+    /*min-width: 150px;*/
     justify-content: flex-start;
     word-wrap: break-word;
+}
+
+@media (min-width: 1049px) {
+  body.eqbench3-page #leaderboard tbody td:first-child .cell-content {
+      min-width: 150px;
+  }
 }
 
 body.eqbench3-page #leaderboard tbody td:nth-last-child(2) .cell-content {
@@ -666,7 +666,20 @@ body.eqbench3-page #leaderboard tbody tr.floating-header-row th.feature-header{
   visibility: hidden;     /* keeps it out of sight but in the DOM flow */
 }
 
+/* ── model column may wrap ─────────────────────────────────────── */
+body.eqbench3-page #leaderboard tbody td:first-child .cell-content{
+    white-space: normal !important;   /* allow line-breaks          */
+    /* keep the flex stuff we added earlier … */
+    flex: 1 1 auto;
+    /*min-width: 0;*/
+    gap: .3rem;                       /* space before the chart icon */
+}
 
+/* give the browser break-points inside the long IDs */
+body.eqbench3-page #leaderboard tbody td:first-child .cell-content a{
+    overflow-wrap: anywhere;
+    word-break: break-word;           /* fallback for older browsers */
+}
 
 
   </style>

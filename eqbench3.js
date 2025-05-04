@@ -6,38 +6,39 @@
 
 
 leaderboardDataEQBench3 = `model_name,elo_norm,rubric_0_100,humanlike,safe,assertive,social_iq,warm,analytical,insightful,empathy,compliant,moral,pragmatic,ci_low_norm,ci_high_norm
-o3,1500.0,87.9,16.74,16.04,14.00,16.62,16.02,18.76,18.27,17.96,12.12,7.40,17.04,1449.1,1550.9
-chatgpt-4o-latest-2025-03-27,1261.0,84.5,16.52,15.19,13.27,16.52,16.35,17.81,17.30,17.69,13.46,8.62,16.96,1226.5,1295.4
-chatgpt-4o-latest-2025-04-25,1255.5,83.2,15.94,16.00,12.35,16.02,16.19,17.69,17.04,17.35,13.96,7.96,16.46,1217.6,1293.4
-openai/o4-mini,1244.2,81.3,15.10,15.85,12.88,15.40,15.33,18.08,16.91,16.62,13.65,8.65,16.31,1210.8,1277.6
-Qwen/Qwen3-235B-A22B,1197.0,82.8,16.73,15.35,14.25,16.81,15.87,18.35,17.26,17.92,13.19,8.73,17.12,1155.5,1238.6
-deepseek-ai/DeepSeek-R1,1185.1,83.5,16.29,15.42,13.60,16.33,15.48,18.62,17.44,17.54,14.04,8.46,16.69,1147.6,1222.5
-gpt-4.1,1168.7,82.3,16.29,15.38,12.40,15.88,15.96,18.00,17.00,17.12,13.19,7.85,16.19,1131.8,1205.7
-gemini-2.5-pro-preview-03-25,1152.9,83.0,16.44,15.81,12.56,16.52,15.98,18.46,17.16,17.77,12.96,6.85,17.15,1117.1,1188.7
-deepseek-ai/DeepSeek-V3-0324,1146.2,75.6,13.94,14.88,12.15,13.37,13.38,17.35,15.98,15.00,11.31,8.65,14.04,1112.2,1180.3
-qwen/qwq-32b,1099.6,79.9,15.87,15.54,13.98,15.77,15.25,18.46,16.73,17.08,13.50,9.35,16.35,1068.5,1130.6
-gpt-4.1-mini,1078.4,81.4,15.87,15.31,12.27,16.00,16.21,17.77,16.71,17.27,14.08,7.62,16.12,1048.6,1108.2
-gpt-4.5-preview-2025-02-27,1068.6,80.6,15.50,14.77,12.37,15.33,15.33,17.96,16.78,16.85,14.23,8.35,15.85,1040.8,1096.5
-claude-3-5-sonnet-20241022,1059.4,75.3,15.37,15.65,12.85,14.54,14.15,18.00,15.96,16.00,13.00,8.77,15.00,1023.4,1095.4
-claude-3-7-sonnet-20250219,1051.2,78.8,16.06,15.35,12.69,15.29,14.90,18.23,16.49,16.42,12.73,8.85,15.77,1023.5,1078.8
-Qwen/Qwen3-32B,1040.5,76.8,15.35,15.69,13.81,15.44,14.79,18.31,16.24,16.54,13.77,9.04,15.77,1005.4,1075.5
-google/gemma-3-27b-it,1037.6,75.6,15.67,15.46,12.85,14.94,14.75,18.04,15.80,16.27,13.38,9.04,15.35,1008.3,1066.8
-gemini-2.5-flash-preview,1004.1,78.7,15.88,15.23,12.19,15.90,15.62,18.04,16.13,17.12,14.19,7.35,16.31,975.7,1032.5
-grok-3-beta,1001.9,77.5,15.54,15.85,11.98,14.94,15.46,17.77,15.98,16.31,13.62,8.04,15.19,973.7,1030.1
-grok-3-mini-beta,957.2,79.0,15.12,15.58,12.23,15.33,15.90,18.15,16.31,17.12,15.85,8.69,15.77,925.4,989.0
-gpt-4.1-nano,921.0,75.9,14.90,15.32,12.26,14.86,15.36,17.16,15.41,16.44,14.00,8.32,15.72,894.2,947.9
-google/gemma-3-4b-it,896.0,72.4,15.42,15.96,12.79,14.46,14.48,18.00,15.38,15.96,14.31,9.38,15.00,870.1,921.8
-nvidia/llama-3.1-nemotron-ultra-253b-v1:free,870.0,73.2,14.40,14.85,12.48,14.90,14.75,17.69,14.73,16.04,14.50,8.12,15.62,841.5,898.4
-gemini-2.0-flash-001,826.0,66.1,13.88,15.04,11.50,12.60,13.00,16.19,13.87,14.08,14.42,8.69,13.27,800.1,852.0
-Qwen/Qwen3-8B,822.9,74.7,15.21,15.65,12.85,14.38,14.46,17.73,15.80,16.12,14.00,9.54,14.85,787.5,858.2
-qwen/qwen-2.5-72b-instruct,741.6,66.7,12.94,15.54,11.37,12.79,13.63,16.50,13.73,14.38,15.69,9.00,13.73,713.6,769.6
-meta-llama/Llama-4-Maverick-17B-128E-Instruct,649.3,60.7,12.98,15.46,10.73,12.60,13.02,15.42,12.27,13.88,14.58,7.92,13.19,616.9,681.6
-mistralai/Mistral-Small-3.1-24B-Instruct-2503,648.6,63.2,12.21,14.85,11.04,12.13,13.71,15.88,12.84,14.23,15.42,10.04,12.96,614.9,682.2
-mistralai/Mistral-Small-24B-Instruct-2501,622.1,62.8,12.25,14.92,10.81,12.08,13.60,15.65,12.86,14.19,15.19,9.38,13.15,592.5,651.8
-meta-llama/Llama-4-Scout-17B-16E-Instruct,505.8,56.2,11.90,14.54,10.42,10.73,12.06,14.62,11.47,12.73,14.92,8.88,11.62,470.8,540.7
-gpt-4-0314,504.1,55.9,11.63,14.96,9.33,10.83,12.63,13.35,11.07,12.69,14.92,9.23,11.27,465.1,543.0
-google/gemma-2-9b-it,466.4,45.9,8.64,12.52,6.82,7.72,10.14,10.76,9.07,10.08,12.52,6.84,8.64,423.9,508.9
-meta-llama/llama-3.2-1b-instruct,200.0,21.9,4.37,9.31,3.87,2.85,5.54,6.92,4.87,4.81,9.62,7.38,3.62,128.7,271.3`
+o3,1500.0,87.9,16.74,16.04,14.00,16.62,16.02,18.76,18.27,17.96,12.12,7.40,17.04,1474.3,1525.7
+chatgpt-4o-latest-2025-03-27,1351.7,84.5,16.52,15.19,13.27,16.52,16.35,17.81,17.30,17.69,13.46,8.62,16.96,1333.1,1370.3
+chatgpt-4o-latest-2025-04-25,1303.9,83.2,15.94,16.00,12.35,16.02,16.19,17.69,17.04,17.35,13.96,7.96,16.46,1286.8,1321.0
+o4-mini,1282.6,80.6,15.67,15.85,13.10,15.62,15.35,18.15,16.82,17.04,14.42,8.54,16.23,1270.0,1295.2
+gemini-2.5-pro-preview-03-25,1274.2,83.0,16.44,15.81,12.56,16.52,15.98,18.46,17.16,17.77,12.96,6.85,17.15,1258.6,1289.8
+Qwen/Qwen3-235B-A22B,1271.6,80.9,16.21,15.62,13.46,16.02,16.02,17.50,16.69,17.31,13.54,8.85,16.35,1257.2,1286.0
+deepseek-ai/DeepSeek-R1,1254.6,83.5,16.29,15.42,13.60,16.33,15.48,18.62,17.44,17.54,14.04,8.46,16.69,1238.0,1271.2
+gpt-4.1,1222.9,82.3,16.29,15.38,12.40,15.88,15.96,18.00,17.00,17.12,13.19,7.85,16.19,1206.2,1239.7
+qwen/qwq-32b,1209.9,79.9,15.87,15.54,13.98,15.77,15.25,18.46,16.73,17.08,13.50,9.35,16.35,1195.6,1224.3
+deepseek-ai/DeepSeek-V3-0324,1162.3,75.6,13.94,14.88,12.15,13.37,13.38,17.35,15.98,15.00,11.31,8.65,14.04,1146.5,1178.1
+gpt-4.1-mini,1141.0,81.4,15.87,15.31,12.27,16.00,16.21,17.77,16.71,17.27,14.08,7.62,16.12,1123.7,1158.3
+gpt-4.5-preview-2025-02-27,1093.1,80.6,15.50,14.77,12.37,15.33,15.33,17.96,16.78,16.85,14.23,8.35,15.85,1076.9,1109.3
+claude-3-7-sonnet-20250219,1076.3,78.8,16.06,15.35,12.69,15.29,14.90,18.23,16.49,16.42,12.73,8.85,15.77,1062.3,1090.3
+grok-3-beta,1067.2,77.5,15.54,15.85,11.98,14.94,15.46,17.77,15.98,16.31,13.62,8.04,15.19,1052.0,1082.4
+claude-3-5-sonnet-20241022,1062.8,75.3,15.37,15.65,12.85,14.54,14.15,18.00,15.96,16.00,13.00,8.77,15.00,1042.8,1082.8
+gemini-2.5-flash-preview,1048.7,78.7,15.88,15.23,12.19,15.90,15.62,18.04,16.13,17.12,14.19,7.35,16.31,1032.5,1064.9
+google/gemma-3-27b-it,1043.4,75.6,15.67,15.46,12.85,14.94,14.75,18.04,15.80,16.27,13.38,9.04,15.35,1027.9,1058.8
+Qwen/Qwen3-32B,1006.6,76.8,15.35,15.69,13.81,15.44,14.79,18.31,16.24,16.54,13.77,9.04,15.77,991.9,1021.3
+grok-3-mini-beta,972.0,79.0,15.12,15.58,12.23,15.33,15.90,18.15,16.31,17.12,15.85,8.69,15.77,955.0,989.0
+gpt-4.1-nano,902.5,75.9,14.90,15.32,12.26,14.86,15.36,17.16,15.41,16.44,14.00,8.32,15.72,887.9,917.0
+nvidia/llama-3.1-nemotron-ultra-253b-v1:free,873.1,73.2,14.40,14.85,12.48,14.90,14.75,17.69,14.73,16.04,14.50,8.12,15.62,858.3,888.0
+google/gemma-3-4b-it,848.4,72.4,15.42,15.96,12.79,14.46,14.48,18.00,15.38,15.96,14.31,9.38,15.00,835.5,861.4
+gemini-2.0-flash-001,781.8,66.1,13.88,15.04,11.50,12.60,13.00,16.19,13.87,14.08,14.42,8.69,13.27,769.7,793.8
+Qwen/Qwen3-8B,756.6,74.7,15.21,15.65,12.85,14.38,14.46,17.73,15.80,16.12,14.00,9.54,14.85,738.5,774.7
+Qwen/Qwen3-30B-A3B,733.5,66.0,13.54,15.38,11.56,12.33,13.77,15.58,13.40,14.38,15.19,9.04,12.85,718.6,748.3
+qwen/qwen-2.5-72b-instruct,697.7,66.7,12.94,15.54,11.37,12.79,13.63,16.50,13.73,14.38,15.69,9.00,13.73,683.5,712.0
+mistralai/Mistral-Small-3.1-24B-Instruct-2503,644.2,63.2,12.21,14.85,11.04,12.13,13.71,15.88,12.84,14.23,15.42,10.04,12.96,626.9,661.5
+meta-llama/Llama-4-Maverick-17B-128E-Instruct,627.7,60.7,12.98,15.46,10.73,12.60,13.02,15.42,12.27,13.88,14.58,7.92,13.19,610.7,644.6
+mistralai/Mistral-Small-24B-Instruct-2501,622.9,62.8,12.25,14.92,10.81,12.08,13.60,15.65,12.86,14.19,15.19,9.38,13.15,606.6,639.2
+meta-llama/Llama-4-Scout-17B-16E-Instruct,471.6,56.2,11.90,14.54,10.42,10.73,12.06,14.62,11.47,12.73,14.92,8.88,11.62,452.2,491.0
+gpt-4-0314,436.3,55.9,11.63,14.96,9.33,10.83,12.63,13.35,11.07,12.69,14.92,9.23,11.27,415.2,457.4
+google/gemma-2-9b-it,390.8,45.9,8.64,12.52,6.82,7.72,10.14,10.76,9.07,10.08,12.52,6.84,8.64,368.4,413.2
+meta-llama/llama-3.2-1b-instruct,200.0,21.9,4.37,9.31,3.87,2.85,5.54,6.92,4.87,4.81,9.62,7.38,3.62,164.5,235.5`
 
 // --- Global Scope Variables ---
 const MOBILE_BREAKPOINT = 1050;
@@ -106,6 +107,22 @@ const featureNames = [
   'moral',       // index 12
   'pragmatic'    // index 13
 ];
+
+const RUBRIC_GROUPS = {
+  humanlike : ["conversational","humanlike"],
+  safe      : ["safety_conscious"],
+  assertive : ["boundary_setting","challenging"],
+  social_iq : ["social_dexterity","message_tailoring"],
+  warm      : ["warmth","validating"],
+  analytical: ["analytical"],
+  insightful: ["depth_of_insight"],
+  empathy   : ["demonstrated_empathy"],
+  compliant : ["compliant"],
+  moral     : ["moralising"],
+  pragmatic : ["pragmatic_ei"]
+};
+
+const RELATIVE_SCALE_FACTOR = 0.15;   // 0 = off, 0.5 ≈ fairly strong
 
 /* 0-20  ➜  0-10,  rounded to 1 dp – uses integer math to avoid FP quirks */
 const s = v => Math.round((v / 2) * 10) / 10;
@@ -181,6 +198,33 @@ function updateFeatureHeatmapColors() {
   });
 }
 
+function getRelativeScale(modelKey, featureKey){
+  if (typeof chartData === 'undefined' || !chartData[modelKey]) return 1;
+
+  // prefer the log variant, fall back if needed
+  const rel = chartData[modelKey].relativeRadarLog
+           || chartData[modelKey].relativeRadar;
+  if (!rel || !rel.labels || !rel.values) return 1;
+
+  const wanted = RUBRIC_GROUPS[featureKey] || [];
+  let total = 0, n = 0;
+
+  wanted.forEach(lbl=>{
+    const i = rel.labels.indexOf(lbl);
+    if (i !== -1){
+      total += rel.values[i];
+      n++;
+    }
+  });
+  if (n === 0) return 1;
+
+  /* log scores are ≈ -0.6 … 0.4 → normalise to 0-1 */
+  const mean   = total / n;
+  const norm01 = Math.min(1, Math.max(0, (mean + 0.6)));   // width ≈ 1.0
+
+  /* centre on 1.0 and apply a gentle scale */
+  return 1 + (norm01 - 0.5) * RELATIVE_SCALE_FACTOR;
+}
 
 function displayEncodedEmail() {
   var encodedUser = 'contact';
@@ -641,17 +685,24 @@ function loadLeaderboardData() {
 
 
 
-  // gather min & max for each feature column
-  eqBenchRows.forEach(r=>{
-    const parts = r.split(',');
-    featureNames.forEach((f,idx)=>{
-      const v = s(parseFloat(parts[3 + idx])); // Features start at data index 3
-      if(!isNaN(v)){
-          featureRange[f].min = Math.min(featureRange[f].min, v);
-          featureRange[f].max = Math.max(featureRange[f].max, v);
+  /* --- gather min & max for each feature column (scaled) ----------- */
+  eqBenchRows.forEach(r => {
+    const parts          = r.split(',');
+    const modelNameRaw   = parts[0].trim();
+    const modelKey       = modelNameRaw.replace(/^!|\*/g, '');   // strip flags
+
+    featureNames.forEach((f, idx) => {
+      const rawAbs  = parseFloat(parts[3 + idx]);   // absolute csv value
+      const scaled  = s(rawAbs * getRelativeScale(modelKey, f));
+
+      if (!isNaN(scaled)) {
+        featureRange[f].min = Math.min(featureRange[f].min, scaled);
+        featureRange[f].max = Math.max(featureRange[f].max, scaled);
       }
     });
   });
+  /* ---------------------------------------------------------------- */
+
 
   // --- Elo/Rubric Scaling (Adjusted for Error Bars) ---
   const originalEloScores = eqBenchRows.map(row => parseFloat(row.split(',')[1])).filter(s => !isNaN(s));
@@ -694,22 +745,29 @@ function loadLeaderboardData() {
     const rubricScoreNum = parseFloat(_rubric_0_100); // Not displayed in table
     const ciLowNum = parseFloat(ci_low_norm);
     const ciHighNum = parseFloat(ci_high_norm);
+    let currentModelName = modelNameRaw.trim();
 
 
     // --- Feature Metric Parsing & Heatmap Color ---
-    const features = [
-      {value:s(humanlike) , name:'humanlike'},
-      {value:s(safe)      , name:'safe'},
-      {value:s(assertive) , name:'assertive'},
-      {value:s(social_iq) , name:'social_iq'},
-      {value:s(warm)      , name:'warm'},
-      {value:s(analytical), name:'analytical'},
-      {value:s(insightful), name:'insightful'},
-      {value:s(empathy)   , name:'empathy'},
-      {value:s(compliant) , name:'compliant'},
-      {value:s(moral)     , name:'moral'},
-      {value:s(pragmatic) , name:'pragmatic'}
-    ];
+    const featuresRaw = {
+      humanlike,
+      safe,
+      assertive,
+      social_iq,
+      warm,
+      analytical,
+      insightful,
+      empathy,
+      compliant,
+      moral,
+      pragmatic
+    };
+
+    const features = Object.entries(featuresRaw).map(([key, raw]) => {
+      const scaled = s(parseFloat(raw) * getRelativeScale(currentModelName, key));
+      return { value: scaled, name: key };
+    });
+
 
 
     const featureCellsHTML = features.map(feature => {
@@ -758,8 +816,7 @@ function loadLeaderboardData() {
     const rubricScorePercentage = isNaN(rubricScoreNum) ? 0 : Math.max(0, Math.min(100, (rubricScoreRelativeToBaseline / rubricScoreRangeForBar) * 100));
     // --- End Percentage Calculation ---
 
-    // --- Model Name Handling ---
-    let currentModelName = modelNameRaw.trim();
+    // --- Model Name Handling ---    
     const isNsfwModel = currentModelName.startsWith('!');
     currentModelName = currentModelName.replace(/^!/, '');
     const isNewModel = currentModelName.startsWith('*');
