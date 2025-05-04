@@ -518,7 +518,7 @@
 				</h4>
 				<div class="accordion-content" id="short-version-content">
 					<p>
-						<strong>EQ-Bench 3</strong> is an LLM-judged benchmark (using Claude Sonnet 3.7) that tests emotional intelligence (EQ) through challenging role-plays and analysis tasks. It measures empathy, social skills, and insight in scenarios like relationship conflicts and workplace dilemmas.
+						<strong>EQ-Bench 3</strong> is an LLM-judged benchmark, using Claude Sonnet 3.7, that tests emotional intelligence (EQ) through challenging role-plays and analysis tasks. It measures empathy, social skills, and insight in scenarios like relationship conflicts and workplace dilemmas.
 					</p>
 					<p>
 						<strong>Why?</strong> Standard EQ tests are too easy for LLMs, and existing benchmarks often miss nuanced social skills crucial for human-AI interaction. EQ-Bench 3 uses difficult, free-form role-plays to better discriminate between models.
@@ -542,7 +542,7 @@
 					<!-- ─────────────────────────  WHAT & WHY  ───────────────────────── -->
 					<h4>What is EQ-Bench 3?</h4>
 					<p class="intro-paragraph">
-						EQ-Bench 3 is a LLM-judged test (judged by <strong>Claude Sonnet 3.7</strong>) evaluating active <strong>emotional intelligence</strong> abilities, understanding, insight, empathy, and interpersonal skills.
+						EQ-Bench 3 is a LLM-judged test judged by <strong>Claude Sonnet 3.7</strong>, evaluating active <strong>emotional intelligence</strong> abilities, understanding, insight, empathy, and interpersonal skills.
 					</p>
 					<p>
 						The test places the evaluated model into <strong>challenging role-plays</strong> involving messy relationship drama, parenting decisions, conflict mediation, and high stakes workplace situations. The model must:
@@ -558,11 +558,7 @@
 
 					<h4>Why measure this?</h4>
 					<p>
-						Few evals are targeting "soft skills" around emotional intelligence and social skills, despite these being extremely important aspects to human-AI interactions. Part of the reason is that subjective abilities are difficult & messy to measure. EQ-Bench intends to provide an <strong>automated evaluation</strong> of these abilities, and a reliable vibe-check for these human-oriented traits and abilities.
-					</p>
-					<p>
-						Figuring out how to meaningfully assess these abilities is nontrivial and still unsolved. It's surprisingly hard to come up with test questions that weaker models obviously fail at. This is because models are trained to be very good at *saying the right thing*. This is especially true for *subjective evals* like this, which don't have ground truth factual answers.
-						Our approach makes inroads into this problem by encoding a high degree of challenge into the roleplay scenarios.
+						Few evals are targeting "soft skills" around emotional intelligence and social skills, despite these being extremely important aspects to human-AI interactions. Part of the reason is that subjective abilities are not straightforward to measure. EQ-Bench intends to provide an <strong>automated evaluation</strong> of these abilities, and a reliable vibe-check for these human-oriented traits and abilities.
 					</p>
 
 					<!-- ─────────────────────────  THE PROBLEM  ───────────────────────── -->
@@ -573,8 +569,8 @@
 							<h5>Traditional (human) EQ tests:</h5>
 							<ul>
 								<li>typically easy for llms</li>
-								<li>results not very interpretable</li>
-								<li>don't test active abilities</li>
+								<li>involve self-rating</li>
+								<li>don't test <b>active EQ abilities</b></li>
 								<li>don't probe eq deeply</li>
 							</ul>
 						</div>
@@ -592,7 +588,7 @@
 
 					<div class="eq-bench-approach">
 						<p>
-							<strong>EQ‑Bench3 aims to address all these points</strong> with a selection of challenging roleplay scenarios, in which the evaluated model interact organically like it would with a user or in a real situation. The output format is structured, requiring the model to elucidate what it's thinking & feeling, what the other person is thinking and feeling, and then give its response. But within this structure, it's free to write what it likes. It's this free‑form nature of the assessment task that gives us a lot of signal to assess understanding and abilities with every test item. Unlike a multiple‑choice EQ quiz, the roleplay format closely mirrors how the chatbot interacts with users in real‑world usage. <strong>We provide the full transcripts for each assessed model on the leaderboard, for visibility on how the model handled the roleplays & analysis tasks.</strong>
+							<strong>EQ‑Bench 3 aims to address all these points</strong> with a selection of challenging roleplay scenarios, in which the evaluated model interacts organically like it would with a user or in a real situation. The output format is structured, requiring the model to elucidate what it's thinking & feeling, what the other person is thinking and feeling, and then give its response. Within this structure, it's free to write what it likes. It's this free‑form nature of the assessment task that gives us a lot of signal to assess the model's understanding and abilities with every test item. Unlike a multiple‑choice EQ quiz, the roleplay format closely mirrors how the chatbot interacts with users in real‑world usage. <strong>We provide the full transcripts for each assessed model on the leaderboard, for visibility on how the model handled the roleplays & analysis tasks.</strong>
 						</p>
 					</div>
 
@@ -616,8 +612,8 @@
 						<div class="task-archetypes">
 							<p><strong>The final set of task archetypes we settled on were:</strong></p>
 							<ul>
-								<li>Challenging 3‑turn roleplays, often including some misdirection via unreliable narration, or towards common failure modes (like stakes recognition, safety overcompensation, over‑validating or under‑validating). These prompts were hand‑written by us and iterated on.</li>
-								<li>Mediation roleplays: the evaluated model plays a mediator in a 3‑turn roleplay with disputants. Each turn, the disputants add challenges and surprises (these responses are prewritten and always the same). These prompts were generated with the help of llms, and then edited & filtered by us.</li>
+								<li>Challenging 3‑turn roleplays, often including some misdirection via unreliable narration, or towards common failure modes (like stakes recognition, safety overcompensation, over‑validating or under‑validating). These prompts were hand‑written by us.</li>
+								<li>Mediation roleplays: the evaluated model plays a mediator in a 3‑turn roleplay with disputants. Each turn, the disputants add challenges and surprises (these responses are prewritten and always the same). These prompts were generated with the help of LLMs, and then edited & filtered by us.</li>
 								<li>Pure analysis, digging into some of the above roleplay outputs.</li>
 							</ul>
 						</div>
@@ -631,13 +627,14 @@
 						<h4>What a higher score means in practice</h4>
 						<p>
 							The <strong>Elo score</strong> represents whether a model "wins" at having higher EQ than its neighbours, according to the judge.
-							To beat its neighbour, it has to score higher on several criteria (insight, social dexterity, etc), as evaluated by Sonnet 3.7. The full criteria evaluated in the pairwise judgements are listed below.
+							To beat its neighbour, it has to score higher on several criteria (insight, social dexterity, etc), as evaluated by Sonnet 3.7. The full criteria assessed in the pairwise judgements are listed below.
 						</p>
 						<p>
 							The resulting Elo score represents a <strong>holistic view</strong> on the model's abilities: empathy, analytical understanding, social dexterity, deep insight, pragmatism, etc. A model has to be strong across all these dimensions to be at the top of the leaderboard.
 						</p>
 					</div>
 
+					<br>
 
 					<!-- ─────────────────────────  HOW IT WORKS  ───────────────────────── -->
 					<h4>How it works</h4>
