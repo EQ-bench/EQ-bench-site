@@ -59,9 +59,9 @@
 				 <li><a href="#about">How to Submit</a></li>
 				 <li>
 					EQ-Bench 3:
-					<a href="#short-version-header" class="toc-link">Short</a>
+					<a href="#short" class="toc-link">Short</a>
 					|
-					<a href="#long-version-header"  class="toc-link">Long</a>
+					<a href="#long"  class="toc-link">Long</a>
 				  </li>
 				  
 				 <li><a href="#eq-bench">EQ-Bench</a></li>
@@ -208,14 +208,12 @@
 			.dark-mode .accordion-content h4,
 			.dark-mode .accordion-content h5, /* Added h5 */
 			.dark-mode .accordion-content pre,
-			.dark-mode .accordion-content code,
 			.dark-mode .accordion-content strong, /* Added strong */
 			[data-theme="dark"] .accordion-content p,
 			[data-theme="dark"] .accordion-content li,
 			[data-theme="dark"] .accordion-content h4,
 			[data-theme="dark"] .accordion-content h5, /* Added h5 */
 			[data-theme="dark"] .accordion-content pre,
-			[data-theme="dark"] .accordion-content code,
 			[data-theme="dark"] .accordion-content strong { /* Added strong */
 				color: inherit; /* Inherit from .accordion-content */
 			}
@@ -512,7 +510,7 @@
 
 			<div class="accordion-container">
 				<!-- Short Version -->
-				<h4 class="accordion-header" id="short-version-header">
+				<h4 class="accordion-header" id="short">
 					Short Version (TL;DR)
 					<span class="accordion-indicator"></span>
 				</h4>
@@ -533,7 +531,7 @@
 				</div>
 
 				<!-- Long Version (Contains all the original detailed content) -->
-				<h4 class="accordion-header" id="long-version-header">
+				<h4 class="accordion-header" id="long">
 					Long Version (Full Details)
 					<span class="accordion-indicator"></span>
 				</h4>
@@ -754,6 +752,24 @@
 					</a>
 
 
+					
+
+					<!-- ─────────────────────────  BIAS MITIGATION  ───────────────────────── -->
+					<h4>Bias mitigation</h4>
+					<ul>
+						<li><b>Length bias.</b> For pairwise judgements, responses are truncated to standardised lengths before judging. The truncation point is chosen so that nearly all outputs will be truncated, aiming for an even playing field. Truncating outputs is not ideal, but length bias is such a strong factor in pairwise eval that we opt to sacrifice some of the generated output for the sake of minimising this biasing effect. We find this to be the least-bad option, and in practice find that it doesn't sacrifice discriminative power.
+							However, for the <em>rubric eval</em>, discriminative power is a more scarce resource and length bias is much less pronounced, so in rubric scoring we retain the full length of the outputs.</li>
+						<li><b>Position bias.</b> In pairwise, every matchup is judged twice (A|B and B|A) and averaged.</li>
+						<li><b>Named participant bias.</b> We mitigate any biases from naming the models in the pairwise evalution by giving them arbitrary designators (A0488 and A0493).</li>
+					</ul>
+
+					<h4>Biases not controlled for</h4>
+					<ul>
+						<li><b>Judge self-bias / family bias:</b> We use Sonnet 3.7 as the judge for all outputs. This may introduce some bias where the judge prefers its own outputs or those of similar models. This is currently not quantified or adjusted for in this eval. Judge self bias can be in the range of 0-10% depending on the task (sometimes even negative bias!). Per our comparison of sonnet-3.7 vs gpt-4.1 as judge (see above), we see some minor discrepancies, e.g. sonnet 3.7 favouring itself by a small margin. However the discrepancies are small, with no clear pattern of self or family bias. The indications are that self or family bias are not strong factors in this eval.</li>
+						<li><b>Other judge biases:</b> LLM judges can have varying biases in how they rate: verbosity, positivity, political, cultural. We don't control for these possible biases; they are just a part of LLM judging, as personal biases are part of human judging. Subjective evals are a messy business! Set your expectations accordingly.</li>
+					</ul>
+
+
 					<!-- ─────────────────────────  RUBRIC VARIANCE  ───────────────────────── -->
 					<br>
 					<h4>Rubric score repeatability</h4>
@@ -782,21 +798,6 @@
 					</a>
 
 					<br>
-
-					<!-- ─────────────────────────  BIAS MITIGATION  ───────────────────────── -->
-					<h4>Bias mitigation</h4>
-					<ul>
-						<li><b>Length bias.</b> For pairwise judgements, responses are truncated to standardised lengths before judging. The truncation point is chosen so that nearly all outputs will be truncated, aiming for an even playing field. Truncating outputs is not ideal, but length bias is such a strong factor in pairwise eval that we opt to sacrifice some of the generated output for the sake of minimising this biasing effect. We find this to be the least-bad option, and in practice find that it doesn't sacrifice discriminative power.
-							However, for the <em>rubric eval</em>, discriminative power is a more scarce resource and length bias is much less pronounced, so in rubric scoring we retain the full length of the outputs.</li>
-						<li><b>Position bias.</b> In pairwise, every matchup is judged twice (A|B and B|A) and averaged.</li>
-						<li><b>Named participant bias.</b> We mitigate any biases from naming the models in the pairwise evalution by giving them arbitrary designators (A0488 and A0493).</li>
-					</ul>
-
-					<h4>Biases not controlled for</h4>
-					<ul>
-						<li><b>Judge self-bias / family bias:</b> We use Sonnet 3.7 as the judge for all outputs. This may introduce some bias where the judge prefers its own outputs or those of similar models. This is currently not quantified or adjusted for in this eval. Judge self bias can be in the range of 0-10% depending on the task (sometimes even negative bias!). Per our comparison of sonnet-3.7 vs gpt-4.1 as judge (see above), we see some minor discrepancies, e.g. sonnet 3.7 favouring itself by a small margin. However the discrepancies are small, with no clear pattern of self or family bias. The indications are that self or family bias are not strong factors in this eval.</li>
-						<li><b>Other judge biases:</b> LLM judges can have varying biases in how they rate: verbosity, positivity, political, cultural. We don't control for these possible biases; they are just a part of LLM judging, as personal biases are part of human judging. Subjective evals are a messy business! Set your expectations accordingly.</li>
-					</ul>
 
 
 					<!-- ─────────────────────────  EXAMPLE PROMPT  ───────────────────────── -->
@@ -927,8 +928,9 @@
 					</tbody>
 					</table>
 
-					<p><strong>Interpretation:</strong> The judge appears to prefer r1's outputs when it's been instructed to be "extremely warm & validating" in its responses to the other roleplay participant. This might represent a bias with the judge, or a genuine improvement in its responses (since baseline r1 scored low on warmth & validation). In these brief tests, we intentionally tried to engineer worst cases for exploiting the eval to trivially inflate scores. Prompt perturbations of this sort are known to produce large swings in other evals (in the order of 5+%). The highest uplift we saw (1.3% for rubric and 2.8% for elo) is significant, but not indicative of a strongly exploitable vector. This suggests the eval is robust to exploitation at least in these directions we tested.</p>
+					<p><strong>Interpretation:</strong> The judge appears to prefer r1's outputs when it's been instructed to be "extremely warm & validating" in its responses to the other roleplay participant. This might represent a bias with the judge, or a genuine improvement in its responses (since baseline r1 scored low on warmth & validation). In these brief tests, we intentionally tried to engineer worst cases for exploiting the eval to trivially inflate scores. Prompt perturbations of this sort are known to produce large swings in other evals (in the order of 5+%). The highest uplift we saw (1.3% for rubric and 2.8% for elo) is significant, but not indicative of a strongly exploitable vector. This suggests the eval is robust to exploitation at least in these directions we tested.</p>					
 					<p>Note that we only tested potential exploits by injecting instructions into the system prompt. Further exploration is needed to examine whether the eval is exploitable through fine tuning.</p>
+					<p>** A more real-world case to examine is <b>chatgpt-4o-latest-2025-04-25</b>, the notorious "glazing" update. It scores higher on <code>compliance</code>, <code>warmth</code> & <code>validating</code>, and much lower on <code>challenging</code> compared to its neighbours. But its Elo score is actually *lower* than chatgpt-4o-latest-2025-03-27. This indicates that the judge may not in fact have a universal preference for overly validating outputs.</p>
 
 					<!-- ─────────────────────────  LIMITATIONS  ───────────────────────── -->
 					<h4>Limitations</h4>
@@ -1468,7 +1470,7 @@ Coefficient of Variation: 0.0181
 
 			});
 
-			const deepLink = window.location.hash;   // e.g. "#long-version-header"
+			const deepLink = window.location.hash;
 
 
 
@@ -1494,7 +1496,7 @@ Coefficient of Variation: 0.0181
 
 
 				// always show the Short Version panel on first load
-				openAccordion('short-version-header');
+				openAccordion('short');
 
 				// honour deep links (only when there *is* a hash in the URL)
 				if (deepLink) {
