@@ -789,10 +789,38 @@ body.eqbench3-page #leaderboard th.feature-header {
     </div>
     <br>
     <hr>
-    <div class="section mt-4" id="metrics-explanation">
-      <div class="card bg-card"> <!-- bg-card class might be from style.css -->
+
+    <p>For more details about the benchmark, see the <a href="./about.html#long">About</a> section.</p>
+
+              <!-- Scoring Criteria -->
+
+    <div class="section mt-4" id="scoring-criteria">
+      <div class="card bg-card">
         <div class="card-body">
-          <p>For more details about the benchmark, see the <a href="./about.html#long">About</a> section.</p>
+          
+
+          <h5 class="card-title">Scoring</h5>
+          <p>The Elo score shown in the leaderboard is calculated from pair-wise model comparisons, where the LLM judge rates each response against eight core dimensions of emotional intelligence:</p>
+          <ul>
+            <li><strong>Demonstrated empathy</strong></li>
+            <li><strong>Pragmatic EI</strong> (practical application of emotional intelligence)</li>
+            <li><strong>Depth of insight</strong></li>
+            <li><strong>Social dexterity</strong></li>
+            <li><strong>Emotional reasoning</strong></li>
+            <li><strong>Appropriate validation and/or challenge</strong> for the scene</li>
+            <li><strong>Message tailoring</strong> to the audience and context</li>
+            <li><strong>Overall EQ</strong></li>
+          </ul>
+
+          <p class="mt-3">
+            <em>Note:</em> the coloured “Abilities” heat-map columns (Humanlike, Safety, Assertive, etc.) are <strong>not</strong> used in the Elo calculation—they are purely informational, giving a quick view of each model’s stylistic traits and skill profile.
+          </p>
+
+          
+
+
+
+
           <h5 class="card-title">Metrics</h5>
           <p>The leaderboard displays several metrics:</p>
           <ul>
