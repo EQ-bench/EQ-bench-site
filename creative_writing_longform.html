@@ -52,11 +52,22 @@
       pointer-events: none;
     }
 
+    /* replace with */
     body.longform-creative-writing-page .container {
       background-color: rgba(255, 255, 255, 0.76) !important;
       border-radius: 8px;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
+      padding: 1rem;            /* previous top/bottom padding */
+    }
+
+    /* add immediately below */
+    @media (min-width: 768px) {
+      body.longform-creative-writing-page .container,
+      body.dark-mode.longform-creative-writing-page .container {
+        max-width: 1200px;     /* hard cap */
+        margin: 0 auto;        /* centred */
+        padding-left: 20px;    /* 20 px gutter */
+        padding-right: 20px;   /* 20 px gutter */
+      }
     }
 
     body.longform-creative-writing-page #leaderboard tbody td {
@@ -419,7 +430,7 @@
           <p>The <strong>Repetition</strong> column measures how strongly a model repeats words/phrases across multiple tasks. Higher means more repetition.</p>
 
           <h5 class="card-title mt-3">Degradation</h5>
-          <p>A mini-sparkline of the 8 chapter scores (averages) to visually see if the model’s chapter quality drops off as it continues writing. The degradation score is the absolute value of the trendline's gradient.</p>
+          <p>A mini-sparkline of the 8 chapter scores (averages) to visually see if the model’s chapter quality drops off as it continues writing. The degradation score represents how much the final chapter quality has dropped relative the the initial chapter.</p>
 
           <h5 class="card-title mt-3">Score (0-100)</h5>
           <p>The overall final rating assigned by the judge LLM, scaled to 0–100. Higher is better.</p>
