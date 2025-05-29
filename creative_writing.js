@@ -3,13 +3,13 @@
 
 let leaderboardDataCreativeWritingV3 = `model_name,elo_score,creative_writing_score,avg_length,vocab_complexity,slop_score,repetition_score
 o3,1658.2,17.53,7864,36.45,17.33,4.15
-claude-opus-4,1650.0,16.75,5774,35.99,17.44,6.43
+*claude-opus-4,1650.0,16.75,5774,35.99,17.44,6.43
 chatgpt-4o-latest-2025-03-27,1517.3,16.98,5956,28.29,24.76,6.70
-claude-sonnet-4,1516.1,16.61,6125,42.48,19.56,6.69
+*claude-sonnet-4,1516.1,16.61,6125,42.48,19.56,6.69
 deepseek-ai/DeepSeek-V3-0324,1505.0,16.32,4414,24.28,33.02,7.86
 deepseek-ai/DeepSeek-R1,1500.0,16.92,5352,29.20,31.21,5.79
 claude-3-5-sonnet-20241022,1473.9,15.63,4921,39.27,19.82,5.98
-deepseek-ai/DeepSeek-R1-0528,1420.7,17.25,7557,38.25,40.60,6.46
+*deepseek-ai/DeepSeek-R1-0528,1420.7,17.25,7557,38.25,40.60,6.46
 optimus-alpha,1397.2,16.75,5937,31.02,25.36,6.07
 gpt-4.1,1387.9,16.80,5997,29.33,24.35,5.95
 claude-3-7-sonnet-20250219,1386.9,16.60,6327,39.58,23.66,5.46
