@@ -3085,67 +3085,67 @@ const chartData = {
         "humanlike"
       ],
       "values": [
+        0.13,
         0.14,
+        0.09,
         0.16,
+        0.2,
+        0.15,
+        0.14,
+        -0.03,
+        0.23,
+        0.08,
+        0.2,
+        0.06,
         0.1,
-        0.18,
-        0.2,
-        0.18,
-        0.16,
+        -0.09,
         -0.06,
-        0.2,
-        0.05,
-        0.21,
-        0.07,
-        0.11,
-        -0.08,
-        -0.08,
-        0.19,
-        0.17
+        0.16,
+        0.14
       ]
     },
     "strengths": [
       {
-        "criterion": "challenging",
+        "criterion": "moralising",
         "relativeScore": 1.0
       },
       {
-        "criterion": "emotional_reasoning",
-        "relativeScore": 0.84
-      },
-      {
-        "criterion": "moralising",
+        "criterion": "challenging",
         "relativeScore": 0.7
       },
       {
+        "criterion": "emotional_reasoning",
+        "relativeScore": 0.6
+      },
+      {
         "criterion": "conversational",
-        "relativeScore": 0.5
+        "relativeScore": 0.22
       },
       {
         "criterion": "social_dexterity",
-        "relativeScore": 0.4
+        "relativeScore": 0.18
       }
     ],
     "weaknesses": [
       {
-        "criterion": "reactive",
+        "criterion": "analytical",
         "relativeScore": -1.0
       },
       {
-        "criterion": "analytical",
-        "relativeScore": -0.99
+        "criterion": "reactive",
+        "relativeScore": -0.85
       },
       {
         "criterion": "safety_conscious",
-        "relativeScore": -0.9
-      },
-      {
-        "criterion": "compliant",
-        "relativeScore": -0.49
+        "relativeScore": -0.76
       },
       {
         "criterion": "warmth",
-        "relativeScore": -0.4
+        "relativeScore": -0.39
+      },
+      {
+        "criterion": "compliant",
+        "relativeScore": -0.27
       }
     ]
   },
@@ -3211,23 +3211,23 @@ const chartData = {
         "humanlike"
       ],
       "values": [
-        0.26,
-        0.38,
-        0.02,
-        0.39,
+        0.25,
+        0.36,
+        0.01,
+        0.37,
+        0.04,
+        0.33,
+        0.19,
+        -0.15,
+        -0.28,
+        0.14,
         0.06,
-        0.35,
-        0.22,
-        -0.17,
+        0.18,
+        0.24,
+        0.24,
         -0.3,
-        0.12,
-        0.08,
-        0.2,
-        0.25,
-        0.25,
-        -0.31,
-        0.03,
-        0.13
+        -0.0,
+        0.1
       ]
     },
     "strengths": [
@@ -3237,19 +3237,19 @@ const chartData = {
       },
       {
         "criterion": "pragmatic_ei",
-        "relativeScore": 0.96
+        "relativeScore": 0.98
       },
       {
         "criterion": "message_tailoring",
-        "relativeScore": 0.83
-      },
-      {
-        "criterion": "validating",
-        "relativeScore": 0.41
+        "relativeScore": 0.81
       },
       {
         "criterion": "demonstrated_empathy",
         "relativeScore": 0.41
+      },
+      {
+        "criterion": "validating",
+        "relativeScore": 0.38
       }
     ],
     "weaknesses": [
@@ -3259,19 +3259,19 @@ const chartData = {
       },
       {
         "criterion": "moralising",
-        "relativeScore": -0.96
+        "relativeScore": -0.93
       },
       {
         "criterion": "safety_conscious",
-        "relativeScore": -0.59
-      },
-      {
-        "criterion": "depth_of_insight",
-        "relativeScore": -0.22
+        "relativeScore": -0.57
       },
       {
         "criterion": "conversational",
-        "relativeScore": -0.21
+        "relativeScore": -0.28
+      },
+      {
+        "criterion": "depth_of_insight",
+        "relativeScore": -0.27
       }
     ]
   },
@@ -3337,20 +3337,20 @@ const chartData = {
         "humanlike"
       ],
       "values": [
-        0.29,
         0.28,
-        0.3,
-        0.24,
-        0.29,
-        0.37,
         0.27,
-        0.24,
-        0.15,
-        0.03,
         0.28,
-        0.21,
-        0.2,
-        0.35,
+        0.23,
+        0.27,
+        0.36,
+        0.26,
+        0.26,
+        0.13,
+        0.04,
+        0.25,
+        0.18,
+        0.17,
+        0.34,
         0.31,
         0.36,
         0.42
@@ -3362,20 +3362,20 @@ const chartData = {
         "relativeScore": 1.0
       },
       {
-        "criterion": "message_tailoring",
-        "relativeScore": 0.56
+        "criterion": "conversational",
+        "relativeScore": 0.59
       },
       {
-        "criterion": "conversational",
-        "relativeScore": 0.54
+        "criterion": "message_tailoring",
+        "relativeScore": 0.57
       },
       {
         "criterion": "analytical",
-        "relativeScore": 0.45
+        "relativeScore": 0.42
       },
       {
         "criterion": "reactive",
-        "relativeScore": 0.19
+        "relativeScore": 0.25
       }
     ],
     "weaknesses": [
@@ -3385,19 +3385,19 @@ const chartData = {
       },
       {
         "criterion": "moralising",
-        "relativeScore": -0.6
+        "relativeScore": -0.64
       },
       {
         "criterion": "validating",
-        "relativeScore": -0.42
+        "relativeScore": -0.51
       },
       {
         "criterion": "warmth",
-        "relativeScore": -0.37
+        "relativeScore": -0.45
       },
       {
-        "criterion": "safety_conscious",
-        "relativeScore": -0.24
+        "criterion": "social_dexterity",
+        "relativeScore": -0.19
       }
     ]
   },
@@ -3463,23 +3463,23 @@ const chartData = {
         "humanlike"
       ],
       "values": [
-        -0.17,
-        -0.06,
-        -0.15,
-        -0.07,
-        -0.13,
-        -0.22,
-        0.07,
-        0.13,
-        0.0,
-        0.39,
-        -0.32,
-        -0.06,
-        -0.02,
-        -0.04,
+        -0.21,
+        -0.12,
+        -0.19,
+        -0.14,
         -0.18,
         -0.27,
-        -0.28
+        0.03,
+        0.14,
+        0.02,
+        0.4,
+        -0.34,
+        -0.11,
+        -0.1,
+        -0.09,
+        -0.17,
+        -0.29,
+        -0.31
       ]
     },
     "strengths": [
@@ -3489,19 +3489,19 @@ const chartData = {
       },
       {
         "criterion": "safety_conscious",
-        "relativeScore": 0.32
+        "relativeScore": 0.4
       },
       {
         "criterion": "boundary_setting",
-        "relativeScore": 0.21
+        "relativeScore": 0.25
       },
       {
         "criterion": "moralising",
-        "relativeScore": 0.12
+        "relativeScore": 0.23
       },
       {
-        "criterion": "validating",
-        "relativeScore": 0.08
+        "criterion": "analytical",
+        "relativeScore": 0.09
       }
     ],
     "weaknesses": [
@@ -3511,19 +3511,19 @@ const chartData = {
       },
       {
         "criterion": "humanlike",
-        "relativeScore": -0.82
+        "relativeScore": -0.83
       },
       {
         "criterion": "conversational",
-        "relativeScore": -0.77
+        "relativeScore": -0.73
       },
       {
         "criterion": "message_tailoring",
-        "relativeScore": -0.54
+        "relativeScore": -0.58
       },
       {
-        "criterion": "reactive",
-        "relativeScore": -0.38
+        "criterion": "demonstrated_empathy",
+        "relativeScore": -0.3
       }
     ]
   },
@@ -3589,23 +3589,23 @@ const chartData = {
         "humanlike"
       ],
       "values": [
+        -0.25,
         -0.21,
-        -0.15,
-        0.06,
-        -0.22,
-        -0.11,
-        -0.07,
         -0.02,
+        -0.27,
+        -0.17,
+        -0.14,
         -0.08,
-        -0.14,
-        -0.09,
-        -0.05,
-        -0.14,
-        -0.32,
-        -0.04,
+        -0.06,
+        -0.12,
+        -0.08,
+        -0.12,
+        -0.18,
+        -0.34,
+        -0.12,
         0.36,
-        0.16,
-        0.08
+        0.12,
+        0.02
       ]
     },
     "strengths": [
@@ -3615,19 +3615,19 @@ const chartData = {
       },
       {
         "criterion": "conversational",
-        "relativeScore": 0.42
+        "relativeScore": 0.4
       },
       {
         "criterion": "humanlike",
-        "relativeScore": 0.27
+        "relativeScore": 0.22
       },
       {
         "criterion": "depth_of_insight",
-        "relativeScore": 0.23
+        "relativeScore": 0.17
       },
       {
-        "criterion": "boundary_setting",
-        "relativeScore": 0.12
+        "criterion": "safety_conscious",
+        "relativeScore": 0.11
       }
     ],
     "weaknesses": [
@@ -3637,15 +3637,15 @@ const chartData = {
       },
       {
         "criterion": "social_dexterity",
-        "relativeScore": -0.52
+        "relativeScore": -0.59
       },
       {
         "criterion": "demonstrated_empathy",
-        "relativeScore": -0.48
+        "relativeScore": -0.5
       },
       {
         "criterion": "pragmatic_ei",
-        "relativeScore": -0.23
+        "relativeScore": -0.35
       },
       {
         "criterion": "warmth",
@@ -3715,23 +3715,23 @@ const chartData = {
         "humanlike"
       ],
       "values": [
-        0.08,
-        -0.13,
-        0.08,
-        0.08,
-        0.22,
-        -0.17,
-        0.29,
-        0.15,
-        0.07,
-        0.21,
-        0.01,
-        0.23,
-        0.07,
         -0.06,
+        -0.25,
+        -0.06,
+        -0.09,
+        0.13,
+        -0.29,
+        0.19,
+        0.11,
+        0.01,
+        0.17,
+        -0.14,
+        0.14,
+        -0.07,
+        -0.21,
+        0.09,
         0.1,
-        0.21,
-        0.14
+        -0.0
       ]
     },
     "strengths": [
@@ -3740,20 +3740,20 @@ const chartData = {
         "relativeScore": 1.0
       },
       {
+        "criterion": "compliant",
+        "relativeScore": 0.87
+      },
+      {
         "criterion": "warmth",
-        "relativeScore": 0.66
+        "relativeScore": 0.67
       },
       {
         "criterion": "emotional_reasoning",
-        "relativeScore": 0.58
+        "relativeScore": 0.62
       },
       {
-        "criterion": "compliant",
-        "relativeScore": 0.56
-      },
-      {
-        "criterion": "conversational",
-        "relativeScore": 0.55
+        "criterion": "safety_conscious",
+        "relativeScore": 0.53
       }
     ],
     "weaknesses": [
@@ -3763,19 +3763,145 @@ const chartData = {
       },
       {
         "criterion": "pragmatic_ei",
-        "relativeScore": -0.78
+        "relativeScore": -0.83
       },
       {
         "criterion": "analytical",
-        "relativeScore": -0.52
+        "relativeScore": -0.65
       },
       {
         "criterion": "challenging",
-        "relativeScore": -0.28
+        "relativeScore": -0.39
+      },
+      {
+        "criterion": "social_dexterity",
+        "relativeScore": -0.25
+      }
+    ]
+  },
+  "mistralai/Mistral-Large-Instruct-2411": {
+    "absoluteRadar": {
+      "labels": [
+        "demonstrated_empathy",
+        "pragmatic_ei",
+        "depth_of_insight",
+        "social_dexterity",
+        "emotional_reasoning",
+        "message_tailoring",
+        "boundary_setting",
+        "safety_conscious",
+        "moralising",
+        "compliant",
+        "challenging",
+        "warmth",
+        "validating",
+        "analytical",
+        "reactive",
+        "conversational",
+        "humanlike"
+      ],
+      "values": [
+        14.42,
+        13.92,
+        13.31,
+        13.42,
+        13.24,
+        12.85,
+        13.12,
+        14.15,
+        8.54,
+        14.35,
+        10.12,
+        13.73,
+        14.65,
+        16.27,
+        10.46,
+        12.88,
+        13.62
+      ]
+    },
+    "relativeRadarLog": {
+      "labels": [
+        "demonstrated_empathy",
+        "pragmatic_ei",
+        "depth_of_insight",
+        "social_dexterity",
+        "emotional_reasoning",
+        "message_tailoring",
+        "boundary_setting",
+        "safety_conscious",
+        "moralising",
+        "compliant",
+        "challenging",
+        "warmth",
+        "validating",
+        "analytical",
+        "reactive",
+        "conversational",
+        "humanlike"
+      ],
+      "values": [
+        0.14,
+        0.28,
+        0.12,
+        0.29,
+        0.09,
+        0.24,
+        0.19,
+        -0.25,
+        -0.11,
+        -0.12,
+        0.25,
+        0.26,
+        0.31,
+        0.24,
+        -0.1,
+        0.13,
+        0.14
+      ]
+    },
+    "strengths": [
+      {
+        "criterion": "validating",
+        "relativeScore": 1.0
+      },
+      {
+        "criterion": "social_dexterity",
+        "relativeScore": 0.9
+      },
+      {
+        "criterion": "pragmatic_ei",
+        "relativeScore": 0.82
+      },
+      {
+        "criterion": "warmth",
+        "relativeScore": 0.68
+      },
+      {
+        "criterion": "challenging",
+        "relativeScore": 0.59
+      }
+    ],
+    "weaknesses": [
+      {
+        "criterion": "safety_conscious",
+        "relativeScore": -1.0
+      },
+      {
+        "criterion": "compliant",
+        "relativeScore": -0.59
       },
       {
         "criterion": "moralising",
-        "relativeScore": -0.07
+        "relativeScore": -0.58
+      },
+      {
+        "criterion": "reactive",
+        "relativeScore": -0.55
+      },
+      {
+        "criterion": "emotional_reasoning",
+        "relativeScore": -0.14
       }
     ]
   },
@@ -3841,23 +3967,23 @@ const chartData = {
         "humanlike"
       ],
       "values": [
-        0.3,
-        0.24,
+        0.32,
+        0.26,
+        0.22,
+        0.26,
+        0.22,
+        0.2,
         0.18,
-        0.24,
-        0.17,
-        0.17,
         0.16,
-        0.14,
-        0.39,
+        0.4,
         0.35,
-        0.28,
+        0.3,
         0.28,
         0.37,
-        0.32,
+        0.33,
         0.24,
-        -0.05,
-        0.03
+        -0.0,
+        0.09
       ]
     },
     "strengths": [
@@ -3867,19 +3993,19 @@ const chartData = {
       },
       {
         "criterion": "validating",
-        "relativeScore": 0.88
+        "relativeScore": 0.8
       },
       {
         "criterion": "compliant",
-        "relativeScore": 0.75
+        "relativeScore": 0.62
       },
       {
         "criterion": "analytical",
-        "relativeScore": 0.51
+        "relativeScore": 0.48
       },
       {
         "criterion": "demonstrated_empathy",
-        "relativeScore": 0.36
+        "relativeScore": 0.41
       }
     ],
     "weaknesses": [
@@ -3889,19 +4015,19 @@ const chartData = {
       },
       {
         "criterion": "humanlike",
-        "relativeScore": -0.76
+        "relativeScore": -0.71
       },
       {
         "criterion": "safety_conscious",
-        "relativeScore": -0.41
+        "relativeScore": -0.43
       },
       {
         "criterion": "boundary_setting",
-        "relativeScore": -0.33
+        "relativeScore": -0.36
       },
       {
-        "criterion": "emotional_reasoning",
-        "relativeScore": -0.3
+        "criterion": "message_tailoring",
+        "relativeScore": -0.25
       }
     ]
   },
@@ -3967,23 +4093,23 @@ const chartData = {
         "humanlike"
       ],
       "values": [
-        0.34,
-        0.34,
-        0.26,
-        0.27,
-        0.23,
-        0.24,
-        0.15,
-        0.18,
-        0.25,
-        0.3,
-        0.27,
+        0.36,
+        0.37,
         0.29,
-        0.38,
         0.31,
-        0.14,
-        0.1,
-        0.1
+        0.26,
+        0.28,
+        0.18,
+        0.2,
+        0.24,
+        0.3,
+        0.28,
+        0.3,
+        0.39,
+        0.33,
+        0.12,
+        0.13,
+        0.14
       ]
     },
     "strengths": [
@@ -3993,33 +4119,33 @@ const chartData = {
       },
       {
         "criterion": "pragmatic_ei",
-        "relativeScore": 0.62
+        "relativeScore": 0.76
       },
       {
         "criterion": "demonstrated_empathy",
-        "relativeScore": 0.61
+        "relativeScore": 0.73
       },
       {
         "criterion": "analytical",
-        "relativeScore": 0.37
+        "relativeScore": 0.43
       },
       {
-        "criterion": "compliant",
-        "relativeScore": 0.33
+        "criterion": "social_dexterity",
+        "relativeScore": 0.19
       }
     ],
     "weaknesses": [
       {
-        "criterion": "conversational",
+        "criterion": "reactive",
         "relativeScore": -1.0
+      },
+      {
+        "criterion": "conversational",
+        "relativeScore": -0.99
       },
       {
         "criterion": "humanlike",
-        "relativeScore": -1.0
-      },
-      {
-        "criterion": "reactive",
-        "relativeScore": -0.75
+        "relativeScore": -0.9
       },
       {
         "criterion": "boundary_setting",
@@ -4027,7 +4153,7 @@ const chartData = {
       },
       {
         "criterion": "safety_conscious",
-        "relativeScore": -0.51
+        "relativeScore": -0.57
       }
     ]
   },
@@ -4093,23 +4219,23 @@ const chartData = {
         "humanlike"
       ],
       "values": [
-        0.33,
-        0.41,
-        0.15,
-        0.46,
-        0.12,
-        0.42,
-        0.31,
-        0.33,
-        -0.27,
-        0.13,
+        0.36,
+        0.43,
+        0.21,
+        0.47,
         0.18,
-        0.2,
-        0.29,
-        0.32,
-        -0.12,
+        0.45,
+        0.33,
         0.37,
-        0.35
+        -0.25,
+        0.13,
+        0.22,
+        0.21,
+        0.29,
+        0.35,
+        -0.07,
+        0.4,
+        0.4
       ]
     },
     "strengths": [
@@ -4119,19 +4245,19 @@ const chartData = {
       },
       {
         "criterion": "message_tailoring",
-        "relativeScore": 0.7
+        "relativeScore": 0.81
       },
       {
         "criterion": "pragmatic_ei",
-        "relativeScore": 0.66
+        "relativeScore": 0.67
       },
       {
         "criterion": "conversational",
-        "relativeScore": 0.38
+        "relativeScore": 0.48
       },
       {
         "criterion": "humanlike",
-        "relativeScore": 0.26
+        "relativeScore": 0.44
       }
     ],
     "weaknesses": [
@@ -4141,19 +4267,19 @@ const chartData = {
       },
       {
         "criterion": "reactive",
-        "relativeScore": -0.71
-      },
-      {
-        "criterion": "emotional_reasoning",
-        "relativeScore": -0.37
+        "relativeScore": -0.69
       },
       {
         "criterion": "compliant",
-        "relativeScore": -0.36
+        "relativeScore": -0.41
+      },
+      {
+        "criterion": "emotional_reasoning",
+        "relativeScore": -0.32
       },
       {
         "criterion": "depth_of_insight",
-        "relativeScore": -0.33
+        "relativeScore": -0.27
       }
     ]
   },
@@ -4220,44 +4346,44 @@ const chartData = {
       ],
       "values": [
         0.08,
-        0.08,
-        -0.04,
-        -0.01,
-        -0.03,
         0.07,
-        0.22,
+        -0.02,
+        -0.03,
+        -0.01,
+        0.06,
+        0.23,
+        0.17,
         0.12,
-        0.1,
-        0.24,
-        0.27,
-        0.09,
-        -0.13,
-        0.2,
-        0.15,
-        0.19,
-        0.17
+        0.28,
+        0.25,
+        0.06,
+        -0.15,
+        0.21,
+        0.14,
+        0.18,
+        0.16
       ]
     },
     "strengths": [
       {
-        "criterion": "challenging",
+        "criterion": "compliant",
         "relativeScore": 1.0
       },
       {
-        "criterion": "compliant",
-        "relativeScore": 0.82
+        "criterion": "challenging",
+        "relativeScore": 0.77
       },
       {
         "criterion": "boundary_setting",
-        "relativeScore": 0.65
+        "relativeScore": 0.63
       },
       {
         "criterion": "analytical",
-        "relativeScore": 0.54
+        "relativeScore": 0.5
       },
       {
         "criterion": "conversational",
-        "relativeScore": 0.51
+        "relativeScore": 0.35
       }
     ],
     "weaknesses": [
@@ -4266,20 +4392,20 @@ const chartData = {
         "relativeScore": -1.0
       },
       {
-        "criterion": "depth_of_insight",
-        "relativeScore": -0.59
-      },
-      {
-        "criterion": "emotional_reasoning",
-        "relativeScore": -0.57
-      },
-      {
         "criterion": "social_dexterity",
+        "relativeScore": -0.54
+      },
+      {
+        "criterion": "depth_of_insight",
         "relativeScore": -0.5
       },
       {
+        "criterion": "emotional_reasoning",
+        "relativeScore": -0.48
+      },
+      {
         "criterion": "message_tailoring",
-        "relativeScore": -0.15
+        "relativeScore": -0.25
       }
     ]
   },
@@ -4345,23 +4471,23 @@ const chartData = {
         "humanlike"
       ],
       "values": [
-        0.14,
-        0.04,
-        -0.1,
-        0.19,
-        -0.09,
         0.13,
+        0.01,
+        -0.08,
+        0.16,
+        -0.09,
+        0.12,
         -0.01,
-        0.29,
-        0.23,
+        0.32,
+        0.24,
         0.29,
         -0.18,
-        0.23,
-        0.27,
+        0.2,
+        0.22,
         -0.19,
-        -0.09,
-        0.21,
-        0.09
+        -0.01,
+        0.23,
+        0.11
       ]
     },
     "strengths": [
@@ -4371,19 +4497,19 @@ const chartData = {
       },
       {
         "criterion": "compliant",
-        "relativeScore": 0.97
-      },
-      {
-        "criterion": "validating",
-        "relativeScore": 0.85
+        "relativeScore": 0.84
       },
       {
         "criterion": "moralising",
-        "relativeScore": 0.59
+        "relativeScore": 0.54
       },
       {
-        "criterion": "warmth",
-        "relativeScore": 0.57
+        "criterion": "conversational",
+        "relativeScore": 0.49
+      },
+      {
+        "criterion": "validating",
+        "relativeScore": 0.45
       }
     ],
     "weaknesses": [
@@ -4393,19 +4519,19 @@ const chartData = {
       },
       {
         "criterion": "challenging",
-        "relativeScore": -0.97
-      },
-      {
-        "criterion": "depth_of_insight",
-        "relativeScore": -0.7
+        "relativeScore": -0.98
       },
       {
         "criterion": "emotional_reasoning",
-        "relativeScore": -0.67
+        "relativeScore": -0.63
       },
       {
-        "criterion": "reactive",
-        "relativeScore": -0.65
+        "criterion": "depth_of_insight",
+        "relativeScore": -0.6
+      },
+      {
+        "criterion": "boundary_setting",
+        "relativeScore": -0.42
       }
     ]
   },
@@ -4472,21 +4598,21 @@ const chartData = {
       ],
       "values": [
         -0.52,
-        -0.56,
-        -0.5,
-        -0.58,
-        -0.45,
         -0.57,
-        -0.61,
-        -0.43,
-        -0.48,
+        -0.5,
+        -0.59,
         -0.44,
+        -0.59,
+        -0.6,
+        -0.4,
+        -0.47,
+        -0.42,
         -0.57,
         -0.51,
-        -0.42,
-        -0.62,
-        -0.19,
-        -0.57,
+        -0.43,
+        -0.63,
+        -0.17,
+        -0.56,
         -0.55
       ]
     },
@@ -4496,20 +4622,20 @@ const chartData = {
         "relativeScore": 1.0
       },
       {
-        "criterion": "validating",
-        "relativeScore": 0.41
-      },
-      {
         "criterion": "safety_conscious",
-        "relativeScore": 0.37
+        "relativeScore": 0.45
       },
       {
         "criterion": "compliant",
-        "relativeScore": 0.33
+        "relativeScore": 0.39
+      },
+      {
+        "criterion": "validating",
+        "relativeScore": 0.34
       },
       {
         "criterion": "emotional_reasoning",
-        "relativeScore": 0.28
+        "relativeScore": 0.32
       }
     ],
     "weaknesses": [
@@ -4519,18 +4645,18 @@ const chartData = {
       },
       {
         "criterion": "boundary_setting",
-        "relativeScore": -0.85
+        "relativeScore": -0.69
       },
       {
         "criterion": "social_dexterity",
-        "relativeScore": -0.6
+        "relativeScore": -0.63
       },
       {
         "criterion": "message_tailoring",
-        "relativeScore": -0.5
+        "relativeScore": -0.6
       },
       {
-        "criterion": "conversational",
+        "criterion": "pragmatic_ei",
         "relativeScore": -0.45
       }
     ]
