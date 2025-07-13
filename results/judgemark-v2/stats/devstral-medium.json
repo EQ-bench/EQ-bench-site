@@ -1,0 +1,2549 @@
+{
+    "judge_model": "mistralai/devstral-medium",
+    "start_time": "2025-07-13T10:16:24.320533",
+    "status": "completed",
+    "samples_file": "data/judgemark_v2.1_samples.json",
+    "prompts_file": "data/judge_prompts.json",
+    "scoring_range": {
+        "min": 0,
+        "max": 10
+    },
+    "errors": [
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "3",
+            "item_id": "6",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "2",
+            "item_id": "37",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "3",
+            "item_id": "41",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "3",
+            "item_id": "26",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "4",
+            "item_id": "9",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "5",
+            "item_id": "22",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "1",
+            "item_id": "6",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "3",
+            "item_id": "20",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "3",
+            "item_id": "33",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "2",
+            "item_id": "19",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "3",
+            "item_id": "33",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "3",
+            "item_id": "26",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "5",
+            "item_id": "32",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "1",
+            "item_id": "20",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-5-sonnet-20240620",
+            "iteration": "5",
+            "item_id": "36",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "4",
+            "item_id": "43",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "1",
+            "item_id": "37",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "1",
+            "item_id": "38",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "5",
+            "item_id": "41",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-5-sonnet-20240620",
+            "iteration": "5",
+            "item_id": "27",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "3",
+            "item_id": "32",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "1",
+            "item_id": "28",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "2",
+            "item_id": "19",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "5",
+            "item_id": "2",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "4",
+            "item_id": "6",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "1",
+            "item_id": "34",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "2",
+            "item_id": "20",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "1",
+            "item_id": "32",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "3",
+            "item_id": "2",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "5",
+            "item_id": "26",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "3",
+            "item_id": "35",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "1",
+            "item_id": "2",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "4",
+            "item_id": "44",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "2",
+            "item_id": "44",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "3",
+            "item_id": "38",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "3",
+            "item_id": "34",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "5",
+            "item_id": "10",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "4",
+            "item_id": "37",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "3",
+            "item_id": "22",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "4",
+            "item_id": "33",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "1",
+            "item_id": "41",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "3",
+            "item_id": "20",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "1",
+            "item_id": "10",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-5-sonnet-20240620",
+            "iteration": "4",
+            "item_id": "31",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "4",
+            "item_id": "41",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "5",
+            "item_id": "37",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "1",
+            "item_id": "26",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "5",
+            "item_id": "43",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "3",
+            "item_id": "22",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "2",
+            "item_id": "36",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "5",
+            "item_id": "28",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-5-sonnet-20240620",
+            "iteration": "4",
+            "item_id": "20",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "5",
+            "item_id": "29",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "2",
+            "item_id": "2",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "1",
+            "item_id": "30",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "2",
+            "item_id": "33",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-5-sonnet-20240620",
+            "iteration": "2",
+            "item_id": "35",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "3",
+            "item_id": "43",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "1",
+            "item_id": "28",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "4",
+            "item_id": "2",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "5",
+            "item_id": "19",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "5",
+            "item_id": "38",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-5-sonnet-20240620",
+            "iteration": "5",
+            "item_id": "6",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "5",
+            "item_id": "41",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "2",
+            "item_id": "30",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "2",
+            "item_id": "29",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "1",
+            "item_id": "27",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "3",
+            "item_id": "27",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-haiku-20240307",
+            "iteration": "2",
+            "item_id": "34",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-001",
+            "iteration": "3",
+            "item_id": "2",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-5-sonnet-20240620",
+            "iteration": "4",
+            "item_id": "35",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "1",
+            "item_id": "41",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3-opus-20240229",
+            "iteration": "5",
+            "item_id": "33",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "2",
+            "item_id": "43",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "5",
+            "item_id": "9",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "2",
+            "item_id": "26",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "5",
+            "item_id": "19",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "3",
+            "item_id": "22",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "4",
+            "item_id": "2",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "34",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "3",
+            "item_id": "29",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "2",
+            "item_id": "37",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "5",
+            "item_id": "30",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "3",
+            "item_id": "33",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "3",
+            "item_id": "36",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "1",
+            "item_id": "34",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "5",
+            "item_id": "6",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "3",
+            "item_id": "9",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "5",
+            "item_id": "41",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-3-70b-chat-hf",
+            "iteration": "4",
+            "item_id": "36",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "1",
+            "item_id": "9",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "35",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "38",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "2",
+            "item_id": "42",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "1",
+            "item_id": "19",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "4",
+            "item_id": "42",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "2",
+            "item_id": "44",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "5",
+            "item_id": "41",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "1",
+            "item_id": "26",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "4",
+            "item_id": "35",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "5",
+            "item_id": "36",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "4",
+            "item_id": "30",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "5",
+            "item_id": "26",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "1",
+            "item_id": "41",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "36",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "2",
+            "item_id": "32",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "3",
+            "item_id": "20",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x7B-Instruct-v0.1",
+            "iteration": "5",
+            "item_id": "42",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "1",
+            "item_id": "33",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "2",
+            "item_id": "10",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "3",
+            "item_id": "31",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "3",
+            "item_id": "19",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "1",
+            "item_id": "30",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "3",
+            "item_id": "33",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "1",
+            "item_id": "35",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "5",
+            "item_id": "33",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "5",
+            "item_id": "6",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "2",
+            "item_id": "10",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "2",
+            "item_id": "33",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "2",
+            "item_id": "19",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "2",
+            "item_id": "37",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "4",
+            "item_id": "20",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "3",
+            "item_id": "29",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "5",
+            "item_id": "35",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "5",
+            "item_id": "20",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "3",
+            "item_id": "44",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "2",
+            "item_id": "28",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "3",
+            "item_id": "31",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "3",
+            "item_id": "32",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "27",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "5",
+            "item_id": "43",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "3",
+            "item_id": "43",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "1",
+            "item_id": "38",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "3",
+            "item_id": "6",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "2",
+            "item_id": "36",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "5",
+            "item_id": "2",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "2",
+            "item_id": "29",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "1",
+            "item_id": "26",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "20",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "1",
+            "item_id": "42",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "5",
+            "item_id": "20",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "4",
+            "item_id": "2",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "5",
+            "item_id": "6",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "4",
+            "item_id": "20",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "4",
+            "item_id": "37",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "4",
+            "item_id": "9",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "4",
+            "item_id": "33",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "19",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "6",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-7b-it",
+            "iteration": "5",
+            "item_id": "38",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "3",
+            "item_id": "37",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "1",
+            "item_id": "28",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "2",
+            "item_id": "28",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "1",
+            "item_id": "34",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "1",
+            "item_id": "2",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "2",
+            "item_id": "44",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "1",
+            "item_id": "9",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "1",
+            "item_id": "44",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "5",
+            "item_id": "2",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "5",
+            "item_id": "22",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "5",
+            "item_id": "44",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-2b-it",
+            "iteration": "5",
+            "item_id": "30",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "c4ai-command-r-08-2024",
+            "iteration": "1",
+            "item_id": "41",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "2",
+            "item_id": "22",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "c4ai-command-r-08-2024",
+            "iteration": "3",
+            "item_id": "38",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "c4ai-command-r-08-2024",
+            "iteration": "2",
+            "item_id": "35",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "5",
+            "item_id": "29",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "c4ai-command-r-08-2024",
+            "iteration": "1",
+            "item_id": "28",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "3",
+            "item_id": "38",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "c4ai-command-r-08-2024",
+            "iteration": "2",
+            "item_id": "19",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "c4ai-command-r-08-2024",
+            "iteration": "1",
+            "item_id": "9",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "c4ai-command-r-08-2024",
+            "iteration": "3",
+            "item_id": "2",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mixtral-8x22B-Instruct-v0.1",
+            "iteration": "2",
+            "item_id": "26",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "c4ai-command-r-08-2024",
+            "iteration": "5",
+            "item_id": "38",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-002",
+            "iteration": "4",
+            "item_id": "10",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-002",
+            "iteration": "2",
+            "item_id": "35",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-002",
+            "iteration": "3",
+            "item_id": "27",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-002",
+            "iteration": "2",
+            "item_id": "38",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-002",
+            "iteration": "4",
+            "item_id": "33",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-002",
+            "iteration": "3",
+            "item_id": "9",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mistral-Large-Instruct-2411",
+            "iteration": "1",
+            "item_id": "29",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-002",
+            "iteration": "5",
+            "item_id": "19",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-002",
+            "iteration": "2",
+            "item_id": "6",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-002",
+            "iteration": "4",
+            "item_id": "6",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-002",
+            "iteration": "3",
+            "item_id": "34",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-002",
+            "iteration": "3",
+            "item_id": "43",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-002",
+            "iteration": "3",
+            "item_id": "42",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mistral-Large-Instruct-2411",
+            "iteration": "2",
+            "item_id": "27",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mistral-Large-Instruct-2411",
+            "iteration": "1",
+            "item_id": "44",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mistral-Large-Instruct-2411",
+            "iteration": "2",
+            "item_id": "38",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mistral-Large-Instruct-2411",
+            "iteration": "1",
+            "item_id": "35",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mistral-Large-Instruct-2411",
+            "iteration": "2",
+            "item_id": "2",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-1.5-pro-002",
+            "iteration": "5",
+            "item_id": "42",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mistral-Large-Instruct-2411",
+            "iteration": "1",
+            "item_id": "33",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mistral-Large-Instruct-2411",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mistral-Large-Instruct-2411",
+            "iteration": "1",
+            "item_id": "30",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Llama-2-13b-chat-hf",
+            "iteration": "1",
+            "item_id": "32",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mistral-Large-Instruct-2411",
+            "iteration": "1",
+            "item_id": "22",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mistral-Large-Instruct-2411",
+            "iteration": "5",
+            "item_id": "34",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mistral-Large-Instruct-2411",
+            "iteration": "5",
+            "item_id": "28",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "44",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mistral-Large-Instruct-2411",
+            "iteration": "1",
+            "item_id": "28",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "3",
+            "item_id": "26",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "6",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "4",
+            "item_id": "31",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mistral-Large-Instruct-2411",
+            "iteration": "3",
+            "item_id": "38",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "3",
+            "item_id": "6",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mistral-Large-Instruct-2411",
+            "iteration": "3",
+            "item_id": "41",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "2",
+            "item_id": "44",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "3",
+            "item_id": "10",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mistral-Large-Instruct-2411",
+            "iteration": "5",
+            "item_id": "9",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "1",
+            "item_id": "9",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "Mistral-Large-Instruct-2411",
+            "iteration": "5",
+            "item_id": "19",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "3",
+            "item_id": "44",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "5",
+            "item_id": "38",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "3",
+            "item_id": "2",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "1",
+            "item_id": "31",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "2",
+            "item_id": "38",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gpt-4o-2024-11-20",
+            "iteration": "5",
+            "item_id": "26",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "5",
+            "item_id": "9",
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "DeepSeek-R1",
+            "iteration": "4",
+            "item_id": "10",
+            "error": "'KeyError' object has no attribute 'response'"
+        }
+    ],
+    "end_time": "2025-07-13T11:19:22.521769",
+    "raw_score_distribution": {
+        "count": 2040,
+        "min": 3.99,
+        "max": 9.74,
+        "mean": 8.086,
+        "median": 8.14,
+        "stdev": 0.808,
+        "p10": 7.028,
+        "p25": 7.69,
+        "p75": 8.67,
+        "p90": 9.07
+    },
+    "calibration_config": {
+        "method": "piecewise_landmark",
+        "in_landmarks": [
+            3.99,
+            7.69,
+            8.14,
+            8.67,
+            9.74
+        ],
+        "out_landmarks": [
+            0,
+            3,
+            5,
+            7,
+            10
+        ]
+    },
+    "calibrated_score_distribution": {
+        "count": 2040,
+        "min": 0.0,
+        "max": 10.0,
+        "mean": 5.114,
+        "median": 5.0,
+        "stdev": 2.117,
+        "p10": 2.463,
+        "p25": 3.0,
+        "p75": 7.0,
+        "p90": 8.121
+    },
+    "raw_model_stats": {
+        "claude-3-5-sonnet-20240620": {
+            "count": 120,
+            "mean": 8.448833333333333,
+            "median": 8.55,
+            "stdev": 0.5748206637884613,
+            "ci95": 0.10284846639849753,
+            "min": 6.57,
+            "max": 9.42,
+            "length_correlation": -0.002102554678959238,
+            "length_correlation_p": 0.9818167653714359
+        },
+        "claude-3-haiku-20240307": {
+            "count": 120,
+            "mean": 8.042416666666666,
+            "median": 7.98,
+            "stdev": 0.6040479638050532,
+            "ci95": 0.10807789389308997,
+            "min": 6.34,
+            "max": 9.16,
+            "length_correlation": -0.020497889822047605,
+            "length_correlation_p": 0.8241455851851669
+        },
+        "claude-3-opus-20240229": {
+            "count": 120,
+            "mean": 8.212916666666667,
+            "median": 8.215,
+            "stdev": 0.6111078187246851,
+            "ci95": 0.10934106221187408,
+            "min": 6.59,
+            "max": 9.13,
+            "length_correlation": 0.0397226089747682,
+            "length_correlation_p": 0.6666466034492278
+        },
+        "gemini-1.5-pro-001": {
+            "count": 120,
+            "mean": 8.350583333333333,
+            "median": 8.475000000000001,
+            "stdev": 0.6223866989912561,
+            "ci95": 0.11135910994603833,
+            "min": 6.69,
+            "max": 9.23,
+            "length_correlation": -0.0244433141341122,
+            "length_correlation_p": 0.7910094398535317
+        },
+        "Llama-3-70b-chat-hf": {
+            "count": 120,
+            "mean": 8.102416666666667,
+            "median": 8.1,
+            "stdev": 0.6664568244676858,
+            "ci95": 0.11924425587897607,
+            "min": 6.46,
+            "max": 9.42,
+            "length_correlation": -0.04787307164561593,
+            "length_correlation_p": 0.6035989747916012
+        },
+        "Mixtral-8x7B-Instruct-v0.1": {
+            "count": 120,
+            "mean": 7.9615833333333335,
+            "median": 7.955,
+            "stdev": 0.7639162651914735,
+            "ci95": 0.13668196236021973,
+            "min": 5.63,
+            "max": 9.16,
+            "length_correlation": 0.012523428667009093,
+            "length_correlation_p": 0.892013643573778
+        },
+        "Llama-2-13b-chat-hf": {
+            "count": 120,
+            "mean": 7.92225,
+            "median": 8.004999999999999,
+            "stdev": 0.8606207086758259,
+            "ci95": 0.15398458269529172,
+            "min": 5.24,
+            "max": 9.74,
+            "length_correlation": -0.08853832298164999,
+            "length_correlation_p": 0.3362369440437135
+        },
+        "gemma-7b-it": {
+            "count": 120,
+            "mean": 7.440083333333333,
+            "median": 7.71,
+            "stdev": 1.0411495713738679,
+            "ci95": 0.18628529461957877,
+            "min": 4.15,
+            "max": 9.07,
+            "length_correlation": 0.02591598532216371,
+            "length_correlation_p": 0.7787325824433002
+        },
+        "gemma-2b-it": {
+            "count": 120,
+            "mean": 7.395666666666667,
+            "median": 7.705,
+            "stdev": 1.1962038929469343,
+            "ci95": 0.21402803281056004,
+            "min": 3.99,
+            "max": 9.13,
+            "length_correlation": -0.03549511937184117,
+            "length_correlation_p": 0.7003255641925098
+        },
+        "Mixtral-8x22B-Instruct-v0.1": {
+            "count": 120,
+            "mean": 8.118166666666667,
+            "median": 8.13,
+            "stdev": 0.7506848227327049,
+            "ci95": 0.13431455692257332,
+            "min": 6.3,
+            "max": 9.58,
+            "length_correlation": -0.07999904351704683,
+            "length_correlation_p": 0.38508447285517056
+        },
+        "c4ai-command-r-08-2024": {
+            "count": 120,
+            "mean": 7.949333333333334,
+            "median": 7.975,
+            "stdev": 0.714407238961947,
+            "ci95": 0.12782367360798438,
+            "min": 5.13,
+            "max": 9.45,
+            "length_correlation": 0.14483832636029917,
+            "length_correlation_p": 0.11448476549918359
+        },
+        "gemini-1.5-pro-002": {
+            "count": 120,
+            "mean": 8.40175,
+            "median": 8.475000000000001,
+            "stdev": 0.5020707749164556,
+            "ci95": 0.08983185970270827,
+            "min": 6.91,
+            "max": 9.16,
+            "length_correlation": 0.002557854645813538,
+            "length_correlation_p": 0.9778801646189913
+        },
+        "Mistral-Large-Instruct-2411": {
+            "count": 120,
+            "mean": 8.243333333333334,
+            "median": 8.43,
+            "stdev": 0.7272537653499542,
+            "ci95": 0.13012220882216138,
+            "min": 6.43,
+            "max": 9.74,
+            "length_correlation": 0.025583049823996663,
+            "length_correlation_p": 0.7815034387260161
+        },
+        "gpt-4o-2024-11-20": {
+            "count": 120,
+            "mean": 8.466833333333334,
+            "median": 8.625,
+            "stdev": 0.634061184298624,
+            "ci95": 0.11344794040307363,
+            "min": 6.69,
+            "max": 9.71,
+            "length_correlation": 0.12430511816566865,
+            "length_correlation_p": 0.17615330701295148
+        },
+        "DeepSeek-R1": {
+            "count": 120,
+            "mean": 8.590583333333333,
+            "median": 8.72,
+            "stdev": 0.5252663123402755,
+            "ci95": 0.09398206793566555,
+            "min": 6.79,
+            "max": 9.49,
+            "length_correlation": 0.09704748260288495,
+            "length_correlation_p": 0.2916697007734843
+        },
+        "gpt-3.5-turbo-0125": {
+            "count": 120,
+            "mean": 7.88325,
+            "median": 7.91,
+            "stdev": 0.7594139298213608,
+            "ci95": 0.13587639234995613,
+            "min": 5.6,
+            "max": 9.45,
+            "length_correlation": 0.028216949280884238,
+            "length_correlation_p": 0.7596603969474969
+        },
+        "databricks/dbrx-instruct": {
+            "count": 120,
+            "mean": 7.9325,
+            "median": 7.91,
+            "stdev": 0.7534885254489236,
+            "ci95": 0.13481620298849575,
+            "min": 5.0,
+            "max": 9.42,
+            "length_correlation": -0.09532502285003307,
+            "length_correlation_p": 0.3003589350306139
+        }
+    },
+    "calibrated_model_stats": {
+        "claude-3-5-sonnet-20240620": {
+            "count": 120,
+            "mean": 6.1573164819730675,
+            "median": 6.547169811320757,
+            "stdev": 1.7783770077977783,
+            "ci95": 0.31819201962033206,
+            "min": 2.091891891891892,
+            "max": 9.102803738317757,
+            "length_correlation": -0.02688954888690991,
+            "length_correlation_p": 0.7706461333754736
+        },
+        "claude-3-haiku-20240307": {
+            "count": 120,
+            "mean": 4.745725092046728,
+            "median": 4.288888888888889,
+            "stdev": 1.8511786319456418,
+            "ci95": 0.33121788293147264,
+            "min": 1.9054054054054048,
+            "max": 8.373831775700936,
+            "length_correlation": 0.011897780919962055,
+            "length_correlation_p": 0.8973782034199499
+        },
+        "claude-3-opus-20240229": {
+            "count": 120,
+            "mean": 5.315187356727208,
+            "median": 5.283018867924525,
+            "stdev": 1.9613222569797861,
+            "ci95": 0.35092507794369254,
+            "min": 2.1081081081081074,
+            "max": 8.289719626168226,
+            "length_correlation": 0.022721990316890785,
+            "length_correlation_p": 0.8054241236904655
+        },
+        "gemini-1.5-pro-001": {
+            "count": 120,
+            "mean": 5.835104357134422,
+            "median": 6.264150943396228,
+            "stdev": 1.9064597812676507,
+            "ci95": 0.34110893554437466,
+            "min": 2.189189189189189,
+            "max": 8.570093457943926,
+            "length_correlation": -0.04429618854194044,
+            "length_correlation_p": 0.6309448634887267
+        },
+        "Llama-3-70b-chat-hf": {
+            "count": 120,
+            "mean": 5.02062522185384,
+            "median": 4.822222222222218,
+            "stdev": 2.007036903976344,
+            "ci95": 0.35910446611070335,
+            "min": 2.0027027027027025,
+            "max": 9.102803738317757,
+            "length_correlation": -0.03909514551444267,
+            "length_correlation_p": 0.6716056498049059
+        },
+        "Mixtral-8x7B-Instruct-v0.1": {
+            "count": 120,
+            "mean": 4.70574723462662,
+            "median": 4.177777777777775,
+            "stdev": 2.1067367794131515,
+            "ci95": 0.3769430372247203,
+            "min": 1.3297297297297295,
+            "max": 8.373831775700936,
+            "length_correlation": 0.010834204875429663,
+            "length_correlation_p": 0.9065082477526111
+        },
+        "Llama-2-13b-chat-hf": {
+            "count": 120,
+            "mean": 4.689109768823663,
+            "median": 4.399999999999997,
+            "stdev": 2.1192438792784385,
+            "ci95": 0.37918084132828156,
+            "min": 1.0135135135135136,
+            "max": 10.0,
+            "length_correlation": -0.0959209307559967,
+            "length_correlation_p": 0.297333708267417
+        },
+        "gemma-7b-it": {
+            "count": 120,
+            "mean": 3.6128024127107174,
+            "median": 3.088888888888887,
+            "stdev": 1.810365135376387,
+            "ci95": 0.3239154218424034,
+            "min": 0.12972972972972985,
+            "max": 8.121495327102805,
+            "length_correlation": -0.010759979670264586,
+            "length_correlation_p": 0.9071458879864566
+        },
+        "gemma-2b-it": {
+            "count": 120,
+            "mean": 3.7478416685950626,
+            "median": 3.0666666666666655,
+            "stdev": 2.125447487068472,
+            "ci95": 0.3802908075969568,
+            "min": 0.0,
+            "max": 8.289719626168226,
+            "length_correlation": -0.04632704773025981,
+            "length_correlation_p": 0.61535421456443
+        },
+        "Mixtral-8x22B-Instruct-v0.1": {
+            "count": 120,
+            "mean": 5.167642424650007,
+            "median": 4.955555555555557,
+            "stdev": 2.1327282460170265,
+            "ci95": 0.38159350066150455,
+            "min": 1.8729729729729725,
+            "max": 9.551401869158878,
+            "length_correlation": -0.06573701251937057,
+            "length_correlation_p": 0.475630665438281
+        },
+        "c4ai-command-r-08-2024": {
+            "count": 120,
+            "mean": 4.614739064139081,
+            "median": 4.266666666666665,
+            "stdev": 1.9266015468326267,
+            "ci95": 0.3447127546646946,
+            "min": 0.924324324324324,
+            "max": 9.186915887850464,
+            "length_correlation": 0.11843114855728654,
+            "length_correlation_p": 0.19763872144424552
+        },
+        "gemini-1.5-pro-002": {
+            "count": 120,
+            "mean": 5.932268648475666,
+            "median": 6.264150943396228,
+            "stdev": 1.6931410477163675,
+            "ci95": 0.30294137132491383,
+            "min": 2.3675675675675674,
+            "max": 8.373831775700936,
+            "length_correlation": -0.02169204466700055,
+            "length_correlation_p": 0.8140807379594492
+        },
+        "Mistral-Large-Instruct-2411": {
+            "count": 120,
+            "mean": 5.557999853583083,
+            "median": 6.094339622641508,
+            "stdev": 2.1423841719482253,
+            "ci95": 0.38332116502056934,
+            "min": 1.9783783783783777,
+            "max": 10.0,
+            "length_correlation": 0.039668799981268946,
+            "length_correlation_p": 0.6670713138073817
+        },
+        "gpt-4o-2024-11-20": {
+            "count": 120,
+            "mean": 6.246112296390907,
+            "median": 6.830188679245284,
+            "stdev": 1.912460355291053,
+            "ci95": 0.342182574462903,
+            "min": 2.189189189189189,
+            "max": 9.915887850467291,
+            "length_correlation": 0.1111912155550609,
+            "length_correlation_p": 0.22664642910301588
+        },
+        "DeepSeek-R1": {
+            "count": 120,
+            "mean": 6.573004386417805,
+            "median": 7.140186915887853,
+            "stdev": 1.7217539228372445,
+            "ci95": 0.30806086425691614,
+            "min": 2.27027027027027,
+            "max": 9.299065420560748,
+            "length_correlation": 0.11769329867897366,
+            "length_correlation_p": 0.20046592450374742
+        },
+        "gpt-3.5-turbo-0125": {
+            "count": 120,
+            "mean": 4.4629786531373545,
+            "median": 3.977777777777776,
+            "stdev": 1.952014840394235,
+            "ci95": 0.34925976981846457,
+            "min": 1.305405405405405,
+            "max": 9.186915887850464,
+            "length_correlation": -0.01514424404298156,
+            "length_correlation_p": 0.8695974297468623
+        },
+        "databricks/dbrx-instruct": {
+            "count": 120,
+            "mean": 4.550110411504786,
+            "median": 3.977777777777776,
+            "stdev": 2.040599048968018,
+            "ci95": 0.3651094957815017,
+            "min": 0.8189189189189188,
+            "max": 9.102803738317757,
+            "length_correlation": 0.005585933141986969,
+            "length_correlation_p": 0.9517169422372832
+        }
+    },
+    "length_correlation": {
+        "raw": {
+            "pearson_corr": 0.006260968520128364,
+            "pearson_p": 0.6094894873157749
+        },
+        "calibrated": {
+            "pearson_corr": 0.0042448370410407485,
+            "pearson_p": 0.641481717446512
+        }
+    },
+    "raw_cross_model_stats": {
+        "anova_f": 23.89049540214029,
+        "anova_p": 5.5000653742403e-65,
+        "kw_stat": 299.879127374691,
+        "kw_p": 2.70193684889702e-54,
+        "std_dev_across_models": 0.32216763278155713,
+        "pearson_r": 0.8822359378174479,
+        "kendall_tau": 0.7617647058823529,
+        "normalized_components": {
+            "pearson_r": 0.6074531260581598,
+            "kendall_tau": 0.7352941176470588,
+            "anova_f": 0.06825855829182939,
+            "kw_stat": 0.16659951520816166,
+            "std_dev": 0.12391062799290659,
+            "ci99_overlap_magnitude_sum_norm": 0.5728336350412977,
+            "ci99_overlap_magnitude_pct_norm": 0.21300035933143768,
+            "raw_score_range_norm": 0.1194916666666666,
+            "kendall_tau_bootstrapped": 0.43686274509803913
+        }
+    },
+    "calibrated_cross_model_stats": {
+        "anova_f": 22.57202669526811,
+        "anova_p": 2.9197654864204424e-61,
+        "kw_stat": 299.879127374691,
+        "kw_p": 2.70193684889702e-54,
+        "std_dev_across_models": 0.8236046008082725,
+        "pearson_r": 0.8881697463954271,
+        "kendall_tau": 0.7323529411764705,
+        "normalized_components": {
+            "pearson_r": 0.6272324879847571,
+            "kendall_tau": 0.7026143790849673,
+            "anova_f": 0.06449150484362318,
+            "kw_stat": 0.16659951520816166,
+            "std_dev": 0.316771000310874,
+            "ci99_overlap_magnitude_sum_norm": 0.1908592885556239,
+            "ci99_overlap_magnitude_pct_norm": 0.20073655775196464,
+            "calibrated_score_range_norm": 0.2960201973707088,
+            "kendall_tau_bootstrapped": 0.43189215686274507
+        }
+    },
+    "separability_metrics": {
+        "raw": {
+            "ci99_overlap_adjacent": {
+                "DeepSeek-R1__gpt-4o-2024-11-20": true,
+                "gpt-4o-2024-11-20__claude-3-5-sonnet-20240620": true,
+                "claude-3-5-sonnet-20240620__gemini-1.5-pro-002": true,
+                "gemini-1.5-pro-002__gemini-1.5-pro-001": true,
+                "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": true,
+                "Mistral-Large-Instruct-2411__claude-3-opus-20240229": true,
+                "claude-3-opus-20240229__Mixtral-8x22B-Instruct-v0.1": true,
+                "Mixtral-8x22B-Instruct-v0.1__Llama-3-70b-chat-hf": true,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": true,
+                "claude-3-haiku-20240307__Mixtral-8x7B-Instruct-v0.1": true,
+                "Mixtral-8x7B-Instruct-v0.1__c4ai-command-r-08-2024": true,
+                "c4ai-command-r-08-2024__databricks/dbrx-instruct": true,
+                "databricks/dbrx-instruct__Llama-2-13b-chat-hf": true,
+                "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": true,
+                "gpt-3.5-turbo-0125__gemma-7b-it": false,
+                "gemma-7b-it__gemma-2b-it": true
+            },
+            "adjacent_overlap_fraction": 0.9375,
+            "ci99_overlap_magnitude_adjacent": {
+                "DeepSeek-R1__gpt-4o-2024-11-20": 0.28515634738340623,
+                "gpt-4o-2024-11-20__claude-3-5-sonnet-20240620": 0.4054899391443598,
+                "claude-3-5-sonnet-20240620__gemini-1.5-pro-002": 0.3327469958928244,
+                "gemini-1.5-pro-002__gemini-1.5-pro-001": 0.3454406766221023,
+                "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": 0.36878162536435966,
+                "Mistral-Large-Instruct-2411__claude-3-opus-20240229": 0.4310876206017973,
+                "claude-3-opus-20240229__Mixtral-8x22B-Instruct-v0.1": 0.3855678191894327,
+                "Mixtral-8x22B-Instruct-v0.1__Llama-3-70b-chat-hf": 0.4701319110810447,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": 0.38811968474129,
+                "claude-3-haiku-20240307__Mixtral-8x7B-Instruct-v0.1": 0.4016612662097998,
+                "Mixtral-8x7B-Instruct-v0.1__c4ai-command-r-08-2024": 0.5039570880102815,
+                "c4ai-command-r-08-2024__databricks/dbrx-instruct": 0.5009081134148925,
+                "databricks/dbrx-instruct__Llama-2-13b-chat-hf": 0.5315258054861696,
+                "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": 0.5324023419465362,
+                "gpt-3.5-turbo-0125__gemma-7b-it": 0.19191000204012543,
+                "gemma-7b-it__gemma-2b-it": 0.7344476337265586
+            },
+            "ci99_overlap_magnitude_sum": 6.809334870854981,
+            "ci99_overlap_scale_factor": 1.5,
+            "ci99_overlap_percentage_adjacent": {
+                "DeepSeek-R1__gpt-4o-2024-11-20": 0.5508966833858292,
+                "gpt-4o-2024-11-20__claude-3-5-sonnet-20240620": 0.9389316755965933,
+                "claude-3-5-sonnet-20240620__gemini-1.5-pro-002": 0.8177939131724234,
+                "gemini-1.5-pro-002__gemini-1.5-pro-001": 0.8158238720266939,
+                "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": 0.666071028418302,
+                "Mistral-Large-Instruct-2411__claude-3-opus-20240229": 0.9102026811085109,
+                "claude-3-opus-20240229__Mixtral-8x22B-Instruct-v0.1": 0.7115774593843645,
+                "Mixtral-8x22B-Instruct-v0.1__Llama-3-70b-chat-hf": 0.9438992266032455,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": 0.8010937594216035,
+                "claude-3-haiku-20240307__Mixtral-8x7B-Instruct-v0.1": 0.7590689306312688,
+                "Mixtral-8x7B-Instruct-v0.1__c4ai-command-r-08-2024": 0.9658429240797732,
+                "c4ai-command-r-08-2024__databricks/dbrx-instruct": 0.9519052305876539,
+                "databricks/dbrx-instruct__Llama-2-13b-chat-hf": 0.9377587698350075,
+                "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": 0.9011372128293426,
+                "gpt-3.5-turbo-0125__gemma-7b-it": 0.0,
+                "gemma-7b-it__gemma-2b-it": 0.9199908836163851
+            },
+            "ci99_overlap_percentage_adjacent_avg": 0.7869996406685623,
+            "average_cohens_d_adjacent": 0.10181677567831246,
+            "cohens_d_norm": 0.2545419391957811,
+            "emd": {
+                "average": 0.39368872549019607,
+                "pairs": {
+                    "claude-3-5-sonnet-20240620__claude-3-haiku-20240307": 0.4064166666666667,
+                    "claude-3-5-sonnet-20240620__claude-3-opus-20240229": 0.24025000000000002,
+                    "claude-3-5-sonnet-20240620__gemini-1.5-pro-001": 0.10408333333333342,
+                    "claude-3-5-sonnet-20240620__Llama-3-70b-chat-hf": 0.3464166666666667,
+                    "claude-3-5-sonnet-20240620__Mixtral-8x7B-Instruct-v0.1": 0.48725000000000007,
+                    "claude-3-5-sonnet-20240620__Llama-2-13b-chat-hf": 0.5452500000000001,
+                    "claude-3-5-sonnet-20240620__gemma-7b-it": 1.00875,
+                    "claude-3-5-sonnet-20240620__gemma-2b-it": 1.0531666666666668,
+                    "claude-3-5-sonnet-20240620__Mixtral-8x22B-Instruct-v0.1": 0.34500000000000003,
+                    "claude-3-5-sonnet-20240620__c4ai-command-r-08-2024": 0.5000000000000001,
+                    "claude-3-5-sonnet-20240620__gemini-1.5-pro-002": 0.09825000000000003,
+                    "claude-3-5-sonnet-20240620__Mistral-Large-Instruct-2411": 0.22100000000000003,
+                    "claude-3-5-sonnet-20240620__gpt-4o-2024-11-20": 0.07733333333333328,
+                    "claude-3-5-sonnet-20240620__DeepSeek-R1": 0.14224999999999996,
+                    "claude-3-5-sonnet-20240620__gpt-3.5-turbo-0125": 0.5697500000000001,
+                    "claude-3-5-sonnet-20240620__databricks/dbrx-instruct": 0.5163333333333333,
+                    "claude-3-haiku-20240307__claude-3-opus-20240229": 0.17099999999999999,
+                    "claude-3-haiku-20240307__gemini-1.5-pro-001": 0.30849999999999994,
+                    "claude-3-haiku-20240307__Llama-3-70b-chat-hf": 0.10066666666666665,
+                    "claude-3-haiku-20240307__Mixtral-8x7B-Instruct-v0.1": 0.15916666666666668,
+                    "claude-3-haiku-20240307__Llama-2-13b-chat-hf": 0.1866666666666667,
+                    "claude-3-haiku-20240307__gemma-7b-it": 0.6023333333333333,
+                    "claude-3-haiku-20240307__gemma-2b-it": 0.64825,
+                    "claude-3-haiku-20240307__Mixtral-8x22B-Instruct-v0.1": 0.18174999999999997,
+                    "claude-3-haiku-20240307__c4ai-command-r-08-2024": 0.10775000000000003,
+                    "claude-3-haiku-20240307__gemini-1.5-pro-002": 0.35933333333333334,
+                    "claude-3-haiku-20240307__Mistral-Large-Instruct-2411": 0.2587499999999999,
+                    "claude-3-haiku-20240307__gpt-4o-2024-11-20": 0.4260833333333333,
+                    "claude-3-haiku-20240307__DeepSeek-R1": 0.5481666666666667,
+                    "claude-3-haiku-20240307__gpt-3.5-turbo-0125": 0.17,
+                    "claude-3-haiku-20240307__databricks/dbrx-instruct": 0.13108333333333333,
+                    "claude-3-opus-20240229__gemini-1.5-pro-001": 0.15049999999999994,
+                    "claude-3-opus-20240229__Llama-3-70b-chat-hf": 0.11799999999999994,
+                    "claude-3-opus-20240229__Mixtral-8x7B-Instruct-v0.1": 0.25183333333333335,
+                    "claude-3-opus-20240229__Llama-2-13b-chat-hf": 0.31649999999999995,
+                    "claude-3-opus-20240229__gemma-7b-it": 0.7728333333333333,
+                    "claude-3-opus-20240229__gemma-2b-it": 0.8172499999999998,
+                    "claude-3-opus-20240229__Mixtral-8x22B-Instruct-v0.1": 0.12874999999999998,
+                    "claude-3-opus-20240229__c4ai-command-r-08-2024": 0.2689166666666667,
+                    "claude-3-opus-20240229__gemini-1.5-pro-002": 0.18983333333333335,
+                    "claude-3-opus-20240229__Mistral-Large-Instruct-2411": 0.13458333333333336,
+                    "claude-3-opus-20240229__gpt-4o-2024-11-20": 0.26708333333333334,
+                    "claude-3-opus-20240229__DeepSeek-R1": 0.3776666666666667,
+                    "claude-3-opus-20240229__gpt-3.5-turbo-0125": 0.33983333333333327,
+                    "claude-3-opus-20240229__databricks/dbrx-instruct": 0.28524999999999995,
+                    "gemini-1.5-pro-001__Llama-3-70b-chat-hf": 0.25183333333333324,
+                    "gemini-1.5-pro-001__Mixtral-8x7B-Instruct-v0.1": 0.38899999999999996,
+                    "gemini-1.5-pro-001__Llama-2-13b-chat-hf": 0.4525,
+                    "gemini-1.5-pro-001__gemma-7b-it": 0.9105,
+                    "gemini-1.5-pro-001__gemma-2b-it": 0.9549166666666666,
+                    "gemini-1.5-pro-001__Mixtral-8x22B-Instruct-v0.1": 0.25425,
+                    "gemini-1.5-pro-001__c4ai-command-r-08-2024": 0.4049166666666666,
+                    "gemini-1.5-pro-001__gemini-1.5-pro-002": 0.09649999999999992,
+                    "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": 0.13058333333333336,
+                    "gemini-1.5-pro-001__gpt-4o-2024-11-20": 0.1265833333333334,
+                    "gemini-1.5-pro-001__DeepSeek-R1": 0.24000000000000005,
+                    "gemini-1.5-pro-001__gpt-3.5-turbo-0125": 0.4758333333333333,
+                    "gemini-1.5-pro-001__databricks/dbrx-instruct": 0.42124999999999996,
+                    "Llama-3-70b-chat-hf__Mixtral-8x7B-Instruct-v0.1": 0.1431666666666667,
+                    "Llama-3-70b-chat-hf__Llama-2-13b-chat-hf": 0.20116666666666674,
+                    "Llama-3-70b-chat-hf__gemma-7b-it": 0.6623333333333334,
+                    "Llama-3-70b-chat-hf__gemma-2b-it": 0.7067500000000001,
+                    "Llama-3-70b-chat-hf__Mixtral-8x22B-Instruct-v0.1": 0.0884166666666667,
+                    "Llama-3-70b-chat-hf__c4ai-command-r-08-2024": 0.15358333333333338,
+                    "Llama-3-70b-chat-hf__gemini-1.5-pro-002": 0.30666666666666664,
+                    "Llama-3-70b-chat-hf__Mistral-Large-Instruct-2411": 0.1709166666666666,
+                    "Llama-3-70b-chat-hf__gpt-4o-2024-11-20": 0.36441666666666667,
+                    "Llama-3-70b-chat-hf__DeepSeek-R1": 0.4881666666666666,
+                    "Llama-3-70b-chat-hf__gpt-3.5-turbo-0125": 0.22450000000000003,
+                    "Llama-3-70b-chat-hf__databricks/dbrx-instruct": 0.16991666666666672,
+                    "Mixtral-8x7B-Instruct-v0.1__Llama-2-13b-chat-hf": 0.13083333333333336,
+                    "Mixtral-8x7B-Instruct-v0.1__gemma-7b-it": 0.5215000000000001,
+                    "Mixtral-8x7B-Instruct-v0.1__gemma-2b-it": 0.5669166666666667,
+                    "Mixtral-8x7B-Instruct-v0.1__Mixtral-8x22B-Instruct-v0.1": 0.1619166666666667,
+                    "Mixtral-8x7B-Instruct-v0.1__c4ai-command-r-08-2024": 0.09791666666666665,
+                    "Mixtral-8x7B-Instruct-v0.1__gemini-1.5-pro-002": 0.4401666666666667,
+                    "Mixtral-8x7B-Instruct-v0.1__Mistral-Large-Instruct-2411": 0.28175,
+                    "Mixtral-8x7B-Instruct-v0.1__gpt-4o-2024-11-20": 0.50525,
+                    "Mixtral-8x7B-Instruct-v0.1__DeepSeek-R1": 0.629,
+                    "Mixtral-8x7B-Instruct-v0.1__gpt-3.5-turbo-0125": 0.11100000000000002,
+                    "Mixtral-8x7B-Instruct-v0.1__databricks/dbrx-instruct": 0.08474999999999996,
+                    "Llama-2-13b-chat-hf__gemma-7b-it": 0.48216666666666663,
+                    "Llama-2-13b-chat-hf__gemma-2b-it": 0.5265833333333333,
+                    "Llama-2-13b-chat-hf__Mixtral-8x22B-Instruct-v0.1": 0.2012500000000001,
+                    "Llama-2-13b-chat-hf__c4ai-command-r-08-2024": 0.11225000000000002,
+                    "Llama-2-13b-chat-hf__gemini-1.5-pro-002": 0.5043333333333334,
+                    "Llama-2-13b-chat-hf__Mistral-Large-Instruct-2411": 0.3270833333333334,
+                    "Llama-2-13b-chat-hf__gpt-4o-2024-11-20": 0.5567500000000001,
+                    "Llama-2-13b-chat-hf__DeepSeek-R1": 0.6831666666666667,
+                    "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": 0.11699999999999988,
+                    "Llama-2-13b-chat-hf__databricks/dbrx-instruct": 0.1309166666666666,
+                    "gemma-7b-it__gemma-2b-it": 0.17725000000000007,
+                    "gemma-7b-it__Mixtral-8x22B-Instruct-v0.1": 0.6780833333333334,
+                    "gemma-7b-it__c4ai-command-r-08-2024": 0.50925,
+                    "gemma-7b-it__gemini-1.5-pro-002": 0.9616666666666667,
+                    "gemma-7b-it__Mistral-Large-Instruct-2411": 0.8032499999999999,
+                    "gemma-7b-it__gpt-4o-2024-11-20": 1.0267499999999998,
+                    "gemma-7b-it__DeepSeek-R1": 1.1505,
+                    "gemma-7b-it__gpt-3.5-turbo-0125": 0.4431666666666667,
+                    "gemma-7b-it__databricks/dbrx-instruct": 0.4924166666666667,
+                    "gemma-2b-it__Mixtral-8x22B-Instruct-v0.1": 0.7224999999999999,
+                    "gemma-2b-it__c4ai-command-r-08-2024": 0.562,
+                    "gemma-2b-it__gemini-1.5-pro-002": 1.0060833333333332,
+                    "gemma-2b-it__Mistral-Large-Instruct-2411": 0.8476666666666667,
+                    "gemma-2b-it__gpt-4o-2024-11-20": 1.0711666666666666,
+                    "gemma-2b-it__DeepSeek-R1": 1.1949166666666666,
+                    "gemma-2b-it__gpt-3.5-turbo-0125": 0.49325,
+                    "gemma-2b-it__databricks/dbrx-instruct": 0.5383333333333333,
+                    "Mixtral-8x22B-Instruct-v0.1__c4ai-command-r-08-2024": 0.17783333333333334,
+                    "Mixtral-8x22B-Instruct-v0.1__gemini-1.5-pro-002": 0.30974999999999997,
+                    "Mixtral-8x22B-Instruct-v0.1__Mistral-Large-Instruct-2411": 0.13216666666666663,
+                    "Mixtral-8x22B-Instruct-v0.1__gpt-4o-2024-11-20": 0.3591666666666666,
+                    "Mixtral-8x22B-Instruct-v0.1__DeepSeek-R1": 0.48291666666666655,
+                    "Mixtral-8x22B-Instruct-v0.1__gpt-3.5-turbo-0125": 0.23558333333333326,
+                    "Mixtral-8x22B-Instruct-v0.1__databricks/dbrx-instruct": 0.20133333333333336,
+                    "c4ai-command-r-08-2024__gemini-1.5-pro-002": 0.45725000000000005,
+                    "c4ai-command-r-08-2024__Mistral-Large-Instruct-2411": 0.29400000000000004,
+                    "c4ai-command-r-08-2024__gpt-4o-2024-11-20": 0.5175000000000001,
+                    "c4ai-command-r-08-2024__DeepSeek-R1": 0.6412500000000001,
+                    "c4ai-command-r-08-2024__gpt-3.5-turbo-0125": 0.08425000000000002,
+                    "c4ai-command-r-08-2024__databricks/dbrx-instruct": 0.06616666666666662,
+                    "gemini-1.5-pro-002__Mistral-Large-Instruct-2411": 0.19491666666666665,
+                    "gemini-1.5-pro-002__gpt-4o-2024-11-20": 0.15724999999999995,
+                    "gemini-1.5-pro-002__DeepSeek-R1": 0.19216666666666665,
+                    "gemini-1.5-pro-002__gpt-3.5-turbo-0125": 0.5276666666666666,
+                    "gemini-1.5-pro-002__databricks/dbrx-instruct": 0.47358333333333336,
+                    "Mistral-Large-Instruct-2411__gpt-4o-2024-11-20": 0.23083333333333333,
+                    "Mistral-Large-Instruct-2411__DeepSeek-R1": 0.3560833333333333,
+                    "Mistral-Large-Instruct-2411__gpt-3.5-turbo-0125": 0.3600833333333333,
+                    "Mistral-Large-Instruct-2411__databricks/dbrx-instruct": 0.313,
+                    "gpt-4o-2024-11-20__DeepSeek-R1": 0.1280833333333333,
+                    "gpt-4o-2024-11-20__gpt-3.5-turbo-0125": 0.5844166666666666,
+                    "gpt-4o-2024-11-20__databricks/dbrx-instruct": 0.5343333333333333,
+                    "DeepSeek-R1__gpt-3.5-turbo-0125": 0.7088333333333333,
+                    "DeepSeek-R1__databricks/dbrx-instruct": 0.6580833333333334,
+                    "gpt-3.5-turbo-0125__databricks/dbrx-instruct": 0.08391666666666665
+                }
+            },
+            "average_ci95": 0.12953326844392615,
+            "modulated_ci95": 0.6721915646619933
+        },
+        "calibrated": {
+            "ci99_overlap_adjacent": {
+                "DeepSeek-R1__gpt-4o-2024-11-20": true,
+                "gpt-4o-2024-11-20__claude-3-5-sonnet-20240620": true,
+                "claude-3-5-sonnet-20240620__gemini-1.5-pro-002": true,
+                "gemini-1.5-pro-002__gemini-1.5-pro-001": true,
+                "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": true,
+                "Mistral-Large-Instruct-2411__claude-3-opus-20240229": true,
+                "claude-3-opus-20240229__Mixtral-8x22B-Instruct-v0.1": true,
+                "Mixtral-8x22B-Instruct-v0.1__Llama-3-70b-chat-hf": true,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": true,
+                "claude-3-haiku-20240307__Mixtral-8x7B-Instruct-v0.1": true,
+                "Mixtral-8x7B-Instruct-v0.1__Llama-2-13b-chat-hf": true,
+                "Llama-2-13b-chat-hf__c4ai-command-r-08-2024": true,
+                "c4ai-command-r-08-2024__databricks/dbrx-instruct": true,
+                "databricks/dbrx-instruct__gpt-3.5-turbo-0125": true,
+                "gpt-3.5-turbo-0125__gemma-2b-it": true,
+                "gemma-2b-it__gemma-7b-it": true
+            },
+            "adjacent_overlap_fraction": 1.0,
+            "ci99_overlap_magnitude_adjacent": {
+                "DeepSeek-R1__gpt-4o-2024-11-20": 0.9549314588722702,
+                "gpt-4o-2024-11-20__claude-3-5-sonnet-20240620": 1.2129992601424728,
+                "claude-3-5-sonnet-20240620__gemini-1.5-pro-002": 0.999391138295552,
+                "gemini-1.5-pro-002__gemini-1.5-pro-001": 1.1724507495211869,
+                "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": 1.1509630587507482,
+                "Mistral-Large-Instruct-2411__claude-3-opus-20240229": 1.204605606701291,
+                "claude-3-opus-20240229__Mixtral-8x22B-Instruct-v0.1": 1.2964674302941672,
+                "Mixtral-8x22B-Instruct-v0.1__Llama-3-70b-chat-hf": 1.3131191705897587,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": 1.0859308923032565,
+                "claude-3-haiku-20240307__Mixtral-8x7B-Instruct-v0.1": 1.3058582582361993,
+                "Mixtral-8x7B-Instruct-v0.1__Llama-2-13b-chat-hf": 1.4739079756433724,
+                "Llama-2-13b-chat-hf__c4ai-command-r-08-2024": 1.3526392472619215,
+                "c4ai-command-r-08-2024__databricks/dbrx-instruct": 1.3346424848736178,
+                "databricks/dbrx-instruct__gpt-3.5-turbo-0125": 1.321102900729839,
+                "gpt-3.5-turbo-0125__gemma-2b-it": 0.7230245632084706,
+                "gemma-2b-it__gemma-7b-it": 1.253161031002071
+            },
+            "ci99_overlap_magnitude_sum": 19.155195226426194,
+            "ci99_overlap_scale_factor": 1.5,
+            "ci99_overlap_percentage_adjacent": {
+                "DeepSeek-R1__gpt-4o-2024-11-20": 0.6191732948675287,
+                "gpt-4o-2024-11-20__claude-3-5-sonnet-20240620": 0.8988708781619097,
+                "claude-3-5-sonnet-20240620__gemini-1.5-pro-002": 0.7247418690795523,
+                "gemini-1.5-pro-002__gemini-1.5-pro-001": 0.8883239858580257,
+                "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": 0.7113528985290054,
+                "Mistral-Large-Instruct-2411__claude-3-opus-20240229": 0.749826291044013,
+                "claude-3-opus-20240229__Mixtral-8x22B-Instruct-v0.1": 0.8482212233836944,
+                "Mixtral-8x22B-Instruct-v0.1__Llama-3-70b-chat-hf": 0.8497523784285644,
+                "Llama-3-70b-chat-hf__claude-3-haiku-20240307": 0.6981257360684612,
+                "claude-3-haiku-20240307__Mixtral-8x7B-Instruct-v0.1": 0.9393473949938123,
+                "Mixtral-8x7B-Instruct-v0.1__Llama-2-13b-chat-hf": 0.9832656149266508,
+                "Llama-2-13b-chat-hf__c4ai-command-r-08-2024": 0.9239200000689733,
+                "c4ai-command-r-08-2024__databricks/dbrx-instruct": 0.9314880760247294,
+                "databricks/dbrx-instruct__gpt-3.5-turbo-0125": 0.9076372381421227,
+                "gpt-3.5-turbo-0125__gemma-2b-it": 0.25457393551869034,
+                "gemma-2b-it__gemma-7b-it": 0.8595942608728324
+            },
+            "ci99_overlap_percentage_adjacent_avg": 0.7992634422480354,
+            "average_cohens_d_adjacent": 0.09485401437647459,
+            "cohens_d_norm": 0.23713503594118646,
+            "emd": {
+                "average": 1.021396784580591,
+                "pairs": {
+                    "claude-3-5-sonnet-20240620__claude-3-haiku-20240307": 1.4115913899263401,
+                    "claude-3-5-sonnet-20240620__claude-3-opus-20240229": 0.8456426387593734,
+                    "claude-3-5-sonnet-20240620__gemini-1.5-pro-001": 0.3332527916737056,
+                    "claude-3-5-sonnet-20240620__Llama-3-70b-chat-hf": 1.1366912601192272,
+                    "claude-3-5-sonnet-20240620__Mixtral-8x7B-Instruct-v0.1": 1.4515692473464474,
+                    "claude-3-5-sonnet-20240620__Llama-2-13b-chat-hf": 1.5205431617475356,
+                    "claude-3-5-sonnet-20240620__gemma-7b-it": 2.54451406926235,
+                    "claude-3-5-sonnet-20240620__gemma-2b-it": 2.4094748133780053,
+                    "claude-3-5-sonnet-20240620__Mixtral-8x22B-Instruct-v0.1": 1.0298609732109119,
+                    "claude-3-5-sonnet-20240620__c4ai-command-r-08-2024": 1.5439792869928652,
+                    "claude-3-5-sonnet-20240620__gemini-1.5-pro-002": 0.28470248815205645,
+                    "claude-3-5-sonnet-20240620__Mistral-Large-Instruct-2411": 0.6391208718858166,
+                    "claude-3-5-sonnet-20240620__gpt-4o-2024-11-20": 0.1928849202755919,
+                    "claude-3-5-sonnet-20240620__DeepSeek-R1": 0.41708977360361577,
+                    "claude-3-5-sonnet-20240620__gpt-3.5-turbo-0125": 1.7060200718263676,
+                    "claude-3-5-sonnet-20240620__databricks/dbrx-instruct": 1.607206070468282,
+                    "claude-3-haiku-20240307__claude-3-opus-20240229": 0.5708641338393586,
+                    "claude-3-haiku-20240307__gemini-1.5-pro-001": 1.0896495353579643,
+                    "claude-3-haiku-20240307__Llama-3-70b-chat-hf": 0.3151403700473532,
+                    "claude-3-haiku-20240307__Mixtral-8x7B-Instruct-v0.1": 0.317309897624657,
+                    "claude-3-haiku-20240307__Llama-2-13b-chat-hf": 0.28503581213024,
+                    "claude-3-haiku-20240307__gemma-7b-it": 1.1329226793360103,
+                    "claude-3-haiku-20240307__gemma-2b-it": 1.0020890309283006,
+                    "claude-3-haiku-20240307__Mixtral-8x22B-Instruct-v0.1": 0.5078632785492249,
+                    "claude-3-haiku-20240307__c4ai-command-r-08-2024": 0.17994042225967813,
+                    "claude-3-haiku-20240307__gemini-1.5-pro-002": 1.1865435564289384,
+                    "claude-3-haiku-20240307__Mistral-Large-Instruct-2411": 0.8591666534282477,
+                    "claude-3-haiku-20240307__gpt-4o-2024-11-20": 1.50173855569553,
+                    "claude-3-haiku-20240307__DeepSeek-R1": 1.8272792943710776,
+                    "claude-3-haiku-20240307__gpt-3.5-turbo-0125": 0.3132819117830579,
+                    "claude-3-haiku-20240307__databricks/dbrx-instruct": 0.267568480577209,
+                    "claude-3-opus-20240229__gemini-1.5-pro-001": 0.5303224058126192,
+                    "claude-3-opus-20240229__Llama-3-70b-chat-hf": 0.31559017225654484,
+                    "claude-3-opus-20240229__Mixtral-8x7B-Instruct-v0.1": 0.610841991259466,
+                    "claude-3-opus-20240229__Llama-2-13b-chat-hf": 0.6985074944456007,
+                    "claude-3-opus-20240229__gemma-7b-it": 1.7023849440164904,
+                    "claude-3-opus-20240229__gemma-2b-it": 1.5673456881321455,
+                    "claude-3-opus-20240229__Mixtral-8x22B-Instruct-v0.1": 0.24552027119695935,
+                    "claude-3-opus-20240229__c4ai-command-r-08-2024": 0.7154015636161641,
+                    "claude-3-opus-20240229__gemini-1.5-pro-002": 0.6198850300662152,
+                    "claude-3-opus-20240229__Mistral-Large-Instruct-2411": 0.3357504347938136,
+                    "claude-3-opus-20240229__gpt-4o-2024-11-20": 0.9416006153393743,
+                    "claude-3-opus-20240229__DeepSeek-R1": 1.2578170296905973,
+                    "claude-3-opus-20240229__gpt-3.5-turbo-0125": 0.8807133764870494,
+                    "claude-3-opus-20240229__databricks/dbrx-instruct": 0.778628347091581,
+                    "gemini-1.5-pro-001__Llama-3-70b-chat-hf": 0.8247595091123567,
+                    "gemini-1.5-pro-001__Mixtral-8x7B-Instruct-v0.1": 1.1293571225078014,
+                    "gemini-1.5-pro-001__Llama-2-13b-chat-hf": 1.2137515976565527,
+                    "gemini-1.5-pro-001__gemma-7b-it": 2.222301944423704,
+                    "gemini-1.5-pro-001__gemma-2b-it": 2.087262688539359,
+                    "gemini-1.5-pro-001__Mixtral-8x22B-Instruct-v0.1": 0.7286768857554432,
+                    "gemini-1.5-pro-001__c4ai-command-r-08-2024": 1.2306456668271164,
+                    "gemini-1.5-pro-001__gemini-1.5-pro-002": 0.23218750888077266,
+                    "gemini-1.5-pro-001__Mistral-Large-Instruct-2411": 0.3423013164813552,
+                    "gemini-1.5-pro-001__gpt-4o-2024-11-20": 0.41999192324046886,
+                    "gemini-1.5-pro-001__DeepSeek-R1": 0.7379000292833836,
+                    "gemini-1.5-pro-001__gpt-3.5-turbo-0125": 1.3959574796980014,
+                    "gemini-1.5-pro-001__databricks/dbrx-instruct": 1.2938724503025332,
+                    "Llama-3-70b-chat-hf__Mixtral-8x7B-Instruct-v0.1": 0.3223898898898899,
+                    "Llama-3-70b-chat-hf__Llama-2-13b-chat-hf": 0.39039395770307467,
+                    "Llama-3-70b-chat-hf__gemma-7b-it": 1.407822809143123,
+                    "Llama-3-70b-chat-hf__gemma-2b-it": 1.272783553258778,
+                    "Llama-3-70b-chat-hf__Mixtral-8x22B-Instruct-v0.1": 0.2132033889823522,
+                    "Llama-3-70b-chat-hf__c4ai-command-r-08-2024": 0.40728802687363813,
+                    "Llama-3-70b-chat-hf__gemini-1.5-pro-002": 0.9322041742853769,
+                    "Llama-3-70b-chat-hf__Mistral-Large-Instruct-2411": 0.5616989560535673,
+                    "Llama-3-70b-chat-hf__gpt-4o-2024-11-20": 1.225487074537066,
+                    "Llama-3-70b-chat-hf__DeepSeek-R1": 1.5523791645639644,
+                    "Llama-3-70b-chat-hf__gpt-3.5-turbo-0125": 0.5725998397445233,
+                    "Llama-3-70b-chat-hf__databricks/dbrx-instruct": 0.47051481034905485,
+                    "Mixtral-8x7B-Instruct-v0.1__Llama-2-13b-chat-hf": 0.2704934166224062,
+                    "Mixtral-8x7B-Instruct-v0.1__gemma-7b-it": 1.092944821915903,
+                    "Mixtral-8x7B-Instruct-v0.1__gemma-2b-it": 0.9607093043493148,
+                    "Mixtral-8x7B-Instruct-v0.1__Mixtral-8x22B-Instruct-v0.1": 0.46621951434771064,
+                    "Mixtral-8x7B-Instruct-v0.1__c4ai-command-r-08-2024": 0.2551550735182371,
+                    "Mixtral-8x7B-Instruct-v0.1__gemini-1.5-pro-002": 1.2265214138490457,
+                    "Mixtral-8x7B-Instruct-v0.1__Mistral-Large-Instruct-2411": 0.8522526189564632,
+                    "Mixtral-8x7B-Instruct-v0.1__gpt-4o-2024-11-20": 1.5403650617642861,
+                    "Mixtral-8x7B-Instruct-v0.1__DeepSeek-R1": 1.867257151791185,
+                    "Mixtral-8x7B-Instruct-v0.1__gpt-3.5-turbo-0125": 0.30444189031210733,
+                    "Mixtral-8x7B-Instruct-v0.1__databricks/dbrx-instruct": 0.20940797745373657,
+                    "Llama-2-13b-chat-hf__gemma-7b-it": 1.0763073561129457,
+                    "Llama-2-13b-chat-hf__gemma-2b-it": 0.9412681002286005,
+                    "Llama-2-13b-chat-hf__Mixtral-8x22B-Instruct-v0.1": 0.49348592685438086,
+                    "Llama-2-13b-chat-hf__c4ai-command-r-08-2024": 0.20443810853703293,
+                    "Llama-2-13b-chat-hf__gemini-1.5-pro-002": 1.312785047876302,
+                    "Llama-2-13b-chat-hf__Mistral-Large-Instruct-2411": 0.8857125146659625,
+                    "Llama-2-13b-chat-hf__gpt-4o-2024-11-20": 1.5911146770999536,
+                    "Llama-2-13b-chat-hf__DeepSeek-R1": 1.925483402640871,
+                    "Llama-2-13b-chat-hf__gpt-3.5-turbo-0125": 0.28937435892955177,
+                    "Llama-2-13b-chat-hf__databricks/dbrx-instruct": 0.2830402576796508,
+                    "gemma-7b-it__gemma-2b-it": 0.3153745912196805,
+                    "gemma-7b-it__Mixtral-8x22B-Instruct-v0.1": 1.5548400119392891,
+                    "gemma-7b-it__c4ai-command-r-08-2024": 1.0019366514283634,
+                    "gemma-7b-it__gemini-1.5-pro-002": 2.3194662357649483,
+                    "gemma-7b-it__Mistral-Large-Instruct-2411": 1.9451974408723662,
+                    "gemma-7b-it__gpt-4o-2024-11-20": 2.633309883680189,
+                    "gemma-7b-it__DeepSeek-R1": 2.960201973707088,
+                    "gemma-7b-it__gpt-3.5-turbo-0125": 0.8501762404266373,
+                    "gemma-7b-it__databricks/dbrx-instruct": 0.9373079987940682,
+                    "gemma-2b-it__Mixtral-8x22B-Instruct-v0.1": 1.419800756054944,
+                    "gemma-2b-it__c4ai-command-r-08-2024": 0.8902618815253269,
+                    "gemma-2b-it__gemini-1.5-pro-002": 2.1844269798806035,
+                    "gemma-2b-it__Mistral-Large-Instruct-2411": 1.8101581849880208,
+                    "gemma-2b-it__gpt-4o-2024-11-20": 2.498270627795844,
+                    "gemma-2b-it__DeepSeek-R1": 2.8251627178227423,
+                    "gemma-2b-it__gpt-3.5-turbo-0125": 0.7310248350095817,
+                    "gemma-2b-it__databricks/dbrx-instruct": 0.8064743503863587,
+                    "Mixtral-8x22B-Instruct-v0.1__c4ai-command-r-08-2024": 0.560200657808223,
+                    "Mixtral-8x22B-Instruct-v0.1__gemini-1.5-pro-002": 0.8379907098069679,
+                    "Mixtral-8x22B-Instruct-v0.1__Mistral-Large-Instruct-2411": 0.40865497881941193,
+                    "Mixtral-8x22B-Instruct-v0.1__gpt-4o-2024-11-20": 1.1079091240773484,
+                    "Mixtral-8x22B-Instruct-v0.1__DeepSeek-R1": 1.434801214104247,
+                    "Mixtral-8x22B-Instruct-v0.1__gpt-3.5-turbo-0125": 0.7052043120531923,
+                    "Mixtral-8x22B-Instruct-v0.1__databricks/dbrx-instruct": 0.6302347158479236,
+                    "c4ai-command-r-08-2024__gemini-1.5-pro-002": 1.331080986205744,
+                    "c4ai-command-r-08-2024__Mistral-Large-Instruct-2411": 0.9432607894440027,
+                    "c4ai-command-r-08-2024__gpt-4o-2024-11-20": 1.6313732322518257,
+                    "c4ai-command-r-08-2024__DeepSeek-R1": 1.9582653222787243,
+                    "c4ai-command-r-08-2024__gpt-3.5-turbo-0125": 0.18607838882790395,
+                    "c4ai-command-r-08-2024__databricks/dbrx-instruct": 0.19295209686851356,
+                    "gemini-1.5-pro-002__Mistral-Large-Instruct-2411": 0.4769285256866811,
+                    "gemini-1.5-pro-002__gpt-4o-2024-11-20": 0.42430410837570076,
+                    "gemini-1.5-pro-002__DeepSeek-R1": 0.6434384406448418,
+                    "gemini-1.5-pro-002__gpt-3.5-turbo-0125": 1.4949909299177508,
+                    "gemini-1.5-pro-002__databricks/dbrx-instruct": 1.3943077696811605,
+                    "Mistral-Large-Instruct-2411__gpt-4o-2024-11-20": 0.7073445721334102,
+                    "Mistral-Large-Instruct-2411__DeepSeek-R1": 1.0397708879749086,
+                    "Mistral-Large-Instruct-2411__gpt-3.5-turbo-0125": 1.095021200445729,
+                    "Mistral-Large-Instruct-2411__databricks/dbrx-instruct": 1.0096461988350545,
+                    "gpt-4o-2024-11-20__DeepSeek-R1": 0.33904162273717897,
+                    "gpt-4o-2024-11-20__gpt-3.5-turbo-0125": 1.7854700918516828,
+                    "gpt-4o-2024-11-20__databricks/dbrx-instruct": 1.696001884886121,
+                    "DeepSeek-R1__gpt-3.5-turbo-0125": 2.114231340757086,
+                    "DeepSeek-R1__databricks/dbrx-instruct": 2.02289397491302,
+                    "gpt-3.5-turbo-0125__databricks/dbrx-instruct": 0.18781669564115333
+                }
+            },
+            "average_ci95": 0.3492976462432003,
+            "modulated_ci95": 0.19731653499698432
+        }
+    },
+    "iteration_stability": {
+        "raw": {
+            "scoring_stability": {
+                "claude-3-5-sonnet-20240620": {
+                    "mean_iter_score": 8.448833333333333,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.1682952514679681
+                },
+                "claude-3-haiku-20240307": {
+                    "mean_iter_score": 8.042416666666666,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.0986898199185487
+                },
+                "claude-3-opus-20240229": {
+                    "mean_iter_score": 8.212916666666667,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.06149582189963045
+                },
+                "gemini-1.5-pro-001": {
+                    "mean_iter_score": 8.350583333333333,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.09903478625659229
+                },
+                "Llama-3-70b-chat-hf": {
+                    "mean_iter_score": 8.102416666666667,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.109762812463967
+                },
+                "Mixtral-8x7B-Instruct-v0.1": {
+                    "mean_iter_score": 7.9615833333333335,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.10438523735556564
+                },
+                "Llama-2-13b-chat-hf": {
+                    "mean_iter_score": 7.92225,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.12284972753553658
+                },
+                "gemma-7b-it": {
+                    "mean_iter_score": 7.440083333333334,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.1442524792777503
+                },
+                "gemma-2b-it": {
+                    "mean_iter_score": 7.395666666666667,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.09491538629513945
+                },
+                "Mixtral-8x22B-Instruct-v0.1": {
+                    "mean_iter_score": 8.118166666666667,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.0577774706188419
+                },
+                "c4ai-command-r-08-2024": {
+                    "mean_iter_score": 7.949333333333334,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.08082113309992368
+                },
+                "gemini-1.5-pro-002": {
+                    "mean_iter_score": 8.40175,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.07231220889694613
+                },
+                "Mistral-Large-Instruct-2411": {
+                    "mean_iter_score": 8.243333333333334,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.04707042595940708
+                },
+                "gpt-4o-2024-11-20": {
+                    "mean_iter_score": 8.466833333333334,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.1462706775505985
+                },
+                "DeepSeek-R1": {
+                    "mean_iter_score": 8.590583333333333,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.06958138719833423
+                },
+                "gpt-3.5-turbo-0125": {
+                    "mean_iter_score": 7.88325,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.17465847627107406
+                },
+                "databricks/dbrx-instruct": {
+                    "mean_iter_score": 7.9325,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.12638400478963596
+                }
+            },
+            "ranking_stability": {
+                "pairwise_correlation": {
+                    "1__vs__2": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.6470588235294118,
+                        "p_value": 0.00012768041939830013
+                    },
+                    "1__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.676470588235294,
+                        "p_value": 5.18722751399025e-05
+                    },
+                    "1__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.6470588235294118,
+                        "p_value": 0.00012768041939830013
+                    },
+                    "1__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.6470588235294118,
+                        "p_value": 0.00012768041939830013
+                    },
+                    "2__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.6176470588235293,
+                        "p_value": 0.0002924937719584528
+                    },
+                    "2__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.676470588235294,
+                        "p_value": 5.18722751399025e-05
+                    },
+                    "2__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.6176470588235293,
+                        "p_value": 0.0002924937719584528
+                    },
+                    "3__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.764705882352941,
+                        "p_value": 2.0270077800034225e-06
+                    },
+                    "3__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.7352941176470588,
+                        "p_value": 6.6254254208949975e-06
+                    },
+                    "4__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8235294117647057,
+                        "p_value": 1.25716599654265e-07
+                    }
+                },
+                "average_kendall_tau": 0.6852941176470587
+            },
+            "randomized_average_kendall_tau_by_item": 0.6621176470588235
+        },
+        "calibrated": {
+            "scoring_stability": {
+                "claude-3-5-sonnet-20240620": {
+                    "mean_iter_score": 6.157316481973068,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.5237601854286082
+                },
+                "claude-3-haiku-20240307": {
+                    "mean_iter_score": 4.745725092046728,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.35946611511978316
+                },
+                "claude-3-opus-20240229": {
+                    "mean_iter_score": 5.315187356727208,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.23715747442262253
+                },
+                "gemini-1.5-pro-001": {
+                    "mean_iter_score": 5.835104357134422,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.21424641770139274
+                },
+                "Llama-3-70b-chat-hf": {
+                    "mean_iter_score": 5.02062522185384,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.29993548218510985
+                },
+                "Mixtral-8x7B-Instruct-v0.1": {
+                    "mean_iter_score": 4.70574723462662,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.29185980901004555
+                },
+                "Llama-2-13b-chat-hf": {
+                    "mean_iter_score": 4.689109768823663,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.31539733462775865
+                },
+                "gemma-7b-it": {
+                    "mean_iter_score": 3.6128024127107174,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.16711484420948217
+                },
+                "gemma-2b-it": {
+                    "mean_iter_score": 3.7478416685950626,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.33676318725908977
+                },
+                "Mixtral-8x22B-Instruct-v0.1": {
+                    "mean_iter_score": 5.167642424650007,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.17443850300493907
+                },
+                "c4ai-command-r-08-2024": {
+                    "mean_iter_score": 4.614739064139081,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.23098611162059468
+                },
+                "gemini-1.5-pro-002": {
+                    "mean_iter_score": 5.932268648475666,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.22747842902596901
+                },
+                "Mistral-Large-Instruct-2411": {
+                    "mean_iter_score": 5.557999853583084,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.17970455310598826
+                },
+                "gpt-4o-2024-11-20": {
+                    "mean_iter_score": 6.246112296390907,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.43491374872462224
+                },
+                "DeepSeek-R1": {
+                    "mean_iter_score": 6.573004386417805,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.20451071155271755
+                },
+                "gpt-3.5-turbo-0125": {
+                    "mean_iter_score": 4.4629786531373545,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.42762008700920745
+                },
+                "databricks/dbrx-instruct": {
+                    "mean_iter_score": 4.550110411504786,
+                    "iteration_count": 5,
+                    "stdev_across_iters": 0.2947666500961641
+                }
+            },
+            "ranking_stability": {
+                "pairwise_correlation": {
+                    "1__vs__2": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.6176470588235293,
+                        "p_value": 0.0002924937719584528
+                    },
+                    "1__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.6911764705882353,
+                        "p_value": 3.209019424470449e-05
+                    },
+                    "1__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.6911764705882353,
+                        "p_value": 3.209019424470449e-05
+                    },
+                    "1__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.676470588235294,
+                        "p_value": 5.18722751399025e-05
+                    },
+                    "2__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.5441176470588235,
+                        "p_value": 0.0017803239418771048
+                    },
+                    "2__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.6617647058823529,
+                        "p_value": 8.216178860308908e-05
+                    },
+                    "2__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.588235294117647,
+                        "p_value": 0.0006285132262410544
+                    },
+                    "3__vs__4": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.764705882352941,
+                        "p_value": 2.0270077800034225e-06
+                    },
+                    "3__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.7205882352941176,
+                        "p_value": 1.148789053319355e-05
+                    },
+                    "4__vs__5": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8676470588235293,
+                        "p_value": 9.575975226992579e-09
+                    }
+                },
+                "average_kendall_tau": 0.6823529411764705
+            },
+            "randomized_average_kendall_tau_by_item": 0.659135294117647
+        }
+    },
+    "raw_score_range": 1.194916666666666,
+    "final_judgemark_score_elements_raw": {
+        "norm_stability_between_iterations": 0.43686274509803913,
+        "norm_correlation_with_lmsys_arena": 0.7352941176470588,
+        "norm_std_dev_between_models": 0.12391062799290659,
+        "norm_kruskall_wallis": 0.16659951520816166,
+        "norm_ci99_adjacent_overlap": 0.21300035933143768,
+        "norm_score_range": 0.1194916666666666,
+        "norm_intra_model_ci95": 0.6721915646619933,
+        "norm_earth_movers_distance": 0.09842218137254902
+    },
+    "final_judgemark_score_raw": 0.32189276863738275,
+    "calibrated_score_range": 2.960201973707088,
+    "final_judgemark_score_elements_calibrated": {
+        "norm_stability_between_iterations": 0.43189215686274507,
+        "norm_correlation_with_lmsys_arena": 0.7026143790849673,
+        "norm_std_dev_between_models": 0.316771000310874,
+        "norm_kruskall_wallis": 0.16659951520816166,
+        "norm_ci99_adjacent_overlap": 0.20073655775196464,
+        "norm_score_range": 0.2960201973707088,
+        "norm_intra_model_ci95": 0.19731653499698432,
+        "norm_earth_movers_distance": 0.2553491961451477
+    },
+    "final_judgemark_score": 0.3115297803113275
+}

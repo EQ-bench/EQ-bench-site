@@ -44,8 +44,12 @@ qwen/qwen3-30b-a3b,68.88,0.837,0.612,0.846,$0.99
 mistral-medium-3,79.24,0.914,0.728,0.928,$5.01
 gpt-4.1,84.23,0.94,0.805,0.895,$24.70
 gemini-2.5-flash-preview-05-20,77.97,0.896,0.718,0.908,$1.90
-*o3:low-reasoning,84.87,0.933,0.816,0.895,$28.59
-*mistralai/Mistral-Small-3.2-24B-Instruct-2506,70.05,0.881,0.603,0.908,$0.45`
+o3:low-reasoning,84.87,0.933,0.816,0.895,$28.59
+mistralai/Mistral-Small-3.2-24B-Instruct-2506,70.05,0.881,0.603,0.908,$0.45
+*devstral-medium,32.19,0.437,0.19,0.735,$5.17
+*inception/mercury,51.65,0.748,0.373,0.859,$2.94
+*mistralai/Devstral-Small-2507,45.86,0.702,0.31,0.81,$1.07
+*moonshotai/Kimi-K2-Instruct,75.61,0.888,0.701,0.843,$6.59`
 
 const csv_header = [
   "model",
