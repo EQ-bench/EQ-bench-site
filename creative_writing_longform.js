@@ -55,7 +55,8 @@ mistralai/Mistral-Small-3.1-24B-Instruct-2503,37.6,15164,36.40,90.51,40.3,9.29,8
 *tencent/Hunyuan-A13B-Instruct,51.0,7998,32.95,73.17,18.6,13.25,10.34,11.57,11.09,9.63,11.78,8.41,9.94,9.48
 *moonshotai/Kimi-K2-Instruct,76.6,5124,21.98,15.21,7.3,16.52,15.72,16.54,16.10,15.68,15.65,15.52,15.05,16.36
 *grok-4,64.5,5848,30.44,48.79,8.1,14.71,14.68,14.94,13.70,13.81,13.41,12.22,12.91,12.39
-*tngtech/DeepSeek-TNG-R1T2-Chimera,76.4,4947,23.32,42.82,6.1,16.22,16.24,16.48,16.42,16.28,16.28,15.73,15.07,14.44`;
+*tngtech/DeepSeek-TNG-R1T2-Chimera,76.4,4947,23.32,42.82,6.1,16.22,16.24,16.48,16.42,16.28,16.28,15.73,15.07,14.44
+*claude-3.5-sonnet,75.4,5388,27.83,18.79,10.6,16.33,16.52,15.85,16.10,15.93,14.10,13.17,13.87,15.59`;
 
 
 // --- New Slop Data ---
@@ -144,10 +145,10 @@ const slopData = `##### gemini-2.5-pro-preview-03-25
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>claude-sonnet-4 (distance=0.804)</div>
+<div class='slop-similar'>claude-3.5-sonnet (distance=0.817)</div>
 <div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.891)</div>
 <div class='slop-similar'>mistralai/Mistral-Small-3.2-24B-Instruct-2506 (distance=0.896)</div>
 <div class='slop-similar'>mistral-medium-3 (distance=0.896)</div>
-<div class='slop-similar'>moonshotai/Kimi-K2-Instruct (distance=0.896)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -225,10 +226,10 @@ const slopData = `##### gemini-2.5-pro-preview-03-25
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>claude-opus-4 (distance=0.804)</div>
+<div class='slop-similar'>claude-3.5-sonnet (distance=0.826)</div>
 <div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=0.856)</div>
 <div class='slop-similar'>CohereForAI/c4ai-command-a-03-2025 (distance=0.886)</div>
 <div class='slop-similar'>mistralai/Mistral-Small-3.2-24B-Instruct-2506 (distance=0.887)</div>
-<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.887)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -435,6 +436,33 @@ const slopData = `##### gemini-2.5-pro-preview-03-25
 <h4>Top Trigrams</h4>
 <div class='slop-section-items'>
 <span class='slop-ngram-item'>jamie shook head (6)</span> <span class='slop-ngram-item'>one last time (5)</span> <span class='slop-ngram-item'>takes one know (5)</span> <span class='slop-ngram-item'>remember last time (5)</span> <span class='slop-ngram-item'>let shaky breath (5)</span> <span class='slop-ngram-item'>said voice low (5)</span> <span class='slop-ngram-item'>looked really looked (5)</span> <span class='slop-ngram-item'>ever think leaving (5)</span> <span class='slop-ngram-item'>closed eyes letting (4)</span> <span class='slop-ngram-item'>nodded swallowing hard (4)</span> <span class='slop-ngram-item'>hair wild eyes (4)</span> <span class='slop-ngram-item'>voice barely whisper (4)</span> <span class='slop-ngram-item'>uncertain first time (4)</span> <span class='slop-ngram-item'>broke silence first (4)</span> <span class='slop-ngram-item'>keep voice steady (3)</span> <span class='slop-ngram-item'>like owned place (3)</span> <span class='slop-ngram-item'>first time ages (3)</span> <span class='slop-ngram-item'>stepped forward voice (3)</span> <span class='slop-ngram-item'>face pale eyes (3)</span> <span class='slop-ngram-item'>mara shook head (3)</span> <span class='slop-ngram-item'>inside air thick (3)</span> <span class='slop-ngram-item'>hands stop shaking (3)</span> <span class='slop-ngram-item'>first time feel (3)</span> <span class='slop-ngram-item'>morning wake find (3)</span> <span class='slop-ngram-item'>shakes head think (3)</span> <span class='slop-ngram-item'>arms wrapped around (3)</span> <span class='slop-ngram-item'>hands jammed pockets (3)</span> <span class='slop-ngram-item'>one left behind (3)</span> <span class='slop-ngram-item'>ran hand hair (3)</span> <span class='slop-ngram-item'>eyes never leaving (3)</span>
+</div>
+
+##### claude-3.5-sonnet
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>claude-opus-4 (distance=0.817)</div>
+<div class='slop-similar'>claude-sonnet-4 (distance=0.826)</div>
+<div class='slop-similar'>mistral-medium-3 (distance=0.857)</div>
+<div class='slop-similar'>mistralai/Mistral-Small-3.2-24B-Instruct-2506 (distance=0.860)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.866)</div>
+</div>
+
+<h4>Top Repetitive Words</h4>
+<div class='slop-section-items'>
+<span class='slop-word-item'>hummed</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>chimed</span> <span class='slop-word-item'>buzzed</span> <span class='slop-word-item'>buzzes</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>gestured</span> <span class='slop-word-item'>chen</span> <span class='slop-word-item'>mira</span> <span class='slop-word-item'>muttered</span> <span class='slop-word-item'>shuddered</span> <span class='slop-word-item'>patel</span> <span class='slop-word-item'>tiktok</span> <span class='slop-word-item'>maya</span> <span class='slop-word-item'>blackwood</span> <span class='slop-word-item'>airlock</span> <span class='slop-word-item'>sophie</span> <span class='slop-word-item'>dumplings</span> <span class='slop-word-item'>grinned</span> <span class='slop-word-item'>marcus</span> <span class='slop-word-item'>clutched</span> <span class='slop-word-item'>clenched</span> <span class='slop-word-item'>nodded</span> <span class='slop-word-item'>straightened</span> <span class='slop-word-item'>whispered</span> <span class='slop-word-item'>humming</span> <span class='slop-word-item'>doorway</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>tremor</span> <span class='slop-word-item'>containment</span> <span class='slop-word-item'>glanced</span> <span class='slop-word-item'>sighed</span> <span class='slop-word-item'>she&#x27;d</span> <span class='slop-word-item'>smiled</span> <span class='slop-word-item'>paused</span> <span class='slop-word-item'>sarah</span> <span class='slop-word-item'>ducked</span> <span class='slop-word-item'>candlelight</span> <span class='slop-word-item'>rattled</span> <span class='slop-word-item'>trailed</span> <span class='slop-word-item'>jamie</span> <span class='slop-word-item'>static</span> <span class='slop-word-item'>alphabetical</span> <span class='slop-word-item'>comm</span> <span class='slop-word-item'>stitching</span> <span class='slop-word-item'>martinez</span> <span class='slop-word-item'>stared</span> <span class='slop-word-item'>pantry</span> <span class='slop-word-item'>tightened</span>
+</div>
+<h4>Top Repetitive Phrases</h4>
+<div class='slop-section-items'>
+<span class='slop-word-item'>one last time (20)</span> <span class='slop-word-item'>phone buzzed one (17)</span> <span class='slop-word-item'>buzzed one last (11)</span> <span class='slop-word-item'>ran a hand through his hair (5)</span> <span class='slop-word-item'>looked exactly like (5)</span> <span class='slop-word-item'>Delete delete delete (5)</span> <span class='slop-word-item'>something else entirely (4)</span> <span class='slop-word-item'>one final time (4)</span> <span class='slop-word-item'>Patel&#x27;s voice crackled (4)</span> <span class='slop-word-item'>Marcus said quietly (3)</span> <span class='slop-word-item'>Three days since (3)</span> <span class='slop-word-item'>makes perfect sense (3)</span> <span class='slop-word-item'>said to no one in particular (3)</span> <span class='slop-word-item'>hands moved across (3)</span> <span class='slop-word-item'>become something new (3)</span> <span class='slop-word-item'>One last time (3)</span> <span class='slop-word-item'>taking up too much space (2)</span> <span class='slop-word-item'>keep people alive (2)</span> <span class='slop-word-item'>made perfect sense (2)</span> <span class='slop-word-item'>waiting for the right moment (2)</span> <span class='slop-word-item'>empty coffee cups (2)</span> <span class='slop-word-item'>coffee had gone cold (2)</span> <span class='slop-word-item'>go,&quot; Marcus said (2)</span> <span class='slop-word-item'>voice had that careful tone (2)</span> <span class='slop-word-item'>Marcus&#x27;s voice was soft (2)</span> <span class='slop-word-item'>couldn&#x27;t shake the feeling (2)</span> <span class='slop-word-item'>door slammed behind (2)</span> <span class='slop-word-item'>seemed to come from everywhere (2)</span> <span class='slop-word-item'>Marcus stood on the stairs (2)</span> <span class='slop-word-item'>Chen said, watching (2)</span>
+</div>
+<h4>Top Bigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>phone buzzed (74)</span> <span class='slop-ngram-item'>last time (32)</span> <span class='slop-ngram-item'>something else (30)</span> <span class='slop-ngram-item'>one last (26)</span> <span class='slop-ngram-item'>said quietly (24)</span> <span class='slop-ngram-item'>chen said (22)</span> <span class='slop-ngram-item'>want know (22)</span> <span class='slop-ngram-item'>ice cream (20)</span> <span class='slop-ngram-item'>bell chimed (19)</span> <span class='slop-ngram-item'>unknown number (18)</span> <span class='slop-ngram-item'>said finally (17)</span> <span class='slop-ngram-item'>buzzed one (17)</span> <span class='slop-ngram-item'>phone lit (17)</span> <span class='slop-ngram-item'>chen watched (16)</span> <span class='slop-ngram-item'>behind us (15)</span> <span class='slop-ngram-item'>phone buzzes (15)</span> <span class='slop-ngram-item'>marcus said (15)</span> <span class='slop-ngram-item'>want see (14)</span> <span class='slop-ngram-item'>front door (13)</span> <span class='slop-ngram-item'>patel voice (13)</span> <span class='slop-ngram-item'>director chen (13)</span> <span class='slop-ngram-item'>delete delete (12)</span> <span class='slop-ngram-item'>last week (11)</span> <span class='slop-ngram-item'>could see (11)</span> <span class='slop-ngram-item'>wei said (11)</span> <span class='slop-ngram-item'>maya said (11)</span> <span class='slop-ngram-item'>recipe book (11)</span> <span class='slop-ngram-item'>long enough (11)</span> <span class='slop-ngram-item'>hands moved (10)</span> <span class='slop-ngram-item'>said softly (10)</span>
+</div>
+<h4>Top Trigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>one last time (23)</span> <span class='slop-ngram-item'>phone buzzed one (17)</span> <span class='slop-ngram-item'>buzzed one last (11)</span> <span class='slop-ngram-item'>phone buzzed text (6)</span> <span class='slop-ngram-item'>something else something (6)</span> <span class='slop-ngram-item'>delete delete delete (6)</span> <span class='slop-ngram-item'>looked exactly like (5)</span> <span class='slop-ngram-item'>ran hand hair (5)</span> <span class='slop-ngram-item'>time unknown number (4)</span> <span class='slop-ngram-item'>new patterns new (4)</span> <span class='slop-ngram-item'>one final time (4)</span> <span class='slop-ngram-item'>patel voice crackled (4)</span> <span class='slop-ngram-item'>something else entirely (4)</span> <span class='slop-ngram-item'>marcus said quietly (4)</span> <span class='slop-ngram-item'>hands moved across (3)</span> <span class='slop-ngram-item'>said one particular (3)</span> <span class='slop-ngram-item'>become something new (3)</span> <span class='slop-ngram-item'>something new something (3)</span> <span class='slop-ngram-item'>three days since (3)</span> <span class='slop-ngram-item'>came sharper intended (3)</span> <span class='slop-ngram-item'>backup systems engaging (3)</span> <span class='slop-ngram-item'>makes perfect sense (3)</span> <span class='slop-ngram-item'>nothing changed except (3)</span> <span class='slop-ngram-item'>changed except everything (3)</span> <span class='slop-ngram-item'>hands steady despite (3)</span> <span class='slop-ngram-item'>door chimed closed (2)</span> <span class='slop-ngram-item'>closed called looking (2)</span> <span class='slop-ngram-item'>like heat waves (2)</span> <span class='slop-ngram-item'>well said one (2)</span> <span class='slop-ngram-item'>door turned back (2)</span>
 </div>
 
 ##### deepseek-ai/DeepSeek-R1
@@ -646,7 +674,7 @@ const slopData = `##### gemini-2.5-pro-preview-03-25
 </div>
 <h4>Top Repetitive Phrases</h4>
 <div class='slop-section-items'>
-<span class='slop-word-item'>fingers tightened around (16)</span> <span class='slop-word-item'>breath came fast (14)</span> <span class='slop-word-item'>door creaked open (11)</span> <span class='slop-word-item'>fingers curled into fists (11)</span> <span class='slop-word-item'>Alex exhaled sharply (10)</span> <span class='slop-word-item'>blood ran cold (9)</span> <span class='slop-word-item'>air smelled like (8)</span> <span class='slop-word-item'>eyes locked onto (8)</span> <span class='slop-word-item'>first time in a long (8)</span> <span class='slop-word-item'>time in a long time (8)</span> <span class='slop-word-item'>Alex’s fingers brushed (7)</span> <span class='slop-word-item'>took a deep breath (7)</span> <span class='slop-word-item'>air thick with the scent (7)</span> <span class='slop-word-item'>fingers twitched toward (7)</span> <span class='slop-word-item'>took a step forward (7)</span> <span class='slop-word-item'>door slammed shut (7)</span> <span class='slop-word-item'>studied him for a long moment (7)</span> <span class='slop-word-item'>Alex stepped forward (6)</span> <span class='slop-word-item'>door clicked shut (6)</span> <span class='slop-word-item'>casting shadows across (6)</span> <span class='slop-word-item'>Alex’s breath caught (5)</span> <span class='slop-word-item'>Took you long enough (5)</span> <span class='slop-word-item'>Alex’s pulse spiked (5)</span> <span class='slop-word-item'>Alex raised an eyebrow (5)</span> <span class='slop-word-item'>Alex’s mind raced (5)</span> <span class='slop-word-item'>one last time (5)</span> <span class='slop-word-item'>blood turned to ice (5)</span> <span class='slop-word-item'>casting jagged shadows (5)</span> <span class='slop-word-item'>door burst open (5)</span> <span class='slop-word-item'>door swung open (5)</span>
+<span class='slop-word-item'>fingers tightened around (16)</span> <span class='slop-word-item'>breath came fast (14)</span> <span class='slop-word-item'>fingers curled into fists (11)</span> <span class='slop-word-item'>door creaked open (11)</span> <span class='slop-word-item'>Alex exhaled sharply (10)</span> <span class='slop-word-item'>blood ran cold (9)</span> <span class='slop-word-item'>eyes locked onto (8)</span> <span class='slop-word-item'>first time in a long (8)</span> <span class='slop-word-item'>time in a long time (8)</span> <span class='slop-word-item'>air smelled like (8)</span> <span class='slop-word-item'>Alex’s fingers brushed (7)</span> <span class='slop-word-item'>air thick with the scent (7)</span> <span class='slop-word-item'>studied him for a long moment (7)</span> <span class='slop-word-item'>took a deep breath (7)</span> <span class='slop-word-item'>fingers twitched toward (7)</span> <span class='slop-word-item'>took a step forward (7)</span> <span class='slop-word-item'>door slammed shut (7)</span> <span class='slop-word-item'>Alex stepped forward (6)</span> <span class='slop-word-item'>casting shadows across (6)</span> <span class='slop-word-item'>door clicked shut (6)</span> <span class='slop-word-item'>Alex’s pulse spiked (5)</span> <span class='slop-word-item'>casting jagged shadows (5)</span> <span class='slop-word-item'>Alex’s breath caught (5)</span> <span class='slop-word-item'>blood turned to ice (5)</span> <span class='slop-word-item'>Alex’s mind raced (5)</span> <span class='slop-word-item'>Alex raised an eyebrow (5)</span> <span class='slop-word-item'>fingers curled around (5)</span> <span class='slop-word-item'>pulse pounded in his ears (5)</span> <span class='slop-word-item'>hands curled into fists (5)</span> <span class='slop-word-item'>door burst open (5)</span>
 </div>
 <h4>Top Bigrams</h4>
 <div class='slop-section-items'>
@@ -754,18 +782,14 @@ const slopData = `##### gemini-2.5-pro-preview-03-25
 </div>
 <h4>Top Repetitive Phrases</h4>
 <div class='slop-section-items'>
-<span class='slop-word-item'>pocket watch ticked (12)</span> <span class='slop-word-item'>laughed, sharp and brittle (7)</span> <span class='slop-word-item'>said, her voice steady (7)</span> <span class='slop-word-item'>Word count:** ~1000  
+<span class='slop-word-item'>pocket watch ticked (12)</span> <span class='slop-word-item'>said, her voice steady (7)</span> <span class='slop-word-item'>laughed, sharp and brittle (7)</span> <span class='slop-word-item'>Elara’s throat tightened (6)</span> <span class='slop-word-item'>voice crackled over the comms (6)</span> <span class='slop-word-item'>words hung in the air (6)</span> <span class='slop-word-item'>Word count:** ~1000  
 
 ---  
-**Key (6)</span> <span class='slop-word-item'>Elara’s throat tightened (6)</span> <span class='slop-word-item'>words hung in the air (6)</span> <span class='slop-word-item'>voice crackled over the comms (6)</span> <span class='slop-word-item'>blood ran cold (5)</span> <span class='slop-word-item'>casting jagged shadows (4)</span> <span class='slop-word-item'>breath came in ragged (4)</span> <span class='slop-word-item'>Word count: 998)  
-
----  
-
-**Key (4)</span> <span class='slop-word-item'>Kai stepped forward (4)</span> <span class='slop-word-item'>door slammed shut (4)</span> <span class='slop-word-item'>door creaked open (4)</span> <span class='slop-word-item'>said, voice tight (4)</span> <span class='slop-word-item'>door burst open (4)</span> <span class='slop-word-item'>smile didn’t reach her eyes (4)</span> <span class='slop-word-item'>blood turned to ice (4)</span> <span class='slop-word-item'>said, voice raw (4)</span> <span class='slop-word-item'>said, her voice hollow (4)</span> <span class='slop-word-item'>words hung like (3)</span> <span class='slop-word-item'>door slammed behind (3)</span> <span class='slop-word-item'>hand closed around (3)</span> <span class='slop-word-item'>breath came in shallow (3)</span> <span class='slop-word-item'>came in shallow gasps (3)</span> <span class='slop-word-item'>came in ragged gasps (3)</span> <span class='slop-word-item'>air thick with the stench (3)</span> <span class='slop-word-item'>Veyra tilted her head (3)</span> <span class='slop-word-item'>Word count: 998)  
+**Key (6)</span> <span class='slop-word-item'>blood ran cold (5)</span> <span class='slop-word-item'>door creaked open (4)</span> <span class='slop-word-item'>blood turned to ice (4)</span> <span class='slop-word-item'>Kai stepped forward (4)</span> <span class='slop-word-item'>smile didn’t reach her eyes (4)</span> <span class='slop-word-item'>said, her voice hollow (4)</span> <span class='slop-word-item'>said, voice tight (4)</span> <span class='slop-word-item'>door slammed shut (4)</span> <span class='slop-word-item'>casting jagged shadows (4)</span> <span class='slop-word-item'>door burst open (4)</span> <span class='slop-word-item'>breath came in ragged (4)</span> <span class='slop-word-item'>Word count: 998)  
 
 ---  
 
-**Human (3)</span> <span class='slop-word-item'>door swung open (3)</span>
+**Key (4)</span> <span class='slop-word-item'>said, voice raw (4)</span> <span class='slop-word-item'>head snapped toward (3)</span> <span class='slop-word-item'>words hung like (3)</span> <span class='slop-word-item'>stepped forward, her voice (3)</span> <span class='slop-word-item'>like dying stars (3)</span> <span class='slop-word-item'>Elara said, her voice (3)</span> <span class='slop-word-item'>gloved hand brushed (3)</span> <span class='slop-word-item'>door swung open (3)</span> <span class='slop-word-item'>last thing she saw (3)</span> <span class='slop-word-item'>said, her voice a blade (3)</span> <span class='slop-word-item'>pulsed like a heartbeat (3)</span>
 </div>
 <h4>Top Bigrams</h4>
 <div class='slop-section-items'>
@@ -1537,9 +1561,9 @@ const slopData = `##### gemini-2.5-pro-preview-03-25
 <div class='slop-similar-section'>
 <div class='slop-similar'>arliai/qwq-32b-arliai-rpr-v1:free (distance=0.000)</div>
 <div class='slop-similar'>aion-labs/aion-rp-llama-3.1-8b (distance=1.000)</div>
+<div class='slop-similar'>claude-3.5-sonnet (distance=1.000)</div>
 <div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=1.000)</div>
 <div class='slop-similar'>claude-opus-4 (distance=1.000)</div>
-<div class='slop-similar'>claude-sonnet-4 (distance=1.000)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -1556,9 +1580,9 @@ const slopData = `##### gemini-2.5-pro-preview-03-25
 <div class='slop-similar-section'>
 <div class='slop-similar'>sam-paech/Darkest-muse-v1 (distance=0.000)</div>
 <div class='slop-similar'>aion-labs/aion-rp-llama-3.1-8b (distance=1.000)</div>
+<div class='slop-similar'>claude-3.5-sonnet (distance=1.000)</div>
 <div class='slop-similar'>claude-3-7-sonnet-20250219 (distance=1.000)</div>
 <div class='slop-similar'>claude-opus-4 (distance=1.000)</div>
-<div class='slop-similar'>claude-sonnet-4 (distance=1.000)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
