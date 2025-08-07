@@ -378,7 +378,7 @@
         <a href='eqbench-v2.html'>💗EQ-Bench (Legacy)</a>
     </p>
 
-    An LLM-judged longform creative writing benchmark (v3). <a href="#metrics-explanation">Learn more</a>
+    An LLM-judged longform creative writing benchmark (v3). <a href="#metrics-explanation">✨Updated! Learn more</a>
 
     <button id="toggleMiddleStats" class="btn btn-outline-secondary btn-sm show-details-toggle-button d-none mb-2">
         Expand Details
@@ -417,24 +417,85 @@
             <li>Write a short story/novella over 8x 1000 word turns</li>
           </ol>
 
+          <!-- 2025-08-08 Update Summary --> <div class="alert alert-primary border rounded-3 p-3 mb-4"> <div class="d-flex align-items-center justify-content-between"> <h5 class="mb-0">2025-08-08 Updates</h5> <span class="badge bg-secondary">Benchmark change log</span> </div> <p class="mb-2 small text-muted">Sharper judging and structural safeguards for more reliable longform evaluations.</p> <ul class="mb-0"> <li><b>Judge upgraded:</b> Evaluation now uses Claude Sonnet 4 (replacing Sonnet 3.7).</li> <li><b>Metaphor vigilance:</b> Added targeted judge prompting to better detect and punish incoherent/forced metaphors.</li> <li><b>Degradation penalty:</b> New automatic score scaling when outputs overuse very short single‑sentence paragraphs.</li> </ul> </div>
+
           <p>Models are typically evaluated via openrouter, using temp=0.7 and min_p=0.1 as the generation settings.</p>
 
-          <p>Outputs are evaluated with a scoring rubric by Claude Sonnet 3.7.</p>
+          <p>Outputs are evaluated with a scoring rubric by Claude Sonnet 4.</p>
 
-          <h5 class="card-title">Length</h5>
-          <p>The average chapter length (chars).</p>
+          <h5 class="card-title mt-4">📊 Main Metrics</h5>
+          
+          <h6 class="mt-3"><b>Length</b></h6>
+          <p>The average chapter length (chars). This doesn't contribute to the score.</p>
 
-          <h5 class="card-title mt-3">Slop Score</h5>
-          <p>The <strong>Slop</strong> column measures the frequency of words/phrases typically overused by LLMs (“GPT-isms”) in each completed chapter. The lower, the better.</p>
+          <h6 class="mt-3"><b>Slop Score</b></h6>
+          <p>Measures the frequency of words/phrases typically overused by LLMs ("GPT-isms") in each completed chapter. The lower, the better. Does not contribute to the score.</p>
 
-          <h5 class="card-title mt-3">Repetition Metric</h5>
-          <p>The <strong>Repetition</strong> column measures how strongly a model repeats words/phrases across multiple tasks. Higher means more repetition.</p>
+          <h6 class="mt-3"><b>Repetition</b></h6>
+          <p>Measures how strongly a model repeats n-grams across its outputs.</p>
 
-          <h5 class="card-title mt-3">Degradation</h5>
-          <p>A mini-sparkline of the 8 chapter scores (averages) to visually see if the model’s chapter quality drops off as it continues writing. The degradation score represents how much the final chapter quality has dropped relative the the initial chapter.</p>
+          <h6 class="mt-3"><b>Degradation</b></h6>
+          <p>A mini-sparkline of the 8 chapter scores (averages) to visually see if the model's chapter quality drops off as it continues writing. The degradation score represents how much the final chapter quality has dropped relative to the initial chapter.</p>
 
-          <h5 class="card-title mt-3">Score (0-100)</h5>
-          <p>The overall final rating assigned by the judge LLM, scaled to 0–100. Higher is better.</p>
+          <h6 class="mt-3"><b>Score (0-100)</b></h6>
+          <p>The average of all chapter scores + final scored piece, based on the rubric criteria below.</p>
+
+          <hr class="my-4">
+
+          <h5 class="card-title">📝 Scoring Rubric Criteria</h5>
+          <p>Each output is evaluated across 14 dimensions that contribute to the final score:</p>
+
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <h6 class="text-success">Positive Qualities (Higher is Better)</h6>
+              <ul>
+                <li><b>Nuanced Characters</b> - Complex, multi-dimensional character development</li>
+                <li><b>Emotionally Engaging</b> - Ability to evoke genuine emotional responses</li>
+                <li><b>Compelling Plot</b> - Engaging narrative structure and pacing</li>
+                <li><b>Coherent</b> - Logical consistency and clarity throughout</li>
+                <li><b>Well-earned Lightness or Darkness</b> - Appropriate tonal shifts that feel justified</li>
+                <li><b>Characters Consistent with Profile</b> - Maintaining character integrity across chapters</li>
+                <li><b>Followed Chapter Plan</b> - Adherence to the outlined story structure</li>
+                <li><b>Faithful to Writing Prompt</b> - Staying true to the original creative brief</li>
+              </ul>
+            </div>
+            
+            <div class="col-md-6">
+              <h6 class="text-danger">Writing Flaws (Lower is Better)</h6>
+              <ul>
+                <li><b>Weak Dialogue</b> - Unnatural or stilted character conversations</li>
+                <li><b>Tell-Don't-Show</b> - Over-reliance on exposition vs. demonstration</li>
+                <li><b>Unsurprising or Uncreative</b> - Predictable plot points and clichéd elements</li>
+                <li><b>Amateurish</b> - Basic writing errors or juvenile style</li>
+                <li><b>Purple Prose</b> - Overly ornate or pretentious language</li>
+                <li><b>Forced Poetry or Metaphor</b> - Unnatural use of figurative language</li>
+              </ul>
+            </div>
+          </div>
+
+          <hr class="my-4">
+      
+          <h5 class="card-title">⚖️ Score Weighting</h5>
+          <p>The rubric scoring is weighted to increase emphasis on incoherent metaphor, to compensate for the judge's difficulty in recognising this common failure mode:</p>
+          
+          <div class="ps-3">
+            <code style="font-size: 1.1em; background: none; color: inherit;">
+              <b>Final Score</b> = (Σ other criteria) + (5 × <i>Forced Poetry/Metaphor</i><sup>1.7</sup>)
+            </code>
+            <br>
+            <small class="text-muted mt-2 d-block">where <i>Forced Poetry/Metaphor</i> is scaled 0-1</small>
+          </div>
+
+          
+          <hr class="my-4">
+        
+          <h5 class="card-title">📉 Long Context Degradation Penalty</h5>
+          <p>Some models exhibit a specific degradation pattern as output length increases, devolving into excessive use of single-sentence paragraphs. Since judges often fail to recognize this structural issue even with explicit instruction, we apply an automatic scaling penalty when this pattern is detected.</p>
+          
+          <p><b>Detection:</b> The system identifies when outputs contain an abnormally high proportion of short single-sentence paragraphs (5 or fewer words).</p>
+          
+          <p><b>Penalty Application:</b> When this degradation pattern is detected, the chapter scores are scaled down proportionally to the severity of the single-sentence paragraph overuse.</p>
+
         </div>
       </div>
     </div>
