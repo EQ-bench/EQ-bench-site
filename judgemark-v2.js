@@ -9,50 +9,28 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 const leaderboardDataV2 = `
-ministral/Ministral-3b-instruct,7.51,0.0,0.041,0.288,$0.30
-gpt-4o-mini,40.9,0.654,0.249,0.804,$1.65
-claude-3.5-haiku-20241022,74.49,0.905,0.662,0.915,$10.64
-claude-3.5-sonnet-20240620,75.23,0.9,0.669,0.938,$44.06
-microsoft/wizardlm-2-8x22b,51.92,0.755,0.374,0.866,$5.89
-gpt-4o-2024-11-20,78.12,0.888,0.72,0.918,$31.64
-deepseek-ai/deepseek-r1-distill-llama-70b,56.94,0.776,0.442,0.873,$2.66
-mistralai/mistral-large-instruct-2411,61.65,0.806,0.501,0.889,$23.61
-meta-llama/llama-3.1-8b-instruct,31.36,0.46,0.19,0.66,$0.30
-meta-llama/llama-3.1-405b-instruct,57.29,0.798,0.435,0.899,$7.42
-mistralai/mistral-small-24b-instruct-2501,60.51,0.815,0.482,0.886,$1.13
-CohereForAI/c4ai-command-r-08-2024,29.34,0.423,0.182,0.611,$1.77
-gemini-pro-1_5,73.46,0.887,0.655,0.899,$13.46
-deepseek-ai/deepseek-r1,76.1,0.894,0.691,0.908,$13.80
-o3-mini,60.45,0.782,0.494,0.869,$20.72
-microsoft/phi-4,44.42,0.651,0.299,0.817,$0.67
-qwen-plus,64.72,0.806,0.544,0.902,$4.39
-qwen-max,67.61,0.846,0.581,0.886,$22.72
-Qwen/Qwen2.5-72B-Instruct,52.04,0.741,0.389,0.827,$2.49
-gemini-2.0-flash-001,64.59,0.797,0.556,0.853,$1.09
-claude-3-7-sonnet-20250219,81.54,0.912,0.773,0.889,$54.73
-qwen/qwq-32b,66.11,0.84,0.564,0.873,$3.23
-quasar-alpha,83.4,0.918,0.795,0.905,$0
-gemini-2.5-pro-preview-03-25,80.11,0.902,0.759,0.869,$60.19
-gpt-4.1-mini,76.33,0.905,0.685,0.935,$5.02
-opencompass/CompassJudger-1-32B-Instruct,40.72,0.574,0.27,0.788,
-gemini-2.5-flash-preview,76.48,0.893,0.711,0.853,$1.80
-qwen/qwen3-235b-a22b,73.92,0.882,0.669,0.876,$2.40
-qwen/qwen3-235b-a22b:thinking,70.36,0.863,0.624,0.863,$3.45
-qwen/qwen3-32b,72.04,0.852,0.646,0.886,$1.13
-qwen/qwen3-14b,71.02,0.863,0.617,0.928,$0.85
-qwen/qwen3-30b-a3b,68.88,0.837,0.612,0.846,$0.99
-mistral-medium-3,79.24,0.914,0.728,0.928,$5.01
-gpt-4.1,84.23,0.94,0.805,0.895,$24.70
-gemini-2.5-flash-preview-05-20,77.97,0.896,0.718,0.908,$1.90
-o3:low-reasoning,84.87,0.933,0.816,0.895,$28.59
-mistralai/Mistral-Small-3.2-24B-Instruct-2506,70.05,0.881,0.603,0.908,$0.45
-devstral-medium,32.19,0.437,0.19,0.735,$5.17
-inception/mercury,51.65,0.748,0.373,0.859,$2.94
-mistralai/Devstral-Small-2507,45.86,0.702,0.31,0.81,$1.07
-*moonshotai/Kimi-K2-Instruct,75.61,0.888,0.701,0.843,$6.59
-*zai-org/GLM-4.5,73.14,0.866,0.672,0.833,$7.98
-*Qwen/Qwen3-30B-A3B-Instruct-2507,71.78,0.851,0.645,0.876,$3.28
-*openrouter/horizon-alpha,82.99,0.919,0.792,0.892,`
+gpt-4.1,76.31,0.727,0.819,0.576,$10.43
+claude-sonnet-4,81.99,0.726,0.844,0.818,$18.73
+gemini-2.5-pro,72.06,0.675,0.747,0.662,$52.90
+mistralai/Mistral-Small-3.2-24B-Instruct-2506,50.21,0.396,0.578,0.306,$0.49
+*qwen/qwen3-235b-a22b-2507,59.69,0.437,0.61,0.704,$0.94
+z-ai/glm-4.5,63.41,0.53,0.664,0.619,$4.40
+gemini-2.5-flash,62.97,0.532,0.66,0.605,$1.87
+o3,75.1,0.699,0.779,0.69,$16.16
+*gpt-5-mini-2025-08-07:minimal-reasoning,74.49,0.694,0.778,0.662,$1.49
+*gpt-5-nano-2025-08-07:minimal-reasoning,52.2,0.411,0.536,0.576,$0.29
+*openai/gpt-oss-120b,54.78,0.332,0.57,0.676,$1.14
+*openai/gpt-oss-20b,42.8,0.331,0.476,0.334,$0.45
+*gpt-5-2025-08-07:minimal-reasoning,81.2,0.8,0.838,0.719,$7.43
+*gpt-5-nano-2025-08-07__5x-ensemble,61.08,0.579,0.635,0.548,$1.45
+moonshotai/Kimi-K2-Instruct,73.09,0.66,0.752,0.719,$3.70
+qwen/qwen3-30b-a3b-instruct-2507,34.58,0.153,0.343,0.548,$0.98
+gemini-2.5-flash-lite,55.99,0.483,0.607,0.448,$0.50
+gpt-4.1-mini,57.26,0.395,0.623,0.548,$2.09
+mistral-medium-3,58.53,0.496,0.621,0.533,$2.31
+qwen/qwen3-235b-a22b,56.18,0.318,0.616,0.59,$1.00
+o4-mini,56.1,0.455,0.594,0.533,$11.81
+meta-llama/llama-3.1-8b-instruct,19.18,0.0,0.286,0.006,$0.11`
 
 const csv_header = [
   "model",
@@ -175,8 +153,7 @@ function loadLeaderboardDataV2() {
       scores.push(parsedScore);
     }
 
-    const sanitized = sanitizeModelName(model);
-    const statsLink = `results/judgemark-v2/stats/${sanitized}.json`;
+    const sanitized = sanitizeModelName(model);    
     const chart3Link = `results/judgemark-v2/charts/judgemark_3chart_${sanitized}.png`;
     const scatterLink = `results/judgemark-v2/charts/judgemark_scattergrid_${sanitized}.png`;
 
@@ -187,7 +164,6 @@ function loadLeaderboardDataV2() {
       separability,
       humanCorr,
       cost,
-      statsLink,
       chart3Link,
       scatterLink
     };
@@ -257,7 +233,6 @@ function loadLeaderboardDataV2() {
         <td class="middle-stats">${separability || '-'}</td>
         <td class="middle-stats">${humanCorr || '-'}</td>
         <td class="middle-stats">${cost || '-'}</td>
-        <td><a href="${statsLink}">Stats</a></td>
         <td>${chartLinksHtml}</td>
       </tr>
     `;
@@ -284,9 +259,9 @@ function initializeDataTableV2() {
     },
     columnDefs: [
       // Stability = col 2, Separability = col 3, Human Corr = col 4, Cost = col 5
-      { targets: [2,3,4,5], className: 'middle-stats' },
+      { targets: [2,3,4], className: 'middle-stats' },
       // Judgemark Score desc by default; if user clicks, toggle asc
-      { targets: [1,2,3,4,5], orderSequence: ['desc','asc'] }
+      { targets: [1,2,3,4], orderSequence: ['desc','asc'] }
     ],
     dom: "<'d-flex flex-column flex-md-row justify-content-between'<'#toggleMiddleStatsDummy.d-block.d-sm-none'><'dataTables_length'l><'dataTables_filter'f>>" +
          "<'row'<'col-12'tr>>" +
@@ -304,7 +279,7 @@ function initializeDataTableV2() {
     if (window.innerWidth < 992 && !middleStatsExpanded) {
       // Wrap columns 2..5 in a collapsible <div> on small screens if not expanded
       $('#judgemark-leaderboard-v2 tr').each(function () {
-        $(this).find('th, td').slice(2, 6).wrapAll('<div class="collapsed-columns"></div>');
+        $(this).find('th, td').slice(2, 5).wrapAll('<div class="collapsed-columns"></div>');
       });
       $('#toggleMiddleStats').text('Expand Details');
     } else {
