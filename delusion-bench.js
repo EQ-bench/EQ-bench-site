@@ -1,6 +1,6 @@
 //
 // delusion-bench.js
-// (CSV-driven leaderboard, dynamic feature headers, orange-yellow gradient palette)
+// (CSV-driven leaderboard, dynamic feature headers, score bars instead of heatmap)
 //
 
 
@@ -24,6 +24,7 @@ let TOTAL_COLS        = null;
 
 const MOBILE_BREAKPOINT = 1050;
 let lastSortedScoreColumn = null;
+let currentSortedColumnIndex = null; // Track which column is currently sorted
 
 /* ======== CSV parsing ======== */
 function parseCSV(csvText){
@@ -53,7 +54,7 @@ function setupDarkModeToggle(){
     localStorage.setItem('darkModeEnabled', this.checked);
     if ($.fn.DataTable.isDataTable('#leaderboard-delusion')){
       $('#leaderboard-delusion').DataTable().rows().invalidate('data').draw(false);
-      updateFeatureHeatmapColors();
+      updateFeatureScoreBars();
       refreshHeatmapLegend();
     }
   });
@@ -165,6 +166,8 @@ function buildHeaderFooter(headers){
 
 /* ======== CSV → table body HTML ======== */
 let maxScoreDisplay = 0;
+let featureColumnMaxes = {}; // Store max values for each feature column
+
 function rowHTMLFromCSVParts(parts){
   const modelNameRaw = parts[0];
   const scoreNorm    = parseFloat(parts[1]);      // used for bar + CI
@@ -177,16 +180,32 @@ function rowHTMLFromCSVParts(parts){
 
   // Features slice
   const featureVals = parts.slice(FEATURE_COL_START, FEATURE_COL_END+1).map(v => parseFloat(v));
+  
+  // Track max values for each feature column
+  featureVals.forEach((val, idx) => {
+    const colIndex = FEATURE_COL_START + idx;
+    if (!isNaN(val)) {
+      featureColumnMaxes[colIndex] = Math.max(featureColumnMaxes[colIndex] || 0, val);
+    }
+  });
 
   // Model display and sample link
   const safe = modelNameRaw.replace(/\//g,'__').replace(/[^a-zA-Z0-9_-]/g,'-').toLowerCase();
   const sampleHref = `results/delusionbench_reports/${safe}.html`;
 
-  const featureCells = featureVals.map(v=>{
+  const featureCells = featureVals.map((v, idx)=>{
     const display = isNaN(v) ? '-' : (Math.round(v*10)/10).toFixed(1);
-    // Heat value: scale low→high over column ranges later; for now stash raw on data-heat, recolor after draw
-    return `<td class="mobile-collapsible feature-cell" data-raw="${isNaN(v)?'':v}">
-              <div class="cell-content">${display}</div>
+    const colIndex = FEATURE_COL_START + idx;
+    
+    // Create score bar for feature column
+    const scoreBar = `
+      <div class="score-bar-container">
+        <div class="delusion-score-bar feature-score-bar" data-col-index="${colIndex}" style="width:0%; display:none;"></div>
+        <span class="score-text">${display}</span>
+      </div>`;
+    
+    return `<td class="mobile-collapsible feature-cell" data-raw="${isNaN(v)?'':v}" data-col-index="${colIndex}">
+              <div class="cell-content">${scoreBar}</div>
             </td>`;
   }).join('');
 
@@ -214,36 +233,40 @@ function rowHTMLFromCSVParts(parts){
           </tr>`;
 }
 
-/* ======== Heat-map normalization per column ======== */
-function computeFeatureRanges(){
-  // Build min/max per feature column index
-  const ranges = {};
-  for (let col=FEATURE_COL_START; col<=FEATURE_COL_END; col++){
-    let min= Infinity, max = -Infinity;
-    $('#leaderboard-delusion tbody tr').each(function(){
-      const td = $(this).find('td').eq(1 + (col-FEATURE_COL_START)); // model col offset = 1
-      const raw = parseFloat(td.attr('data-raw'));
-      if (!isNaN(raw)){ min = Math.min(min, raw); max = Math.max(max, raw); }
-    });
-    ranges[col] = {min, max};
-  }
-  return ranges;
-}
-function updateFeatureHeatmapColors(){
-  const ranges = computeFeatureRanges();
+/* ======== Feature score bars instead of heatmap ======== */
+function updateFeatureScoreBars(){
   const dark = document.body.classList.contains('dark-mode');
+  
   $('#leaderboard-delusion tbody tr').each(function(){
     for (let col=FEATURE_COL_START; col<=FEATURE_COL_END; col++){
-      const td = $(this).find('td').eq(1 + (col-FEATURE_COL_START)); // feature cell
+      const td = $(this).find(`td[data-col-index="${col}"]`);
       const v  = parseFloat(td.attr('data-raw'));
-      const {min,max} = ranges[col];
-      let t = (!isNaN(v) && isFinite(min) && isFinite(max) && max!==min) ? (v-min)/(max-min) : 0;
-      t = Math.min(1, Math.max(0,t));
-      const bg = orangeYellowGradient(t, {
-        wash: dark ? 0.25 : 0.45, 
-        alpha: dark ? 0.7 : 0.55
-      });
-      td[0].style.setProperty('background-color', bg, 'important');
+      const maxVal = featureColumnMaxes[col] || 1;
+      
+      if (!isNaN(v) && maxVal > 0) {
+        const widthPercent = Math.max(0, Math.min(100, (v / maxVal) * 100));
+        const bar = td.find('.feature-score-bar');
+        
+        // Determine if this is the currently sorted column
+        const isSortedColumn = (currentSortedColumnIndex !== null && 
+                               currentSortedColumnIndex === (1 + (col - FEATURE_COL_START)));
+        
+        // Set width based on whether it's the sorted column
+        const actualWidth = isSortedColumn ? widthPercent : widthPercent * 0.6; // 60% width for non-sorted columns
+        
+        bar.css('width', `${actualWidth.toFixed(2)}%`);
+        
+        // Color based on value intensity
+        const intensity = v / maxVal;
+        const color = orangeYellowGradient(intensity, {
+          wash: dark ? 0.25 : 0.45, 
+          alpha: dark ? 0.8 : 0.7
+        });
+        bar.css('background-color', color);
+        bar.show();
+      } else {
+        td.find('.feature-score-bar').hide();
+      }
     }
   });
 }
@@ -363,6 +386,9 @@ function initializeDataTable(){
         api.order(order).draw(false); return;
       }
       const sortedIdx = order[0][0];
+      
+      // Update current sorted column index
+      currentSortedColumnIndex = sortedIdx;
       lastSortedScoreColumn = SCORE_COL_INDEX;
 
       // Hide then show bars/error bars for score col
@@ -373,11 +399,15 @@ function initializeDataTable(){
          .find(`td:eq(${SCORE_COL_INDEX}) .score-bar-container`)
          .children('.delusion-score-bar, .error-bar').show();
 
+      // Show feature score bars
+      api.rows({ page:'current'}).nodes().to$()
+         .find('.feature-score-bar').show();
+
       setScoreHeaderWidth(api, SCORE_COL_INDEX);
 
       updateScoreBarColors();
       collapseMiddleColumns();
-      updateFeatureHeatmapColors();
+      updateFeatureScoreBars(); // Update feature score bars instead of heatmap
     }
   };
 
@@ -403,7 +433,7 @@ function initializeDataTable(){
   table.one('init.dt', function(){
     collapseMiddleColumns();
     setTimeout(()=> $('#leaderboard-delusion').DataTable().draw(false), 50);
-    updateFeatureHeatmapColors();
+    updateFeatureScoreBars(); // Update feature score bars instead of heatmap
   });
 
   $(window).on('resize.scoreHeader', ()=>{
