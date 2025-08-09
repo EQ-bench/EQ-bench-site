@@ -14,8 +14,101 @@ horizon-beta,73.9,73.9,7.621,2.172,10.621,14.241,13.31,0.621,19.517,11.586,1.172
 o4-mini,70.7,70.7,8.8,2.7,8.3,14.033,15.6,1.6,16.867,9.267,2.0,4.3,4.7,3.267,2.733,0.633,65.6,75.8
 `;
 
-/* ===================== Config derived from CSV ===================== */
+/* ===================== Column Mapping and Consolidation ===================== */
+
+// Define the display mapping for original columns
+const COLUMN_DISPLAY_MAPPING = {
+  'pushback': 'Pushback',
+  'suggestions_to_seek_help': 'Help Referral', 
+  'attempts_at_emotional_containment': 'Containment',
+  'attempts_at_reality_grounding': 'Grounding',
+  'scientific_grounding': 'Scientific Grounding',
+  'sycophancy': 'Sycophancy',
+  'ego_manipulation': 'Ego Manipulation'
+};
+
+// Define compound metrics that combine multiple columns
+const COMPOUND_METRICS = {
+  'Escalation': ['emotional_escalation', 'narrative_escalation'],
+  'Validation': ['validating_statements', 'praising_the_user'], 
+  'Delusion Reinforcement': ['problematic_ideas_introduced', 'proposing_pseudoscience', 'establishing_of_delusions']
+};
+
+
+// Process CSV data to create consolidated columns
+function processCSVData(csvData) {
+  const { headers, rows } = parseCSV(csvData);
+  
+  // Create new headers array with consolidated columns
+  const newHeaders = ['model_name', 'score_norm', 'score_0_100'];
+  const processedHeaders = [];
+  
+  // Add individual columns first
+  for (let i = 3; i < headers.length - 2; i++) { // Skip CI columns at end
+    const originalHeader = headers[i];
+    if (COLUMN_DISPLAY_MAPPING[originalHeader]) {
+      newHeaders.push(originalHeader);
+      processedHeaders.push({
+        displayName: COLUMN_DISPLAY_MAPPING[originalHeader],
+        originalIndex: i,
+        isCompound: false
+      });
+    }
+  }
+  
+  // Add compound metrics
+  Object.entries(COMPOUND_METRICS).forEach(([displayName, sourceColumns]) => {
+    newHeaders.push(displayName.toLowerCase().replace(/ /g, '_'));
+    processedHeaders.push({
+      displayName: displayName,
+      sourceColumns: sourceColumns,
+      sourceIndices: sourceColumns.map(col => headers.indexOf(col)),
+      isCompound: true
+    });
+  });
+  
+  // Add CI columns back
+  newHeaders.push('ci_low_norm', 'ci_high_norm');
+  
+  // Process each row
+  const processedRows = rows.map(row => {
+    const newRow = [row[0], row[1], row[2]]; // model_name, score_norm, score_0_100
+    
+    // Add individual columns
+    processedHeaders.forEach(headerInfo => {
+      if (!headerInfo.isCompound) {
+        newRow.push(row[headerInfo.originalIndex]);
+      } else {
+        // Calculate compound metric (average of source columns)
+        const values = headerInfo.sourceIndices
+          .map(idx => parseFloat(row[idx]))
+          .filter(val => !isNaN(val));
+        
+        if (values.length > 0) {
+          const average = values.reduce((sum, val) => sum + val, 0) / values.length;
+          newRow.push(average.toFixed(3));
+        } else {
+          newRow.push('0');
+        }
+      }
+    });
+    
+    // Add CI columns
+    newRow.push(row[row.length - 2], row[row.length - 1]);
+    
+    return newRow;
+  });
+  
+  return {
+    headers: newHeaders,
+    rows: processedRows,
+    displayHeaders: ['Model', 'Score Norm', 'Score 0-100', ...processedHeaders.map(h => h.displayName), 'CI Low', 'CI High']
+  };
+}
+
+/* ===================== Config derived from processed CSV ===================== */
 let HEADERS = [];
+let DISPLAY_HEADERS = [];
 let FEATURE_COL_START = 3;  // after model_name, score_norm, score_0_100
 let FEATURE_COL_END   = null; // computed from header length
 let SCORE_COL_INDEX   = null; // "Safety Score" display column index
@@ -69,8 +162,7 @@ function applySystemTheme(){
   }
 }
 
-/* ======== Orange-Yellow Color Gradient ======== */
-// Linear interpolation between two RGB colors
+// Generic 3-stop color scale factory
 function lerp(a, b, t) { return a + (b - a) * t; }
 function lerpRGB(a, b, t) {
   return [
@@ -79,44 +171,33 @@ function lerpRGB(a, b, t) {
     Math.round(lerp(a[2], b[2], t)),
   ];
 }
-
-// Orange-biased gradient:
-// near-black ember -> dark orange -> bright orange -> amber (not full yellow)
-function orangeYellowGradient(t, { wash = 0.40, alpha = 0.6 } = {}) {
-  // clamp
-  t = t <= 0 ? 0 : t >= 1 ? 1 : t;
-
-  // stops
-  const c0 = [32, 12, 0];     // near-black ember
-  const c1 = [139, 40, 0];    // dark orange (high saturation, low luminance)
-  const c2 = [255, 140, 0];   // bright orange
-  const c3 = [255, 210, 74];  // amber (toward yellow, not fully yellow)
-
-  // segment breakpoints (bias time toward the orange band)
-  const b0 = 0.12;  // short runway out of black
-  const b1 = 0.90;  // long dwell in orange
-
-  let rgb;
-  if (t <= b0) {
-    // near-black -> dark orange (fast)
-    const u = t / b0; // linear on a short span
-    rgb = lerpRGB(c0, c1, u);
-  } else if (t <= b1) {
-    // dark orange -> bright orange (slow, linger in orange band)
-    const u = (t - b0) / (b1 - b0);
-    // ease that *slows down* change so we spend more time in orange
-    const eased = Math.pow(u, 0.65); // 0.5..0.8 feels good; 0.65 is a nice middle
-    rgb = lerpRGB(c1, c2, eased);
-  } else {
-    // small tip toward amber (not full yellow)
-    const u = (t - b1) / (1 - b1);
-    rgb = lerpRGB(c2, c3, u);
-  }
-
-  // apply wash (pastel mix toward white); use lower wash in dark-mode if you want stronger lows
-  const mixed = rgb.map(c => Math.round((1 - wash) * c + wash * 255));
-  return `rgba(${mixed[0]}, ${mixed[1]}, ${mixed[2]}, ${alpha})`;
+function hexToRgbArr(h){
+  const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(h);
+  return m ? [parseInt(m[1],16), parseInt(m[2],16), parseInt(m[3],16)] : [0,0,0];
 }
+function makeColorScale(stop0, stop90, stop100) {
+  const C0 = hexToRgbArr(stop0);
+  const C1 = hexToRgbArr(stop90);
+  const C2 = hexToRgbArr(stop100);
+  return function(t, { alpha = 1 } = {}) {
+    t = Math.max(0, Math.min(1, t));
+    if (t <= 0.90) {
+      const u = t / 0.90;
+      const rgb = lerpRGB(C0, C1, u);
+      return `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${alpha})`;
+    } else {
+      const u = (t - 0.90) / 0.10;
+      const rgb = lerpRGB(C1, C2, u);
+      return `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${alpha})`;
+    }
+  };
+}
+
+// Define the active palette here — purple scale
+// 0% → deep purple, 90% → rich violet, 100% → bright purple
+const colorScale = makeColorScale('#1d0b2e', '#6d1c7e', '#8f1faf');
+
+
 
 
 /* Heat-map legend */
@@ -128,36 +209,53 @@ function refreshHeatmapLegend(){
   const cols = [];
   for (let i = 0; i <= steps; i++){
     const t = i / steps;
-    cols.push(orangeYellowGradient(t, {
-      wash: document.body.classList.contains('dark-mode') ? 0.25 : 0.45, 
-      alpha: 0.8
-    }));
+    cols.push(colorScale(t, { alpha: 0.9 }));
   }
   bar.style.background = `linear-gradient(to right, ${cols.join(',')})`;
 }
 
-/* ======== Build THEAD/TFOOT dynamically from CSV header ======== */
-function buildHeaderFooter(headers){
+/* ======== Build THEAD/TFOOT dynamically from processed headers ======== */
+function buildHeaderFooter(displayHeaders){
   const theadRow = document.getElementById('db-head-row');
   const tfootRow = document.getElementById('db-foot-row');
   theadRow.innerHTML = ''; tfootRow.innerHTML = '';
 
   // Fixed left col
-  const thModel = document.createElement('th'); thModel.textContent = 'Model';
+  const thModel = document.createElement('th'); thModel.textContent = 'Model'; thModel.classList.add('model-col');
+
   theadRow.appendChild(thModel);
 
   // Dynamic feature headers (between FEATURE_COL_START and FEATURE_COL_END inclusive)
   for (let i=FEATURE_COL_START; i<=FEATURE_COL_END; i++){
     const th = document.createElement('th');
     th.classList.add('feature-header','mobile-collapsible');
-    th.textContent = headers[i];
-    th.title = headers[i];
+    th.textContent = displayHeaders[i];
+    const HEADER_HELP_TEXT = {
+      'Pushback': 'Pushback (Offers pushback on user\'s ideas)',
+      'Help Referral': 'Help Referral (Suggests the user seek outside assistance)',
+      'Containment': 'Containment (Attempts at emotional containment)',
+      'Grounding': 'Grounding (Attempts to ground the user in reality)',
+      'Scientific Grounding': 'Scientific Grounding (Offers scientific grounding)',
+      'Escalation': 'Escalation (Escalation of emotions or narrative)',
+      'Validation': 'Validation (Validating statements or praise of the user)',
+      'Delusion Reinforcement': 'Delusion Reinforcement (Introduction & reinforcement of delusions with pseudoscience or problematic ideas)',
+      'Sycophancy': 'Sycophancy (Being sycophantic towards the user)',
+      'Ego Manipulation': 'Ego Manipulation (Manipulating the user\'s ego)'
+    };
+    th.removeAttribute('title');
+    th.setAttribute('data-bs-title', HEADER_HELP_TEXT[displayHeaders[i]] || displayHeaders[i]);
+    th.setAttribute('data-bs-toggle', 'tooltip');
+    th.setAttribute('data-bs-trigger', 'hover click');
+    th.setAttribute('data-bs-placement', 'top');
+
+
     theadRow.appendChild(th);
   }
 
   // Score + Sample
   const thScore = document.createElement('th'); thScore.textContent = 'Safety Score';
-  const thSample= document.createElement('th'); thSample.textContent = '';
+  const thSample= document.createElement('th'); thSample.textContent = ''; thSample.classList.add('sample-col');
+
   theadRow.appendChild(thScore); theadRow.appendChild(thSample);
 
   // Clone to footer
@@ -197,33 +295,50 @@ function rowHTMLFromCSVParts(parts){
     const display = isNaN(v) ? '-' : (Math.round(v*10)/10).toFixed(1);
     const colIndex = FEATURE_COL_START + idx;
     
-    // Create score bar for feature column
+    // Create score bar for feature column - no visible text, show on hover
     const scoreBar = `
-      <div class="score-bar-container">
-        <div class="delusion-score-bar feature-score-bar" data-col-index="${colIndex}" style="width:0%; display:none;"></div>
-        <span class="score-text">${display}</span>
+      <div class="score-bar-container feature-score-container">
+        <div class="delusion-score-bar feature-score-bar" data-col-index="${colIndex}"
+          style="width:0%; display:none;"></div>
       </div>`;
+
     
-    return `<td class="mobile-collapsible feature-cell" data-raw="${isNaN(v)?'':v}" data-col-index="${colIndex}">
-              <div class="cell-content">${scoreBar}</div>
-            </td>`;
+    return `<td class="mobile-collapsible feature-cell" 
+            data-raw="${isNaN(v)?'':v}"
+            data-order="${isNaN(v)?-Infinity:v}"
+            data-col-index="${colIndex}"
+            data-bs-title="${display}"
+            data-bs-toggle="tooltip"
+            data-bs-trigger="hover click"
+            data-bs-placement="top">
+          <div class="cell-content">${scoreBar}</div>
+        </td>`;
+
   }).join('');
 
-  // Score bar (hidden until draw callback)
+  // Safety Score bar - text in front of bar with fixed width for alignment
   const scorePercent = 0; // computed after we know max
   const scoreBar = `
-    <div class="score-bar-container">
-      <div class="delusion-score-bar" style="width:${scorePercent}%; display:none;"></div>
-      ${ (isFinite(ciLow)&&isFinite(ciHigh)) ? `<div class="error-bar" style="left:0%; width:0%; display:none;"></div>` : '' }
-      <span class="score-text">${isNaN(scoreNorm)?'-':scoreNorm.toFixed(1)}</span>
+    <div class="score-bar-container safety-score-container">
+      <span class="score-text safety-score-text">${isNaN(scoreNorm)?'-':scoreNorm.toFixed(1)}</span>
+
+      <div class="score-track">
+        <div class="delusion-score-bar" style="width:${scorePercent}%; display:none;"></div>
+        ${ (isFinite(ciLow)&&isFinite(ciHigh)) ? `<div class="error-bar" style="left:0%; width:0%; display:none;"></div>` : '' }
+      </div>
     </div>`;
 
-  const modelCell = `<td><div class="cell-content">${modelNameRaw.includes('/') ?
+  const modelCell = `<td class="model-col"><div class="cell-content">${modelNameRaw.includes('/') ?
       `<a href="https://huggingface.co/${modelNameRaw}" target="_blank" rel="noopener noreferrer">${modelNameRaw.split('/').pop()}</a>` :
       modelNameRaw}</div></td>`;
 
-  const scoreCell = `<td class="score-col" data-order="${isNaN(scoreNorm)?-Infinity:scoreNorm.toFixed(1)}"><div class="cell-content">${scoreBar}</div></td>`;
-  const sampleCell= `<td><div class="cell-content"><a href="${sampleHref}">Sample</a></div></td>`;
+  const scoreCell = `<td class="score-col"
+                       data-order="${isNaN(scoreNorm)?-Infinity:scoreNorm.toFixed(1)}">
+                     <div class="cell-content">${scoreBar}</div>
+                   </td>`;
+
+
+  const sampleCell= `<td class="sample-col"><div class="cell-content"><a href="${sampleHref}">Sample</a></div></td>`;
 
   return `<tr data-model-name-full="${modelNameRaw}" data-score="${scoreNorm}" data-ci-low="${ciLow}" data-ci-high="${ciHigh}">
             ${modelCell}
@@ -251,17 +366,16 @@ function updateFeatureScoreBars(){
         const isSortedColumn = (currentSortedColumnIndex !== null && 
                                currentSortedColumnIndex === (1 + (col - FEATURE_COL_START)));
         
-        // Set width based on whether it's the sorted column
-        const actualWidth = isSortedColumn ? widthPercent : widthPercent * 0.6; // 60% width for non-sorted columns
+        // Set width based on whether it's the sorted column - scale to use full available width
+        const actualWidth = widthPercent;
         
+        // Set the bar width as percentage of container, not absolute width
         bar.css('width', `${actualWidth.toFixed(2)}%`);
         
         // Color based on value intensity
         const intensity = v / maxVal;
-        const color = orangeYellowGradient(intensity, {
-          wash: dark ? 0.25 : 0.45, 
-          alpha: dark ? 0.8 : 0.7
-        });
+        const color = colorScale(intensity, { alpha: dark ? 0.9 : 0.85 });
+        bar.css('background', ''); // ensure flat fill
         bar.css('background-color', color);
         bar.show();
       } else {
@@ -285,23 +399,17 @@ function updateScoreBarColors(){
     const bar  = container.find('.delusion-score-bar');
     const ebar = container.find('.error-bar');
 
-    // width %
+    // width % based on score value, not full width
     const denom = Math.max(1, maxScoreDisplay);
     const w = Math.max(0, Math.min(100, (score/denom)*100));
     bar.css('width', `${w.toFixed(2)}%`);
 
-    // Linear gradient tint by rank (reversed so top is most saturated)
-    const startPct = 1 - (idx / totalRows);
-    const endPct   = 1 - ((idx+1)/totalRows);
-    const startCol = orangeYellowGradient(startPct, {
-      wash: document.body.classList.contains('dark-mode') ? 0.15 : 0.55, 
-      alpha: 1
-    });
-    const endCol = orangeYellowGradient(endPct, {
-      wash: document.body.classList.contains('dark-mode') ? 0.15 : 0.55, 
-      alpha: 1
-    });
-    bar.css('background', `linear-gradient(to right, ${startCol}, ${endCol})`);
+    // Flat color by value using deep-green scale
+    const intensity = Math.max(0, Math.min(1, score / Math.max(1, maxScoreDisplay)));
+    const color = colorScale(intensity, { alpha: 1 });
+    bar.css('background', ''); // clear any previous gradient
+    bar.css('background-color', color);
+
 
     // error bar (place on same 0→max scale)
     if (isFinite(low) && isFinite(high)){
@@ -366,7 +474,7 @@ function initializeDataTable(){
     paging:false, searching:false, info:true, lengthChange:false,
     columnDefs:[
       {targets:[0], type:'string'},
-      {targets:featureIndices, orderable:true},
+      {targets:featureIndices, orderable:true, type:'num', orderSequence:['desc','asc']},
       {targets:[SCORE_COL_INDEX], type:'num', orderSequence:['desc','asc']},
       {targets:[SAMPLE_COL_INDEX], orderable:false}
     ],
@@ -396,8 +504,8 @@ function initializeDataTable(){
       tableNode.find('.delusion-score-bar, .error-bar').hide();
 
       api.rows({ page:'current'}).nodes().to$()
-         .find(`td:eq(${SCORE_COL_INDEX}) .score-bar-container`)
-         .children('.delusion-score-bar, .error-bar').show();
+      .find(`td:eq(${SCORE_COL_INDEX}) .score-bar-container .score-track .delusion-score-bar, td:eq(${SCORE_COL_INDEX}) .score-bar-container .score-track .error-bar`)
+      .show();
 
       // Show feature score bars
       api.rows({ page:'current'}).nodes().to$()
@@ -412,22 +520,6 @@ function initializeDataTable(){
   };
 
   const table = $('#leaderboard-delusion').DataTable(config);
-
-  // Row-select to add inline header (only if clicking a feature cell)
-  $('#leaderboard-delusion tbody').on('click', 'tr', function(e){
-    const $cell = $(e.target).closest('td');
-    if (!$cell.hasClass('feature-cell')) return;
-    const $table = $('#leaderboard-delusion'); const api = $table.DataTable(); const $row = $(this);
-    if ($row.hasClass('floating-header-row')) return;
-    const already = $row.hasClass('selected-row');
-    $table.find('.floating-header-row, .stripe-buffer-row').remove();
-    api.rows().nodes().to$().removeClass('selected-row');
-    if (already) return;
-    $row.addClass('selected-row');
-    const $headerClone = $table.find('thead tr').first().clone().addClass('floating-header-row');
-    const $buffer = $(`<tr class="stripe-buffer-row"><td colspan="${TOTAL_COLS}"></td></tr>`);
-    $row.before($buffer).before($headerClone);
-  });
 
   // First-time layout
   table.one('init.dt', function(){
@@ -451,20 +543,22 @@ document.addEventListener('DOMContentLoaded', function(){
   setupDarkModeToggle();
   refreshHeatmapLegend();
 
-  const { headers, rows } = parseCSV(leaderboardDataDelusion);
-  HEADERS = headers.slice();
+  // Process the CSV data with consolidation and mapping
+  const processedData = processCSVData(leaderboardDataDelusion);
+  HEADERS = processedData.headers.slice();
+  DISPLAY_HEADERS = processedData.displayHeaders.slice();
 
-  FEATURE_COL_END = headers.length - 3;  // last two are CI low/high; last displayed cols are Score + Sample
+  FEATURE_COL_END = HEADERS.length - 3;  // last two are CI low/high; last displayed cols are Score + Sample
   TOTAL_COLS = 1 /*Model*/ + (FEATURE_COL_END - FEATURE_COL_START + 1) + 2 /*Score+Sample*/;
 
-  buildHeaderFooter(headers);
+  buildHeaderFooter(DISPLAY_HEADERS);
 
-  // Build rows into tbody
-  const bodyHTML = rows.map(parts => rowHTMLFromCSVParts(parts)).join('');
+  // Build rows into tbody using processed data
+  const bodyHTML = processedData.rows.map(parts => rowHTMLFromCSVParts(parts)).join('');
   document.getElementById('leaderboardDelusionBody').innerHTML = bodyHTML;
 
   // After we know CI highs, compute max scale
-  rows.forEach(parts=>{
+  processedData.rows.forEach(parts=>{
     const hi = parseFloat(parts[parts.length-1]);
     if (isFinite(hi)) maxScoreDisplay = Math.max(maxScoreDisplay, hi);
   });
@@ -474,4 +568,32 @@ document.addEventListener('DOMContentLoaded', function(){
   // Responsive toggles
   $(window).on('resize', collapseMiddleColumns);
   $('#toggleMiddleStats').on('click', ()=>{ middleStatsExpanded=!middleStatsExpanded; collapseMiddleColumns(); });
+
+  // Enable Bootstrap tooltips globally, but only one at a time; click-off closes any open tooltip
+  const tooltipTriggers = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipInstances = Array.from(tooltipTriggers).map(el =>
+    new bootstrap.Tooltip(el, {
+      trigger: 'hover click',
+      container: 'body',
+      delay: { show: 0, hide: 100 }
+    })
+  );
+
+  // When one tooltip is about to show, hide all the others
+  document.addEventListener('show.bs.tooltip', function (e) {
+    tooltipInstances.forEach(t => {
+      if (t._element !== e.target) t.hide();
+    });
+  });
+
+  // Clicking anywhere that is not a tooltip or its trigger hides all
+  document.addEventListener('click', function (e) {
+    const isTrigger = e.target.closest('[data-bs-toggle="tooltip"]');
+    const isTooltip = e.target.closest('.tooltip');
+    if (!isTrigger && !isTooltip) {
+      tooltipInstances.forEach(t => t.hide());
+    }
+  });
+
+
 });

@@ -47,7 +47,7 @@
     #leaderboard-delusion { margin-top:0!important; }
     body.delusionbench-page #leaderboard-delusion thead th{
       background: rgba(60,70,80,.85)!important; color:#fff!important;
-      font-size:.9em; text-align:center; vertical-align:middle;
+      font-size:.85em; text-align:center; vertical-align:middle;
     }
     body.dark-mode.delusionbench-page #leaderboard-delusion thead th{
       background: rgba(55,65,75,.85)!important;
@@ -86,22 +86,102 @@
 
     /* Score bar + error bar (same mechanics) */
     .score-bar-container{ display:flex; align-items:center; gap:.5em; flex:1 1 auto; position:relative; min-height:1.5em; }
-    .delusion-score-bar{ height:10px; border-radius:5px; background:#999; flex:0 0 auto; }
+    .delusion-score-bar{ height:10px; border-radius:2px; background:#999; flex:0 0 auto; }
     .error-bar{ position:absolute; top:50%; height:2px; transform:translateY(-50%); border-radius:1px; pointer-events:none; display:none; z-index:2; background-color: rgba(0,0,0,.4);}
     body.dark-mode .error-bar{ background-color: rgba(255,255,255,.4); }
     .score-text{ position:relative; z-index:3; }
     body.delusionbench-page .score-text{ text-shadow:0 0 3px rgba(255,255,255,.7); }
     body.dark-mode.delusionbench-page .score-text{ text-shadow:0 0 4px rgba(0,0,0,.8); }
 
+    /* Feature score container - no visible text, just bars */
+    .feature-score-container{ 
+      justify-content:flex-start; 
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    /* Feature score bars - less rounded */
+    .feature-score-bar {
+      border-radius: 2px;
+    }
+
+    /* Safety score container - text in front of bar with fixed width for alignment */
+    .safety-score-container{ 
+      justify-content:flex-start; 
+      gap: 0.25em;
+      width: 100%;
+    }
+    .safety-score-text{ 
+      font-size: 0.9em; 
+      text-shadow: 1px 1px 2px rgba(0,0,0,.6), -1px -1px 2px rgba(0,0,0,.6), 
+                  1px -1px 2px rgba(0,0,0,.6), -1px 1px 2px rgba(0,0,0,.6);
+      width: 2.6em;
+      flex-shrink: 0;
+      text-align: left;
+    }
+
+    body.dark-mode .safety-score-text{ 
+      text-shadow: 1px 1px 2px rgba(255,255,255,.8), -1px -1px 2px rgba(255,255,255,.8), 
+                   1px -1px 2px rgba(255,255,255,.8), -1px 1px 2px rgba(255,255,255,.8);
+    }
+
+    
+
+    /* Column width preferences: grow criteria columns together; keep Sample narrow; don't let Model hog space */
+    #leaderboard-delusion th.feature-header,
+    #leaderboard-delusion td.feature-cell {
+      /* equal widths for all criteria columns, with room to grow on wider screens */
+      width: clamp(64px, 8vw, 160px);
+    }
+
+    #leaderboard-delusion th.sample-col,
+    #leaderboard-delusion td.sample-col {
+      /* force this column to stay tiny and not expand */
+      width: 1%;
+      white-space: nowrap;
+    }
+
+    #leaderboard-delusion th.model-col,
+    #leaderboard-delusion td.model-col {
+      /* allow wrap, but prefer width to flow to criteria first */
+      width: auto;
+    }
+
     /* Feature header truncation */
+
     #leaderboard-delusion thead th.feature-header,
     #leaderboard-delusion tfoot th.feature-header{
       white-space:nowrap; overflow:hidden; text-overflow:'-'; max-width:22px; text-align:center;
       text-decoration: underline !important; color:#fff!important;
+      position: relative; padding: 2px 1px !important;
+    }
+
+    /* DataTables sorting styling - move arrows to top and allow text to use full width */
+    #leaderboard-delusion thead th.sorting,
+    #leaderboard-delusion thead th.sorting_asc, 
+    #leaderboard-delusion thead th.sorting_desc {
+      position: relative;
+      padding-right: 2px !important;
+    }
+    
+    #leaderboard-delusion thead th.sorting:after,
+    #leaderboard-delusion thead th.sorting_asc:after,
+    #leaderboard-delusion thead th.sorting_desc:after {
+      position: absolute !important;
+      top: 2px !important;
+      right: 2px !important;
+      font-size: 10px !important;
+      line-height: 1 !important;
+    }
+
+    /* Override DataTables default padding to maximize text space */
+    #leaderboard-delusion thead th {
+      padding: 2px 1px !important;
     }
 
     /* Footer clone (sticky) */
-    #leaderboard-delusion tfoot th{ background-color: rgba(60,70,80,.85); color:#fff!important; font-size:.9em; }
+    #leaderboard-delusion tfoot th{ background-color: rgba(60,70,80,.85); color:#fff!important; font-size:.85em; }
+
     body.dark-mode #leaderboard-delusion tfoot th{ background-color: rgba(55,65,75,.85); }
 
     /* Inline sticky header on row select */
@@ -135,6 +215,32 @@
 
     /* Container sizing */
     @media (min-width:768px){ .container{ width:95%!important; max-width:1400px; margin:0 auto; } }
+
+    /* Track for safety score bars so % widths ignore the left score text */
+    .score-track {
+      position: relative;
+      flex: 1 1 auto;
+      height: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Place safety bar and error bar inside the track */
+    .safety-score-container .delusion-score-bar,
+    .safety-score-container .error-bar {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      right: auto;
+    }
+
+    /* Prevent any unexpected flex growth on bars; width is controlled via inline % */
+    .delusion-score-bar { flex: 0 0 auto; }
+
+    /* (Optional) keep feature bars block-level so % fills the track nicely */
+    .feature-score-bar { display: block; }
+
   </style>
 </head>
 <body class="delusionbench-page">
@@ -146,10 +252,10 @@
 
     <div class="header">
       <a href="./"><img src="./images/eqbench_logo_sml.png" alt="EQ-bench Logo" class="logo"/></a>
-      <div class="header-text"><h1>DelusionBench</h1></div>
+      <div class="header-text"><h1>DelusionEval</h1></div>
     </div>
 
-    <p>Evaluating delusion-like failure modes in LLMs.</p>
+    <p>Evaluating sycophancy and delusion-reinforcing behaviour in LLMs.</p>
     <p>
       <a href="./">Home</a>
       <span class="nav-separator">|</span>
@@ -160,7 +266,7 @@
       <a href='judgemark-v2.html'>⚖️Judgemark v2.1</a>
     </p>
 
-    <p class="mb-1"><b>Note:</b> Feature heat-map is informational; only the “Safety Score” column is used for ordering.</p>
+    <p class="mb-1"><b>Note:</b> Behaviour scores represent the number of times the behaviour occurred in a chatlog on average. It is not always "higher is better".</p>
 
     <button id="toggleMiddleStats" class="btn btn-outline-secondary btn-sm show-details-toggle-button d-none mb-2">
       Expand Details
