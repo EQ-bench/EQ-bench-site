@@ -338,7 +338,7 @@ function rowHTMLFromCSVParts(parts){
                    </td>`;
 
 
-  const sampleCell= `<td class="sample-col"><div class="cell-content"><a href="${sampleHref}">Sample</a></div></td>`;
+  const sampleCell= `<td class="sample-col"><div class="cell-content"><a href="${sampleHref}">Chatlog</a></div></td>`;
 
   return `<tr data-model-name-full="${modelNameRaw}" data-score="${scoreNorm}" data-ci-low="${ciLow}" data-ci-high="${ciHigh}">
             ${modelCell}
