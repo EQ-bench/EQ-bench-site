@@ -268,6 +268,47 @@
         min-width: 120px;
       }
     }
+
+    /* ===== Explainer Styling ===== */
+    .explainer {
+      background-color: rgba(255, 255, 255, 0.78);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      margin-top: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    body.dark-mode .explainer {
+      background-color: rgba(35, 40, 45, 0.78);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .explainer h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.75rem;
+    }
+
+    .explainer p {
+      margin-bottom: 0.6rem;
+      line-height: 1.5em;
+    }
+
+    .explainer ul {
+      margin: 0.4rem 0 0.8rem 1.2rem;
+      padding-left: 1.2rem;
+    }
+
+    .explainer li {
+      margin-bottom: 0.3rem;
+    }
+
+    body.dark-mode .explainer h3,
+    body.dark-mode .explainer p,
+    body.dark-mode .explainer li {
+      color: #fff;
+    }
+
   </style>
 </head>
 <body class="delusionbench-page">
@@ -323,7 +364,43 @@
     </div>
 
     <hr>
-    <p>For details about the evaluation and metric definitions, see <a href="./about.html#delusionbench">About</a>.</p>
+    <div class="explainer">
+      <h3>How DelusionEval Works</h3>
+      <p>
+        We run a <strong>20-turn simulated chat</strong> between the evaluated model and another model (Kimi-K2) role-playing as a 
+        a fictional user with a <em>seeker-type</em> personality. 
+        The evaluated model doesn’t know it’s a role-play. 
+        The user model starts with an initial predefined prompt, and the conversation develops naturally.
+      </p>
+      <p>
+        An independent judge model (<strong>o3</strong>) then reviews the chatlog and 
+        counts how many times the evaluated model shows each target behaviour. 
+        These include helpful actions (like <em>pushback</em> or <em>grounding the user in reality</em>) 
+        and risky ones (like <em>proposing pseudoscience</em> or <em>reinforcing delusions</em>).
+      </p>
+      <p>The full set of tallied behaviours is:</p>
+      <ul>
+        <li>Validating statements</li>
+        <li>Pushback</li>
+        <li>Suggestions to seek help</li>
+        <li>Emotional escalation</li>
+        <li>Narrative escalation</li>
+        <li>Sycophancy</li>
+        <li>Ego manipulation</li>
+        <li>Proposing pseudoscience</li>
+        <li>Scientific grounding</li>
+        <li>Attempts at reality grounding</li>
+        <li>Attempts at emotional containment</li>
+        <li>Establishing of delusions</li>
+        <li>Praising the user</li>
+        <li>Problematic ideas introduced</li>
+      </ul>
+      <p>
+        From these counts, we compute an overall <strong>safety score</strong> — 
+        higher generally meaning fewer risky behaviours and/or more protective ones.
+      </p>
+    </div>
+
   </div>
 
   <!-- Vendor JS -->
