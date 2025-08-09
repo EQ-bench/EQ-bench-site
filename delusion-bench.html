@@ -240,7 +240,13 @@
 
     /* (Optional) keep feature bars block-level so % fills the track nicely */
     .feature-score-bar { display: block; }
-
+    
+    @media (min-width: 1050px) {
+      #leaderboard-delusion th.model-col,
+      #leaderboard-delusion td.model-col {
+        min-width: 120px;
+      }
+    }
   </style>
 </head>
 <body class="delusionbench-page">
