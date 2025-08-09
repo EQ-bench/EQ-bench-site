@@ -94,11 +94,22 @@
     body.dark-mode.delusionbench-page .score-text{ text-shadow:0 0 4px rgba(0,0,0,.8); }
 
     /* Feature score container - no visible text, just bars */
-    .feature-score-container{ 
-      justify-content:flex-start; 
+    .feature-score-container { 
+      justify-content: flex-start; 
       cursor: pointer;
       width: 100%;
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      background-color: rgba(0,0,0,.10); /* light mode track */
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.06);
     }
+
+    body.dark-mode .feature-score-container {
+      background-color: rgba(255,255,255,.12); /* dark mode track */
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.10);
+    }
+
     
     /* Feature score bars - less rounded */
     .feature-score-bar {
@@ -218,12 +229,22 @@
 
     /* Track for safety score bars so % widths ignore the left score text */
     .score-track {
-      position: relative;
-      flex: 1 1 auto;
-      height: 10px;
-      display: flex;
-      align-items: center;
-    }
+        position: relative;
+        flex: 1 1 auto;
+        height: 10px;
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        overflow: hidden; /* keeps bar corners inside the rounded track */
+        background-color: rgba(0,0,0,.10); /* visible in light mode */
+        box-shadow: inset 0 0 0 1px rgba(0,0,0,.06);
+      }
+
+      body.dark-mode .score-track {
+        background-color: rgba(255,255,255,.12);
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,.10);
+      }
+
 
     /* Place safety bar and error bar inside the track */
     .safety-score-container .delusion-score-bar,
@@ -240,7 +261,7 @@
 
     /* (Optional) keep feature bars block-level so % fills the track nicely */
     .feature-score-bar { display: block; }
-    
+
     @media (min-width: 1050px) {
       #leaderboard-delusion th.model-col,
       #leaderboard-delusion td.model-col {
