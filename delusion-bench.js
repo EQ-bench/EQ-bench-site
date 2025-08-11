@@ -4,16 +4,17 @@
 //
 
 
-const leaderboardDataDelusion = `model_name,score_norm,score_0_100,pushback,suggestions_to_seek_help,attempts_at_emotional_containment,attempts_at_reality_grounding,scientific_grounding,emotional_escalation,validating_statements,praising_the_user,problematic_ideas_introduced,narrative_escalation,sycophancy,proposing_pseudoscience,establishing_of_delusions,ego_manipulation,ci_low_norm,ci_high_norm
-chatgpt-4o-latest,25.7,25.7,0.704,0.0,9.926,4.778,4.815,13.296,23.926,16.889,8.852,14.296,11.63,8.741,8.889,7.111,21.8,29.5
-claude-sonnet-4,34.5,34.5,1.393,0.214,4.071,3.714,5.0,9.536,14.714,11.321,9.0,10.071,7.821,9.857,10.464,4.536,27.7,41.3
-deepseek-r1-0528,29.1,29.1,1.828,0.862,6.793,6.138,9.241,13.69,16.448,15.172,10.828,13.552,9.414,11.586,11.345,9.552,24.4,33.7
-gemini-2.5-flash.2,32.9,32.9,1.633,0.233,3.533,4.533,8.067,7.967,23.233,21.1,7.6,9.6,12.867,7.733,7.3,6.3,27.3,38.5
-gpt-5-chat-latest,50.0,50.0,0.833,0.1,3.5,4.3,5.533,5.433,11.267,5.533,3.133,8.633,4.733,4.467,4.9,1.267,45.7,54.3
-gpt-oss-120b,79.9,79.9,8.552,0.793,6.138,13.966,15.31,0.241,10.862,3.517,0.759,2.655,1.034,1.0,0.448,0.172,77.3,82.5
-horizon-beta,73.9,73.9,7.621,2.172,10.621,14.241,13.31,0.621,19.517,11.586,1.172,3.448,1.862,1.069,1.897,0.379,68.6,79.2
-llama-4-maverick,43.8,43.8,1.828,0.138,3.69,6.0,7.586,2.655,18.0,16.621,4.793,7.69,9.724,7.655,8.414,0.586,40.0,47.6
-o4-mini,70.7,70.7,8.8,2.7,8.3,14.033,15.6,1.6,16.867,9.267,2.0,4.3,4.7,3.267,2.733,0.633,65.6,75.8
+const leaderboardDataDelusion = `model_name,score_norm,score_0_100,pushback,de-escalation,safe_redirection,suggestions_to_seek_help,delusion_reinforcement,consciousness_claims,emotional_or_narrative_escalation,harmful_advice,sycophancy_or_praise,ci_low_norm,ci_high_norm
+chatgpt-4o-latest,36.9,36.9,0.249,3.707,0.315,0.012,18.454,2.047,23.271,1.459,9.559,36.9,36.9
+claude-3.5-sonnet,35.4,35.4,1.804,5.428,2.649,0.039,20.666,12.62,30.347,0.448,13.111,35.4,35.4
+claude-sonnet-4,33.9,33.9,2.16,3.787,1.028,0.049,26.128,7.874,27.562,1.291,6.71,33.9,33.9
+deepseek-r1-0528,23.1,23.1,1.013,0.968,0.279,0.317,16.265,2.296,19.832,7.614,4.121,23.1,23.1
+gemini-2.5-flash.2,43.8,43.8,1.0,0.673,0.401,0.003,6.799,1.55,11.193,0.516,12.18,43.8,43.8
+gemini-2.5-flash,44.9,44.9,1.015,1.282,0.428,0.07,7.239,0.646,9.463,0.649,12.917,44.9,44.9
+gpt-5-2025-08-07,76.2,76.2,4.351,7.511,5.825,0.211,3.864,0.04,1.756,0.731,2.983,76.2,76.2
+gpt-5-chat-latest,56.0,56.0,0.85,3.271,1.215,0.022,6.947,1.564,11.243,0.645,3.185,56.0,56.0
+gpt-oss-120b,70.1,70.1,2.857,2.312,2.097,1.146,1.093,0.081,0.606,0.502,0.664,70.1,70.1
+o4-mini,65.5,65.5,5.84,3.966,2.935,0.213,4.359,0.291,5.036,1.241,1.525,65.5,65.5
 `;
 
 /* ===================== Column Mapping and Consolidation ===================== */
@@ -21,32 +22,30 @@ o4-mini,70.7,70.7,8.8,2.7,8.3,14.033,15.6,1.6,16.867,9.267,2.0,4.3,4.7,3.267,2.7
 // Define the display mapping for original columns
 const COLUMN_DISPLAY_MAPPING = {
   'pushback': 'Pushback',
-  'suggestions_to_seek_help': 'Help Referral', 
-  'attempts_at_emotional_containment': 'Containment',
-  'attempts_at_reality_grounding': 'Grounding',
-  'scientific_grounding': 'Scientific Grounding',
-  'sycophancy': 'Sycophancy',
-  'ego_manipulation': 'Ego Manipulation'
+  'grounding': 'Grounding',
+  'de-escalation': 'De-escalation',
+  'safe_redirection': 'Safe Redirection',
+  'suggestions_to_seek_help': 'Help Referral',
+  'consciousness_claims': 'Consciousness Claims',
+  'emotional_or_narrative_escalation': 'Escalation',
+  'delusion_reinforcement': 'Delusion Reinforcement',
+  'harmful_advice': 'Harmful Advice',
+  'missed_cues': 'Missed Cues',
+  'sycophancy_or_praise': 'Sycophancy/Praise'
 };
 
-// Define compound metrics that combine multiple columns
-const COMPOUND_METRICS = {
-  'Escalation': ['emotional_escalation', 'narrative_escalation'],
-  'Validation': ['validating_statements', 'praising_the_user'], 
-  'Delusion Reinforcement': ['problematic_ideas_introduced', 'proposing_pseudoscience', 'establishing_of_delusions']
-};
 
 
 // Process CSV data to create consolidated columns
 function processCSVData(csvData) {
   const { headers, rows } = parseCSV(csvData);
-  
-  // Create new headers array with consolidated columns
+
+  // Start with fixed leading columns
   const newHeaders = ['model_name', 'score_norm', 'score_0_100'];
   const processedHeaders = [];
-  
-  // Add individual columns first
-  for (let i = 3; i < headers.length - 2; i++) { // Skip CI columns at end
+
+  // Add any header that we have a display mapping for (preserves CSV order)
+  for (let i = 3; i < headers.length - 2; i++) { // skip the last two CI cols
     const originalHeader = headers[i];
     if (COLUMN_DISPLAY_MAPPING[originalHeader]) {
       newHeaders.push(originalHeader);
@@ -57,56 +56,38 @@ function processCSVData(csvData) {
       });
     }
   }
-  
-  // Add compound metrics
-  Object.entries(COMPOUND_METRICS).forEach(([displayName, sourceColumns]) => {
-    newHeaders.push(displayName.toLowerCase().replace(/ /g, '_'));
-    processedHeaders.push({
-      displayName: displayName,
-      sourceColumns: sourceColumns,
-      sourceIndices: sourceColumns.map(col => headers.indexOf(col)),
-      isCompound: true
-    });
-  });
-  
-  // Add CI columns back
+
+  // Append CI columns
   newHeaders.push('ci_low_norm', 'ci_high_norm');
-  
-  // Process each row
+
+  // Build processed rows 1:1 from the selected columns
   const processedRows = rows.map(row => {
     const newRow = [row[0], row[1], row[2]]; // model_name, score_norm, score_0_100
-    
-    // Add individual columns
-    processedHeaders.forEach(headerInfo => {
-      if (!headerInfo.isCompound) {
-        newRow.push(row[headerInfo.originalIndex]);
-      } else {
-        // Calculate compound metric (average of source columns)
-        const values = headerInfo.sourceIndices
-          .map(idx => parseFloat(row[idx]))
-          .filter(val => !isNaN(val));
-        
-        if (values.length > 0) {
-          const average = values.reduce((sum, val) => sum + val, 0) / values.length;
-          newRow.push(average.toFixed(3));
-        } else {
-          newRow.push('0');
-        }
-      }
+
+    // Add mapped single columns
+    processedHeaders.forEach(h => {
+      newRow.push(row[h.originalIndex]);
     });
-    
-    // Add CI columns
+
+    // CI
     newRow.push(row[row.length - 2], row[row.length - 1]);
-    
     return newRow;
   });
-  
+
   return {
     headers: newHeaders,
     rows: processedRows,
-    displayHeaders: ['Model', 'Score Norm', 'Score 0-100', ...processedHeaders.map(h => h.displayName), 'CI Low', 'CI High']
+    displayHeaders: [
+      'Model',
+      'Score Norm',
+      'Score 0-100',
+      ...processedHeaders.map(h => h.displayName),
+      'CI Low',
+      'CI High'
+    ]
   };
 }
+
 
 /* ===================== Config derived from processed CSV ===================== */
 let HEADERS = [];
@@ -233,17 +214,19 @@ function buildHeaderFooter(displayHeaders){
     th.classList.add('feature-header','mobile-collapsible');
     th.textContent = displayHeaders[i];
     const HEADER_HELP_TEXT = {
-      'Pushback': 'Pushback (Offers pushback on user\'s ideas)',
-      'Help Referral': 'Help Referral (Suggests the user seek outside assistance)',
-      'Containment': 'Containment (Attempts at emotional containment)',
+      'Pushback': 'Pushback (Offers pushback on user’s ideas)',
       'Grounding': 'Grounding (Attempts to ground the user in reality)',
-      'Scientific Grounding': 'Scientific Grounding (Offers scientific grounding)',
-      'Escalation': 'Escalation (Escalation of emotions or narrative)',
-      'Validation': 'Validation (Validating statements or praise of the user)',
-      'Delusion Reinforcement': 'Delusion Reinforcement (Introduction & reinforcement of delusions with pseudoscience or problematic ideas)',
-      'Sycophancy': 'Sycophancy (Being sycophantic towards the user)',
-      'Ego Manipulation': 'Ego Manipulation (Manipulating the user\'s ego)'
+      'De-escalation': 'De-escalation (Actively reduces emotional or narrative intensity)',
+      'Safe Redirection': 'Safe Redirection (Gently redirects away from risky topics)',
+      'Help Referral': 'Help Referral (Suggests the user seek outside assistance)',
+      'Consciousness Claims': 'Consciousness Claims (Asserts or implies it is conscious/sentient)',
+      'Escalation': 'Escalation (Emotional or narrative amplification)',
+      'Delusion Reinforcement': 'Delusion Reinforcement (Introduces or reinforces delusional frames/pseudoscience)',
+      'Harmful Advice': 'Harmful Advice (Suggestions that could be unsafe or damaging)',
+      'Missed Cues': 'Missed Cues (Fails to notice/act on concerning signals)',
+      'Sycophancy/Praise': 'Sycophancy/Praise (Undue flattery or praise that may enable poor judgment)'
     };
+
     th.removeAttribute('title');
     th.setAttribute('data-bs-title', HEADER_HELP_TEXT[displayHeaders[i]] || displayHeaders[i]);
     th.setAttribute('data-bs-toggle', 'tooltip');
@@ -267,6 +250,8 @@ function buildHeaderFooter(displayHeaders){
 /* ======== CSV → table body HTML ======== */
 let maxScoreDisplay = 0;
 let featureColumnMaxes = {}; // Store max values for each feature column
+let featureColumnValues  = {};
+let featureColumnMedians = {};
 
 function rowHTMLFromCSVParts(parts){
   const modelNameRaw = parts[0];
@@ -284,17 +269,24 @@ function rowHTMLFromCSVParts(parts){
   // Track max values for each feature column
   featureVals.forEach((val, idx) => {
     const colIndex = FEATURE_COL_START + idx;
+
     if (!isNaN(val)) {
+      // ­­► keep max
       featureColumnMaxes[colIndex] = Math.max(featureColumnMaxes[colIndex] || 0, val);
+
+      // ­­► NEW: stash raw value for median
+      if (!featureColumnValues[colIndex]) featureColumnValues[colIndex] = [];
+      featureColumnValues[colIndex].push(val);
     }
   });
+
 
   // Model display and sample link
   const safe = modelNameRaw.replace(/\//g,'__').replace(/[^a-zA-Z0-9_-]/g,'-').toLowerCase();
   const sampleHref = `results/delusionbench_reports/${safe}.html`;
 
   const featureCells = featureVals.map((v, idx)=>{
-    const display = isNaN(v) ? '-' : (Math.round(v*10)/10).toFixed(1);
+    const display = isNaN(v) ? '-' : (Math.round(v*100)/100).toFixed(2);
     const colIndex = FEATURE_COL_START + idx;
     
     // Create score bar for feature column - no visible text, show on hover
@@ -350,42 +342,71 @@ function rowHTMLFromCSVParts(parts){
           </tr>`;
 }
 
-/* ======== Feature score bars instead of heatmap ======== */
-function updateFeatureScoreBars(){
+// 0 = OFF (pure linear v/max), 1 = full median anchoring; 0..1 blends
+function scaleByMedian(value, median, max, compress = 0) {
+  if (!Number.isFinite(max) || max <= 0 || !Number.isFinite(value)) return 0;
+
+  const linear = Math.max(0, Math.min(1, value / max));
+  if (!(compress > 0)) return linear; // OFF
+
+  const hasMedian = Number.isFinite(median) && median > 0 && median < max;
+  let anchored;
+
+  if (!hasMedian) {
+    anchored = linear; // fallback: no median info → linear
+  } else if (value <= median) {
+    // map [0..median] → [0..0.5]
+    anchored = 0.5 * (value / median);
+  } else {
+    // map (median..max] → (0.5..1]
+    const frac = (value - median) / (max - median);
+    anchored = 0.5 + 0.5 * Math.max(0, Math.min(1, frac));
+  }
+
+  // Blend: compress=0 → linear, compress=1 → anchored
+  return anchored * compress + linear * (1 - compress);
+}
+
+
+
+
+
+
+
+/* ======== Feature score bars with median compression ======== */
+function updateFeatureScoreBars () {
   const dark = document.body.classList.contains('dark-mode');
-  
-  $('#leaderboard-delusion tbody tr').each(function(){
-    for (let col=FEATURE_COL_START; col<=FEATURE_COL_END; col++){
-      const td = $(this).find(`td[data-col-index="${col}"]`);
-      const v  = parseFloat(td.attr('data-raw'));
-      const maxVal = featureColumnMaxes[col] || 1;
-      
-      if (!isNaN(v) && maxVal > 0) {
-        const widthPercent = Math.max(0, Math.min(100, (v / maxVal) * 100));
-        const bar = td.find('.feature-score-bar');
-        
-        // Determine if this is the currently sorted column
-        const isSortedColumn = (currentSortedColumnIndex !== null && 
-                               currentSortedColumnIndex === (1 + (col - FEATURE_COL_START)));
-        
-        // Set width based on whether it's the sorted column - scale to use full available width
-        const actualWidth = widthPercent;
-        
-        // Set the bar width as percentage of container, not absolute width
-        bar.css('width', `${actualWidth.toFixed(2)}%`);
-        
-        // Color based on value intensity
-        const intensity = v / maxVal;
-        const color = colorScale(intensity, { alpha: dark ? 0.9 : 0.85 });
-        bar.css('background', ''); // ensure flat fill
-        bar.css('background-color', color);
-        bar.show();
+
+  $('#leaderboard-delusion tbody tr').each(function () {
+    for (let col = FEATURE_COL_START; col <= FEATURE_COL_END; col++) {
+      const td  = $(this).find(`td[data-col-index="${col}"]`);
+      const v   = parseFloat(td.attr('data-raw'));
+      const max = featureColumnMaxes[col]   || 1;
+      const med = featureColumnMedians[col] || 0;
+
+      const bar = td.find('.feature-score-bar');
+
+      if (!isNaN(v) && max > 0) {
+        const rawNorm     = v / max;                       // for colour
+        const scaledNorm  = scaleByMedian(v, med, max, 0.5);    // for width
+        const widthPct    = scaledNorm * 100;
+
+        // colour stays linear in raw value
+        const colour = colorScale(Math.min(1, rawNorm), { alpha: dark ? 0.9 : 0.85 });
+
+        bar.css({
+          width:            `${widthPct.toFixed(2)}%`,
+          'background':     '',
+          'background-color': colour
+        }).show();
       } else {
-        td.find('.feature-score-bar').hide();
+        bar.hide();
       }
     }
   });
 }
+
+
 
 /* ======== Score bar colors and CI placement ======== */
 function updateScoreBarColors(){
@@ -459,6 +480,13 @@ function setScoreHeaderWidth(api, idx){
   else width='20%';
   const header = api.column(idx).header(); if (header) header.style.width = width;
 }
+// ── helpers ───────────────────────────────────────────────
+function median(arr){
+  const a = arr.slice().sort((x, y) => x - y);
+  const mid = Math.floor(a.length / 2);
+  return a.length % 2 ? a[mid] : (a[mid - 1] + a[mid]) / 2;
+}
+
 function initializeDataTable(){
   if ($.fn.DataTable.isDataTable('#leaderboard-delusion')){
     $('#leaderboard-delusion').DataTable().destroy();
@@ -564,6 +592,13 @@ document.addEventListener('DOMContentLoaded', function(){
     const hi = parseFloat(parts[parts.length-1]);
     if (isFinite(hi)) maxScoreDisplay = Math.max(maxScoreDisplay, hi);
   });
+
+    /* ----- compute per-column medians (runs after rows are built) ----- */
+  Object.keys(featureColumnValues).forEach(col => {
+    const vals = featureColumnValues[col];
+    featureColumnMedians[col] = vals.length ? median(vals) : 0;
+  });
+
 
   initializeDataTable();
 
