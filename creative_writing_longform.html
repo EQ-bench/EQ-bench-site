@@ -381,7 +381,7 @@
     </p>
 
 
-    An LLM-judged longform creative writing benchmark (v3). <a href="#metrics-explanation">✨Updated! Learn more</a>
+    An LLM-judged longform creative writing benchmark. <a href="#metrics-explanation">✨Updated! Learn more</a>
 
     <button id="toggleMiddleStats" class="btn btn-outline-secondary btn-sm show-details-toggle-button d-none mb-2">
         Expand Details
@@ -420,7 +420,7 @@
             <li>Write a short story/novella over 8x 1000 word turns</li>
           </ol>
 
-          <!-- 2025-08-08 Update Summary --> <div class="alert alert-primary border rounded-3 p-3 mb-4"> <div class="d-flex align-items-center justify-content-between"> <h5 class="mb-0">2025-08-08 Updates</h5> <span class="badge bg-secondary">Benchmark change log</span> </div> <p class="mb-2 small text-muted">Sharper judging and structural safeguards for more reliable longform evaluations.</p> <ul class="mb-0"> <li><b>Judge upgraded:</b> Evaluation now uses Claude Sonnet 4 (replacing Sonnet 3.7).</li> <li><b>Metaphor vigilance:</b> Added targeted judge prompting to better detect and punish incoherent/forced metaphors.</li> <li><b>Degradation penalty:</b> New automatic score scaling when outputs overuse very short single‑sentence paragraphs.</li> </ul> </div>
+          <!-- 2025-08-08 Update Summary --> <div class="alert alert-primary border rounded-3 p-3 mb-4"> <div class="d-flex align-items-center justify-content-between"> <h5 class="mb-0">v1.1 2025-08-08 Updates</h5> <span class="badge bg-secondary">Benchmark change log</span> </div> <p class="mb-2 small text-muted">Sharper judging and structural safeguards for more reliable longform evaluations.</p> <ul class="mb-0"> <li><b>Judge upgraded:</b> Evaluation now uses Claude Sonnet 4 (replacing Sonnet 3.7).</li> <li><b>Metaphor vigilance:</b> Added targeted judge prompting to better detect and punish incoherent/forced metaphors.</li> <li><b>Degradation penalty:</b> New automatic score scaling when outputs overuse very short single‑sentence paragraphs.</li> </ul> </div>
 
           <p>Models are typically evaluated via openrouter, using temp=0.7 and min_p=0.1 as the generation settings.</p>
 
