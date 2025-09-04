@@ -629,7 +629,7 @@ const chartData = {
       }
     ]
   },
-  "hermes-4": {
+  "NousResearch/Hermes-4-405B": {
     "absoluteRadar": {
       "labels": [
         "demonstrated_empathy",
