@@ -1,13 +1,5 @@
 /* judgemark-v2.js */
 
-////////////////////////////////////////////////////////////////////////////////
-
-// model, judgemark_score, judgemark_score_raw, kendall_tau_bootstrapped,
-// std_dev, kw_stat, ci99_overlap_magnitude_sum_norm, calibrated_score_range_norm,
-// modulated_ci95, emd_norm, cost
-//
-////////////////////////////////////////////////////////////////////////////////
-
 const leaderboardDataV2 = `
 gpt-4.1,76.31,0.727,0.819,0.576,$10.43
 claude-sonnet-4,81.99,0.726,0.844,0.818,$18.73
