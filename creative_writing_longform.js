@@ -45,7 +45,8 @@ mistral-medium-3.1,52.9,6631,12.89,45.40,13.8,14.24,13.82,12.49,12.07,10.26,8.91
 *NousResearch/Hermes-4-405B,66.8,7104,36.11,47.09,5.2,14.71,15.00,15.00,15.27,14.09,13.99,13.46,12.64,14.24
 *qwen3-max-2025-09-05,57.4,6402,12.21,33.58,6.1,15.34,14.29,12.90,13.10,11.47,10.71,10.79,9.88,14.28
 *sonoma-sky-alpha,56.5,5445,24.56,49.43,6.5,13.99,14.33,13.70,13.40,12.51,12.00,12.05,11.91,10.75
-*moonshotai/Kimi-K2-Instruct-0905,62.8,5897,25.85,15.60,4.4,14.75,14.15,14.53,14.90,13.68,13.56,13.65,13.07,14.34`;
+*moonshotai/Kimi-K2-Instruct-0905,62.8,5897,25.85,15.60,4.4,14.75,14.15,14.53,14.90,13.68,13.56,13.65,13.07,14.34
+*meituan-longcat/LongCat-Flash-Chat-FP8,45.0,4745,9.32,41.46,10.3,14.88,13.93,11.27,10.06,8.90,7.32,6.97,5.36,10.51`;
 
 
 // --- New Slop Data ---
@@ -56,8 +57,8 @@ const slopData = `
 <div class='slop-similar'>claude-3.5-sonnet (distance=0.837)</div>
 <div class='slop-similar'>claude-sonnet-4 (distance=0.838)</div>
 <div class='slop-similar'>Qwen/Qwen3-235B-A22B-Instruct-2507 (distance=0.868)</div>
+<div class='slop-similar'>meituan-longcat/LongCat-Flash-Chat-FP8 (distance=0.882)</div>
 <div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.887)</div>
-<div class='slop-similar'>qwen3-max-2025-09-05 (distance=0.894)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -218,10 +219,10 @@ const slopData = `
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>claude-sonnet-4 (distance=0.822)</div>
+<div class='slop-similar'>meituan-longcat/LongCat-Flash-Chat-FP8 (distance=0.834)</div>
 <div class='slop-similar'>claude-opus-4.1 (distance=0.837)</div>
 <div class='slop-similar'>mistralai/Mistral-Small-3.2-24B-Instruct-2506 (distance=0.859)</div>
 <div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.859)</div>
-<div class='slop-similar'>Qwen/Qwen3-235B-A22B-Instruct-2507 (distance=0.860)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -383,7 +384,7 @@ const slopData = `
 <div class='slop-similar'>gpt-5-chat-latest-2025-08-07 (distance=0.751)</div>
 <div class='slop-similar'>qwen3-max-2025-09-05 (distance=0.762)</div>
 <div class='slop-similar'>mistralai/Mistral-Small-3.2-24B-Instruct-2506 (distance=0.767)</div>
-<div class='slop-similar'>qwen/qwen3-32b (distance=0.784)</div>
+<div class='slop-similar'>meituan-longcat/LongCat-Flash-Chat-FP8 (distance=0.775)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -624,10 +625,10 @@ const slopData = `
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.703)</div>
+<div class='slop-similar'>meituan-longcat/LongCat-Flash-Chat-FP8 (distance=0.735)</div>
 <div class='slop-similar'>qwen3-max-2025-09-05 (distance=0.741)</div>
 <div class='slop-similar'>mistralai/Mistral-Small-3.2-24B-Instruct-2506 (distance=0.785)</div>
 <div class='slop-similar'>deepseek-ai/DeepSeek-V3-0324 (distance=0.794)</div>
-<div class='slop-similar'>gpt-5-chat-latest-2025-08-07 (distance=0.795)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -852,7 +853,7 @@ const slopData = `
 </div>
 <h4>Top Repetitive Phrases</h4>
 <div class='slop-section-items'>
-<span class='slop-word-item'>voice barely a whisper (23)</span> <span class='slop-word-item'>said, his voice low (13)</span> <span class='slop-word-item'>voice trembling slightly (13)</span> <span class='slop-word-item'>hung in the air, heavy (8)</span> <span class='slop-word-item'>smile playing on her lips (8)</span> <span class='slop-word-item'>felt a surge of anger (8)</span> <span class='slop-word-item'>air was thick with the scent (7)</span> <span class='slop-word-item'>felt a chill run (7)</span> <span class='slop-word-item'>said, his voice barely (6)</span> <span class='slop-word-item'>said, his voice laced (6)</span> <span class='slop-word-item'>said, his voice a low (6)</span> <span class='slop-word-item'>voice barely audible (6)</span> <span class='slop-word-item'>eyes filled with a mixture (6)</span> <span class='slop-word-item'>rain continued to fall (5)</span> <span class='slop-word-item'>could have ever imagined (5)</span> <span class='slop-word-item'>carefully constructed facade (5)</span> <span class='slop-word-item'>small, intricately carved (5)</span> <span class='slop-word-item'>smile playing on his lips (5)</span> <span class='slop-word-item'>Elara said, her voice (5)</span> <span class='slop-word-item'>said, her voice barely (5)</span> <span class='slop-word-item'>long, distorted shadows (5)</span> <span class='slop-word-item'>said, her voice low (4)</span> <span class='slop-word-item'>hung heavy in the air (4)</span> <span class='slop-word-item'>testament to the enduring power (4)</span> <span class='slop-word-item'>words hung in the air (4)</span> <span class='slop-word-item'>air, heavy with unspoken (4)</span> <span class='slop-word-item'>took a deep breath (4)</span> <span class='slop-word-item'>movements slow and deliberate (4)</span> <span class='slop-word-item'>growing sense of unease (4)</span> <span class='slop-word-item'>chill run down her spine (4)</span>
+<span class='slop-word-item'>voice barely a whisper (23)</span> <span class='slop-word-item'>voice trembling slightly (13)</span> <span class='slop-word-item'>said, his voice low (13)</span> <span class='slop-word-item'>hung in the air, heavy (8)</span> <span class='slop-word-item'>felt a surge of anger (8)</span> <span class='slop-word-item'>smile playing on her lips (8)</span> <span class='slop-word-item'>air was thick with the scent (7)</span> <span class='slop-word-item'>felt a chill run (7)</span> <span class='slop-word-item'>said, his voice a low (6)</span> <span class='slop-word-item'>said, his voice barely (6)</span> <span class='slop-word-item'>eyes filled with a mixture (6)</span> <span class='slop-word-item'>voice barely audible (6)</span> <span class='slop-word-item'>said, his voice laced (6)</span> <span class='slop-word-item'>small, intricately carved (5)</span> <span class='slop-word-item'>smile playing on his lips (5)</span> <span class='slop-word-item'>long, distorted shadows (5)</span> <span class='slop-word-item'>could have ever imagined (5)</span> <span class='slop-word-item'>said, her voice barely (5)</span> <span class='slop-word-item'>rain continued to fall (5)</span> <span class='slop-word-item'>carefully constructed facade (5)</span> <span class='slop-word-item'>Elara said, her voice (5)</span> <span class='slop-word-item'>hung heavy in the air (4)</span> <span class='slop-word-item'>casting long, distorted (4)</span> <span class='slop-word-item'>distorted shadows across (4)</span> <span class='slop-word-item'>turned to leave, then paused (4)</span> <span class='slop-word-item'>chill run down her spine (4)</span> <span class='slop-word-item'>words hung in the air (4)</span> <span class='slop-word-item'>replied, his voice strained (4)</span> <span class='slop-word-item'>movements slow and deliberate (4)</span> <span class='slop-word-item'>growing sense of unease (4)</span>
 </div>
 <h4>Top Bigrams</h4>
 <div class='slop-section-items'>
@@ -949,6 +950,33 @@ const slopData = `
 <h4>Top Trigrams</h4>
 <div class='slop-section-items'>
 <span class='slop-ngram-item'>word count key (16)</span> <span class='slop-ngram-item'>pocket watch ticked (12)</span> <span class='slop-ngram-item'>said voice steady (8)</span> <span class='slop-ngram-item'>laughed sharp brittle (7)</span> <span class='slop-ngram-item'>said voice raw (6)</span> <span class='slop-ngram-item'>words hung air (6)</span> <span class='slop-ngram-item'>blood ran cold (5)</span> <span class='slop-ngram-item'>stepped forward voice (5)</span> <span class='slop-ngram-item'>breath came shallow (5)</span> <span class='slop-ngram-item'>door creaked open (4)</span> <span class='slop-ngram-item'>blood turned ice (4)</span> <span class='slop-ngram-item'>smile reach eyes (4)</span> <span class='slop-ngram-item'>said voice hollow (4)</span> <span class='slop-ngram-item'>said voice tight (4)</span> <span class='slop-ngram-item'>door slammed shut (4)</span> <span class='slop-ngram-item'>door burst open (4)</span> <span class='slop-ngram-item'>breath came ragged (4)</span> <span class='slop-ngram-item'>head snapped toward (3)</span> <span class='slop-ngram-item'>words hung like (3)</span> <span class='slop-ngram-item'>door swung open (3)</span> <span class='slop-ngram-item'>said voice blade (3)</span> <span class='slop-ngram-item'>go said voice (3)</span> <span class='slop-ngram-item'>body lay still (3)</span> <span class='slop-ngram-item'>clicked open inside (3)</span> <span class='slop-ngram-item'>stumbled back clutching (3)</span> <span class='slop-ngram-item'>came shallow gasps (3)</span> <span class='slop-ngram-item'>flicker something like (3)</span> <span class='slop-ngram-item'>breath warm ear (3)</span>
+</div>
+
+##### meituan-longcat/LongCat-Flash-Chat-FP8
+<h4>Most Similar To:</h4>
+<div class='slop-similar-section'>
+<div class='slop-similar'>Qwen/Qwen3-235B-A22B-Instruct-2507 (distance=0.735)</div>
+<div class='slop-similar'>chatgpt-4o-latest-2025-03-27 (distance=0.775)</div>
+<div class='slop-similar'>mistralai/Mistral-Small-3.2-24B-Instruct-2506 (distance=0.784)</div>
+<div class='slop-similar'>qwen/qwen3-32b (distance=0.787)</div>
+<div class='slop-similar'>qwen3-max-2025-09-05 (distance=0.818)</div>
+</div>
+
+<h4>Top Repetitive Words</h4>
+<div class='slop-section-items'>
+<span class='slop-word-item'>jingled</span> <span class='slop-word-item'>hummed</span> <span class='slop-word-item'>creaked</span> <span class='slop-word-item'>flickered</span> <span class='slop-word-item'>pulsed</span> <span class='slop-word-item'>throbbed</span> <span class='slop-word-item'>beeped</span> <span class='slop-word-item'>itched</span> <span class='slop-word-item'>creak</span> <span class='slop-word-item'>crackled</span> <span class='slop-word-item'>mira</span> <span class='slop-word-item'>ached</span> <span class='slop-word-item'>lira</span> <span class='slop-word-item'>howled</span> <span class='slop-word-item'>twitched</span> <span class='slop-word-item'>wavered</span> <span class='slop-word-item'>pulsing</span> <span class='slop-word-item'>exhaled</span> <span class='slop-word-item'>glowed</span> <span class='slop-word-item'>groaned</span> <span class='slop-word-item'>trembled</span> <span class='slop-word-item'>whispered</span> <span class='slop-word-item'>lena</span> <span class='slop-word-item'>hissed</span> <span class='slop-word-item'>hesitated</span> <span class='slop-word-item'>breaths</span> <span class='slop-word-item'>nodded</span> <span class='slop-word-item'>pulses</span> <span class='slop-word-item'>lunged</span> <span class='slop-word-item'>grinned</span> <span class='slop-word-item'>flinched</span> <span class='slop-word-item'>knelt</span> <span class='slop-word-item'>shuddered</span> <span class='slop-word-item'>hovered</span> <span class='slop-word-item'>thorne</span> <span class='slop-word-item'>smiled</span> <span class='slop-word-item'>stared</span> <span class='slop-word-item'>rippling</span> <span class='slop-word-item'>flinch</span> <span class='slop-word-item'>loomed</span> <span class='slop-word-item'>hairpin</span> <span class='slop-word-item'>buzzed</span> <span class='slop-word-item'>gasped</span> <span class='slop-word-item'>waver</span> <span class='slop-word-item'>blinked</span> <span class='slop-word-item'>bandaged</span> <span class='slop-word-item'>comms</span> <span class='slop-word-item'>whispering</span> <span class='slop-word-item'>sipped</span> <span class='slop-word-item'>leaned</span>
+</div>
+<h4>Top Repetitive Phrases</h4>
+<div class='slop-section-items'>
+<span class='slop-word-item'>first time in years (11)</span> <span class='slop-word-item'>Outside, the rain had stopped (4)</span> <span class='slop-word-item'>casting long shadows (4)</span> <span class='slop-word-item'>sat on the edge of the bed (3)</span> <span class='slop-word-item'>Inside, the air was thick (2)</span> <span class='slop-word-item'>next morning, we went (1)</span> <span class='slop-word-item'>next morning, she went (1)</span> <span class='slop-word-item'>Outside, the rain stopped (1)</span> <span class='slop-word-item'>looked at him then, really looked (1)</span> <span class='slop-word-item'>next morning, he went (1)</span> <span class='slop-word-item'>sat on the edge of his bed (1)</span> <span class='slop-word-item'>room door wouldn’t open (1)</span>
+</div>
+<h4>Top Bigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>first time (77)</span> <span class='slop-ngram-item'>closed eyes (50)</span> <span class='slop-ngram-item'>stepped forward (32)</span> <span class='slop-ngram-item'>stepped closer (28)</span> <span class='slop-ngram-item'>sat bed (27)</span> <span class='slop-ngram-item'>next morning (25)</span> <span class='slop-ngram-item'>red light (24)</span> <span class='slop-ngram-item'>one thing (22)</span> <span class='slop-ngram-item'>breath caught (21)</span> <span class='slop-ngram-item'>stood walked (21)</span> <span class='slop-ngram-item'>walked back (20)</span> <span class='slop-ngram-item'>air thick (18)</span> <span class='slop-ngram-item'>stepped inside (18)</span> <span class='slop-ngram-item'>door opened (18)</span> <span class='slop-ngram-item'>bell jingled (17)</span> <span class='slop-ngram-item'>lights flickered (17)</span> <span class='slop-ngram-item'>walked window (17)</span> <span class='slop-ngram-item'>breath neck (16)</span> <span class='slop-ngram-item'>phone buzzed (16)</span> <span class='slop-ngram-item'>looked sky (15)</span> <span class='slop-ngram-item'>stepped back (15)</span> <span class='slop-ngram-item'>new sound (14)</span> <span class='slop-ngram-item'>rain stopped (14)</span> <span class='slop-ngram-item'>hands shook (14)</span> <span class='slop-ngram-item'>back room (14)</span> <span class='slop-ngram-item'>back door (14)</span> <span class='slop-ngram-item'>something else (14)</span> <span class='slop-ngram-item'>door open (13)</span> <span class='slop-ngram-item'>turned leave (13)</span> <span class='slop-ngram-item'>looked away (12)</span>
+</div>
+<h4>Top Trigrams</h4>
+<div class='slop-section-items'>
+<span class='slop-ngram-item'>first time years (11)</span> <span class='slop-ngram-item'>outside rain stopped (7)</span> <span class='slop-ngram-item'>room door open (6)</span> <span class='slop-ngram-item'>looked really looked (4)</span> <span class='slop-ngram-item'>sat edge bed (4)</span> <span class='slop-ngram-item'>casting long shadows (4)</span> <span class='slop-ngram-item'>next morning went (3)</span> <span class='slop-ngram-item'>inside air thick (3)</span>
 </div>
 
 ##### qwen/qwen3-30b-a3b
@@ -1102,7 +1130,7 @@ const slopData = `
 </div>
 <h4>Top Repetitive Phrases</h4>
 <div class='slop-section-items'>
-<span class='slop-word-item'>voice barely above a whisper (46)</span> <span class='slop-word-item'>couldn&#x27;t shake the feeling (46)</span> <span class='slop-word-item'>felt a shiver run (41)</span> <span class='slop-word-item'>seemed to press in around (34)</span> <span class='slop-word-item'>eyes locked onto (33)</span> <span class='slop-word-item'>took a deep breath (27)</span> <span class='slop-word-item'>mind racing with the implications (26)</span> <span class='slop-word-item'>felt a sense of unease (25)</span> <span class='slop-word-item'>said, his voice low (25)</span> <span class='slop-word-item'>said, his voice firm (24)</span> <span class='slop-word-item'>felt a sense of wonder (22)</span> <span class='slop-word-item'>senses on high alert (21)</span> <span class='slop-word-item'>said, her voice barely (21)</span> <span class='slop-word-item'>darkness seemed to press (21)</span> <span class='slop-word-item'>mind racing with possibilities (20)</span> <span class='slop-word-item'>air was thick with tension (20)</span> <span class='slop-word-item'>felt a sense of relief (19)</span> <span class='slop-word-item'>sense of relief wash (18)</span> <span class='slop-word-item'>shiver run down my spine (18)</span> <span class='slop-word-item'>said, her voice low (17)</span> <span class='slop-word-item'>air was thick with the smell (16)</span> <span class='slop-word-item'>eyes never leaving (16)</span> <span class='slop-word-item'>darkness outside seemed (16)</span> <span class='slop-word-item'>feel a sense of unease (16)</span> <span class='slop-word-item'>said, his voice dripping (16)</span> <span class='slop-word-item'>couldn&#x27;t help but feel (15)</span> <span class='slop-word-item'>voice low and husky (15)</span> <span class='slop-word-item'>senses were on high alert (14)</span> <span class='slop-word-item'>felt a sense of excitement (14)</span> <span class='slop-word-item'>whatever came next (14)</span>
+<span class='slop-word-item'>couldn&#x27;t shake the feeling (46)</span> <span class='slop-word-item'>voice barely above a whisper (46)</span> <span class='slop-word-item'>felt a shiver run (41)</span> <span class='slop-word-item'>seemed to press in around (34)</span> <span class='slop-word-item'>eyes locked onto (33)</span> <span class='slop-word-item'>took a deep breath (27)</span> <span class='slop-word-item'>mind racing with the implications (26)</span> <span class='slop-word-item'>said, his voice low (25)</span> <span class='slop-word-item'>felt a sense of unease (25)</span> <span class='slop-word-item'>said, his voice firm (24)</span> <span class='slop-word-item'>felt a sense of wonder (22)</span> <span class='slop-word-item'>senses on high alert (21)</span> <span class='slop-word-item'>darkness seemed to press (21)</span> <span class='slop-word-item'>said, her voice barely (21)</span> <span class='slop-word-item'>mind racing with possibilities (20)</span> <span class='slop-word-item'>air was thick with tension (20)</span> <span class='slop-word-item'>felt a sense of relief (19)</span> <span class='slop-word-item'>sense of relief wash (18)</span> <span class='slop-word-item'>shiver run down my spine (18)</span> <span class='slop-word-item'>said, her voice low (17)</span> <span class='slop-word-item'>air was thick with the smell (16)</span> <span class='slop-word-item'>darkness outside seemed (16)</span> <span class='slop-word-item'>feel a sense of unease (16)</span> <span class='slop-word-item'>said, his voice dripping (16)</span> <span class='slop-word-item'>eyes never leaving (16)</span> <span class='slop-word-item'>couldn&#x27;t help but feel (15)</span> <span class='slop-word-item'>voice low and husky (15)</span> <span class='slop-word-item'>eyes glinting with amusement (14)</span> <span class='slop-word-item'>smiled, feeling a sense (14)</span> <span class='slop-word-item'>felt a sense of excitement (14)</span>
 </div>
 <h4>Top Bigrams</h4>
 <div class='slop-section-items'>
