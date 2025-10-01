@@ -50,7 +50,7 @@ meituan-longcat/LongCat-Flash-Chat-FP8,45.0,4745,9.32,41.46,10.3,14.88,13.93,11.
 Qwen/Qwen3-Next-80B-A3B-Instruct,40.1,4904,6.44,25.55,11.1,11.61,9.89,8.16,8.81,7.75,8.06,7.26,7.30,11.99
 *Qwen3-Max-2025-09-24,75.1,4403,20.49,49.19,7.7,16.01,15.83,16.14,15.70,16.17,15.84,15.64,16.04,15.27
 *claude-sonnet-4.5,79.8,6803,22.64,12.99,4.4,16.02,15.30,16.12,16.24,16.06,16.47,16.00,15.66,15.85
-*deepseek/deepseek-v3.2-exp,72.5,5430,30.75,57.85,6.3,15.21,15.75,15.09,15.71,16.01,15.91,15.05,15.15,15.23
+*deepseek-ai/DeepSeek-V3.2-Exp,72.5,5430,30.75,57.85,6.3,15.21,15.75,15.09,15.71,16.01,15.91,15.05,15.15,15.23
 *zai-org/GLM-4.6,70.0,5054,32.98,58.55,6.4,15.61,15.65,15.36,15.22,15.61,15.49,14.82,14.61,14.36`;
 
 
@@ -142,7 +142,7 @@ const slopData = `
 ##### deepseek-ai/DeepSeek-V3.1
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>deepseek/deepseek-v3.2-exp (distance=0.678)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3.2-Exp (distance=0.678)</div>
 <div class='slop-similar'>zai-org/GLM-4.6 (distance=0.708)</div>
 <div class='slop-similar'>gemini-2.5-pro-preview-03-25 (distance=0.791)</div>
 <div class='slop-similar'>NousResearch/Hermes-4-405B (distance=0.801)</div>
@@ -193,7 +193,7 @@ const slopData = `
 <span class='slop-ngram-item'>like physical blow (19)</span> <span class='slop-ngram-item'>quiet long moment (13)</span> <span class='slop-ngram-item'>first time since (10)</span> <span class='slop-ngram-item'>phone buzzed text (10)</span> <span class='slop-ngram-item'>hit like physical (10)</span> <span class='slop-ngram-item'>words hit like (8)</span> <span class='slop-ngram-item'>six months ago (8)</span> <span class='slop-ngram-item'>three weeks ago (7)</span> <span class='slop-ngram-item'>tears streaming face (6)</span> <span class='slop-ngram-item'>phone buzzes text (6)</span> <span class='slop-ngram-item'>voice barely whisper (5)</span> <span class='slop-ngram-item'>heart hammering ribs (5)</span> <span class='slop-ngram-item'>question hung air (4)</span> <span class='slop-ngram-item'>felt something cold (4)</span> <span class='slop-ngram-item'>dark circles eyes (4)</span> <span class='slop-ngram-item'>hung air like (4)</span> <span class='slop-ngram-item'>air like smoke (4)</span> <span class='slop-ngram-item'>something else entirely (4)</span> <span class='slop-ngram-item'>two months ago (3)</span> <span class='slop-ngram-item'>stared long moment (3)</span> <span class='slop-ngram-item'>trying tell something (3)</span> <span class='slop-ngram-item'>twenty minutes later (3)</span> <span class='slop-ngram-item'>looking older years (3)</span> <span class='slop-ngram-item'>like might bite (3)</span> <span class='slop-ngram-item'>kept voice level (3)</span> <span class='slop-ngram-item'>voice seemed come (3)</span> <span class='slop-ngram-item'>said voice tight (3)</span> <span class='slop-ngram-item'>ca stop thinking (3)</span>
 </div>
 
-##### deepseek/deepseek-v3.2-exp
+##### deepseek-ai/DeepSeek-V3.2-Exp
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>deepseek-ai/DeepSeek-V3.1 (distance=0.678)</div>
@@ -226,7 +226,7 @@ const slopData = `
 <div class='slop-similar'>NousResearch/Hermes-4-405B (distance=0.729)</div>
 <div class='slop-similar'>gemini-2.5-pro-preview-06-05 (distance=0.741)</div>
 <div class='slop-similar'>google/gemini-2.5-flash-preview-05-20 (distance=0.767)</div>
-<div class='slop-similar'>deepseek/deepseek-v3.2-exp (distance=0.789)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3.2-Exp (distance=0.789)</div>
 <div class='slop-similar'>deepseek-ai/DeepSeek-V3.1 (distance=0.791)</div>
 </div>
 
@@ -361,7 +361,7 @@ const slopData = `
 <div class='slop-similar'>NousResearch/Hermes-4-405B (distance=0.726)</div>
 <div class='slop-similar'>google/gemini-2.5-flash-preview-05-20 (distance=0.732)</div>
 <div class='slop-similar'>gemini-2.5-pro-preview-03-25 (distance=0.741)</div>
-<div class='slop-similar'>deepseek/deepseek-v3.2-exp (distance=0.803)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3.2-Exp (distance=0.803)</div>
 <div class='slop-similar'>deepseek-ai/DeepSeek-V3.1 (distance=0.805)</div>
 </div>
 
@@ -412,7 +412,7 @@ const slopData = `
 ##### zai-org/GLM-4.6
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
-<div class='slop-similar'>deepseek/deepseek-v3.2-exp (distance=0.694)</div>
+<div class='slop-similar'>deepseek-ai/DeepSeek-V3.2-Exp (distance=0.694)</div>
 <div class='slop-similar'>deepseek-ai/DeepSeek-V3.1 (distance=0.708)</div>
 <div class='slop-similar'>NousResearch/Hermes-4-405B (distance=0.792)</div>
 <div class='slop-similar'>gemini-2.5-pro-preview-03-25 (distance=0.810)</div>
@@ -1189,7 +1189,7 @@ const slopData = `
 </div>
 <h4>Top Repetitive Phrases</h4>
 <div class='slop-section-items'>
-<span class='slop-word-item'>fingers tightened around (47)</span> <span class='slop-word-item'>something that looked like (47)</span> <span class='slop-word-item'>voice barely above a whisper (46)</span> <span class='slop-word-item'>first time, she wasn’t sure (45)</span> <span class='slop-word-item'>eyes were filled with something (28)</span> <span class='slop-word-item'>said, his voice low (28)</span> <span class='slop-word-item'>eyes filled with something (26)</span> <span class='slop-word-item'>said, her voice barely (24)</span> <span class='slop-word-item'>first time in years (21)</span> <span class='slop-word-item'>voice was quiet, almost (20)</span> <span class='slop-word-item'>door creaked open (18)</span> <span class='slop-word-item'>said, her voice low (18)</span> <span class='slop-word-item'>air was thick with the scent (18)</span> <span class='slop-word-item'>air thick with the scent (15)</span> <span class='slop-word-item'>casting long shadows (14)</span> <span class='slop-word-item'>said, her voice steady (13)</span> <span class='slop-word-item'>long shadows across (12)</span> <span class='slop-word-item'>knew one thing (12)</span> <span class='slop-word-item'>door slammed shut (12)</span> <span class='slop-word-item'>moment, she thought she saw (12)</span> <span class='slop-word-item'>stepped forward, her voice (12)</span> <span class='slop-word-item'>eyes wide with something (12)</span> <span class='slop-word-item'>voice was low, almost (10)</span> <span class='slop-word-item'>like a second skin (10)</span> <span class='slop-word-item'>knelt beside him, her hands (10)</span> <span class='slop-word-item'>voice was steady, but there was something (9)</span> <span class='slop-word-item'>hands clenched into fists (9)</span> <span class='slop-word-item'>voice barely a whisper (9)</span> <span class='slop-word-item'>lips parted, but no words (9)</span> <span class='slop-word-item'>eyes dark with something (8)</span>
+<span class='slop-word-item'>fingers tightened around (47)</span> <span class='slop-word-item'>something that looked like (47)</span> <span class='slop-word-item'>voice barely above a whisper (46)</span> <span class='slop-word-item'>first time, she wasn’t sure (45)</span> <span class='slop-word-item'>said, his voice low (28)</span> <span class='slop-word-item'>eyes were filled with something (28)</span> <span class='slop-word-item'>eyes filled with something (26)</span> <span class='slop-word-item'>said, her voice barely (24)</span> <span class='slop-word-item'>first time in years (21)</span> <span class='slop-word-item'>voice was quiet, almost (20)</span> <span class='slop-word-item'>said, her voice low (18)</span> <span class='slop-word-item'>door creaked open (18)</span> <span class='slop-word-item'>air was thick with the scent (18)</span> <span class='slop-word-item'>air thick with the scent (15)</span> <span class='slop-word-item'>casting long shadows (14)</span> <span class='slop-word-item'>said, her voice steady (13)</span> <span class='slop-word-item'>knew one thing (12)</span> <span class='slop-word-item'>door slammed shut (12)</span> <span class='slop-word-item'>stepped forward, her voice (12)</span> <span class='slop-word-item'>long shadows across (12)</span> <span class='slop-word-item'>eyes wide with something (12)</span> <span class='slop-word-item'>moment, she thought she saw (12)</span> <span class='slop-word-item'>knelt beside him, her hands (10)</span> <span class='slop-word-item'>like a second skin (10)</span> <span class='slop-word-item'>voice was low, almost (10)</span> <span class='slop-word-item'>hands clenched into fists (9)</span> <span class='slop-word-item'>lips parted, but no words (9)</span> <span class='slop-word-item'>voice barely a whisper (9)</span> <span class='slop-word-item'>voice was steady, but there was something (9)</span> <span class='slop-word-item'>said, his voice barely (8)</span>
 </div>
 <h4>Top Bigrams</h4>
 <div class='slop-section-items'>
