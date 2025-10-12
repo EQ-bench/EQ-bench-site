@@ -708,24 +708,31 @@ body.eqbench3-page #leaderboard th.feature-header {
     <p><a href="https://github.com/EQ-bench" target="_blank">Github</a> | <a href="https://arxiv.org/abs/2312.06281" target="_blank">Paper</a> | <span id="email"></span> | <a href="https://twitter.com/sam_paech" target="_blank">Twitter</a> | <a href="about.html">About</a></p>
 
     <p>
-      <b>💙EQ-Bench3</b>
-      <span class="nav-separator">|</span>
-      <a href='spiral-bench.html'>🌀Spiral-Bench</a>
-      <span class="nav-separator">|</span>
-      <a href='creative_writing_longform.html'>✍️Longform Writing</a>
-      <span class="nav-separator">|</span>
-      <a href='creative_writing.html'>🎨Creative Writing v3</a>
-      <span class="nav-separator">|</span>
-      <a href='judgemark-v2.html'>⚖️Judgemark v2.1</a>
-      <span class="nav-separator">|</span>
-      <a href='buzzbench.html'>🎤BuzzBench</a>
-      <span class="nav-separator">|</span>
-      <a href='diplobench.html'>🌍DiploBench</a>
-      <span class="nav-separator">|</span>
-      <a href='creative_writing_v2.html'>🎨Creative Writing (Legacy)</a>
-      <span class="nav-separator">|</span>
-      <a href='eqbench-v2.html'>💗EQ-Bench (Legacy)</a>
-  </p>
+        <b>💙EQ-Bench3</b>
+        <span class="nav-separator">|</span>
+        <a href='spiral-bench.html'>🌀Spiral-Bench v1.2</a>
+        <span class="nav-separator">|</span>
+        <a href='creative_writing_longform.html'>✍️Longform Writing</a>
+        <span class="nav-separator">|</span>
+        <a href='creative_writing.html'>🎨Creative Writing v3</a>
+        <span class="nav-separator">|</span>
+        <a href='judgemark-v2.html'>⚖️Judgemark v2.1</a>
+        <span class="nav-separator">|</span>
+        <a href='buzzbench.html'>🎤BuzzBench</a>
+        <span class="nav-separator">|</span>
+        <a href='diplobench.html'>🌍DiploBench</a>
+        <span class="nav-separator">|</span>
+        <span class="nav-dropdown">
+          <button class="nav-dropdown-toggle" id="legacyDropdownToggle">
+            📚Legacy Leaderboards
+          </button>
+          <span class="nav-dropdown-menu" id="legacyDropdownMenu">
+            <a href="spiral-bench_v1.0.html" class="nav-dropdown-item">🌀Spiral-Bench v1.0</a>
+            <a href="creative_writing_v2.html" class="nav-dropdown-item">🎨Creative Writing v2</a>
+            <a href="eqbench-v2.html" class="nav-dropdown-item">💗EQ-Bench v2</a>
+          </span>
+        </span>
+    </p>
 
 
     <p>A benchmark measuring emotional intelligence in challenging roleplays, judged by Sonnet 3.7. <a href="./about.html#eq-bench-3">Learn more</a></p>
@@ -856,6 +863,8 @@ body.eqbench3-page #leaderboard th.feature-header {
   <script defer src="eqbench3_chartdata.js?v=1.0.4"></script>
   <script defer src="eqbench3_chartdata_style.js?v=1.0.4"></script>
   <script defer src="eqbench3.js?v=1.0.4"></script> <!-- Version Bumped -->
+  <!-- Dropdown functionality -->
+  <script src="utils.js"></script>
 
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1600fe1d3da743c1b311f4e5fee86767"}'></script>
 

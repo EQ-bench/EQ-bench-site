@@ -59,7 +59,7 @@ body.dark-mode .container {
 }
 
 body.dark-mode a {
-	color: #aad;
+	color: #4dabf7;
 }
 
 /* Style adjustments for DataTables in dark mode */
@@ -731,4 +731,77 @@ body.dark-mode .container {
 /* Style the separator spans for proper spacing */
 .container p .nav-separator {
   margin: 0 0.5rem;
+}
+
+
+
+/* Navigation dropdown styling */
+.nav-dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.nav-dropdown-toggle {
+	background: none;
+	border: none;
+	padding: 0;
+	font: inherit;
+	color: #007bff;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.nav-dropdown-toggle:hover {
+	text-decoration: underline;
+}
+
+.nav-dropdown-toggle::after {
+	content: ' ▾';
+	font-size: 0.8em;
+}
+
+body.dark-mode .nav-dropdown-toggle {
+	color: #4dabf7;
+}
+
+.nav-dropdown-menu {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	margin-top: 8px;
+	padding: 8px 0;
+	background: var(--bg-color, #ffffff);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+	min-width: 200px;
+	z-index: 1000;
+}
+
+.nav-dropdown-menu.show {
+	display: block;
+}
+
+.nav-dropdown-item {
+	display: block;
+	padding: 8px 16px;
+	color: inherit;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.nav-dropdown-item:hover {
+	background: rgba(0, 0, 0, 0.05);
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Dark mode support */
+body.dark-mode .nav-dropdown-menu {
+	background: var(--bg-color, #1a1a1a);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .nav-dropdown-item:hover {
+	background: rgba(255, 255, 255, 0.1);
 }

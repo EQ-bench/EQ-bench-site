@@ -168,7 +168,7 @@
     <p>
         <a href='index.html'>💙EQ-Bench3</a>
         <span class="nav-separator">|</span>
-        <a href='spiral-bench.html'>🌀Spiral-Bench</a>
+        <a href='spiral-bench.html'>🌀Spiral-Bench v1.2</a>
         <span class="nav-separator">|</span>
         <a href='creative_writing_longform.html'>✍️Longform Writing</a>
         <span class="nav-separator">|</span>
@@ -180,9 +180,16 @@
         <span class="nav-separator">|</span>
         <b>🌍DiploBench</b>
         <span class="nav-separator">|</span>
-        <a href='creative_writing_v2.html'>🎨Creative Writing (Legacy)</a>
-        <span class="nav-separator">|</span>
-        <a href='eqbench-v2.html'>💗EQ-Bench (Legacy)</a>
+        <span class="nav-dropdown">
+          <button class="nav-dropdown-toggle" id="legacyDropdownToggle">
+            📚Legacy Leaderboards
+          </button>
+          <span class="nav-dropdown-menu" id="legacyDropdownMenu">
+            <a href="spiral-bench_v1.0.html" class="nav-dropdown-item">🌀Spiral-Bench v1.0</a>
+            <a href="creative_writing_v2.html" class="nav-dropdown-item">🎨Creative Writing v2</a>
+            <a href="eqbench-v2.html" class="nav-dropdown-item">💗EQ-Bench v2</a>
+          </span>
+        </span>
     </p>
 
   
@@ -238,6 +245,8 @@
 
   <!-- Our Diplomacy script -->
   <script src="diplobench.js"></script>
+  <!-- Dropdown functionality -->
+  <script src="utils.js"></script>
 
   <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1600fe1d3da743c1b311f4e5fee86767"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

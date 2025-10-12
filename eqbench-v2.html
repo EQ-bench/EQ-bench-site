@@ -35,7 +35,7 @@
         <p>
 			<a href='index.html'>💙EQ-Bench3</a>
 			<span class="nav-separator">|</span>
-			<a href='spiral-bench.html'>🌀Spiral-Bench</a>
+			<a href='spiral-bench.html'>🌀Spiral-Bench v1.2</a>
 			<span class="nav-separator">|</span>
 			<a href='creative_writing_longform.html'>✍️Longform Writing</a>
 			<span class="nav-separator">|</span>
@@ -47,9 +47,16 @@
 			<span class="nav-separator">|</span>
 			<a href='diplobench.html'>🌍DiploBench</a>
 			<span class="nav-separator">|</span>
-			<a href='creative_writing_v2.html'>🎨Creative Writing (Legacy)</a>
-			<span class="nav-separator">|</span>
-			<b>💗EQ-Bench (Legacy)</b>
+			<span class="nav-dropdown">
+			<button class="nav-dropdown-toggle" id="legacyDropdownToggle">
+				📚Legacy Leaderboards
+			</button>
+			<span class="nav-dropdown-menu" id="legacyDropdownMenu">
+				<a href="spiral-bench_v1.0.html" class="nav-dropdown-item">🌀Spiral-Bench v1.0</a>
+				<a href="creative_writing_v2.html" class="nav-dropdown-item">🎨Creative Writing v2</a>
+				<b>💗EQ-Bench v2</b>
+			</span>
+			</span>
 		</p>
 
 		
@@ -172,6 +179,9 @@
 	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 	<script src="eqbench-v2.js"></script>
+	<!-- Dropdown functionality -->
+  	<script src="utils.js"></script>
+
 	<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1600fe1d3da743c1b311f4e5fee86767"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
