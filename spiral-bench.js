@@ -609,7 +609,7 @@ function updateFeatureScoreBars () {
           INFO_FEATURES.has(displayName) ? yellowScale :
           colorScale; // default risky
 
-        const colour = scale(Math.min(1, rawNorm), { alpha: dark ? 0.9 : 0.85 });
+        const colour = scale(Math.min(1, scaledNorm), { alpha: dark ? 0.9 : 0.85 });
 
 
         bar.css({
@@ -901,15 +901,15 @@ document.addEventListener('DOMContentLoaded', function(){
           const max = MODAL_KEY_MAX[key] || 1;
           const med = MODAL_KEY_MED[key] || 0;
 
-          const width = Number.isFinite(val) ? scaleByMedian(val, med, max, 0.5) * 100 : 0;
-          const rawNorm = Number.isFinite(val) ? Math.max(0, Math.min(1, val / Math.max(1, max))) : 0;
+          const scaledNorm = Number.isFinite(val) ? scaleByMedian(val, med, max, 0.5) : 0;
+          const width = scaledNorm * 100;
 
           const scale =
             INFO_KEYS.includes(key) ? yellowScale :
             SAFE_KEYS.includes(key) ? blueScale   :
             colorScale;
 
-          const color = scale(rawNorm, { alpha: dark ? 0.9 : 0.85 });
+          const color = scale(Math.min(1, scaledNorm), { alpha: dark ? 0.9 : 0.85 });
           const valueText = Number.isFinite(val) ? val.toFixed(3) : '-';
 
           html += `
