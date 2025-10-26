@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Writing Metrics: Slop • Repetition • Contrast • Top n-grams</title>
+<style>
+  :root { --bg:#0f1115; --fg:#e6e6e6; --muted:#9aa4ad; --card:#171a21; --accent:#6aa0ff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 24px; background: var(--bg); color: var(--fg); font: 14px/1.45 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; }
+  h1 { font-size: 24px; margin: 0 0 20px; text-align: center; font-weight: 700; }
+  .row { display: grid; grid-template-columns: 1fr 380px; gap: 18px; }
+  textarea { width: 100%; height: 50vh; padding: 12px; background: var(--card); color: var(--fg); border: 1px solid #2a2f3a; border-radius: 8px; resize: vertical; }
+  button { background: var(--accent); color: #0b0f16; border: 0; border-radius: 8px; padding: 10px 14px; font-weight: 600; cursor: pointer; }
+  button:disabled { opacity: .55; cursor: not-allowed; }
+  button.show-more { background: transparent; color: var(--accent); padding: 6px 10px; font-size: 12px; margin-top: 6px; border: 1px solid var(--accent); }
+  button.show-more:hover { background: var(--accent); color: var(--bg); }
+  .panel { background: var(--card); border: 1px solid #2a2f3a; border-radius: 8px; padding: 12px 14px; }
+  .muted { color: var(--muted); }
+  .metric { display: grid; grid-template-columns: 1fr auto; gap: 8px; padding: 6px 0; border-bottom: 1px dashed #2a2f3a; }
+  .metric:last-child { border-bottom: 0; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+  .section { margin-top: 16px; }
+  .pill { display: inline-block; background: #10141c; border: 1px solid #2a2f3a; border-radius: 999px; padding: 4px 8px; margin: 4px 6px 0 0; font-size: 12px; }
+  .pill b { color: #b8c7ff; }
+  .contrast-match { background: #1a1f2a; border: 1px solid #3a4f5a; border-radius: 6px; padding: 8px 10px; margin: 6px 0; font-size: 12px; }
+  .contrast-match .pattern { color: #8a9aaa; font-size: 10px; margin-bottom: 4px; }
+  details { margin-top: 10px; }
+  summary { cursor: pointer; color: #c7d5ff; }
+  code { background: #10141c; padding: 2px 6px; border-radius: 6px; }
+
+  /* Leaderboard styles */
+  #leaderboard { display: none; width: 100%; }
+  #leaderboard.visible { display: block; }
+  .leaderboard-row { display: flex; align-items: center; gap: 10px; padding: 10px; margin: 6px 0; background: var(--card); border: 1px solid #2a2f3a; border-radius: 6px; transition: all 0.3s ease; position: relative; }
+  .leaderboard-row.user-result { animation: slideIn 0.5s ease-out; }
+  .leaderboard-row.user-result .leaderboard-name { font-weight: 700; }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .leaderboard-rank { font-weight: 700; color: var(--accent); min-width: 30px; }
+  .leaderboard-name { flex: 0 0 200px; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .leaderboard-bar-container { flex: 1; height: 24px; background: #10141c; border-radius: 4px; position: relative; overflow: hidden; }
+  .leaderboard-bar { height: 100%; background: linear-gradient(90deg, #6fd147 0%, #8fe66a 100%); border-radius: 4px; transition: width 0.6s ease-out; }
+  .leaderboard-bar.user-bar { background: linear-gradient(90deg, #ff9d3a 0%, #ffb66a 100%); }
+  .leaderboard-score { min-width: 60px; text-align: right; font-weight: 600; font-family: var(--mono); }
+  .leaderboard-report-btn { background: transparent; border: 1px solid #3a4f5a; padding: 4px 8px; font-size: 11px; cursor: pointer; color: var(--accent); border-radius: 4px; }
+  .leaderboard-report-btn:hover { background: var(--accent); color: var(--bg); }
+
+  /* Modal styles */
+  .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); align-items: center; justify-content: center; }
+  .modal.visible { display: flex; }
+  .modal-content { background: var(--card); border: 1px solid #3a4f5a; border-radius: 8px; padding: 20px; max-width: 600px; max-height: 80vh; overflow-y: auto; }
+  .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  .modal-close { background: transparent; color: var(--muted); cursor: pointer; font-size: 24px; border: none; padding: 0; }
+  .modal-close:hover { color: var(--fg); }
+  .modal-metric { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; border-bottom: 1px solid #2a2f3a; position: relative; }
+  .modal-metric:last-child { border-bottom: none; }
+  .modal-metric-bg { position: absolute; left: 0; top: 0; width: 0; height: 100%; border-radius: 4px; opacity: 0.15; z-index: 0; transition: width 0.6s ease-out; }
+  .modal-metric-bg.slop { background: #6fd147; }
+  .modal-metric-bg.diversity { background: #a855f7; }
+  .modal-metric-label { position: relative; z-index: 1; text-align: left; }
+  .modal-metric-value { position: relative; z-index: 1; text-align: right; font-weight: 600; font-family: var(--mono); }
+
+  button.secondary { background: transparent; border: 1px solid var(--accent); color: var(--accent); margin-left: 10px; }
+  button.secondary:hover { background: var(--accent); color: var(--bg); }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .row { grid-template-columns: 1fr; }
+    .panel { display: none; }
+    .leaderboard-row.selected .leaderboard-report-btn { display: inline-block; }
+  }
+  @media (min-width: 769px) {
+    .leaderboard-report-btn { display: none !important; }
+  }
+
+  /* Leaderboard row selection state */
+  .leaderboard-row { cursor: pointer; }
+  .leaderboard-row:hover { background: #1e2530; }
+  .leaderboard-row.selected { background: #1a2533; border-color: var(--accent); }
+
+  /* File upload styles */
+  #fileList { display: none; min-height: 50vh; padding: 12px; background: var(--card); border: 1px solid #2a2f3a; border-radius: 8px; }
+  #fileList.visible { display: block; }
+  .file-item { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; margin: 6px 0; background: #10141c; border: 1px solid #2a2f3a; border-radius: 6px; }
+  .file-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .file-size { color: var(--muted); font-size: 12px; margin-left: 12px; }
+  .file-remove { background: transparent; color: #ff6b6b; border: 1px solid #ff6b6b; border-radius: 4px; padding: 4px 8px; font-size: 12px; cursor: pointer; margin-left: 12px; }
+  .file-remove:hover { background: #ff6b6b; color: var(--bg); }
+  textarea.drag-over { border-color: var(--accent); background: #1a1f2a; }
+  .drop-hint { color: var(--muted); font-size: 13px; margin-top: 8px; }
+
+  /* Spinner animation */
+  .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.3); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; margin-left: 8px; vertical-align: middle; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Leaderboard header */
+  .leaderboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .slop-indicator { font-size: 12px; color: var(--muted); }
+  .slop-indicator.left::before { content: '← '; }
+  .slop-indicator.right::after { content: ' →'; }
+
+  /* Tooltip styles */
+  .metric-with-tooltip { position: relative; cursor: help; }
+  .metric-with-tooltip .tooltip-text { visibility: hidden; position: absolute; z-index: 1000; background: #2a2f3a; color: var(--fg); padding: 8px 12px; border-radius: 6px; font-size: 12px; width: 240px; left: 0; top: 100%; margin-top: 4px; opacity: 0; transition: opacity 0.2s; line-height: 1.4; box-shadow: 0 4px 6px rgba(0,0,0,0.3); pointer-events: none; }
+  .metric-with-tooltip:hover .tooltip-text { visibility: visible; opacity: 1; }
+</style>
+</head>
+<body>
+  <h1>Slop-or-Not</h1>
+  <div class="section">
+    <button id="analyzeTextBtn" class="secondary" style="display:none;">Analyse Text</button>
+    <button id="viewLeaderboardBtn" class="secondary" style="display:none;">View Leaderboard</button>
+    <button id="analyzeBtn" disabled style="display:none;">Analyze</button>
+    <span id="status" class="muted" style="margin-left:10px;">loading resources…</span>
+  </div>
+  <div id="errors" class="section mono" style="white-space:pre-wrap;color:#ffb4b4;"></div>
+  <div class="row">
+    <div>
+      <textarea id="input" placeholder="Paste or type your long-form text here…" style="display:none;"></textarea>
+      <div id="fileList"></div>
+      <div class="drop-hint" id="dropHint" style="display:none;">You can also drag and drop .txt files here</div>
+      <div id="leaderboard" class="visible"></div>
+    </div>
+    <div class="panel">
+      <div id="panelContent">
+        <div style="color: var(--muted); font-size: 12px; margin-bottom: 16px;">Select a model to view details</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for detailed stats -->
+  <div id="detailModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 style="margin:0;">Detailed Report</h2>
+        <button class="modal-close" id="closeModal">&times;</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+<script type="module">
+import { wordsOnlyLower, alphaTokens, countItems } from './js/utils.js';
+import {
+  loadWordfreq,
+  loadHumanProfile,
+  loadSlopSets,
+  computeSlopIndex,
+  contentTokens,
+  makeNgrams,
+  rankOveruseWithCounts,
+  humanBigramFreq,
+  humanTrigramFreq,
+  lookupFrequency,
+  mergePossessives,
+  filterNumericWords
+} from './js/metrics.js';
+import { initPosTagger } from './js/pos-tagger.js';
+import { scoreText as scoreContrast } from './js/contrast-detector.js';
+
+const ui = {
+  btn: document.getElementById('analyzeBtn'),
+  status: document.getElementById('status'),
+  errors: document.getElementById('errors'),
+  input: document.getElementById('input'),
+  fileList: document.getElementById('fileList'),
+  dropHint: document.getElementById('dropHint'),
+  leaderboard: document.getElementById('leaderboard'),
+  viewLeaderboardBtn: document.getElementById('viewLeaderboardBtn'),
+  analyzeTextBtn: document.getElementById('analyzeTextBtn'),
+  panelContent: document.getElementById('panelContent'),
+  modal: document.getElementById('detailModal'),
+  modalBody: document.getElementById('modalBody'),
+  closeModal: document.getElementById('closeModal'),
+};
+
+let ready = false;
+let leaderboardData = null;
+let normalizationRanges = null;
+let userResult = null;
+let selectedModel = null;
+let analysisResourcesLoaded = false;
+let uploadedFiles = [];
+
+// File management functions
+function formatFileSize(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+  return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+}
+
+function renderFileList() {
+  if (uploadedFiles.length === 0) {
+    ui.fileList.style.display = 'none';
+    ui.fileList.classList.remove('visible');
+    ui.input.style.display = 'block';
+    ui.dropHint.style.display = 'block';
+    return;
+  }
+
+  ui.input.style.display = 'none';
+  ui.dropHint.style.display = 'none';
+  ui.fileList.style.display = 'block';
+  ui.fileList.classList.add('visible');
+
+  let html = '<div style="margin-bottom: 12px; color: var(--muted); font-size: 13px;">';
+  html += `${uploadedFiles.length} file${uploadedFiles.length > 1 ? 's' : ''} selected for analysis:`;
+  html += '</div>';
+
+  uploadedFiles.forEach((file, index) => {
+    html += `
+      <div class="file-item">
+        <span class="file-name" title="${file.name}">${file.name}</span>
+        <span class="file-size">${formatFileSize(file.size)}</span>
+        <button class="file-remove" data-index="${index}">×</button>
+      </div>
+    `;
+  });
+
+  ui.fileList.innerHTML = html;
+
+  // Add event listeners to remove buttons
+  ui.fileList.querySelectorAll('.file-remove').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const index = parseInt(e.target.dataset.index);
+      uploadedFiles.splice(index, 1);
+      renderFileList();
+    });
+  });
+}
+
+function handleFiles(files) {
+  // Filter for text files only
+  const textFiles = Array.from(files).filter(file =>
+    file.type === 'text/plain' || file.name.endsWith('.txt')
+  );
+
+  if (textFiles.length === 0) {
+    ui.errors.textContent = '⚠ Please drop only .txt files';
+    setTimeout(() => ui.errors.textContent = '', 3000);
+    return;
+  }
+
+  // Add files to the list (avoid duplicates by name)
+  textFiles.forEach(file => {
+    if (!uploadedFiles.some(f => f.name === file.name)) {
+      uploadedFiles.push(file);
+    }
+  });
+
+  renderFileList();
+  ui.errors.textContent = '';
+}
+
+async function readFilesContent() {
+  const contents = await Promise.all(
+    uploadedFiles.map(file => {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (e) => resolve(e.target.result);
+        reader.onerror = reject;
+        reader.readAsText(file);
+      });
+    })
+  );
+
+  return contents.join('\n\n');
+}
+
+// Additional text analytics functions
+function calculateFleschKincaid(text) {
+  // Split into sentences (approximate)
+  const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+  const words = text.match(/\b\w+\b/g) || [];
+
+  if (sentences.length === 0 || words.length === 0) return 0;
+
+  // Count syllables (simplified algorithm)
+  function countSyllables(word) {
+    word = word.toLowerCase();
+    if (word.length <= 3) return 1;
+    word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');
+    word = word.replace(/^y/, '');
+    const syllables = word.match(/[aeiouy]{1,2}/g);
+    return syllables ? syllables.length : 1;
+  }
+
+  const totalSyllables = words.reduce((sum, word) => sum + countSyllables(word), 0);
+  const avgSyllablesPerWord = totalSyllables / words.length;
+  const avgWordsPerSentence = words.length / sentences.length;
+
+  // Flesch-Kincaid Grade Level formula
+  const gradeLevel = 0.39 * avgWordsPerSentence + 11.8 * avgSyllablesPerWord - 15.59;
+  return Math.max(0, gradeLevel);
+}
+
+function calculateAverageSentenceLength(text) {
+  const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+  const words = text.match(/\b\w+\b/g) || [];
+
+  if (sentences.length === 0) return 0;
+  return words.length / sentences.length;
+}
+
+function calculateAverageParagraphLength(text) {
+  const paragraphs = text.split(/\n\s*\n/).filter(p => p.trim().length > 0);
+  const words = text.match(/\b\w+\b/g) || [];
+
+  if (paragraphs.length === 0) return 0;
+  return words.length / paragraphs.length;
+}
+
+function calculateDialogueFrequency(text) {
+  // Count quotation marks (both straight and curly)
+  const quotes = (text.match(/[""\u201C\u201D]/g) || []).length;
+  const chars = text.length;
+
+  if (chars === 0) return 0;
+  // Divide by 2 (pairs of quotes) and normalize to per 1000 chars
+  return (quotes / 2 / chars) * 1000;
+}
+
+function renderPills(targetEl, items, fmt = (w, v) => `<b>${w}</b> <span class="muted">(${v})</span>`, showLimit = 10) {
+  if (!items.length) {
+    targetEl.innerHTML = '<span class="muted">None found</span>';
+    return;
+  }
+
+  const visibleItems = items.slice(0, showLimit);
+  const hiddenItems = items.slice(showLimit);
+
+  let html = visibleItems.map(([w, v]) => `<span class="pill">${fmt(w, v)}</span>`).join("");
+
+  if (hiddenItems.length > 0) {
+    const toggleId = 'toggle_' + Math.random().toString(36).substr(2, 9);
+    html += `<div id="${toggleId}_hidden" style="display:none;">`;
+    html += hiddenItems.map(([w, v]) => `<span class="pill">${fmt(w, v)}</span>`).join("");
+    html += `</div>`;
+    html += `<button class="show-more" id="${toggleId}_btn">Show ${hiddenItems.length} more</button>`;
+
+    targetEl.innerHTML = html;
+
+    // Add click handler
+    const btn = document.getElementById(`${toggleId}_btn`);
+    const hiddenDiv = document.getElementById(`${toggleId}_hidden`);
+    let expanded = false;
+
+    btn.addEventListener('click', () => {
+      expanded = !expanded;
+      hiddenDiv.style.display = expanded ? 'block' : 'none';
+      btn.textContent = expanded ? 'Show less' : `Show ${hiddenItems.length} more`;
+    });
+  } else {
+    targetEl.innerHTML = html;
+  }
+}
+
+function renderContrastMatches(targetEl, matches, showLimit = 10) {
+  if (!matches.length) {
+    targetEl.innerHTML = '<span class="muted">None found</span>';
+    return;
+  }
+
+  const visibleMatches = matches.slice(0, showLimit);
+  const hiddenMatches = matches.slice(showLimit);
+
+  let html = visibleMatches.map(m =>
+    `<div class="contrast-match">
+      <div class="pattern">${m.pattern_name}</div>
+      <div>${m.sentence}</div>
+    </div>`
+  ).join("");
+
+  if (hiddenMatches.length > 0) {
+    const toggleId = 'toggle_' + Math.random().toString(36).substr(2, 9);
+    html += `<div id="${toggleId}_hidden" style="display:none;">`;
+    html += hiddenMatches.map(m =>
+      `<div class="contrast-match">
+        <div class="pattern">${m.pattern_name}</div>
+        <div>${m.sentence}</div>
+      </div>`
+    ).join("");
+    html += `</div>`;
+    html += `<button class="show-more" id="${toggleId}_btn">Show ${hiddenMatches.length} more</button>`;
+
+    targetEl.innerHTML = html;
+
+    const btn = document.getElementById(`${toggleId}_btn`);
+    const hiddenDiv = document.getElementById(`${toggleId}_hidden`);
+    let expanded = false;
+
+    btn.addEventListener('click', () => {
+      expanded = !expanded;
+      hiddenDiv.style.display = expanded ? 'block' : 'none';
+      btn.textContent = expanded ? 'Show less' : `Show ${hiddenMatches.length} more`;
+    });
+  } else {
+    targetEl.innerHTML = html;
+  }
+}
+
+// Leaderboard functions
+async function loadLeaderboard() {
+  const response = await fetch('data/leaderboard_results.json');
+  const data = await response.json();
+  leaderboardData = data.results;
+
+  // Compute normalization ranges with 10% buffer
+  const slopVals = leaderboardData.map(r => r.metrics.slop_list_matches_per_1k_words);
+  const contrastVals = leaderboardData.map(r => r.metrics.not_x_but_y_per_1k_chars);
+  const vocabVals = leaderboardData.map(r => r.metrics.vocab_level || 0);
+  const sentenceLengthVals = leaderboardData.map(r => r.metrics.avg_sentence_length || 0);
+  const paragraphLengthVals = leaderboardData.map(r => r.metrics.avg_paragraph_length || 0);
+  const dialogueVals = leaderboardData.map(r => r.metrics.dialogue_frequency || 0);
+
+  const computeRange = (values) => {
+    const min = Math.min(...values);
+    const max = Math.max(...values);
+    const range = max - min;
+    return {
+      min: min - range * 0.1,
+      max: max + range * 0.1
+    };
+  };
+
+  normalizationRanges = {
+    slop: computeRange(slopVals),
+    contrast: computeRange(contrastVals),
+    vocab_level: computeRange(vocabVals),
+    avg_sentence_length: computeRange(sentenceLengthVals),
+    avg_paragraph_length: computeRange(paragraphLengthVals),
+    dialogue_frequency: computeRange(dialogueVals)
+  };
+
+  console.log('Normalization ranges:', normalizationRanges);
+}
+
+function normalizeValue(value, range) {
+  const normalized = (value - range.min) / (range.max - range.min);
+  return Math.max(0, Math.min(1, normalized));
+}
+
+function computeSlopScore(slopIndex, contrastScore) {
+  const normSlop = normalizeValue(slopIndex, normalizationRanges.slop);
+  const normContrast = normalizeValue(contrastScore, normalizationRanges.contrast);
+
+  return ((normSlop + normContrast) / 2) * 100;
+}
+
+function renderLeaderboard(includeUserResult = false) {
+  // Compute slop scores for all leaderboard entries
+  const entries = leaderboardData.map(entry => ({
+    model: entry.model,
+    slopScore: computeSlopScore(
+      entry.metrics.slop_list_matches_per_1k_words,
+      entry.metrics.not_x_but_y_per_1k_chars
+    ),
+    fullData: entry
+  }));
+
+  // Add user result if available
+  if (includeUserResult && userResult) {
+    entries.push({
+      model: 'Your Text',
+      slopScore: userResult.slopScore,
+      fullData: userResult.fullData,
+      isUser: true
+    });
+  }
+
+  // Sort by slop score (higher is worse, so descending)
+  entries.sort((a, b) => b.slopScore - a.slopScore);
+
+  // Find max score for bar width calculation
+  const maxScore = Math.max(...entries.map(e => e.slopScore));
+
+  // Render
+  let html = `
+    <div class="leaderboard-header">
+      <span class="slop-indicator left">Less slop</span>
+      <span class="slop-indicator right">More slop</span>
+    </div>
+  `;
+  entries.forEach((entry, idx) => {
+    const barWidth = (entry.slopScore / maxScore) * 100;
+    const rowClass = entry.isUser ? 'leaderboard-row user-result' : 'leaderboard-row';
+    const barClass = entry.isUser ? 'leaderboard-bar user-bar' : 'leaderboard-bar';
+
+    html += `
+      <div class="${rowClass}">
+        <div class="leaderboard-rank">${idx + 1}</div>
+        <div class="leaderboard-name" title="${entry.model}">${entry.model}</div>
+        <div class="leaderboard-bar-container">
+          <div class="${barClass}" style="width: ${barWidth}%"></div>
+        </div>
+        <div class="leaderboard-score">${entry.slopScore.toFixed(1)}</div>
+        <button class="leaderboard-report-btn" data-model="${entry.model}">Report</button>
+      </div>
+    `;
+  });
+
+  ui.leaderboard.innerHTML = html;
+
+  // Add event listeners to rows for selection
+  ui.leaderboard.querySelectorAll('.leaderboard-row').forEach(row => {
+    const rowModel = row.querySelector('.leaderboard-report-btn').dataset.model;
+
+    row.addEventListener('click', (e) => {
+      // Don't trigger row click if clicking the report button
+      if (e.target.classList.contains('leaderboard-report-btn')) {
+        return;
+      }
+
+      // Deselect all rows
+      ui.leaderboard.querySelectorAll('.leaderboard-row').forEach(r => r.classList.remove('selected'));
+
+      // Select this row
+      row.classList.add('selected');
+
+      // Update right panel with model stats
+      const entry = entries.find(e => e.model === rowModel);
+      selectedModel = entry;
+      updateRightPanel(entry);
+    });
+  });
+
+  // Add event listeners to report buttons (for mobile)
+  ui.leaderboard.querySelectorAll('.leaderboard-report-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const model = e.target.dataset.model;
+      const entry = entries.find(e => e.model === model);
+      showDetailModal(entry);
+    });
+  });
+
+  // Auto-select the first model or user's text if available
+  if (entries.length > 0) {
+    const firstRow = ui.leaderboard.querySelector('.leaderboard-row');
+    if (firstRow) {
+      firstRow.click();
+    }
+  }
+}
+
+function updateRightPanel(entry) {
+  const data = entry.fullData;
+
+  let html = `<h3 style="margin: 0 0 16px;">${entry.model}</h3>`;
+
+  if (data.metrics) {
+    // Compute normalized values for bars
+    const normSlop = normalizeValue(data.metrics.slop_list_matches_per_1k_words, normalizationRanges.slop);
+    const normContrast = normalizeValue(data.metrics.not_x_but_y_per_1k_chars, normalizationRanges.contrast);
+
+    html += `
+      <div class="modal-metric metric-with-tooltip">
+        <div class="modal-metric-bg slop" style="width: ${entry.slopScore}%"></div>
+        <div class="modal-metric-label">Slop Score</div>
+        <div class="modal-metric-value">${entry.slopScore.toFixed(2)}</div>
+        <span class="tooltip-text">Combined metric of slop list matches and contrast patterns, normalized across all models</span>
+      </div>
+      <div class="modal-metric metric-with-tooltip">
+        <div class="modal-metric-bg slop" style="width: ${normSlop * 100}%"></div>
+        <div class="modal-metric-label">Slop List Matches (per 1k words)</div>
+        <div class="modal-metric-value">${data.metrics.slop_list_matches_per_1k_words.toFixed(2)}</div>
+        <span class="tooltip-text">Frequency of AI-typical words and phrases that appear unnaturally often in LLM outputs</span>
+      </div>
+      <div class="modal-metric metric-with-tooltip">
+        <div class="modal-metric-bg slop" style="width: ${normContrast * 100}%"></div>
+        <div class="modal-metric-label">Not-x-but-y Patterns (per 1k chars)</div>
+        <div class="modal-metric-value">${data.metrics.not_x_but_y_per_1k_chars.toFixed(2)}</div>
+        <span class="tooltip-text">Frequency of contrast patterns like "not just X, but Y" which are overused by AI</span>
+      </div>
+    `;
+
+    // Writing Style Metrics
+    if (data.metrics.vocab_level !== undefined ||
+        data.metrics.avg_sentence_length !== undefined ||
+        data.metrics.avg_paragraph_length !== undefined ||
+        data.metrics.dialogue_frequency !== undefined) {
+      html += `<h4 style="margin-top: 16px;">Writing Style</h4>`;
+
+      if (data.metrics.vocab_level !== undefined) {
+        const normVocab = normalizeValue(data.metrics.vocab_level, normalizationRanges.vocab_level);
+        html += `
+          <div class="modal-metric metric-with-tooltip">
+            <div class="modal-metric-bg diversity" style="width: ${normVocab * 100}%"></div>
+            <div class="modal-metric-label">Vocab Level</div>
+            <div class="modal-metric-value">${data.metrics.vocab_level.toFixed(2)}</div>
+            <span class="tooltip-text">Flesch-Kincaid grade level - measures vocabulary complexity</span>
+          </div>
+        `;
+      }
+
+      if (data.metrics.avg_sentence_length !== undefined) {
+        const normSentence = normalizeValue(data.metrics.avg_sentence_length, normalizationRanges.avg_sentence_length);
+        html += `
+          <div class="modal-metric metric-with-tooltip">
+            <div class="modal-metric-bg diversity" style="width: ${normSentence * 100}%"></div>
+            <div class="modal-metric-label">Sentence Length</div>
+            <div class="modal-metric-value">${data.metrics.avg_sentence_length.toFixed(2)}</div>
+            <span class="tooltip-text">Average words per sentence - indicates pacing</span>
+          </div>
+        `;
+      }
+
+      if (data.metrics.avg_paragraph_length !== undefined) {
+        const normParagraph = normalizeValue(data.metrics.avg_paragraph_length, normalizationRanges.avg_paragraph_length);
+        html += `
+          <div class="modal-metric metric-with-tooltip">
+            <div class="modal-metric-bg diversity" style="width: ${normParagraph * 100}%"></div>
+            <div class="modal-metric-label">Paragraph Length</div>
+            <div class="modal-metric-value">${data.metrics.avg_paragraph_length.toFixed(2)}</div>
+            <span class="tooltip-text">Average words per paragraph - shows structural rhythm</span>
+          </div>
+        `;
+      }
+
+      if (data.metrics.dialogue_frequency !== undefined) {
+        const normDialogue = normalizeValue(data.metrics.dialogue_frequency, normalizationRanges.dialogue_frequency);
+        html += `
+          <div class="modal-metric metric-with-tooltip">
+            <div class="modal-metric-bg diversity" style="width: ${normDialogue * 100}%"></div>
+            <div class="modal-metric-label">Dialogue Frequency</div>
+            <div class="modal-metric-value">${data.metrics.dialogue_frequency.toFixed(2)}</div>
+            <span class="tooltip-text">Quoted dialogue per 1000 characters</span>
+          </div>
+        `;
+      }
+    }
+
+    if (data.metrics.lexical_diversity) {
+      html += `<h4 style="margin-top: 16px;">Lexical Diversity</h4>`;
+
+      if (data.metrics.lexical_diversity.mattr_500 !== undefined) {
+        html += `
+          <div class="modal-metric metric-with-tooltip">
+            <div class="modal-metric-bg diversity" style="width: ${data.metrics.lexical_diversity.mattr_500 * 100}%"></div>
+            <div class="modal-metric-label">MATTR-500</div>
+            <div class="modal-metric-value">${data.metrics.lexical_diversity.mattr_500.toFixed(4)}</div>
+            <span class="tooltip-text">Moving-Average Type-Token Ratio - measures vocabulary diversity using 500-word windows</span>
+          </div>
+        `;
+      }
+
+      html += `
+        <div class="modal-metric metric-with-tooltip">
+          <div class="modal-metric-label">N-gram Repetition Score</div>
+          <div class="modal-metric-value">${data.metrics.ngram_repetition_score.toFixed(4)}</div>
+          <span class="tooltip-text">Frequency of repeated bigrams and trigrams compared to human writing baseline</span>
+        </div>
+      `;
+
+      if (data.metrics.lexical_diversity.unique_words !== undefined) {
+        html += `
+          <div class="modal-metric">
+            <div class="modal-metric-label">Unique Words</div>
+            <div class="modal-metric-value">${data.metrics.lexical_diversity.unique_words.toLocaleString()}</div>
+          </div>
+        `;
+      }
+
+      if (data.metrics.lexical_diversity.total_words !== undefined) {
+        html += `
+          <div class="modal-metric">
+            <div class="modal-metric-label">Total Words</div>
+            <div class="modal-metric-value">${data.metrics.lexical_diversity.total_words.toLocaleString()}</div>
+          </div>
+        `;
+      }
+    }
+
+    if (data.sample_count) {
+      html += `
+        <h4 style="margin-top: 16px;">Sample Info</h4>
+        <div class="modal-metric">
+          <div class="modal-metric-label">Sample Count</div>
+          <div class="modal-metric-value">${data.sample_count}</div>
+        </div>
+        <div class="modal-metric">
+          <div class="modal-metric-label">Total Characters</div>
+          <div class="modal-metric-value">${data.total_chars.toLocaleString()}</div>
+        </div>
+      `;
+    } else if (data.total_chars) {
+      html += `
+        <h4 style="margin-top: 16px;">Sample Info</h4>
+        <div class="modal-metric">
+          <div class="modal-metric-label">Total Characters</div>
+          <div class="modal-metric-value">${data.total_chars.toLocaleString()}</div>
+        </div>
+      `;
+    }
+
+    // Helper function to render items with show more
+    const renderItemsWithShowMore = (items, title, formatter) => {
+      if (!items || items.length === 0) return '';
+
+      const toggleId = 'panel_' + Math.random().toString(36).substr(2, 9);
+      let itemsHtml = `<h4 style="margin-top: 16px;">${title}</h4><div style="margin-top: 8px;">`;
+
+      const visibleItems = items.slice(0, 10);
+      const hiddenItems = items.slice(10);
+
+      visibleItems.forEach(item => {
+        itemsHtml += formatter(item);
+      });
+
+      if (hiddenItems.length > 0) {
+        itemsHtml += `<div id="${toggleId}_hidden" style="display:none;">`;
+        hiddenItems.forEach(item => {
+          itemsHtml += formatter(item);
+        });
+        itemsHtml += `</div>`;
+        itemsHtml += `<button class="show-more" id="${toggleId}_btn">Show ${hiddenItems.length} more</button>`;
+      }
+
+      itemsHtml += `</div>`;
+      return itemsHtml;
+    };
+
+    if (data.top_over_represented) {
+      html += renderItemsWithShowMore(
+        data.top_over_represented.words,
+        'Top Over-represented Words',
+        w => `<span class="pill"><b>${w.word}</b> <span class="muted">${w.ratio.toFixed(2)}×</span></span>`
+      );
+
+      html += renderItemsWithShowMore(
+        data.top_over_represented.bigrams,
+        'Top Over-represented Bigrams',
+        b => `<span class="pill"><b>${b.phrase}</b> <span class="muted">${b.ratio.toFixed(2)}×</span></span>`
+      );
+
+      html += renderItemsWithShowMore(
+        data.top_over_represented.trigrams,
+        'Top Over-represented Trigrams',
+        t => `<span class="pill"><b>${t.phrase}</b> <span class="muted">${t.ratio.toFixed(2)}×</span></span>`
+      );
+    }
+
+    // Add contrast matches
+    if (data.contrast_matches && data.contrast_matches.length > 0) {
+      html += renderItemsWithShowMore(
+        data.contrast_matches,
+        'Not-x-but-y Patterns',
+        m => `<div class="contrast-match">
+          <div class="pattern">${m.pattern_name}</div>
+          <div>${m.sentence}</div>
+        </div>`
+      );
+    }
+  }
+
+  ui.panelContent.innerHTML = html;
+
+  // Add click handlers for show more buttons
+  ui.panelContent.querySelectorAll('.show-more').forEach(btn => {
+    const toggleId = btn.id.replace('_btn', '');
+    const hiddenDiv = document.getElementById(`${toggleId}_hidden`);
+    let expanded = false;
+
+    btn.addEventListener('click', () => {
+      expanded = !expanded;
+      hiddenDiv.style.display = expanded ? 'block' : 'none';
+      const count = btn.textContent.match(/\d+/)[0];
+      btn.textContent = expanded ? 'Show less' : `Show ${count} more`;
+    });
+  });
+}
+
+function showDetailModal(entry) {
+  const data = entry.fullData;
+
+  let html = `<h3>${entry.model}</h3>`;
+
+  if (data.metrics) {
+    // Compute normalized values for bars
+    const normSlop = normalizeValue(data.metrics.slop_list_matches_per_1k_words, normalizationRanges.slop);
+    const normContrast = normalizeValue(data.metrics.not_x_but_y_per_1k_chars, normalizationRanges.contrast);
+
+    html += `
+      <div class="modal-metric metric-with-tooltip">
+        <div class="modal-metric-bg slop" style="width: ${entry.slopScore}%"></div>
+        <div class="modal-metric-label">Slop Score</div>
+        <div class="modal-metric-value">${entry.slopScore.toFixed(2)}</div>
+        <span class="tooltip-text">Combined metric of slop list matches and contrast patterns, normalized across all models</span>
+      </div>
+      <div class="modal-metric metric-with-tooltip">
+        <div class="modal-metric-bg slop" style="width: ${normSlop * 100}%"></div>
+        <div class="modal-metric-label">Slop List Matches (per 1k words)</div>
+        <div class="modal-metric-value">${data.metrics.slop_list_matches_per_1k_words.toFixed(2)}</div>
+        <span class="tooltip-text">Frequency of AI-typical words and phrases that appear unnaturally often in LLM outputs</span>
+      </div>
+      <div class="modal-metric metric-with-tooltip">
+        <div class="modal-metric-bg slop" style="width: ${normContrast * 100}%"></div>
+        <div class="modal-metric-label">Not-x-but-y Patterns (per 1k chars)</div>
+        <div class="modal-metric-value">${data.metrics.not_x_but_y_per_1k_chars.toFixed(2)}</div>
+        <span class="tooltip-text">Frequency of contrast patterns like "not just X, but Y" which are overused by AI</span>
+      </div>
+    `;
+
+    // Writing Style Metrics
+    if (data.metrics.vocab_level !== undefined ||
+        data.metrics.avg_sentence_length !== undefined ||
+        data.metrics.avg_paragraph_length !== undefined ||
+        data.metrics.dialogue_frequency !== undefined) {
+      html += `<h4 style="margin-top: 16px;">Writing Style</h4>`;
+
+      if (data.metrics.vocab_level !== undefined) {
+        const normVocab = normalizeValue(data.metrics.vocab_level, normalizationRanges.vocab_level);
+        html += `
+          <div class="modal-metric metric-with-tooltip">
+            <div class="modal-metric-bg diversity" style="width: ${normVocab * 100}%"></div>
+            <div class="modal-metric-label">Vocab Level</div>
+            <div class="modal-metric-value">${data.metrics.vocab_level.toFixed(2)}</div>
+            <span class="tooltip-text">Flesch-Kincaid grade level - measures vocabulary complexity</span>
+          </div>
+        `;
+      }
+
+      if (data.metrics.avg_sentence_length !== undefined) {
+        const normSentence = normalizeValue(data.metrics.avg_sentence_length, normalizationRanges.avg_sentence_length);
+        html += `
+          <div class="modal-metric metric-with-tooltip">
+            <div class="modal-metric-bg diversity" style="width: ${normSentence * 100}%"></div>
+            <div class="modal-metric-label">Sentence Length</div>
+            <div class="modal-metric-value">${data.metrics.avg_sentence_length.toFixed(2)}</div>
+            <span class="tooltip-text">Average words per sentence - indicates pacing</span>
+          </div>
+        `;
+      }
+
+      if (data.metrics.avg_paragraph_length !== undefined) {
+        const normParagraph = normalizeValue(data.metrics.avg_paragraph_length, normalizationRanges.avg_paragraph_length);
+        html += `
+          <div class="modal-metric metric-with-tooltip">
+            <div class="modal-metric-bg diversity" style="width: ${normParagraph * 100}%"></div>
+            <div class="modal-metric-label">Paragraph Length</div>
+            <div class="modal-metric-value">${data.metrics.avg_paragraph_length.toFixed(2)}</div>
+            <span class="tooltip-text">Average words per paragraph - shows structural rhythm</span>
+          </div>
+        `;
+      }
+
+      if (data.metrics.dialogue_frequency !== undefined) {
+        const normDialogue = normalizeValue(data.metrics.dialogue_frequency, normalizationRanges.dialogue_frequency);
+        html += `
+          <div class="modal-metric metric-with-tooltip">
+            <div class="modal-metric-bg diversity" style="width: ${normDialogue * 100}%"></div>
+            <div class="modal-metric-label">Dialogue Frequency</div>
+            <div class="modal-metric-value">${data.metrics.dialogue_frequency.toFixed(2)}</div>
+            <span class="tooltip-text">Quoted dialogue per 1000 characters</span>
+          </div>
+        `;
+      }
+    }
+
+    if (data.metrics.lexical_diversity) {
+      html += `<h4 style="margin-top: 16px;">Lexical Diversity</h4>`;
+
+      if (data.metrics.lexical_diversity.mattr_500 !== undefined) {
+        html += `
+          <div class="modal-metric metric-with-tooltip">
+            <div class="modal-metric-bg diversity" style="width: ${data.metrics.lexical_diversity.mattr_500 * 100}%"></div>
+            <div class="modal-metric-label">MATTR-500</div>
+            <div class="modal-metric-value">${data.metrics.lexical_diversity.mattr_500.toFixed(4)}</div>
+            <span class="tooltip-text">Moving-Average Type-Token Ratio - measures vocabulary diversity using 500-word windows</span>
+          </div>
+        `;
+      }
+
+      html += `
+        <div class="modal-metric metric-with-tooltip">
+          <div class="modal-metric-label">N-gram Repetition Score</div>
+          <div class="modal-metric-value">${data.metrics.ngram_repetition_score.toFixed(4)}</div>
+          <span class="tooltip-text">Frequency of repeated bigrams and trigrams compared to human writing baseline</span>
+        </div>
+      `;
+
+      if (data.metrics.lexical_diversity.unique_words !== undefined) {
+        html += `
+          <div class="modal-metric">
+            <div class="modal-metric-label">Unique Words</div>
+            <div class="modal-metric-value">${data.metrics.lexical_diversity.unique_words.toLocaleString()}</div>
+          </div>
+        `;
+      }
+
+      if (data.metrics.lexical_diversity.total_words !== undefined) {
+        html += `
+          <div class="modal-metric">
+            <div class="modal-metric-label">Total Words</div>
+            <div class="modal-metric-value">${data.metrics.lexical_diversity.total_words.toLocaleString()}</div>
+          </div>
+        `;
+      }
+    }
+
+    if (data.sample_count) {
+      html += `
+        <h4 style="margin-top: 16px;">Sample Info</h4>
+        <div class="modal-metric">
+          <div class="modal-metric-label">Sample Count</div>
+          <div class="modal-metric-value">${data.sample_count}</div>
+        </div>
+        <div class="modal-metric">
+          <div class="modal-metric-label">Total Characters</div>
+          <div class="modal-metric-value">${data.total_chars.toLocaleString()}</div>
+        </div>
+      `;
+    }
+
+    // Helper function to render items with show more
+    const renderItemsWithShowMore = (items, title, formatter) => {
+      if (!items || items.length === 0) return '';
+
+      const toggleId = 'modal_' + Math.random().toString(36).substr(2, 9);
+      let itemsHtml = `<h4 style="margin-top: 16px;">${title}</h4><div style="margin-top: 8px;">`;
+
+      const visibleItems = items.slice(0, 10);
+      const hiddenItems = items.slice(10);
+
+      visibleItems.forEach(item => {
+        itemsHtml += formatter(item);
+      });
+
+      if (hiddenItems.length > 0) {
+        itemsHtml += `<div id="${toggleId}_hidden" style="display:none;">`;
+        hiddenItems.forEach(item => {
+          itemsHtml += formatter(item);
+        });
+        itemsHtml += `</div>`;
+        itemsHtml += `<button class="show-more" id="${toggleId}_btn">Show ${hiddenItems.length} more</button>`;
+      }
+
+      itemsHtml += `</div>`;
+      return itemsHtml;
+    };
+
+    if (data.top_over_represented) {
+      html += renderItemsWithShowMore(
+        data.top_over_represented.words,
+        'Top Over-represented Words',
+        w => `<span class="pill"><b>${w.word}</b> <span class="muted">${w.ratio.toFixed(2)}×</span></span>`
+      );
+
+      html += renderItemsWithShowMore(
+        data.top_over_represented.bigrams,
+        'Top Over-represented Bigrams',
+        b => `<span class="pill"><b>${b.phrase}</b> <span class="muted">${b.ratio.toFixed(2)}×</span></span>`
+      );
+
+      html += renderItemsWithShowMore(
+        data.top_over_represented.trigrams,
+        'Top Over-represented Trigrams',
+        t => `<span class="pill"><b>${t.phrase}</b> <span class="muted">${t.ratio.toFixed(2)}×</span></span>`
+      );
+    }
+
+    // Add contrast matches
+    if (data.contrast_matches && data.contrast_matches.length > 0) {
+      html += renderItemsWithShowMore(
+        data.contrast_matches,
+        'Not-x-but-y Patterns',
+        m => `<div class="contrast-match">
+          <div class="pattern">${m.pattern_name}</div>
+          <div>${m.sentence}</div>
+        </div>`
+      );
+    }
+  }
+
+  ui.modalBody.innerHTML = html;
+
+  // Add click handlers for show more buttons
+  ui.modalBody.querySelectorAll('.show-more').forEach(btn => {
+    const toggleId = btn.id.replace('_btn', '');
+    const hiddenDiv = document.getElementById(`${toggleId}_hidden`);
+    let expanded = false;
+
+    btn.addEventListener('click', () => {
+      expanded = !expanded;
+      hiddenDiv.style.display = expanded ? 'block' : 'none';
+      const count = btn.textContent.match(/\d+/)[0];
+      btn.textContent = expanded ? 'Show less' : `Show ${count} more`;
+    });
+  });
+
+  ui.modal.classList.add('visible');
+}
+
+function hideLeaderboard() {
+  ui.leaderboard.classList.remove('visible');
+  ui.leaderboard.style.display = 'none';
+
+  // Show either file list or input box
+  if (uploadedFiles.length > 0) {
+    renderFileList();
+  } else {
+    ui.input.style.display = 'block';
+    ui.dropHint.style.display = 'block';
+  }
+
+  ui.viewLeaderboardBtn.style.display = 'inline-block';
+  ui.analyzeTextBtn.style.display = 'none';
+  ui.btn.style.display = 'inline-block';
+  ui.status.style.display = 'inline';
+}
+
+function showLeaderboard() {
+  ui.input.style.display = 'none';
+  ui.fileList.style.display = 'none';
+  ui.fileList.classList.remove('visible');
+  ui.dropHint.style.display = 'none';
+  ui.leaderboard.style.display = 'block';
+  ui.leaderboard.classList.add('visible');
+  ui.viewLeaderboardBtn.style.display = 'none';
+  ui.analyzeTextBtn.style.display = 'inline-block';
+  ui.btn.style.display = 'none';
+  ui.status.style.display = 'none';
+  renderLeaderboard(userResult !== null);
+}
+
+async function loadAnalysisResources() {
+  if (analysisResourcesLoaded) {
+    return true; // Already loaded
+  }
+
+  let posLoaded = false;
+
+  try {
+    // Try to load POS tagger (optional for Stage2 patterns)
+    ui.status.textContent = "loading POS tagger…";
+    try {
+      await initPosTagger();
+      posLoaded = true;
+      console.log('✓ POS tagger loaded - Stage2 patterns enabled');
+    } catch (posError) {
+      console.warn('POS tagger failed to load:', posError.message);
+      console.warn('⚠ Stage2 contrast patterns will be disabled. Stage1 patterns will still work.');
+      // Continue without POS tagger
+    }
+
+    ui.status.textContent = "loading wordfreq…";
+    await loadWordfreq();
+
+    ui.status.textContent = "loading analysis resources…";
+    await Promise.all([loadHumanProfile(), loadSlopSets()]);
+
+    analysisResourcesLoaded = true;
+    ui.status.textContent = "ready";
+
+    if (!posLoaded) {
+      ui.errors.textContent = "⚠ Note: POS tagger could not be loaded. Stage2 contrast patterns are disabled, but Stage1 patterns will still work.";
+    }
+
+    ui.btn.disabled = false;
+    return true;
+  } catch (e) {
+    ui.status.textContent = "ERROR";
+    const errorMsg = String(e?.message || e);
+    ui.errors.textContent = `❌ ${errorMsg}\n\nFailed to load analysis resources. Please check:\n1. Your internet connection\n2. Browser console for details\n3. Whether CDN services are accessible`;
+    console.error('Analysis resources loading failed:', e);
+    ui.btn.disabled = true;
+    return false;
+  }
+}
+
+async function init() {
+  try {
+    ui.status.textContent = "loading leaderboard…";
+    await loadLeaderboard();
+
+    ready = true;
+    ui.status.textContent = "";
+
+    // Show leaderboard by default on page load
+    showLeaderboard();
+  } catch (e) {
+    ui.status.textContent = "ERROR";
+    const errorMsg = String(e?.message || e);
+    ui.errors.textContent = `❌ ${errorMsg}\n\nFailed to load leaderboard. Please check:\n1. Your internet connection\n2. Browser console for details\n3. Whether the data file exists`;
+    console.error('Initialization failed:', e);
+  }
+}
+
+ui.btn.addEventListener('click', async () => {
+  if (!ready) return;
+  ui.errors.textContent = "";
+
+  // Disable button and show spinner
+  ui.btn.disabled = true;
+  const originalBtnText = ui.btn.textContent;
+  ui.btn.innerHTML = 'Analyzing<span class="spinner"></span>';
+
+  try {
+    // Determine whether to use files or text input
+    let raw = "";
+    if (uploadedFiles.length > 0) {
+      try {
+        raw = await readFilesContent();
+      } catch (err) {
+        ui.errors.textContent = `❌ Error reading files: ${err.message}`;
+        ui.btn.disabled = false;
+        ui.btn.textContent = originalBtnText;
+        return;
+      }
+    } else {
+      raw = ui.input.value || "";
+    }
+
+    if (!raw || raw.trim().length === 0) {
+      ui.errors.textContent = uploadedFiles.length > 0
+        ? "⚠ The selected files appear to be empty"
+        : "⚠ Please enter some text to analyze";
+      ui.btn.disabled = false;
+      ui.btn.textContent = originalBtnText;
+      return;
+    }
+
+    const chars = raw.length;
+    const toks0 = wordsOnlyLower(raw);
+    const toks = alphaTokens(toks0);
+    const nWords = toks.length;
+
+    // Slop
+    const slop = computeSlopIndex(toks);
+
+    // Repetition score
+    const toksContent = contentTokens(toks);
+    const bigs = makeNgrams(toksContent, 2);
+    const tris = makeNgrams(toksContent, 3);
+
+    const topBCounts = rankOveruseWithCounts(bigs, humanBigramFreq, 40);
+    const topTCounts = rankOveruseWithCounts(tris, humanTrigramFreq, 40);
+
+    const top_bigram_count = topBCounts.reduce((s, r) => s + r[2], 0);
+    const top_trigram_count = topTCounts.reduce((s, r) => s + r[2], 0);
+    const content_word_count = toksContent.length;
+
+    const repetition_score =
+      content_word_count > 0
+        ? ((top_bigram_count + top_trigram_count) / content_word_count) * 1000
+        : 0;
+
+    // Contrast patterns
+    const contrastResult = scoreContrast(raw);
+
+    // Calculate lexical diversity (MATTR-500)
+    const windowSize = 500;
+    const uniqueWords = new Set(toks);
+    const simpleTTR = uniqueWords.size / nWords;
+
+    let mattr = 0;
+    if (nWords >= windowSize) {
+      let sumTTR = 0;
+      let windowCount = 0;
+
+      for (let i = 0; i <= nWords - windowSize; i++) {
+        const windowTokens = toks.slice(i, i + windowSize);
+        const windowUnique = new Set(windowTokens);
+        const windowTTR = windowUnique.size / windowSize;
+        sumTTR += windowTTR;
+        windowCount++;
+      }
+
+      mattr = sumTTR / windowCount;
+    } else {
+      mattr = simpleTTR;
+    }
+
+    // Calculate additional writing metrics
+    const vocabLevel = calculateFleschKincaid(raw);
+    const avgSentenceLength = calculateAverageSentenceLength(raw);
+    const avgParagraphLength = calculateAverageParagraphLength(raw);
+    const dialogueFrequency = calculateDialogueFrequency(raw);
+
+    // Compute slop score for user text
+    const userSlopScore = computeSlopScore(slop, contrastResult.rate_per_1k);
+
+    // Store user result
+    userResult = {
+      slopScore: userSlopScore,
+      fullData: {
+        total_chars: chars,
+        metrics: {
+          slop_list_matches_per_1k_words: slop,
+          ngram_repetition_score: repetition_score,
+          not_x_but_y_per_1k_chars: contrastResult.rate_per_1k,
+          lexical_diversity: {
+            mattr_500: mattr,
+            type_token_ratio: simpleTTR,
+            unique_words: uniqueWords.size,
+            total_words: nWords
+          },
+          vocab_level: vocabLevel,
+          avg_sentence_length: avgSentenceLength,
+          avg_paragraph_length: avgParagraphLength,
+          dialogue_frequency: dialogueFrequency
+        },
+        contrast_matches: contrastResult.matches.slice(0, 100).map(m => ({
+          pattern_name: m.pattern_name,
+          sentence: m.sentence,
+          match_text: m.match_text || '',
+          sentence_count: m.sentence_count || 1
+        }))
+      }
+    };
+
+  // Top over-represented words (vs wordfreq baseline)
+  // Apply preprocessing like Python implementation
+  let wordCounts = countItems(toksContent);
+  wordCounts = filterNumericWords(wordCounts);
+  wordCounts = mergePossessives(wordCounts);
+  
+  const totalWords = Array.from(wordCounts.values()).reduce((a, b) => a + b, 0);
+  const wordOverrep = [];
+  
+  for (const [w, cnt] of wordCounts.entries()) {
+    const baselineFreq = lookupFrequency(w); // proportion (0-1)
+    if (!baselineFreq) continue;
+    
+    const modelFreq = cnt / totalWords; // proportion (0-1)
+    const ratio = modelFreq / baselineFreq;
+    
+    // Only show words that are significantly over-represented
+    if (ratio > 1.5 && cnt >= 2) {
+      wordOverrep.push([w, ratio, cnt]);
+    }
+  }
+  wordOverrep.sort((a, b) => b[1] - a[1]);
+  const topWords = wordOverrep.slice(0, 100);
+
+  // Update user result with top_over_represented data
+  userResult.fullData.top_over_represented = {
+    words: topWords.map(([w, ratio, cnt]) => ({ word: w, ratio, count: cnt })),
+    bigrams: topBCounts.slice(0, 100).map(([phrase, ratio, count]) => ({ phrase, ratio, count })),
+    trigrams: topTCounts.slice(0, 100).map(([phrase, ratio, count]) => ({ phrase, ratio, count }))
+  };
+
+  // Re-enable button
+  ui.btn.disabled = false;
+  ui.btn.textContent = originalBtnText;
+
+  // Clear uploaded files and input text after successful analysis
+  uploadedFiles = [];
+  ui.input.value = '';
+
+  // Show leaderboard after analysis
+  showLeaderboard();
+
+  // Scroll to user's position on leaderboard
+  setTimeout(() => {
+    const userRow = ui.leaderboard.querySelector('.leaderboard-row.user-result');
+    if (userRow) {
+      userRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Click the row to select it
+      userRow.click();
+    }
+  }, 100);
+
+  } catch (error) {
+    console.error('Analysis error:', error);
+    ui.errors.textContent = `❌ Analysis failed: ${error.message}`;
+    ui.btn.disabled = false;
+    ui.btn.textContent = originalBtnText;
+  }
+});
+
+// Button event listeners
+ui.viewLeaderboardBtn.addEventListener('click', () => {
+  showLeaderboard();
+});
+
+ui.analyzeTextBtn.addEventListener('click', async () => {
+  hideLeaderboard();
+
+  // Load analysis resources if not already loaded
+  if (!analysisResourcesLoaded) {
+    ui.status.style.display = 'inline';
+    const success = await loadAnalysisResources();
+    if (!success) {
+      // If loading failed, go back to leaderboard
+      showLeaderboard();
+      return;
+    }
+  } else {
+    ui.status.textContent = "ready";
+  }
+});
+
+ui.closeModal.addEventListener('click', () => {
+  ui.modal.classList.remove('visible');
+});
+
+ui.modal.addEventListener('click', (e) => {
+  if (e.target === ui.modal) {
+    ui.modal.classList.remove('visible');
+  }
+});
+
+// Drag and drop event handlers
+ui.input.addEventListener('dragover', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  ui.input.classList.add('drag-over');
+});
+
+ui.input.addEventListener('dragleave', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  ui.input.classList.remove('drag-over');
+});
+
+ui.input.addEventListener('drop', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  ui.input.classList.remove('drag-over');
+
+  const files = e.dataTransfer.files;
+  if (files.length > 0) {
+    handleFiles(files);
+  }
+});
+
+// Also handle file selection on the file list area
+ui.fileList.addEventListener('dragover', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+});
+
+ui.fileList.addEventListener('drop', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+
+  const files = e.dataTransfer.files;
+  if (files.length > 0) {
+    handleFiles(files);
+  }
+});
+
+init();
+</script>
+</body>
+</html>
