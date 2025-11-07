@@ -23,7 +23,9 @@ mistral-medium-3,58.53,0.496,0.621,0.533,$2.31
 qwen/qwen3-235b-a22b,56.18,0.318,0.616,0.59,$1.00
 o4-mini,56.1,0.455,0.594,0.533,$11.81
 meta-llama/llama-3.1-8b-instruct,19.18,0.0,0.286,0.006,$0.11
-*claude-sonnet-4.5,84.56,0.817,0.867,0.79,$18.02
+claude-sonnet-4.5,84.56,0.817,0.867,0.79,$18.02
+*claude-haiku-4.5,79.72,0.781,0.814,0.747,$6.05
+*openrouter/polaris-alpha,82.93,0.741,0.844,0.863,
 
 `
 
@@ -186,7 +188,7 @@ function loadLeaderboardDataV2() {
     model = model.replace(/^\*/, '');
 
     let displayModel = model;
-    if (model.includes('/')) {
+    if (model.includes('/') && model != "openrouter/polaris-alpha") {
       // Strip “:…” so the link points to the base repo
       const hfRepoPath = model.split(':')[0]; // keep text before first colon
       displayModel = `<a href="https://huggingface.co/${hfRepoPath}" target="_blank" rel="noopener noreferrer">${model}</a>`;

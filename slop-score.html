@@ -3,18 +3,113 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Writing Metrics: Slop • Repetition • Contrast • Top n-grams</title>
+<title>Slop Score | EQ-Bench</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <style>
   :root { --bg:#0f1115; --fg:#e6e6e6; --muted:#9aa4ad; --card:#171a21; --accent:#6aa0ff; }
   * { box-sizing: border-box; }
-  body { margin: 0; padding: 24px; background: var(--bg); color: var(--fg); font: 14px/1.45 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; }
-  h1 { font-size: 36px; margin: 0 0 20px; text-align: center; font-weight: 700; }
-  .row { display: grid; grid-template-columns: 1fr 380px; gap: 18px; }
+  body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); }
+
+  /* Container */
+  .container { max-width: 1400px; margin: 0 auto; padding: 24px; background: var(--bg); }
+
+  /* EQBench header styles */
+  .header { display: flex; align-items: flex-end; margin-bottom: 10px; }
+  .logo { width: 100px; height: auto; margin-right: 10px; }
+  .header-text h1, .header-text p { margin: 0; }
+
+  /* Dark mode toggle */
+  .form-check { position: fixed; top: 10px; right: 10px; z-index: 1000; }
+  #toggleLabel { margin-right: 8px; }
+
+  /* Navigation styles */
+  .nav-separator { color: var(--muted); margin: 0 4px; }
+  .nav-dropdown { position: relative; display: inline-block; }
+  .nav-dropdown-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .nav-dropdown-toggle:hover { text-decoration: underline; }
+  .nav-dropdown-toggle::after { content: ' ▾'; font-size: 0.8em; }
+
+  body.dark-mode .nav-dropdown-toggle { color: #4dabf7; }
+
+  .nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 8px;
+    padding: 8px 0;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    min-width: 200px;
+    z-index: 1000;
+  }
+  .nav-dropdown-menu.show { display: block; }
+  .nav-dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .nav-dropdown-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: inherit;
+    text-decoration: none;
+  }
+
+  body.dark-mode .nav-dropdown-menu {
+    background: #1a1a1a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+  body.dark-mode .nav-dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Slop-specific content font (not applied to header/nav) */
+  .slop-content {
+    font: 14px/1.45 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    margin-top: 24px;
+  }
+
+  .slop-content > .section:first-child {
+    margin-top: 0;
+    padding: 0;
+  }
+
+  /* Light mode base styles */
+  body.dark-mode { background: var(--bg); color: var(--fg); }
+  body.dark-mode .container { background: var(--bg); }
+  .row { display: grid; grid-template-columns: 1fr 380px; gap: 18px; align-items: start; }
+  .row > div:first-child { min-height: 0; }
   textarea { width: 100%; height: 50vh; padding: 12px; background: var(--card); color: var(--fg); border: 1px solid #2a2f3a; border-radius: 8px; resize: vertical; }
   button { background: var(--accent); color: #0b0f16; border: 0; border-radius: 8px; padding: 10px 14px; font-weight: 600; cursor: pointer; }
   button:disabled { opacity: .55; cursor: not-allowed; }
   button.show-more { background: transparent; color: var(--accent); padding: 6px 10px; font-size: 12px; margin-top: 6px; border: 1px solid var(--accent); }
   button.show-more:hover { background: var(--accent); color: var(--bg); }
+
+  /* Light mode: show-more buttons - minimalist b&w */
+  body:not(.dark-mode) button.show-more {
+    background: #ffffff;
+    color: #222;
+    border: 1px solid #ccc;
+  }
+  body:not(.dark-mode) button.show-more:hover {
+    background: #f0f0f0;
+    color: #222;
+    border: 1px solid #999;
+  }
   .panel { background: var(--card); border: 1px solid #2a2f3a; border-radius: 8px; padding: 12px 14px; }
   .muted { color: var(--muted); }
   .metric { display: grid; grid-template-columns: 1fr auto; gap: 8px; padding: 6px 0; border-bottom: 1px dashed #2a2f3a; }
@@ -22,9 +117,9 @@
   .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
   .section { margin-top: 16px; }
   .pill { display: inline-block; background: #10141c; border: 1px solid #2a2f3a; border-radius: 999px; padding: 4px 8px; margin: 4px 6px 0 0; font-size: 12px; }
-  .pill b { color: #b8c7ff; }
-  .contrast-match { background: #1a1f2a; border: 1px solid #3a4f5a; border-radius: 6px; padding: 8px 10px; margin: 6px 0; font-size: 12px; }
-  .contrast-match .pattern { color: #8a9aaa; font-size: 10px; margin-bottom: 4px; }
+  .pill b { color: #e6e6e6; }
+  .contrast-match { background: #1a1f2a; border: 1px solid #3a4f5a; border-radius: 6px; padding: 12px 16px 12px 40px; margin: 6px 0; font-size: 13px; position: relative; line-height: 1.6; }
+  .contrast-match::before { content: '\201C'; position: absolute; left: 8px; top: 4px; font-size: 48px; color: #3a4f5a; opacity: 0.4; font-family: Georgia, serif; line-height: 1; }
   details { margin-top: 10px; }
   summary { cursor: pointer; color: #c7d5ff; }
   code { background: #10141c; padding: 2px 6px; border-radius: 6px; }
@@ -63,8 +158,20 @@
   .modal-metric-label { position: relative; z-index: 1; text-align: left; }
   .modal-metric-value { position: relative; z-index: 1; text-align: right; font-weight: 600; font-family: var(--mono); }
 
+  /* How it works modal styles */
+  #howItWorksBody { line-height: 1.6; }
+  #howItWorksBody h3 { color: var(--accent); margin-top: 20px; margin-bottom: 10px; }
+  #howItWorksBody p { margin-bottom: 12px; }
+  #howItWorksBody ul { margin-top: 8px; margin-bottom: 12px; padding-left: 24px; }
+  #howItWorksBody a { color: var(--accent); text-decoration: none; }
+  #howItWorksBody a:hover { text-decoration: underline; }
+
   button.secondary { background: transparent; border: 1px solid var(--accent); color: var(--accent); margin-left: 10px; }
   button.secondary:hover { background: var(--accent); color: var(--bg); }
+
+  /* Button icon styles */
+  .btn-icon { display: inline-block; width: 12px; height: 12px; margin-right: 6px; vertical-align: middle; }
+  #analyzeTextBtn .btn-icon { filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2)); }
 
   /* Mobile styles */
   @media (max-width: 768px) {
@@ -107,6 +214,14 @@
   .metric-with-tooltip .tooltip-text { visibility: hidden; position: absolute; z-index: 1000; background: #2a2f3a; color: var(--fg); padding: 8px 12px; border-radius: 6px; font-size: 12px; width: 240px; left: 0; top: 100%; margin-top: 4px; opacity: 0; transition: opacity 0.2s; line-height: 1.4; box-shadow: 0 4px 6px rgba(0,0,0,0.3); pointer-events: none; }
   .metric-with-tooltip:hover .tooltip-text { visibility: visible; opacity: 1; }
 
+  /* Help icon styles */
+  .help-icon { display: inline-block; width: 16px; height: 16px; line-height: 16px; text-align: center; background: #2a2f3a; color: var(--muted); border-radius: 50%; font-size: 11px; font-weight: bold; margin-left: 6px; cursor: pointer; position: relative; }
+  .help-icon:hover { background: #3a4f5a; color: var(--fg); }
+  .help-text { display: none; background: #1a1f2a; border: 1px solid #2a2f3a; border-radius: 6px; padding: 10px 14px; font-size: 12px; line-height: 1.5; margin-top: 8px; margin-bottom: 8px; color: var(--muted); }
+  .help-text.visible { display: block; }
+  .help-text a { color: var(--accent); text-decoration: none; }
+  .help-text a:hover { text-decoration: underline; }
+
   /* Slop/Not Slop verdict animation */
   #verdictOverlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: none; align-items: center; justify-content: center; z-index: 9999; pointer-events: none; }
   #verdictOverlay.visible { display: flex; }
@@ -117,12 +232,15 @@
   }
   .verdict-text { font-size: 72px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; text-shadow: 0 4px 12px rgba(0,0,0,0.5); margin: 0; font-family: "Arial", "Helvetica Neue", sans-serif; }
 
+  
+
   /* Slop verdict with overlay text */
   .slop-container { position: relative; display: inline-block; }
   .verdict-text.slop { color: #ff4444; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; width: 100%; text-align: center; }
+  /* NOT SLOP gradient segmentation */
   .verdict-text.not-slop {
     display: flex;
-    justify-content: center;
+    align-items: center;
     gap: 8px;
     position: relative;
     animation: notSlopFadeOut 0.3s ease-out 2.6s forwards;
@@ -135,12 +253,27 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: white;
+    background: #87ceeb;
     opacity: 1.0;
     border-radius: 100px;
     mask-image: radial-gradient(ellipse closest-side, black 82%, transparent 100%);
     -webkit-mask-image: radial-gradient(ellipse closest-side, black 82%, transparent 100%);
     z-index: -1;
+  }
+  .verdict-text.not-slop .space { flex: 0 0 20px; } /* the gap between NOT and SLOP */
+
+  .verdict-text.not-slop .letter{
+    flex: 1 1 0;           /* equal width segments */
+    text-align: center;
+    background-image: var(--rainbow, linear-gradient(90deg, red, blue));
+    background-size: 700% 100%;                      /* 7 equal slices */
+    background-position: calc(var(--i) * 100% / 6) 0;/* i in [0..6] */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    paint-order: stroke fill;
   }
 
   /* Fade out for entire not-slop text */
@@ -150,21 +283,13 @@
   }
 
   /* Rainbow letter drop animation - with acceleration (ease-in) */
-  .letter { display: inline-block; animation: letterDrop 0.4s ease-in; -webkit-text-stroke: 2px white; paint-order: stroke fill; opacity: 0; animation-fill-mode: forwards; }
+  .letter { display: inline-block; animation: letterDrop 0.4s ease-in; opacity: 0; animation-fill-mode: forwards; }
   @keyframes letterDrop {
     0% { transform: translateY(-150px); opacity: 0; }
     60% { transform: translateY(8px); opacity: 1; }
     80% { transform: translateY(-3px); opacity: 1; }
     100% { transform: translateY(0); opacity: 1; }
   }
-  .letter:nth-child(1) { animation-delay: 0s; color: #ff0080; }
-  .letter:nth-child(2) { animation-delay: 0.05s; color: #ff8c00; }
-  .letter:nth-child(3) { animation-delay: 0.1s; color: #ffd700; }
-  .letter:nth-child(4) { animation-delay: 0.15s; color: #00ff00; }
-  .letter:nth-child(5) { animation-delay: 0.2s; color: #00bfff; }
-  .letter:nth-child(6) { animation-delay: 0.25s; color: #8a2be2; }
-  .letter:nth-child(7) { animation-delay: 0.3s; color: #ff1493; }
-  .letter:nth-child(8) { animation-delay: 0.35s; color: #ff4500; }
 
   /* Sparkle animation */
   .sparkle { position: absolute; top: 5px; right: 5px; width: 35px; height: 35px; animation: sparklePopIn 0.4s ease-out 0.9s forwards; }
@@ -175,15 +300,223 @@
   }
 
   .paint-splash { width: 350px; height: 350px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+
+  /* Light mode styles */
+  body:not(.dark-mode) {
+    --bg: #ffffff;
+    --fg: #222;
+    --muted: #666;
+    --card: #f8f8f8;
+    --accent: #4169e1;
+  }
+
+  body:not(.dark-mode) {
+    background: #ffffff;
+  }
+
+  body:not(.dark-mode) .container {
+    background: #ffffff;
+  }
+
+  body:not(.dark-mode) a {
+    color: #4169e1;
+  }
+
+  body:not(.dark-mode) button {
+    background: #4169e1;
+    color: #fff;
+  }
+
+  body:not(.dark-mode) button.secondary {
+    background: transparent;
+    border: 1px solid #4169e1;
+    color: #4169e1;
+  }
+
+  body:not(.dark-mode) button.secondary:hover {
+    background: #4169e1;
+    color: #fff;
+  }
+
+  body:not(.dark-mode) .nav-dropdown-menu {
+    background: #ffffff;
+    border: 1px solid #ccc;
+  }
+
+  body:not(.dark-mode) .nav-dropdown-item:hover {
+    background: #e8e8e8;
+  }
+
+  body:not(.dark-mode) .leaderboard-bar {
+    background: linear-gradient(90deg, #6fd147 0%, #8fe66a 100%);
+  }
+
+  body:not(.dark-mode) .leaderboard-bar.user-bar {
+    background: linear-gradient(90deg, #ff9d3a 0%, #ffb66a 100%);
+  }
+
+  /* Light mode: Score bar container background */
+  body:not(.dark-mode) .leaderboard-bar-container {
+    background: #e8e8e8;
+  }
+
+  /* Light mode: Selected leaderboard row */
+  body:not(.dark-mode) .leaderboard-row.selected {
+    background: #e8f0ff;
+    border-color: #4169e1;
+  }
+
+  body:not(.dark-mode) .leaderboard-row:hover {
+    background: #f0f0f0;
+  }
+
+  /* Light mode: Pills (slop word hits, etc.) */
+  body:not(.dark-mode) .pill {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    color: var(--fg);
+  }
+
+  body:not(.dark-mode) .pill b {
+    color: #222;
+  }
+
+  /* Light mode: Help icon */
+  body:not(.dark-mode) .help-icon {
+    background: #e8e8e8;
+    color: #666;
+  }
+
+  body:not(.dark-mode) .help-icon:hover {
+    background: #d0d0d0;
+    color: #222;
+  }
+
+  /* Light mode: Contrast match blocks */
+  body:not(.dark-mode) .contrast-match {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    color: var(--fg);
+  }
+
+  body:not(.dark-mode) .contrast-match::before {
+    color: #ccc;
+  }
+
+  /* Light mode: Help text */
+  body:not(.dark-mode) .help-text {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    color: #666;
+  }
+
+  /* Light mode: Modal */
+  body:not(.dark-mode) .modal-content {
+    background: var(--card);
+    border: 1px solid #ddd;
+  }
+
+  /* Light mode: Tooltips */
+  body:not(.dark-mode) .metric-with-tooltip .tooltip-text {
+    background: #333;
+    color: #fff;
+  }
+
+  /* Light mode: Drag-over styling */
+  body:not(.dark-mode) textarea.drag-over {
+    border-color: #4169e1;
+    background: #f0f4ff;
+  }
+
+  /* Light mode: File list and items */
+  body:not(.dark-mode) #fileList {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+  }
+
+  body:not(.dark-mode) .file-item {
+    background: #ffffff;
+    border: 1px solid #ddd;
+  }
+
+  body:not(.dark-mode) .file-size {
+    color: #666;
+  }
+
+  body:not(.dark-mode) .file-remove {
+    background: transparent;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+  }
+
+  body:not(.dark-mode) .file-remove:hover {
+    background: #dc3545;
+    color: #ffffff;
+  }
+
+  body:not(.dark-mode) .drop-hint {
+    color: #666;
+  }
 </style>
 </head>
 <body>
-  <h1>Slop-or-Not</h1>
-  <div class="section">
-    <button id="analyzeTextBtn" class="secondary" style="display:none;">Analyse Text</button>
-    <button id="viewLeaderboardBtn" class="secondary" style="display:none;">View Leaderboard</button>
-    <button id="analyzeBtn" disabled style="display:none;">Analyze</button>
-    <span id="status" class="muted" style="margin-left:10px;">loading resources…</span>
+  <div class="container">
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" id="darkModeToggle">
+      <label class="form-check-label" for="darkModeToggle" id="toggleLabel">Light</label>
+    </div>
+    <div class="header">
+      <a href="./"><img src="./images/eqbench_logo_sml.png" alt="EQ-bench Logo" class="logo"/></a>
+      <div class="header-text">
+        <h1>Slop Score</h1>
+      </div>
+    </div>
+    <p>Emotional Intelligence Benchmarks for LLMs</p>
+    <p><a href="https://github.com/EQ-bench" target="_blank">Github</a> | <a href="https://arxiv.org/abs/2312.06281" target="_blank">Paper</a> | <span id="email"></span> | <a href="https://twitter.com/sam_paech" target="_blank">Twitter</a> | <a href="about.html">About</a></p>
+
+    <p>
+      <a href='index.html'>💙EQ-Bench3</a>
+      <span class="nav-separator">|</span>
+      <a href='spiral-bench.html'>🌀Spiral-Bench v1.2</a>
+      <span class="nav-separator">|</span>
+      <a href='creative_writing_longform.html'>✍️Longform Writing</a>
+      <span class="nav-separator">|</span>
+      <a href='creative_writing.html'>🎨Creative Writing v3</a>
+      <span class="nav-separator">|</span>
+      <b>☢️Slop Score</b>
+      <span class="nav-separator">|</span>
+      <a href='judgemark-v2.html'>⚖️Judgemark v2.1</a>
+      <span class="nav-separator">|</span>
+      <a href='buzzbench.html'>🎤BuzzBench</a>
+      <span class="nav-separator">|</span>
+      <a href='diplobench.html'>🌍DiploBench</a>
+      <span class="nav-separator">|</span>
+      <span class="nav-dropdown">
+        <button class="nav-dropdown-toggle" id="legacyDropdownToggle">
+          📚Legacy Leaderboards
+        </button>
+        <span class="nav-dropdown-menu" id="legacyDropdownMenu">
+          <a href="spiral-bench_v1.0.html" class="nav-dropdown-item">🌀Spiral-Bench v1.0</a>
+          <a href="creative_writing_v2.html" class="nav-dropdown-item">🎨Creative Writing v2</a>
+          <a href="eqbench-v2.html" class="nav-dropdown-item">💗EQ-Bench v2</a>
+        </span>
+      </span>
+    </p>
+
+  <div class="slop-content">
+  <div class="section" style="display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <button id="analyzeTextBtn" class="secondary" style="display:none;">
+        <svg class="btn-icon" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="10" r="8" fill="#39ff14"/>
+        </svg>
+        Analyse your text
+      </button>
+      <button id="viewLeaderboardBtn" class="secondary" style="display:none;">View Leaderboard</button>
+      <button id="analyzeBtn" disabled style="display:none;">Analyze</button>
+      <span id="status" class="muted" style="margin-left:10px;">loading resources…</span>
+    </div>
+    <button id="howItWorksBtn" class="secondary">How does this work?</button>
   </div>
   <div id="errors" class="section mono" style="white-space:pre-wrap;color:#ffb4b4;"></div>
   <div class="row">
@@ -210,6 +543,55 @@
     </div>
   </div>
 
+  <!-- How it works modal -->
+  <div id="howItWorksModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 style="margin:0;">How does this work?</h2>
+        <button class="modal-close" id="closeHowItWorksModal">&times;</button>
+      </div>
+      <div id="howItWorksBody">
+        <h3>What is Slop Score?</h3>
+        <p>Slop Score is a leaderboard and analysis tool for computing how much a given text looks/smells like AI "slop". It looks specifically at words and patterns that occur more frequently in AI text than in human text.</p>
+
+        <h3>Not an AI Detector!</h3>
+        <p>This tool works differently than most AI detectors: It looks for glaringly over-used patterns, rather than trying to classify the text as AI or human. It will detect words and phrases that smell of AI, but it won't reliably help you avoid AI detection. The best way to avoid AI detectors is to write in your own words.</p>
+
+        <h3>Tips for the Analysis Tool</h3>
+        <ul style="line-height: 1.8;">
+          <li>Analysis works best on several pieces of writing on different topics. The more the better! It will still work on a single story or essay, but the results will be skewed by the topic.</li>
+          <li>The analysis is optimised for creative writing and essays. It may work for other domains, but will likely under-report slop.</li>
+        </ul>
+
+        <h3>Slop Score Calculation</h3>
+        <p>The Slop Score is a weighted composite metric designed to detect AI-generated text patterns:</p>
+        <ul style="line-height: 1.8;">
+          <li><strong>60%</strong> - Slop Words: Frequency of individual words that appear unnaturally often in LLM outputs</li>
+          <li><strong>25%</strong> - Not-x-but-y Patterns: Frequency of contrast patterns like "not just X, but Y" which are overused by AI</li>
+          <li><strong>15%</strong> - Slop Trigrams: Frequency of 3-word phrases that appear unnaturally often in LLM outputs</li>
+        </ul>
+
+        <h3>Slop Lists</h3>
+        <p>The slop word and trigram lists are produced using the <a href="https://github.com/sam-paech/slop-forensics" target="_blank" style="color: var(--accent);">slop-forensics toolkit</a>. This tool identifies words and n-grams that are statistically over-represented in LLM outputs compared to human writing.</p>
+        <p>The lists were computed by analyzing outputs from 10 different language models on a selection of essay and creative writing prompts, then comparing them against human-authored text.</p>
+        <p>View the lists: <a href="https://github.com/sam-paech/slop-score/blob/main/data/slop_list.json" target="_blank" style="color: var(--accent);">Slop Words</a> | <a href="https://github.com/sam-paech/slop-score/blob/main/data/slop_list_trigrams.json" target="_blank" style="color: var(--accent);">Slop Trigrams</a></p>
+
+        <h3>Over-represented Words & Trigrams</h3>
+        <p>These sections show words and phrases that occur more frequently in the analyzed text than in typical human writing, based on:</p>
+        <ul style="line-height: 1.8;">
+          <li><strong>Words</strong>: Compared against the <a href="https://github.com/rspeer/wordfreq" target="_blank" style="color: var(--accent);">wordfreq</a> baseline (a large corpus of human language)</li>
+          <li><strong>Trigrams</strong>: Compared against a human baseline corpus of essays and creative writing</li>
+        </ul>
+
+        <h3>Additional Metrics</h3>
+        <p>The tool also provides various writing style metrics including lexical diversity (MATTR-500), vocabulary level (Flesch-Kincaid), sentence and paragraph length, and dialogue frequency to give a comprehensive view of the text's characteristics.</p>
+
+        <h3>Leaderboard</h3>
+        <p>The leaderboard shows how different language models score on the Slop metric, based on their outputs from a standardized set of prompts. Lower scores indicate more human-like writing patterns.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Verdict overlay -->
   <div id="verdictOverlay">
     <div class="verdict-content" id="verdictContent"></div>
@@ -228,8 +610,7 @@ import {
   humanBigramFreq,
   humanTrigramFreq,
   lookupFrequency,
-  mergePossessives,
-  filterNumericWords
+  mergePossessives
 } from './js/metrics.js';
 import { initPosTagger } from './js/pos-tagger.js';
 import { scoreText as scoreContrast } from './js/contrast-detector.js';
@@ -249,6 +630,9 @@ const ui = {
   closeModal: document.getElementById('closeModal'),
   verdictOverlay: document.getElementById('verdictOverlay'),
   verdictContent: document.getElementById('verdictContent'),
+  howItWorksBtn: document.getElementById('howItWorksBtn'),
+  howItWorksModal: document.getElementById('howItWorksModal'),
+  closeHowItWorksModal: document.getElementById('closeHowItWorksModal'),
 };
 
 let ready = false;
@@ -330,8 +714,13 @@ function showVerdict(slopScore) {
       <defs>
         <radialGradient id="sparkleGrad" cx="50%" cy="50%" r="50%">
           <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-          <stop offset="50%" style="stop-color:#ffffaa;stop-opacity:0.9" />
-          <stop offset="100%" style="stop-color:#ffdd00;stop-opacity:0.7" />
+          <stop offset="50%" style="stop-color:#ffd700;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#ffaa00;stop-opacity:0.9" />
+        </radialGradient>
+        <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.4" />
+          <stop offset="70%" style="stop-color:#ffd700;stop-opacity:0.15" />
+          <stop offset="100%" style="stop-color:#ffaa00;stop-opacity:0" />
         </radialGradient>
         <filter id="glow">
           <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
@@ -341,12 +730,14 @@ function showVerdict(slopScore) {
           </feMerge>
         </filter>
       </defs>
+      <!-- Background glow circle for light mode visibility -->
+      <circle cx="50" cy="50" r="48" fill="url(#bgGlow)" opacity="0.8"/>
       <!-- Main star shape with 4 points -->
-      <polygon points="50,10 55,45 90,50 55,55 50,90 45,55 10,50 45,45" fill="url(#sparkleGrad)" filter="url(#glow)"/>
+      <polygon points="50,10 55,45 90,50 55,55 50,90 45,55 10,50 45,45" fill="url(#sparkleGrad)" filter="url(#glow)" stroke="#cc8800" stroke-width="1.5"/>
       <!-- Smaller diagonal star overlay -->
-      <polygon points="50,25 58,48 75,50 58,52 50,75 42,52 25,50 42,48" fill="#ffffff" opacity="0.8"/>
+      <polygon points="50,25 58,48 75,50 58,52 50,75 42,52 25,50 42,48" fill="#ffffff" opacity="0.9" stroke="#dd9900" stroke-width="1"/>
       <!-- Center bright spot -->
-      <circle cx="50" cy="50" r="8" fill="#ffffff" opacity="0.95"/>
+      <circle cx="50" cy="50" r="8" fill="#ffffff" opacity="0.95" stroke="#ffcc00" stroke-width="0.5"/>
     </svg>
   `;
 
@@ -359,13 +750,23 @@ function showVerdict(slopScore) {
       </div>
     `;
   } else {
-    // Split "NOT SLOP" into individual letters
+    // Build a single rainbow and slice it into 7 equal segments by index
     const text = "NOT SLOP";
-    const letters = text.split('').map((char, i) => {
-      if (char === ' ') {
-        return '<span class="letter" style="width: 20px;"></span>';
-      }
-      return `<span class="letter">${char}</span>`;
+    const rainbowColors = ['#ff0080','#ff8c00','#ffd700','#00ff00','#00bfff','#8a2be2','#ff1493'];
+    const colorStops = rainbowColors
+      .map((c, idx) => `${c} ${(idx/(rainbowColors.length-1))*100}%`)
+      .join(', ');
+    const gradient = `linear-gradient(90deg, ${colorStops})`;
+
+    let letterIndex = 0;
+    const letters = text.split('').map((ch) => {
+      if (ch === ' ') return '<span class="space" aria-hidden="true"></span>';
+      // each letter gets equal flex width; --i controls background-position
+      // use inline animation-delay so space elements do not shift nth-child timing
+      const delay = (letterIndex * 0.05).toFixed(2);
+      const html = `<span class="letter" style="--i:${letterIndex};--rainbow:${gradient};animation-delay:${delay}s;">${ch}</span>`;
+      letterIndex++;
+      return html;
     }).join('');
 
     html = `
@@ -375,6 +776,7 @@ function showVerdict(slopScore) {
       </h1>
     `;
   }
+
 
   ui.verdictContent.innerHTML = html;
   ui.verdictOverlay.classList.add('visible');
@@ -566,20 +968,14 @@ function renderContrastMatches(targetEl, matches, showLimit = 10) {
   const hiddenMatches = matches.slice(showLimit);
 
   let html = visibleMatches.map(m =>
-    `<div class="contrast-match">
-      <div class="pattern">${m.pattern_name}</div>
-      <div>${m.sentence}</div>
-    </div>`
+    `<div class="contrast-match">${m.sentence}</div>`
   ).join("");
 
   if (hiddenMatches.length > 0) {
     const toggleId = 'toggle_' + Math.random().toString(36).substr(2, 9);
     html += `<div id="${toggleId}_hidden" style="display:none;">`;
     html += hiddenMatches.map(m =>
-      `<div class="contrast-match">
-        <div class="pattern">${m.pattern_name}</div>
-        <div>${m.sentence}</div>
-      </div>`
+      `<div class="contrast-match">${m.sentence}</div>`
     ).join("");
     html += `</div>`;
     html += `<button class="show-more" id="${toggleId}_btn">Show ${hiddenMatches.length} more</button>`;
@@ -607,12 +1003,14 @@ async function loadLeaderboard() {
   leaderboardData = data.results;
 
   // Compute normalization ranges with 10% buffer
-  const slopVals = leaderboardData.map(r => r.metrics.slop_list_matches_per_1k_words);
-  const contrastVals = leaderboardData.map(r => r.metrics.not_x_but_y_per_1k_chars);
+  const slopWordVals = leaderboardData.map(r => r.metrics.slop_list_matches_per_1k_words || 0);
+  const slopTrigramVals = leaderboardData.map(r => r.metrics.slop_trigram_matches_per_1k_words || 0);
+  const contrastVals = leaderboardData.map(r => r.metrics.not_x_but_y_per_1k_chars || 0);
   const vocabVals = leaderboardData.map(r => r.metrics.vocab_level || 0);
   const sentenceLengthVals = leaderboardData.map(r => r.metrics.avg_sentence_length || 0);
   const paragraphLengthVals = leaderboardData.map(r => r.metrics.avg_paragraph_length || 0);
   const dialogueVals = leaderboardData.map(r => r.metrics.dialogue_frequency || 0);
+  const mattrVals = leaderboardData.map(r => r.metrics.lexical_diversity?.mattr_500 || 0);
 
   const computeRange = (values) => {
     const min = Math.min(...values);
@@ -625,12 +1023,14 @@ async function loadLeaderboard() {
   };
 
   normalizationRanges = {
-    slop: computeRange(slopVals),
+    slop_words: computeRange(slopWordVals),
+    slop_trigrams: computeRange(slopTrigramVals),
     contrast: computeRange(contrastVals),
     vocab_level: computeRange(vocabVals),
     avg_sentence_length: computeRange(sentenceLengthVals),
     avg_paragraph_length: computeRange(paragraphLengthVals),
-    dialogue_frequency: computeRange(dialogueVals)
+    dialogue_frequency: computeRange(dialogueVals),
+    mattr_500: computeRange(mattrVals)
   };
 
   console.log('Normalization ranges:', normalizationRanges);
@@ -641,11 +1041,13 @@ function normalizeValue(value, range) {
   return Math.max(0, Math.min(1, normalized));
 }
 
-function computeSlopScore(slopIndex, contrastScore) {
-  const normSlop = normalizeValue(slopIndex, normalizationRanges.slop);
+function computeSlopScore(slopWordScore, slopTrigramScore, contrastScore) {
+  const normWords = normalizeValue(slopWordScore, normalizationRanges.slop_words);
+  const normTrigrams = normalizeValue(slopTrigramScore, normalizationRanges.slop_trigrams);
   const normContrast = normalizeValue(contrastScore, normalizationRanges.contrast);
 
-  return ((normSlop + normContrast) / 2) * 100;
+  // Weighted formula: 45% slop words + 40% not-x-but-y + 15% slop trigrams
+  return (normWords * 0.6 + normContrast * 0.25 + normTrigrams * 0.15) * 100;
 }
 
 function renderLeaderboard(includeUserResult = false) {
@@ -653,8 +1055,9 @@ function renderLeaderboard(includeUserResult = false) {
   const entries = leaderboardData.map(entry => ({
     model: entry.model,
     slopScore: computeSlopScore(
-      entry.metrics.slop_list_matches_per_1k_words,
-      entry.metrics.not_x_but_y_per_1k_chars
+      entry.metrics.slop_list_matches_per_1k_words || 0,
+      entry.metrics.slop_trigram_matches_per_1k_words || 0,
+      entry.metrics.not_x_but_y_per_1k_chars || 0
     ),
     fullData: entry
   }));
@@ -751,26 +1154,33 @@ function updateRightPanel(entry) {
 
   if (data.metrics) {
     // Compute normalized values for bars
-    const normSlop = normalizeValue(data.metrics.slop_list_matches_per_1k_words, normalizationRanges.slop);
-    const normContrast = normalizeValue(data.metrics.not_x_but_y_per_1k_chars, normalizationRanges.contrast);
+    const normSlopWords = normalizeValue(data.metrics.slop_list_matches_per_1k_words || 0, normalizationRanges.slop_words);
+    const normSlopTrigrams = normalizeValue(data.metrics.slop_trigram_matches_per_1k_words || 0, normalizationRanges.slop_trigrams);
+    const normContrast = normalizeValue(data.metrics.not_x_but_y_per_1k_chars || 0, normalizationRanges.contrast);
 
     html += `
       <div class="modal-metric metric-with-tooltip">
         <div class="modal-metric-bg slop" style="width: ${entry.slopScore}%"></div>
         <div class="modal-metric-label">Slop Score</div>
         <div class="modal-metric-value">${entry.slopScore.toFixed(2)}</div>
-        <span class="tooltip-text">Combined metric of slop list matches and contrast patterns, normalized across all models</span>
+        <span class="tooltip-text">Combined metric: 45% slop words + 40% not-x-but-y patterns + 15% slop trigrams, normalized across all models</span>
       </div>
       <div class="modal-metric metric-with-tooltip">
-        <div class="modal-metric-bg slop" style="width: ${normSlop * 100}%"></div>
-        <div class="modal-metric-label">Slop List Matches (per 1k words)</div>
-        <div class="modal-metric-value">${data.metrics.slop_list_matches_per_1k_words.toFixed(2)}</div>
-        <span class="tooltip-text">Frequency of AI-typical words and phrases that appear unnaturally often in LLM outputs</span>
+        <div class="modal-metric-bg slop" style="width: ${normSlopWords * 100}%"></div>
+        <div class="modal-metric-label">Slop Words (per 1k words)</div>
+        <div class="modal-metric-value">${(data.metrics.slop_list_matches_per_1k_words || 0).toFixed(2)}</div>
+        <span class="tooltip-text">Frequency of AI-typical single words that appear unnaturally often in LLM outputs</span>
+      </div>
+      <div class="modal-metric metric-with-tooltip">
+        <div class="modal-metric-bg slop" style="width: ${normSlopTrigrams * 100}%"></div>
+        <div class="modal-metric-label">Slop Trigrams (per 1k words)</div>
+        <div class="modal-metric-value">${(data.metrics.slop_trigram_matches_per_1k_words || 0).toFixed(2)}</div>
+        <span class="tooltip-text">Frequency of AI-typical 3-word phrases that appear unnaturally often in LLM outputs</span>
       </div>
       <div class="modal-metric metric-with-tooltip">
         <div class="modal-metric-bg slop" style="width: ${normContrast * 100}%"></div>
         <div class="modal-metric-label">Not-x-but-y Patterns (per 1k chars)</div>
-        <div class="modal-metric-value">${data.metrics.not_x_but_y_per_1k_chars.toFixed(2)}</div>
+        <div class="modal-metric-value">${(data.metrics.not_x_but_y_per_1k_chars || 0).toFixed(2)}</div>
         <span class="tooltip-text">Frequency of contrast patterns like "not just X, but Y" which are overused by AI</span>
       </div>
     `;
@@ -835,9 +1245,10 @@ function updateRightPanel(entry) {
       html += `<h4 style="margin-top: 16px;">Lexical Diversity</h4>`;
 
       if (data.metrics.lexical_diversity.mattr_500 !== undefined) {
+        const normMattr = normalizeValue(data.metrics.lexical_diversity.mattr_500, normalizationRanges.mattr_500);
         html += `
           <div class="modal-metric metric-with-tooltip">
-            <div class="modal-metric-bg diversity" style="width: ${data.metrics.lexical_diversity.mattr_500 * 100}%"></div>
+            <div class="modal-metric-bg diversity" style="width: ${normMattr * 100}%"></div>
             <div class="modal-metric-label">MATTR-500</div>
             <div class="modal-metric-value">${data.metrics.lexical_diversity.mattr_500.toFixed(4)}</div>
             <span class="tooltip-text">Moving-Average Type-Token Ratio - measures vocabulary diversity using 500-word windows</span>
@@ -845,13 +1256,6 @@ function updateRightPanel(entry) {
         `;
       }
 
-      html += `
-        <div class="modal-metric metric-with-tooltip">
-          <div class="modal-metric-label">N-gram Repetition Score</div>
-          <div class="modal-metric-value">${data.metrics.ngram_repetition_score.toFixed(4)}</div>
-          <span class="tooltip-text">Frequency of repeated bigrams and trigrams compared to human writing baseline</span>
-        </div>
-      `;
 
       if (data.metrics.lexical_diversity.unique_words !== undefined) {
         html += `
@@ -895,11 +1299,26 @@ function updateRightPanel(entry) {
     }
 
     // Helper function to render items with show more
-    const renderItemsWithShowMore = (items, title, formatter) => {
+    const renderItemsWithShowMore = (items, title, formatter, helpText = null) => {
       if (!items || items.length === 0) return '';
 
       const toggleId = 'panel_' + Math.random().toString(36).substr(2, 9);
-      let itemsHtml = `<h4 style="margin-top: 16px;">${title}</h4><div style="margin-top: 8px;">`;
+      const helpId = 'help_' + Math.random().toString(36).substr(2, 9);
+
+      let itemsHtml = `<h4 style="margin-top: 16px;">`;
+      itemsHtml += title;
+
+      if (helpText) {
+        itemsHtml += `<span class="help-icon" id="${helpId}_btn">?</span>`;
+      }
+
+      itemsHtml += `</h4>`;
+
+      if (helpText) {
+        itemsHtml += `<div class="help-text" id="${helpId}_text">${helpText}</div>`;
+      }
+
+      itemsHtml += `<div style="margin-top: 8px;">`;
 
       const visibleItems = items.slice(0, 10);
       const hiddenItems = items.slice(10);
@@ -921,35 +1340,51 @@ function updateRightPanel(entry) {
       return itemsHtml;
     };
 
-    if (data.top_over_represented) {
+    // Skip over-represented and slop hits for human-baseline
+    const isHumanBaseline = entry.model === 'human-baseline';
+
+    // Add slop word hits (only for user-submitted text, not for human-baseline)
+    if (data.slop_word_hits && data.slop_word_hits.length > 0 && !isHumanBaseline) {
+      html += renderItemsWithShowMore(
+        data.slop_word_hits,
+        'Slop Word Hits',
+        hit => `<span class="pill"><b>${hit[0]}</b> <span class="muted">(${hit[1]})</span></span>`,
+        'Matches to a precompiled slop list produced with the <a href="https://github.com/sam-paech/slop-forensics" target="_blank" style="color: var(--accent);">slop-forensics toolkit</a>. The list identifies words that are over-represented in LLM outputs compared to human writing, computed from 10 models\' outputs on essay & creative writing prompts. <a href="https://github.com/sam-paech/slop-score/blob/main/data/slop_list.json" target="_blank" style="color: var(--accent);">View slop list</a>'
+      );
+    }
+
+    // Add slop trigram hits (only for user-submitted text, not for human-baseline)
+    if (data.slop_trigram_hits && data.slop_trigram_hits.length > 0 && !isHumanBaseline) {
+      html += renderItemsWithShowMore(
+        data.slop_trigram_hits,
+        'Slop Trigram Hits',
+        hit => `<span class="pill"><b>${hit[0]}</b> <span class="muted">(${hit[1]})</span></span>`,
+        'Matches to a precompiled slop trigram list produced with the <a href="https://github.com/sam-paech/slop-forensics" target="_blank" style="color: var(--accent);">slop-forensics toolkit</a>. The list identifies 3-word phrases that are over-represented in LLM outputs compared to human writing, computed from 10 models\' outputs on essay & creative writing prompts. <a href="https://github.com/sam-paech/slop-score/blob/main/data/slop_list_trigrams.json" target="_blank" style="color: var(--accent);">View trigram list</a>'
+      );
+    }
+
+    if (data.top_over_represented && !isHumanBaseline) {
       html += renderItemsWithShowMore(
         data.top_over_represented.words,
         'Top Over-represented Words',
-        w => `<span class="pill"><b>${w.word}</b> <span class="muted">${w.ratio.toFixed(2)}×</span></span>`
-      );
-
-      html += renderItemsWithShowMore(
-        data.top_over_represented.bigrams,
-        'Top Over-represented Bigrams',
-        b => `<span class="pill"><b>${b.phrase}</b> <span class="muted">${b.ratio.toFixed(2)}×</span></span>`
+        w => `<span class="pill"><b>${w.word}</b> <span class="muted">${w.ratio.toFixed(2)}×</span></span>`,
+        'Words that occur more frequently in this text than in typical human-authored text (based on wordfreq baseline).'
       );
 
       html += renderItemsWithShowMore(
         data.top_over_represented.trigrams,
         'Top Over-represented Trigrams',
-        t => `<span class="pill"><b>${t.phrase}</b> <span class="muted">${t.ratio.toFixed(2)}×</span></span>`
+        t => `<span class="pill"><b>${t.phrase}</b> <span class="muted">${t.ratio.toFixed(2)}×</span></span>`,
+        '3-word phrases that occur more frequently in this text than in typical human-authored text (based on human baseline corpus).'
       );
     }
 
-    // Add contrast matches
+    // Add contrast matches (always show, even for human-baseline)
     if (data.contrast_matches && data.contrast_matches.length > 0) {
       html += renderItemsWithShowMore(
         data.contrast_matches,
         'Not-x-but-y Patterns',
-        m => `<div class="contrast-match">
-          <div class="pattern">${m.pattern_name}</div>
-          <div>${m.sentence}</div>
-        </div>`
+        m => `<div class="contrast-match">${m.sentence}</div>`
       );
     }
   }
@@ -969,6 +1404,17 @@ function updateRightPanel(entry) {
       btn.textContent = expanded ? 'Show less' : `Show ${count} more`;
     });
   });
+
+  // Add click handlers for help icons
+  ui.panelContent.querySelectorAll('.help-icon').forEach(btn => {
+    const helpId = btn.id.replace('_btn', '');
+    const helpText = document.getElementById(`${helpId}_text`);
+    if (helpText) {
+      btn.addEventListener('click', () => {
+        helpText.classList.toggle('visible');
+      });
+    }
+  });
 }
 
 function showDetailModal(entry) {
@@ -978,26 +1424,33 @@ function showDetailModal(entry) {
 
   if (data.metrics) {
     // Compute normalized values for bars
-    const normSlop = normalizeValue(data.metrics.slop_list_matches_per_1k_words, normalizationRanges.slop);
-    const normContrast = normalizeValue(data.metrics.not_x_but_y_per_1k_chars, normalizationRanges.contrast);
+    const normSlopWords = normalizeValue(data.metrics.slop_list_matches_per_1k_words || 0, normalizationRanges.slop_words);
+    const normSlopTrigrams = normalizeValue(data.metrics.slop_trigram_matches_per_1k_words || 0, normalizationRanges.slop_trigrams);
+    const normContrast = normalizeValue(data.metrics.not_x_but_y_per_1k_chars || 0, normalizationRanges.contrast);
 
     html += `
       <div class="modal-metric metric-with-tooltip">
         <div class="modal-metric-bg slop" style="width: ${entry.slopScore}%"></div>
         <div class="modal-metric-label">Slop Score</div>
         <div class="modal-metric-value">${entry.slopScore.toFixed(2)}</div>
-        <span class="tooltip-text">Combined metric of slop list matches and contrast patterns, normalized across all models</span>
+        <span class="tooltip-text">Combined metric: 45% slop words + 40% not-x-but-y patterns + 15% slop trigrams, normalized across all models</span>
       </div>
       <div class="modal-metric metric-with-tooltip">
-        <div class="modal-metric-bg slop" style="width: ${normSlop * 100}%"></div>
-        <div class="modal-metric-label">Slop List Matches (per 1k words)</div>
-        <div class="modal-metric-value">${data.metrics.slop_list_matches_per_1k_words.toFixed(2)}</div>
-        <span class="tooltip-text">Frequency of AI-typical words and phrases that appear unnaturally often in LLM outputs</span>
+        <div class="modal-metric-bg slop" style="width: ${normSlopWords * 100}%"></div>
+        <div class="modal-metric-label">Slop Words (per 1k words)</div>
+        <div class="modal-metric-value">${(data.metrics.slop_list_matches_per_1k_words || 0).toFixed(2)}</div>
+        <span class="tooltip-text">Frequency of AI-typical single words that appear unnaturally often in LLM outputs</span>
+      </div>
+      <div class="modal-metric metric-with-tooltip">
+        <div class="modal-metric-bg slop" style="width: ${normSlopTrigrams * 100}%"></div>
+        <div class="modal-metric-label">Slop Trigrams (per 1k words)</div>
+        <div class="modal-metric-value">${(data.metrics.slop_trigram_matches_per_1k_words || 0).toFixed(2)}</div>
+        <span class="tooltip-text">Frequency of AI-typical 3-word phrases that appear unnaturally often in LLM outputs</span>
       </div>
       <div class="modal-metric metric-with-tooltip">
         <div class="modal-metric-bg slop" style="width: ${normContrast * 100}%"></div>
         <div class="modal-metric-label">Not-x-but-y Patterns (per 1k chars)</div>
-        <div class="modal-metric-value">${data.metrics.not_x_but_y_per_1k_chars.toFixed(2)}</div>
+        <div class="modal-metric-value">${(data.metrics.not_x_but_y_per_1k_chars || 0).toFixed(2)}</div>
         <span class="tooltip-text">Frequency of contrast patterns like "not just X, but Y" which are overused by AI</span>
       </div>
     `;
@@ -1062,9 +1515,10 @@ function showDetailModal(entry) {
       html += `<h4 style="margin-top: 16px;">Lexical Diversity</h4>`;
 
       if (data.metrics.lexical_diversity.mattr_500 !== undefined) {
+        const normMattr = normalizeValue(data.metrics.lexical_diversity.mattr_500, normalizationRanges.mattr_500);
         html += `
           <div class="modal-metric metric-with-tooltip">
-            <div class="modal-metric-bg diversity" style="width: ${data.metrics.lexical_diversity.mattr_500 * 100}%"></div>
+            <div class="modal-metric-bg diversity" style="width: ${normMattr * 100}%"></div>
             <div class="modal-metric-label">MATTR-500</div>
             <div class="modal-metric-value">${data.metrics.lexical_diversity.mattr_500.toFixed(4)}</div>
             <span class="tooltip-text">Moving-Average Type-Token Ratio - measures vocabulary diversity using 500-word windows</span>
@@ -1072,13 +1526,6 @@ function showDetailModal(entry) {
         `;
       }
 
-      html += `
-        <div class="modal-metric metric-with-tooltip">
-          <div class="modal-metric-label">N-gram Repetition Score</div>
-          <div class="modal-metric-value">${data.metrics.ngram_repetition_score.toFixed(4)}</div>
-          <span class="tooltip-text">Frequency of repeated bigrams and trigrams compared to human writing baseline</span>
-        </div>
-      `;
 
       if (data.metrics.lexical_diversity.unique_words !== undefined) {
         html += `
@@ -1114,11 +1561,26 @@ function showDetailModal(entry) {
     }
 
     // Helper function to render items with show more
-    const renderItemsWithShowMore = (items, title, formatter) => {
+    const renderItemsWithShowMore = (items, title, formatter, helpText = null) => {
       if (!items || items.length === 0) return '';
 
       const toggleId = 'modal_' + Math.random().toString(36).substr(2, 9);
-      let itemsHtml = `<h4 style="margin-top: 16px;">${title}</h4><div style="margin-top: 8px;">`;
+      const helpId = 'help_' + Math.random().toString(36).substr(2, 9);
+
+      let itemsHtml = `<h4 style="margin-top: 16px;">`;
+      itemsHtml += title;
+
+      if (helpText) {
+        itemsHtml += `<span class="help-icon" id="${helpId}_btn">?</span>`;
+      }
+
+      itemsHtml += `</h4>`;
+
+      if (helpText) {
+        itemsHtml += `<div class="help-text" id="${helpId}_text">${helpText}</div>`;
+      }
+
+      itemsHtml += `<div style="margin-top: 8px;">`;
 
       const visibleItems = items.slice(0, 10);
       const hiddenItems = items.slice(10);
@@ -1140,35 +1602,51 @@ function showDetailModal(entry) {
       return itemsHtml;
     };
 
-    if (data.top_over_represented) {
+    // Skip over-represented and slop hits for human-baseline
+    const isHumanBaseline = entry.model === 'human-baseline';
+
+    // Add slop word hits (only for user-submitted text, not for human-baseline)
+    if (data.slop_word_hits && data.slop_word_hits.length > 0 && !isHumanBaseline) {
+      html += renderItemsWithShowMore(
+        data.slop_word_hits,
+        'Slop Word Hits',
+        hit => `<span class="pill"><b>${hit[0]}</b> <span class="muted">(${hit[1]})</span></span>`,
+        'Matches to a precompiled slop list produced with the <a href="https://github.com/sam-paech/slop-forensics" target="_blank" style="color: var(--accent);">slop-forensics toolkit</a>. The list identifies words that are over-represented in LLM outputs compared to human writing, computed from 10 models\' outputs on essay & creative writing prompts. <a href="https://github.com/sam-paech/slop-score/blob/main/data/slop_list.json" target="_blank" style="color: var(--accent);">View slop list</a>'
+      );
+    }
+
+    // Add slop trigram hits (only for user-submitted text, not for human-baseline)
+    if (data.slop_trigram_hits && data.slop_trigram_hits.length > 0 && !isHumanBaseline) {
+      html += renderItemsWithShowMore(
+        data.slop_trigram_hits,
+        'Slop Trigram Hits',
+        hit => `<span class="pill"><b>${hit[0]}</b> <span class="muted">(${hit[1]})</span></span>`,
+        'Matches to a precompiled slop trigram list produced with the <a href="https://github.com/sam-paech/slop-forensics" target="_blank" style="color: var(--accent);">slop-forensics toolkit</a>. The list identifies 3-word phrases that are over-represented in LLM outputs compared to human writing, computed from 10 models\' outputs on essay & creative writing prompts. <a href="https://github.com/sam-paech/slop-score/blob/main/data/slop_list_trigrams.json" target="_blank" style="color: var(--accent);">View trigram list</a>'
+      );
+    }
+
+    if (data.top_over_represented && !isHumanBaseline) {
       html += renderItemsWithShowMore(
         data.top_over_represented.words,
         'Top Over-represented Words',
-        w => `<span class="pill"><b>${w.word}</b> <span class="muted">${w.ratio.toFixed(2)}×</span></span>`
-      );
-
-      html += renderItemsWithShowMore(
-        data.top_over_represented.bigrams,
-        'Top Over-represented Bigrams',
-        b => `<span class="pill"><b>${b.phrase}</b> <span class="muted">${b.ratio.toFixed(2)}×</span></span>`
+        w => `<span class="pill"><b>${w.word}</b> <span class="muted">${w.ratio.toFixed(2)}×</span></span>`,
+        'Words that occur more frequently in this text than in typical human-authored text (based on wordfreq baseline).'
       );
 
       html += renderItemsWithShowMore(
         data.top_over_represented.trigrams,
         'Top Over-represented Trigrams',
-        t => `<span class="pill"><b>${t.phrase}</b> <span class="muted">${t.ratio.toFixed(2)}×</span></span>`
+        t => `<span class="pill"><b>${t.phrase}</b> <span class="muted">${t.ratio.toFixed(2)}×</span></span>`,
+        '3-word phrases that occur more frequently in this text than in typical human-authored text (based on human baseline corpus).'
       );
     }
 
-    // Add contrast matches
+    // Add contrast matches (always show, even for human-baseline)
     if (data.contrast_matches && data.contrast_matches.length > 0) {
       html += renderItemsWithShowMore(
         data.contrast_matches,
         'Not-x-but-y Patterns',
-        m => `<div class="contrast-match">
-          <div class="pattern">${m.pattern_name}</div>
-          <div>${m.sentence}</div>
-        </div>`
+        m => `<div class="contrast-match">${m.sentence}</div>`
       );
     }
   }
@@ -1187,6 +1665,17 @@ function showDetailModal(entry) {
       const count = btn.textContent.match(/\d+/)[0];
       btn.textContent = expanded ? 'Show less' : `Show ${count} more`;
     });
+  });
+
+  // Add click handlers for help icons
+  ui.modalBody.querySelectorAll('.help-icon').forEach(btn => {
+    const helpId = btn.id.replace('_btn', '');
+    const helpText = document.getElementById(`${helpId}_text`);
+    if (helpText) {
+      btn.addEventListener('click', () => {
+        helpText.classList.toggle('visible');
+      });
+    }
   });
 
   ui.modal.classList.add('visible');
@@ -1324,8 +1813,8 @@ ui.btn.addEventListener('click', async () => {
     const toks = alphaTokens(toks0);
     const nWords = toks.length;
 
-    // Slop
-    const slop = computeSlopIndex(toks);
+    // Slop - now returns separate scores and hit tracking
+    const slopResult = computeSlopIndex(toks, true);  // trackHits = true
 
     // Repetition score
     const toksContent = contentTokens(toks);
@@ -1376,8 +1865,12 @@ ui.btn.addEventListener('click', async () => {
     const avgParagraphLength = calculateAverageParagraphLength(raw);
     const dialogueFrequency = calculateDialogueFrequency(raw);
 
-    // Compute slop score for user text
-    const userSlopScore = computeSlopScore(slop, contrastResult.rate_per_1k);
+    // Compute slop score for user text using new 3-component formula
+    const userSlopScore = computeSlopScore(
+      slopResult.wordScore,
+      slopResult.trigramScore,
+      contrastResult.rate_per_1k
+    );
 
     // Store user result
     userResult = {
@@ -1385,7 +1878,8 @@ ui.btn.addEventListener('click', async () => {
       fullData: {
         total_chars: chars,
         metrics: {
-          slop_list_matches_per_1k_words: slop,
+          slop_list_matches_per_1k_words: slopResult.wordScore,
+          slop_trigram_matches_per_1k_words: slopResult.trigramScore,
           ngram_repetition_score: repetition_score,
           not_x_but_y_per_1k_chars: contrastResult.rate_per_1k,
           lexical_diversity: {
@@ -1399,6 +1893,8 @@ ui.btn.addEventListener('click', async () => {
           avg_paragraph_length: avgParagraphLength,
           dialogue_frequency: dialogueFrequency
         },
+        slop_word_hits: slopResult.wordHits,
+        slop_trigram_hits: slopResult.trigramHits,
         contrast_matches: contrastResult.matches.slice(0, 100).map(m => ({
           pattern_name: m.pattern_name,
           sentence: m.sentence,
@@ -1409,9 +1905,8 @@ ui.btn.addEventListener('click', async () => {
     };
 
   // Top over-represented words (vs wordfreq baseline)
-  // Apply preprocessing like Python implementation
+  // Merge possessives for word counts (but not for ngrams)
   let wordCounts = countItems(toksContent);
-  wordCounts = filterNumericWords(wordCounts);
   wordCounts = mergePossessives(wordCounts);
   
   const totalWords = Array.from(wordCounts.values()).reduce((a, b) => a + b, 0);
@@ -1510,6 +2005,21 @@ ui.modal.addEventListener('click', (e) => {
   }
 });
 
+// How it works modal handlers
+ui.howItWorksBtn.addEventListener('click', () => {
+  ui.howItWorksModal.classList.add('visible');
+});
+
+ui.closeHowItWorksModal.addEventListener('click', () => {
+  ui.howItWorksModal.classList.remove('visible');
+});
+
+ui.howItWorksModal.addEventListener('click', (e) => {
+  if (e.target === ui.howItWorksModal) {
+    ui.howItWorksModal.classList.remove('visible');
+  }
+});
+
 // Drag and drop event handlers
 ui.input.addEventListener('dragover', (e) => {
   e.preventDefault();
@@ -1552,5 +2062,28 @@ ui.fileList.addEventListener('drop', (e) => {
 
 init();
 </script>
+
+<script src="js/eqbench-utils.js"></script>
+<script>
+// Initialize EQBench utilities
+document.addEventListener('DOMContentLoaded', function() {
+  displayEncodedEmail();
+  applySystemTheme();
+  setupDarkModeToggle();
+
+  // Wire up "Learn more" link to "How it works" modal
+  const learnMoreLink = document.getElementById('learnMoreLink');
+  const howItWorksBtn = document.getElementById('howItWorksBtn');
+  if (learnMoreLink && howItWorksBtn) {
+    learnMoreLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      howItWorksBtn.click();
+    });
+  }
+});
+</script>
+
+</div><!-- .slop-content -->
+</div><!-- .container -->
 </body>
 </html>

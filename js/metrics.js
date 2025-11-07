@@ -3,15 +3,21 @@
 import { wordsOnlyLower, alphaTokens, countItems } from './utils.js';
 import { loadWordfreqEnFromFile, loadWordfreqEnFromUrl } from './wordfreq.js';
 
+// NLTK English stopwords (179 words)
+// Source: https://github.com/nltk/nltk_data/blob/gh-pages/packages/corpora/stopwords.zip
 const STOPWORDS = new Set([
-  "a","an","the","and","or","but","if","then","than","as","of","to","in","on","for",
-  "with","by","at","from","that","this","these","those","is","am","are","was","were",
-  "be","been","being","it","its","it's","i","you","he","she","they","we","me","him",
-  "her","them","us","my","your","his","their","our","yours","hers","theirs","ours",
-  "not","no","so","do","does","did","doing","have","has","had","having","will","would",
-  "can","could","should","may","might","must","there","here","up","down","out","over",
-  "under","again","further","then","once","about","into","through","during","before",
-  "after","above","below","between","own","same","other","very","just"
+  "i","me","my","myself","we","our","ours","ourselves","you","your","yours",
+  "yourself","yourselves","he","him","his","himself","she","her","hers","herself",
+  "it","its","itself","they","them","their","theirs","themselves","what","which",
+  "who","whom","this","that","these","those","am","is","are","was","were","be",
+  "been","being","have","has","had","having","do","does","did","doing","a","an",
+  "the","and","but","if","or","because","as","until","while","of","at","by","for",
+  "with","about","against","between","into","through","during","before","after",
+  "above","below","to","from","up","down","in","out","on","off","over","under",
+  "again","further","then","once","here","there","when","where","why","how","all",
+  "any","both","each","few","more","most","other","some","such","no","nor","not",
+  "only","own","same","so","than","too","very","s","t","can","will","just","don",
+  "should","now"
 ]);
 
 const FUNCTION_WORDS = new Set([
@@ -143,32 +149,53 @@ export async function loadSlopSets() {
   await loadSet("./data/slop_list_trigrams.json", slopTrigrams);
 }
 
-export function computeSlopIndex(tokens) {
+// Returns separate slop word and trigram scores (per 1k words)
+// Also tracks individual hits with frequencies when trackHits=true
+export function computeSlopIndex(tokens, trackHits = false) {
   const n = tokens.length || 0;
-  if (!n) return 0;
+  if (!n) return { wordScore: 0, trigramScore: 0, wordHits: null, trigramHits: null };
 
-  let wordHits = 0, biHits = 0, triHits = 0;
+  let wordHitCount = 0, triHitCount = 0;
+  const wordHitMap = trackHits ? new Map() : null;
+  const triHitMap = trackHits ? new Map() : null;
 
+  // Single-word matches only (slop_list.json)
   if (slopWords.size) {
-    for (const t of tokens) if (slopWords.has(t)) wordHits++;
-  }
-
-  if (slopBigrams.size && n >= 2) {
-    for (let i = 0; i < n - 1; i++) {
-      const bg = tokens[i] + " " + tokens[i + 1];
-      if (slopBigrams.has(bg)) biHits++;
+    for (const t of tokens) {
+      if (slopWords.has(t)) {
+        wordHitCount++;
+        if (trackHits) {
+          wordHitMap.set(t, (wordHitMap.get(t) || 0) + 1);
+        }
+      }
     }
   }
 
+  // Trigram matches only (slop_list_trigrams.json)
   if (slopTrigrams.size && n >= 3) {
     for (let i = 0; i < n - 2; i++) {
       const tg = tokens[i] + " " + tokens[i + 1] + " " + tokens[i + 2];
-      if (slopTrigrams.has(tg)) triHits++;
+      if (slopTrigrams.has(tg)) {
+        triHitCount++;
+        if (trackHits) {
+          triHitMap.set(tg, (triHitMap.get(tg) || 0) + 1);
+        }
+      }
     }
   }
 
-  const totalScore = wordHits + 2 * biHits + 8 * triHits;
-  return (totalScore / n) * 1000;
+  const wordScore = (wordHitCount / n) * 1000;
+  const trigramScore = (triHitCount / n) * 1000;
+
+  const result = { wordScore, trigramScore };
+
+  if (trackHits) {
+    // Convert to sorted arrays: [[phrase, count], ...]
+    result.wordHits = Array.from(wordHitMap.entries()).sort((a, b) => b[1] - a[1]);
+    result.trigramHits = Array.from(triHitMap.entries()).sort((a, b) => b[1] - a[1]);
+  }
+
+  return result;
 }
 
 export function contentTokens(tokens) {
