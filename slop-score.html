@@ -178,6 +178,44 @@
     .row { grid-template-columns: 1fr; }
     .panel { display: none; }
     .leaderboard-row.selected .leaderboard-report-btn { display: inline-block; }
+
+    /* Fix container padding for small screens */
+    .container { padding: 12px; }
+
+    /* Fix paint-splash animation size */
+    .paint-splash { width: 90vw; height: 90vw; max-width: 350px; max-height: 350px; }
+
+    /* Fix modal max-width */
+    .modal-content { max-width: 90vw; }
+
+    /* Fix navigation dropdown min-width */
+    .nav-dropdown-menu { min-width: 150px; max-width: 90vw; }
+
+    /* Fix leaderboard spacing and wrapping */
+    .leaderboard-row { gap: 4px; align-items: flex-start; }
+
+    /* Allow model name to wrap without increasing row height */
+    .leaderboard-name {
+      flex: 0 0 100px;
+      white-space: normal;
+      overflow: visible;
+      line-height: 1.3;
+      max-height: 33px; /* ~2 lines at 13px font-size with 1.3 line-height */
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Keep bar container stretching but reduce score min-width */
+    .leaderboard-bar-container { flex: 1; }
+
+    /* Reduce score spacing and align to top */
+    .leaderboard-score { min-width: 45px; align-self: flex-start; padding-top: 2px; }
+
+    /* Fix tooltip width */
+    .metric-with-tooltip .tooltip-text { width: auto; max-width: 90vw; right: 0; }
   }
   @media (min-width: 769px) {
     .leaderboard-report-btn { display: none !important; }
@@ -553,10 +591,9 @@
       <div id="howItWorksBody">
         <h3>What is Slop Score?</h3>
         <p>Slop Score is a leaderboard and analysis tool for computing how much a given text looks/smells like AI "slop". It looks specifically at words and patterns that occur more frequently in AI text than in human text.</p>
-        <p>Find the source code here: <a href="https://github.com/sam-paech/slop-score">https://github.com/sam-paech/slop-score</a></p>
 
         <h3>Not an AI Detector!</h3>
-        <p>This tool works differently than most AI detectors: It looks for glaringly over-used patterns, rather than trying to classify the text as AI or human. It will detect words and phrases that are commonly used by AI, but it won't reliably help you avoid AI detection. The best way to avoid AI detectors is to write in your own words.</p>
+        <p>This tool works differently than most AI detectors: It looks for glaringly over-used patterns, rather than trying to classify the text as AI or human. It will detect words and phrases that smell of AI, but it won't reliably help you avoid AI detection. The best way to avoid AI detectors is to write in your own words.</p>
 
         <h3>Tips for the Analysis Tool</h3>
         <ul style="line-height: 1.8;">
@@ -567,8 +604,8 @@
         <h3>Slop Score Calculation</h3>
         <p>The Slop Score is a weighted composite metric designed to detect AI-generated text patterns:</p>
         <ul style="line-height: 1.8;">
-          <li><strong>60%</strong> - Slop Words: Frequency of individual words that appear unnaturally often in LLM outputs</li>
-          <li><strong>25%</strong> - Not-x-but-y Patterns: Frequency of contrast patterns like "not just X, but Y" which are overused by AI</li>
+          <li><strong>45%</strong> - Slop Words: Frequency of individual words that appear unnaturally often in LLM outputs</li>
+          <li><strong>40%</strong> - Not-x-but-y Patterns: Frequency of contrast patterns like "not just X, but Y" which are overused by AI</li>
           <li><strong>15%</strong> - Slop Trigrams: Frequency of 3-word phrases that appear unnaturally often in LLM outputs</li>
         </ul>
 
@@ -2086,7 +2123,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </div><!-- .slop-content -->
 </div><!-- .container -->
-
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1600fe1d3da743c1b311f4e5fee86767"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
