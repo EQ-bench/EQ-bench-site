@@ -24,7 +24,9 @@ mistral-medium-3.1,15.0,15.0,0.184,0.61,0.002,0.008,0.169,0.036,0.576,4.374,4.38
 o3,63.4,63.4,1.672,1.58,0.192,0.115,0.524,0.592,0.679,1.356,1.215,0.95,0.099,0.0,0.241,0.029,1.065,0.49,0.042,2.069,63.4,63.4
 o4-mini,53.6,53.6,1.119,1.151,0.085,0.071,0.337,0.258,0.684,1.34,1.917,0.761,0.331,0.001,0.326,0.02,1.253,0.709,0.029,4.5,53.6,53.6
 qwen3-235b-a22b-2507,20.4,20.4,0.211,0.589,0.011,0.025,0.251,0.0,0.975,4.217,4.352,4.38,0.922,0.002,0.26,0.178,2.502,3.58,0.084,7.267,20.4,20.4
-polaris-alpha,62.7,62.7,1.323,2.177,0.077,0.24,0.957,0.291,1.292,1.46,1.682,0.727,0.158,0.001,0.479,0.001,0.875,1.282,0.02,2.5,62.7,62.7
+*polaris-alpha,62.7,62.7,1.323,2.177,0.077,0.24,0.957,0.291,1.292,1.46,1.682,0.727,0.158,0.001,0.479,0.001,0.875,1.282,0.02,2.5,62.7,62.7
+*grok-4.1-fast,25.3,25.3,0.499,0.414,0.103,0.029,0.091,0.159,0.314,3.71,4.061,3.541,1.03,0.0,0.056,0.372,2.615,2.597,0.018,6.367,25.3,25.3
+*gemini-3-pro-preview,38.7,38.7,0.506,0.664,0.106,0.022,0.267,0.078,0.281,3.314,2.594,2.822,0.289,0.0,0.433,0.444,0.914,1.9,0.022,3.0,38.7,38.7
 
 
 
@@ -471,8 +473,12 @@ function rowHTMLFromCSVParts(parts, originalParts, originalHeaders){
   });
 
 
-  // Model display and sample link
-  const safe = modelNameRaw
+  // Model display and sample link - handle new model indicator
+  let currentModelName = modelNameRaw;
+  const isNewModel = currentModelName.startsWith('*');
+  currentModelName = currentModelName.replace(/^\*/, '');
+
+  const safe = currentModelName
   .replace(/\//g, '__')
   .replace(/[^a-zA-Z0-9_.-]/g, '-')  // note the extra `.` in here
   .toLowerCase();
@@ -515,9 +521,12 @@ function rowHTMLFromCSVParts(parts, originalParts, originalHeaders){
       </div>
     </div>`;
 
-  const modelCell = `<td class="model-col"><div class="cell-content">${modelNameRaw.includes('/') ?
-      `<a href="https://huggingface.co/${modelNameRaw}" target="_blank" rel="noopener noreferrer">${modelNameRaw.split('/').pop()}</a>` :
-      modelNameRaw}</div></td>`;
+  let displayModelName = currentModelName.split('/').pop();
+  if (isNewModel) displayModelName = '🆕 ' + displayModelName;
+
+  const modelCell = `<td class="model-col"><div class="cell-content">${currentModelName.includes('/') ?
+      `<a href="https://huggingface.co/${currentModelName}" target="_blank" rel="noopener noreferrer">${displayModelName}</a>` :
+      displayModelName}</div></td>`;
 
   // Report Cell with data for modal
   const rowData = originalHeaders.reduce((obj, header, i) => {
