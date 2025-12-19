@@ -297,11 +297,11 @@
             box-shadow: 0 4px 12px var(--shadow-color);
         }
 
-        .dimension-card.positive {
+        .dimension-card.helpful {
             border-left: 4px solid var(--positive-color);
         }
 
-        .dimension-card.negative {
+        .dimension-card.unhelpful {
             border-left: 4px solid var(--negative-color);
         }
 
@@ -315,11 +315,6 @@
             margin-bottom: 5px;
         }
 
-        .dimension-default {
-            font-size: 0.85em;
-            color: var(--subheader-color);
-        }
-
         .dimension-weight {
             font-size: 0.8em;
             padding: 2px 8px;
@@ -327,73 +322,6 @@
             background: var(--chart-bg);
             color: var(--text-color);
             float: right;
-        }
-
-        /* Conversation timeline */
-        .conversation-timeline {
-            position: relative;
-            padding-left: 30px;
-            margin: 30px 0;
-        }
-
-        .conversation-timeline::before {
-            content: '';
-            position: absolute;
-            left: 10px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border-color);
-        }
-
-        .timeline-turn {
-            position: relative;
-            margin-bottom: 20px;
-            padding: 15px 20px;
-            background: var(--card-bg);
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-
-        .timeline-turn::before {
-            content: '';
-            position: absolute;
-            left: -24px;
-            top: 20px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--neutral-color);
-            border: 2px solid var(--bg-color);
-        }
-
-        .timeline-turn.assistant::before {
-            background: var(--positive-color);
-        }
-
-        .timeline-turn.persona::before {
-            background: var(--accent-1);
-        }
-
-        .timeline-turn.state::before {
-            background: var(--accent-2);
-        }
-
-        .turn-label {
-            font-weight: 700;
-            font-size: 0.85em;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
-
-        .turn-label.assistant { color: var(--positive-color); }
-        .turn-label.persona { color: var(--accent-1); }
-        .turn-label.state { color: var(--accent-2); }
-
-        .turn-content {
-            font-size: 0.95em;
-            color: var(--text-color);
         }
 
         /* Scoring visualization */
@@ -475,8 +403,8 @@
             margin: 2px;
         }
 
-        .badge-positive { background: var(--positive-color); }
-        .badge-negative { background: var(--negative-color); }
+        .badge-helpful { background: var(--positive-color); }
+        .badge-unhelpful { background: var(--negative-color); }
         .badge-neutral { background: var(--neutral-color); }
         .badge-accent { background: var(--accent-1); }
         .badge-accent2 { background: var(--accent-2); }
@@ -506,59 +434,6 @@
 
         .styled-table tr:hover {
             background: var(--hover-bg);
-        }
-
-        /* Expandable sections */
-        .expandable {
-            margin: 15px 0;
-        }
-
-        .expandable-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .expandable-header:hover {
-            background: var(--hover-bg);
-        }
-
-        .expandable-header h4 {
-            margin: 0;
-            font-size: 1em;
-        }
-
-        .expandable-icon {
-            font-size: 1.2em;
-            color: var(--subheader-color);
-            transition: transform 0.2s;
-        }
-
-        .expandable.open .expandable-icon {
-            transform: rotate(180deg);
-        }
-
-        .expandable-content {
-            display: none;
-            padding: 20px;
-            background: var(--container-bg);
-            border: 1px solid var(--border-color);
-            border-top: none;
-            border-radius: 0 0 8px 8px;
-        }
-
-        .expandable.open .expandable-content {
-            display: block;
-        }
-
-        .expandable.open .expandable-header {
-            border-radius: 8px 8px 0 0;
         }
 
         /* Section numbers */
@@ -659,24 +534,6 @@
             <p class="subtitle">
                 A benchmark for measuring AI emotional intelligence through realistic, dynamic conversations with simulated personas facing real psychological challenges.
             </p>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="hero-stat-value">20</div>
-                    <div class="hero-stat-label">Emotional Dimensions</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-value">25</div>
-                    <div class="hero-stat-label">EQ Rubric Criteria</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-value">10</div>
-                    <div class="hero-stat-label">Conversation Turns</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-value">3</div>
-                    <div class="hero-stat-label">Scoring Components</div>
-                </div>
-            </div>
         </div>
 
         <!-- Section 1: Overview -->
@@ -684,19 +541,32 @@
             <h2><span class="section-number">1</span>What is EQ-Bench?</h2>
 
             <p>
-                EQ-Bench 4 evaluates how well AI models handle emotionally complex conversations. Unlike simple Q&A benchmarks, it simulates realistic interactions where a person seeks support for a difficult situation&mdash;and the AI must build trust, understand hidden issues, and provide genuine help.
+                EQ-Bench 4 evaluates how well AI models handle emotionally complex conversations. It involves a roleplay conversation with a simulated persona who seeks support for a difficult situation&mdash;and the AI must build trust, understand hidden issues, and provide genuine help.
             </p>
 
             <div class="info-box concept">
                 <div class="info-box-title">The Core Idea</div>
                 <p style="margin-bottom: 0;">
-                    Imagine someone talking to a therapist, friend, or crisis counselor. They don't reveal everything immediately. They have defenses, trust issues, and underlying problems they might not even recognize. EQ-Bench tests whether an AI can navigate this complexity&mdash;building rapport, recognizing what's really going on, and helping the person make progress.
+                    EQ-Bench loosely mirrors the format of an <strong>OSCE</strong> (Objective Structured Clinical Examination), which is a kind of roleplay evaluation used
+                    in medical training in which candidates conduct short clinical interviews with
+                    <strong>standardized patients</strong> (trained actors). The goal of an OSCE is to show you can
+                    build rapport quickly, think on your feet, ask the right questions, notice what&rsquo;s unsaid, and respond in a way that helps. This kind of test strongly assesses <strong>active, applied abilities</strong>.
                 </p>
-            </div>
+                <p style="margin-bottom: 0; margin-top: 12px;">
+                    Our evaluation mirrors this structure, but with more variety in roles: <strong>friend, partner, therapist, teacher, parent.</strong> Each scenario defines a standardized &ldquo;persona&rdquo; profile (traits,
+                    presenting complaint, and hidden underlying core issue). The evaluated model runs a fixed-length conversation with this simulated persona, which is "acted" by another AI model. The persona model is instructed to behave faithfully to their assigned traits and their current emotional state.
+                </p>
+                <p>
+                    After the interaction, judge models score both the <em>process</em> (how the
+                    conversation was handled) and the <em>outcome</em> (whether the persona ends up feeling safer, more trusting, and closer to
+                    progress on the real issue).
+                </p>
+                </div>
+
 
             <div class="diagram-container">
-                <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Main flow boxes -->
+                <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Gradients and markers -->
                     <defs>
                         <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" style="stop-color:#6a8caf;stop-opacity:1" />
@@ -707,77 +577,75 @@
                             <stop offset="100%" style="stop-color:#6c4285;stop-opacity:1" />
                         </linearGradient>
                         <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#c9a227;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#b99217;stop-opacity:1" />
-                        </linearGradient>
-                        <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" style="stop-color:#5a8c8c;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#4a7c7c;stop-opacity:1" />
                         </linearGradient>
-                        <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" style="stop-color:#4a9c6d;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#3a8c5d;stop-opacity:1" />
                         </linearGradient>
                         <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
                             <polygon points="0 0, 10 3.5, 0 7" fill="#7a6a60" />
                         </marker>
+                        <marker id="arrowhead-loop" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#c9a227" />
+                        </marker>
                     </defs>
 
-                    <!-- Box 1: Dataset Generation -->
-                    <rect x="20" y="60" width="140" height="80" rx="10" fill="url(#grad1)" />
-                    <text x="90" y="95" text-anchor="middle" fill="white" font-family="Merriweather, serif" font-size="13" font-weight="700">Dataset</text>
-                    <text x="90" y="115" text-anchor="middle" fill="white" font-family="Lora, serif" font-size="11">Generation</text>
+                    <!-- Dataset Generation (separate, offline) -->
+                    <rect x="20" y="20" width="200" height="70" rx="10" fill="url(#grad1)" />
+                    <text x="120" y="50" text-anchor="middle" fill="white" font-family="Merriweather, serif" font-size="13" font-weight="700">Dataset Generation</text>
+                    <text x="120" y="70" text-anchor="middle" fill="#c0d8e8" font-family="Lora, serif" font-size="10">(offline, one-time)</text>
+                    <text x="120" y="115" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">Create test/train/eval</text>
+                    <text x="120" y="128" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">scenario datasets</text>
 
-                    <!-- Arrow 1 -->
-                    <line x1="160" y1="100" x2="195" y2="100" stroke="#7a6a60" stroke-width="2" marker-end="url(#arrowhead)" />
+                    <!-- Divider line -->
+                    <line x1="250" y1="20" x2="250" y2="130" stroke="#d3c0a5" stroke-width="2" stroke-dasharray="5,5" />
 
-                    <!-- Box 2: Conversation -->
-                    <rect x="200" y="60" width="140" height="80" rx="10" fill="url(#grad2)" />
-                    <text x="270" y="95" text-anchor="middle" fill="white" font-family="Merriweather, serif" font-size="13" font-weight="700">Conversation</text>
-                    <text x="270" y="115" text-anchor="middle" fill="white" font-family="Lora, serif" font-size="11">Execution</text>
+                    <!-- EVALUATION FLOW label -->
+                    <text x="570" y="18" text-anchor="middle" fill="#5c4033" font-family="Merriweather, serif" font-size="11" font-weight="700">EVALUATION FLOW</text>
 
-                    <!-- Arrow 2 -->
-                    <line x1="340" y1="100" x2="375" y2="100" stroke="#7a6a60" stroke-width="2" marker-end="url(#arrowhead)" />
+                    <!-- Box 1: Conversation Turns (with loop) -->
+                    <rect x="280" y="40" width="160" height="80" rx="10" fill="url(#grad2)" />
+                    <text x="360" y="70" text-anchor="middle" fill="white" font-family="Merriweather, serif" font-size="13" font-weight="700">Conversation</text>
+                    <text x="360" y="90" text-anchor="middle" fill="white" font-family="Lora, serif" font-size="11">8 Turns</text>
 
-                    <!-- Box 3: State Tracking -->
-                    <rect x="380" y="60" width="140" height="80" rx="10" fill="url(#grad3)" />
-                    <text x="450" y="95" text-anchor="middle" fill="white" font-family="Merriweather, serif" font-size="13" font-weight="700">State</text>
-                    <text x="450" y="115" text-anchor="middle" fill="white" font-family="Lora, serif" font-size="11">Tracking</text>
+                    <!-- Loop arrow for state update (on top of box) -->
+                    <text x="360" y="5" text-anchor="middle" fill="#c9a227" font-family="Lora, serif" font-size="9">persona state update</text>
+                    <path d="M 320 40 Q 320 15, 360 15 Q 400 15, 400 20" fill="none" stroke="#c9a227" stroke-width="2" />
+                    <polygon points="393,20 407,20 400,40" fill="#c9a227" />
 
-                    <!-- Arrow 3 -->
-                    <line x1="520" y1="100" x2="555" y2="100" stroke="#7a6a60" stroke-width="2" marker-end="url(#arrowhead)" />
+                    <!-- Arrow to Judging -->
+                    <line x1="440" y1="80" x2="530" y2="80" stroke="#7a6a60" stroke-width="2" marker-end="url(#arrowhead)" />
 
-                    <!-- Box 4: Judging -->
-                    <rect x="560" y="60" width="140" height="80" rx="10" fill="url(#grad4)" />
-                    <text x="630" y="95" text-anchor="middle" fill="white" font-family="Merriweather, serif" font-size="13" font-weight="700">Judging</text>
-                    <text x="630" y="115" text-anchor="middle" fill="white" font-family="Lora, serif" font-size="11">& Debrief</text>
+                    <!-- Box 2: Judging & Debrief -->
+                    <rect x="535" y="40" width="150" height="80" rx="10" fill="url(#grad3)" />
+                    <text x="610" y="70" text-anchor="middle" fill="white" font-family="Merriweather, serif" font-size="13" font-weight="700">Judging</text>
+                    <text x="610" y="90" text-anchor="middle" fill="white" font-family="Lora, serif" font-size="11">& Debrief</text>
 
-                    <!-- Arrow 4 -->
-                    <line x1="700" y1="100" x2="735" y2="100" stroke="#7a6a60" stroke-width="2" marker-end="url(#arrowhead)" />
+                    <!-- Arrow to Score -->
+                    <line x1="685" y1="80" x2="720" y2="80" stroke="#7a6a60" stroke-width="2" marker-end="url(#arrowhead)" />
 
-                    <!-- Box 5: Scoring -->
-                    <rect x="740" y="60" width="140" height="80" rx="10" fill="url(#grad5)" />
-                    <text x="810" y="95" text-anchor="middle" fill="white" font-family="Merriweather, serif" font-size="13" font-weight="700">Final</text>
-                    <text x="810" y="115" text-anchor="middle" fill="white" font-family="Lora, serif" font-size="11">Score</text>
+                    <!-- Box 3: Final Score -->
+                    <rect x="725" y="40" width="150" height="80" rx="10" fill="url(#grad4)" />
+                    <text x="800" y="70" text-anchor="middle" fill="white" font-family="Merriweather, serif" font-size="13" font-weight="700">Final</text>
+                    <text x="800" y="90" text-anchor="middle" fill="white" font-family="Lora, serif" font-size="11">Score</text>
 
                     <!-- Labels below -->
-                    <text x="90" y="165" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">Create personas</text>
-                    <text x="90" y="178" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">& scenarios</text>
+                    <text x="360" y="145" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">Evaluated AI model talks with</text>
+                    <text x="360" y="158" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">simulated persona</text>
 
-                    <text x="270" y="165" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">AI talks with</text>
-                    <text x="270" y="178" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">simulated person</text>
+                    <text x="610" y="145" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">Evaluate quality</text>
+                    <text x="610" y="158" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">& understanding</text>
 
-                    <text x="450" y="165" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">Track emotional</text>
-                    <text x="450" y="178" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">state changes</text>
+                    <text x="800" y="145" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">Combine into</text>
+                    <text x="800" y="158" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">0-10 score</text>
 
-                    <text x="630" y="165" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">Evaluate quality</text>
-                    <text x="630" y="178" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">& understanding</text>
-
-                    <text x="810" y="165" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">Combine into</text>
-                    <text x="810" y="178" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">0-10 score</text>
+                    <!-- Turn explanation -->
+                    <rect x="280" y="190" width="595" height="70" rx="8" fill="#f9f6f0" stroke="#d3c0a5" stroke-width="1" />
+                    <text x="577" y="215" text-anchor="middle" fill="#5c4033" font-family="Merriweather, serif" font-size="11" font-weight="700">What is a "turn"?</text>
+                    <text x="577" y="235" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">Each turn = one assistant response + one user persona response. Both sides get 8 turns each (16 messages total).</text>
                 </svg>
-                <div class="diagram-caption">The five phases of an EQ-Bench evaluation</div>
-            </div>
         </section>
 
         <!-- Section 2: Dataset Generation -->
@@ -851,25 +719,41 @@
                 <div class="diagram-caption">The registry provides building blocks; the generator assembles them into complete scenarios</div>
             </div>
 
+            <div class="info-box important">
+                <div class="info-box-title">No Core Issue Overlap Between Datasets</div>
+                <p style="margin-bottom: 0;">
+                    The generator ensures that <strong>core issues do not overlap</strong> between test, train, and private held-out evaluation datasets. This prevents models from being trained on the same underlying issues they'll be evaluated on, ensuring fair benchmark results.
+                </p>
+            </div>
+
             <h3>What's in the Registry?</h3>
 
             <div class="grid-2">
                 <div class="card">
                     <div class="card-title">Core Issues</div>
-                    <p>The <em>real</em> underlying problem the person is dealing with, often hidden even from themselves. Categories include:</p>
+                    <p>The <em>real</em> underlying problem the person is dealing with, often hidden even from themselves. Categories:</p>
                     <p>
-                        <span class="badge badge-neutral">Mental Health</span>
-                        <span class="badge badge-accent">Relationship</span>
-                        <span class="badge badge-negative">Trauma</span>
-                        <span class="badge badge-accent2">Parenting</span>
-                        <span class="badge badge-accent3">Personal Growth</span>
+                        <span class="badge badge-neutral">trauma</span>
+                        <span class="badge badge-accent">relationship</span>
+                        <span class="badge badge-unhelpful">mental_health</span>
+                        <span class="badge badge-accent2">share_or_vent</span>
+                        <span class="badge badge-accent3">personal</span>
+                        <span class="badge badge-neutral">dispute</span>
+                        <span class="badge badge-accent">exploring_feelings</span>
+                        <span class="badge badge-unhelpful">distress</span>
+                        <span class="badge badge-accent2">schooling</span>
+                        <span class="badge badge-accent3">work</span>
+                        <span class="badge badge-neutral">parenting_or_caregiving</span>
+                        <span class="badge badge-accent">teen</span>
+                        <span class="badge badge-unhelpful">young_adult</span>
+                        <span class="badge badge-accent2">other</span>
                     </p>
                 </div>
                 <div class="card">
                     <div class="card-title">Presenting Issues</div>
-                    <p>What the person <em>says</em> they need help with. This is the surface-level complaint that masks the core issue.</p>
+                    <p>A prewritten conversation starter from the persona's perspective. It's typically something vaguely tangential to or hinting at the core issue&mdash;the opening message that kicks off the conversation.</p>
                     <p style="font-style: italic; color: var(--subheader-color);">
-                        Example: "I can't sleep" might mask underlying anxiety about job loss.
+                        Example: "I've been having trouble sleeping lately" (while the core issue might be anxiety about job loss).
                     </p>
                 </div>
                 <div class="card">
@@ -895,7 +779,7 @@
             <div class="info-box example">
                 <div class="info-box-title">Example: Why Compatibility Matters</div>
                 <p style="margin-bottom: 0;">
-                    The generator enforces logical constraints. A "parenting burnout" core issue requires a modifier indicating the person has children. A "social anxiety at parties" presenting issue excludes modifiers like "extroverted socialite." This ensures scenarios are psychologically coherent.
+                    The generator enforces logical constraints. For example, a "parenting burnout" core issue requires a modifier indicating the person has children. This ensures scenarios are psychologically coherent.
                 </p>
             </div>
         </section>
@@ -919,7 +803,7 @@
                     <!-- Presenting Issue (top left) -->
                     <rect x="30" y="30" width="180" height="100" rx="8" fill="#7c5295" />
                     <text x="120" y="60" text-anchor="middle" fill="white" font-family="Merriweather, serif" font-size="12" font-weight="700">Presenting Issue</text>
-                    <text x="120" y="82" text-anchor="middle" fill="#e0d0f0" font-family="Lora, serif" font-size="10">What they say:</text>
+                    <text x="120" y="82" text-anchor="middle" fill="#e0d0f0" font-family="Lora, serif" font-size="10">Conversation starter:</text>
                     <text x="120" y="98" text-anchor="middle" fill="white" font-family="Lora, serif" font-size="11">"I can't focus at work"</text>
                     <text x="120" y="118" text-anchor="middle" fill="#c0b0d0" font-family="Lora, serif" font-size="9">Severity: moderate</text>
                     <line x1="210" y1="100" x2="280" y2="200" stroke="#7c5295" stroke-width="2" />
@@ -1003,100 +887,87 @@
                 Each persona has an internal emotional state tracked across <strong>20 dimensions</strong>. This state starts at initial values and <em>changes during the conversation</em> based on how well the AI responds. The state change is the primary measure of how helpful the AI was.
             </p>
 
-            <h3>Positive Dimensions <span class="badge badge-positive">Higher = Better</span></h3>
+            <div class="info-box concept">
+                <div class="info-box-title">Helpful vs. Unhelpful Dimensions</div>
+                <p style="margin-bottom: 0;">
+                    Dimensions are labeled as "helpful" or "unhelpful" based on the <strong>evaluated model's task</strong>: to support the persona, build trust with them, learn about them, and help them make progress on their core issue. "Helpful" dimensions should increase during a successful conversation; "unhelpful" dimensions should decrease.
+                </p>
+            </div>
+
+            <h3>Helpful Dimensions <span class="badge badge-helpful">Higher = Better</span></h3>
             <p>These should <em>increase</em> during a good conversation:</p>
 
             <div class="grid-4">
-                <div class="dimension-card positive">
-                    <div class="dimension-name">Trusting <span class="dimension-weight">3.0x</span></div>
-                    <div class="dimension-default">Default: 3.0</div>
+                <div class="dimension-card helpful">
+                    <div class="dimension-name">Trusting <span class="dimension-weight">3.0x weight</span></div>
                 </div>
-                <div class="dimension-card positive">
-                    <div class="dimension-name">Safe <span class="dimension-weight">3.0x</span></div>
-                    <div class="dimension-default">Default: 2.0</div>
+                <div class="dimension-card helpful">
+                    <div class="dimension-name">Safe <span class="dimension-weight">3.0x weight</span></div>
                 </div>
-                <div class="dimension-card positive">
-                    <div class="dimension-name">Understood <span class="dimension-weight">2.0x</span></div>
-                    <div class="dimension-default">Default: 3.0</div>
+                <div class="dimension-card helpful">
+                    <div class="dimension-name">Understood <span class="dimension-weight">2.0x weight</span></div>
                 </div>
-                <div class="dimension-card positive">
-                    <div class="dimension-name">Engaged <span class="dimension-weight">1.0x</span></div>
-                    <div class="dimension-default">Default: 5.0</div>
+                <div class="dimension-card helpful">
+                    <div class="dimension-name">Engaged <span class="dimension-weight">1.0x weight</span></div>
                 </div>
-                <div class="dimension-card positive">
-                    <div class="dimension-name">Curious <span class="dimension-weight">1.0x</span></div>
-                    <div class="dimension-default">Default: 4.0</div>
+                <div class="dimension-card helpful">
+                    <div class="dimension-name">Curious <span class="dimension-weight">1.0x weight</span></div>
                 </div>
-                <div class="dimension-card positive">
-                    <div class="dimension-name">Motivated <span class="dimension-weight">1.0x</span></div>
-                    <div class="dimension-default">Default: 4.0</div>
+                <div class="dimension-card helpful">
+                    <div class="dimension-name">Motivated <span class="dimension-weight">1.0x weight</span></div>
                 </div>
-                <div class="dimension-card positive">
-                    <div class="dimension-name">Progress on Core Issue <span class="dimension-weight">3.0x</span></div>
-                    <div class="dimension-default">Default: 0.0</div>
+                <div class="dimension-card helpful">
+                    <div class="dimension-name">Progress on Core Issue <span class="dimension-weight">3.0x weight</span></div>
                 </div>
             </div>
 
-            <h3>Negative Dimensions <span class="badge badge-negative">Lower = Better</span></h3>
+            <h3>Unhelpful Dimensions <span class="badge badge-unhelpful">Lower = Better</span></h3>
             <p>These should <em>decrease</em> during a good conversation:</p>
 
             <div class="grid-4">
-                <div class="dimension-card negative">
-                    <div class="dimension-name">Resistant <span class="dimension-weight">2.0x</span></div>
-                    <div class="dimension-default">Default: 5.0</div>
+                <div class="dimension-card unhelpful">
+                    <div class="dimension-name">Resistant <span class="dimension-weight">2.0x weight</span></div>
                 </div>
-                <div class="dimension-card negative">
-                    <div class="dimension-name">Frustrated <span class="dimension-weight">2.0x</span></div>
-                    <div class="dimension-default">Default: 4.0</div>
+                <div class="dimension-card unhelpful">
+                    <div class="dimension-name">Frustrated <span class="dimension-weight">2.0x weight</span></div>
                 </div>
-                <div class="dimension-card negative">
-                    <div class="dimension-name">Oppositional <span class="dimension-weight">1.0x</span></div>
-                    <div class="dimension-default">Default: 3.0</div>
+                <div class="dimension-card unhelpful">
+                    <div class="dimension-name">Oppositional <span class="dimension-weight">1.0x weight</span></div>
                 </div>
-                <div class="dimension-card negative">
-                    <div class="dimension-name">Anxious <span class="dimension-weight">1.0x</span></div>
-                    <div class="dimension-default">Default: 5.0</div>
+                <div class="dimension-card unhelpful">
+                    <div class="dimension-name">Anxious <span class="dimension-weight">1.0x weight</span></div>
                 </div>
-                <div class="dimension-card negative">
-                    <div class="dimension-name">Paranoid <span class="dimension-weight">1.0x</span></div>
-                    <div class="dimension-default">Default: 2.0</div>
+                <div class="dimension-card unhelpful">
+                    <div class="dimension-name">Paranoid <span class="dimension-weight">1.0x weight</span></div>
                 </div>
-                <div class="dimension-card negative">
-                    <div class="dimension-name">Overwhelmed <span class="dimension-weight">1.0x</span></div>
-                    <div class="dimension-default">Default: 4.0</div>
+                <div class="dimension-card unhelpful">
+                    <div class="dimension-name">Overwhelmed <span class="dimension-weight">1.0x weight</span></div>
                 </div>
-                <div class="dimension-card negative">
-                    <div class="dimension-name">Distressed <span class="dimension-weight">1.0x</span></div>
-                    <div class="dimension-default">Default: 4.0</div>
+                <div class="dimension-card unhelpful">
+                    <div class="dimension-name">Distressed <span class="dimension-weight">1.0x weight</span></div>
                 </div>
-                <div class="dimension-card negative">
-                    <div class="dimension-name">Sad <span class="dimension-weight">1.0x</span></div>
-                    <div class="dimension-default">Default: 4.0</div>
+                <div class="dimension-card unhelpful">
+                    <div class="dimension-name">Ashamed <span class="dimension-weight">1.0x weight</span></div>
                 </div>
-                <div class="dimension-card negative">
-                    <div class="dimension-name">Ashamed <span class="dimension-weight">1.0x</span></div>
-                    <div class="dimension-default">Default: 3.0</div>
+                <div class="dimension-card unhelpful">
+                    <div class="dimension-name">Insecure <span class="dimension-weight">1.0x weight</span></div>
                 </div>
-                <div class="dimension-card negative">
-                    <div class="dimension-name">Insecure <span class="dimension-weight">1.0x</span></div>
-                    <div class="dimension-default">Default: 4.0</div>
+                <div class="dimension-card unhelpful">
+                    <div class="dimension-name">Angry <span class="dimension-weight">1.0x weight</span></div>
                 </div>
-                <div class="dimension-card negative">
-                    <div class="dimension-name">Angry <span class="dimension-weight">1.0x</span></div>
-                    <div class="dimension-default">Default: 2.0</div>
-                </div>
-                <div class="dimension-card negative">
-                    <div class="dimension-name">Irritated <span class="dimension-weight">1.0x</span></div>
-                    <div class="dimension-default">Default: 3.0</div>
+                <div class="dimension-card unhelpful">
+                    <div class="dimension-name">Irritated <span class="dimension-weight">1.0x weight</span></div>
                 </div>
             </div>
 
-            <h3>Neutral Dimension <span class="badge badge-neutral">Tracked, Not Scored</span></h3>
+            <h3>Neutral Dimensions <span class="badge badge-neutral">Tracked, Not Scored</span></h3>
 
             <div class="grid-4">
                 <div class="dimension-card neutral">
                     <div class="dimension-name">Vulnerable</div>
-                    <div class="dimension-default">Default: 3.0</div>
+                </div>
+                <div class="dimension-card neutral">
+                    <div class="dimension-name">Sad</div>
                 </div>
             </div>
 
@@ -1113,51 +984,60 @@
             <h2><span class="section-number">5</span>Conversation Execution</h2>
 
             <p>
-                The heart of EQ-Bench is a <strong>10-turn conversation</strong> between the AI being evaluated and a simulated persona. The persona is played by another AI model that follows the scenario's traits and updates its emotional state after each exchange.
+                The heart of EQ-Bench is an <strong>8-turn conversation</strong> between the AI being evaluated and a simulated persona. A "turn" means one response from each side&mdash;so each participant sends 8 messages (16 total). The persona is played by another AI model that follows the scenario's traits and updates its emotional state after each exchange.
             </p>
 
             <div class="diagram-container">
-                <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
                     <!-- Title -->
-                    <text x="400" y="30" text-anchor="middle" fill="#5c4033" font-family="Merriweather, serif" font-size="16" font-weight="700">Conversation Flow (Perspective Flipping)</text>
+                    <text x="400" y="30" text-anchor="middle" fill="#5c4033" font-family="Merriweather, serif" font-size="16" font-weight="700">Conversation Flow</text>
 
                     <!-- Evaluated Model box -->
-                    <rect x="50" y="60" width="160" height="60" rx="8" fill="#4a9c6d" />
-                    <text x="130" y="85" text-anchor="middle" fill="white" font-family="Merriweather, serif" font-size="12" font-weight="700">Evaluated Model</text>
-                    <text x="130" y="105" text-anchor="middle" fill="#b0e0c0" font-family="Lora, serif" font-size="10">(AI being tested)</text>
+                    <rect x="50" y="50" width="160" height="60" rx="8" fill="#4a9c6d" />
+                    <text x="130" y="75" text-anchor="middle" fill="white" font-family="Merriweather, serif" font-size="12" font-weight="700">Evaluated Model</text>
+                    <text x="130" y="95" text-anchor="middle" fill="#b0e0c0" font-family="Lora, serif" font-size="10">(AI being tested)</text>
 
                     <!-- Persona Simulator box -->
-                    <rect x="590" y="60" width="160" height="60" rx="8" fill="#7c5295" />
-                    <text x="670" y="85" text-anchor="middle" fill="white" font-family="Merriweather, serif" font-size="12" font-weight="700">Persona Simulator</text>
-                    <text x="670" y="105" text-anchor="middle" fill="#d0c0e0" font-family="Lora, serif" font-size="10">(Plays the person)</text>
+                    <rect x="590" y="50" width="160" height="60" rx="8" fill="#7c5295" />
+                    <text x="670" y="75" text-anchor="middle" fill="white" font-family="Merriweather, serif" font-size="12" font-weight="700">Persona Simulator</text>
+                    <text x="670" y="95" text-anchor="middle" fill="#d0c0e0" font-family="Lora, serif" font-size="10">(Plays the person)</text>
 
-                    <!-- Turn 1: Evaluated speaks -->
-                    <rect x="70" y="150" width="280" height="50" rx="6" fill="#d0f0d8" stroke="#4a9c6d" stroke-width="2" />
-                    <text x="85" y="172" fill="#3a8c5d" font-family="Lora, serif" font-size="10" font-weight="700">TURN 1 - Assistant:</text>
-                    <text x="85" y="188" fill="#3a3a3a" font-family="Lora, serif" font-size="11">"Hi, I'm here to help. What's on your mind?"</text>
+                    <!-- Presenting Issue (conversation starter, no turn label) -->
+                    <rect x="450" y="130" width="300" height="50" rx="6" fill="#e8d8f0" stroke="#7c5295" stroke-width="2" />
+                    <text x="465" y="152" fill="#6c4285" font-family="Lora, serif" font-size="10" font-weight="700">User (Persona) - Conversation Starter:</text>
+                    <text x="465" y="168" fill="#3a3a3a" font-family="Lora, serif" font-size="11">"I've been having trouble focusing at work lately..."</text>
+
+                    <!-- Arrow to assistant -->
+                    <path d="M 450 155 L 370 155 L 370 200 L 350 200" fill="none" stroke="#7a6a60" stroke-width="2" marker-end="url(#arrowhead)" />
+
+                    <!-- Turn 1: Assistant responds -->
+                    <rect x="70" y="190" width="280" height="50" rx="6" fill="#d0f0d8" stroke="#4a9c6d" stroke-width="2" />
+                    <text x="85" y="212" fill="#3a8c5d" font-family="Lora, serif" font-size="10" font-weight="700">TURN 1 - Assistant:</text>
+                    <text x="85" y="228" fill="#3a3a3a" font-family="Lora, serif" font-size="11">"That sounds frustrating. Can you tell me more?"</text>
 
                     <!-- Arrow to persona -->
-                    <path d="M 350 175 L 430 175 L 430 220 L 450 220" fill="none" stroke="#7a6a60" stroke-width="2" marker-end="url(#arrowhead)" />
+                    <path d="M 350 215 L 430 215 L 430 260 L 450 260" fill="none" stroke="#7a6a60" stroke-width="2" marker-end="url(#arrowhead)" />
 
-                    <!-- Turn 2: Persona responds -->
-                    <rect x="450" y="210" width="300" height="90" rx="6" fill="#e8d8f0" stroke="#7c5295" stroke-width="2" />
-                    <text x="465" y="232" fill="#6c4285" font-family="Lora, serif" font-size="10" font-weight="700">TURN 2 - User (Persona):</text>
-                    <text x="465" y="250" fill="#3a3a3a" font-family="Lora, serif" font-size="10">[INTERNAL] They seem okay... but I've heard</text>
-                    <text x="465" y="264" fill="#3a3a3a" font-family="Lora, serif" font-size="10">that before. Let's see if they actually listen.</text>
-                    <text x="465" y="282" fill="#7c5295" font-family="monospace" font-size="9">[STATE] {"trusting": 3.2, "resistant": 4.8...}</text>
+                    <!-- Turn 1: Persona responds with internal/state/response -->
+                    <rect x="450" y="250" width="300" height="100" rx="6" fill="#e8d8f0" stroke="#7c5295" stroke-width="2" />
+                    <text x="465" y="272" fill="#6c4285" font-family="Lora, serif" font-size="10" font-weight="700">TURN 1 - User (Persona):</text>
+                    <text x="465" y="292" fill="#3a3a3a" font-family="Lora, serif" font-size="10">[INTERNAL] They seem interested... maybe I can</text>
+                    <text x="465" y="306" fill="#3a3a3a" font-family="Lora, serif" font-size="10">share a bit more.</text>
+                    <text x="465" y="324" fill="#7c5295" font-family="monospace" font-size="9">[STATE] {"trusting": 3.2, "resistant": 4.8...}</text>
+                    <text x="465" y="340" fill="#3a3a3a" font-family="Lora, serif" font-size="10">[RESPONSE] "Well, it started a few weeks ago..."</text>
 
-                    <!-- Arrow back -->
-                    <path d="M 450 285 L 370 285 L 370 320 L 350 320" fill="none" stroke="#7a6a60" stroke-width="2" marker-end="url(#arrowhead)" />
+                    <!-- Arrow back to assistant -->
+                    <path d="M 450 320 L 370 320 L 370 380 L 350 380" fill="none" stroke="#7a6a60" stroke-width="2" marker-end="url(#arrowhead)" />
 
-                    <!-- Turn 3: Evaluated responds -->
-                    <rect x="70" y="310" width="280" height="50" rx="6" fill="#d0f0d8" stroke="#4a9c6d" stroke-width="2" />
-                    <text x="85" y="332" fill="#3a8c5d" font-family="Lora, serif" font-size="10" font-weight="700">TURN 3 - Assistant:</text>
-                    <text x="85" y="348" fill="#3a3a3a" font-family="Lora, serif" font-size="11">"It sounds like work has been really draining..."</text>
+                    <!-- Turn 2: Assistant responds -->
+                    <rect x="70" y="370" width="280" height="50" rx="6" fill="#d0f0d8" stroke="#4a9c6d" stroke-width="2" />
+                    <text x="85" y="392" fill="#3a8c5d" font-family="Lora, serif" font-size="10" font-weight="700">TURN 2 - Assistant:</text>
+                    <text x="85" y="408" fill="#3a3a3a" font-family="Lora, serif" font-size="11">"It sounds like work has been really draining..."</text>
 
                     <!-- Dots indicating continuation -->
-                    <text x="400" y="385" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="14">. . . continues for 10 turns . . .</text>
+                    <text x="400" y="460" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="14">. . . continues for 8 turns each . . .</text>
                 </svg>
-                <div class="diagram-caption">Each persona turn includes internal reasoning, state update, and dialogue</div>
+                <div class="diagram-caption">The persona starts with their presenting issue, then each side takes 8 turns</div>
             </div>
 
             <h3>What the Persona Outputs Each Turn</h3>
@@ -1172,24 +1052,17 @@
                     <p>Updated values for all 20 emotional dimensions as JSON. This is how we track whether the conversation is helping or hurting.</p>
                 </div>
                 <div class="card">
-                    <div class="card-title">[DIALOGUE]</div>
+                    <div class="card-title">[RESPONSE]</div>
                     <p>What the persona actually says to the AI. This is the only part the evaluated model sees.</p>
                 </div>
-            </div>
-
-            <div class="info-box concept">
-                <div class="info-box-title">Perspective Flipping</div>
-                <p style="margin-bottom: 0;">
-                    A clever trick: when calling the persona simulator, the conversation roles are <em>flipped</em>. The persona model sees itself as the "assistant" responding to a "user" (the AI being evaluated). This lets a single model naturally play the persona role while reacting authentically to the evaluated model's responses.
-                </p>
             </div>
 
             <h3>Example: State Evolution Over a Conversation</h3>
 
             <div class="diagram-container">
-                <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
                     <!-- Axes -->
-                    <line x1="80" y1="250" x2="750" y2="250" stroke="#7a6a60" stroke-width="2" />
+                    <line x1="80" y1="250" x2="650" y2="250" stroke="#7a6a60" stroke-width="2" />
                     <line x1="80" y1="250" x2="80" y2="50" stroke="#7a6a60" stroke-width="2" />
 
                     <!-- Y-axis labels -->
@@ -1209,29 +1082,28 @@
                     <text x="480" y="270" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">6</text>
                     <text x="550" y="270" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">7</text>
                     <text x="620" y="270" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">8</text>
-                    <text x="690" y="270" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="10">9</text>
-                    <text x="415" y="295" text-anchor="middle" fill="#5c4033" font-family="Merriweather, serif" font-size="11">Conversation Turn</text>
+                    <text x="375" y="295" text-anchor="middle" fill="#5c4033" font-family="Merriweather, serif" font-size="11">Conversation Turn</text>
 
                     <!-- Trust line (increasing) - green -->
-                    <polyline points="130,190 200,185 270,175 340,160 410,145 480,130 550,115 620,105 690,95"
+                    <polyline points="130,190 200,180 270,165 340,150 410,135 480,120 550,105 620,95"
                               fill="none" stroke="#4a9c6d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                    <circle cx="690" cy="95" r="5" fill="#4a9c6d" />
-                    <text x="720" y="100" fill="#4a9c6d" font-family="Lora, serif" font-size="10">Trust</text>
+                    <circle cx="620" cy="95" r="5" fill="#4a9c6d" />
+                    <text x="655" y="100" fill="#4a9c6d" font-family="Lora, serif" font-size="10">Trust</text>
 
                     <!-- Resistant line (decreasing) - red -->
-                    <polyline points="130,150 200,155 270,160 340,170 410,180 480,190 550,200 620,210 690,215"
+                    <polyline points="130,150 200,160 270,170 340,180 410,190 480,200 550,210 620,215"
                               fill="none" stroke="#c75050" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                    <circle cx="690" cy="215" r="5" fill="#c75050" />
-                    <text x="720" y="220" fill="#c75050" font-family="Lora, serif" font-size="10">Resistant</text>
+                    <circle cx="620" cy="215" r="5" fill="#c75050" />
+                    <text x="655" y="220" fill="#c75050" font-family="Lora, serif" font-size="10">Resistant</text>
 
                     <!-- Progress line (increasing from 0) - purple -->
-                    <polyline points="130,250 200,250 270,245 340,235 410,220 480,200 550,180 620,160 690,140"
+                    <polyline points="130,250 200,248 270,240 340,225 410,205 480,180 550,155 620,135"
                               fill="none" stroke="#7c5295" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8,4" />
-                    <circle cx="690" cy="140" r="5" fill="#7c5295" />
-                    <text x="720" y="145" fill="#7c5295" font-family="Lora, serif" font-size="10">Progress</text>
+                    <circle cx="620" cy="135" r="5" fill="#7c5295" />
+                    <text x="655" y="140" fill="#7c5295" font-family="Lora, serif" font-size="10">Progress</text>
 
                     <!-- Title -->
-                    <text x="400" y="35" text-anchor="middle" fill="#5c4033" font-family="Merriweather, serif" font-size="14" font-weight="700">Example: Good Conversation State Evolution</text>
+                    <text x="365" y="35" text-anchor="middle" fill="#5c4033" font-family="Merriweather, serif" font-size="14" font-weight="700">Example: Good Conversation State Evolution</text>
                 </svg>
                 <div class="diagram-caption">In a successful conversation, trust and progress rise while resistance falls</div>
             </div>
@@ -1308,79 +1180,86 @@
                 Beyond the debrief, the entire conversation transcript is evaluated by judge models across <strong>25 EQ dimensions</strong>. This provides a detailed assessment of the AI's emotional intelligence capabilities.
             </p>
 
-            <h3>Positive Dimensions <span class="badge badge-positive">12 dimensions</span></h3>
+            <div class="info-box concept">
+                <div class="info-box-title">Helpful vs. Unhelpful Dimensions</div>
+                <p style="margin-bottom: 0;">
+                    As with persona state, dimensions are labeled based on whether higher scores indicate better performance for the evaluated model's task: supporting the persona, building trust, learning about them, and helping them make progress.
+                </p>
+            </div>
+
+            <h3>Helpful Dimensions <span class="badge badge-helpful">11 dimensions</span></h3>
             <p>Higher scores indicate better performance:</p>
 
             <div class="grid-4">
-                <div class="dimension-card positive">
-                    <div class="dimension-name">Warmth</div>
-                </div>
-                <div class="dimension-card positive">
+                <div class="dimension-card helpful">
                     <div class="dimension-name">Rapport</div>
                 </div>
-                <div class="dimension-card positive">
+                <div class="dimension-card helpful">
                     <div class="dimension-name">Authenticity</div>
                 </div>
-                <div class="dimension-card positive">
+                <div class="dimension-card helpful">
                     <div class="dimension-name">Trust Building</div>
                 </div>
-                <div class="dimension-card positive">
+                <div class="dimension-card helpful">
                     <div class="dimension-name">Character Insight</div>
                 </div>
-                <div class="dimension-card positive">
+                <div class="dimension-card helpful">
                     <div class="dimension-name">Issue Insight</div>
                 </div>
-                <div class="dimension-card positive">
+                <div class="dimension-card helpful">
                     <div class="dimension-name">Emotional Support</div>
                 </div>
-                <div class="dimension-card positive">
+                <div class="dimension-card helpful">
                     <div class="dimension-name">Adaptiveness</div>
                 </div>
-                <div class="dimension-card positive">
+                <div class="dimension-card helpful">
                     <div class="dimension-name">Facilitation</div>
                 </div>
-                <div class="dimension-card positive">
+                <div class="dimension-card helpful">
                     <div class="dimension-name">Theory of Mind</div>
                 </div>
-                <div class="dimension-card positive">
+                <div class="dimension-card helpful">
                     <div class="dimension-name">Analytical Intelligence</div>
                 </div>
-                <div class="dimension-card positive">
+                <div class="dimension-card helpful">
                     <div class="dimension-name">Social Agility</div>
                 </div>
             </div>
 
-            <h3>Negative Dimensions <span class="badge badge-negative">7 dimensions</span></h3>
+            <h3>Unhelpful Dimensions <span class="badge badge-unhelpful">7 dimensions</span></h3>
             <p>Lower scores indicate better performance (these are inverted in final scoring):</p>
 
             <div class="grid-4">
-                <div class="dimension-card negative">
+                <div class="dimension-card unhelpful">
                     <div class="dimension-name">Manipulative</div>
                 </div>
-                <div class="dimension-card negative">
+                <div class="dimension-card unhelpful">
                     <div class="dimension-name">Inauthentic</div>
                 </div>
-                <div class="dimension-card negative">
+                <div class="dimension-card unhelpful">
                     <div class="dimension-name">Premature Advice</div>
                 </div>
-                <div class="dimension-card negative">
+                <div class="dimension-card unhelpful">
                     <div class="dimension-name">Generic Responses</div>
                 </div>
-                <div class="dimension-card negative">
+                <div class="dimension-card unhelpful">
                     <div class="dimension-name">Missed Subtext</div>
                 </div>
-                <div class="dimension-card negative">
+                <div class="dimension-card unhelpful">
                     <div class="dimension-name">Missed Opportunities</div>
                 </div>
-                <div class="dimension-card negative">
+                <div class="dimension-card unhelpful">
                     <div class="dimension-name">Made Things Worse</div>
                 </div>
             </div>
 
-            <h3>Neutral Dimensions <span class="badge badge-neutral">5 dimensions</span></h3>
+            <h3>Neutral Dimensions <span class="badge badge-neutral">6 dimensions</span></h3>
             <p>These are tracked but not scored&mdash;context determines whether they're appropriate:</p>
 
             <div class="grid-4">
+                <div class="dimension-card neutral">
+                    <div class="dimension-name">Warmth</div>
+                </div>
                 <div class="dimension-card neutral">
                     <div class="dimension-name">Passive</div>
                 </div>
@@ -1401,7 +1280,7 @@
             <div class="info-box example">
                 <div class="info-box-title">Ensemble Judging</div>
                 <p style="margin-bottom: 0;">
-                    Multiple judge models evaluate each conversation, and their scores are averaged. This reduces individual judge bias and produces more reliable assessments. The ensemble can run in "split" mode (round-robin assignment) or "stack" mode (fixed assignment per conversation).
+                    Multiple judge models evaluate each conversation, and their scores are averaged. This reduces individual judge bias and produces more reliable assessments.
                 </p>
             </div>
         </section>
@@ -1465,99 +1344,6 @@
                 <span class="weight">0.25</span> <span class="operator">×</span> <span class="component">Debrief</span>
             </div>
 
-            <h3>Component Calculations</h3>
-
-            <div class="expandable open">
-                <div class="expandable-header" onclick="toggleExpand(this)">
-                    <h4>User State Score (50% weight)</h4>
-                    <span class="expandable-icon">▼</span>
-                </div>
-                <div class="expandable-content">
-                    <p>Measures how much the persona's emotional state <em>improved</em> during the conversation:</p>
-                    <ol>
-                        <li><strong>Calculate deltas</strong> for each dimension (final - initial)</li>
-                        <li><strong>Flip sign</strong> for negative dimensions (so decrease = positive delta)</li>
-                        <li><strong>Apply weights</strong> (trust: 3x, safety: 3x, progress: 3x, etc.)</li>
-                        <li><strong>Compute weighted average</strong> of all deltas</li>
-                        <li><strong>Normalize</strong> to 0-10 scale (delta of -1 → 0, delta of +5 → 10)</li>
-                    </ol>
-                    <div class="info-box example">
-                        <div class="info-box-title">Example</div>
-                        <p style="margin-bottom: 0;">
-                            If trust went from 3.0 → 6.0 (+3.0) and resistant went from 5.0 → 3.0 (-2.0, but flipped = +2.0), these improvements contribute positively to the score.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="expandable">
-                <div class="expandable-header" onclick="toggleExpand(this)">
-                    <h4>EQ Rubric Score (25% weight)</h4>
-                    <span class="expandable-icon">▼</span>
-                </div>
-                <div class="expandable-content">
-                    <p>Average of judge scores across the 25 dimensions:</p>
-                    <ol>
-                        <li>Collect judge scores for all positive dimensions (0-10 each)</li>
-                        <li>Collect judge scores for negative dimensions and <strong>invert</strong> them (10 - score)</li>
-                        <li>Exclude neutral dimensions from averaging</li>
-                        <li>Average all scored dimensions</li>
-                    </ol>
-                </div>
-            </div>
-
-            <div class="expandable">
-                <div class="expandable-header" onclick="toggleExpand(this)">
-                    <h4>Debrief Score (25% weight)</h4>
-                    <span class="expandable-icon">▼</span>
-                </div>
-                <div class="expandable-content">
-                    <p>Average of the four debrief judgment dimensions:</p>
-                    <div class="formula-box" style="font-size: 0.95em;">
-                        <span class="component">Debrief</span>
-                        <span class="operator">=</span>
-                        <span class="operator">(</span>
-                        <span class="component">Personality</span>
-                        <span class="operator">+</span>
-                        <span class="component">Core Issue</span>
-                        <span class="operator">+</span>
-                        <span class="component">Attunement</span>
-                        <span class="operator">+</span>
-                        <span class="component">Overall</span>
-                        <span class="operator">)</span>
-                        <span class="operator">÷</span>
-                        <span class="weight">4</span>
-                    </div>
-                </div>
-            </div>
-
-            <h3>Fallback Scoring</h3>
-
-            <p>If some components are unavailable, the formula adjusts:</p>
-
-            <table class="styled-table">
-                <thead>
-                    <tr>
-                        <th>Situation</th>
-                        <th>Formula</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>No debrief available</td>
-                        <td>50% User State + 50% EQ Rubric</td>
-                    </tr>
-                    <tr>
-                        <td>No EQ rubric available</td>
-                        <td>50% User State + 50% Debrief</td>
-                    </tr>
-                    <tr>
-                        <td>No judges at all</td>
-                        <td>100% User State</td>
-                    </tr>
-                </tbody>
-            </table>
-
             <div class="info-box important">
                 <div class="info-box-title">Why This Weighting?</div>
                 <p style="margin-bottom: 0;">
@@ -1579,7 +1365,7 @@
                     <rect x="20" y="390" width="860" height="90" rx="10" fill="#d8f0d8" opacity="0.3" />
 
                     <!-- Section labels -->
-                    <text x="40" y="45" fill="#5c4033" font-family="Merriweather, serif" font-size="12" font-weight="700">1. GENERATION</text>
+                    <text x="40" y="45" fill="#5c4033" font-family="Merriweather, serif" font-size="12" font-weight="700">1. GENERATION (offline)</text>
                     <text x="40" y="155" fill="#6c4285" font-family="Merriweather, serif" font-size="12" font-weight="700">2. CONVERSATION</text>
                     <text x="40" y="305" fill="#4a7c7c" font-family="Merriweather, serif" font-size="12" font-weight="700">3. EVALUATION</text>
                     <text x="40" y="415" fill="#3a8c5d" font-family="Merriweather, serif" font-size="12" font-weight="700">4. SCORING</text>
@@ -1605,7 +1391,7 @@
 
                     <path d="M 200 215 C 280 215, 280 215, 360 215" fill="none" stroke="#7a6a60" stroke-width="2" marker-end="url(#arrowhead)" />
                     <path d="M 360 225 C 280 225, 280 225, 200 225" fill="none" stroke="#7a6a60" stroke-width="2" marker-end="url(#arrowhead)" />
-                    <text x="280" y="205" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="9">10 turns</text>
+                    <text x="280" y="205" text-anchor="middle" fill="#7a6a60" font-family="Lora, serif" font-size="9">8 turns each</text>
 
                     <rect x="360" y="175" width="150" height="80" rx="6" fill="#7c5295" />
                     <text x="435" y="205" text-anchor="middle" fill="white" font-family="Merriweather, serif" font-size="11" font-weight="700">Persona Sim</text>
@@ -1663,7 +1449,6 @@
             <p>Measuring emotional intelligence in AI through realistic, dynamic conversations.</p>
             <div class="footer-links">
                 <a href="https://eqbench.com" target="_blank">EQ-Bench Website</a>
-                <a href="https://github.com/EQ-bench/EQ-Bench" target="_blank">GitHub Repository</a>
                 <a href="personas_viewer.html">Meet the Personas</a>
             </div>
         </div>
@@ -1680,12 +1465,6 @@
             if (label) label.textContent = isDark ? 'Dark Mode' : 'Light Mode';
             if (toggle && toggle.checked !== isDark) toggle.checked = isDark;
             localStorage.setItem(STORAGE_KEY, isDark);
-        }
-
-        // Expandable sections
-        function toggleExpand(header) {
-            const expandable = header.parentElement;
-            expandable.classList.toggle('open');
         }
 
         // Initialize on load
