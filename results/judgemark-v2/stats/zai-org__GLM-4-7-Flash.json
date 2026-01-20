@@ -1,0 +1,1642 @@
+{
+    "judge_models": [
+        "z-ai/glm-4.7-flash"
+    ],
+    "judge_model_name_for_charts": "z-ai/glm-4.7-flash",
+    "ensemble_method": "average",
+    "book_club_mode": false,
+    "start_time": "2026-01-20T06:53:37.893428",
+    "status": "completed",
+    "samples_file": "data/judgemark_v3_samples_3_iter.json",
+    "prompts_file": "data/judge_prompts_v3_noref_nocot_noanchor_x96.json",
+    "scoring_range": {
+        "min": 0,
+        "max": 10
+    },
+    "errors": [
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "10",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "1",
+            "item_id": "17",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "2",
+            "item_id": "32",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "2",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "11",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "1",
+            "item_id": "21",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "28",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "2",
+            "item_id": "18",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "1",
+            "item_id": "8",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "1",
+            "item_id": "4",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "1",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "3",
+            "item_id": "8",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "25",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "1",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "3",
+            "item_id": "7",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "28",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "11",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "2",
+            "item_id": "11",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "2",
+            "item_id": "3",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "13",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "28",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "2",
+            "item_id": "22",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "17",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "10",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "12",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "10",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "1",
+            "item_id": "15",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "2",
+            "item_id": "19",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "1",
+            "item_id": "18",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "4",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "15",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "21",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "3",
+            "item_id": "3",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "3",
+            "item_id": "30",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "30",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "32",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "3",
+            "item_id": "16",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "22",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "11",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "8",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "2",
+            "item_id": "2",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "29",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "1",
+            "item_id": "31",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "24",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "3",
+            "item_id": "10",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "reka-flash-3",
+            "iteration": "3",
+            "item_id": "7",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "grok-3-beta",
+            "iteration": "2",
+            "item_id": "12",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gpt-4.1",
+            "iteration": "3",
+            "item_id": "26",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gpt-4.1",
+            "iteration": "3",
+            "item_id": "18",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-sonnet-4",
+            "iteration": "3",
+            "item_id": "14",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "glm-4-32b",
+            "iteration": "2",
+            "item_id": "11",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-opus-4",
+            "iteration": "1",
+            "item_id": "15",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-opus-4",
+            "iteration": "3",
+            "item_id": "4",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-opus-4",
+            "iteration": "3",
+            "item_id": "3",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-opus-4",
+            "iteration": "3",
+            "item_id": "18",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-opus-4",
+            "iteration": "3",
+            "item_id": "8",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-sonnet-4",
+            "iteration": "1",
+            "item_id": "19",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-opus-4",
+            "iteration": "3",
+            "item_id": "1",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-opus-4",
+            "iteration": "3",
+            "item_id": "31",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-opus-4",
+            "iteration": "3",
+            "item_id": "33",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemini-2.5-pro",
+            "iteration": "1",
+            "item_id": "8",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "mistral-small-3.2-24b",
+            "iteration": "1",
+            "item_id": "30",
+            "judge_model": "z-ai/glm-4.7-flash",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        }
+    ],
+    "end_time": "2026-01-20T14:49:43.611715",
+    "raw_score_distribution": {
+        "count": 1564,
+        "min": 3.01,
+        "max": 9.84,
+        "mean": 7.834,
+        "median": 7.99,
+        "stdev": 0.867,
+        "p10": 6.66,
+        "p25": 7.3,
+        "p75": 8.46,
+        "p90": 8.78
+    },
+    "calibration_config": {
+        "method": "piecewise_landmark",
+        "in_landmarks": [
+            3.01,
+            7.3,
+            7.99,
+            8.46,
+            9.84
+        ],
+        "out_landmarks": [
+            0,
+            3,
+            5,
+            7,
+            10
+        ]
+    },
+    "calibrated_score_distribution": {
+        "count": 1564,
+        "min": 0.0,
+        "max": 10.0,
+        "mean": 5.089,
+        "median": 5.0,
+        "stdev": 2.034,
+        "p10": 2.552,
+        "p25": 3.0,
+        "p75": 7.0,
+        "p90": 7.696
+    },
+    "raw_model_stats": {
+        "claude-3.5-sonnet": {
+            "count": 92,
+            "mean": 7.788913043478261,
+            "median": 7.93,
+            "stdev": 0.823896473441219,
+            "ci95": 0.16835840459522033,
+            "min": 3.01,
+            "max": 9.1,
+            "length_correlation": 0.49249959136002147,
+            "length_correlation_p": 6.141889180799969e-07
+        },
+        "gemma-3-27b-it": {
+            "count": 92,
+            "mean": 7.755434782608695,
+            "median": 7.83,
+            "stdev": 0.6651520739005765,
+            "ci95": 0.13591991904926226,
+            "min": 6.24,
+            "max": 8.99,
+            "length_correlation": -0.07974953874071952,
+            "length_correlation_p": 0.4498429913655095
+        },
+        "gemma-3-4b-it": {
+            "count": 92,
+            "mean": 7.213913043478261,
+            "median": 7.275,
+            "stdev": 0.6942209746084022,
+            "ci95": 0.1418599781516703,
+            "min": 4.44,
+            "max": 8.88,
+            "length_correlation": 0.14004242967035274,
+            "length_correlation_p": 0.1830423740915336
+        },
+        "gemma-3-12b-it": {
+            "count": 90,
+            "mean": 7.463222222222222,
+            "median": 7.41,
+            "stdev": 0.6669868987439931,
+            "ci95": 0.13780092094217705,
+            "min": 5.92,
+            "max": 9.05,
+            "length_correlation": -0.15501691200875395,
+            "length_correlation_p": 0.14459337256733157
+        },
+        "chatgpt-4o-latest": {
+            "count": 95,
+            "mean": 8.208105263157895,
+            "median": 8.25,
+            "stdev": 0.5723120238397749,
+            "ci95": 0.11508723043113973,
+            "min": 6.66,
+            "max": 9.52,
+            "length_correlation": 0.08041742015898216,
+            "length_correlation_p": 0.43852191213792846
+        },
+        "reka-flash-3": {
+            "count": 93,
+            "mean": 7.723440860215054,
+            "median": 7.72,
+            "stdev": 0.7091521186901512,
+            "ci95": 0.14412987229429508,
+            "min": 5.66,
+            "max": 8.89,
+            "length_correlation": 0.2746617216378886,
+            "length_correlation_p": 0.007713337634451816
+        },
+        "quasar-alpha": {
+            "count": 93,
+            "mean": 8.081935483870968,
+            "median": 8.15,
+            "stdev": 0.5353691494914599,
+            "ci95": 0.10880978158682492,
+            "min": 5.76,
+            "max": 9.15,
+            "length_correlation": 0.35785171362004936,
+            "length_correlation_p": 0.00042878577008501447
+        },
+        "grok-3-beta": {
+            "count": 91,
+            "mean": 7.842747252747253,
+            "median": 7.92,
+            "stdev": 0.5777890155758818,
+            "ci95": 0.1187147429151255,
+            "min": 6.06,
+            "max": 9.05,
+            "length_correlation": 0.042225183135285435,
+            "length_correlation_p": 0.6910639543882725
+        },
+        "gpt-4.1": {
+            "count": 92,
+            "mean": 8.163152173913044,
+            "median": 8.2,
+            "stdev": 0.537002116654977,
+            "ci95": 0.10973322806768702,
+            "min": 6.45,
+            "max": 9.42,
+            "length_correlation": -0.03116582846162999,
+            "length_correlation_p": 0.7680576098823992
+        },
+        "gpt-4.1-nano": {
+            "count": 90,
+            "mean": 6.550111111111111,
+            "median": 6.585,
+            "stdev": 0.668364588731825,
+            "ci95": 0.13808555464255942,
+            "min": 4.6,
+            "max": 8.2,
+            "length_correlation": 0.1739844468288185,
+            "length_correlation_p": 0.10100034802685155
+        },
+        "glm-4-32b": {
+            "count": 96,
+            "mean": 7.213125,
+            "median": 7.41,
+            "stdev": 1.0903831412567062,
+            "ci95": 0.21812205615064695,
+            "min": 3.36,
+            "max": 8.82,
+            "length_correlation": 0.0831754837105115,
+            "length_correlation_p": 0.42043205141856554
+        },
+        "qwen3-235b-a22b": {
+            "count": 93,
+            "mean": 8.113118279569893,
+            "median": 8.25,
+            "stdev": 0.6453697600308099,
+            "ci95": 0.13116658421277638,
+            "min": 5.55,
+            "max": 9.29,
+            "length_correlation": 0.4808079773631694,
+            "length_correlation_p": 1.0715422511189038e-06
+        },
+        "claude-sonnet-4": {
+            "count": 90,
+            "mean": 8.140444444444444,
+            "median": 8.25,
+            "stdev": 0.5694249239978109,
+            "ci95": 0.11764440813168849,
+            "min": 6.61,
+            "max": 9.05,
+            "length_correlation": -0.15850797992610652,
+            "length_correlation_p": 0.13565466301454182
+        },
+        "claude-opus-4": {
+            "count": 91,
+            "mean": 8.38043956043956,
+            "median": 8.46,
+            "stdev": 0.5761171024634799,
+            "ci95": 0.11837122524697222,
+            "min": 6.45,
+            "max": 9.36,
+            "length_correlation": 0.13746305631453412,
+            "length_correlation_p": 0.1938188633980078
+        },
+        "gemini-2.5-pro": {
+            "count": 92,
+            "mean": 8.535652173913043,
+            "median": 8.62,
+            "stdev": 0.44991160144644116,
+            "ci95": 0.09193679287402315,
+            "min": 6.98,
+            "max": 9.36,
+            "length_correlation": -0.02037456075823854,
+            "length_correlation_p": 0.8471360280551468
+        },
+        "mistral-small-3.2-24b": {
+            "count": 90,
+            "mean": 7.158444444444444,
+            "median": 7.220000000000001,
+            "stdev": 0.8042330579413177,
+            "ci95": 0.16615627120285306,
+            "min": 5.18,
+            "max": 8.73,
+            "length_correlation": -0.07316085198530582,
+            "length_correlation_p": 0.4931659901763668
+        },
+        "kimi-k2": {
+            "count": 92,
+            "mean": 8.813152173913043,
+            "median": 8.78,
+            "stdev": 0.5101560402267502,
+            "ci95": 0.10424739004944712,
+            "min": 6.82,
+            "max": 9.84,
+            "length_correlation": 0.1485274228954696,
+            "length_correlation_p": 0.15765655282766744
+        }
+    },
+    "calibrated_model_stats": {
+        "claude-3.5-sonnet": {
+            "count": 92,
+            "mean": 4.884202562911889,
+            "median": 4.826086956521739,
+            "stdev": 1.728452524876752,
+            "ci95": 0.35319912014114446,
+            "min": 0.0,
+            "max": 8.391304347826086,
+            "length_correlation": 0.2794811379081017,
+            "length_correlation_p": 0.0069752194097885195
+        },
+        "gemma-3-27b-it": {
+            "count": 92,
+            "mean": 4.745892701796051,
+            "median": 4.536231884057971,
+            "stdev": 1.679881829317247,
+            "ci95": 0.34327398381870844,
+            "min": 2.2587412587412588,
+            "max": 8.152173913043477,
+            "length_correlation": -0.10731247628228412,
+            "length_correlation_p": 0.3085945355099789
+        },
+        "gemma-3-4b-it": {
+            "count": 92,
+            "mean": 3.428162062367508,
+            "median": 2.9825174825174825,
+            "stdev": 1.1984522849791548,
+            "ci95": 0.24489668445823504,
+            "min": 1.0000000000000004,
+            "max": 7.91304347826087,
+            "length_correlation": 0.09104876285564234,
+            "length_correlation_p": 0.3880476709103418
+        },
+        "gemma-3-12b-it": {
+            "count": 90,
+            "mean": 3.9767986441899477,
+            "median": 3.3188405797101455,
+            "stdev": 1.5685654723756406,
+            "ci95": 0.32406898405125667,
+            "min": 2.034965034965035,
+            "max": 8.282608695652174,
+            "length_correlation": -0.14463977171324743,
+            "length_correlation_p": 0.17378031738337352
+        },
+        "chatgpt-4o-latest": {
+            "count": 95,
+            "mean": 5.946348143636229,
+            "median": 6.106382978723402,
+            "stdev": 1.6795696780292397,
+            "ci95": 0.3377476175734199,
+            "min": 2.5524475524475525,
+            "max": 9.304347826086955,
+            "length_correlation": 0.06147380528402822,
+            "length_correlation_p": 0.5539840710019155
+        },
+        "reka-flash-3": {
+            "count": 93,
+            "mean": 4.679052630829658,
+            "median": 4.217391304347825,
+            "stdev": 1.803052410515397,
+            "ci95": 0.36645693754325703,
+            "min": 1.8531468531468533,
+            "max": 7.934782608695652,
+            "length_correlation": 0.24608629494650924,
+            "length_correlation_p": 0.017418026266072726
+        },
+        "quasar-alpha": {
+            "count": 93,
+            "mean": 5.54967236749338,
+            "median": 5.680851063829786,
+            "stdev": 1.5503813918968101,
+            "ci95": 0.3151034399139589,
+            "min": 1.923076923076923,
+            "max": 8.5,
+            "length_correlation": 0.37799056323045355,
+            "length_correlation_p": 0.00018734639600145406
+        },
+        "grok-3-beta": {
+            "count": 91,
+            "mean": 4.848290860921614,
+            "median": 4.797101449275361,
+            "stdev": 1.643332549460316,
+            "ci95": 0.3376453962850009,
+            "min": 2.1328671328671325,
+            "max": 8.282608695652174,
+            "length_correlation": 0.053693533727795964,
+            "length_correlation_p": 0.6132161846315219
+        },
+        "gpt-4.1": {
+            "count": 92,
+            "mean": 5.807094509614316,
+            "median": 5.89361702127659,
+            "stdev": 1.5747720165666654,
+            "ci95": 0.32179541102171877,
+            "min": 2.405594405594406,
+            "max": 9.086956521739129,
+            "length_correlation": -0.048438755584358645,
+            "length_correlation_p": 0.6465752311306042
+        },
+        "gpt-4.1-nano": {
+            "count": 90,
+            "mean": 2.5555387121529582,
+            "median": 2.5,
+            "stdev": 0.698546603309748,
+            "ci95": 0.14432122345788406,
+            "min": 1.1118881118881117,
+            "max": 5.89361702127659,
+            "length_correlation": 0.10917155390949121,
+            "length_correlation_p": 0.30570291954020445
+        },
+        "glm-4-32b": {
+            "count": 96,
+            "mean": 3.9099587007195695,
+            "median": 3.3188405797101455,
+            "stdev": 1.9197834102263192,
+            "ci95": 0.38403666469003217,
+            "min": 0.24475524475524485,
+            "max": 7.782608695652173,
+            "length_correlation": 0.1497790854881505,
+            "length_correlation_p": 0.14524464245038485
+        },
+        "qwen3-235b-a22b": {
+            "count": 93,
+            "mean": 5.761961959538873,
+            "median": 6.106382978723402,
+            "stdev": 1.7166732405618863,
+            "ci95": 0.34890101631540776,
+            "min": 1.7762237762237763,
+            "max": 8.804347826086953,
+            "length_correlation": 0.41299348724292506,
+            "length_correlation_p": 3.886522401173112e-05
+        },
+        "claude-sonnet-4": {
+            "count": 90,
+            "mean": 5.79182086286619,
+            "median": 6.106382978723402,
+            "stdev": 1.685370267305409,
+            "ci95": 0.3482011047002444,
+            "min": 2.517482517482518,
+            "max": 8.282608695652174,
+            "length_correlation": -0.18005857416252571,
+            "length_correlation_p": 0.08946668380663148
+        },
+        "claude-opus-4": {
+            "count": 91,
+            "mean": 6.460512601087566,
+            "median": 7.0,
+            "stdev": 1.6589886166395953,
+            "ci95": 0.3408621517790416,
+            "min": 2.405594405594406,
+            "max": 8.956521739130434,
+            "length_correlation": 0.15301330584056186,
+            "length_correlation_p": 0.1476120585042628
+        },
+        "gemini-2.5-pro": {
+            "count": 92,
+            "mean": 6.925690429239879,
+            "median": 7.347826086956519,
+            "stdev": 1.3457571399907085,
+            "ci95": 0.27499756627812155,
+            "min": 2.7762237762237767,
+            "max": 8.956521739130434,
+            "length_correlation": -0.014618888142620648,
+            "length_correlation_p": 0.8899957007520859
+        },
+        "mistral-small-3.2-24b": {
+            "count": 90,
+            "mean": 3.5099385778849235,
+            "median": 2.944055944055944,
+            "stdev": 1.4735493474022463,
+            "ci95": 0.30443844925312674,
+            "min": 1.5174825174825175,
+            "max": 7.58695652173913,
+            "length_correlation": -0.12812370216202384,
+            "length_correlation_p": 0.22879651326872172
+        },
+        "kimi-k2": {
+            "count": 92,
+            "mean": 7.657985562748664,
+            "median": 7.695652173913041,
+            "stdev": 1.3299529240707506,
+            "ci95": 0.2717680675923837,
+            "min": 2.6643356643356646,
+            "max": 10.0,
+            "length_correlation": 0.16106603018334328,
+            "length_correlation_p": 0.1250785514513302
+        }
+    },
+    "length_correlation": {
+        "raw": {
+            "pearson_corr": 0.11139298675378403,
+            "pearson_p": 0.29600767767563696
+        },
+        "calibrated": {
+            "pearson_corr": 0.08662384662176133,
+            "pearson_p": 0.2729832080963078
+        }
+    },
+    "raw_cross_model_stats": {
+        "anova_f": 67.0123486571361,
+        "anova_p": 8.719789348061517e-164,
+        "kw_stat": 645.565961407741,
+        "kw_p": 4.859237249418475e-127,
+        "std_dev_across_models": 0.5564537015443045,
+        "pearson_r": 0.662289099627083,
+        "kendall_tau": 0.5555555555555555,
+        "normalized_components": {
+            "pearson_r": 0.9314347265946965,
+            "kendall_tau": 0.6759259259259258,
+            "anova_f": 0.19146385330610316,
+            "kw_stat": 0.45463830117311754,
+            "std_dev": 0.21402065444011711,
+            "ci99_overlap_magnitude_sum_norm": 0.9275584777032616,
+            "ci99_overlap_magnitude_pct_norm": 0.9429854714787986,
+            "raw_score_range_norm": 0.2263041062801932,
+            "kendall_tau_bootstrapped": 0.4997712418300651
+        }
+    },
+    "calibrated_cross_model_stats": {
+        "anova_f": 67.09425353907166,
+        "anova_p": 5.9519272120525e-164,
+        "kw_stat": 645.565961407741,
+        "kw_p": 4.859237249418475e-127,
+        "std_dev_across_models": 1.3048921172805341,
+        "pearson_r": 0.6721488933089687,
+        "kendall_tau": 0.5470085470085468,
+        "normalized_components": {
+            "pearson_r": 0.9493616241981249,
+            "kendall_tau": 0.6616809116809114,
+            "anova_f": 0.19169786725449045,
+            "kw_stat": 0.45463830117311754,
+            "std_dev": 0.5018815835694361,
+            "ci99_overlap_magnitude_sum_norm": 0.8734095857104328,
+            "ci99_overlap_magnitude_pct_norm": 0.9347338413604467,
+            "calibrated_score_range_norm": 0.5102446850595705,
+            "kendall_tau_bootstrapped": 0.619583333333333
+        }
+    },
+    "separability_metrics": {
+        "raw": {
+            "ci99_overlap_adjacent": {
+                "kimi-k2__gemini-2.5-pro": false,
+                "gemini-2.5-pro__claude-opus-4": false,
+                "claude-opus-4__chatgpt-4o-latest": false,
+                "chatgpt-4o-latest__gpt-4.1": true,
+                "gpt-4.1__claude-sonnet-4": true,
+                "claude-sonnet-4__qwen3-235b-a22b": true,
+                "qwen3-235b-a22b__quasar-alpha": true,
+                "quasar-alpha__grok-3-beta": false,
+                "grok-3-beta__claude-3.5-sonnet": true,
+                "claude-3.5-sonnet__gemma-3-27b-it": true,
+                "gemma-3-27b-it__reka-flash-3": true,
+                "reka-flash-3__gemma-3-12b-it": false,
+                "gemma-3-12b-it__gemma-3-4b-it": false,
+                "gemma-3-4b-it__glm-4-32b": true,
+                "glm-4-32b__mistral-small-3.2-24b": true,
+                "mistral-small-3.2-24b__gpt-4.1-nano": false
+            },
+            "adjacent_overlap_fraction": 0.5625,
+            "ci99_overlap_magnitude_adjacent": {
+                "kimi-k2__gemini-2.5-pro": 0.0,
+                "gemini-2.5-pro__claude-opus-4": 0.0,
+                "claude-opus-4__chatgpt-4o-latest": 0.0,
+                "chatgpt-4o-latest__gpt-4.1": 0.07393029332121337,
+                "gpt-4.1__claude-sonnet-4": 0.09752786960344295,
+                "claude-sonnet-4__qwen3-235b-a22b": 0.10424323315549344,
+                "qwen3-235b-a22b__quasar-alpha": 0.09571491767050588,
+                "quasar-alpha__grok-3-beta": 0.0,
+                "grok-3-beta__claude-3.5-sonnet": 0.09796793119366054,
+                "claude-3.5-sonnet__gemma-3-27b-it": 0.12742184847958704,
+                "gemma-3-27b-it__reka-flash-3": 0.11609431968249684,
+                "reka-flash-3__gemma-3-12b-it": 0.0,
+                "gemma-3-12b-it__gemma-3-4b-it": 0.0,
+                "gemma-3-4b-it__glm-4-32b": 0.15002899794821545,
+                "glm-4-32b__mistral-small-3.2-24b": 0.148522959407706,
+                "mistral-small-3.2-24b__gpt-4.1-nano": 0.0
+            },
+            "ci99_overlap_magnitude_sum": 1.0114523704623215,
+            "ci99_overlap_scale_factor": 1.0,
+            "ci99_overlap_percentage_adjacent": {
+                "kimi-k2__gemini-2.5-pro": 0.0,
+                "gemini-2.5-pro__claude-opus-4": 0.0,
+                "claude-opus-4__chatgpt-4o-latest": 0.0,
+                "chatgpt-4o-latest__gpt-4.1": 0.6222252755450449,
+                "gpt-4.1__claude-sonnet-4": 0.8121228403931501,
+                "claude-sonnet-4__qwen3-235b-a22b": 0.7946531739831308,
+                "qwen3-235b-a22b__quasar-alpha": 0.7608720642103761,
+                "quasar-alpha__grok-3-beta": 0.0,
+                "grok-3-beta__claude-3.5-sonnet": 0.6652604947664067,
+                "claude-3.5-sonnet__gemma-3-27b-it": 0.8010353673170791,
+                "gemma-3-27b-it__reka-flash-3": 0.7846279954361737,
+                "reka-flash-3__gemma-3-12b-it": 0.0,
+                "gemma-3-12b-it__gemma-3-4b-it": 0.0,
+                "gemma-3-4b-it__glm-4-32b": 0.8251848544231918,
+                "glm-4-32b__mistral-small-3.2-24b": 0.7445225392780979,
+                "mistral-small-3.2-24b__gpt-4.1-nano": 0.0
+            },
+            "ci99_overlap_percentage_adjacent_avg": 0.42565653783454066,
+            "average_cohens_d_adjacent": 0.2273593633881119,
+            "cohens_d_norm": 0.5683984084702798,
+            "emd": {
+                "average": 0.6734522980650647,
+                "pairs": {
+                    "claude-3.5-sonnet__gemma-3-27b-it": 0.13413043478260867,
+                    "claude-3.5-sonnet__gemma-3-4b-it": 0.6095652173913044,
+                    "claude-3.5-sonnet__gemma-3-12b-it": 0.4050917874396135,
+                    "claude-3.5-sonnet__chatgpt-4o-latest": 0.41919221967963405,
+                    "claude-3.5-sonnet__reka-flash-3": 0.1731346423562412,
+                    "claude-3.5-sonnet__quasar-alpha": 0.29305750350631143,
+                    "claude-3.5-sonnet__grok-3-beta": 0.13053511705685616,
+                    "claude-3.5-sonnet__gpt-4.1": 0.37423913043478263,
+                    "claude-3.5-sonnet__gpt-4.1-nano": 1.273367149758454,
+                    "claude-3.5-sonnet__glm-4-32b": 0.5858514492753624,
+                    "claude-3.5-sonnet__qwen3-235b-a22b": 0.32420523609163154,
+                    "claude-3.5-sonnet__claude-sonnet-4": 0.35261835748792275,
+                    "claude-3.5-sonnet__claude-opus-4": 0.5915265169612995,
+                    "claude-3.5-sonnet__gemini-2.5-pro": 0.7467391304347826,
+                    "claude-3.5-sonnet__mistral-small-3.2-24b": 0.6776425120772946,
+                    "claude-3.5-sonnet__kimi-k2": 1.0242391304347827,
+                    "gemma-3-27b-it__gemma-3-4b-it": 0.5415217391304349,
+                    "gemma-3-27b-it__gemma-3-12b-it": 0.3011256038647343,
+                    "gemma-3-27b-it__chatgpt-4o-latest": 0.4526704805491991,
+                    "gemma-3-27b-it__reka-flash-3": 0.10162926601215522,
+                    "gemma-3-27b-it__quasar-alpha": 0.33682328190743344,
+                    "gemma-3-27b-it__grok-3-beta": 0.10136168179646435,
+                    "gemma-3-27b-it__gpt-4.1": 0.40771739130434786,
+                    "gemma-3-27b-it__gpt-4.1-nano": 1.2053236714975846,
+                    "gemma-3-27b-it__glm-4-32b": 0.5553170289855073,
+                    "gemma-3-27b-it__qwen3-235b-a22b": 0.3737985039738194,
+                    "gemma-3-27b-it__claude-sonnet-4": 0.3850096618357488,
+                    "gemma-3-27b-it__claude-opus-4": 0.6250047778308647,
+                    "gemma-3-27b-it__gemini-2.5-pro": 0.7802173913043478,
+                    "gemma-3-27b-it__mistral-small-3.2-24b": 0.5969903381642512,
+                    "gemma-3-27b-it__kimi-k2": 1.0577173913043478,
+                    "gemma-3-4b-it__gemma-3-12b-it": 0.24930917874396136,
+                    "gemma-3-4b-it__chatgpt-4o-latest": 0.994192219679634,
+                    "gemma-3-4b-it__reka-flash-3": 0.5108555399719494,
+                    "gemma-3-4b-it__quasar-alpha": 0.8680224403927069,
+                    "gemma-3-4b-it__grok-3-beta": 0.6288342092689918,
+                    "gemma-3-4b-it__gpt-4.1": 0.9492391304347826,
+                    "gemma-3-4b-it__gpt-4.1-nano": 0.667280193236715,
+                    "gemma-3-4b-it__glm-4-32b": 0.3751539855072465,
+                    "gemma-3-4b-it__qwen3-235b-a22b": 0.8992052360916315,
+                    "gemma-3-4b-it__claude-sonnet-4": 0.9265314009661836,
+                    "gemma-3-4b-it__claude-opus-4": 1.1665265169612997,
+                    "gemma-3-4b-it__gemini-2.5-pro": 1.3217391304347825,
+                    "gemma-3-4b-it__mistral-small-3.2-24b": 0.17141062801932372,
+                    "gemma-3-4b-it__kimi-k2": 1.5992391304347826,
+                    "gemma-3-12b-it__chatgpt-4o-latest": 0.7448830409356725,
+                    "gemma-3-12b-it__reka-flash-3": 0.27229749103942646,
+                    "gemma-3-12b-it__quasar-alpha": 0.6221541218637994,
+                    "gemma-3-12b-it__grok-3-beta": 0.3795396825396825,
+                    "gemma-3-12b-it__gpt-4.1": 0.6999299516908213,
+                    "gemma-3-12b-it__gpt-4.1-nano": 0.9131111111111112,
+                    "gemma-3-12b-it__glm-4-32b": 0.34341666666666676,
+                    "gemma-3-12b-it__qwen3-235b-a22b": 0.6578530465949819,
+                    "gemma-3-12b-it__claude-sonnet-4": 0.6772222222222223,
+                    "gemma-3-12b-it__claude-opus-4": 0.9172173382173382,
+                    "gemma-3-12b-it__gemini-2.5-pro": 1.0724299516908213,
+                    "gemma-3-12b-it__mistral-small-3.2-24b": 0.3052222222222223,
+                    "gemma-3-12b-it__kimi-k2": 1.3499299516908212,
+                    "chatgpt-4o-latest__reka-flash-3": 0.48466440294284113,
+                    "chatgpt-4o-latest__quasar-alpha": 0.16249801924165252,
+                    "chatgpt-4o-latest__grok-3-beta": 0.3653580104106421,
+                    "chatgpt-4o-latest__gpt-4.1": 0.06826887871853554,
+                    "chatgpt-4o-latest__gpt-4.1-nano": 1.6579941520467836,
+                    "chatgpt-4o-latest__glm-4-32b": 0.9949802631578948,
+                    "chatgpt-4o-latest__qwen3-235b-a22b": 0.10347368421052655,
+                    "chatgpt-4o-latest__claude-sonnet-4": 0.0829005847953217,
+                    "chatgpt-4o-latest__claude-opus-4": 0.18610873337189116,
+                    "chatgpt-4o-latest__gemini-2.5-pro": 0.3365148741418763,
+                    "chatgpt-4o-latest__mistral-small-3.2-24b": 1.0496608187134504,
+                    "chatgpt-4o-latest__kimi-k2": 0.6050469107551487,
+                    "reka-flash-3__quasar-alpha": 0.358494623655914,
+                    "reka-flash-3__grok-3-beta": 0.1535613848517074,
+                    "reka-flash-3__gpt-4.1": 0.43971131369798977,
+                    "reka-flash-3__gpt-4.1-nano": 1.1733297491039427,
+                    "reka-flash-3__glm-4-32b": 0.5121303763440859,
+                    "reka-flash-3__qwen3-235b-a22b": 0.3920430107526881,
+                    "reka-flash-3__claude-sonnet-4": 0.41700358422939077,
+                    "reka-flash-3__claude-opus-4": 0.6569987002245067,
+                    "reka-flash-3__gemini-2.5-pro": 0.8122113136979898,
+                    "reka-flash-3__mistral-small-3.2-24b": 0.5649964157706093,
+                    "reka-flash-3__kimi-k2": 1.08971131369799,
+                    "quasar-alpha__grok-3-beta": 0.24610776320453748,
+                    "quasar-alpha__gpt-4.1": 0.10163744740532957,
+                    "quasar-alpha__gpt-4.1-nano": 1.5318243727598568,
+                    "quasar-alpha__glm-4-32b": 0.8688104838709678,
+                    "quasar-alpha__qwen3-235b-a22b": 0.12580645161290308,
+                    "quasar-alpha__claude-sonnet-4": 0.12744086021505371,
+                    "quasar-alpha__claude-opus-4": 0.3021079995273543,
+                    "quasar-alpha__gemini-2.5-pro": 0.4537166900420757,
+                    "quasar-alpha__mistral-small-3.2-24b": 0.9234910394265234,
+                    "quasar-alpha__kimi-k2": 0.7312166900420757,
+                    "grok-3-beta__gpt-4.1": 0.3229849498327759,
+                    "grok-3-beta__gpt-4.1-nano": 1.2926361416361418,
+                    "grok-3-beta__glm-4-32b": 0.6343337912087912,
+                    "grok-3-beta__qwen3-235b-a22b": 0.30837409901926016,
+                    "grok-3-beta__claude-sonnet-4": 0.29824664224664227,
+                    "grok-3-beta__claude-opus-4": 0.5414285714285714,
+                    "grok-3-beta__gemini-2.5-pro": 0.6929049211657907,
+                    "grok-3-beta__mistral-small-3.2-24b": 0.6843028083028082,
+                    "grok-3-beta__kimi-k2": 0.9704049211657908,
+                    "gpt-4.1__gpt-4.1-nano": 1.6130410628019325,
+                    "gpt-4.1__glm-4-32b": 0.9500271739130435,
+                    "gpt-4.1__qwen3-235b-a22b": 0.08738078541374483,
+                    "gpt-4.1__claude-sonnet-4": 0.08111835748792284,
+                    "gpt-4.1__claude-opus-4": 0.2198411371237458,
+                    "gpt-4.1__gemini-2.5-pro": 0.37380434782608696,
+                    "gpt-4.1__mistral-small-3.2-24b": 1.004707729468599,
+                    "gpt-4.1__kimi-k2": 0.65,
+                    "gpt-4.1-nano__glm-4-32b": 0.7122361111111111,
+                    "gpt-4.1-nano__qwen3-235b-a22b": 1.5630071684587814,
+                    "gpt-4.1-nano__claude-sonnet-4": 1.5903333333333334,
+                    "gpt-4.1-nano__claude-opus-4": 1.8303284493284493,
+                    "gpt-4.1-nano__gemini-2.5-pro": 1.9855410628019325,
+                    "gpt-4.1-nano__mistral-small-3.2-24b": 0.6096666666666666,
+                    "gpt-4.1-nano__kimi-k2": 2.2630410628019324,
+                    "glm-4-32b__qwen3-235b-a22b": 0.8999932795698924,
+                    "glm-4-32b__claude-sonnet-4": 0.9273194444444444,
+                    "glm-4-32b__claude-opus-4": 1.1673145604395605,
+                    "glm-4-32b__gemini-2.5-pro": 1.3225271739130435,
+                    "glm-4-32b__mistral-small-3.2-24b": 0.2540972222222223,
+                    "glm-4-32b__kimi-k2": 1.6000271739130436,
+                    "qwen3-235b-a22b__claude-sonnet-4": 0.06427240143369166,
+                    "qwen3-235b-a22b__claude-opus-4": 0.26751979203592113,
+                    "qwen3-235b-a22b__gemini-2.5-pro": 0.4225338943431511,
+                    "qwen3-235b-a22b__mistral-small-3.2-24b": 0.9546738351254478,
+                    "qwen3-235b-a22b__kimi-k2": 0.7000338943431511,
+                    "claude-sonnet-4__claude-opus-4": 0.24679609279609277,
+                    "claude-sonnet-4__gemini-2.5-pro": 0.39520772946859906,
+                    "claude-sonnet-4__mistral-small-3.2-24b": 0.982,
+                    "claude-sonnet-4__kimi-k2": 0.672707729468599,
+                    "claude-opus-4__gemini-2.5-pro": 0.16526516961299573,
+                    "claude-opus-4__mistral-small-3.2-24b": 1.221995115995116,
+                    "claude-opus-4__kimi-k2": 0.4327126134734831,
+                    "gemini-2.5-pro__mistral-small-3.2-24b": 1.3772077294685992,
+                    "gemini-2.5-pro__kimi-k2": 0.28097826086956523,
+                    "mistral-small-3.2-24b__kimi-k2": 1.654707729468599
+                }
+            },
+            "average_ci95": 0.1333026094437864,
+            "modulated_ci95": 0.8260691300314099
+        },
+        "calibrated": {
+            "ci99_overlap_adjacent": {
+                "kimi-k2__gemini-2.5-pro": false,
+                "gemini-2.5-pro__claude-opus-4": false,
+                "claude-opus-4__chatgpt-4o-latest": false,
+                "chatgpt-4o-latest__gpt-4.1": true,
+                "gpt-4.1__claude-sonnet-4": true,
+                "claude-sonnet-4__qwen3-235b-a22b": true,
+                "qwen3-235b-a22b__quasar-alpha": true,
+                "quasar-alpha__claude-3.5-sonnet": false,
+                "claude-3.5-sonnet__grok-3-beta": true,
+                "grok-3-beta__gemma-3-27b-it": true,
+                "gemma-3-27b-it__reka-flash-3": true,
+                "reka-flash-3__gemma-3-12b-it": false,
+                "gemma-3-12b-it__glm-4-32b": true,
+                "glm-4-32b__mistral-small-3.2-24b": false,
+                "mistral-small-3.2-24b__gemma-3-4b-it": true,
+                "gemma-3-4b-it__gpt-4.1-nano": false
+            },
+            "adjacent_overlap_fraction": 0.5625,
+            "ci99_overlap_magnitude_adjacent": {
+                "kimi-k2__gemini-2.5-pro": 0.0,
+                "gemini-2.5-pro__claude-opus-4": 0.0,
+                "claude-opus-4__chatgpt-4o-latest": 0.0,
+                "chatgpt-4o-latest__gpt-4.1": 0.20950780304128092,
+                "gpt-4.1__claude-sonnet-4": 0.33901551638388483,
+                "claude-sonnet-4__qwen3-235b-a22b": 0.338763501829602,
+                "qwen3-235b-a22b__quasar-alpha": 0.13883101469368153,
+                "quasar-alpha__claude-3.5-sonnet": 0.0,
+                "claude-3.5-sonnet__grok-3-beta": 0.3294017285060251,
+                "grok-3-beta__gemma-3-27b-it": 0.257666933268772,
+                "gemma-3-27b-it__reka-flash-3": 0.30846034967428704,
+                "reka-flash-3__gemma-3-12b-it": 0.0,
+                "gemma-3-12b-it__glm-4-32b": 0.307601045123822,
+                "glm-4-32b__mistral-small-3.2-24b": 0.0,
+                "mistral-small-3.2-24b__gemma-3-4b-it": 0.20870780825834512,
+                "gemma-3-4b-it__gpt-4.1-nano": 0.0
+            },
+            "ci99_overlap_magnitude_sum": 2.4379557007797006,
+            "ci99_overlap_scale_factor": 1.0,
+            "ci99_overlap_percentage_adjacent": {
+                "kimi-k2__gemini-2.5-pro": 0.0,
+                "gemini-2.5-pro__claude-opus-4": 0.0,
+                "claude-opus-4__chatgpt-4o-latest": 0.0,
+                "chatgpt-4o-latest__gpt-4.1": 0.6010711460558811,
+                "gpt-4.1__claude-sonnet-4": 0.9583779503853149,
+                "claude-sonnet-4__qwen3-235b-a22b": 0.9189996011917501,
+                "qwen3-235b-a22b__quasar-alpha": 0.3964211320584359,
+                "quasar-alpha__claude-3.5-sonnet": 0.0,
+                "claude-3.5-sonnet__grok-3-beta": 0.9021534768917552,
+                "grok-3-beta__gemma-3-27b-it": 0.7156609905705515,
+                "gemma-3-27b-it__reka-flash-3": 0.82278036620956,
+                "reka-flash-3__gemma-3-12b-it": 0.0,
+                "gemma-3-12b-it__glm-4-32b": 0.8274283426354481,
+                "glm-4-32b__mistral-small-3.2-24b": 0.0,
+                "mistral-small-3.2-24b__gemma-3-4b-it": 0.7270233362060867,
+                "gemma-3-4b-it__gpt-4.1-nano": 0.0
+            },
+            "ci99_overlap_percentage_adjacent_avg": 0.429369771387799,
+            "average_cohens_d_adjacent": 0.22411973990947054,
+            "cohens_d_norm": 0.5602993497736763,
+            "emd": {
+                "average": 1.589041146217093,
+                "pairs": {
+                    "claude-3.5-sonnet__gemma-3-27b-it": 0.2211471193140742,
+                    "claude-3.5-sonnet__gemma-3-4b-it": 1.4802119812376011,
+                    "claude-3.5-sonnet__gemma-3-12b-it": 0.9630857919841547,
+                    "claude-3.5-sonnet__chatgpt-4o-latest": 1.0621455807243396,
+                    "claude-3.5-sonnet__reka-flash-3": 0.335622908049483,
+                    "claude-3.5-sonnet__quasar-alpha": 0.6655460287415011,
+                    "claude-3.5-sonnet__grok-3-beta": 0.20917413872345342,
+                    "claude-3.5-sonnet__gpt-4.1": 0.9228919467024279,
+                    "claude-3.5-sonnet__gpt-4.1-nano": 2.3528353314521504,
+                    "claude-3.5-sonnet__glm-4-32b": 0.9835251842099362,
+                    "claude-3.5-sonnet__qwen3-235b-a22b": 0.877759396626984,
+                    "claude-3.5-sonnet__claude-sonnet-4": 0.9099812489146034,
+                    "claude-3.5-sonnet__claude-opus-4": 1.5763100381756767,
+                    "claude-3.5-sonnet__gemini-2.5-pro": 2.04148786632799,
+                    "claude-3.5-sonnet__mistral-small-3.2-24b": 1.4072527354070203,
+                    "claude-3.5-sonnet__kimi-k2": 2.7737829998367745,
+                    "gemma-3-27b-it__gemma-3-4b-it": 1.3177306394285433,
+                    "gemma-3-27b-it__gemma-3-12b-it": 0.7798932667985072,
+                    "gemma-3-27b-it__chatgpt-4o-latest": 1.2004554418401774,
+                    "gemma-3-27b-it__reka-flash-3": 0.199906210020183,
+                    "gemma-3-27b-it__quasar-alpha": 0.8109982535610784,
+                    "gemma-3-27b-it__grok-3-beta": 0.14724617992332734,
+                    "gemma-3-27b-it__gpt-4.1": 1.0612018078182657,
+                    "gemma-3-27b-it__gpt-4.1-nano": 2.1903539896430932,
+                    "gemma-3-27b-it__glm-4-32b": 0.8642106236347675,
+                    "gemma-3-27b-it__qwen3-235b-a22b": 1.0273384934159846,
+                    "gemma-3-27b-it__claude-sonnet-4": 1.0459281610701385,
+                    "gemma-3-27b-it__claude-opus-4": 1.7146198992915145,
+                    "gemma-3-27b-it__gemini-2.5-pro": 2.1797977274438276,
+                    "gemma-3-27b-it__mistral-small-3.2-24b": 1.2359541239111278,
+                    "gemma-3-27b-it__kimi-k2": 2.912092860952612,
+                    "gemma-3-4b-it__gemma-3-12b-it": 0.5486365818224399,
+                    "gemma-3-4b-it__chatgpt-4o-latest": 2.5181860812687202,
+                    "gemma-3-4b-it__reka-flash-3": 1.2537769233211866,
+                    "gemma-3-4b-it__quasar-alpha": 2.1215103051258724,
+                    "gemma-3-4b-it__grok-3-beta": 1.420128798554107,
+                    "gemma-3-4b-it__gpt-4.1": 2.3789324472468087,
+                    "gemma-3-4b-it__gpt-4.1-nano": 0.875055700472987,
+                    "gemma-3-4b-it__glm-4-32b": 0.7485934049125336,
+                    "gemma-3-4b-it__qwen3-235b-a22b": 2.3337998971713647,
+                    "gemma-3-4b-it__claude-sonnet-4": 2.363658800498682,
+                    "gemma-3-4b-it__claude-opus-4": 3.032350538720058,
+                    "gemma-3-4b-it__gemini-2.5-pro": 3.4975283668723707,
+                    "gemma-3-4b-it__mistral-small-3.2-24b": 0.2869258715174332,
+                    "gemma-3-4b-it__kimi-k2": 4.229823500381155,
+                    "gemma-3-12b-it__chatgpt-4o-latest": 1.9695494994462808,
+                    "gemma-3-12b-it__reka-flash-3": 0.7188401743338924,
+                    "gemma-3-12b-it__quasar-alpha": 1.5752799192580156,
+                    "gemma-3-12b-it__grok-3-beta": 0.8715240689374322,
+                    "gemma-3-12b-it__gpt-4.1": 1.830295865424369,
+                    "gemma-3-12b-it__gpt-4.1-nano": 1.4212599320369896,
+                    "gemma-3-12b-it__glm-4-32b": 0.3742674797022625,
+                    "gemma-3-12b-it__qwen3-235b-a22b": 1.7907276434938983,
+                    "gemma-3-12b-it__claude-sonnet-4": 1.8150222186762417,
+                    "gemma-3-12b-it__claude-opus-4": 2.483713956897618,
+                    "gemma-3-12b-it__gemini-2.5-pro": 2.9488917850499305,
+                    "gemma-3-12b-it__mistral-small-3.2-24b": 0.4687513192601071,
+                    "gemma-3-12b-it__kimi-k2": 3.681186918558716,
+                    "chatgpt-4o-latest__reka-flash-3": 1.2672955128065702,
+                    "chatgpt-4o-latest__quasar-alpha": 0.4661746671372732,
+                    "chatgpt-4o-latest__grok-3-beta": 1.0980572827146138,
+                    "chatgpt-4o-latest__gpt-4.1": 0.1888871000816041,
+                    "chatgpt-4o-latest__gpt-4.1-nano": 3.3908094314832704,
+                    "chatgpt-4o-latest__glm-4-32b": 2.0363894429166587,
+                    "chatgpt-4o-latest__qwen3-235b-a22b": 0.22049980376767087,
+                    "chatgpt-4o-latest__claude-sonnet-4": 0.21307104156804738,
+                    "chatgpt-4o-latest__claude-opus-4": 0.5299785324803392,
+                    "chatgpt-4o-latest__gemini-2.5-pro": 0.9988378581834929,
+                    "chatgpt-4o-latest__mistral-small-3.2-24b": 2.436409565751305,
+                    "chatgpt-4o-latest__kimi-k2": 1.711637419112435,
+                    "reka-flash-3__quasar-alpha": 0.870619736663722,
+                    "reka-flash-3__grok-3-beta": 0.27831289532384207,
+                    "reka-flash-3__gpt-4.1": 1.1280418787846584,
+                    "reka-flash-3__gpt-4.1-nano": 2.1235139186767,
+                    "reka-flash-3__glm-4-32b": 0.7730385303905936,
+                    "reka-flash-3__qwen3-235b-a22b": 1.0845635884279905,
+                    "reka-flash-3__claude-sonnet-4": 1.1127682320365317,
+                    "reka-flash-3__claude-opus-4": 1.7814599702579075,
+                    "reka-flash-3__gemini-2.5-pro": 2.2466377984102204,
+                    "reka-flash-3__mistral-small-3.2-24b": 1.1691140529447348,
+                    "reka-flash-3__kimi-k2": 2.9789329319190054,
+                    "quasar-alpha__grok-3-beta": 0.7062900371033406,
+                    "quasar-alpha__gpt-4.1": 0.29029165825162695,
+                    "quasar-alpha__gpt-4.1-nano": 2.994133655340422,
+                    "quasar-alpha__glm-4-32b": 1.6397136667738108,
+                    "quasar-alpha__qwen3-235b-a22b": 0.33757960513354207,
+                    "quasar-alpha__claude-sonnet-4": 0.3716472445069023,
+                    "quasar-alpha__claude-opus-4": 0.9133604594394733,
+                    "quasar-alpha__gemini-2.5-pro": 1.3760180617464985,
+                    "quasar-alpha__mistral-small-3.2-24b": 2.039733789608457,
+                    "quasar-alpha__kimi-k2": 2.108313195255283,
+                    "grok-3-beta__gpt-4.1": 0.9606078645437406,
+                    "grok-3-beta__gpt-4.1-nano": 2.2927521487686566,
+                    "grok-3-beta__glm-4-32b": 0.9485746351184332,
+                    "grok-3-beta__qwen3-235b-a22b": 0.9402466735799297,
+                    "grok-3-beta__claude-sonnet-4": 0.943914233098037,
+                    "grok-3-beta__claude-opus-4": 1.6148345120094918,
+                    "grok-3-beta__gemini-2.5-pro": 2.0773995683182642,
+                    "grok-3-beta__mistral-small-3.2-24b": 1.3383522830366914,
+                    "grok-3-beta__kimi-k2": 2.8096947018270484,
+                    "gpt-4.1__gpt-4.1-nano": 3.251555797461358,
+                    "gpt-4.1__glm-4-32b": 1.8971358088947472,
+                    "gpt-4.1__qwen3-235b-a22b": 0.19658874553146805,
+                    "gpt-4.1__claude-sonnet-4": 0.22684926606818606,
+                    "gpt-4.1__claude-opus-4": 0.6571273384571796,
+                    "gpt-4.1__gemini-2.5-pro": 1.1214314583779248,
+                    "gpt-4.1__mistral-small-3.2-24b": 2.2971559317293933,
+                    "gpt-4.1__kimi-k2": 1.8508910531343465,
+                    "gpt-4.1-nano__glm-4-32b": 1.3888411229877458,
+                    "gpt-4.1-nano__qwen3-235b-a22b": 3.2064232473859144,
+                    "gpt-4.1-nano__claude-sonnet-4": 3.2362821507132313,
+                    "gpt-4.1-nano__claude-opus-4": 3.9049738889346073,
+                    "gpt-4.1-nano__gemini-2.5-pro": 4.37015171708692,
+                    "gpt-4.1-nano__mistral-small-3.2-24b": 0.9553322666643662,
+                    "gpt-4.1-nano__kimi-k2": 5.102446850595705,
+                    "glm-4-32b__qwen3-235b-a22b": 1.8520032588193034,
+                    "glm-4-32b__claude-sonnet-4": 1.88186216214662,
+                    "glm-4-32b__claude-opus-4": 2.550553900367996,
+                    "glm-4-32b__gemini-2.5-pro": 3.015731728520309,
+                    "glm-4-32b__mistral-small-3.2-24b": 0.5394723372868608,
+                    "glm-4-32b__kimi-k2": 3.7480268620290937,
+                    "qwen3-235b-a22b__claude-sonnet-4": 0.12211018457325612,
+                    "qwen3-235b-a22b__claude-opus-4": 0.6986894605460725,
+                    "qwen3-235b-a22b__gemini-2.5-pro": 1.1637284697010057,
+                    "qwen3-235b-a22b__mistral-small-3.2-24b": 2.2520233816539497,
+                    "qwen3-235b-a22b__kimi-k2": 1.8960236032097904,
+                    "claude-sonnet-4__claude-opus-4": 0.6734476660542268,
+                    "claude-sonnet-4__gemini-2.5-pro": 1.1338695663736889,
+                    "claude-sonnet-4__mistral-small-3.2-24b": 2.2818822849812666,
+                    "claude-sonnet-4__kimi-k2": 1.8661646998824737,
+                    "claude-opus-4__gemini-2.5-pro": 0.48703121106429703,
+                    "claude-opus-4__mistral-small-3.2-24b": 2.9505740232026425,
+                    "claude-opus-4__kimi-k2": 1.1974729616610977,
+                    "gemini-2.5-pro__mistral-small-3.2-24b": 3.415751851354955,
+                    "gemini-2.5-pro__kimi-k2": 0.734727483767222,
+                    "mistral-small-3.2-24b__kimi-k2": 4.14804698486374
+                }
+            },
+            "average_ci95": 0.3153949305219378,
+            "modulated_ci95": 0.3506210825289351
+        }
+    },
+    "iteration_stability": {
+        "raw": {
+            "scoring_stability": {
+                "claude-3.5-sonnet": {
+                    "mean_iter_score": 7.788354166666666,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.11507403388889675
+                },
+                "gemma-3-27b-it": {
+                    "mean_iter_score": 7.753298109010011,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.05287602895453445
+                },
+                "gemma-3-4b-it": {
+                    "mean_iter_score": 7.213362007168459,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.07358770948513697
+                },
+                "gemma-3-12b-it": {
+                    "mean_iter_score": 7.462137212643678,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.08050520720967823
+                },
+                "chatgpt-4o-latest": {
+                    "mean_iter_score": 8.208461021505377,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.09713788393636813
+                },
+                "reka-flash-3": {
+                    "mean_iter_score": 7.721919354838709,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.059530439460311654
+                },
+                "quasar-alpha": {
+                    "mean_iter_score": 8.081935483870968,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.027417457239839942
+                },
+                "grok-3-beta": {
+                    "mean_iter_score": 7.840734767025089,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.12992009199041035
+                },
+                "gpt-4.1": {
+                    "mean_iter_score": 8.161150815721172,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.05271184526546164
+                },
+                "gpt-4.1-nano": {
+                    "mean_iter_score": 6.546100234828822,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.14794431980499417
+                },
+                "glm-4-32b": {
+                    "mean_iter_score": 7.213125,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.028388809048050488
+                },
+                "qwen3-235b-a22b": {
+                    "mean_iter_score": 8.111340949820788,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.11590884234476649
+                },
+                "claude-sonnet-4": {
+                    "mean_iter_score": 8.13851766513057,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.040903700743509026
+                },
+                "claude-opus-4": {
+                    "mean_iter_score": 8.378193007662835,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.05546557371830258
+                },
+                "gemini-2.5-pro": {
+                    "mean_iter_score": 8.537214845198369,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.04243431740418607
+                },
+                "mistral-small-3.2-24b": {
+                    "mean_iter_score": 7.162819683908046,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.09369276572938538
+                },
+                "kimi-k2": {
+                    "mean_iter_score": 8.812777777777777,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.01588927738452815
+                }
+            },
+            "ranking_stability": {
+                "pairwise_correlation": {
+                    "1__vs__2": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8088235294117646,
+                        "p_value": 2.674946328840178e-07
+                    },
+                    "1__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8235294117647057,
+                        "p_value": 1.25716599654265e-07
+                    },
+                    "2__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8382352941176471,
+                        "p_value": 5.634316092440314e-08
+                    }
+                },
+                "average_kendall_tau": 0.8235294117647058
+            },
+            "randomized_average_kendall_tau_by_item": 0.8499313725490195
+        },
+        "calibrated": {
+            "scoring_stability": {
+                "claude-3.5-sonnet": {
+                    "mean_iter_score": 4.884942433089402,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.16807447402751147
+                },
+                "gemma-3-27b-it": {
+                    "mean_iter_score": 4.739382665942131,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.18833242198882452
+                },
+                "gemma-3-4b-it": {
+                    "mean_iter_score": 3.426427405332839,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.18871415150947343
+                },
+                "gemma-3-12b-it": {
+                    "mean_iter_score": 3.9722687992195187,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.21639998077724387
+                },
+                "chatgpt-4o-latest": {
+                    "mean_iter_score": 5.946888093382434,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.29939852601950145
+                },
+                "reka-flash-3": {
+                    "mean_iter_score": 4.67495830592696,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.1558354136982338
+                },
+                "quasar-alpha": {
+                    "mean_iter_score": 5.54967236749338,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.016302249352919667
+                },
+                "grok-3-beta": {
+                    "mean_iter_score": 4.8410352784692545,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.4669847849696919
+                },
+                "gpt-4.1": {
+                    "mean_iter_score": 5.801489159306495,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.14477272469967956
+                },
+                "gpt-4.1-nano": {
+                    "mean_iter_score": 2.551570563161405,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.14584318159403498
+                },
+                "glm-4-32b": {
+                    "mean_iter_score": 3.9099587007195695,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.18623025037739732
+                },
+                "qwen3-235b-a22b": {
+                    "mean_iter_score": 5.758037098067609,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.2880165356084329
+                },
+                "claude-sonnet-4": {
+                    "mean_iter_score": 5.7843201058040945,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.16163272726419176
+                },
+                "claude-opus-4": {
+                    "mean_iter_score": 6.455069129265772,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.13674598604702892
+                },
+                "gemini-2.5-pro": {
+                    "mean_iter_score": 6.931065777368704,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.14976574508710017
+                },
+                "mistral-small-3.2-24b": {
+                    "mean_iter_score": 3.5141999430961994,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.15596924796071557
+                },
+                "kimi-k2": {
+                    "mean_iter_score": 7.656938578903194,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.03497453680543209
+                }
+            },
+            "ranking_stability": {
+                "pairwise_correlation": {
+                    "1__vs__2": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8088235294117646,
+                        "p_value": 2.674946328840178e-07
+                    },
+                    "1__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8970588235294118,
+                        "p_value": 1.2313901628307946e-09
+                    },
+                    "2__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8235294117647057,
+                        "p_value": 1.25716599654265e-07
+                    }
+                },
+                "average_kendall_tau": 0.8431372549019607
+            },
+            "randomized_average_kendall_tau_by_item": 0.8478333333333332
+        }
+    },
+    "raw_score_range": 2.263041062801932,
+    "final_judgemark_score_elements_raw": {
+        "norm_stability_between_iterations": 0.4997712418300651,
+        "norm_correlation_with_lmsys_arena": 0.6759259259259258,
+        "norm_std_dev_between_models": 0.21402065444011711,
+        "norm_kruskall_wallis": 0.45463830117311754,
+        "norm_ci99_adjacent_overlap": 0.9429854714787986,
+        "norm_score_range": 0.2263041062801932,
+        "norm_intra_model_ci95": 0.8260691300314099,
+        "norm_earth_movers_distance": 0.16836307451626617
+    },
+    "final_judgemark_score_raw": 0.6618241188433038,
+    "calibrated_score_range": 5.1024468505957055,
+    "final_judgemark_score_elements_calibrated": {
+        "norm_stability_between_iterations": 0.619583333333333,
+        "norm_correlation_with_lmsys_arena": 0.6616809116809114,
+        "norm_std_dev_between_models": 0.5018815835694361,
+        "norm_kruskall_wallis": 0.45463830117311754,
+        "norm_ci99_adjacent_overlap": 0.9347338413604467,
+        "norm_score_range": 0.5102446850595705,
+        "norm_intra_model_ci95": 0.3506210825289351,
+        "norm_earth_movers_distance": 0.39726028655427326
+    },
+    "final_judgemark_score": 0.6766680883468955
+}
