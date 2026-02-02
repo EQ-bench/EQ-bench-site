@@ -62,20 +62,20 @@ grok-4.1-fast,49.1,3617,17.65,40.11,5.6,13.41,13.11,12.61,11.57,12.37,10.38,10.8
 minimax/minimax-m2,63.1,7294,33.28,67.83,6.2,14.28,13.96,14.45,14.25,13.87,14.19,13.95,12.20,13.46
 claude-opus-4-5-20251101,79.3,5856,23.66,20.22,4.6,15.98,15.99,16.05,16.32,16.49,16.29,16.51,16.20,16.29
 gpt-5.2,74.5,11746,22.84,41.76,7.6,15.72,15.93,16.15,16.16,16.06,15.60,15.82,16.14,14.97
-*mistralai/Mistral-Large-3-675B-Instruct-2512,56.1,6364,13.57,55.90,14.7,13.84,14.24,13.54,12.13,11.78,11.81,9.10,7.73,10.10
-*Nanbeige/Nanbeige4-3B-Thinking-2511,38.9,9251,15.33,46.70,10.4,10.94,10.77,9.35,10.36,9.72,8.79,8.80,8.93,5.95
-*mistralai/Ministral-3-14B-Instruct-2512,37.0,8065,11.53,53.85,21.9,11.59,11.75,9.31,8.13,6.54,5.92,6.11,5.20,6.93
-*nova-2-lite-v1,42.7,12000,40.29,72.45,11.7,9.90,9.38,9.77,9.15,8.86,8.11,7.61,7.37,8.34
-*deepseek-ai/DeepSeek-V3.2,72.6,6496,30.92,41.24,4.9,15.51,15.70,16.10,16.20,15.54,16.08,16.12,15.41,13.83
-*deepseek-ai/DeepSeek-V3.2-Speciale,57.8,9997,25.34,29.02,7.2,13.17,11.19,13.93,10.19,13.56,11.46,10.45,9.32,12.13
-*mistral-small-creative,42.7,5211,13.02,62.17,17.0,12.35,10.70,9.61,8.74,7.69,6.75,6.49,6.17,7.97
-*XiaomiMiMo/MiMo-V2-Flash,62.1,7614,25.07,55.79,6.3,14.73,15.24,14.34,14.35,13.49,12.97,9.89,12.61,11.99
-*gemini-3-flash-preview,65.5,6983,29.13,52.64,5.2,15.53,15.39,14.31,15.13,15.37,14.54,13.94,13.59,12.85
-*allenai/Olmo-3.1-32B-Think,57.1,4946,22.55,73.94,8.8,14.34,13.32,13.64,14.20,13.78,13.70,13.38,10.62,9.26
-*zai-org/GLM-4.7,71.6,6794,21.25,46.93,6.2,15.98,15.58,15.63,15.85,15.43,15.12,15.74,14.51,14.27
-*bytedance-seed-1.6,56.2,5024,47.11,47.84,8.3,13.04,14.62,13.65,14.36,12.58,13.65,13.41,10.31,7.94
+mistralai/Mistral-Large-3-675B-Instruct-2512,56.1,6364,13.57,55.90,14.7,13.84,14.24,13.54,12.13,11.78,11.81,9.10,7.73,10.10
+Nanbeige/Nanbeige4-3B-Thinking-2511,38.9,9251,15.33,46.70,10.4,10.94,10.77,9.35,10.36,9.72,8.79,8.80,8.93,5.95
+mistralai/Ministral-3-14B-Instruct-2512,37.0,8065,11.53,53.85,21.9,11.59,11.75,9.31,8.13,6.54,5.92,6.11,5.20,6.93
+nova-2-lite-v1,42.7,12000,40.29,72.45,11.7,9.90,9.38,9.77,9.15,8.86,8.11,7.61,7.37,8.34
+deepseek-ai/DeepSeek-V3.2,72.6,6496,30.92,41.24,4.9,15.51,15.70,16.10,16.20,15.54,16.08,16.12,15.41,13.83
+deepseek-ai/DeepSeek-V3.2-Speciale,57.8,9997,25.34,29.02,7.2,13.17,11.19,13.93,10.19,13.56,11.46,10.45,9.32,12.13
+mistral-small-creative,42.7,5211,13.02,62.17,17.0,12.35,10.70,9.61,8.74,7.69,6.75,6.49,6.17,7.97
+XiaomiMiMo/MiMo-V2-Flash,62.1,7614,25.07,55.79,6.3,14.73,15.24,14.34,14.35,13.49,12.97,9.89,12.61,11.99
+gemini-3-flash-preview,65.5,6983,29.13,52.64,5.2,15.53,15.39,14.31,15.13,15.37,14.54,13.94,13.59,12.85
+allenai/Olmo-3.1-32B-Think,57.1,4946,22.55,73.94,8.8,14.34,13.32,13.64,14.20,13.78,13.70,13.38,10.62,9.26
+zai-org/GLM-4.7,71.6,6794,21.25,46.93,6.2,15.98,15.58,15.63,15.85,15.43,15.12,15.74,14.51,14.27
+bytedance-seed-1.6,56.2,5024,47.11,47.84,8.3,13.04,14.62,13.65,14.36,12.58,13.65,13.41,10.31,7.94
 *zai-org/GLM-4.7-Flash,58.8,5378,23.13,48.86,6.5,13.09,13.85,14.78,14.18,14.44,13.73,12.94,11.82,8.57
-*MiniMaxAI/MiniMax-M2,69.0,9360,28.19,24.85,5.5,15.09,15.05,15.94,15.73,15.26,14.93,14.59,12.80,11.80
+*MiniMaxAI/MiniMax-M2.1,69.0,9360,28.19,24.85,5.5,15.09,15.05,15.94,15.73,15.26,14.93,14.59,12.80,11.80
 *minimax-m2-her,35.4,7042,29.05,60.78,20.5,8.56,8.05,6.44,6.71,5.49,6.74,5.22,5.20,5.62
 *solar-pro-3,32.9,15946,44.84,52.92,13.3,10.38,9.69,9.32,8.52,7.92,7.06,6.08,7.05,6.14
 *moonshotai/Kimi-K2.5,74.9,6315,19.66,17.28,4.8,16.39,16.34,16.22,16.34,15.86,16.36,16.29,14.62,15.35`
@@ -113,7 +113,7 @@ const slopData = `
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>claude-sonnet-4.5 (distance=0.730)</div>
-<div class='slop-similar'>MiniMaxAI/MiniMax-M2 (distance=0.769)</div>
+<div class='slop-similar'>MiniMaxAI/MiniMax-M2.1 (distance=0.769)</div>
 <div class='slop-similar'>Qwen/Qwen3-235B-A22B-Instruct-2507 (distance=0.807)</div>
 <div class='slop-similar'>claude-sonnet-4 (distance=0.811)</div>
 <div class='slop-similar'>claude-haiku-4.5 (distance=0.814)</div>
@@ -168,7 +168,7 @@ const slopData = `
 <div class='slop-similar-section'>
 <div class='slop-similar'>claude-opus-4-5-20251101 (distance=0.814)</div>
 <div class='slop-similar'>claude-sonnet-4.5 (distance=0.815)</div>
-<div class='slop-similar'>MiniMaxAI/MiniMax-M2 (distance=0.816)</div>
+<div class='slop-similar'>MiniMaxAI/MiniMax-M2.1 (distance=0.816)</div>
 <div class='slop-similar'>claude-sonnet-4 (distance=0.842)</div>
 <div class='slop-similar'>claude-3.5-sonnet (distance=0.848)</div>
 </div>
@@ -334,7 +334,7 @@ const slopData = `
 <div class='slop-similar'>claude-opus-4-5-20251101 (distance=0.811)</div>
 <div class='slop-similar'>claude-3.5-sonnet (distance=0.822)</div>
 <div class='slop-similar'>claude-opus-4.1 (distance=0.838)</div>
-<div class='slop-similar'>MiniMaxAI/MiniMax-M2 (distance=0.840)</div>
+<div class='slop-similar'>MiniMaxAI/MiniMax-M2.1 (distance=0.840)</div>
 </div>
 
 <h4>Top Repetitive Words</h4>
@@ -840,7 +840,7 @@ const slopData = `
 <span class='slop-ngram-item'>heart hammering ribs (14)</span> <span class='slop-ngram-item'>said voice low (14)</span> <span class='slop-ngram-item'>heart hammered ribs (12)</span> <span class='slop-ngram-item'>smile touched lips (12)</span> <span class='slop-ngram-item'>said voice tight (11)</span> <span class='slop-ngram-item'>silence stretched thick (10)</span> <span class='slop-ngram-item'>like physical blow (9)</span> <span class='slop-ngram-item'>knuckles white gripped (9)</span> <span class='slop-ngram-item'>something else something (9)</span> <span class='slop-ngram-item'>turned walked away (8)</span> <span class='slop-ngram-item'>felt like lead (7)</span> <span class='slop-ngram-item'>like lead weight (7)</span> <span class='slop-ngram-item'>sighed sound heavy (7)</span> <span class='slop-ngram-item'>took step closer (7)</span> <span class='slop-ngram-item'>took step forward (7)</span> <span class='slop-ngram-item'>door creaked open (7)</span> <span class='slop-ngram-item'>long dancing shadows (7)</span> <span class='slop-ngram-item'>hammered ribs frantic (6)</span> <span class='slop-ngram-item'>smile spread across (6)</span> <span class='slop-ngram-item'>spread across face (6)</span> <span class='slop-ngram-item'>voice low rough (6)</span> <span class='slop-ngram-item'>metallic tang blood (6)</span> <span class='slop-ngram-item'>one last time (6)</span> <span class='slop-ngram-item'>eyes locked onto (6)</span> <span class='slop-ngram-item'>eyes wide terrified (6)</span> <span class='slop-ngram-item'>tasted like ash (5)</span> <span class='slop-ngram-item'>fingers flew across (5)</span> <span class='slop-ngram-item'>scent damp earth (5)</span> <span class='slop-ngram-item'>ribs like trapped (5)</span> <span class='slop-ngram-item'>like trapped bird (5)</span>
 </div>
 
-##### MiniMaxAI/MiniMax-M2
+##### MiniMaxAI/MiniMax-M2.1
 <h4>Most Similar To:</h4>
 <div class='slop-similar-section'>
 <div class='slop-similar'>claude-opus-4-5-20251101 (distance=0.769)</div>
@@ -1644,7 +1644,7 @@ const slopData = `
 </div>
 <h4>Top Repetitive Phrases</h4>
 <div class='slop-section-items'>
-<span class='slop-word-item'>fingers tightened around (16)</span> <span class='slop-word-item'>breath came fast (14)</span> <span class='slop-word-item'>door creaked open (11)</span> <span class='slop-word-item'>fingers curled into fists (11)</span> <span class='slop-word-item'>blood ran cold (9)</span> <span class='slop-word-item'>air smelled like (8)</span> <span class='slop-word-item'>eyes locked onto (8)</span> <span class='slop-word-item'>first time in a long (8)</span> <span class='slop-word-item'>time in a long time (8)</span> <span class='slop-word-item'>took a deep breath (7)</span> <span class='slop-word-item'>air thick with the scent (7)</span> <span class='slop-word-item'>fingers twitched toward (7)</span> <span class='slop-word-item'>took a step forward (7)</span> <span class='slop-word-item'>door slammed shut (7)</span> <span class='slop-word-item'>studied him for a long moment (7)</span> <span class='slop-word-item'>door clicked shut (6)</span> <span class='slop-word-item'>Took you long enough (5)</span> <span class='slop-word-item'>blood turned to ice (5)</span> <span class='slop-word-item'>casting jagged shadows (5)</span> <span class='slop-word-item'>door burst open (5)</span> <span class='slop-word-item'>door swung open (5)</span> <span class='slop-word-item'>hands curled into fists (5)</span> <span class='slop-word-item'>fingers curled around (5)</span> <span class='slop-word-item'>pulse pounded in his ears (5)</span> <span class='slop-word-item'>studied me for a long moment (5)</span> <span class='slop-word-item'>reached into his pocket and pulled (5)</span> <span class='slop-word-item'>look like hell (4)</span> <span class='slop-word-item'>like a second skin (4)</span> <span class='slop-word-item'>pulse hammered in his throat (4)</span> <span class='slop-word-item'>floorboard creaked behind (4)</span>
+<span class='slop-word-item'>fingers tightened around (16)</span> <span class='slop-word-item'>breath came fast (14)</span> <span class='slop-word-item'>fingers curled into fists (11)</span> <span class='slop-word-item'>door creaked open (11)</span> <span class='slop-word-item'>blood ran cold (9)</span> <span class='slop-word-item'>eyes locked onto (8)</span> <span class='slop-word-item'>first time in a long (8)</span> <span class='slop-word-item'>time in a long time (8)</span> <span class='slop-word-item'>air smelled like (8)</span> <span class='slop-word-item'>air thick with the scent (7)</span> <span class='slop-word-item'>studied him for a long moment (7)</span> <span class='slop-word-item'>took a deep breath (7)</span> <span class='slop-word-item'>fingers twitched toward (7)</span> <span class='slop-word-item'>took a step forward (7)</span> <span class='slop-word-item'>door slammed shut (7)</span> <span class='slop-word-item'>door clicked shut (6)</span> <span class='slop-word-item'>casting jagged shadows (5)</span> <span class='slop-word-item'>blood turned to ice (5)</span> <span class='slop-word-item'>fingers curled around (5)</span> <span class='slop-word-item'>pulse pounded in his ears (5)</span> <span class='slop-word-item'>hands curled into fists (5)</span> <span class='slop-word-item'>door burst open (5)</span> <span class='slop-word-item'>studied me for a long moment (5)</span> <span class='slop-word-item'>reached into his pocket and pulled (5)</span> <span class='slop-word-item'>door swung open (5)</span> <span class='slop-word-item'>Took you long enough (5)</span> <span class='slop-word-item'>shadows across their face (4)</span> <span class='slop-word-item'>like a dying star (4)</span> <span class='slop-word-item'>casting long shadows (4)</span> <span class='slop-word-item'>took another bite (4)</span>
 </div>
 <h4>Top Bigrams</h4>
 <div class='slop-section-items'>
@@ -1975,7 +1975,7 @@ const slopData = `
 </div>
 <h4>Top Repetitive Phrases</h4>
 <div class='slop-section-items'>
-<span class='slop-word-item'>fingers tightened around (47)</span> <span class='slop-word-item'>something that looked like (47)</span> <span class='slop-word-item'>voice barely above a whisper (46)</span> <span class='slop-word-item'>first time, she wasn’t sure (45)</span> <span class='slop-word-item'>said, his voice low (28)</span> <span class='slop-word-item'>eyes were filled with something (28)</span> <span class='slop-word-item'>eyes filled with something (26)</span> <span class='slop-word-item'>said, her voice barely (24)</span> <span class='slop-word-item'>first time in years (21)</span> <span class='slop-word-item'>voice was quiet, almost (20)</span> <span class='slop-word-item'>said, her voice low (18)</span> <span class='slop-word-item'>door creaked open (18)</span> <span class='slop-word-item'>air was thick with the scent (18)</span> <span class='slop-word-item'>air thick with the scent (15)</span> <span class='slop-word-item'>casting long shadows (14)</span> <span class='slop-word-item'>said, her voice steady (13)</span> <span class='slop-word-item'>knew one thing (12)</span> <span class='slop-word-item'>door slammed shut (12)</span> <span class='slop-word-item'>stepped forward, her voice (12)</span> <span class='slop-word-item'>long shadows across (12)</span> <span class='slop-word-item'>eyes wide with something (12)</span> <span class='slop-word-item'>moment, she thought she saw (12)</span> <span class='slop-word-item'>knelt beside him, her hands (10)</span> <span class='slop-word-item'>like a second skin (10)</span> <span class='slop-word-item'>voice was low, almost (10)</span> <span class='slop-word-item'>hands clenched into fists (9)</span> <span class='slop-word-item'>lips parted, but no words (9)</span> <span class='slop-word-item'>voice barely a whisper (9)</span> <span class='slop-word-item'>voice was steady, but there was something (9)</span> <span class='slop-word-item'>said, his voice barely (8)</span>
+<span class='slop-word-item'>fingers tightened around (47)</span> <span class='slop-word-item'>something that looked like (47)</span> <span class='slop-word-item'>voice barely above a whisper (46)</span> <span class='slop-word-item'>first time, she wasn’t sure (45)</span> <span class='slop-word-item'>eyes were filled with something (28)</span> <span class='slop-word-item'>said, his voice low (28)</span> <span class='slop-word-item'>eyes filled with something (26)</span> <span class='slop-word-item'>said, her voice barely (24)</span> <span class='slop-word-item'>first time in years (21)</span> <span class='slop-word-item'>voice was quiet, almost (20)</span> <span class='slop-word-item'>door creaked open (18)</span> <span class='slop-word-item'>said, her voice low (18)</span> <span class='slop-word-item'>air was thick with the scent (18)</span> <span class='slop-word-item'>air thick with the scent (15)</span> <span class='slop-word-item'>casting long shadows (14)</span> <span class='slop-word-item'>said, her voice steady (13)</span> <span class='slop-word-item'>long shadows across (12)</span> <span class='slop-word-item'>knew one thing (12)</span> <span class='slop-word-item'>door slammed shut (12)</span> <span class='slop-word-item'>moment, she thought she saw (12)</span> <span class='slop-word-item'>stepped forward, her voice (12)</span> <span class='slop-word-item'>eyes wide with something (12)</span> <span class='slop-word-item'>voice was low, almost (10)</span> <span class='slop-word-item'>like a second skin (10)</span> <span class='slop-word-item'>knelt beside him, her hands (10)</span> <span class='slop-word-item'>voice was steady, but there was something (9)</span> <span class='slop-word-item'>hands clenched into fists (9)</span> <span class='slop-word-item'>voice barely a whisper (9)</span> <span class='slop-word-item'>lips parted, but no words (9)</span> <span class='slop-word-item'>eyes dark with something (8)</span>
 </div>
 <h4>Top Bigrams</h4>
 <div class='slop-section-items'>
@@ -2056,7 +2056,7 @@ const slopData = `
 </div>
 <h4>Top Repetitive Phrases</h4>
 <div class='slop-section-items'>
-<span class='slop-word-item'>took a deep breath (38)</span> <span class='slop-word-item'>voice barely above a whisper (36)</span> <span class='slop-word-item'>nodded, her mind racing (24)</span> <span class='slop-word-item'>weight of the decision pressing (24)</span> <span class='slop-word-item'>eyes locking onto (23)</span> <span class='slop-word-item'>casting long shadows (21)</span> <span class='slop-word-item'>air was thick with the scent (20)</span> <span class='slop-word-item'>eyes scanning the room (20)</span> <span class='slop-word-item'>ahead would be fraught (19)</span> <span class='slop-word-item'>leaned forward, her eyes (19)</span> <span class='slop-word-item'>ready to face whatever (18)</span> <span class='slop-word-item'>would be fraught with danger (17)</span> <span class='slop-word-item'>long shadows across (17)</span> <span class='slop-word-item'>said, his voice low (17)</span> <span class='slop-word-item'>studied her for a long moment (17)</span> <span class='slop-word-item'>keeping my voice low (17)</span> <span class='slop-word-item'>air grew colder (16)</span> <span class='slop-word-item'>need to be prepared for the possibility (16)</span> <span class='slop-word-item'>answer right away (16)</span> <span class='slop-word-item'>air was filled with the scent (15)</span> <span class='slop-word-item'>need to find a way (15)</span> <span class='slop-word-item'>voice steady but laced (15)</span> <span class='slop-word-item'>said, her voice low (15)</span> <span class='slop-word-item'>voice low and dangerous (15)</span> <span class='slop-word-item'>mind racing with possibilities (14)</span> <span class='slop-word-item'>voice steady despite (14)</span> <span class='slop-word-item'>made their way back (13)</span> <span class='slop-word-item'>voice low and urgent (13)</span> <span class='slop-word-item'>eyes locked onto (13)</span> <span class='slop-word-item'>said, his voice steady (13)</span>
+<span class='slop-word-item'>took a deep breath (38)</span> <span class='slop-word-item'>voice barely above a whisper (36)</span> <span class='slop-word-item'>nodded, her mind racing (24)</span> <span class='slop-word-item'>weight of the decision pressing (24)</span> <span class='slop-word-item'>eyes locking onto (23)</span> <span class='slop-word-item'>casting long shadows (21)</span> <span class='slop-word-item'>air was thick with the scent (20)</span> <span class='slop-word-item'>eyes scanning the room (20)</span> <span class='slop-word-item'>leaned forward, her eyes (19)</span> <span class='slop-word-item'>ahead would be fraught (19)</span> <span class='slop-word-item'>ready to face whatever (18)</span> <span class='slop-word-item'>would be fraught with danger (17)</span> <span class='slop-word-item'>long shadows across (17)</span> <span class='slop-word-item'>studied her for a long moment (17)</span> <span class='slop-word-item'>keeping my voice low (17)</span> <span class='slop-word-item'>said, his voice low (17)</span> <span class='slop-word-item'>answer right away (16)</span> <span class='slop-word-item'>air grew colder (16)</span> <span class='slop-word-item'>need to be prepared for the possibility (16)</span> <span class='slop-word-item'>said, her voice low (15)</span> <span class='slop-word-item'>voice low and dangerous (15)</span> <span class='slop-word-item'>air was filled with the scent (15)</span> <span class='slop-word-item'>voice steady but laced (15)</span> <span class='slop-word-item'>need to find a way (15)</span> <span class='slop-word-item'>mind racing with possibilities (14)</span> <span class='slop-word-item'>voice steady despite (14)</span> <span class='slop-word-item'>voice low and urgent (13)</span> <span class='slop-word-item'>eyes locked onto (13)</span> <span class='slop-word-item'>made their way back (13)</span> <span class='slop-word-item'>said, his voice steady (13)</span>
 </div>
 <h4>Top Bigrams</h4>
 <div class='slop-section-items'>
