@@ -516,7 +516,7 @@
 				</h4>
 				<div class="accordion-content" id="short-version-content">
 					<p>
-						<strong>EQ-Bench 3</strong> is an LLM-judged benchmark, using Claude Sonnet 3.7, that tests emotional intelligence (EQ) through challenging role-plays and analysis tasks. It measures empathy, social skills, and insight in scenarios like relationship conflicts and workplace dilemmas.
+						<strong>EQ-Bench 3</strong> is an LLM-judged benchmark, using Claude Opus 4.6, that tests emotional intelligence (EQ) through challenging role-plays and analysis tasks. It measures empathy, social skills, and insight in scenarios like relationship conflicts and workplace dilemmas.
 					</p>
 					<p>
 						<strong>Why?</strong> Standard EQ tests are too easy for LLMs, and existing benchmarks often miss nuanced social skills crucial for human-AI interaction. EQ-Bench 3 uses difficult, free-form role-plays to better discriminate between models.
@@ -540,7 +540,7 @@
 					<!-- ─────────────────────────  WHAT & WHY  ───────────────────────── -->
 					<h4>What is EQ-Bench 3?</h4>
 					<p class="intro-paragraph">
-						EQ-Bench 3 is a LLM-judged test judged by <strong>Claude Sonnet 3.7</strong>, evaluating active <strong>emotional intelligence</strong> abilities, understanding, insight, empathy, and interpersonal skills.
+						EQ-Bench 3 is a LLM-judged test judged by <strong>Claude Opus 4.6</strong>, evaluating active <strong>emotional intelligence</strong> abilities, understanding, insight, empathy, and interpersonal skills.
 					</p>
 					<p>
 						The test places the evaluated model into <strong>challenging role-plays</strong> involving messy relationship drama, parenting decisions, conflict mediation, and high stakes workplace situations. The model must:
@@ -625,7 +625,7 @@
 						<h4>What a higher score means in practice</h4>
 						<p>
 							The <strong>Elo score</strong> represents whether a model "wins" at having higher EQ than its neighbours, according to the judge.
-							To beat its neighbour, it has to score higher on several criteria (insight, social dexterity, etc), as evaluated by Sonnet 3.7. The full criteria assessed in the pairwise judgements are listed below.
+							To beat its neighbour, it has to score higher on several criteria (insight, social dexterity, etc), as evaluated by Claude Opus 4.6. The full criteria assessed in the pairwise judgements are listed below.
 						</p>
 						<p>
 							The resulting Elo score represents a <strong>holistic view</strong> on the model's abilities: empathy, analytical understanding, social dexterity, deep insight, pragmatism, etc. A model has to be strong across all these dimensions to be at the top of the leaderboard.
@@ -646,14 +646,14 @@
 							The test set also contains several analytical tasks, instructing the evaluated model to identify compelling aspects in a provided roleplay transcript and to "go deep" analysing them. These tasks test psychological insight, emotional reasoning, theory of mind and academic grounding.</li>
 
 						<li><b>Rubric pass.</b>
-							Sonnet 3.7 reads the full transcript + self-debrief and scores several criteria (e.g. Demonstrated Empathy, Depth of Insight, Boundary Setting).
+							The judge LLM reads the full transcript + self-debrief and scores several criteria (e.g. Demonstrated Empathy, Depth of Insight, Boundary Setting).
 							Only some of these criteria are aggregated into the “rubric score” (0-100); the rest are to give visibility on style & tendencies.
 							When running the benchmark, users may choose to run only the rubric evaluation, or only Elo, or both. The rubric eval is about 3x cheaper and provides *absolute scores*, but is *less discriminative* at the top ability range.
 							The rubric score is not shown on the leaderboard; it's available when running the benchmark.
 						</li>
 
 						<li><b>Pairwise pass.</b>
-							The roleplay transcripts are compared head-to-head and judged on several criteria by Sonnet 3.7.
+							The roleplay transcripts are compared head-to-head and judged on several criteria by the judge LLM.
 							The judge outputs a winner for eight criteria (see below for full list), using “+ … +++++” to denote the win margin.
 							Win margins are mapped to extra wins/losses to provide the Trueskill Elo solver more discriminate power per test item (since by default it only supports win/loss, not margins). Several rounds of matchups are conducted, moving from sparse to dense sampling, until ranks stabilise.</li>
 
@@ -787,7 +787,7 @@
 
 					<h4>Elo repeatability</h4>
 					<p>
-						To examine Elo repeatability, we ran several iterations of the full benchmark, evaluating gemini-2.5-flash-preview. The Elo matchups were against two anchor models, and also itself (the baseline). For this test, we used gemini-2.5-flash-preview as judge, for cost reasons. We expect sonnet 3.7, which is the judge used on the leaderboard, will have a tighter spread of values. If you have the budget for it, Elo scores & rankings can be stabilised further by simply running the benchmark with <code>--iterations n</code>.
+						To examine Elo repeatability, we ran several iterations of the full benchmark, evaluating gemini-2.5-flash-preview. The Elo matchups were against two anchor models, and also itself (the baseline). For this test, we used gemini-2.5-flash-preview as judge, for cost reasons. We expect Claude Opus 4.6, which is the judge used on the leaderboard, will have a tighter spread of values. If you have the budget for it, Elo scores & rankings can be stabilised further by simply running the benchmark with <code>--iterations n</code>.
 					</p>
 					<a href="images/eqbench3_elo_repeatability.png"
 					data-lightbox="eqbench3_elo_repeatability"
@@ -935,7 +935,7 @@
 					<!-- ─────────────────────────  LIMITATIONS  ───────────────────────── -->
 					<h4>Limitations</h4>
 					<p>
-						EQ‑Bench 3 is a <strong>subjective evaluation</strong> judged by a LLM (Sonnet 3.7).
+						EQ‑Bench 3 is a <strong>subjective evaluation</strong> judged by a LLM (Claude Opus 4.6).
 						As such, the results should be considered roughly indicative but not absolute truth.
 						The sample transcripts are provided so you can make your own judgements.
 						Several test items target typical LLM failure modes, like over-cautiousness from safety training. This may cause some models to be penalised more than others.
