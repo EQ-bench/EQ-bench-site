@@ -12056,7 +12056,7 @@ Overall Impression: 14 <br><i>Scores: Adherence to Instructions: 13.0, Believabl
                 'source_sans': "'Source Sans 3', sans-serif",
                 'open_sans': "'Open Sans', sans-serif",
                 'fira_sans': "'Fira Sans', sans-serif",
-                'besley': "'Besley', 'Merriweather', serif" // Primarily a heading font
+                'besley': "'Besley', 'Merriweather', serif"
             };
             
             // Font definitions with URLs for dynamic loading
@@ -12148,7 +12148,7 @@ Overall Impression: 14 <br><i>Scores: Adherence to Instructions: 13.0, Believabl
 
             const THEME_DEFAULT_FONTS = {
                 'cozy': 'tiempos',
-                'modern': 'inter' // Default body font for modern
+                'modern': 'inter'
             };
             const THEME_DEFAULT_HEAD_FONTS = {
                  'cozy': "'Lora', serif",
@@ -12231,7 +12231,7 @@ Overall Impression: 14 <br><i>Scores: Adherence to Instructions: 13.0, Believabl
                 if (darkModeToggle.checked !== isDark) {
                     darkModeToggle.checked = isDark;
                 }
-                saveSettings('DARK_MODE', isDark); // Use the shared key
+                saveSettings('DARK_MODE', isDark);
             }
 
 
@@ -12242,12 +12242,12 @@ Overall Impression: 14 <br><i>Scores: Adherence to Instructions: 13.0, Believabl
                 if (themeSelector.value !== themeName) {
                     themeSelector.value = themeName;
                 }
-                saveSettings('THEME', themeName); // Use the shared key
+                saveSettings('THEME', themeName);
                 
                 // Re-apply font based on theme's default or user's saved preference
                 const savedFont = localStorage.getItem(KEYS.FONT);
                 const defaultFont = THEME_DEFAULT_FONTS[themeName] || 'tiempos';
-                applyFont(savedFont || defaultFont); // Apply saved or new default
+                applyFont(savedFont || defaultFont);
             }
 
             // --- Font Selection ---
@@ -12265,9 +12265,9 @@ Overall Impression: 14 <br><i>Scores: Adherence to Instructions: 13.0, Believabl
 
                     // Determine appropriate heading font based on selected body font and theme
                     if (currentTheme === 'modern') {
-                        headingFontFamily = THEME_DEFAULT_HEAD_FONTS['modern']; // Default to Besley for modern
-                    } else { // Cozy theme
-                        headingFontFamily = THEME_DEFAULT_HEAD_FONTS['cozy']; // Default to Lora for cozy
+                        headingFontFamily = THEME_DEFAULT_HEAD_FONTS['modern'];
+                    } else { 
+                        headingFontFamily = THEME_DEFAULT_HEAD_FONTS['cozy'];
                     }
                     
                     // Special case: If Besley is explicitly selected, use it for heading regardless of theme
@@ -12283,7 +12283,6 @@ Overall Impression: 14 <br><i>Scores: Adherence to Instructions: 13.0, Believabl
                         fontSelector.value = fontValue;
                     }
                     
-                    // Save with the shared key
                     saveSettings('FONT', fontValue);
                 } else {
                     console.warn("Font value not found in FONT_MAP:", fontValue);
@@ -12294,7 +12293,6 @@ Overall Impression: 14 <br><i>Scores: Adherence to Instructions: 13.0, Believabl
             }
 
             // --- Event Listeners ---
-            // Dark mode toggled by clicking the label (which triggers the hidden checkbox)
             darkModeToggle.addEventListener('change', function() {
                 setDarkMode(this.checked);
             });
@@ -12309,24 +12307,19 @@ Overall Impression: 14 <br><i>Scores: Adherence to Instructions: 13.0, Believabl
 
             // --- Initial Settings Application ---
             async function applyInitialSettings() {
-                // 1. Dark Mode - use shared key
                 const savedDarkMode = localStorage.getItem(KEYS.DARK_MODE);
                 const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
                 setDarkMode(savedDarkMode !== null ? (savedDarkMode === 'true') : prefersDark);
 
-                // 2. Theme - use shared key
                 const savedTheme = localStorage.getItem(KEYS.THEME) || 'cozy';
                 applyTheme(savedTheme);
 
-                // 3. Font - use shared key
                 const savedFont = localStorage.getItem(KEYS.FONT) || THEME_DEFAULT_FONTS[savedTheme];
                 await applyFont(savedFont);
                 
-                // 4. Font Selector (Ensure it matches the applied font)
                 fontSelector.value = savedFont || THEME_DEFAULT_FONTS[savedTheme];
             }
 
-            // Apply settings on load
             applyInitialSettings();
 
             // Optional: Listen for system theme changes ONLY if no preference is saved
