@@ -150,9 +150,12 @@
     body.dark-mode.longform-creative-writing-page .container a,
     body.dark-mode.longform-creative-writing-page .container span,
     body.dark-mode.longform-creative-writing-page .container li,
-    body.dark-mode.longform-creative-writing-page .container .alert,
     body.dark-mode.longform-creative-writing-page .container .dataTables_info {
       text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+    }
+    body.dark-mode.longform-creative-writing-page .container .alert,
+    body.dark-mode.longform-creative-writing-page .container .alert * {
+      text-shadow: none;
     }
 
     .score-text {
@@ -429,11 +432,13 @@
             <li>Write a short story/novella over 8x 1000 word turns</li>
           </ol>
 
+          <!-- 2026-02-19 Update Summary --> <div class="alert alert-primary border rounded-3 p-3 mb-4"> <div class="d-flex align-items-center justify-content-between"> <h5 class="mb-0">v1.11 2026-02-19 Updates</h5> <span class="badge bg-secondary">Benchmark change log</span> </div> <ul class="mb-0"> <li><b>Judge upgraded:</b> Evaluation now uses Claude Sonnet 4.6 (replacing Sonnet 4).</li> </ul> </div>
+
           <!-- 2025-08-08 Update Summary --> <div class="alert alert-primary border rounded-3 p-3 mb-4"> <div class="d-flex align-items-center justify-content-between"> <h5 class="mb-0">v1.1 2025-08-08 Updates</h5> <span class="badge bg-secondary">Benchmark change log</span> </div> <p class="mb-2 small text-muted">Sharper judging and structural safeguards for more reliable longform evaluations.</p> <ul class="mb-0"> <li><b>Judge upgraded:</b> Evaluation now uses Claude Sonnet 4 (replacing Sonnet 3.7).</li> <li><b>Metaphor vigilance:</b> Added targeted judge prompting to better detect and punish incoherent/forced metaphors.</li> <li><b>Degradation penalty:</b> New automatic score scaling when outputs overuse very short single‑sentence paragraphs.</li> </ul> </div>
 
           <p>Models are typically evaluated via openrouter, using temp=0.7 and min_p=0.1 as the generation settings.</p>
 
-          <p>Outputs are evaluated with a scoring rubric by Claude Sonnet 4.</p>
+          <p>Outputs are evaluated with a scoring rubric by Claude Sonnet 4.6.</p>
 
           <h5 class="card-title mt-4">📊 Main Metrics</h5>
           

@@ -7,7 +7,7 @@ const styleAssociationData = {
       },
       {
         "word": "nostalgic",
-        "strength": 0.0048
+        "strength": 0.0049
       },
       {
         "word": "romantic",
@@ -15,11 +15,11 @@ const styleAssociationData = {
       },
       {
         "word": "friendly",
-        "strength": 0.0044
+        "strength": 0.0043
       },
       {
         "word": "allegorical",
-        "strength": 0.0042
+        "strength": 0.0043
       },
       {
         "word": "concrete",
@@ -71,7 +71,7 @@ const styleAssociationData = {
       },
       {
         "word": "female perspective",
-        "strength": 0.0027
+        "strength": 0.0026
       },
       {
         "word": "ethereal",
@@ -83,7 +83,7 @@ const styleAssociationData = {
       },
       {
         "word": "conventional",
-        "strength": 0.0024
+        "strength": 0.0025
       },
       {
         "word": "uplifting",
@@ -94,11 +94,11 @@ const styleAssociationData = {
         "strength": 0.0023
       },
       {
-        "word": "dreamlike",
+        "word": "idealistic",
         "strength": 0.0022
       },
       {
-        "word": "idealistic",
+        "word": "dreamlike",
         "strength": 0.0021
       },
       {
@@ -114,14 +114,6 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "clarity",
-        "strength": 0.0017
-      },
-      {
-        "word": "mischievous",
-        "strength": 0.0017
-      },
-      {
         "word": "earnest",
         "strength": 0.0017
       },
@@ -130,7 +122,11 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "simple",
+        "word": "mischievous",
+        "strength": 0.0017
+      },
+      {
+        "word": "clarity",
         "strength": 0.0016
       },
       {
@@ -142,8 +138,12 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "action-oriented",
+        "word": "simple",
         "strength": 0.0016
+      },
+      {
+        "word": "action-oriented",
+        "strength": 0.0015
       },
       {
         "word": "precise",
@@ -158,11 +158,19 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "biting",
+        "word": "amusing",
         "strength": 0.0014
       },
       {
-        "word": "amusing",
+        "word": "magical",
+        "strength": 0.0013
+      },
+      {
+        "word": "feverish",
+        "strength": 0.0013
+      },
+      {
+        "word": "biting",
         "strength": 0.0013
       },
       {
@@ -174,18 +182,6 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "elegant",
-        "strength": 0.0013
-      },
-      {
-        "word": "magical",
-        "strength": 0.0013
-      },
-      {
-        "word": "feverish",
-        "strength": 0.0013
-      },
-      {
         "word": "gentle",
         "strength": 0.0013
       },
@@ -194,7 +190,11 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "calm",
+        "word": "elegant",
+        "strength": 0.0013
+      },
+      {
+        "word": "excessive",
         "strength": 0.0012
       },
       {
@@ -207,7 +207,7 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "overwrought",
-        "strength": 0.0031
+        "strength": 0.0032
       },
       {
         "word": "dreamlike",
@@ -223,7 +223,7 @@ const styleAssociationData = {
       },
       {
         "word": "verbose",
-        "strength": 0.002
+        "strength": 0.0019
       },
       {
         "word": "complex",
@@ -234,19 +234,19 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
-        "word": "crisp",
-        "strength": 0.0018
-      },
-      {
         "word": "convoluted",
         "strength": 0.0018
       },
       {
-        "word": "surgical",
-        "strength": 0.0016
+        "word": "crisp",
+        "strength": 0.0018
       },
       {
         "word": "intimate",
+        "strength": 0.0017
+      },
+      {
+        "word": "surgical",
         "strength": 0.0016
       },
       {
@@ -262,6 +262,10 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
+        "word": "comforting",
+        "strength": 0.0015
+      },
+      {
         "word": "cool",
         "strength": 0.0015
       },
@@ -270,11 +274,7 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "comforting",
-        "strength": 0.0014
-      },
-      {
-        "word": "matter-of-fact",
+        "word": "intelligent",
         "strength": 0.0014
       },
       {
@@ -282,23 +282,15 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "intelligent",
-        "strength": 0.0014
-      },
-      {
-        "word": "odd",
-        "strength": 0.0014
-      },
-      {
         "word": "human",
         "strength": 0.0014
       },
       {
-        "word": "whimsical",
+        "word": "stream-of-consciousness",
         "strength": 0.0014
       },
       {
-        "word": "stream-of-consciousness",
+        "word": "odd",
         "strength": 0.0013
       },
       {
@@ -306,19 +298,7 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "quirky",
-        "strength": 0.0013
-      },
-      {
-        "word": "aggressive",
-        "strength": 0.0013
-      },
-      {
-        "word": "moralising",
-        "strength": 0.0013
-      },
-      {
-        "word": "clever",
+        "word": "whimsical",
         "strength": 0.0013
       },
       {
@@ -326,11 +306,31 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
+        "word": "matter-of-fact",
+        "strength": 0.0013
+      },
+      {
+        "word": "moralising",
+        "strength": 0.0013
+      },
+      {
+        "word": "quirky",
+        "strength": 0.0013
+      },
+      {
+        "word": "raw",
+        "strength": 0.0012
+      },
+      {
         "word": "metaphorical",
         "strength": 0.0012
       },
       {
-        "word": "raw",
+        "word": "clever",
+        "strength": 0.0012
+      },
+      {
+        "word": "aggressive",
         "strength": 0.0012
       },
       {
@@ -343,10 +343,14 @@ const styleAssociationData = {
       },
       {
         "word": "ornate",
-        "strength": 0.0011
+        "strength": 0.0012
       },
       {
         "word": "sparse",
+        "strength": 0.0011
+      },
+      {
+        "word": "stylized",
         "strength": 0.0011
       },
       {
@@ -359,18 +363,10 @@ const styleAssociationData = {
       },
       {
         "word": "hypnotic",
-        "strength": 0.001
-      },
-      {
-        "word": "stylized",
-        "strength": 0.001
+        "strength": 0.0011
       },
       {
         "word": "polished",
-        "strength": 0.001
-      },
-      {
-        "word": "meticulous",
         "strength": 0.001
       },
       {
@@ -378,7 +374,15 @@ const styleAssociationData = {
         "strength": 0.001
       },
       {
+        "word": "meticulous",
+        "strength": 0.001
+      },
+      {
         "word": "social criticism",
+        "strength": 0.001
+      },
+      {
+        "word": "disturbing",
         "strength": 0.0009
       },
       {
@@ -386,23 +390,19 @@ const styleAssociationData = {
         "strength": 0.0009
       },
       {
-        "word": "baroque",
-        "strength": 0.0009
-      },
-      {
-        "word": "disturbing",
-        "strength": 0.0009
-      },
-      {
         "word": "conventional",
         "strength": 0.0009
       },
       {
-        "word": "vibrant",
-        "strength": 0.0008
+        "word": "baroque",
+        "strength": 0.0009
       },
       {
         "word": "literal",
+        "strength": 0.0008
+      },
+      {
+        "word": "passive voice",
         "strength": 0.0008
       }
     ]
@@ -419,7 +419,7 @@ const styleAssociationData = {
       },
       {
         "word": "friendly",
-        "strength": 0.0058
+        "strength": 0.0057
       },
       {
         "word": "suspenseful",
@@ -450,19 +450,19 @@ const styleAssociationData = {
         "strength": 0.0046
       },
       {
-        "word": "irreverent",
+        "word": "conventional",
         "strength": 0.0046
       },
       {
-        "word": "relationship-focused",
-        "strength": 0.0045
-      },
-      {
-        "word": "conventional",
+        "word": "irreverent",
         "strength": 0.0045
       },
       {
         "word": "nostalgic",
+        "strength": 0.0045
+      },
+      {
+        "word": "relationship-focused",
         "strength": 0.0045
       },
       {
@@ -478,16 +478,16 @@ const styleAssociationData = {
         "strength": 0.0038
       },
       {
-        "word": "crisp",
+        "word": "frantic",
         "strength": 0.0037
       },
       {
         "word": "intimate",
-        "strength": 0.0036
+        "strength": 0.0037
       },
       {
-        "word": "frantic",
-        "strength": 0.0036
+        "word": "crisp",
+        "strength": 0.0037
       },
       {
         "word": "mischievous",
@@ -498,12 +498,16 @@ const styleAssociationData = {
         "strength": 0.0031
       },
       {
+        "word": "gentle",
+        "strength": 0.003
+      },
+      {
         "word": "human",
         "strength": 0.003
       },
       {
-        "word": "gentle",
-        "strength": 0.003
+        "word": "stream-of-consciousness",
+        "strength": 0.0029
       },
       {
         "word": "action-oriented",
@@ -511,10 +515,6 @@ const styleAssociationData = {
       },
       {
         "word": "feminist",
-        "strength": 0.0029
-      },
-      {
-        "word": "stream-of-consciousness",
         "strength": 0.0028
       },
       {
@@ -523,11 +523,11 @@ const styleAssociationData = {
       },
       {
         "word": "sharp",
-        "strength": 0.0026
+        "strength": 0.0025
       },
       {
         "word": "ethereal",
-        "strength": 0.0026
+        "strength": 0.0025
       },
       {
         "word": "engaging",
@@ -542,6 +542,10 @@ const styleAssociationData = {
         "strength": 0.0024
       },
       {
+        "word": "excessive",
+        "strength": 0.0023
+      },
+      {
         "word": "natural",
         "strength": 0.0023
       },
@@ -550,24 +554,20 @@ const styleAssociationData = {
         "strength": 0.0023
       },
       {
-        "word": "excessive",
-        "strength": 0.0023
+        "word": "clinical",
+        "strength": 0.0022
       },
       {
         "word": "sophisticated",
         "strength": 0.0022
       },
       {
-        "word": "clinical",
-        "strength": 0.0022
-      },
-      {
         "word": "poised",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
         "word": "biting",
-        "strength": 0.0021
+        "strength": 0.002
       },
       {
         "word": "elegant",
@@ -578,23 +578,23 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
-        "word": "surreal",
-        "strength": 0.0019
-      },
-      {
         "word": "lush",
         "strength": 0.0019
       },
       {
-        "word": "vibrant",
+        "word": "surreal",
         "strength": 0.0019
       },
       {
-        "word": "quirky",
+        "word": "vibrant",
         "strength": 0.0018
       },
       {
         "word": "disorienting",
+        "strength": 0.0018
+      },
+      {
+        "word": "quirky",
         "strength": 0.0018
       },
       {
@@ -606,7 +606,7 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "calm",
+        "word": "overwrought",
         "strength": 0.0015
       }
     ]
@@ -642,19 +642,23 @@ const styleAssociationData = {
         "strength": 0.005
       },
       {
-        "word": "clever",
-        "strength": 0.0049
-      },
-      {
         "word": "raw",
         "strength": 0.0049
       },
       {
+        "word": "clever",
+        "strength": 0.0049
+      },
+      {
         "word": "virtue signaling",
-        "strength": 0.0046
+        "strength": 0.0045
       },
       {
         "word": "quirky",
+        "strength": 0.0043
+      },
+      {
+        "word": "hypnotic",
         "strength": 0.0043
       },
       {
@@ -662,12 +666,8 @@ const styleAssociationData = {
         "strength": 0.0042
       },
       {
-        "word": "hypnotic",
-        "strength": 0.0042
-      },
-      {
         "word": "logical",
-        "strength": 0.0042
+        "strength": 0.0041
       },
       {
         "word": "subjective",
@@ -679,14 +679,14 @@ const styleAssociationData = {
       },
       {
         "word": "active voice",
-        "strength": 0.0036
-      },
-      {
-        "word": "technical",
-        "strength": 0.0033
+        "strength": 0.0035
       },
       {
         "word": "effusive",
+        "strength": 0.0033
+      },
+      {
+        "word": "technical",
         "strength": 0.0033
       },
       {
@@ -698,6 +698,10 @@ const styleAssociationData = {
         "strength": 0.0031
       },
       {
+        "word": "utopian",
+        "strength": 0.003
+      },
+      {
         "word": "visceral",
         "strength": 0.003
       },
@@ -706,19 +710,11 @@ const styleAssociationData = {
         "strength": 0.003
       },
       {
-        "word": "utopian",
-        "strength": 0.003
+        "word": "soothing",
+        "strength": 0.0029
       },
       {
         "word": "vibrant",
-        "strength": 0.0029
-      },
-      {
-        "word": "matter-of-fact",
-        "strength": 0.0029
-      },
-      {
-        "word": "soothing",
         "strength": 0.0029
       },
       {
@@ -726,7 +722,11 @@ const styleAssociationData = {
         "strength": 0.0028
       },
       {
-        "word": "cold",
+        "word": "matter-of-fact",
+        "strength": 0.0028
+      },
+      {
+        "word": "earnest",
         "strength": 0.0028
       },
       {
@@ -734,20 +734,20 @@ const styleAssociationData = {
         "strength": 0.0028
       },
       {
-        "word": "odd",
-        "strength": 0.0028
+        "word": "cold",
+        "strength": 0.0027
       },
       {
-        "word": "earnest",
+        "word": "odd",
         "strength": 0.0027
       },
       {
         "word": "cool",
-        "strength": 0.0025
+        "strength": 0.0024
       },
       {
         "word": "cynical",
-        "strength": 0.0024
+        "strength": 0.0023
       },
       {
         "word": "dramatic",
@@ -755,7 +755,7 @@ const styleAssociationData = {
       },
       {
         "word": "gentle",
-        "strength": 0.0021
+        "strength": 0.0022
       },
       {
         "word": "idealistic",
@@ -763,7 +763,7 @@ const styleAssociationData = {
       },
       {
         "word": "layered",
-        "strength": 0.0021
+        "strength": 0.002
       },
       {
         "word": "passive voice",
@@ -771,10 +771,18 @@ const styleAssociationData = {
       },
       {
         "word": "subversive",
-        "strength": 0.002
+        "strength": 0.0019
       },
       {
         "word": "intelligent",
+        "strength": 0.0019
+      },
+      {
+        "word": "elaborate",
+        "strength": 0.0018
+      },
+      {
+        "word": "stylized",
         "strength": 0.0018
       },
       {
@@ -782,11 +790,7 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "elaborate",
-        "strength": 0.0018
-      },
-      {
-        "word": "natural",
+        "word": "unfiltered",
         "strength": 0.0017
       },
       {
@@ -794,23 +798,19 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "stylized",
-        "strength": 0.0017
-      },
-      {
-        "word": "unfiltered",
+        "word": "natural",
         "strength": 0.0017
       },
       {
         "word": "crisp",
-        "strength": 0.0017
-      },
-      {
-        "word": "moody",
         "strength": 0.0016
       },
       {
         "word": "dystopian",
+        "strength": 0.0016
+      },
+      {
+        "word": "moody",
         "strength": 0.0016
       }
     ]
@@ -819,31 +819,31 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "friendly",
-        "strength": 0.0043
+        "strength": 0.0042
       },
       {
         "word": "allegorical",
-        "strength": 0.0027
-      },
-      {
-        "word": "formal",
-        "strength": 0.0026
+        "strength": 0.0028
       },
       {
         "word": "positive vibes",
+        "strength": 0.0026
+      },
+      {
+        "word": "formal",
         "strength": 0.0025
       },
       {
         "word": "clarity",
-        "strength": 0.0024
+        "strength": 0.0023
       },
       {
         "word": "virtue signaling",
-        "strength": 0.0024
+        "strength": 0.0023
       },
       {
         "word": "vibrant",
-        "strength": 0.0023
+        "strength": 0.0022
       },
       {
         "word": "functional",
@@ -851,14 +851,10 @@ const styleAssociationData = {
       },
       {
         "word": "subversive",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
         "word": "active voice",
-        "strength": 0.0022
-      },
-      {
-        "word": "female perspective",
         "strength": 0.0021
       },
       {
@@ -866,23 +862,19 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
-        "word": "detailed",
-        "strength": 0.002
+        "word": "female perspective",
+        "strength": 0.0021
       },
       {
         "word": "poetic",
         "strength": 0.002
       },
       {
+        "word": "detailed",
+        "strength": 0.002
+      },
+      {
         "word": "deliberate",
-        "strength": 0.002
-      },
-      {
-        "word": "concrete",
-        "strength": 0.002
-      },
-      {
-        "word": "modern",
         "strength": 0.002
       },
       {
@@ -894,11 +886,19 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
+        "word": "concrete",
+        "strength": 0.0019
+      },
+      {
+        "word": "modern",
+        "strength": 0.0019
+      },
+      {
         "word": "twisted",
         "strength": 0.0019
       },
       {
-        "word": "witty",
+        "word": "dramatic",
         "strength": 0.0018
       },
       {
@@ -906,7 +906,7 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "dramatic",
+        "word": "witty",
         "strength": 0.0018
       },
       {
@@ -918,15 +918,7 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "visceral",
-        "strength": 0.0018
-      },
-      {
         "word": "odd",
-        "strength": 0.0018
-      },
-      {
-        "word": "dreamlike",
         "strength": 0.0017
       },
       {
@@ -934,11 +926,19 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
+        "word": "dreamlike",
+        "strength": 0.0017
+      },
+      {
+        "word": "visceral",
+        "strength": 0.0017
+      },
+      {
         "word": "feminist",
         "strength": 0.0017
       },
       {
-        "word": "cold",
+        "word": "theatrical",
         "strength": 0.0017
       },
       {
@@ -946,15 +946,7 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "theatrical",
-        "strength": 0.0016
-      },
-      {
-        "word": "matter-of-fact",
-        "strength": 0.0016
-      },
-      {
-        "word": "clever",
+        "word": "cold",
         "strength": 0.0016
       },
       {
@@ -962,23 +954,7 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "surreal",
-        "strength": 0.0016
-      },
-      {
-        "word": "crisp",
-        "strength": 0.0016
-      },
-      {
-        "word": "meticulous",
-        "strength": 0.0016
-      },
-      {
-        "word": "grounding",
-        "strength": 0.0015
-      },
-      {
-        "word": "technical",
+        "word": "clever",
         "strength": 0.0015
       },
       {
@@ -986,7 +962,23 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "cool",
+        "word": "surreal",
+        "strength": 0.0015
+      },
+      {
+        "word": "crisp",
+        "strength": 0.0015
+      },
+      {
+        "word": "meticulous",
+        "strength": 0.0015
+      },
+      {
+        "word": "grounding",
+        "strength": 0.0015
+      },
+      {
+        "word": "matter-of-fact",
         "strength": 0.0015
       },
       {
@@ -994,27 +986,35 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "subjective",
+        "word": "technical",
         "strength": 0.0015
       },
       {
-        "word": "elegant",
-        "strength": 0.0015
-      },
-      {
-        "word": "meditative",
+        "word": "cool",
         "strength": 0.0015
       },
       {
         "word": "magical",
+        "strength": 0.0015
+      },
+      {
+        "word": "elegant",
         "strength": 0.0014
       },
       {
-        "word": "precise",
+        "word": "subjective",
+        "strength": 0.0014
+      },
+      {
+        "word": "meditative",
         "strength": 0.0014
       },
       {
         "word": "descriptive",
+        "strength": 0.0014
+      },
+      {
+        "word": "precise",
         "strength": 0.0013
       }
     ]
@@ -1023,27 +1023,27 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "friendly",
-        "strength": 0.0041
+        "strength": 0.004
       },
       {
         "word": "matter-of-fact",
-        "strength": 0.0036
-      },
-      {
-        "word": "formal",
-        "strength": 0.0035
-      },
-      {
-        "word": "cold",
         "strength": 0.0034
       },
       {
+        "word": "formal",
+        "strength": 0.0034
+      },
+      {
+        "word": "cold",
+        "strength": 0.0033
+      },
+      {
         "word": "vibrant",
-        "strength": 0.0032
+        "strength": 0.0031
       },
       {
         "word": "detailed",
-        "strength": 0.0029
+        "strength": 0.0028
       },
       {
         "word": "witty",
@@ -1054,24 +1054,24 @@ const styleAssociationData = {
         "strength": 0.0026
       },
       {
-        "word": "virtue signaling",
-        "strength": 0.0025
-      },
-      {
         "word": "effusive",
         "strength": 0.0025
       },
       {
-        "word": "subjective",
-        "strength": 0.0025
-      },
-      {
-        "word": "subversive",
+        "word": "virtue signaling",
         "strength": 0.0024
       },
       {
-        "word": "clarity",
+        "word": "subjective",
+        "strength": 0.0024
+      },
+      {
+        "word": "subversive",
         "strength": 0.0023
+      },
+      {
+        "word": "clarity",
+        "strength": 0.0022
       },
       {
         "word": "clever",
@@ -1079,19 +1079,19 @@ const styleAssociationData = {
       },
       {
         "word": "active voice",
-        "strength": 0.0022
-      },
-      {
-        "word": "visceral",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
         "word": "modern",
         "strength": 0.0021
       },
       {
+        "word": "visceral",
+        "strength": 0.0021
+      },
+      {
         "word": "meticulous",
-        "strength": 0.002
+        "strength": 0.0019
       },
       {
         "word": "deliberate",
@@ -1099,10 +1099,6 @@ const styleAssociationData = {
       },
       {
         "word": "economical",
-        "strength": 0.0019
-      },
-      {
-        "word": "meditative",
         "strength": 0.0019
       },
       {
@@ -1114,6 +1110,14 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
+        "word": "meditative",
+        "strength": 0.0018
+      },
+      {
+        "word": "warm",
+        "strength": 0.0017
+      },
+      {
         "word": "odd",
         "strength": 0.0017
       },
@@ -1122,19 +1126,15 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "warm",
-        "strength": 0.0017
-      },
-      {
         "word": "restrained",
         "strength": 0.0017
       },
       {
-        "word": "cynical",
-        "strength": 0.0017
+        "word": "serene",
+        "strength": 0.0016
       },
       {
-        "word": "serene",
+        "word": "cynical",
         "strength": 0.0016
       },
       {
@@ -1154,39 +1154,35 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "chaotic",
-        "strength": 0.0015
-      },
-      {
         "word": "dreamlike",
         "strength": 0.0015
       },
       {
-        "word": "poised",
-        "strength": 0.0015
+        "word": "direct",
+        "strength": 0.0014
+      },
+      {
+        "word": "chaotic",
+        "strength": 0.0014
       },
       {
         "word": "elegant",
-        "strength": 0.0015
+        "strength": 0.0014
       },
       {
-        "word": "direct",
-        "strength": 0.0015
+        "word": "poised",
+        "strength": 0.0014
       },
       {
         "word": "technical",
         "strength": 0.0014
       },
       {
-        "word": "cool",
-        "strength": 0.0013
-      },
-      {
-        "word": "female perspective",
-        "strength": 0.0013
-      },
-      {
         "word": "hypnotic",
+        "strength": 0.0013
+      },
+      {
+        "word": "cool",
         "strength": 0.0013
       },
       {
@@ -1194,23 +1190,15 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "plain",
+        "word": "female perspective",
         "strength": 0.0013
-      },
-      {
-        "word": "transcendent",
-        "strength": 0.0012
       },
       {
         "word": "poetic",
         "strength": 0.0012
       },
       {
-        "word": "simple",
-        "strength": 0.0012
-      },
-      {
-        "word": "quirky",
+        "word": "transcendent",
         "strength": 0.0012
       },
       {
@@ -1218,8 +1206,20 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
+        "word": "plain",
+        "strength": 0.0012
+      },
+      {
+        "word": "quirky",
+        "strength": 0.0012
+      },
+      {
         "word": "feminist",
         "strength": 0.0012
+      },
+      {
+        "word": "simple",
+        "strength": 0.0011
       }
     ]
   },
@@ -1230,10 +1230,6 @@ const styleAssociationData = {
         "strength": 0.0028
       },
       {
-        "word": "witty",
-        "strength": 0.0022
-      },
-      {
         "word": "experimental",
         "strength": 0.0022
       },
@@ -1242,19 +1238,19 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
-        "word": "virtue signaling",
+        "word": "witty",
         "strength": 0.0021
       },
       {
-        "word": "functional",
+        "word": "virtue signaling",
         "strength": 0.002
       },
       {
-        "word": "active voice",
+        "word": "functional",
         "strength": 0.0019
       },
       {
-        "word": "subversive",
+        "word": "active voice",
         "strength": 0.0018
       },
       {
@@ -1262,15 +1258,15 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "friendly",
+        "word": "subversive",
         "strength": 0.0018
+      },
+      {
+        "word": "friendly",
+        "strength": 0.0017
       },
       {
         "word": "formal",
-        "strength": 0.0018
-      },
-      {
-        "word": "matter-of-fact",
         "strength": 0.0017
       },
       {
@@ -1278,15 +1274,19 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "odd",
+        "word": "matter-of-fact",
         "strength": 0.0016
       },
       {
-        "word": "technical",
-        "strength": 0.0016
+        "word": "odd",
+        "strength": 0.0015
       },
       {
         "word": "dry humor",
+        "strength": 0.0015
+      },
+      {
+        "word": "technical",
         "strength": 0.0015
       },
       {
@@ -1294,31 +1294,23 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "female perspective",
-        "strength": 0.0015
-      },
-      {
         "word": "measured",
         "strength": 0.0014
       },
       {
-        "word": "clever",
+        "word": "female perspective",
         "strength": 0.0014
       },
       {
         "word": "cool",
-        "strength": 0.0014
+        "strength": 0.0013
       },
       {
         "word": "direct",
         "strength": 0.0013
       },
       {
-        "word": "cold",
-        "strength": 0.0013
-      },
-      {
-        "word": "subjective",
+        "word": "clever",
         "strength": 0.0013
       },
       {
@@ -1326,11 +1318,19 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
+        "word": "dialogue-driven",
+        "strength": 0.0013
+      },
+      {
         "word": "verbose",
         "strength": 0.0013
       },
       {
-        "word": "vibrant",
+        "word": "subjective",
+        "strength": 0.0013
+      },
+      {
+        "word": "cold",
         "strength": 0.0013
       },
       {
@@ -1338,11 +1338,7 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "dialogue-driven",
-        "strength": 0.0013
-      },
-      {
-        "word": "detailed",
+        "word": "vibrant",
         "strength": 0.0012
       },
       {
@@ -1350,15 +1346,23 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
+        "word": "detailed",
+        "strength": 0.0012
+      },
+      {
         "word": "dramatic",
         "strength": 0.0012
       },
       {
-        "word": "visceral",
+        "word": "precise",
         "strength": 0.0011
       },
       {
-        "word": "precise",
+        "word": "eccentric",
+        "strength": 0.0011
+      },
+      {
+        "word": "visceral",
         "strength": 0.0011
       },
       {
@@ -1370,31 +1374,7 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "eccentric",
-        "strength": 0.0011
-      },
-      {
         "word": "logical",
-        "strength": 0.0011
-      },
-      {
-        "word": "feminist",
-        "strength": 0.001
-      },
-      {
-        "word": "chaotic",
-        "strength": 0.001
-      },
-      {
-        "word": "plain",
-        "strength": 0.001
-      },
-      {
-        "word": "aggressive",
-        "strength": 0.001
-      },
-      {
-        "word": "figurative",
         "strength": 0.001
       },
       {
@@ -1402,19 +1382,39 @@ const styleAssociationData = {
         "strength": 0.001
       },
       {
+        "word": "feminist",
+        "strength": 0.001
+      },
+      {
         "word": "theatrical",
         "strength": 0.001
       },
       {
-        "word": "transcendent",
+        "word": "figurative",
         "strength": 0.001
       },
       {
         "word": "profane",
+        "strength": 0.001
+      },
+      {
+        "word": "chaotic",
+        "strength": 0.001
+      },
+      {
+        "word": "transcendent",
         "strength": 0.0009
       },
       {
-        "word": "serene",
+        "word": "plain",
+        "strength": 0.0009
+      },
+      {
+        "word": "vulgar",
+        "strength": 0.0009
+      },
+      {
+        "word": "aggressive",
         "strength": 0.0009
       },
       {
@@ -1422,7 +1422,7 @@ const styleAssociationData = {
         "strength": 0.0009
       },
       {
-        "word": "vulgar",
+        "word": "serene",
         "strength": 0.0009
       }
     ]
@@ -1430,11 +1430,11 @@ const styleAssociationData = {
   "claude-sonnet-4": {
     "mostFavored": [
       {
-        "word": "sophisticated",
-        "strength": 0.003
+        "word": "dreamlike",
+        "strength": 0.0029
       },
       {
-        "word": "dreamlike",
+        "word": "sophisticated",
         "strength": 0.0029
       },
       {
@@ -1443,7 +1443,7 @@ const styleAssociationData = {
       },
       {
         "word": "meticulous",
-        "strength": 0.0027
+        "strength": 0.0026
       },
       {
         "word": "friendly",
@@ -1451,7 +1451,7 @@ const styleAssociationData = {
       },
       {
         "word": "subjective",
-        "strength": 0.0024
+        "strength": 0.0023
       },
       {
         "word": "odd",
@@ -1459,34 +1459,22 @@ const styleAssociationData = {
       },
       {
         "word": "vibrant",
-        "strength": 0.0023
-      },
-      {
-        "word": "matter-of-fact",
         "strength": 0.0022
       },
       {
-        "word": "virtue signaling",
-        "strength": 0.0021
-      },
-      {
-        "word": "active voice",
-        "strength": 0.0021
-      },
-      {
-        "word": "cynical",
-        "strength": 0.0021
-      },
-      {
-        "word": "formal",
-        "strength": 0.0021
-      },
-      {
-        "word": "functional",
+        "word": "matter-of-fact",
         "strength": 0.002
       },
       {
-        "word": "subversive",
+        "word": "virtue signaling",
+        "strength": 0.002
+      },
+      {
+        "word": "active voice",
+        "strength": 0.002
+      },
+      {
+        "word": "cynical",
         "strength": 0.002
       },
       {
@@ -1498,8 +1486,20 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
-        "word": "witty",
+        "word": "formal",
         "strength": 0.002
+      },
+      {
+        "word": "functional",
+        "strength": 0.002
+      },
+      {
+        "word": "witty",
+        "strength": 0.0019
+      },
+      {
+        "word": "subversive",
+        "strength": 0.0019
       },
       {
         "word": "quirky",
@@ -1507,7 +1507,7 @@ const styleAssociationData = {
       },
       {
         "word": "clarity",
-        "strength": 0.0019
+        "strength": 0.0018
       },
       {
         "word": "crisp",
@@ -1518,11 +1518,11 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "technical",
+        "word": "complex",
         "strength": 0.0017
       },
       {
-        "word": "complex",
+        "word": "technical",
         "strength": 0.0017
       },
       {
@@ -1535,10 +1535,6 @@ const styleAssociationData = {
       },
       {
         "word": "elegant",
-        "strength": 0.0017
-      },
-      {
-        "word": "visceral",
         "strength": 0.0016
       },
       {
@@ -1546,16 +1542,20 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "cool",
+        "word": "warm",
         "strength": 0.0016
+      },
+      {
+        "word": "visceral",
+        "strength": 0.0015
+      },
+      {
+        "word": "cool",
+        "strength": 0.0015
       },
       {
         "word": "modern",
-        "strength": 0.0016
-      },
-      {
-        "word": "warm",
-        "strength": 0.0016
+        "strength": 0.0015
       },
       {
         "word": "female perspective",
@@ -1567,14 +1567,10 @@ const styleAssociationData = {
       },
       {
         "word": "deliberate",
-        "strength": 0.0015
-      },
-      {
-        "word": "relationship-focused",
         "strength": 0.0014
       },
       {
-        "word": "aggressive",
+        "word": "relationship-focused",
         "strength": 0.0014
       },
       {
@@ -1582,11 +1578,15 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "cold",
+        "word": "aggressive",
         "strength": 0.0013
       },
       {
         "word": "descriptive",
+        "strength": 0.0013
+      },
+      {
+        "word": "cold",
         "strength": 0.0013
       },
       {
@@ -1598,23 +1598,19 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "meditative",
-        "strength": 0.0011
-      },
-      {
         "word": "polished",
         "strength": 0.0011
       },
       {
-        "word": "whimsical",
-        "strength": 0.001
-      },
-      {
-        "word": "panache",
+        "word": "meditative",
         "strength": 0.001
       },
       {
         "word": "soft",
+        "strength": 0.001
+      },
+      {
+        "word": "panache",
         "strength": 0.001
       },
       {
@@ -1626,7 +1622,11 @@ const styleAssociationData = {
         "strength": 0.001
       },
       {
-        "word": "logical",
+        "word": "whimsical",
+        "strength": 0.001
+      },
+      {
+        "word": "idealistic",
         "strength": 0.0009
       }
     ]
@@ -1639,7 +1639,7 @@ const styleAssociationData = {
       },
       {
         "word": "vibrant",
-        "strength": 0.0091
+        "strength": 0.009
       },
       {
         "word": "moralising",
@@ -1647,26 +1647,26 @@ const styleAssociationData = {
       },
       {
         "word": "metaphorical",
-        "strength": 0.0076
+        "strength": 0.0075
       },
       {
         "word": "friendly",
-        "strength": 0.0073
+        "strength": 0.0072
       },
       {
         "word": "sophisticated",
-        "strength": 0.0073
+        "strength": 0.0072
       },
       {
         "word": "psychedelic",
-        "strength": 0.0069
+        "strength": 0.007
       },
       {
         "word": "cool",
         "strength": 0.0062
       },
       {
-        "word": "meticulous",
+        "word": "intelligent",
         "strength": 0.006
       },
       {
@@ -1674,15 +1674,15 @@ const styleAssociationData = {
         "strength": 0.006
       },
       {
-        "word": "intelligent",
+        "word": "meticulous",
         "strength": 0.006
       },
       {
-        "word": "verbose",
+        "word": "intimate",
         "strength": 0.0059
       },
       {
-        "word": "intimate",
+        "word": "verbose",
         "strength": 0.0059
       },
       {
@@ -1715,7 +1715,7 @@ const styleAssociationData = {
       },
       {
         "word": "subversive",
-        "strength": 0.0048
+        "strength": 0.0047
       },
       {
         "word": "clinical",
@@ -1730,20 +1730,20 @@ const styleAssociationData = {
         "strength": 0.0045
       },
       {
+        "word": "overwrought",
+        "strength": 0.0045
+      },
+      {
         "word": "sentimental",
-        "strength": 0.0044
+        "strength": 0.0045
       },
       {
         "word": "dreamlike",
         "strength": 0.0044
       },
       {
-        "word": "overwrought",
-        "strength": 0.0044
-      },
-      {
         "word": "cynical",
-        "strength": 0.0044
+        "strength": 0.0043
       },
       {
         "word": "panache",
@@ -1751,23 +1751,23 @@ const styleAssociationData = {
       },
       {
         "word": "restrained",
-        "strength": 0.0042
+        "strength": 0.0041
       },
       {
         "word": "odd",
-        "strength": 0.0042
+        "strength": 0.0041
       },
       {
         "word": "ornate",
         "strength": 0.0041
       },
       {
-        "word": "plain",
+        "word": "warm",
         "strength": 0.0039
       },
       {
-        "word": "warm",
-        "strength": 0.0039
+        "word": "plain",
+        "strength": 0.0038
       },
       {
         "word": "nostalgic",
@@ -1783,14 +1783,14 @@ const styleAssociationData = {
       },
       {
         "word": "matter-of-fact",
-        "strength": 0.0034
-      },
-      {
-        "word": "formal",
         "strength": 0.0032
       },
       {
         "word": "allegorical",
+        "strength": 0.0031
+      },
+      {
+        "word": "formal",
         "strength": 0.0031
       },
       {
@@ -1810,16 +1810,16 @@ const styleAssociationData = {
         "strength": 0.0028
       },
       {
+        "word": "feverish",
+        "strength": 0.0027
+      },
+      {
         "word": "deliberate",
         "strength": 0.0027
       },
       {
         "word": "clarity",
-        "strength": 0.0027
-      },
-      {
-        "word": "feverish",
-        "strength": 0.0027
+        "strength": 0.0026
       },
       {
         "word": "morbid",
@@ -1830,7 +1830,7 @@ const styleAssociationData = {
         "strength": 0.0026
       },
       {
-        "word": "cold",
+        "word": "twisted",
         "strength": 0.0026
       }
     ]
@@ -1851,7 +1851,7 @@ const styleAssociationData = {
       },
       {
         "word": "playful",
-        "strength": 0.0026
+        "strength": 0.0025
       },
       {
         "word": "absurdist",
@@ -1859,10 +1859,6 @@ const styleAssociationData = {
       },
       {
         "word": "cliche",
-        "strength": 0.0023
-      },
-      {
-        "word": "chaotic",
         "strength": 0.0023
       },
       {
@@ -1874,15 +1870,15 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
+        "word": "chaotic",
+        "strength": 0.0022
+      },
+      {
         "word": "dry humor",
         "strength": 0.002
       },
       {
         "word": "dry",
-        "strength": 0.002
-      },
-      {
-        "word": "sparse",
         "strength": 0.0019
       },
       {
@@ -1890,19 +1886,23 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
-        "word": "simple",
+        "word": "sparse",
         "strength": 0.0019
       },
       {
-        "word": "languid",
+        "word": "dialogue-driven",
         "strength": 0.0018
       },
       {
-        "word": "dialogue-driven",
-        "strength": 0.0017
+        "word": "simple",
+        "strength": 0.0018
       },
       {
         "word": "profane",
+        "strength": 0.0018
+      },
+      {
+        "word": "languid",
         "strength": 0.0017
       },
       {
@@ -1915,11 +1915,7 @@ const styleAssociationData = {
       },
       {
         "word": "imagistic",
-        "strength": 0.0016
-      },
-      {
-        "word": "plain",
-        "strength": 0.0016
+        "strength": 0.0017
       },
       {
         "word": "theatrical",
@@ -1927,15 +1923,23 @@ const styleAssociationData = {
       },
       {
         "word": "lavish",
+        "strength": 0.0016
+      },
+      {
+        "word": "plain",
         "strength": 0.0015
+      },
+      {
+        "word": "provocative",
+        "strength": 0.0014
       },
       {
         "word": "formal",
         "strength": 0.0014
       },
       {
-        "word": "provocative",
-        "strength": 0.0014
+        "word": "grandiose",
+        "strength": 0.0013
       },
       {
         "word": "minimalist",
@@ -1946,23 +1950,11 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "grandiose",
-        "strength": 0.0013
-      },
-      {
         "word": "analytical",
         "strength": 0.0013
       },
       {
-        "word": "matter-of-fact",
-        "strength": 0.0012
-      },
-      {
         "word": "opaque",
-        "strength": 0.0012
-      },
-      {
-        "word": "calm",
         "strength": 0.0012
       },
       {
@@ -1974,7 +1966,15 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
+        "word": "matter-of-fact",
+        "strength": 0.0011
+      },
+      {
         "word": "eccentric",
+        "strength": 0.0011
+      },
+      {
+        "word": "calm",
         "strength": 0.0011
       },
       {
@@ -1982,15 +1982,11 @@ const styleAssociationData = {
         "strength": 0.001
       },
       {
-        "word": "meditative",
-        "strength": 0.001
-      },
-      {
         "word": "friendly",
         "strength": 0.001
       },
       {
-        "word": "engineered",
+        "word": "meditative",
         "strength": 0.0009
       },
       {
@@ -1998,11 +1994,11 @@ const styleAssociationData = {
         "strength": 0.0009
       },
       {
-        "word": "figurative",
+        "word": "utopian",
         "strength": 0.0009
       },
       {
-        "word": "creative",
+        "word": "figurative",
         "strength": 0.0009
       },
       {
@@ -2010,15 +2006,15 @@ const styleAssociationData = {
         "strength": 0.0009
       },
       {
+        "word": "engineered",
+        "strength": 0.0009
+      },
+      {
+        "word": "creative",
+        "strength": 0.0009
+      },
+      {
         "word": "transcendent",
-        "strength": 0.0009
-      },
-      {
-        "word": "utopian",
-        "strength": 0.0009
-      },
-      {
-        "word": "cold",
         "strength": 0.0008
       },
       {
@@ -2026,15 +2022,19 @@ const styleAssociationData = {
         "strength": 0.0008
       },
       {
-        "word": "intricate",
-        "strength": 0.0008
-      },
-      {
         "word": "assonant",
         "strength": 0.0008
       },
       {
-        "word": "active voice",
+        "word": "intricate",
+        "strength": 0.0008
+      },
+      {
+        "word": "literal",
+        "strength": 0.0008
+      },
+      {
+        "word": "modern",
         "strength": 0.0008
       }
     ]
@@ -2051,7 +2051,7 @@ const styleAssociationData = {
       },
       {
         "word": "suspenseful",
-        "strength": 0.0015
+        "strength": 0.0016
       },
       {
         "word": "systematic",
@@ -2059,7 +2059,7 @@ const styleAssociationData = {
       },
       {
         "word": "imagistic",
-        "strength": 0.0014
+        "strength": 0.0015
       },
       {
         "word": "female perspective",
@@ -2070,15 +2070,19 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "cliche",
-        "strength": 0.0011
+        "word": "distant",
+        "strength": 0.0012
       },
       {
         "word": "cinematic",
         "strength": 0.0011
       },
       {
-        "word": "distant",
+        "word": "hopeful",
+        "strength": 0.0011
+      },
+      {
+        "word": "cliche",
         "strength": 0.0011
       },
       {
@@ -2086,11 +2090,7 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "hopeful",
-        "strength": 0.001
-      },
-      {
-        "word": "bizarre",
+        "word": "risky",
         "strength": 0.001
       },
       {
@@ -2098,11 +2098,15 @@ const styleAssociationData = {
         "strength": 0.001
       },
       {
-        "word": "risky",
-        "strength": 0.0009
+        "word": "bizarre",
+        "strength": 0.001
       },
       {
         "word": "lavish",
+        "strength": 0.001
+      },
+      {
+        "word": "comforting",
         "strength": 0.0009
       },
       {
@@ -2110,39 +2114,7 @@ const styleAssociationData = {
         "strength": 0.0009
       },
       {
-        "word": "comforting",
-        "strength": 0.0009
-      },
-      {
         "word": "dark humor",
-        "strength": 0.0008
-      },
-      {
-        "word": "absurdist",
-        "strength": 0.0008
-      },
-      {
-        "word": "feminist",
-        "strength": 0.0008
-      },
-      {
-        "word": "objective",
-        "strength": 0.0008
-      },
-      {
-        "word": "moralising",
-        "strength": 0.0008
-      },
-      {
-        "word": "unfiltered",
-        "strength": 0.0008
-      },
-      {
-        "word": "playful",
-        "strength": 0.0008
-      },
-      {
-        "word": "meandering",
         "strength": 0.0008
       },
       {
@@ -2150,11 +2122,31 @@ const styleAssociationData = {
         "strength": 0.0008
       },
       {
-        "word": "dialogue-driven",
-        "strength": 0.0007
+        "word": "absurdist",
+        "strength": 0.0008
       },
       {
-        "word": "dreamlike",
+        "word": "unfiltered",
+        "strength": 0.0008
+      },
+      {
+        "word": "objective",
+        "strength": 0.0008
+      },
+      {
+        "word": "dialogue-driven",
+        "strength": 0.0008
+      },
+      {
+        "word": "moralising",
+        "strength": 0.0008
+      },
+      {
+        "word": "feminist",
+        "strength": 0.0008
+      },
+      {
+        "word": "meandering",
         "strength": 0.0007
       },
       {
@@ -2170,6 +2162,14 @@ const styleAssociationData = {
         "strength": 0.0007
       },
       {
+        "word": "dreamlike",
+        "strength": 0.0007
+      },
+      {
+        "word": "playful",
+        "strength": 0.0007
+      },
+      {
         "word": "relationship-focused",
         "strength": 0.0007
       },
@@ -2178,23 +2178,31 @@ const styleAssociationData = {
         "strength": 0.0007
       },
       {
-        "word": "action-oriented",
+        "word": "gritty",
         "strength": 0.0007
       },
       {
         "word": "languid",
-        "strength": 0.0007
+        "strength": 0.0006
+      },
+      {
+        "word": "amusing",
+        "strength": 0.0006
+      },
+      {
+        "word": "action-oriented",
+        "strength": 0.0006
+      },
+      {
+        "word": "stream-of-consciousness",
+        "strength": 0.0006
       },
       {
         "word": "friendly",
         "strength": 0.0006
       },
       {
-        "word": "calm",
-        "strength": 0.0006
-      },
-      {
-        "word": "engineered",
+        "word": "allegorical",
         "strength": 0.0006
       },
       {
@@ -2202,7 +2210,7 @@ const styleAssociationData = {
         "strength": 0.0006
       },
       {
-        "word": "amusing",
+        "word": "haunting",
         "strength": 0.0006
       },
       {
@@ -2214,15 +2222,7 @@ const styleAssociationData = {
         "strength": 0.0006
       },
       {
-        "word": "stream-of-consciousness",
-        "strength": 0.0006
-      },
-      {
-        "word": "gritty",
-        "strength": 0.0006
-      },
-      {
-        "word": "allegorical",
+        "word": "engineered",
         "strength": 0.0006
       },
       {
@@ -2230,15 +2230,15 @@ const styleAssociationData = {
         "strength": 0.0006
       },
       {
-        "word": "warm",
+        "word": "disturbing",
+        "strength": 0.0006
+      },
+      {
+        "word": "sensational",
         "strength": 0.0005
       },
       {
-        "word": "crisp",
-        "strength": 0.0005
-      },
-      {
-        "word": "haunting",
+        "word": "calm",
         "strength": 0.0005
       }
     ]
@@ -2251,7 +2251,7 @@ const styleAssociationData = {
       },
       {
         "word": "gritty",
-        "strength": 0.0052
+        "strength": 0.0053
       },
       {
         "word": "vulgar",
@@ -2267,11 +2267,11 @@ const styleAssociationData = {
       },
       {
         "word": "formulaic",
-        "strength": 0.0046
+        "strength": 0.0047
       },
       {
         "word": "lavish",
-        "strength": 0.0045
+        "strength": 0.0046
       },
       {
         "word": "dialogue-driven",
@@ -2282,24 +2282,24 @@ const styleAssociationData = {
         "strength": 0.004
       },
       {
+        "word": "cinematic",
+        "strength": 0.0038
+      },
+      {
         "word": "abstract",
         "strength": 0.0038
       },
       {
-        "word": "cinematic",
-        "strength": 0.0038
+        "word": "haunting",
+        "strength": 0.0034
       },
       {
         "word": "funny",
         "strength": 0.0034
       },
       {
-        "word": "haunting",
-        "strength": 0.0033
-      },
-      {
         "word": "hyperbolic",
-        "strength": 0.0031
+        "strength": 0.0032
       },
       {
         "word": "dry",
@@ -2307,30 +2307,30 @@ const styleAssociationData = {
       },
       {
         "word": "dark humor",
-        "strength": 0.0026
+        "strength": 0.0027
       },
       {
         "word": "unfiltered",
         "strength": 0.0026
       },
       {
-        "word": "detached",
-        "strength": 0.0025
+        "word": "immersive",
+        "strength": 0.0026
       },
       {
-        "word": "immersive",
-        "strength": 0.0025
+        "word": "detached",
+        "strength": 0.0026
       },
       {
         "word": "distant",
-        "strength": 0.0024
-      },
-      {
-        "word": "social criticism",
-        "strength": 0.0024
+        "strength": 0.0025
       },
       {
         "word": "hopeful",
+        "strength": 0.0025
+      },
+      {
+        "word": "social criticism",
         "strength": 0.0024
       },
       {
@@ -2342,15 +2342,15 @@ const styleAssociationData = {
         "strength": 0.0023
       },
       {
+        "word": "frantic",
+        "strength": 0.0022
+      },
+      {
         "word": "sincere",
         "strength": 0.0022
       },
       {
         "word": "experimental",
-        "strength": 0.0022
-      },
-      {
-        "word": "frantic",
         "strength": 0.0021
       },
       {
@@ -2371,14 +2371,14 @@ const styleAssociationData = {
       },
       {
         "word": "soft",
+        "strength": 0.0019
+      },
+      {
+        "word": "grandiose",
         "strength": 0.0018
       },
       {
         "word": "descriptive",
-        "strength": 0.0018
-      },
-      {
-        "word": "grandiose",
         "strength": 0.0018
       },
       {
@@ -2394,7 +2394,7 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "chaotic",
+        "word": "theatrical",
         "strength": 0.0016
       },
       {
@@ -2402,20 +2402,20 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "theatrical",
+        "word": "chaotic",
         "strength": 0.0016
-      },
-      {
-        "word": "playful",
-        "strength": 0.0015
       },
       {
         "word": "internally focused",
         "strength": 0.0015
       },
       {
+        "word": "playful",
+        "strength": 0.0015
+      },
+      {
         "word": "measured",
-        "strength": 0.0014
+        "strength": 0.0015
       },
       {
         "word": "surgical",
@@ -2423,26 +2423,26 @@ const styleAssociationData = {
       },
       {
         "word": "deep",
-        "strength": 0.0013
+        "strength": 0.0014
       },
       {
         "word": "male perspective",
         "strength": 0.0013
       },
       {
-        "word": "simple",
-        "strength": 0.001
-      },
-      {
         "word": "flashy",
+        "strength": 0.0011
+      },
+      {
+        "word": "sensational",
         "strength": 0.001
       },
       {
-        "word": "female perspective",
+        "word": "suspenseful",
         "strength": 0.001
       },
       {
-        "word": "economical",
+        "word": "cozy",
         "strength": 0.001
       }
     ]
@@ -2451,7 +2451,7 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "gritty",
-        "strength": 0.0082
+        "strength": 0.0083
       },
       {
         "word": "vulgar",
@@ -2467,23 +2467,23 @@ const styleAssociationData = {
       },
       {
         "word": "dialogue-driven",
-        "strength": 0.0056
+        "strength": 0.0057
       },
       {
         "word": "detached",
-        "strength": 0.0054
+        "strength": 0.0055
       },
       {
         "word": "lavish",
         "strength": 0.0053
       },
       {
-        "word": "cinematic",
+        "word": "haunting",
         "strength": 0.005
       },
       {
-        "word": "haunting",
-        "strength": 0.0049
+        "word": "cinematic",
+        "strength": 0.005
       },
       {
         "word": "immersive",
@@ -2495,7 +2495,7 @@ const styleAssociationData = {
       },
       {
         "word": "hopeful",
-        "strength": 0.0046
+        "strength": 0.0047
       },
       {
         "word": "imagistic",
@@ -2515,11 +2515,11 @@ const styleAssociationData = {
       },
       {
         "word": "cozy",
-        "strength": 0.0039
+        "strength": 0.004
       },
       {
         "word": "measured",
-        "strength": 0.0037
+        "strength": 0.0038
       },
       {
         "word": "funny",
@@ -2531,7 +2531,7 @@ const styleAssociationData = {
       },
       {
         "word": "distant",
-        "strength": 0.0033
+        "strength": 0.0034
       },
       {
         "word": "frantic",
@@ -2539,7 +2539,7 @@ const styleAssociationData = {
       },
       {
         "word": "flashy",
-        "strength": 0.0032
+        "strength": 0.0033
       },
       {
         "word": "vulnerable",
@@ -2547,7 +2547,7 @@ const styleAssociationData = {
       },
       {
         "word": "calculated",
-        "strength": 0.0029
+        "strength": 0.003
       },
       {
         "word": "excessive",
@@ -2555,18 +2555,18 @@ const styleAssociationData = {
       },
       {
         "word": "eccentric",
-        "strength": 0.0028
-      },
-      {
-        "word": "theatrical",
-        "strength": 0.0028
-      },
-      {
-        "word": "absurdist",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "wry",
+        "strength": 0.0029
+      },
+      {
+        "word": "theatrical",
+        "strength": 0.0029
+      },
+      {
+        "word": "absurdist",
         "strength": 0.0028
       },
       {
@@ -2578,6 +2578,10 @@ const styleAssociationData = {
         "strength": 0.0026
       },
       {
+        "word": "decadent",
+        "strength": 0.0026
+      },
+      {
         "word": "tactile",
         "strength": 0.0026
       },
@@ -2586,12 +2590,8 @@ const styleAssociationData = {
         "strength": 0.0025
       },
       {
-        "word": "decadent",
-        "strength": 0.0025
-      },
-      {
         "word": "alliterative",
-        "strength": 0.0024
+        "strength": 0.0025
       },
       {
         "word": "vivid",
@@ -2602,23 +2602,23 @@ const styleAssociationData = {
         "strength": 0.0024
       },
       {
-        "word": "experimental",
-        "strength": 0.0023
-      },
-      {
         "word": "internally focused",
         "strength": 0.0023
       },
       {
-        "word": "thought-provoking",
-        "strength": 0.0021
+        "word": "experimental",
+        "strength": 0.0023
       },
       {
-        "word": "surgical",
-        "strength": 0.0021
+        "word": "thought-provoking",
+        "strength": 0.0022
       },
       {
         "word": "sensational",
+        "strength": 0.0022
+      },
+      {
+        "word": "surgical",
         "strength": 0.0021
       },
       {
@@ -2626,11 +2626,11 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
-        "word": "direct",
+        "word": "propulsive",
         "strength": 0.0021
       },
       {
-        "word": "propulsive",
+        "word": "direct",
         "strength": 0.002
       },
       {
@@ -2643,11 +2643,11 @@ const styleAssociationData = {
       },
       {
         "word": "electric",
-        "strength": 0.0019
+        "strength": 0.002
       },
       {
         "word": "soft",
-        "strength": 0.0018
+        "strength": 0.0019
       }
     ]
   },
@@ -2655,15 +2655,15 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "haunting",
-        "strength": 0.0062
+        "strength": 0.0063
       },
       {
         "word": "cozy",
-        "strength": 0.0052
+        "strength": 0.0053
       },
       {
         "word": "gritty",
-        "strength": 0.005
+        "strength": 0.0051
       },
       {
         "word": "detached",
@@ -2671,35 +2671,35 @@ const styleAssociationData = {
       },
       {
         "word": "frantic",
-        "strength": 0.0042
+        "strength": 0.0043
       },
       {
         "word": "hopeful",
-        "strength": 0.0041
+        "strength": 0.0042
       },
       {
         "word": "disturbing",
-        "strength": 0.0041
+        "strength": 0.0042
       },
       {
         "word": "excessive",
-        "strength": 0.0041
+        "strength": 0.0042
       },
       {
         "word": "immersive",
-        "strength": 0.004
-      },
-      {
-        "word": "dry",
-        "strength": 0.0039
+        "strength": 0.0041
       },
       {
         "word": "vulgar",
         "strength": 0.0039
       },
       {
+        "word": "dry",
+        "strength": 0.0039
+      },
+      {
         "word": "wry",
-        "strength": 0.0035
+        "strength": 0.0036
       },
       {
         "word": "opaque",
@@ -2715,14 +2715,14 @@ const styleAssociationData = {
       },
       {
         "word": "hyperbolic",
+        "strength": 0.0033
+      },
+      {
+        "word": "overwrought",
         "strength": 0.0032
       },
       {
         "word": "introspective",
-        "strength": 0.0032
-      },
-      {
-        "word": "overwrought",
         "strength": 0.0031
       },
       {
@@ -2739,18 +2739,18 @@ const styleAssociationData = {
       },
       {
         "word": "atmospheric",
-        "strength": 0.0027
+        "strength": 0.0028
       },
       {
         "word": "propulsive",
         "strength": 0.0027
       },
       {
-        "word": "dense",
+        "word": "internally focused",
         "strength": 0.0026
       },
       {
-        "word": "internally focused",
+        "word": "dense",
         "strength": 0.0026
       },
       {
@@ -2758,16 +2758,16 @@ const styleAssociationData = {
         "strength": 0.0025
       },
       {
-        "word": "intricate",
-        "strength": 0.0024
-      },
-      {
         "word": "sincere",
         "strength": 0.0024
       },
       {
+        "word": "intricate",
+        "strength": 0.0024
+      },
+      {
         "word": "comforting",
-        "strength": 0.0022
+        "strength": 0.0023
       },
       {
         "word": "decadent",
@@ -2775,7 +2775,7 @@ const styleAssociationData = {
       },
       {
         "word": "distant",
-        "strength": 0.0021
+        "strength": 0.0022
       },
       {
         "word": "surgical",
@@ -2786,11 +2786,11 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
-        "word": "moody",
+        "word": "philosophical",
         "strength": 0.0019
       },
       {
-        "word": "philosophical",
+        "word": "moody",
         "strength": 0.0019
       },
       {
@@ -2799,11 +2799,7 @@ const styleAssociationData = {
       },
       {
         "word": "lavish",
-        "strength": 0.0018
-      },
-      {
-        "word": "quirky",
-        "strength": 0.0018
+        "strength": 0.0019
       },
       {
         "word": "cinematic",
@@ -2811,6 +2807,10 @@ const styleAssociationData = {
       },
       {
         "word": "amusing",
+        "strength": 0.0017
+      },
+      {
+        "word": "quirky",
         "strength": 0.0017
       },
       {
@@ -2830,15 +2830,11 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "logical",
-        "strength": 0.0015
-      },
-      {
         "word": "imagistic",
         "strength": 0.0014
       },
       {
-        "word": "symbolic",
+        "word": "logical",
         "strength": 0.0014
       },
       {
@@ -2846,12 +2842,16 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "engineered",
+        "word": "symbolic",
+        "strength": 0.0014
+      },
+      {
+        "word": "suspenseful",
         "strength": 0.0014
       },
       {
         "word": "unfiltered",
-        "strength": 0.0013
+        "strength": 0.0014
       }
     ]
   },
@@ -2866,23 +2866,15 @@ const styleAssociationData = {
         "strength": 0.0028
       },
       {
-        "word": "minimalist",
-        "strength": 0.0026
-      },
-      {
         "word": "sparse",
         "strength": 0.0026
       },
       {
+        "word": "minimalist",
+        "strength": 0.0026
+      },
+      {
         "word": "introspective",
-        "strength": 0.0025
-      },
-      {
-        "word": "opaque",
-        "strength": 0.0024
-      },
-      {
-        "word": "quirky",
         "strength": 0.0024
       },
       {
@@ -2890,15 +2882,23 @@ const styleAssociationData = {
         "strength": 0.0024
       },
       {
+        "word": "opaque",
+        "strength": 0.0024
+      },
+      {
+        "word": "quirky",
+        "strength": 0.0023
+      },
+      {
         "word": "engineered",
         "strength": 0.0022
       },
       {
-        "word": "subjective",
+        "word": "wry",
         "strength": 0.0021
       },
       {
-        "word": "wry",
+        "word": "subjective",
         "strength": 0.0021
       },
       {
@@ -2906,23 +2906,19 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
-        "word": "vivid",
-        "strength": 0.002
-      },
-      {
         "word": "surgical",
         "strength": 0.002
       },
       {
+        "word": "vivid",
+        "strength": 0.002
+      },
+      {
         "word": "gritty",
-        "strength": 0.0019
+        "strength": 0.002
       },
       {
         "word": "deep",
-        "strength": 0.0018
-      },
-      {
-        "word": "matter-of-fact",
         "strength": 0.0018
       },
       {
@@ -2930,11 +2926,15 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
+        "word": "matter-of-fact",
+        "strength": 0.0017
+      },
+      {
         "word": "languid",
         "strength": 0.0016
       },
       {
-        "word": "playful",
+        "word": "symbolic",
         "strength": 0.0016
       },
       {
@@ -2942,23 +2942,23 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
+        "word": "playful",
+        "strength": 0.0015
+      },
+      {
         "word": "clever",
-        "strength": 0.0016
+        "strength": 0.0015
       },
       {
         "word": "detailed",
         "strength": 0.0015
       },
       {
-        "word": "symbolic",
+        "word": "imagistic",
         "strength": 0.0015
       },
       {
         "word": "objective",
-        "strength": 0.0015
-      },
-      {
-        "word": "visceral",
         "strength": 0.0014
       },
       {
@@ -2966,19 +2966,15 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "imagistic",
-        "strength": 0.0014
-      },
-      {
-        "word": "calm",
-        "strength": 0.0014
-      },
-      {
         "word": "internally focused",
         "strength": 0.0014
       },
       {
-        "word": "aggressive",
+        "word": "frantic",
+        "strength": 0.0014
+      },
+      {
+        "word": "visceral",
         "strength": 0.0014
       },
       {
@@ -2986,11 +2982,15 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "cynical",
-        "strength": 0.0014
+        "word": "calm",
+        "strength": 0.0013
       },
       {
-        "word": "frantic",
+        "word": "aggressive",
+        "strength": 0.0013
+      },
+      {
+        "word": "cynical",
         "strength": 0.0013
       },
       {
@@ -2998,15 +2998,19 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
+        "word": "hopeful",
+        "strength": 0.0013
+      },
+      {
         "word": "intricate",
         "strength": 0.0013
       },
       {
-        "word": "technical",
-        "strength": 0.0013
+        "word": "profane",
+        "strength": 0.0012
       },
       {
-        "word": "cold",
+        "word": "technical",
         "strength": 0.0012
       },
       {
@@ -3014,43 +3018,39 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "active voice",
+        "word": "distant",
         "strength": 0.0012
       },
       {
-        "word": "profane",
+        "word": "detached",
         "strength": 0.0012
       },
       {
-        "word": "plain",
-        "strength": 0.0012
-      },
-      {
-        "word": "hopeful",
-        "strength": 0.0012
-      },
-      {
-        "word": "virtue signaling",
+        "word": "immersive",
         "strength": 0.0012
       },
       {
         "word": "social criticism",
+        "strength": 0.0012
+      },
+      {
+        "word": "active voice",
         "strength": 0.0011
       },
       {
-        "word": "distant",
+        "word": "cold",
+        "strength": 0.0011
+      },
+      {
+        "word": "plain",
+        "strength": 0.0011
+      },
+      {
+        "word": "virtue signaling",
         "strength": 0.0011
       },
       {
         "word": "poised",
-        "strength": 0.0011
-      },
-      {
-        "word": "detached",
-        "strength": 0.0011
-      },
-      {
-        "word": "immersive",
         "strength": 0.0011
       },
       {
@@ -3063,7 +3063,7 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "overwrought",
-        "strength": 0.0032
+        "strength": 0.0033
       },
       {
         "word": "haunting",
@@ -3071,7 +3071,7 @@ const styleAssociationData = {
       },
       {
         "word": "comforting",
-        "strength": 0.003
+        "strength": 0.0031
       },
       {
         "word": "symbolic",
@@ -3087,34 +3087,38 @@ const styleAssociationData = {
       },
       {
         "word": "detached",
-        "strength": 0.0021
+        "strength": 0.0022
       },
       {
         "word": "suspenseful",
         "strength": 0.0021
       },
       {
-        "word": "soft",
-        "strength": 0.0019
-      },
-      {
-        "word": "grandiose",
-        "strength": 0.0019
-      },
-      {
         "word": "disturbing",
-        "strength": 0.0019
+        "strength": 0.002
       },
       {
         "word": "frantic",
-        "strength": 0.0019
+        "strength": 0.002
+      },
+      {
+        "word": "soft",
+        "strength": 0.002
+      },
+      {
+        "word": "grandiose",
+        "strength": 0.002
       },
       {
         "word": "hopeful",
-        "strength": 0.0018
+        "strength": 0.0019
       },
       {
         "word": "gritty",
+        "strength": 0.0018
+      },
+      {
+        "word": "stylized",
         "strength": 0.0018
       },
       {
@@ -3122,7 +3126,7 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "stylized",
+        "word": "distant",
         "strength": 0.0017
       },
       {
@@ -3131,15 +3135,11 @@ const styleAssociationData = {
       },
       {
         "word": "vulgar",
-        "strength": 0.0016
-      },
-      {
-        "word": "distant",
-        "strength": 0.0016
+        "strength": 0.0017
       },
       {
         "word": "wry",
-        "strength": 0.0016
+        "strength": 0.0017
       },
       {
         "word": "flashy",
@@ -3150,11 +3150,11 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "bizarre",
+        "word": "immersive",
         "strength": 0.0015
       },
       {
-        "word": "dreamlike",
+        "word": "bizarre",
         "strength": 0.0015
       },
       {
@@ -3162,7 +3162,19 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "immersive",
+        "word": "profane",
+        "strength": 0.0015
+      },
+      {
+        "word": "intimate",
+        "strength": 0.0015
+      },
+      {
+        "word": "dreamlike",
+        "strength": 0.0015
+      },
+      {
+        "word": "sensational",
         "strength": 0.0015
       },
       {
@@ -3170,11 +3182,7 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "profane",
-        "strength": 0.0014
-      },
-      {
-        "word": "intimate",
+        "word": "lavish",
         "strength": 0.0014
       },
       {
@@ -3182,39 +3190,27 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "sensational",
-        "strength": 0.0014
-      },
-      {
-        "word": "lavish",
-        "strength": 0.0014
-      },
-      {
         "word": "dense",
         "strength": 0.0014
       },
       {
-        "word": "metaphorical",
-        "strength": 0.0013
-      },
-      {
         "word": "decadent",
-        "strength": 0.0013
+        "strength": 0.0014
       },
       {
         "word": "amusing",
-        "strength": 0.0013
+        "strength": 0.0014
+      },
+      {
+        "word": "risky",
+        "strength": 0.0014
       },
       {
         "word": "unfiltered",
         "strength": 0.0013
       },
       {
-        "word": "verbose",
-        "strength": 0.0013
-      },
-      {
-        "word": "risky",
+        "word": "metaphorical",
         "strength": 0.0013
       },
       {
@@ -3226,11 +3222,15 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "moralising",
-        "strength": 0.0012
+        "word": "verbose",
+        "strength": 0.0013
       },
       {
         "word": "hyperbolic",
+        "strength": 0.0012
+      },
+      {
+        "word": "moralising",
         "strength": 0.0012
       },
       {
@@ -3239,6 +3239,10 @@ const styleAssociationData = {
       },
       {
         "word": "dry humor",
+        "strength": 0.0011
+      },
+      {
+        "word": "allegorical",
         "strength": 0.001
       },
       {
@@ -3250,16 +3254,12 @@ const styleAssociationData = {
         "strength": 0.001
       },
       {
-        "word": "allegorical",
+        "word": "systematic",
         "strength": 0.001
       },
       {
-        "word": "absurdist",
-        "strength": 0.0009
-      },
-      {
         "word": "utopian",
-        "strength": 0.0009
+        "strength": 0.001
       }
     ]
   },
@@ -3278,7 +3278,7 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
-        "word": "natural",
+        "word": "earnest",
         "strength": 0.0021
       },
       {
@@ -3286,23 +3286,19 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
-        "word": "earnest",
+        "word": "natural",
         "strength": 0.002
       },
       {
         "word": "sophisticated",
-        "strength": 0.0018
+        "strength": 0.0017
       },
       {
         "word": "deep",
         "strength": 0.0017
       },
       {
-        "word": "biting",
-        "strength": 0.0016
-      },
-      {
-        "word": "sparse",
+        "word": "conventional",
         "strength": 0.0016
       },
       {
@@ -3310,35 +3306,43 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "conventional",
+        "word": "sparse",
+        "strength": 0.0016
+      },
+      {
+        "word": "biting",
         "strength": 0.0016
       },
       {
         "word": "suspenseful",
-        "strength": 0.0015
+        "strength": 0.0016
       },
       {
         "word": "cozy",
-        "strength": 0.0014
+        "strength": 0.0015
       },
       {
-        "word": "crisp",
-        "strength": 0.0013
+        "word": "haunting",
+        "strength": 0.0014
       },
       {
         "word": "complex",
         "strength": 0.0013
       },
       {
-        "word": "haunting",
+        "word": "crisp",
         "strength": 0.0013
       },
       {
-        "word": "sharp",
+        "word": "overwrought",
+        "strength": 0.0013
+      },
+      {
+        "word": "convoluted",
         "strength": 0.0012
       },
       {
-        "word": "calm",
+        "word": "sharp",
         "strength": 0.0012
       },
       {
@@ -3346,15 +3350,7 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "convoluted",
-        "strength": 0.0012
-      },
-      {
-        "word": "overwrought",
-        "strength": 0.0012
-      },
-      {
-        "word": "whimsical",
+        "word": "dangerous",
         "strength": 0.0011
       },
       {
@@ -3362,23 +3358,19 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "aggressive",
-        "strength": 0.0011
-      },
-      {
-        "word": "dangerous",
-        "strength": 0.0011
-      },
-      {
-        "word": "minimalist",
-        "strength": 0.0011
-      },
-      {
         "word": "utopian",
         "strength": 0.0011
       },
       {
-        "word": "opaque",
+        "word": "calm",
+        "strength": 0.0011
+      },
+      {
+        "word": "stylized",
+        "strength": 0.0011
+      },
+      {
+        "word": "whimsical",
         "strength": 0.0011
       },
       {
@@ -3386,19 +3378,31 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
+        "word": "opaque",
+        "strength": 0.0011
+      },
+      {
+        "word": "gentle",
+        "strength": 0.0011
+      },
+      {
         "word": "disorienting",
         "strength": 0.001
       },
       {
-        "word": "stylized",
+        "word": "aggressive",
         "strength": 0.001
       },
       {
-        "word": "gentle",
+        "word": "minimalist",
         "strength": 0.001
       },
       {
         "word": "nostalgic",
+        "strength": 0.001
+      },
+      {
+        "word": "systematic",
         "strength": 0.001
       },
       {
@@ -3407,18 +3411,14 @@ const styleAssociationData = {
       },
       {
         "word": "clever",
-        "strength": 0.001
+        "strength": 0.0009
       },
       {
         "word": "meandering",
         "strength": 0.0009
       },
       {
-        "word": "systematic",
-        "strength": 0.0009
-      },
-      {
-        "word": "elegant",
+        "word": "baroque",
         "strength": 0.0009
       },
       {
@@ -3426,11 +3426,11 @@ const styleAssociationData = {
         "strength": 0.0008
       },
       {
-        "word": "baroque",
+        "word": "purple prose",
         "strength": 0.0008
       },
       {
-        "word": "purple prose",
+        "word": "elegant",
         "strength": 0.0008
       },
       {
@@ -3438,11 +3438,11 @@ const styleAssociationData = {
         "strength": 0.0008
       },
       {
-        "word": "introspective",
+        "word": "wry",
         "strength": 0.0008
       },
       {
-        "word": "wry",
+        "word": "introspective",
         "strength": 0.0007
       },
       {
@@ -3450,7 +3450,7 @@ const styleAssociationData = {
         "strength": 0.0007
       },
       {
-        "word": "matter-of-fact",
+        "word": "propulsive",
         "strength": 0.0007
       },
       {
@@ -3458,12 +3458,12 @@ const styleAssociationData = {
         "strength": 0.0007
       },
       {
-        "word": "propulsive",
+        "word": "excessive",
         "strength": 0.0007
       },
       {
-        "word": "ethereal",
-        "strength": 0.0006
+        "word": "stream-of-consciousness",
+        "strength": 0.0007
       }
     ]
   },
@@ -3475,27 +3475,27 @@ const styleAssociationData = {
       },
       {
         "word": "gritty",
-        "strength": 0.0029
+        "strength": 0.003
+      },
+      {
+        "word": "cozy",
+        "strength": 0.003
       },
       {
         "word": "vulgar",
         "strength": 0.0029
       },
       {
-        "word": "cozy",
-        "strength": 0.0029
-      },
-      {
         "word": "haunting",
-        "strength": 0.0027
+        "strength": 0.0028
       },
       {
         "word": "detached",
-        "strength": 0.0026
+        "strength": 0.0027
       },
       {
         "word": "plain",
-        "strength": 0.0025
+        "strength": 0.0024
       },
       {
         "word": "intelligent",
@@ -3506,19 +3506,15 @@ const styleAssociationData = {
         "strength": 0.0023
       },
       {
-        "word": "playful",
-        "strength": 0.0023
-      },
-      {
         "word": "intricate",
         "strength": 0.0023
       },
       {
-        "word": "minimalist",
-        "strength": 0.0023
+        "word": "playful",
+        "strength": 0.0022
       },
       {
-        "word": "quirky",
+        "word": "minimalist",
         "strength": 0.0022
       },
       {
@@ -3526,15 +3522,19 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
-        "word": "dry",
+        "word": "quirky",
         "strength": 0.0022
+      },
+      {
+        "word": "dry",
+        "strength": 0.0021
       },
       {
         "word": "melancholic",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
-        "word": "absurdist",
+        "word": "disturbing",
         "strength": 0.0021
       },
       {
@@ -3542,7 +3542,11 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
-        "word": "disturbing",
+        "word": "absurdist",
+        "strength": 0.0021
+      },
+      {
+        "word": "sincere",
         "strength": 0.002
       },
       {
@@ -3550,15 +3554,7 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
-        "word": "sincere",
-        "strength": 0.002
-      },
-      {
         "word": "grandiose",
-        "strength": 0.0019
-      },
-      {
-        "word": "subjective",
         "strength": 0.0019
       },
       {
@@ -3566,15 +3562,23 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
+        "word": "subjective",
+        "strength": 0.0018
+      },
+      {
         "word": "male perspective",
         "strength": 0.0017
+      },
+      {
+        "word": "stylized",
+        "strength": 0.0016
       },
       {
         "word": "bizarre",
         "strength": 0.0016
       },
       {
-        "word": "stylized",
+        "word": "gentle",
         "strength": 0.0015
       },
       {
@@ -3582,11 +3586,11 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "gentle",
-        "strength": 0.0015
+        "word": "philosophical",
+        "strength": 0.0014
       },
       {
-        "word": "philosophical",
+        "word": "decadent",
         "strength": 0.0014
       },
       {
@@ -3602,19 +3606,7 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "decadent",
-        "strength": 0.0014
-      },
-      {
-        "word": "logical",
-        "strength": 0.0013
-      },
-      {
         "word": "utopian",
-        "strength": 0.0013
-      },
-      {
-        "word": "psychedelic",
         "strength": 0.0013
       },
       {
@@ -3622,7 +3614,23 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
+        "word": "logical",
+        "strength": 0.0013
+      },
+      {
+        "word": "psychedelic",
+        "strength": 0.0013
+      },
+      {
         "word": "wry",
+        "strength": 0.0013
+      },
+      {
+        "word": "cinematic",
+        "strength": 0.0012
+      },
+      {
+        "word": "immersive",
         "strength": 0.0012
       },
       {
@@ -3634,32 +3642,20 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "cinematic",
-        "strength": 0.0012
-      },
-      {
         "word": "objective",
         "strength": 0.0012
-      },
-      {
-        "word": "immersive",
-        "strength": 0.0011
-      },
-      {
-        "word": "biting",
-        "strength": 0.0011
       },
       {
         "word": "sensational",
         "strength": 0.0011
       },
       {
-        "word": "electric",
-        "strength": 0.001
+        "word": "hyperbolic",
+        "strength": 0.0011
       },
       {
-        "word": "hyperbolic",
-        "strength": 0.001
+        "word": "electric",
+        "strength": 0.0011
       },
       {
         "word": "propulsive",
@@ -3667,6 +3663,10 @@ const styleAssociationData = {
       },
       {
         "word": "flashy",
+        "strength": 0.001
+      },
+      {
+        "word": "baroque",
         "strength": 0.001
       }
     ]
@@ -3679,7 +3679,7 @@ const styleAssociationData = {
       },
       {
         "word": "disturbing",
-        "strength": 0.0069
+        "strength": 0.007
       },
       {
         "word": "human",
@@ -3687,11 +3687,11 @@ const styleAssociationData = {
       },
       {
         "word": "earnest",
-        "strength": 0.005
+        "strength": 0.0051
       },
       {
         "word": "suspenseful",
-        "strength": 0.0045
+        "strength": 0.0046
       },
       {
         "word": "romantic",
@@ -3723,7 +3723,7 @@ const styleAssociationData = {
       },
       {
         "word": "systematic",
-        "strength": 0.0037
+        "strength": 0.0038
       },
       {
         "word": "stylized",
@@ -3735,7 +3735,7 @@ const styleAssociationData = {
       },
       {
         "word": "decadent",
-        "strength": 0.0035
+        "strength": 0.0036
       },
       {
         "word": "dangerous",
@@ -3743,19 +3743,19 @@ const styleAssociationData = {
       },
       {
         "word": "excessive",
-        "strength": 0.0034
+        "strength": 0.0035
       },
       {
         "word": "magical",
         "strength": 0.0034
       },
       {
-        "word": "feverish",
-        "strength": 0.0033
+        "word": "cozy",
+        "strength": 0.0034
       },
       {
-        "word": "cozy",
-        "strength": 0.0033
+        "word": "feverish",
+        "strength": 0.0034
       },
       {
         "word": "sentimental",
@@ -3767,7 +3767,7 @@ const styleAssociationData = {
       },
       {
         "word": "elaborate",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "intoxicating",
@@ -3779,7 +3779,7 @@ const styleAssociationData = {
       },
       {
         "word": "baroque",
-        "strength": 0.0027
+        "strength": 0.0028
       },
       {
         "word": "uplifting",
@@ -3791,11 +3791,11 @@ const styleAssociationData = {
       },
       {
         "word": "frantic",
-        "strength": 0.0024
+        "strength": 0.0025
       },
       {
         "word": "utopian",
-        "strength": 0.0024
+        "strength": 0.0025
       },
       {
         "word": "amusing",
@@ -3814,35 +3814,35 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
-        "word": "mischievous",
+        "word": "stream-of-consciousness",
         "strength": 0.0022
       },
       {
-        "word": "stream-of-consciousness",
-        "strength": 0.0021
+        "word": "mischievous",
+        "strength": 0.0022
       },
       {
         "word": "ornate",
         "strength": 0.0021
       },
       {
-        "word": "effusive",
+        "word": "haunting",
         "strength": 0.002
       },
       {
         "word": "raw",
-        "strength": 0.0019
+        "strength": 0.002
       },
       {
-        "word": "haunting",
+        "word": "effusive",
+        "strength": 0.002
+      },
+      {
+        "word": "sensational",
         "strength": 0.0019
       },
       {
         "word": "purple prose",
-        "strength": 0.0019
-      },
-      {
-        "word": "sensational",
         "strength": 0.0019
       },
       {
@@ -3854,15 +3854,15 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "crisp",
+        "word": "propulsive",
         "strength": 0.0018
       },
       {
-        "word": "disorienting",
+        "word": "crisp",
         "strength": 0.0017
       },
       {
-        "word": "propulsive",
+        "word": "disorienting",
         "strength": 0.0017
       },
       {
@@ -3871,7 +3871,7 @@ const styleAssociationData = {
       },
       {
         "word": "hopeful",
-        "strength": 0.0015
+        "strength": 0.0016
       }
     ]
   },
@@ -3891,18 +3891,14 @@ const styleAssociationData = {
       },
       {
         "word": "overwrought",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "quirky",
-        "strength": 0.0027
+        "strength": 0.0026
       },
       {
         "word": "raw",
-        "strength": 0.0023
-      },
-      {
-        "word": "clever",
         "strength": 0.0023
       },
       {
@@ -3910,7 +3906,7 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
-        "word": "matter-of-fact",
+        "word": "clever",
         "strength": 0.0022
       },
       {
@@ -3918,11 +3914,15 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
-        "word": "aggressive",
+        "word": "matter-of-fact",
         "strength": 0.0021
       },
       {
         "word": "verbose",
+        "strength": 0.0021
+      },
+      {
+        "word": "aggressive",
         "strength": 0.0021
       },
       {
@@ -3935,7 +3935,7 @@ const styleAssociationData = {
       },
       {
         "word": "convoluted",
-        "strength": 0.0019
+        "strength": 0.002
       },
       {
         "word": "odd",
@@ -3948,10 +3948,6 @@ const styleAssociationData = {
       {
         "word": "crisp",
         "strength": 0.0018
-      },
-      {
-        "word": "vibrant",
-        "strength": 0.0017
       },
       {
         "word": "idealistic",
@@ -3966,31 +3962,35 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "natural",
-        "strength": 0.0017
-      },
-      {
         "word": "soothing",
         "strength": 0.0017
       },
       {
         "word": "intelligent",
-        "strength": 0.0016
+        "strength": 0.0017
+      },
+      {
+        "word": "vibrant",
+        "strength": 0.0017
       },
       {
         "word": "dense",
         "strength": 0.0016
       },
       {
-        "word": "cold",
+        "word": "natural",
         "strength": 0.0016
       },
       {
-        "word": "elegant",
+        "word": "moralising",
         "strength": 0.0015
       },
       {
-        "word": "moralising",
+        "word": "cold",
+        "strength": 0.0015
+      },
+      {
+        "word": "elegant",
         "strength": 0.0015
       },
       {
@@ -3998,11 +3998,11 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "meticulous",
+        "word": "comforting",
         "strength": 0.0014
       },
       {
-        "word": "comforting",
+        "word": "meticulous",
         "strength": 0.0014
       },
       {
@@ -4010,7 +4010,7 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "clarity",
+        "word": "baroque",
         "strength": 0.0013
       },
       {
@@ -4018,19 +4018,15 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "cynical",
-        "strength": 0.0013
-      },
-      {
         "word": "literal",
         "strength": 0.0013
       },
       {
-        "word": "baroque",
-        "strength": 0.0013
+        "word": "cynical",
+        "strength": 0.0012
       },
       {
-        "word": "subjective",
+        "word": "clarity",
         "strength": 0.0012
       },
       {
@@ -4042,7 +4038,7 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "active voice",
+        "word": "subjective",
         "strength": 0.0012
       },
       {
@@ -4050,15 +4046,23 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "poetic",
-        "strength": 0.0012
-      },
-      {
         "word": "dry humor",
         "strength": 0.0012
       },
       {
+        "word": "active voice",
+        "strength": 0.0012
+      },
+      {
+        "word": "poetic",
+        "strength": 0.0012
+      },
+      {
         "word": "social criticism",
+        "strength": 0.0011
+      },
+      {
+        "word": "disturbing",
         "strength": 0.0011
       },
       {
@@ -4070,12 +4074,8 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "effusive",
-        "strength": 0.001
-      },
-      {
         "word": "deep",
-        "strength": 0.001
+        "strength": 0.0011
       }
     ]
   },
@@ -4083,27 +4083,27 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "precise",
-        "strength": 0.0034
+        "strength": 0.0033
       },
       {
         "word": "overwrought",
-        "strength": 0.003
+        "strength": 0.0031
       },
       {
         "word": "sophisticated",
-        "strength": 0.0028
+        "strength": 0.0027
       },
       {
         "word": "complex",
         "strength": 0.0027
       },
       {
-        "word": "matter-of-fact",
-        "strength": 0.0027
-      },
-      {
         "word": "surgical",
         "strength": 0.0026
+      },
+      {
+        "word": "matter-of-fact",
+        "strength": 0.0025
       },
       {
         "word": "verbose",
@@ -4114,11 +4114,11 @@ const styleAssociationData = {
         "strength": 0.0024
       },
       {
-        "word": "quirky",
-        "strength": 0.0023
+        "word": "convoluted",
+        "strength": 0.0024
       },
       {
-        "word": "convoluted",
+        "word": "quirky",
         "strength": 0.0023
       },
       {
@@ -4127,7 +4127,7 @@ const styleAssociationData = {
       },
       {
         "word": "clever",
-        "strength": 0.0023
+        "strength": 0.0022
       },
       {
         "word": "dry humor",
@@ -4139,10 +4139,26 @@ const styleAssociationData = {
       },
       {
         "word": "aggressive",
-        "strength": 0.0019
+        "strength": 0.0018
+      },
+      {
+        "word": "comforting",
+        "strength": 0.0018
+      },
+      {
+        "word": "moralising",
+        "strength": 0.0018
       },
       {
         "word": "vibrant",
+        "strength": 0.0018
+      },
+      {
+        "word": "deep",
+        "strength": 0.0018
+      },
+      {
+        "word": "dense",
         "strength": 0.0018
       },
       {
@@ -4154,27 +4170,11 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "moralising",
-        "strength": 0.0018
-      },
-      {
-        "word": "dense",
-        "strength": 0.0018
-      },
-      {
-        "word": "deep",
-        "strength": 0.0018
-      },
-      {
-        "word": "comforting",
-        "strength": 0.0018
-      },
-      {
         "word": "dry",
         "strength": 0.0017
       },
       {
-        "word": "cold",
+        "word": "symbolic",
         "strength": 0.0016
       },
       {
@@ -4182,11 +4182,7 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "symbolic",
-        "strength": 0.0016
-      },
-      {
-        "word": "whimsical",
+        "word": "social criticism",
         "strength": 0.0015
       },
       {
@@ -4194,15 +4190,19 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
+        "word": "cold",
+        "strength": 0.0015
+      },
+      {
+        "word": "whimsical",
+        "strength": 0.0015
+      },
+      {
         "word": "absurdist",
         "strength": 0.0015
       },
       {
-        "word": "social criticism",
-        "strength": 0.0015
-      },
-      {
-        "word": "minimalist",
+        "word": "haunting",
         "strength": 0.0015
       },
       {
@@ -4214,7 +4214,7 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "haunting",
+        "word": "minimalist",
         "strength": 0.0014
       },
       {
@@ -4222,31 +4222,27 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "twisted",
-        "strength": 0.0013
-      },
-      {
         "word": "purple prose",
         "strength": 0.0013
       },
       {
-        "word": "subjective",
+        "word": "twisted",
+        "strength": 0.0013
+      },
+      {
+        "word": "intelligent",
         "strength": 0.0013
       },
       {
         "word": "eccentric",
-        "strength": 0.0012
+        "strength": 0.0013
       },
       {
         "word": "idealistic",
-        "strength": 0.0012
+        "strength": 0.0013
       },
       {
-        "word": "intelligent",
-        "strength": 0.0012
-      },
-      {
-        "word": "deliberate",
+        "word": "subjective",
         "strength": 0.0012
       },
       {
@@ -4254,7 +4250,11 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "clarity",
+        "word": "deliberate",
+        "strength": 0.0012
+      },
+      {
+        "word": "soft",
         "strength": 0.0012
       },
       {
@@ -4262,15 +4262,15 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "meticulous",
-        "strength": 0.0012
-      },
-      {
         "word": "ornate",
         "strength": 0.0011
       },
       {
-        "word": "soft",
+        "word": "clarity",
+        "strength": 0.0011
+      },
+      {
+        "word": "meticulous",
         "strength": 0.0011
       },
       {
@@ -4287,42 +4287,42 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "overwrought",
-        "strength": 0.0047
+        "strength": 0.0048
       },
       {
         "word": "disturbing",
-        "strength": 0.0046
+        "strength": 0.0047
       },
       {
         "word": "amusing",
-        "strength": 0.0043
+        "strength": 0.0044
       },
       {
         "word": "quirky",
-        "strength": 0.004
+        "strength": 0.0039
       },
       {
         "word": "haunting",
-        "strength": 0.0038
-      },
-      {
-        "word": "surgical",
-        "strength": 0.0034
+        "strength": 0.0039
       },
       {
         "word": "dense",
         "strength": 0.0034
       },
       {
-        "word": "detached",
-        "strength": 0.0033
+        "word": "surgical",
+        "strength": 0.0034
       },
       {
-        "word": "dry",
-        "strength": 0.0031
+        "word": "detached",
+        "strength": 0.0034
       },
       {
         "word": "comforting",
+        "strength": 0.0032
+      },
+      {
+        "word": "dry",
         "strength": 0.0031
       },
       {
@@ -4338,12 +4338,12 @@ const styleAssociationData = {
         "strength": 0.0026
       },
       {
-        "word": "clever",
+        "word": "raw",
         "strength": 0.0026
       },
       {
-        "word": "raw",
-        "strength": 0.0026
+        "word": "clever",
+        "strength": 0.0025
       },
       {
         "word": "crisp",
@@ -4354,11 +4354,15 @@ const styleAssociationData = {
         "strength": 0.0025
       },
       {
+        "word": "deep",
+        "strength": 0.0025
+      },
+      {
         "word": "complex",
         "strength": 0.0024
       },
       {
-        "word": "deep",
+        "word": "systematic",
         "strength": 0.0024
       },
       {
@@ -4367,19 +4371,15 @@ const styleAssociationData = {
       },
       {
         "word": "natural",
-        "strength": 0.0024
-      },
-      {
-        "word": "systematic",
-        "strength": 0.0024
-      },
-      {
-        "word": "matter-of-fact",
-        "strength": 0.0024
+        "strength": 0.0023
       },
       {
         "word": "whimsical",
         "strength": 0.0023
+      },
+      {
+        "word": "matter-of-fact",
+        "strength": 0.0022
       },
       {
         "word": "baroque",
@@ -4387,7 +4387,7 @@ const styleAssociationData = {
       },
       {
         "word": "odd",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
         "word": "verbose",
@@ -4402,11 +4402,11 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
-        "word": "aggressive",
+        "word": "human",
         "strength": 0.0019
       },
       {
-        "word": "human",
+        "word": "aggressive",
         "strength": 0.0019
       },
       {
@@ -4414,7 +4414,15 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
+        "word": "grandiose",
+        "strength": 0.0018
+      },
+      {
         "word": "active voice",
+        "strength": 0.0018
+      },
+      {
+        "word": "disorienting",
         "strength": 0.0018
       },
       {
@@ -4423,22 +4431,14 @@ const styleAssociationData = {
       },
       {
         "word": "detailed",
-        "strength": 0.0018
-      },
-      {
-        "word": "grandiose",
-        "strength": 0.0018
-      },
-      {
-        "word": "disorienting",
-        "strength": 0.0018
-      },
-      {
-        "word": "dreamlike",
         "strength": 0.0017
       },
       {
         "word": "symbolic",
+        "strength": 0.0017
+      },
+      {
+        "word": "dreamlike",
         "strength": 0.0017
       },
       {
@@ -4447,18 +4447,22 @@ const styleAssociationData = {
       },
       {
         "word": "ornate",
-        "strength": 0.0016
-      },
-      {
-        "word": "virtue signaling",
-        "strength": 0.0016
+        "strength": 0.0017
       },
       {
         "word": "sharp",
-        "strength": 0.0016
+        "strength": 0.0015
       },
       {
-        "word": "cold",
+        "word": "virtue signaling",
+        "strength": 0.0015
+      },
+      {
+        "word": "hopeful",
+        "strength": 0.0015
+      },
+      {
+        "word": "gentle",
         "strength": 0.0015
       },
       {
@@ -4466,15 +4470,7 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "subjective",
-        "strength": 0.0014
-      },
-      {
-        "word": "gentle",
-        "strength": 0.0014
-      },
-      {
-        "word": "hopeful",
+        "word": "cold",
         "strength": 0.0014
       },
       {
@@ -4482,7 +4478,11 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "deliberate",
+        "word": "subjective",
+        "strength": 0.0014
+      },
+      {
+        "word": "wry",
         "strength": 0.0013
       }
     ]
@@ -4491,7 +4491,7 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "quirky",
-        "strength": 0.0047
+        "strength": 0.0046
       },
       {
         "word": "overwrought",
@@ -4507,26 +4507,22 @@ const styleAssociationData = {
       },
       {
         "word": "natural",
-        "strength": 0.0033
+        "strength": 0.0032
       },
       {
         "word": "disturbing",
-        "strength": 0.0031
+        "strength": 0.0032
       },
       {
         "word": "raw",
         "strength": 0.0031
       },
       {
-        "word": "complex",
-        "strength": 0.003
-      },
-      {
         "word": "convoluted",
         "strength": 0.003
       },
       {
-        "word": "sophisticated",
+        "word": "complex",
         "strength": 0.003
       },
       {
@@ -4538,31 +4534,39 @@ const styleAssociationData = {
         "strength": 0.0029
       },
       {
+        "word": "sophisticated",
+        "strength": 0.0029
+      },
+      {
         "word": "crisp",
         "strength": 0.0027
       },
       {
         "word": "clever",
-        "strength": 0.0027
+        "strength": 0.0026
+      },
+      {
+        "word": "haunting",
+        "strength": 0.0026
       },
       {
         "word": "sharp",
         "strength": 0.0026
       },
       {
-        "word": "haunting",
-        "strength": 0.0025
+        "word": "odd",
+        "strength": 0.0024
       },
       {
-        "word": "odd",
-        "strength": 0.0025
+        "word": "deep",
+        "strength": 0.0024
       },
       {
         "word": "whimsical",
         "strength": 0.0024
       },
       {
-        "word": "deep",
+        "word": "baroque",
         "strength": 0.0024
       },
       {
@@ -4571,10 +4575,6 @@ const styleAssociationData = {
       },
       {
         "word": "dry",
-        "strength": 0.0023
-      },
-      {
-        "word": "baroque",
         "strength": 0.0023
       },
       {
@@ -4594,28 +4594,28 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
-        "word": "aggressive",
+        "word": "comforting",
         "strength": 0.0021
-      },
-      {
-        "word": "minimalist",
-        "strength": 0.0021
-      },
-      {
-        "word": "virtue signaling",
-        "strength": 0.002
       },
       {
         "word": "ornate",
         "strength": 0.002
       },
       {
-        "word": "comforting",
+        "word": "aggressive",
+        "strength": 0.002
+      },
+      {
+        "word": "minimalist",
+        "strength": 0.002
+      },
+      {
+        "word": "virtue signaling",
         "strength": 0.002
       },
       {
         "word": "sparse",
-        "strength": 0.002
+        "strength": 0.0019
       },
       {
         "word": "active voice",
@@ -4623,18 +4623,10 @@ const styleAssociationData = {
       },
       {
         "word": "gentle",
-        "strength": 0.0018
-      },
-      {
-        "word": "matter-of-fact",
-        "strength": 0.0018
+        "strength": 0.0019
       },
       {
         "word": "disorienting",
-        "strength": 0.0018
-      },
-      {
-        "word": "subjective",
         "strength": 0.0018
       },
       {
@@ -4642,35 +4634,43 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "cold",
-        "strength": 0.0017
-      },
-      {
         "word": "precise",
         "strength": 0.0017
       },
       {
+        "word": "subjective",
+        "strength": 0.0017
+      },
+      {
+        "word": "matter-of-fact",
+        "strength": 0.0017
+      },
+      {
+        "word": "cold",
+        "strength": 0.0017
+      },
+      {
         "word": "detached",
-        "strength": 0.0015
+        "strength": 0.0016
       },
       {
         "word": "literal",
         "strength": 0.0015
       },
       {
-        "word": "deliberate",
-        "strength": 0.0014
-      },
-      {
         "word": "patriarchal",
         "strength": 0.0014
       },
       {
-        "word": "cynical",
+        "word": "earnest",
         "strength": 0.0014
       },
       {
-        "word": "earnest",
+        "word": "deliberate",
+        "strength": 0.0014
+      },
+      {
+        "word": "cynical",
         "strength": 0.0014
       },
       {
@@ -4682,11 +4682,11 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "logical",
+        "word": "decadent",
         "strength": 0.0013
       },
       {
-        "word": "visceral",
+        "word": "grandiose",
         "strength": 0.0013
       }
     ]
@@ -4698,31 +4698,31 @@ const styleAssociationData = {
         "strength": 0.0053
       },
       {
-        "word": "surreal",
-        "strength": 0.0051
-      },
-      {
         "word": "theatrical",
         "strength": 0.0051
       },
       {
+        "word": "surreal",
+        "strength": 0.0051
+      },
+      {
         "word": "tactile",
-        "strength": 0.0046
+        "strength": 0.0045
       },
       {
         "word": "vivid",
         "strength": 0.0045
       },
       {
-        "word": "simple",
-        "strength": 0.0043
+        "word": "funny",
+        "strength": 0.0042
       },
       {
         "word": "economical",
         "strength": 0.0042
       },
       {
-        "word": "funny",
+        "word": "simple",
         "strength": 0.0042
       },
       {
@@ -4734,56 +4734,56 @@ const styleAssociationData = {
         "strength": 0.004
       },
       {
-        "word": "meditative",
-        "strength": 0.0039
+        "word": "friendly",
+        "strength": 0.0038
       },
       {
-        "word": "friendly",
-        "strength": 0.0039
+        "word": "meditative",
+        "strength": 0.0038
       },
       {
         "word": "visceral",
-        "strength": 0.0037
-      },
-      {
-        "word": "subversive",
         "strength": 0.0036
       },
       {
-        "word": "melancholic",
-        "strength": 0.0034
+        "word": "subversive",
+        "strength": 0.0035
       },
       {
-        "word": "plain",
-        "strength": 0.0032
+        "word": "melancholic",
+        "strength": 0.0033
       },
       {
         "word": "direct",
         "strength": 0.0032
       },
       {
+        "word": "plain",
+        "strength": 0.0031
+      },
+      {
         "word": "minimalist",
-        "strength": 0.0032
+        "strength": 0.0031
       },
       {
         "word": "articulate",
         "strength": 0.0031
       },
       {
-        "word": "functional",
-        "strength": 0.003
-      },
-      {
         "word": "moody",
         "strength": 0.003
       },
       {
-        "word": "chaotic",
-        "strength": 0.0029
+        "word": "functional",
+        "strength": 0.003
       },
       {
         "word": "grounding",
         "strength": 0.0029
+      },
+      {
+        "word": "chaotic",
+        "strength": 0.0028
       },
       {
         "word": "dialogue-driven",
@@ -4806,7 +4806,7 @@ const styleAssociationData = {
         "strength": 0.0026
       },
       {
-        "word": "matter-of-fact",
+        "word": "alliterative",
         "strength": 0.0026
       },
       {
@@ -4814,19 +4814,19 @@ const styleAssociationData = {
         "strength": 0.0025
       },
       {
-        "word": "alliterative",
-        "strength": 0.0025
-      },
-      {
         "word": "restrained",
         "strength": 0.0025
       },
       {
-        "word": "formal",
+        "word": "descriptive",
         "strength": 0.0025
       },
       {
-        "word": "descriptive",
+        "word": "matter-of-fact",
+        "strength": 0.0024
+      },
+      {
+        "word": "formal",
         "strength": 0.0024
       },
       {
@@ -4839,30 +4839,18 @@ const styleAssociationData = {
       },
       {
         "word": "playful",
-        "strength": 0.0023
-      },
-      {
-        "word": "calm",
-        "strength": 0.0023
-      },
-      {
-        "word": "cold",
         "strength": 0.0022
       },
       {
+        "word": "calm",
+        "strength": 0.0022
+      },
+      {
+        "word": "cold",
+        "strength": 0.0021
+      },
+      {
         "word": "safe",
-        "strength": 0.0021
-      },
-      {
-        "word": "subjective",
-        "strength": 0.0021
-      },
-      {
-        "word": "engaging",
-        "strength": 0.0021
-      },
-      {
-        "word": "introspective",
         "strength": 0.0021
       },
       {
@@ -4870,8 +4858,20 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
+        "word": "engaging",
+        "strength": 0.0021
+      },
+      {
         "word": "cliche",
         "strength": 0.0021
+      },
+      {
+        "word": "introspective",
+        "strength": 0.0021
+      },
+      {
+        "word": "subjective",
+        "strength": 0.002
       },
       {
         "word": "dry",
@@ -4887,11 +4887,11 @@ const styleAssociationData = {
       },
       {
         "word": "engineered",
-        "strength": 0.002
+        "strength": 0.0019
       },
       {
         "word": "logical",
-        "strength": 0.0019
+        "strength": 0.0018
       }
     ]
   },
@@ -4899,15 +4899,15 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "visceral",
-        "strength": 0.0049
-      },
-      {
-        "word": "economical",
         "strength": 0.0048
       },
       {
+        "word": "economical",
+        "strength": 0.0047
+      },
+      {
         "word": "surreal",
-        "strength": 0.0046
+        "strength": 0.0045
       },
       {
         "word": "provocative",
@@ -4915,11 +4915,11 @@ const styleAssociationData = {
       },
       {
         "word": "subversive",
-        "strength": 0.0037
+        "strength": 0.0036
       },
       {
         "word": "functional",
-        "strength": 0.0036
+        "strength": 0.0035
       },
       {
         "word": "friendly",
@@ -4927,7 +4927,7 @@ const styleAssociationData = {
       },
       {
         "word": "technical",
-        "strength": 0.0034
+        "strength": 0.0033
       },
       {
         "word": "vivid",
@@ -4942,12 +4942,12 @@ const styleAssociationData = {
         "strength": 0.0031
       },
       {
-        "word": "virtue signaling",
+        "word": "irreverent",
         "strength": 0.0031
       },
       {
-        "word": "irreverent",
-        "strength": 0.0031
+        "word": "virtue signaling",
+        "strength": 0.003
       },
       {
         "word": "formal",
@@ -4958,59 +4958,47 @@ const styleAssociationData = {
         "strength": 0.0029
       },
       {
-        "word": "minimalist",
-        "strength": 0.0028
-      },
-      {
         "word": "tactile",
         "strength": 0.0028
       },
       {
-        "word": "meditative",
+        "word": "minimalist",
         "strength": 0.0028
       },
       {
         "word": "ethereal",
-        "strength": 0.0028
+        "strength": 0.0027
+      },
+      {
+        "word": "meditative",
+        "strength": 0.0027
       },
       {
         "word": "cynical",
-        "strength": 0.0028
+        "strength": 0.0027
       },
       {
         "word": "engineered",
         "strength": 0.0027
       },
       {
-        "word": "matter-of-fact",
-        "strength": 0.0027
-      },
-      {
         "word": "old-fashioned",
-        "strength": 0.0027
+        "strength": 0.0026
       },
       {
         "word": "logical",
         "strength": 0.0026
       },
       {
-        "word": "subjective",
+        "word": "matter-of-fact",
         "strength": 0.0026
       },
       {
+        "word": "subjective",
+        "strength": 0.0025
+      },
+      {
         "word": "abstract",
-        "strength": 0.0025
-      },
-      {
-        "word": "plain",
-        "strength": 0.0025
-      },
-      {
-        "word": "grounding",
-        "strength": 0.0025
-      },
-      {
-        "word": "twisted",
         "strength": 0.0025
       },
       {
@@ -5018,12 +5006,24 @@ const styleAssociationData = {
         "strength": 0.0025
       },
       {
-        "word": "cold",
+        "word": "twisted",
+        "strength": 0.0025
+      },
+      {
+        "word": "grounding",
         "strength": 0.0024
       },
       {
-        "word": "calm",
+        "word": "plain",
         "strength": 0.0024
+      },
+      {
+        "word": "cold",
+        "strength": 0.0023
+      },
+      {
+        "word": "calm",
+        "strength": 0.0023
       },
       {
         "word": "thought-provoking",
@@ -5046,11 +5046,11 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
-        "word": "active voice",
+        "word": "alliterative",
         "strength": 0.0021
       },
       {
-        "word": "alliterative",
+        "word": "active voice",
         "strength": 0.002
       },
       {
@@ -5066,15 +5066,11 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
-        "word": "action-oriented",
-        "strength": 0.002
-      },
-      {
         "word": "relationship-focused",
         "strength": 0.002
       },
       {
-        "word": "restrained",
+        "word": "action-oriented",
         "strength": 0.002
       },
       {
@@ -5082,11 +5078,11 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
-        "word": "poetic descriptives",
+        "word": "restrained",
         "strength": 0.0019
       },
       {
-        "word": "vibrant",
+        "word": "poetic descriptives",
         "strength": 0.0019
       },
       {
@@ -5094,8 +5090,12 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "creative",
+        "word": "vibrant",
         "strength": 0.0018
+      },
+      {
+        "word": "creative",
+        "strength": 0.0017
       }
     ]
   },
@@ -5103,15 +5103,15 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "visceral",
-        "strength": 0.0066
+        "strength": 0.0065
       },
       {
         "word": "natural",
-        "strength": 0.0064
+        "strength": 0.0063
       },
       {
         "word": "calm",
-        "strength": 0.0062
+        "strength": 0.0061
       },
       {
         "word": "surreal",
@@ -5119,11 +5119,11 @@ const styleAssociationData = {
       },
       {
         "word": "biting",
-        "strength": 0.0061
+        "strength": 0.006
       },
       {
         "word": "ethereal",
-        "strength": 0.0057
+        "strength": 0.0056
       },
       {
         "word": "idealistic",
@@ -5142,11 +5142,11 @@ const styleAssociationData = {
         "strength": 0.0047
       },
       {
-        "word": "whimsical",
+        "word": "hypnotic",
         "strength": 0.0046
       },
       {
-        "word": "hypnotic",
+        "word": "whimsical",
         "strength": 0.0046
       },
       {
@@ -5158,31 +5158,27 @@ const styleAssociationData = {
         "strength": 0.0044
       },
       {
-        "word": "poetic descriptives",
-        "strength": 0.0042
-      },
-      {
         "word": "allegorical",
         "strength": 0.0042
       },
       {
-        "word": "minimalist",
-        "strength": 0.0039
+        "word": "poetic descriptives",
+        "strength": 0.0042
       },
       {
         "word": "human",
         "strength": 0.0039
       },
       {
-        "word": "engineered",
+        "word": "minimalist",
         "strength": 0.0039
       },
       {
-        "word": "clarity",
+        "word": "engineered",
         "strength": 0.0038
       },
       {
-        "word": "cold",
+        "word": "clarity",
         "strength": 0.0038
       },
       {
@@ -5194,35 +5190,39 @@ const styleAssociationData = {
         "strength": 0.0037
       },
       {
-        "word": "concrete",
-        "strength": 0.0037
-      },
-      {
         "word": "atmospheric",
         "strength": 0.0037
       },
       {
-        "word": "poised",
-        "strength": 0.0036
+        "word": "cold",
+        "strength": 0.0037
       },
       {
-        "word": "subjective",
-        "strength": 0.0036
+        "word": "concrete",
+        "strength": 0.0037
+      },
+      {
+        "word": "poised",
+        "strength": 0.0035
       },
       {
         "word": "graceful",
-        "strength": 0.0036
+        "strength": 0.0035
       },
       {
         "word": "elegant",
         "strength": 0.0035
       },
       {
-        "word": "matter-of-fact",
-        "strength": 0.0034
+        "word": "subjective",
+        "strength": 0.0035
       },
       {
         "word": "grounding",
+        "strength": 0.0033
+      },
+      {
+        "word": "matter-of-fact",
         "strength": 0.0033
       },
       {
@@ -5231,30 +5231,30 @@ const styleAssociationData = {
       },
       {
         "word": "technical",
-        "strength": 0.0032
+        "strength": 0.0031
       },
       {
         "word": "deliberate",
         "strength": 0.0031
       },
       {
-        "word": "cynical",
+        "word": "earnest",
         "strength": 0.003
       },
       {
-        "word": "earnest",
-        "strength": 0.003
+        "word": "cynical",
+        "strength": 0.0029
       },
       {
         "word": "sharp",
         "strength": 0.0029
       },
       {
-        "word": "economical",
+        "word": "lyrical",
         "strength": 0.0029
       },
       {
-        "word": "lyrical",
+        "word": "economical",
         "strength": 0.0029
       },
       {
@@ -5266,16 +5266,16 @@ const styleAssociationData = {
         "strength": 0.0027
       },
       {
-        "word": "sophisticated",
-        "strength": 0.0027
-      },
-      {
         "word": "articulate",
         "strength": 0.0027
       },
       {
-        "word": "meticulous",
+        "word": "sophisticated",
         "strength": 0.0026
+      },
+      {
+        "word": "meticulous",
+        "strength": 0.0025
       },
       {
         "word": "moralising",
@@ -5283,23 +5283,23 @@ const styleAssociationData = {
       },
       {
         "word": "dreamlike",
-        "strength": 0.0025
-      },
-      {
-        "word": "vibrant",
         "strength": 0.0024
-      },
-      {
-        "word": "aggressive",
-        "strength": 0.0023
       },
       {
         "word": "relationship-focused",
         "strength": 0.0023
       },
       {
+        "word": "vibrant",
+        "strength": 0.0023
+      },
+      {
+        "word": "aggressive",
+        "strength": 0.0023
+      },
+      {
         "word": "formal",
-        "strength": 0.0021
+        "strength": 0.002
       }
     ]
   },
@@ -5315,11 +5315,11 @@ const styleAssociationData = {
       },
       {
         "word": "verbose",
-        "strength": 0.0082
+        "strength": 0.0081
       },
       {
         "word": "psychedelic",
-        "strength": 0.0075
+        "strength": 0.0076
       },
       {
         "word": "cool",
@@ -5351,7 +5351,7 @@ const styleAssociationData = {
       },
       {
         "word": "vulgar",
-        "strength": 0.0057
+        "strength": 0.0058
       },
       {
         "word": "old-fashioned",
@@ -5366,11 +5366,11 @@ const styleAssociationData = {
         "strength": 0.0055
       },
       {
-        "word": "dreamlike",
+        "word": "passive voice",
         "strength": 0.0055
       },
       {
-        "word": "passive voice",
+        "word": "dreamlike",
         "strength": 0.0055
       },
       {
@@ -5406,11 +5406,11 @@ const styleAssociationData = {
         "strength": 0.0043
       },
       {
-        "word": "odd",
+        "word": "feverish",
         "strength": 0.0042
       },
       {
-        "word": "feverish",
+        "word": "odd",
         "strength": 0.0042
       },
       {
@@ -5419,7 +5419,7 @@ const styleAssociationData = {
       },
       {
         "word": "meticulous",
-        "strength": 0.0042
+        "strength": 0.0041
       },
       {
         "word": "idealistic",
@@ -5435,7 +5435,7 @@ const styleAssociationData = {
       },
       {
         "word": "sensational",
-        "strength": 0.0037
+        "strength": 0.0038
       },
       {
         "word": "sardonic",
@@ -5446,19 +5446,19 @@ const styleAssociationData = {
         "strength": 0.0036
       },
       {
-        "word": "meditative",
-        "strength": 0.0035
-      },
-      {
         "word": "ornate",
         "strength": 0.0034
       },
       {
-        "word": "whimsical",
-        "strength": 0.0033
+        "word": "meditative",
+        "strength": 0.0034
       },
       {
         "word": "haunting",
+        "strength": 0.0034
+      },
+      {
+        "word": "whimsical",
         "strength": 0.0033
       },
       {
@@ -5471,7 +5471,7 @@ const styleAssociationData = {
       },
       {
         "word": "plain",
-        "strength": 0.0032
+        "strength": 0.0031
       },
       {
         "word": "experimental",
@@ -5482,19 +5482,19 @@ const styleAssociationData = {
         "strength": 0.003
       },
       {
-        "word": "male perspective",
-        "strength": 0.0028
+        "word": "poetic descriptives",
+        "strength": 0.0029
       },
       {
-        "word": "poetic descriptives",
+        "word": "male perspective",
+        "strength": 0.0029
+      },
+      {
+        "word": "utopian",
         "strength": 0.0028
       },
       {
         "word": "subversive",
-        "strength": 0.0028
-      },
-      {
-        "word": "utopian",
         "strength": 0.0027
       },
       {
@@ -5510,20 +5510,20 @@ const styleAssociationData = {
   "ifable/gemma-2-Ifable-9B": {
     "mostFavored": [
       {
-        "word": "decadent",
-        "strength": 0.0072
+        "word": "overwrought",
+        "strength": 0.0073
       },
       {
-        "word": "overwrought",
-        "strength": 0.0072
+        "word": "decadent",
+        "strength": 0.0073
+      },
+      {
+        "word": "disturbing",
+        "strength": 0.0071
       },
       {
         "word": "human",
         "strength": 0.0071
-      },
-      {
-        "word": "disturbing",
-        "strength": 0.007
       },
       {
         "word": "conventional",
@@ -5547,7 +5547,7 @@ const styleAssociationData = {
       },
       {
         "word": "intelligent",
-        "strength": 0.0057
+        "strength": 0.0058
       },
       {
         "word": "baroque",
@@ -5559,7 +5559,7 @@ const styleAssociationData = {
       },
       {
         "word": "cozy",
-        "strength": 0.0052
+        "strength": 0.0053
       },
       {
         "word": "ornate",
@@ -5567,22 +5567,22 @@ const styleAssociationData = {
       },
       {
         "word": "utopian",
-        "strength": 0.005
+        "strength": 0.0051
       },
       {
         "word": "lyrical",
         "strength": 0.0047
       },
       {
-        "word": "psychedelic",
-        "strength": 0.0045
-      },
-      {
         "word": "stylized",
-        "strength": 0.0045
+        "strength": 0.0046
       },
       {
         "word": "cinematic",
+        "strength": 0.0045
+      },
+      {
+        "word": "psychedelic",
         "strength": 0.0045
       },
       {
@@ -5603,18 +5603,18 @@ const styleAssociationData = {
       },
       {
         "word": "distant",
-        "strength": 0.0039
+        "strength": 0.004
       },
       {
         "word": "complex",
         "strength": 0.0039
       },
       {
-        "word": "passive voice",
+        "word": "thought-provoking",
         "strength": 0.0038
       },
       {
-        "word": "thought-provoking",
+        "word": "passive voice",
         "strength": 0.0038
       },
       {
@@ -5627,23 +5627,23 @@ const styleAssociationData = {
       },
       {
         "word": "comforting",
-        "strength": 0.0036
+        "strength": 0.0037
       },
       {
         "word": "panache",
-        "strength": 0.0035
+        "strength": 0.0036
       },
       {
         "word": "literal",
         "strength": 0.0035
       },
       {
-        "word": "sardonic",
-        "strength": 0.0034
+        "word": "hopeful",
+        "strength": 0.0035
       },
       {
-        "word": "hopeful",
-        "strength": 0.0034
+        "word": "sardonic",
+        "strength": 0.0035
       },
       {
         "word": "dry humor",
@@ -5654,11 +5654,11 @@ const styleAssociationData = {
         "strength": 0.0033
       },
       {
-        "word": "gentle",
+        "word": "soft",
         "strength": 0.0033
       },
       {
-        "word": "soft",
+        "word": "gentle",
         "strength": 0.0033
       },
       {
@@ -5671,6 +5671,10 @@ const styleAssociationData = {
       },
       {
         "word": "flashy",
+        "strength": 0.0032
+      },
+      {
+        "word": "magical",
         "strength": 0.0031
       },
       {
@@ -5678,20 +5682,16 @@ const styleAssociationData = {
         "strength": 0.0031
       },
       {
-        "word": "magical",
+        "word": "dangerous",
         "strength": 0.0031
       },
       {
-        "word": "dangerous",
-        "strength": 0.003
+        "word": "elaborate",
+        "strength": 0.0029
       },
       {
         "word": "intimate",
         "strength": 0.0029
-      },
-      {
-        "word": "elaborate",
-        "strength": 0.0028
       },
       {
         "word": "atmospheric",
@@ -5706,7 +5706,7 @@ const styleAssociationData = {
         "strength": 0.0027
       },
       {
-        "word": "articulate",
+        "word": "detached",
         "strength": 0.0027
       }
     ]
@@ -5719,11 +5719,11 @@ const styleAssociationData = {
       },
       {
         "word": "vibrant",
-        "strength": 0.0167
+        "strength": 0.0166
       },
       {
         "word": "sophisticated",
-        "strength": 0.0151
+        "strength": 0.015
       },
       {
         "word": "sentimental",
@@ -5755,7 +5755,7 @@ const styleAssociationData = {
       },
       {
         "word": "elegant",
-        "strength": 0.0113
+        "strength": 0.0112
       },
       {
         "word": "irreverent",
@@ -5763,7 +5763,7 @@ const styleAssociationData = {
       },
       {
         "word": "subversive",
-        "strength": 0.0108
+        "strength": 0.0107
       },
       {
         "word": "moralising",
@@ -5779,7 +5779,7 @@ const styleAssociationData = {
       },
       {
         "word": "clarity",
-        "strength": 0.0099
+        "strength": 0.0098
       },
       {
         "word": "cynical",
@@ -5791,7 +5791,7 @@ const styleAssociationData = {
       },
       {
         "word": "verbose",
-        "strength": 0.0092
+        "strength": 0.0091
       },
       {
         "word": "feminist",
@@ -5811,18 +5811,18 @@ const styleAssociationData = {
       },
       {
         "word": "dramatic",
-        "strength": 0.0083
-      },
-      {
-        "word": "meditative",
         "strength": 0.0082
       },
       {
-        "word": "graceful",
-        "strength": 0.0079
+        "word": "meditative",
+        "strength": 0.0081
       },
       {
         "word": "overwrought",
+        "strength": 0.0079
+      },
+      {
+        "word": "graceful",
         "strength": 0.0079
       },
       {
@@ -5830,7 +5830,7 @@ const styleAssociationData = {
         "strength": 0.0079
       },
       {
-        "word": "restrained",
+        "word": "idealistic",
         "strength": 0.0076
       },
       {
@@ -5838,27 +5838,27 @@ const styleAssociationData = {
         "strength": 0.0076
       },
       {
-        "word": "idealistic",
+        "word": "restrained",
         "strength": 0.0076
       },
       {
         "word": "matter-of-fact",
-        "strength": 0.0074
+        "strength": 0.0073
       },
       {
         "word": "formal",
-        "strength": 0.0074
+        "strength": 0.0073
       },
       {
         "word": "allegorical",
         "strength": 0.0071
       },
       {
-        "word": "twisted",
+        "word": "nostalgic",
         "strength": 0.007
       },
       {
-        "word": "nostalgic",
+        "word": "twisted",
         "strength": 0.007
       },
       {
@@ -5867,7 +5867,7 @@ const styleAssociationData = {
       },
       {
         "word": "odd",
-        "strength": 0.0068
+        "strength": 0.0067
       },
       {
         "word": "surreal",
@@ -5882,11 +5882,11 @@ const styleAssociationData = {
         "strength": 0.0065
       },
       {
-        "word": "plain",
+        "word": "economical",
         "strength": 0.0063
       },
       {
-        "word": "economical",
+        "word": "plain",
         "strength": 0.0063
       },
       {
@@ -5898,11 +5898,11 @@ const styleAssociationData = {
         "strength": 0.0059
       },
       {
-        "word": "simple",
-        "strength": 0.0059
+        "word": "clinical",
+        "strength": 0.0058
       },
       {
-        "word": "clinical",
+        "word": "simple",
         "strength": 0.0058
       },
       {
@@ -5919,7 +5919,7 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "human",
-        "strength": 0.0079
+        "strength": 0.0078
       },
       {
         "word": "nostalgic",
@@ -5927,11 +5927,11 @@ const styleAssociationData = {
       },
       {
         "word": "conventional",
-        "strength": 0.0065
+        "strength": 0.0066
       },
       {
         "word": "earnest",
-        "strength": 0.006
+        "strength": 0.0061
       },
       {
         "word": "dreamlike",
@@ -5947,7 +5947,7 @@ const styleAssociationData = {
       },
       {
         "word": "dangerous",
-        "strength": 0.005
+        "strength": 0.0051
       },
       {
         "word": "hypnotic",
@@ -5971,23 +5971,23 @@ const styleAssociationData = {
       },
       {
         "word": "natural",
-        "strength": 0.0043
+        "strength": 0.0042
       },
       {
         "word": "crisp",
-        "strength": 0.0042
+        "strength": 0.0041
+      },
+      {
+        "word": "suspenseful",
+        "strength": 0.0041
       },
       {
         "word": "raw",
         "strength": 0.0041
       },
       {
-        "word": "suspenseful",
-        "strength": 0.004
-      },
-      {
         "word": "disturbing",
-        "strength": 0.0039
+        "strength": 0.004
       },
       {
         "word": "lyrical",
@@ -5998,7 +5998,7 @@ const styleAssociationData = {
         "strength": 0.0037
       },
       {
-        "word": "sophisticated",
+        "word": "romantic",
         "strength": 0.0036
       },
       {
@@ -6010,7 +6010,7 @@ const styleAssociationData = {
         "strength": 0.0036
       },
       {
-        "word": "romantic",
+        "word": "sophisticated",
         "strength": 0.0036
       },
       {
@@ -6023,11 +6023,11 @@ const styleAssociationData = {
       },
       {
         "word": "baroque",
-        "strength": 0.0035
+        "strength": 0.0036
       },
       {
         "word": "ethereal",
-        "strength": 0.0035
+        "strength": 0.0034
       },
       {
         "word": "gentle",
@@ -6039,11 +6039,11 @@ const styleAssociationData = {
       },
       {
         "word": "elegant",
-        "strength": 0.0033
+        "strength": 0.0032
       },
       {
         "word": "biting",
-        "strength": 0.0031
+        "strength": 0.003
       },
       {
         "word": "lush",
@@ -6051,6 +6051,10 @@ const styleAssociationData = {
       },
       {
         "word": "systematic",
+        "strength": 0.0029
+      },
+      {
+        "word": "poetic descriptives",
         "strength": 0.0028
       },
       {
@@ -6058,12 +6062,8 @@ const styleAssociationData = {
         "strength": 0.0028
       },
       {
-        "word": "poetic descriptives",
-        "strength": 0.0027
-      },
-      {
         "word": "sardonic",
-        "strength": 0.0027
+        "strength": 0.0028
       },
       {
         "word": "sentimental",
@@ -6071,14 +6071,10 @@ const styleAssociationData = {
       },
       {
         "word": "relationship-focused",
-        "strength": 0.0027
-      },
-      {
-        "word": "effusive",
         "strength": 0.0026
       },
       {
-        "word": "poetic",
+        "word": "effusive",
         "strength": 0.0026
       },
       {
@@ -6086,8 +6082,8 @@ const styleAssociationData = {
         "strength": 0.0026
       },
       {
-        "word": "whimsical",
-        "strength": 0.0025
+        "word": "poetic",
+        "strength": 0.0026
       },
       {
         "word": "intimate",
@@ -6098,16 +6094,20 @@ const styleAssociationData = {
         "strength": 0.0025
       },
       {
-        "word": "action-oriented",
-        "strength": 0.0025
-      },
-      {
-        "word": "graceful",
+        "word": "whimsical",
         "strength": 0.0025
       },
       {
         "word": "psychedelic",
         "strength": 0.0025
+      },
+      {
+        "word": "action-oriented",
+        "strength": 0.0024
+      },
+      {
+        "word": "graceful",
+        "strength": 0.0024
       },
       {
         "word": "concrete",
@@ -6138,24 +6138,24 @@ const styleAssociationData = {
         "strength": 0.0044
       },
       {
-        "word": "dreamlike",
-        "strength": 0.0042
-      },
-      {
         "word": "allegorical",
         "strength": 0.0042
       },
       {
+        "word": "dreamlike",
+        "strength": 0.0042
+      },
+      {
         "word": "nostalgic",
-        "strength": 0.0037
+        "strength": 0.0038
       },
       {
         "word": "conventional",
-        "strength": 0.0035
+        "strength": 0.0036
       },
       {
         "word": "suspenseful",
-        "strength": 0.0034
+        "strength": 0.0035
       },
       {
         "word": "relationship-focused",
@@ -6167,7 +6167,7 @@ const styleAssociationData = {
       },
       {
         "word": "hypnotic",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "romantic",
@@ -6178,11 +6178,11 @@ const styleAssociationData = {
         "strength": 0.0028
       },
       {
-        "word": "experimental",
+        "word": "dangerous",
         "strength": 0.0027
       },
       {
-        "word": "dangerous",
+        "word": "experimental",
         "strength": 0.0027
       },
       {
@@ -6195,7 +6195,7 @@ const styleAssociationData = {
       },
       {
         "word": "concrete",
-        "strength": 0.0024
+        "strength": 0.0023
       },
       {
         "word": "sardonic",
@@ -6234,15 +6234,23 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "mischievous",
-        "strength": 0.0017
-      },
-      {
         "word": "intimate",
         "strength": 0.0017
       },
       {
+        "word": "mischievous",
+        "strength": 0.0017
+      },
+      {
+        "word": "raw",
+        "strength": 0.0016
+      },
+      {
         "word": "polished",
+        "strength": 0.0016
+      },
+      {
+        "word": "stream-of-consciousness",
         "strength": 0.0016
       },
       {
@@ -6250,16 +6258,12 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "raw",
-        "strength": 0.0016
-      },
-      {
         "word": "sophisticated",
-        "strength": 0.0016
+        "strength": 0.0015
       },
       {
-        "word": "stream-of-consciousness",
-        "strength": 0.0016
+        "word": "stylized",
+        "strength": 0.0015
       },
       {
         "word": "irreverent",
@@ -6270,19 +6274,11 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "stylized",
+        "word": "intoxicating",
         "strength": 0.0015
       },
       {
-        "word": "intoxicating",
-        "strength": 0.0014
-      },
-      {
         "word": "sentimental",
-        "strength": 0.0014
-      },
-      {
-        "word": "whimsical",
         "strength": 0.0014
       },
       {
@@ -6290,23 +6286,23 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
+        "word": "whimsical",
+        "strength": 0.0013
+      },
+      {
         "word": "funny",
         "strength": 0.0013
       },
       {
-        "word": "natural",
-        "strength": 0.0013
-      },
-      {
         "word": "cool",
-        "strength": 0.0013
-      },
-      {
-        "word": "metaphorical",
         "strength": 0.0012
       },
       {
-        "word": "clever",
+        "word": "natural",
+        "strength": 0.0012
+      },
+      {
+        "word": "metaphorical",
         "strength": 0.0012
       },
       {
@@ -6318,8 +6314,12 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "deliberate",
+        "word": "clever",
         "strength": 0.0012
+      },
+      {
+        "word": "frantic",
+        "strength": 0.0011
       }
     ]
   },
@@ -6327,7 +6327,7 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "friendly",
-        "strength": 0.0061
+        "strength": 0.006
       },
       {
         "word": "positive vibes",
@@ -6335,7 +6335,7 @@ const styleAssociationData = {
       },
       {
         "word": "allegorical",
-        "strength": 0.0055
+        "strength": 0.0056
       },
       {
         "word": "warm",
@@ -6363,11 +6363,11 @@ const styleAssociationData = {
       },
       {
         "word": "suspenseful",
-        "strength": 0.0039
+        "strength": 0.004
       },
       {
         "word": "conventional",
-        "strength": 0.0038
+        "strength": 0.0039
       },
       {
         "word": "female perspective",
@@ -6383,11 +6383,11 @@ const styleAssociationData = {
       },
       {
         "word": "romantic",
-        "strength": 0.0035
+        "strength": 0.0036
       },
       {
         "word": "idealistic",
-        "strength": 0.0031
+        "strength": 0.0032
       },
       {
         "word": "dangerous",
@@ -6402,10 +6402,6 @@ const styleAssociationData = {
         "strength": 0.0026
       },
       {
-        "word": "irreverent",
-        "strength": 0.0025
-      },
-      {
         "word": "experimental",
         "strength": 0.0025
       },
@@ -6414,12 +6410,16 @@ const styleAssociationData = {
         "strength": 0.0025
       },
       {
+        "word": "irreverent",
+        "strength": 0.0025
+      },
+      {
         "word": "sentimental",
         "strength": 0.0025
       },
       {
         "word": "intimate",
-        "strength": 0.0024
+        "strength": 0.0025
       },
       {
         "word": "descriptive",
@@ -6430,20 +6430,20 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
-        "word": "action-oriented",
-        "strength": 0.0021
-      },
-      {
-        "word": "sharp",
-        "strength": 0.0021
-      },
-      {
         "word": "sardonic",
         "strength": 0.0021
       },
       {
-        "word": "metaphorical",
+        "word": "action-oriented",
         "strength": 0.0021
+      },
+      {
+        "word": "metaphorical",
+        "strength": 0.002
+      },
+      {
+        "word": "sharp",
+        "strength": 0.002
       },
       {
         "word": "human",
@@ -6459,14 +6459,10 @@ const styleAssociationData = {
       },
       {
         "word": "sophisticated",
-        "strength": 0.0018
-      },
-      {
-        "word": "earnest",
         "strength": 0.0017
       },
       {
-        "word": "feminist",
+        "word": "earnest",
         "strength": 0.0017
       },
       {
@@ -6474,7 +6470,7 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "mischievous",
+        "word": "feminist",
         "strength": 0.0016
       },
       {
@@ -6482,27 +6478,23 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
+        "word": "mischievous",
+        "strength": 0.0016
+      },
+      {
         "word": "theatrical",
         "strength": 0.0016
       },
       {
-        "word": "deliberate",
+        "word": "stylized",
         "strength": 0.0016
       },
       {
+        "word": "deliberate",
+        "strength": 0.0015
+      },
+      {
         "word": "dramatic",
-        "strength": 0.0015
-      },
-      {
-        "word": "ethereal",
-        "strength": 0.0015
-      },
-      {
-        "word": "stylized",
-        "strength": 0.0015
-      },
-      {
-        "word": "gentle",
         "strength": 0.0015
       },
       {
@@ -6510,11 +6502,19 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "whimsical",
-        "strength": 0.0014
+        "word": "gentle",
+        "strength": 0.0015
+      },
+      {
+        "word": "ethereal",
+        "strength": 0.0015
       },
       {
         "word": "panache",
+        "strength": 0.0014
+      },
+      {
+        "word": "whimsical",
         "strength": 0.0014
       },
       {
@@ -6523,7 +6523,7 @@ const styleAssociationData = {
       },
       {
         "word": "lush",
-        "strength": 0.0013
+        "strength": 0.0014
       }
     ]
   },
@@ -6546,28 +6546,28 @@ const styleAssociationData = {
         "strength": 0.0051
       },
       {
-        "word": "crisp",
-        "strength": 0.0048
-      },
-      {
         "word": "nostalgic",
         "strength": 0.0048
       },
       {
+        "word": "crisp",
+        "strength": 0.0047
+      },
+      {
         "word": "conventional",
-        "strength": 0.0044
+        "strength": 0.0045
       },
       {
         "word": "dreamlike",
         "strength": 0.0042
       },
       {
-        "word": "romantic",
-        "strength": 0.0037
+        "word": "suspenseful",
+        "strength": 0.0038
       },
       {
-        "word": "suspenseful",
-        "strength": 0.0037
+        "word": "romantic",
+        "strength": 0.0038
       },
       {
         "word": "uplifting",
@@ -6582,11 +6582,11 @@ const styleAssociationData = {
         "strength": 0.0034
       },
       {
-        "word": "concrete",
+        "word": "dangerous",
         "strength": 0.0033
       },
       {
-        "word": "dangerous",
+        "word": "concrete",
         "strength": 0.0033
       },
       {
@@ -6599,14 +6599,14 @@ const styleAssociationData = {
       },
       {
         "word": "female perspective",
-        "strength": 0.0031
-      },
-      {
-        "word": "irreverent",
-        "strength": 0.0029
+        "strength": 0.003
       },
       {
         "word": "earnest",
+        "strength": 0.0029
+      },
+      {
+        "word": "irreverent",
         "strength": 0.0029
       },
       {
@@ -6615,14 +6615,14 @@ const styleAssociationData = {
       },
       {
         "word": "meandering",
-        "strength": 0.0028
-      },
-      {
-        "word": "precise",
         "strength": 0.0027
       },
       {
         "word": "intimate",
+        "strength": 0.0027
+      },
+      {
+        "word": "precise",
         "strength": 0.0027
       },
       {
@@ -6666,20 +6666,16 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
-        "word": "metaphorical",
+        "word": "frantic",
         "strength": 0.0019
       },
       {
         "word": "intoxicating",
-        "strength": 0.0018
+        "strength": 0.0019
       },
       {
-        "word": "frantic",
-        "strength": 0.0018
-      },
-      {
-        "word": "ethereal",
-        "strength": 0.0018
+        "word": "metaphorical",
+        "strength": 0.0019
       },
       {
         "word": "stream-of-consciousness",
@@ -6687,26 +6683,30 @@ const styleAssociationData = {
       },
       {
         "word": "raw",
-        "strength": 0.0017
+        "strength": 0.0018
       },
       {
-        "word": "natural",
-        "strength": 0.0017
+        "word": "ethereal",
+        "strength": 0.0018
       },
       {
         "word": "mischievous",
         "strength": 0.0017
       },
       {
+        "word": "natural",
+        "strength": 0.0016
+      },
+      {
         "word": "descriptive",
         "strength": 0.0016
       },
       {
-        "word": "lush",
+        "word": "magical",
         "strength": 0.0015
       },
       {
-        "word": "magical",
+        "word": "lush",
         "strength": 0.0015
       },
       {
@@ -6715,14 +6715,14 @@ const styleAssociationData = {
       },
       {
         "word": "stylized",
+        "strength": 0.0014
+      },
+      {
+        "word": "elaborate",
         "strength": 0.0013
       },
       {
         "word": "ornate",
-        "strength": 0.0013
-      },
-      {
-        "word": "elaborate",
         "strength": 0.0013
       },
       {
@@ -6739,7 +6739,7 @@ const styleAssociationData = {
       },
       {
         "word": "crisp",
-        "strength": 0.0066
+        "strength": 0.0065
       },
       {
         "word": "allegorical",
@@ -6751,7 +6751,7 @@ const styleAssociationData = {
       },
       {
         "word": "suspenseful",
-        "strength": 0.0056
+        "strength": 0.0057
       },
       {
         "word": "dreamlike",
@@ -6759,7 +6759,7 @@ const styleAssociationData = {
       },
       {
         "word": "female perspective",
-        "strength": 0.0052
+        "strength": 0.0051
       },
       {
         "word": "conventional",
@@ -6778,16 +6778,16 @@ const styleAssociationData = {
         "strength": 0.0042
       },
       {
-        "word": "friendly",
-        "strength": 0.0041
-      },
-      {
         "word": "romantic",
         "strength": 0.0041
       },
       {
+        "word": "friendly",
+        "strength": 0.0041
+      },
+      {
         "word": "earnest",
-        "strength": 0.0039
+        "strength": 0.004
       },
       {
         "word": "dangerous",
@@ -6795,14 +6795,14 @@ const styleAssociationData = {
       },
       {
         "word": "concrete",
-        "strength": 0.0036
-      },
-      {
-        "word": "sharp",
         "strength": 0.0035
       },
       {
         "word": "relationship-focused",
+        "strength": 0.0035
+      },
+      {
+        "word": "sharp",
         "strength": 0.0035
       },
       {
@@ -6831,14 +6831,14 @@ const styleAssociationData = {
       },
       {
         "word": "irreverent",
-        "strength": 0.003
-      },
-      {
-        "word": "precise",
         "strength": 0.0029
       },
       {
         "word": "hypnotic",
+        "strength": 0.0029
+      },
+      {
+        "word": "precise",
         "strength": 0.0029
       },
       {
@@ -6854,11 +6854,11 @@ const styleAssociationData = {
         "strength": 0.0026
       },
       {
-        "word": "engaging",
+        "word": "elaborate",
         "strength": 0.0026
       },
       {
-        "word": "elaborate",
+        "word": "engaging",
         "strength": 0.0026
       },
       {
@@ -6878,15 +6878,15 @@ const styleAssociationData = {
         "strength": 0.0024
       },
       {
+        "word": "frantic",
+        "strength": 0.0023
+      },
+      {
         "word": "natural",
         "strength": 0.0023
       },
       {
         "word": "action-oriented",
-        "strength": 0.0023
-      },
-      {
-        "word": "frantic",
         "strength": 0.0022
       },
       {
@@ -6898,11 +6898,11 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
-        "word": "whimsical",
+        "word": "disturbing",
         "strength": 0.002
       },
       {
-        "word": "disturbing",
+        "word": "whimsical",
         "strength": 0.0019
       },
       {
@@ -6915,7 +6915,7 @@ const styleAssociationData = {
       },
       {
         "word": "clarity",
-        "strength": 0.0018
+        "strength": 0.0017
       },
       {
         "word": "ethereal",
@@ -6930,7 +6930,7 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "meandering",
+        "word": "systematic",
         "strength": 0.0015
       }
     ]
@@ -6946,16 +6946,16 @@ const styleAssociationData = {
         "strength": 0.0059
       },
       {
-        "word": "nostalgic",
-        "strength": 0.0055
+        "word": "allegorical",
+        "strength": 0.0056
       },
       {
-        "word": "allegorical",
-        "strength": 0.0055
+        "word": "nostalgic",
+        "strength": 0.0056
       },
       {
         "word": "conventional",
-        "strength": 0.0053
+        "strength": 0.0054
       },
       {
         "word": "warm",
@@ -6979,7 +6979,7 @@ const styleAssociationData = {
       },
       {
         "word": "dangerous",
-        "strength": 0.0041
+        "strength": 0.0042
       },
       {
         "word": "human",
@@ -6991,19 +6991,19 @@ const styleAssociationData = {
       },
       {
         "word": "suspenseful",
-        "strength": 0.0038
+        "strength": 0.0039
       },
       {
         "word": "concrete",
-        "strength": 0.0038
-      },
-      {
-        "word": "female perspective",
         "strength": 0.0037
       },
       {
         "word": "earnest",
-        "strength": 0.0036
+        "strength": 0.0037
+      },
+      {
+        "word": "female perspective",
+        "strength": 0.0037
       },
       {
         "word": "effusive",
@@ -7011,7 +7011,7 @@ const styleAssociationData = {
       },
       {
         "word": "sentimental",
-        "strength": 0.0034
+        "strength": 0.0035
       },
       {
         "word": "idealistic",
@@ -7022,19 +7022,19 @@ const styleAssociationData = {
         "strength": 0.0031
       },
       {
-        "word": "precise",
-        "strength": 0.003
-      },
-      {
         "word": "intimate",
         "strength": 0.003
       },
       {
-        "word": "action-oriented",
+        "word": "precise",
         "strength": 0.003
       },
       {
         "word": "gentle",
+        "strength": 0.003
+      },
+      {
+        "word": "action-oriented",
         "strength": 0.0029
       },
       {
@@ -7043,7 +7043,7 @@ const styleAssociationData = {
       },
       {
         "word": "hypnotic",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "engaging",
@@ -7063,18 +7063,14 @@ const styleAssociationData = {
       },
       {
         "word": "lush",
-        "strength": 0.0024
+        "strength": 0.0025
       },
       {
         "word": "stream-of-consciousness",
-        "strength": 0.0022
+        "strength": 0.0023
       },
       {
         "word": "lyrical",
-        "strength": 0.0022
-      },
-      {
-        "word": "natural",
         "strength": 0.0022
       },
       {
@@ -7082,15 +7078,11 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
+        "word": "natural",
+        "strength": 0.0022
+      },
+      {
         "word": "stylized",
-        "strength": 0.0021
-      },
-      {
-        "word": "experimental",
-        "strength": 0.0021
-      },
-      {
-        "word": "meandering",
         "strength": 0.0021
       },
       {
@@ -7099,6 +7091,14 @@ const styleAssociationData = {
       },
       {
         "word": "magical",
+        "strength": 0.0021
+      },
+      {
+        "word": "experimental",
+        "strength": 0.0021
+      },
+      {
+        "word": "meandering",
         "strength": 0.0021
       },
       {
@@ -7114,19 +7114,19 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "ornate",
-        "strength": 0.0016
-      },
-      {
-        "word": "theatrical",
-        "strength": 0.0016
-      },
-      {
         "word": "feverish",
         "strength": 0.0016
       },
       {
         "word": "elaborate",
+        "strength": 0.0016
+      },
+      {
+        "word": "ornate",
+        "strength": 0.0016
+      },
+      {
+        "word": "theatrical",
         "strength": 0.0016
       },
       {
@@ -7143,11 +7143,11 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "positive vibes",
-        "strength": 0.0084
+        "strength": 0.0085
       },
       {
         "word": "friendly",
-        "strength": 0.0068
+        "strength": 0.0067
       },
       {
         "word": "warm",
@@ -7155,7 +7155,7 @@ const styleAssociationData = {
       },
       {
         "word": "nostalgic",
-        "strength": 0.0061
+        "strength": 0.0062
       },
       {
         "word": "allegorical",
@@ -7171,7 +7171,7 @@ const styleAssociationData = {
       },
       {
         "word": "female perspective",
-        "strength": 0.0048
+        "strength": 0.0047
       },
       {
         "word": "irreverent",
@@ -7179,26 +7179,26 @@ const styleAssociationData = {
       },
       {
         "word": "dreamlike",
-        "strength": 0.0043
+        "strength": 0.0042
       },
       {
         "word": "ethereal",
-        "strength": 0.0041
-      },
-      {
-        "word": "biting",
-        "strength": 0.0041
+        "strength": 0.004
       },
       {
         "word": "conventional",
-        "strength": 0.0039
+        "strength": 0.004
       },
       {
-        "word": "graceful",
-        "strength": 0.0038
+        "word": "biting",
+        "strength": 0.004
       },
       {
         "word": "effusive",
+        "strength": 0.0038
+      },
+      {
+        "word": "graceful",
         "strength": 0.0038
       },
       {
@@ -7219,10 +7219,10 @@ const styleAssociationData = {
       },
       {
         "word": "calm",
-        "strength": 0.0034
+        "strength": 0.0033
       },
       {
-        "word": "natural",
+        "word": "suspenseful",
         "strength": 0.0032
       },
       {
@@ -7230,15 +7230,15 @@ const styleAssociationData = {
         "strength": 0.0032
       },
       {
-        "word": "suspenseful",
-        "strength": 0.0031
-      },
-      {
-        "word": "feminist",
-        "strength": 0.003
+        "word": "natural",
+        "strength": 0.0032
       },
       {
         "word": "lush",
+        "strength": 0.003
+      },
+      {
+        "word": "feminist",
         "strength": 0.003
       },
       {
@@ -7246,11 +7246,11 @@ const styleAssociationData = {
         "strength": 0.003
       },
       {
-        "word": "poised",
-        "strength": 0.003
+        "word": "experimental",
+        "strength": 0.0029
       },
       {
-        "word": "experimental",
+        "word": "poised",
         "strength": 0.0029
       },
       {
@@ -7267,26 +7267,26 @@ const styleAssociationData = {
       },
       {
         "word": "meandering",
-        "strength": 0.0026
+        "strength": 0.0025
       },
       {
         "word": "theatrical",
-        "strength": 0.0023
+        "strength": 0.0024
       },
       {
         "word": "descriptive",
-        "strength": 0.0022
+        "strength": 0.0023
       },
       {
         "word": "intimate",
         "strength": 0.0022
       },
       {
-        "word": "concrete",
+        "word": "raw",
         "strength": 0.0021
       },
       {
-        "word": "raw",
+        "word": "concrete",
         "strength": 0.0021
       },
       {
@@ -7295,6 +7295,10 @@ const styleAssociationData = {
       },
       {
         "word": "panache",
+        "strength": 0.0021
+      },
+      {
+        "word": "hypnotic",
         "strength": 0.002
       },
       {
@@ -7302,24 +7306,16 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
-        "word": "hypnotic",
-        "strength": 0.002
+        "word": "atmospheric",
+        "strength": 0.0019
       },
       {
         "word": "human",
         "strength": 0.0019
       },
       {
-        "word": "atmospheric",
-        "strength": 0.0019
-      },
-      {
         "word": "ornate",
         "strength": 0.0019
-      },
-      {
-        "word": "sophisticated",
-        "strength": 0.0018
       },
       {
         "word": "polished",
@@ -7330,12 +7326,16 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
+        "word": "sophisticated",
+        "strength": 0.0018
+      },
+      {
         "word": "sentimental",
         "strength": 0.0018
       },
       {
         "word": "earnest",
-        "strength": 0.0017
+        "strength": 0.0018
       },
       {
         "word": "lyrical",
@@ -7347,7 +7347,7 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "positive vibes",
-        "strength": 0.0091
+        "strength": 0.0092
       },
       {
         "word": "allegorical",
@@ -7363,7 +7363,7 @@ const styleAssociationData = {
       },
       {
         "word": "friendly",
-        "strength": 0.0058
+        "strength": 0.0057
       },
       {
         "word": "dreamlike",
@@ -7379,7 +7379,7 @@ const styleAssociationData = {
       },
       {
         "word": "suspenseful",
-        "strength": 0.0043
+        "strength": 0.0044
       },
       {
         "word": "irreverent",
@@ -7402,11 +7402,11 @@ const styleAssociationData = {
         "strength": 0.0039
       },
       {
-        "word": "action-oriented",
-        "strength": 0.0039
+        "word": "relationship-focused",
+        "strength": 0.0038
       },
       {
-        "word": "relationship-focused",
+        "word": "action-oriented",
         "strength": 0.0038
       },
       {
@@ -7422,11 +7422,11 @@ const styleAssociationData = {
         "strength": 0.0037
       },
       {
-        "word": "uplifting",
+        "word": "earnest",
         "strength": 0.0037
       },
       {
-        "word": "earnest",
+        "word": "uplifting",
         "strength": 0.0037
       },
       {
@@ -7438,6 +7438,10 @@ const styleAssociationData = {
         "strength": 0.003
       },
       {
+        "word": "poetic",
+        "strength": 0.0029
+      },
+      {
         "word": "ethereal",
         "strength": 0.0029
       },
@@ -7446,23 +7450,19 @@ const styleAssociationData = {
         "strength": 0.0029
       },
       {
-        "word": "poetic",
-        "strength": 0.0029
-      },
-      {
         "word": "meandering",
         "strength": 0.0028
       },
       {
         "word": "natural",
-        "strength": 0.0028
+        "strength": 0.0027
       },
       {
         "word": "female perspective",
-        "strength": 0.0026
+        "strength": 0.0025
       },
       {
-        "word": "biting",
+        "word": "theatrical",
         "strength": 0.0025
       },
       {
@@ -7470,7 +7470,7 @@ const styleAssociationData = {
         "strength": 0.0025
       },
       {
-        "word": "theatrical",
+        "word": "biting",
         "strength": 0.0025
       },
       {
@@ -7486,11 +7486,11 @@ const styleAssociationData = {
         "strength": 0.0023
       },
       {
-        "word": "intimate",
+        "word": "magical",
         "strength": 0.0022
       },
       {
-        "word": "magical",
+        "word": "intimate",
         "strength": 0.0022
       },
       {
@@ -7502,20 +7502,12 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
-        "word": "whimsical",
-        "strength": 0.0018
-      },
-      {
         "word": "gentle",
         "strength": 0.0018
       },
       {
-        "word": "clarity",
-        "strength": 0.0017
-      },
-      {
-        "word": "descriptive",
-        "strength": 0.0017
+        "word": "whimsical",
+        "strength": 0.0018
       },
       {
         "word": "elaborate",
@@ -7526,7 +7518,15 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
+        "word": "descriptive",
+        "strength": 0.0017
+      },
+      {
         "word": "atmospheric",
+        "strength": 0.0017
+      },
+      {
+        "word": "clarity",
         "strength": 0.0017
       },
       {
@@ -7534,11 +7534,11 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "graceful",
+        "word": "analytical",
         "strength": 0.0016
       },
       {
-        "word": "analytical",
+        "word": "graceful",
         "strength": 0.0016
       },
       {
@@ -7575,14 +7575,14 @@ const styleAssociationData = {
       },
       {
         "word": "conventional",
+        "strength": 0.003
+      },
+      {
+        "word": "romantic",
         "strength": 0.0029
       },
       {
         "word": "effusive",
-        "strength": 0.0029
-      },
-      {
-        "word": "romantic",
         "strength": 0.0029
       },
       {
@@ -7591,7 +7591,7 @@ const styleAssociationData = {
       },
       {
         "word": "intoxicating",
-        "strength": 0.0025
+        "strength": 0.0026
       },
       {
         "word": "human",
@@ -7602,15 +7602,11 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
-        "word": "ethereal",
-        "strength": 0.0022
-      },
-      {
         "word": "polished",
         "strength": 0.0022
       },
       {
-        "word": "biting",
+        "word": "ethereal",
         "strength": 0.0021
       },
       {
@@ -7622,7 +7618,7 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
-        "word": "action-oriented",
+        "word": "biting",
         "strength": 0.002
       },
       {
@@ -7634,12 +7630,16 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
+        "word": "action-oriented",
+        "strength": 0.002
+      },
+      {
         "word": "lyrical",
         "strength": 0.002
       },
       {
         "word": "idealistic",
-        "strength": 0.0019
+        "strength": 0.002
       },
       {
         "word": "dangerous",
@@ -7654,31 +7654,23 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "graceful",
-        "strength": 0.0018
-      },
-      {
         "word": "lush",
         "strength": 0.0018
       },
       {
         "word": "suspenseful",
-        "strength": 0.0017
+        "strength": 0.0018
       },
       {
-        "word": "crisp",
-        "strength": 0.0016
+        "word": "graceful",
+        "strength": 0.0018
       },
       {
         "word": "magical",
         "strength": 0.0016
       },
       {
-        "word": "concrete",
-        "strength": 0.0016
-      },
-      {
-        "word": "calm",
+        "word": "crisp",
         "strength": 0.0016
       },
       {
@@ -7686,28 +7678,36 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
+        "word": "concrete",
+        "strength": 0.0016
+      },
+      {
         "word": "uplifting",
+        "strength": 0.0016
+      },
+      {
+        "word": "calm",
         "strength": 0.0015
       },
       {
         "word": "theatrical",
-        "strength": 0.0014
+        "strength": 0.0015
       },
       {
         "word": "sentimental",
-        "strength": 0.0014
+        "strength": 0.0015
+      },
+      {
+        "word": "feverish",
+        "strength": 0.0015
       },
       {
         "word": "metaphorical",
         "strength": 0.0014
       },
       {
-        "word": "feverish",
-        "strength": 0.0014
-      },
-      {
         "word": "female perspective",
-        "strength": 0.0014
+        "strength": 0.0013
       },
       {
         "word": "experimental",
@@ -7715,18 +7715,26 @@ const styleAssociationData = {
       },
       {
         "word": "meandering",
-        "strength": 0.0013
+        "strength": 0.0012
       },
       {
         "word": "elegant",
-        "strength": 0.0013
+        "strength": 0.0012
+      },
+      {
+        "word": "sardonic",
+        "strength": 0.0012
       },
       {
         "word": "mischievous",
         "strength": 0.0012
       },
       {
-        "word": "sardonic",
+        "word": "sensational",
+        "strength": 0.0011
+      },
+      {
+        "word": "gentle",
         "strength": 0.0011
       },
       {
@@ -7735,14 +7743,6 @@ const styleAssociationData = {
       },
       {
         "word": "transcendent",
-        "strength": 0.0011
-      },
-      {
-        "word": "gentle",
-        "strength": 0.0011
-      },
-      {
-        "word": "sensational",
         "strength": 0.0011
       },
       {
@@ -7755,11 +7755,11 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "allegorical",
-        "strength": 0.0056
+        "strength": 0.0057
       },
       {
         "word": "nostalgic",
-        "strength": 0.0044
+        "strength": 0.0045
       },
       {
         "word": "irreverent",
@@ -7771,11 +7771,11 @@ const styleAssociationData = {
       },
       {
         "word": "romantic",
-        "strength": 0.0036
+        "strength": 0.0037
       },
       {
         "word": "concrete",
-        "strength": 0.0032
+        "strength": 0.0031
       },
       {
         "word": "warm",
@@ -7786,15 +7786,15 @@ const styleAssociationData = {
         "strength": 0.003
       },
       {
+        "word": "suspenseful",
+        "strength": 0.0029
+      },
+      {
         "word": "female perspective",
         "strength": 0.0029
       },
       {
         "word": "metaphorical",
-        "strength": 0.0028
-      },
-      {
-        "word": "suspenseful",
         "strength": 0.0028
       },
       {
@@ -7827,7 +7827,7 @@ const styleAssociationData = {
       },
       {
         "word": "conventional",
-        "strength": 0.0019
+        "strength": 0.002
       },
       {
         "word": "male perspective",
@@ -7838,11 +7838,11 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
-        "word": "sentimental",
+        "word": "stream-of-consciousness",
         "strength": 0.0018
       },
       {
-        "word": "stream-of-consciousness",
+        "word": "sentimental",
         "strength": 0.0018
       },
       {
@@ -7850,15 +7850,11 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "clinical",
-        "strength": 0.0017
-      },
-      {
         "word": "dangerous",
-        "strength": 0.0017
+        "strength": 0.0018
       },
       {
-        "word": "biting",
+        "word": "clinical",
         "strength": 0.0017
       },
       {
@@ -7866,23 +7862,31 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "poised",
-        "strength": 0.0017
-      },
-      {
         "word": "engaging",
         "strength": 0.0017
       },
       {
-        "word": "calm",
-        "strength": 0.0017
+        "word": "intimate",
+        "strength": 0.0016
+      },
+      {
+        "word": "biting",
+        "strength": 0.0016
+      },
+      {
+        "word": "poised",
+        "strength": 0.0016
+      },
+      {
+        "word": "gentle",
+        "strength": 0.0016
       },
       {
         "word": "ethereal",
         "strength": 0.0016
       },
       {
-        "word": "intimate",
+        "word": "calm",
         "strength": 0.0016
       },
       {
@@ -7894,15 +7898,11 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "gentle",
-        "strength": 0.0016
-      },
-      {
-        "word": "sharp",
+        "word": "serene",
         "strength": 0.0015
       },
       {
-        "word": "serene",
+        "word": "sharp",
         "strength": 0.0015
       },
       {
@@ -7911,10 +7911,6 @@ const styleAssociationData = {
       },
       {
         "word": "transcendent",
-        "strength": 0.0014
-      },
-      {
-        "word": "grounding",
         "strength": 0.0013
       },
       {
@@ -7922,7 +7918,15 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "deliberate",
+        "word": "excessive",
+        "strength": 0.0013
+      },
+      {
+        "word": "grounding",
+        "strength": 0.0013
+      },
+      {
+        "word": "lyrical",
         "strength": 0.0013
       },
       {
@@ -7930,27 +7934,23 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "excessive",
-        "strength": 0.0012
+        "word": "deliberate",
+        "strength": 0.0013
       },
       {
-        "word": "lyrical",
+        "word": "frantic",
         "strength": 0.0012
       },
       {
         "word": "clarity",
-        "strength": 0.0012
-      },
-      {
-        "word": "frantic",
-        "strength": 0.0011
-      },
-      {
-        "word": "graceful",
         "strength": 0.0011
       },
       {
         "word": "uplifting",
+        "strength": 0.0011
+      },
+      {
+        "word": "intoxicating",
         "strength": 0.0011
       }
     ]
@@ -7959,7 +7959,7 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "allegorical",
-        "strength": 0.0079
+        "strength": 0.008
       },
       {
         "word": "irreverent",
@@ -7967,7 +7967,7 @@ const styleAssociationData = {
       },
       {
         "word": "suspenseful",
-        "strength": 0.0061
+        "strength": 0.0062
       },
       {
         "word": "nostalgic",
@@ -7986,15 +7986,15 @@ const styleAssociationData = {
         "strength": 0.0045
       },
       {
+        "word": "conventional",
+        "strength": 0.004
+      },
+      {
         "word": "concrete",
         "strength": 0.004
       },
       {
         "word": "friendly",
-        "strength": 0.004
-      },
-      {
-        "word": "conventional",
         "strength": 0.004
       },
       {
@@ -8026,20 +8026,20 @@ const styleAssociationData = {
         "strength": 0.0033
       },
       {
-        "word": "human",
-        "strength": 0.0032
-      },
-      {
         "word": "frantic",
         "strength": 0.0032
       },
       {
+        "word": "human",
+        "strength": 0.0032
+      },
+      {
         "word": "grounding",
-        "strength": 0.0031
+        "strength": 0.003
       },
       {
         "word": "excessive",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "effusive",
@@ -8050,20 +8050,24 @@ const styleAssociationData = {
         "strength": 0.0027
       },
       {
-        "word": "clarity",
-        "strength": 0.0026
-      },
-      {
         "word": "stream-of-consciousness",
         "strength": 0.0026
       },
       {
         "word": "sentimental",
-        "strength": 0.0025
+        "strength": 0.0026
       },
       {
         "word": "dangerous",
         "strength": 0.0025
+      },
+      {
+        "word": "clarity",
+        "strength": 0.0025
+      },
+      {
+        "word": "clinical",
+        "strength": 0.0024
       },
       {
         "word": "whimsical",
@@ -8074,12 +8078,8 @@ const styleAssociationData = {
         "strength": 0.0024
       },
       {
-        "word": "clinical",
-        "strength": 0.0024
-      },
-      {
         "word": "female perspective",
-        "strength": 0.0024
+        "strength": 0.0023
       },
       {
         "word": "crisp",
@@ -8091,10 +8091,14 @@ const styleAssociationData = {
       },
       {
         "word": "risky",
-        "strength": 0.0021
+        "strength": 0.0022
       },
       {
         "word": "propulsive",
+        "strength": 0.0021
+      },
+      {
+        "word": "uplifting",
         "strength": 0.002
       },
       {
@@ -8103,14 +8107,6 @@ const styleAssociationData = {
       },
       {
         "word": "sharp",
-        "strength": 0.002
-      },
-      {
-        "word": "uplifting",
-        "strength": 0.002
-      },
-      {
-        "word": "calm",
         "strength": 0.0019
       },
       {
@@ -8119,14 +8115,10 @@ const styleAssociationData = {
       },
       {
         "word": "intimate",
-        "strength": 0.0018
+        "strength": 0.0019
       },
       {
-        "word": "natural",
-        "strength": 0.0018
-      },
-      {
-        "word": "biting",
+        "word": "calm",
         "strength": 0.0018
       },
       {
@@ -8134,28 +8126,36 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "action-oriented",
+        "word": "natural",
         "strength": 0.0018
+      },
+      {
+        "word": "action-oriented",
+        "strength": 0.0017
+      },
+      {
+        "word": "biting",
+        "strength": 0.0017
+      },
+      {
+        "word": "comforting",
+        "strength": 0.0017
       },
       {
         "word": "moralising",
         "strength": 0.0017
       },
       {
-        "word": "meticulous",
+        "word": "passive voice",
         "strength": 0.0017
       },
       {
-        "word": "passive voice",
+        "word": "meticulous",
         "strength": 0.0016
       },
       {
-        "word": "comforting",
+        "word": "disturbing",
         "strength": 0.0016
-      },
-      {
-        "word": "male perspective",
-        "strength": 0.0015
       }
     ]
   },
@@ -8187,7 +8187,7 @@ const styleAssociationData = {
       },
       {
         "word": "friendly",
-        "strength": 0.0043
+        "strength": 0.0042
       },
       {
         "word": "dreamlike",
@@ -8203,7 +8203,7 @@ const styleAssociationData = {
       },
       {
         "word": "sentimental",
-        "strength": 0.004
+        "strength": 0.0041
       },
       {
         "word": "metaphorical",
@@ -8219,7 +8219,7 @@ const styleAssociationData = {
       },
       {
         "word": "conventional",
-        "strength": 0.0036
+        "strength": 0.0037
       },
       {
         "word": "crisp",
@@ -8227,7 +8227,7 @@ const styleAssociationData = {
       },
       {
         "word": "suspenseful",
-        "strength": 0.0032
+        "strength": 0.0033
       },
       {
         "word": "human",
@@ -8238,11 +8238,11 @@ const styleAssociationData = {
         "strength": 0.0029
       },
       {
-        "word": "disorienting",
+        "word": "intimate",
         "strength": 0.0029
       },
       {
-        "word": "intimate",
+        "word": "disorienting",
         "strength": 0.0029
       },
       {
@@ -8251,18 +8251,18 @@ const styleAssociationData = {
       },
       {
         "word": "hypnotic",
-        "strength": 0.0025
-      },
-      {
-        "word": "female perspective",
-        "strength": 0.0024
+        "strength": 0.0026
       },
       {
         "word": "dangerous",
         "strength": 0.0024
       },
       {
-        "word": "sharp",
+        "word": "female perspective",
+        "strength": 0.0024
+      },
+      {
+        "word": "stream-of-consciousness",
         "strength": 0.0023
       },
       {
@@ -8270,7 +8270,7 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
-        "word": "stream-of-consciousness",
+        "word": "sharp",
         "strength": 0.0022
       },
       {
@@ -8278,16 +8278,12 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
-        "word": "ethereal",
-        "strength": 0.0021
-      },
-      {
         "word": "clinical",
         "strength": 0.0021
       },
       {
-        "word": "action-oriented",
-        "strength": 0.002
+        "word": "ethereal",
+        "strength": 0.0021
       },
       {
         "word": "precise",
@@ -8298,15 +8294,19 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
+        "word": "action-oriented",
+        "strength": 0.002
+      },
+      {
         "word": "whimsical",
-        "strength": 0.0019
+        "strength": 0.0018
       },
       {
         "word": "lyrical",
-        "strength": 0.0017
+        "strength": 0.0018
       },
       {
-        "word": "feminist",
+        "word": "gentle",
         "strength": 0.0017
       },
       {
@@ -8318,7 +8318,7 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "gentle",
+        "word": "feminist",
         "strength": 0.0017
       },
       {
@@ -8326,23 +8326,19 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "deliberate",
-        "strength": 0.0016
-      },
-      {
         "word": "intoxicating",
         "strength": 0.0016
       },
       {
-        "word": "meticulous",
-        "strength": 0.0016
+        "word": "deliberate",
+        "strength": 0.0015
       },
       {
         "word": "sensational",
         "strength": 0.0015
       },
       {
-        "word": "sophisticated",
+        "word": "meticulous",
         "strength": 0.0015
       },
       {
@@ -8350,15 +8346,19 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "clarity",
+        "word": "sophisticated",
         "strength": 0.0014
       },
       {
         "word": "systematic",
+        "strength": 0.0014
+      },
+      {
+        "word": "clarity",
         "strength": 0.0013
       },
       {
-        "word": "grounding",
+        "word": "complex",
         "strength": 0.001
       }
     ]
@@ -8371,22 +8371,22 @@ const styleAssociationData = {
       },
       {
         "word": "lavish",
-        "strength": 0.004
+        "strength": 0.0041
       },
       {
         "word": "imagistic",
         "strength": 0.004
       },
       {
-        "word": "vivid",
+        "word": "vulgar",
         "strength": 0.0035
       },
       {
-        "word": "vulgar",
-        "strength": 0.0034
+        "word": "profane",
+        "strength": 0.0035
       },
       {
-        "word": "profane",
+        "word": "vivid",
         "strength": 0.0034
       },
       {
@@ -8403,11 +8403,11 @@ const styleAssociationData = {
       },
       {
         "word": "formulaic",
-        "strength": 0.0031
+        "strength": 0.0032
       },
       {
         "word": "gritty",
-        "strength": 0.003
+        "strength": 0.0031
       },
       {
         "word": "dark humor",
@@ -8418,11 +8418,11 @@ const styleAssociationData = {
         "strength": 0.0027
       },
       {
-        "word": "dry",
+        "word": "haunting",
         "strength": 0.0027
       },
       {
-        "word": "haunting",
+        "word": "dry",
         "strength": 0.0026
       },
       {
@@ -8439,7 +8439,7 @@ const styleAssociationData = {
       },
       {
         "word": "cliche",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
         "word": "absurdist",
@@ -8447,30 +8447,30 @@ const styleAssociationData = {
       },
       {
         "word": "detached",
-        "strength": 0.0019
-      },
-      {
-        "word": "playful",
-        "strength": 0.0019
-      },
-      {
-        "word": "chaotic",
-        "strength": 0.0019
+        "strength": 0.002
       },
       {
         "word": "male perspective",
         "strength": 0.0019
       },
       {
+        "word": "immersive",
+        "strength": 0.0018
+      },
+      {
         "word": "unfiltered",
         "strength": 0.0018
       },
       {
-        "word": "social criticism",
+        "word": "playful",
         "strength": 0.0018
       },
       {
-        "word": "immersive",
+        "word": "chaotic",
+        "strength": 0.0018
+      },
+      {
+        "word": "social criticism",
         "strength": 0.0018
       },
       {
@@ -8482,11 +8482,11 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "descriptive",
-        "strength": 0.0016
+        "word": "distant",
+        "strength": 0.0017
       },
       {
-        "word": "distant",
+        "word": "descriptive",
         "strength": 0.0016
       },
       {
@@ -8498,10 +8498,6 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "sparse",
-        "strength": 0.0014
-      },
-      {
         "word": "theatrical",
         "strength": 0.0014
       },
@@ -8510,7 +8506,7 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "transcendent",
+        "word": "sparse",
         "strength": 0.0014
       },
       {
@@ -8518,15 +8514,19 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "plain",
+        "word": "transcendent",
         "strength": 0.0013
       },
       {
         "word": "soft",
-        "strength": 0.0012
+        "strength": 0.0013
       },
       {
-        "word": "simple",
+        "word": "risky",
+        "strength": 0.0013
+      },
+      {
+        "word": "plain",
         "strength": 0.0012
       },
       {
@@ -8534,11 +8534,11 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "risky",
+        "word": "deep",
         "strength": 0.0012
       },
       {
-        "word": "deep",
+        "word": "simple",
         "strength": 0.0011
       },
       {
@@ -8550,19 +8550,19 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
+        "word": "comforting",
+        "strength": 0.0011
+      },
+      {
         "word": "dramatic",
         "strength": 0.001
       },
       {
-        "word": "comforting",
+        "word": "suspenseful",
         "strength": 0.001
       },
       {
-        "word": "friendly",
-        "strength": 0.0009
-      },
-      {
-        "word": "suspenseful",
+        "word": "hopeful",
         "strength": 0.0009
       }
     ]
@@ -8579,7 +8579,7 @@ const styleAssociationData = {
       },
       {
         "word": "friendly",
-        "strength": 0.0052
+        "strength": 0.0051
       },
       {
         "word": "irreverent",
@@ -8602,7 +8602,7 @@ const styleAssociationData = {
         "strength": 0.0033
       },
       {
-        "word": "relationship-focused",
+        "word": "romantic",
         "strength": 0.0032
       },
       {
@@ -8610,7 +8610,7 @@ const styleAssociationData = {
         "strength": 0.0032
       },
       {
-        "word": "romantic",
+        "word": "relationship-focused",
         "strength": 0.0032
       },
       {
@@ -8618,11 +8618,11 @@ const styleAssociationData = {
         "strength": 0.0031
       },
       {
-        "word": "engaging",
+        "word": "effusive",
         "strength": 0.0031
       },
       {
-        "word": "effusive",
+        "word": "engaging",
         "strength": 0.0031
       },
       {
@@ -8635,7 +8635,7 @@ const styleAssociationData = {
       },
       {
         "word": "calm",
-        "strength": 0.0028
+        "strength": 0.0027
       },
       {
         "word": "conventional",
@@ -8646,11 +8646,11 @@ const styleAssociationData = {
         "strength": 0.0024
       },
       {
-        "word": "concrete",
+        "word": "suspenseful",
         "strength": 0.0022
       },
       {
-        "word": "suspenseful",
+        "word": "concrete",
         "strength": 0.0022
       },
       {
@@ -8659,18 +8659,18 @@ const styleAssociationData = {
       },
       {
         "word": "dangerous",
-        "strength": 0.0019
+        "strength": 0.002
       },
       {
         "word": "human",
         "strength": 0.0019
       },
       {
-        "word": "mischievous",
+        "word": "intoxicating",
         "strength": 0.0019
       },
       {
-        "word": "intoxicating",
+        "word": "mischievous",
         "strength": 0.0019
       },
       {
@@ -8682,15 +8682,19 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "sharp",
-        "strength": 0.0017
-      },
-      {
         "word": "sentimental",
         "strength": 0.0017
       },
       {
+        "word": "sharp",
+        "strength": 0.0017
+      },
+      {
         "word": "idealistic",
+        "strength": 0.0017
+      },
+      {
+        "word": "hypnotic",
         "strength": 0.0016
       },
       {
@@ -8702,11 +8706,11 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "hypnotic",
-        "strength": 0.0016
+        "word": "gentle",
+        "strength": 0.0015
       },
       {
-        "word": "gentle",
+        "word": "lush",
         "strength": 0.0015
       },
       {
@@ -8718,10 +8722,6 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "lush",
-        "strength": 0.0015
-      },
-      {
         "word": "metaphorical",
         "strength": 0.0014
       },
@@ -8730,11 +8730,11 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "poised",
-        "strength": 0.0012
+        "word": "earnest",
+        "strength": 0.0013
       },
       {
-        "word": "earnest",
+        "word": "poised",
         "strength": 0.0012
       },
       {
@@ -8750,23 +8750,23 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "clarity",
+        "word": "systematic",
         "strength": 0.001
       },
       {
         "word": "sophisticated",
-        "strength": 0.001
-      },
-      {
-        "word": "systematic",
-        "strength": 0.0009
-      },
-      {
-        "word": "whimsical",
         "strength": 0.0009
       },
       {
         "word": "magical",
+        "strength": 0.0009
+      },
+      {
+        "word": "clarity",
+        "strength": 0.0009
+      },
+      {
+        "word": "theatrical",
         "strength": 0.0009
       }
     ]
@@ -8779,7 +8779,7 @@ const styleAssociationData = {
       },
       {
         "word": "moody",
-        "strength": 0.0038
+        "strength": 0.0037
       },
       {
         "word": "tactile",
@@ -8795,7 +8795,7 @@ const styleAssociationData = {
       },
       {
         "word": "formulaic",
-        "strength": 0.0031
+        "strength": 0.0032
       },
       {
         "word": "dry",
@@ -8807,7 +8807,7 @@ const styleAssociationData = {
       },
       {
         "word": "economical",
-        "strength": 0.003
+        "strength": 0.0029
       },
       {
         "word": "melancholic",
@@ -8815,15 +8815,15 @@ const styleAssociationData = {
       },
       {
         "word": "safe",
-        "strength": 0.0028
-      },
-      {
-        "word": "playful",
         "strength": 0.0027
       },
       {
         "word": "intricate",
         "strength": 0.0027
+      },
+      {
+        "word": "playful",
+        "strength": 0.0026
       },
       {
         "word": "introspective",
@@ -8838,11 +8838,11 @@ const styleAssociationData = {
         "strength": 0.0025
       },
       {
-        "word": "articulate",
+        "word": "vulnerable",
         "strength": 0.0025
       },
       {
-        "word": "vulnerable",
+        "word": "articulate",
         "strength": 0.0025
       },
       {
@@ -8851,11 +8851,11 @@ const styleAssociationData = {
       },
       {
         "word": "surreal",
-        "strength": 0.0025
+        "strength": 0.0024
       },
       {
         "word": "minimalist",
-        "strength": 0.0024
+        "strength": 0.0023
       },
       {
         "word": "poetic descriptives",
@@ -8867,15 +8867,15 @@ const styleAssociationData = {
       },
       {
         "word": "funny",
-        "strength": 0.0022
-      },
-      {
-        "word": "visceral",
-        "strength": 0.0022
+        "strength": 0.0023
       },
       {
         "word": "direct",
-        "strength": 0.0022
+        "strength": 0.0021
+      },
+      {
+        "word": "visceral",
+        "strength": 0.0021
       },
       {
         "word": "logical",
@@ -8894,16 +8894,16 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
+        "word": "vulgar",
+        "strength": 0.0019
+      },
+      {
         "word": "experimental",
         "strength": 0.0019
       },
       {
-        "word": "vulgar",
-        "strength": 0.0018
-      },
-      {
         "word": "graceful",
-        "strength": 0.0018
+        "strength": 0.0017
       },
       {
         "word": "creative",
@@ -8911,7 +8911,7 @@ const styleAssociationData = {
       },
       {
         "word": "simple",
-        "strength": 0.0017
+        "strength": 0.0016
       },
       {
         "word": "virtue signaling",
@@ -8922,7 +8922,7 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "plain",
+        "word": "measured",
         "strength": 0.0015
       },
       {
@@ -8930,15 +8930,11 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "measured",
-        "strength": 0.0015
-      },
-      {
-        "word": "formal",
+        "word": "profane",
         "strength": 0.0014
       },
       {
-        "word": "profane",
+        "word": "plain",
         "strength": 0.0014
       },
       {
@@ -8946,8 +8942,12 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "technical",
+        "word": "formal",
         "strength": 0.0014
+      },
+      {
+        "word": "technical",
+        "strength": 0.0013
       },
       {
         "word": "grounding",
@@ -8958,19 +8958,19 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "chaotic",
-        "strength": 0.0013
-      },
-      {
-        "word": "functional",
-        "strength": 0.0013
-      },
-      {
-        "word": "subversive",
+        "word": "assonant",
         "strength": 0.0012
       },
       {
-        "word": "assonant",
+        "word": "chaotic",
+        "strength": 0.0012
+      },
+      {
+        "word": "functional",
+        "strength": 0.0012
+      },
+      {
+        "word": "layered",
         "strength": 0.0012
       }
     ]
@@ -8982,11 +8982,11 @@ const styleAssociationData = {
         "strength": 0.0051
       },
       {
-        "word": "economical",
+        "word": "moody",
         "strength": 0.0039
       },
       {
-        "word": "moody",
+        "word": "economical",
         "strength": 0.0039
       },
       {
@@ -8995,22 +8995,22 @@ const styleAssociationData = {
       },
       {
         "word": "theatrical",
-        "strength": 0.0035
+        "strength": 0.0036
       },
       {
         "word": "alliterative",
-        "strength": 0.0035
+        "strength": 0.0036
       },
       {
         "word": "measured",
         "strength": 0.0035
       },
       {
-        "word": "tactile",
+        "word": "vulnerable",
         "strength": 0.0034
       },
       {
-        "word": "vulnerable",
+        "word": "tactile",
         "strength": 0.0034
       },
       {
@@ -9019,7 +9019,7 @@ const styleAssociationData = {
       },
       {
         "word": "introspective",
-        "strength": 0.0031
+        "strength": 0.003
       },
       {
         "word": "grounding",
@@ -9031,7 +9031,7 @@ const styleAssociationData = {
       },
       {
         "word": "visceral",
-        "strength": 0.0028
+        "strength": 0.0027
       },
       {
         "word": "virtue signaling",
@@ -9039,7 +9039,7 @@ const styleAssociationData = {
       },
       {
         "word": "provocative",
-        "strength": 0.0027
+        "strength": 0.0026
       },
       {
         "word": "safe",
@@ -9050,19 +9050,19 @@ const styleAssociationData = {
         "strength": 0.0023
       },
       {
-        "word": "intricate",
+        "word": "dialogue-driven",
         "strength": 0.0023
       },
       {
-        "word": "subversive",
-        "strength": 0.0022
-      },
-      {
-        "word": "dialogue-driven",
+        "word": "intricate",
         "strength": 0.0022
       },
       {
         "word": "funny",
+        "strength": 0.0022
+      },
+      {
+        "word": "subversive",
         "strength": 0.0022
       },
       {
@@ -9074,15 +9074,15 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
+        "word": "creative",
+        "strength": 0.002
+      },
+      {
         "word": "surreal",
-        "strength": 0.0021
+        "strength": 0.002
       },
       {
         "word": "functional",
-        "strength": 0.0021
-      },
-      {
-        "word": "creative",
         "strength": 0.002
       },
       {
@@ -9090,15 +9090,15 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
+        "word": "thought-provoking",
+        "strength": 0.0019
+      },
+      {
         "word": "vivid",
         "strength": 0.0019
       },
       {
         "word": "graceful",
-        "strength": 0.0019
-      },
-      {
-        "word": "thought-provoking",
         "strength": 0.0019
       },
       {
@@ -9110,23 +9110,23 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "direct",
-        "strength": 0.0017
-      },
-      {
         "word": "serene",
         "strength": 0.0017
       },
       {
-        "word": "poised",
-        "strength": 0.0016
+        "word": "propulsive",
+        "strength": 0.0017
       },
       {
-        "word": "propulsive",
+        "word": "direct",
         "strength": 0.0016
       },
       {
         "word": "philosophical",
+        "strength": 0.0016
+      },
+      {
+        "word": "poised",
         "strength": 0.0016
       },
       {
@@ -9138,11 +9138,15 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
+        "word": "formulaic",
+        "strength": 0.0015
+      },
+      {
         "word": "cynical",
         "strength": 0.0015
       },
       {
-        "word": "formulaic",
+        "word": "panache",
         "strength": 0.0014
       },
       {
@@ -9150,7 +9154,11 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "panache",
+        "word": "morbid",
+        "strength": 0.0014
+      },
+      {
+        "word": "positive vibes",
         "strength": 0.0014
       },
       {
@@ -9158,23 +9166,15 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "morbid",
-        "strength": 0.0014
+        "word": "psychedelic",
+        "strength": 0.0013
+      },
+      {
+        "word": "lush",
+        "strength": 0.0013
       },
       {
         "word": "witty",
-        "strength": 0.0014
-      },
-      {
-        "word": "positive vibes",
-        "strength": 0.0013
-      },
-      {
-        "word": "restrained",
-        "strength": 0.0013
-      },
-      {
-        "word": "psychedelic",
         "strength": 0.0013
       }
     ]
@@ -9190,12 +9190,12 @@ const styleAssociationData = {
         "strength": 0.0038
       },
       {
-        "word": "calm",
-        "strength": 0.0038
+        "word": "poised",
+        "strength": 0.0037
       },
       {
-        "word": "poised",
-        "strength": 0.0038
+        "word": "calm",
+        "strength": 0.0037
       },
       {
         "word": "vivid",
@@ -9211,22 +9211,22 @@ const styleAssociationData = {
       },
       {
         "word": "friendly",
-        "strength": 0.0027
+        "strength": 0.0026
       },
       {
         "word": "simple",
-        "strength": 0.0025
+        "strength": 0.0024
       },
       {
         "word": "chaotic",
         "strength": 0.0024
       },
       {
-        "word": "matter-of-fact",
-        "strength": 0.0024
+        "word": "surreal",
+        "strength": 0.0023
       },
       {
-        "word": "surreal",
+        "word": "matter-of-fact",
         "strength": 0.0023
       },
       {
@@ -9235,7 +9235,7 @@ const styleAssociationData = {
       },
       {
         "word": "deliberate",
-        "strength": 0.0023
+        "strength": 0.0022
       },
       {
         "word": "symbolic",
@@ -9254,32 +9254,32 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
-        "word": "visceral",
-        "strength": 0.002
-      },
-      {
         "word": "technical",
-        "strength": 0.002
-      },
-      {
-        "word": "cold",
-        "strength": 0.002
+        "strength": 0.0019
       },
       {
         "word": "funny",
         "strength": 0.0019
       },
       {
-        "word": "meditative",
+        "word": "visceral",
         "strength": 0.0019
       },
       {
-        "word": "economical",
+        "word": "cold",
         "strength": 0.0019
       },
       {
         "word": "sparse",
         "strength": 0.0019
+      },
+      {
+        "word": "economical",
+        "strength": 0.0018
+      },
+      {
+        "word": "meditative",
+        "strength": 0.0018
       },
       {
         "word": "grounding",
@@ -9294,15 +9294,7 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "formal",
-        "strength": 0.0017
-      },
-      {
         "word": "objective",
-        "strength": 0.0016
-      },
-      {
-        "word": "minimalist",
         "strength": 0.0016
       },
       {
@@ -9310,8 +9302,16 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "transcendent",
+        "word": "formal",
         "strength": 0.0016
+      },
+      {
+        "word": "minimalist",
+        "strength": 0.0016
+      },
+      {
+        "word": "transcendent",
+        "strength": 0.0015
       },
       {
         "word": "meandering",
@@ -9322,6 +9322,10 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
+        "word": "formulaic",
+        "strength": 0.0013
+      },
+      {
         "word": "direct",
         "strength": 0.0013
       },
@@ -9330,19 +9334,11 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "formulaic",
-        "strength": 0.0013
-      },
-      {
         "word": "clarity",
-        "strength": 0.0013
+        "strength": 0.0012
       },
       {
         "word": "subversive",
-        "strength": 0.0013
-      },
-      {
-        "word": "crisp",
         "strength": 0.0012
       },
       {
@@ -9350,7 +9346,7 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "ethereal",
+        "word": "crisp",
         "strength": 0.0011
       },
       {
@@ -9358,7 +9354,7 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "clever",
+        "word": "ethereal",
         "strength": 0.0011
       },
       {
@@ -9366,19 +9362,23 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "plain",
-        "strength": 0.0011
-      },
-      {
         "word": "dramatic",
         "strength": 0.0011
       },
       {
-        "word": "witty",
+        "word": "clever",
         "strength": 0.001
       },
       {
         "word": "irreverent",
+        "strength": 0.001
+      },
+      {
+        "word": "lavish",
+        "strength": 0.001
+      },
+      {
+        "word": "witty",
         "strength": 0.001
       }
     ]
@@ -9387,7 +9387,7 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "allegorical",
-        "strength": 0.009
+        "strength": 0.0091
       },
       {
         "word": "suspenseful",
@@ -9406,11 +9406,11 @@ const styleAssociationData = {
         "strength": 0.0062
       },
       {
-        "word": "human",
-        "strength": 0.0061
+        "word": "stream-of-consciousness",
+        "strength": 0.0062
       },
       {
-        "word": "stream-of-consciousness",
+        "word": "human",
         "strength": 0.0061
       },
       {
@@ -9418,11 +9418,11 @@ const styleAssociationData = {
         "strength": 0.006
       },
       {
-        "word": "concrete",
+        "word": "conventional",
         "strength": 0.0057
       },
       {
-        "word": "conventional",
+        "word": "concrete",
         "strength": 0.0057
       },
       {
@@ -9450,12 +9450,12 @@ const styleAssociationData = {
         "strength": 0.005
       },
       {
-        "word": "uplifting",
+        "word": "dangerous",
         "strength": 0.0045
       },
       {
-        "word": "dangerous",
-        "strength": 0.0044
+        "word": "uplifting",
+        "strength": 0.0045
       },
       {
         "word": "warm",
@@ -9467,7 +9467,7 @@ const styleAssociationData = {
       },
       {
         "word": "disturbing",
-        "strength": 0.0042
+        "strength": 0.0043
       },
       {
         "word": "friendly",
@@ -9475,7 +9475,7 @@ const styleAssociationData = {
       },
       {
         "word": "earnest",
-        "strength": 0.0036
+        "strength": 0.0037
       },
       {
         "word": "metaphorical",
@@ -9483,11 +9483,11 @@ const styleAssociationData = {
       },
       {
         "word": "intimate",
-        "strength": 0.0033
+        "strength": 0.0034
       },
       {
         "word": "mischievous",
-        "strength": 0.0032
+        "strength": 0.0033
       },
       {
         "word": "effusive",
@@ -9507,7 +9507,7 @@ const styleAssociationData = {
       },
       {
         "word": "risky",
-        "strength": 0.0029
+        "strength": 0.003
       },
       {
         "word": "frantic",
@@ -9515,11 +9515,11 @@ const styleAssociationData = {
       },
       {
         "word": "sharp",
-        "strength": 0.0027
+        "strength": 0.0026
       },
       {
         "word": "whimsical",
-        "strength": 0.0026
+        "strength": 0.0025
       },
       {
         "word": "female perspective",
@@ -9530,12 +9530,12 @@ const styleAssociationData = {
         "strength": 0.0025
       },
       {
-        "word": "gentle",
+        "word": "overwrought",
         "strength": 0.0024
       },
       {
-        "word": "overwrought",
-        "strength": 0.0023
+        "word": "gentle",
+        "strength": 0.0024
       },
       {
         "word": "amusing",
@@ -9543,7 +9543,7 @@ const styleAssociationData = {
       },
       {
         "word": "comforting",
-        "strength": 0.0022
+        "strength": 0.0023
       },
       {
         "word": "lyrical",
@@ -9562,6 +9562,10 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
+        "word": "soothing",
+        "strength": 0.0019
+      },
+      {
         "word": "natural",
         "strength": 0.0019
       },
@@ -9570,19 +9574,15 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
-        "word": "soothing",
-        "strength": 0.0019
-      },
-      {
-        "word": "ethereal",
-        "strength": 0.0019
-      },
-      {
-        "word": "engaging",
+        "word": "atmospheric",
         "strength": 0.0018
       },
       {
-        "word": "atmospheric",
+        "word": "ethereal",
+        "strength": 0.0018
+      },
+      {
+        "word": "engaging",
         "strength": 0.0018
       }
     ]
@@ -9591,7 +9591,7 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "allegorical",
-        "strength": 0.0063
+        "strength": 0.0064
       },
       {
         "word": "romantic",
@@ -9599,7 +9599,7 @@ const styleAssociationData = {
       },
       {
         "word": "concrete",
-        "strength": 0.0047
+        "strength": 0.0046
       },
       {
         "word": "nostalgic",
@@ -9615,7 +9615,7 @@ const styleAssociationData = {
       },
       {
         "word": "crisp",
-        "strength": 0.0042
+        "strength": 0.0041
       },
       {
         "word": "warm",
@@ -9623,15 +9623,11 @@ const styleAssociationData = {
       },
       {
         "word": "friendly",
-        "strength": 0.0041
+        "strength": 0.004
       },
       {
         "word": "dreamlike",
         "strength": 0.004
-      },
-      {
-        "word": "irreverent",
-        "strength": 0.0037
       },
       {
         "word": "stream-of-consciousness",
@@ -9639,6 +9635,10 @@ const styleAssociationData = {
       },
       {
         "word": "conventional",
+        "strength": 0.0037
+      },
+      {
+        "word": "irreverent",
         "strength": 0.0037
       },
       {
@@ -9654,11 +9654,11 @@ const styleAssociationData = {
         "strength": 0.0035
       },
       {
-        "word": "idealistic",
+        "word": "positive vibes",
         "strength": 0.0034
       },
       {
-        "word": "positive vibes",
+        "word": "idealistic",
         "strength": 0.0034
       },
       {
@@ -9687,7 +9687,7 @@ const styleAssociationData = {
       },
       {
         "word": "hypnotic",
-        "strength": 0.0027
+        "strength": 0.0028
       },
       {
         "word": "disorienting",
@@ -9699,11 +9699,19 @@ const styleAssociationData = {
       },
       {
         "word": "deliberate",
-        "strength": 0.0021
+        "strength": 0.002
       },
       {
         "word": "sharp",
-        "strength": 0.002
+        "strength": 0.0019
+      },
+      {
+        "word": "magical",
+        "strength": 0.0019
+      },
+      {
+        "word": "intimate",
+        "strength": 0.0019
       },
       {
         "word": "sophisticated",
@@ -9711,14 +9719,6 @@ const styleAssociationData = {
       },
       {
         "word": "engaging",
-        "strength": 0.0019
-      },
-      {
-        "word": "magical",
-        "strength": 0.0018
-      },
-      {
-        "word": "intimate",
         "strength": 0.0018
       },
       {
@@ -9734,11 +9734,11 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "vibrant",
+        "word": "disturbing",
         "strength": 0.0017
       },
       {
-        "word": "disturbing",
+        "word": "vibrant",
         "strength": 0.0016
       },
       {
@@ -9751,7 +9751,7 @@ const styleAssociationData = {
       },
       {
         "word": "action-oriented",
-        "strength": 0.0014
+        "strength": 0.0013
       },
       {
         "word": "precise",
@@ -9759,7 +9759,11 @@ const styleAssociationData = {
       },
       {
         "word": "risky",
-        "strength": 0.0012
+        "strength": 0.0013
+      },
+      {
+        "word": "earnest",
+        "strength": 0.0013
       },
       {
         "word": "moralising",
@@ -9770,7 +9774,7 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "earnest",
+        "word": "clinical",
         "strength": 0.0012
       },
       {
@@ -9778,15 +9782,11 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "clinical",
-        "strength": 0.0012
-      },
-      {
-        "word": "grounding",
+        "word": "ornate",
         "strength": 0.0011
       },
       {
-        "word": "ornate",
+        "word": "grounding",
         "strength": 0.0011
       }
     ]
@@ -9799,7 +9799,7 @@ const styleAssociationData = {
       },
       {
         "word": "friendly",
-        "strength": 0.0034
+        "strength": 0.0033
       },
       {
         "word": "theatrical",
@@ -9814,11 +9814,11 @@ const styleAssociationData = {
         "strength": 0.0023
       },
       {
-        "word": "surreal",
+        "word": "experimental",
         "strength": 0.0022
       },
       {
-        "word": "experimental",
+        "word": "surreal",
         "strength": 0.0022
       },
       {
@@ -9827,7 +9827,7 @@ const styleAssociationData = {
       },
       {
         "word": "simple",
-        "strength": 0.0019
+        "strength": 0.0018
       },
       {
         "word": "objective",
@@ -9835,7 +9835,7 @@ const styleAssociationData = {
       },
       {
         "word": "positive vibes",
-        "strength": 0.0016
+        "strength": 0.0017
       },
       {
         "word": "rhythmic",
@@ -9866,6 +9866,10 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
+        "word": "abstract",
+        "strength": 0.0014
+      },
+      {
         "word": "tactile",
         "strength": 0.0014
       },
@@ -9874,15 +9878,11 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "abstract",
-        "strength": 0.0014
-      },
-      {
         "word": "irreverent",
         "strength": 0.0014
       },
       {
-        "word": "female perspective",
+        "word": "risky",
         "strength": 0.0013
       },
       {
@@ -9890,23 +9890,19 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "risky",
+        "word": "female perspective",
         "strength": 0.0013
-      },
-      {
-        "word": "poised",
-        "strength": 0.0012
       },
       {
         "word": "dry",
         "strength": 0.0012
       },
       {
-        "word": "calm",
+        "word": "poised",
         "strength": 0.0012
       },
       {
-        "word": "economical",
+        "word": "calm",
         "strength": 0.0011
       },
       {
@@ -9914,7 +9910,19 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "transcendent",
+        "word": "economical",
+        "strength": 0.0011
+      },
+      {
+        "word": "frantic",
+        "strength": 0.0011
+      },
+      {
+        "word": "measured",
+        "strength": 0.0011
+      },
+      {
+        "word": "formulaic",
         "strength": 0.001
       },
       {
@@ -9922,15 +9930,7 @@ const styleAssociationData = {
         "strength": 0.001
       },
       {
-        "word": "measured",
-        "strength": 0.001
-      },
-      {
-        "word": "formulaic",
-        "strength": 0.001
-      },
-      {
-        "word": "frantic",
+        "word": "transcendent",
         "strength": 0.001
       },
       {
@@ -9954,7 +9954,7 @@ const styleAssociationData = {
         "strength": 0.0008
       },
       {
-        "word": "metaphorical",
+        "word": "vulgar",
         "strength": 0.0008
       },
       {
@@ -9962,15 +9962,11 @@ const styleAssociationData = {
         "strength": 0.0008
       },
       {
-        "word": "vulgar",
-        "strength": 0.0007
+        "word": "metaphorical",
+        "strength": 0.0008
       },
       {
         "word": "analytical",
-        "strength": 0.0007
-      },
-      {
-        "word": "intricate",
         "strength": 0.0007
       },
       {
@@ -9978,19 +9974,23 @@ const styleAssociationData = {
         "strength": 0.0007
       },
       {
-        "word": "engineered",
-        "strength": 0.0007
-      },
-      {
-        "word": "ethereal",
+        "word": "symbolic",
         "strength": 0.0006
       },
       {
-        "word": "direct",
+        "word": "intricate",
+        "strength": 0.0006
+      },
+      {
+        "word": "calculated",
         "strength": 0.0006
       },
       {
         "word": "male perspective",
+        "strength": 0.0006
+      },
+      {
+        "word": "engineered",
         "strength": 0.0006
       }
     ]
@@ -9999,15 +9999,15 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "allegorical",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "suspenseful",
-        "strength": 0.0021
+        "strength": 0.0022
       },
       {
         "word": "systematic",
-        "strength": 0.0021
+        "strength": 0.0022
       },
       {
         "word": "risky",
@@ -10015,18 +10015,18 @@ const styleAssociationData = {
       },
       {
         "word": "atmospheric",
-        "strength": 0.002
+        "strength": 0.0021
       },
       {
         "word": "immersive",
+        "strength": 0.0018
+      },
+      {
+        "word": "earnest",
         "strength": 0.0017
       },
       {
         "word": "surreal",
-        "strength": 0.0017
-      },
-      {
-        "word": "earnest",
         "strength": 0.0017
       },
       {
@@ -10038,6 +10038,10 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
+        "word": "hyperbolic",
+        "strength": 0.0015
+      },
+      {
         "word": "natural",
         "strength": 0.0015
       },
@@ -10046,31 +10050,31 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "hyperbolic",
+        "word": "soothing",
         "strength": 0.0014
       },
       {
-        "word": "soothing",
-        "strength": 0.0014
+        "word": "disturbing",
+        "strength": 0.0013
+      },
+      {
+        "word": "amusing",
+        "strength": 0.0013
+      },
+      {
+        "word": "distant",
+        "strength": 0.0013
       },
       {
         "word": "feminist",
         "strength": 0.0013
       },
       {
-        "word": "calm",
-        "strength": 0.0013
-      },
-      {
         "word": "action-oriented",
-        "strength": 0.0013
+        "strength": 0.0012
       },
       {
         "word": "sparse",
-        "strength": 0.0013
-      },
-      {
-        "word": "amusing",
         "strength": 0.0012
       },
       {
@@ -10078,24 +10082,12 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "disturbing",
-        "strength": 0.0012
-      },
-      {
-        "word": "distant",
-        "strength": 0.0012
-      },
-      {
-        "word": "engineered",
-        "strength": 0.0012
-      },
-      {
-        "word": "ethereal",
+        "word": "calm",
         "strength": 0.0012
       },
       {
         "word": "positive vibes",
-        "strength": 0.0011
+        "strength": 0.0012
       },
       {
         "word": "social criticism",
@@ -10106,27 +10098,31 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "lavish",
-        "strength": 0.001
+        "word": "engineered",
+        "strength": 0.0011
       },
       {
-        "word": "layered",
-        "strength": 0.0009
+        "word": "ethereal",
+        "strength": 0.0011
+      },
+      {
+        "word": "lavish",
+        "strength": 0.001
       },
       {
         "word": "nostalgic",
         "strength": 0.0009
       },
       {
-        "word": "opaque",
-        "strength": 0.0008
+        "word": "hopeful",
+        "strength": 0.0009
       },
       {
-        "word": "biting",
-        "strength": 0.0008
+        "word": "layered",
+        "strength": 0.0009
       },
       {
-        "word": "female perspective",
+        "word": "comforting",
         "strength": 0.0008
       },
       {
@@ -10134,19 +10130,11 @@ const styleAssociationData = {
         "strength": 0.0008
       },
       {
-        "word": "hopeful",
+        "word": "opaque",
         "strength": 0.0008
       },
       {
-        "word": "whimsical",
-        "strength": 0.0008
-      },
-      {
-        "word": "comforting",
-        "strength": 0.0008
-      },
-      {
-        "word": "objective",
+        "word": "female perspective",
         "strength": 0.0008
       },
       {
@@ -10158,20 +10146,40 @@ const styleAssociationData = {
         "strength": 0.0008
       },
       {
-        "word": "symbolic",
-        "strength": 0.0007
+        "word": "objective",
+        "strength": 0.0008
       },
       {
-        "word": "friendly",
+        "word": "biting",
+        "strength": 0.0008
+      },
+      {
+        "word": "symbolic",
+        "strength": 0.0008
+      },
+      {
+        "word": "whimsical",
         "strength": 0.0007
       },
       {
         "word": "crisp",
-        "strength": 0.0007
+        "strength": 0.0006
       },
       {
         "word": "grounding",
-        "strength": 0.0007
+        "strength": 0.0006
+      },
+      {
+        "word": "friendly",
+        "strength": 0.0006
+      },
+      {
+        "word": "internally focused",
+        "strength": 0.0006
+      },
+      {
+        "word": "passive voice",
+        "strength": 0.0006
       },
       {
         "word": "engaging",
@@ -10182,15 +10190,7 @@ const styleAssociationData = {
         "strength": 0.0006
       },
       {
-        "word": "passive voice",
-        "strength": 0.0006
-      },
-      {
-        "word": "internally focused",
-        "strength": 0.0006
-      },
-      {
-        "word": "minimalist",
+        "word": "unfiltered",
         "strength": 0.0006
       },
       {
@@ -10207,7 +10207,7 @@ const styleAssociationData = {
       },
       {
         "word": "crisp",
-        "strength": 0.0055
+        "strength": 0.0054
       },
       {
         "word": "natural",
@@ -10215,7 +10215,7 @@ const styleAssociationData = {
       },
       {
         "word": "suspenseful",
-        "strength": 0.0037
+        "strength": 0.0038
       },
       {
         "word": "earnest",
@@ -10226,7 +10226,7 @@ const styleAssociationData = {
         "strength": 0.0036
       },
       {
-        "word": "sharp",
+        "word": "systematic",
         "strength": 0.0035
       },
       {
@@ -10234,7 +10234,7 @@ const styleAssociationData = {
         "strength": 0.0035
       },
       {
-        "word": "systematic",
+        "word": "sharp",
         "strength": 0.0035
       },
       {
@@ -10243,7 +10243,7 @@ const styleAssociationData = {
       },
       {
         "word": "risky",
-        "strength": 0.0032
+        "strength": 0.0033
       },
       {
         "word": "meandering",
@@ -10251,7 +10251,7 @@ const styleAssociationData = {
       },
       {
         "word": "idealistic",
-        "strength": 0.0029
+        "strength": 0.003
       },
       {
         "word": "uplifting",
@@ -10266,15 +10266,15 @@ const styleAssociationData = {
         "strength": 0.0023
       },
       {
-        "word": "calm",
-        "strength": 0.0023
-      },
-      {
         "word": "passive voice",
         "strength": 0.0023
       },
       {
         "word": "precise",
+        "strength": 0.0022
+      },
+      {
+        "word": "calm",
         "strength": 0.0022
       },
       {
@@ -10287,14 +10287,14 @@ const styleAssociationData = {
       },
       {
         "word": "atmospheric",
-        "strength": 0.002
+        "strength": 0.0021
       },
       {
         "word": "sensory",
         "strength": 0.002
       },
       {
-        "word": "biting",
+        "word": "convoluted",
         "strength": 0.0019
       },
       {
@@ -10302,35 +10302,31 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
-        "word": "convoluted",
-        "strength": 0.0019
-      },
-      {
         "word": "soothing",
         "strength": 0.0019
       },
       {
-        "word": "aggressive",
+        "word": "biting",
         "strength": 0.0019
+      },
+      {
+        "word": "aggressive",
+        "strength": 0.0018
       },
       {
         "word": "poetic",
         "strength": 0.0017
       },
       {
-        "word": "clever",
-        "strength": 0.0016
-      },
-      {
         "word": "social criticism",
-        "strength": 0.0015
+        "strength": 0.0016
       },
       {
         "word": "raw",
         "strength": 0.0015
       },
       {
-        "word": "concrete",
+        "word": "clever",
         "strength": 0.0015
       },
       {
@@ -10338,19 +10334,31 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "moralising",
-        "strength": 0.0013
-      },
-      {
-        "word": "ethereal",
-        "strength": 0.0013
+        "word": "concrete",
+        "strength": 0.0015
       },
       {
         "word": "disturbing",
         "strength": 0.0013
       },
       {
+        "word": "moralising",
+        "strength": 0.0013
+      },
+      {
         "word": "deep",
+        "strength": 0.0013
+      },
+      {
+        "word": "ethereal",
+        "strength": 0.0012
+      },
+      {
+        "word": "romantic",
+        "strength": 0.0012
+      },
+      {
+        "word": "symbolic",
         "strength": 0.0012
       },
       {
@@ -10359,14 +10367,6 @@ const styleAssociationData = {
       },
       {
         "word": "sparse",
-        "strength": 0.0012
-      },
-      {
-        "word": "friendly",
-        "strength": 0.0011
-      },
-      {
-        "word": "romantic",
         "strength": 0.0011
       },
       {
@@ -10378,15 +10378,15 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "symbolic",
+        "word": "nostalgic",
+        "strength": 0.0011
+      },
+      {
+        "word": "friendly",
         "strength": 0.0011
       },
       {
         "word": "relationship-focused",
-        "strength": 0.0011
-      },
-      {
-        "word": "nostalgic",
         "strength": 0.0011
       },
       {
@@ -10398,7 +10398,7 @@ const styleAssociationData = {
         "strength": 0.001
       },
       {
-        "word": "clarity",
+        "word": "elaborate",
         "strength": 0.0009
       }
     ]
@@ -10407,7 +10407,7 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "surreal",
-        "strength": 0.0057
+        "strength": 0.0056
       },
       {
         "word": "irreverent",
@@ -10415,11 +10415,11 @@ const styleAssociationData = {
       },
       {
         "word": "calm",
-        "strength": 0.0049
+        "strength": 0.0048
       },
       {
         "word": "ethereal",
-        "strength": 0.0048
+        "strength": 0.0047
       },
       {
         "word": "stream-of-consciousness",
@@ -10431,7 +10431,7 @@ const styleAssociationData = {
       },
       {
         "word": "friendly",
-        "strength": 0.0042
+        "strength": 0.0041
       },
       {
         "word": "action-oriented",
@@ -10442,36 +10442,36 @@ const styleAssociationData = {
         "strength": 0.0041
       },
       {
-        "word": "poised",
-        "strength": 0.0041
-      },
-      {
         "word": "poetic",
         "strength": 0.0041
       },
       {
-        "word": "biting",
-        "strength": 0.0039
+        "word": "poised",
+        "strength": 0.004
       },
       {
         "word": "natural",
-        "strength": 0.0039
+        "strength": 0.0038
+      },
+      {
+        "word": "biting",
+        "strength": 0.0038
       },
       {
         "word": "languid",
         "strength": 0.0038
       },
       {
-        "word": "provocative",
+        "word": "suspenseful",
         "strength": 0.0037
       },
       {
-        "word": "suspenseful",
+        "word": "provocative",
         "strength": 0.0036
       },
       {
         "word": "allegorical",
-        "strength": 0.0035
+        "strength": 0.0036
       },
       {
         "word": "graceful",
@@ -10491,7 +10491,7 @@ const styleAssociationData = {
       },
       {
         "word": "romantic",
-        "strength": 0.0027
+        "strength": 0.0028
       },
       {
         "word": "elegant",
@@ -10511,22 +10511,22 @@ const styleAssociationData = {
       },
       {
         "word": "amusing",
-        "strength": 0.0021
+        "strength": 0.0022
       },
       {
         "word": "metaphorical",
-        "strength": 0.0021
+        "strength": 0.002
       },
       {
         "word": "sharp",
         "strength": 0.002
       },
       {
-        "word": "relationship-focused",
-        "strength": 0.0018
+        "word": "systematic",
+        "strength": 0.0019
       },
       {
-        "word": "systematic",
+        "word": "relationship-focused",
         "strength": 0.0018
       },
       {
@@ -10547,7 +10547,7 @@ const styleAssociationData = {
       },
       {
         "word": "visceral",
-        "strength": 0.0017
+        "strength": 0.0016
       },
       {
         "word": "sophisticated",
@@ -10555,7 +10555,7 @@ const styleAssociationData = {
       },
       {
         "word": "quirky",
-        "strength": 0.0015
+        "strength": 0.0014
       },
       {
         "word": "positive vibes",
@@ -10567,7 +10567,7 @@ const styleAssociationData = {
       },
       {
         "word": "grounding",
-        "strength": 0.0013
+        "strength": 0.0012
       },
       {
         "word": "dreamlike",
@@ -10575,11 +10575,11 @@ const styleAssociationData = {
       },
       {
         "word": "risky",
-        "strength": 0.0011
+        "strength": 0.0012
       },
       {
         "word": "overwrought",
-        "strength": 0.0011
+        "strength": 0.0012
       },
       {
         "word": "conventional",
@@ -10590,15 +10590,15 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
+        "word": "excessive",
+        "strength": 0.0011
+      },
+      {
         "word": "vivid",
         "strength": 0.001
       },
       {
         "word": "social criticism",
-        "strength": 0.001
-      },
-      {
-        "word": "excessive",
         "strength": 0.001
       },
       {
@@ -10619,7 +10619,7 @@ const styleAssociationData = {
       },
       {
         "word": "suspenseful",
-        "strength": 0.0058
+        "strength": 0.0059
       },
       {
         "word": "nostalgic",
@@ -10631,7 +10631,7 @@ const styleAssociationData = {
       },
       {
         "word": "conventional",
-        "strength": 0.005
+        "strength": 0.0051
       },
       {
         "word": "warm",
@@ -10647,7 +10647,7 @@ const styleAssociationData = {
       },
       {
         "word": "romantic",
-        "strength": 0.0037
+        "strength": 0.0038
       },
       {
         "word": "intimate",
@@ -10659,7 +10659,7 @@ const styleAssociationData = {
       },
       {
         "word": "stream-of-consciousness",
-        "strength": 0.0034
+        "strength": 0.0035
       },
       {
         "word": "crisp",
@@ -10667,11 +10667,11 @@ const styleAssociationData = {
       },
       {
         "word": "sardonic",
-        "strength": 0.0032
+        "strength": 0.0033
       },
       {
         "word": "risky",
-        "strength": 0.0032
+        "strength": 0.0033
       },
       {
         "word": "earnest",
@@ -10698,10 +10698,6 @@ const styleAssociationData = {
         "strength": 0.0029
       },
       {
-        "word": "friendly",
-        "strength": 0.0029
-      },
-      {
         "word": "hypnotic",
         "strength": 0.0028
       },
@@ -10710,35 +10706,39 @@ const styleAssociationData = {
         "strength": 0.0028
       },
       {
-        "word": "relationship-focused",
-        "strength": 0.0027
+        "word": "friendly",
+        "strength": 0.0028
       },
       {
-        "word": "precise",
-        "strength": 0.0025
+        "word": "relationship-focused",
+        "strength": 0.0027
       },
       {
         "word": "sentimental",
         "strength": 0.0025
       },
       {
-        "word": "frantic",
-        "strength": 0.0024
+        "word": "precise",
+        "strength": 0.0025
       },
       {
-        "word": "concrete",
-        "strength": 0.0024
+        "word": "frantic",
+        "strength": 0.0025
       },
       {
         "word": "propulsive",
         "strength": 0.0024
       },
       {
-        "word": "descriptive",
-        "strength": 0.0022
+        "word": "concrete",
+        "strength": 0.0023
       },
       {
         "word": "excessive",
+        "strength": 0.0023
+      },
+      {
+        "word": "descriptive",
         "strength": 0.0022
       },
       {
@@ -10746,8 +10746,12 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
+        "word": "sensational",
+        "strength": 0.0021
+      },
+      {
         "word": "irreverent",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
         "word": "theatrical",
@@ -10758,11 +10762,11 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
-        "word": "sensational",
+        "word": "atmospheric",
         "strength": 0.0021
       },
       {
-        "word": "atmospheric",
+        "word": "overwrought",
         "strength": 0.0021
       },
       {
@@ -10770,19 +10774,15 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
-        "word": "overwrought",
-        "strength": 0.002
-      },
-      {
         "word": "sensory",
-        "strength": 0.002
-      },
-      {
-        "word": "uplifting",
         "strength": 0.0019
       },
       {
         "word": "feverish",
+        "strength": 0.0019
+      },
+      {
+        "word": "uplifting",
         "strength": 0.0019
       },
       {
@@ -10794,19 +10794,19 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
+        "word": "distant",
+        "strength": 0.0018
+      },
+      {
         "word": "soothing",
         "strength": 0.0018
       },
       {
-        "word": "female perspective",
+        "word": "intelligent",
         "strength": 0.0017
       },
       {
         "word": "polished",
-        "strength": 0.0017
-      },
-      {
-        "word": "distant",
         "strength": 0.0017
       }
     ]
@@ -10826,19 +10826,19 @@ const styleAssociationData = {
         "strength": 0.0046
       },
       {
-        "word": "ethereal",
-        "strength": 0.0043
-      },
-      {
         "word": "vulnerable",
         "strength": 0.0042
       },
       {
-        "word": "magical",
-        "strength": 0.0038
+        "word": "ethereal",
+        "strength": 0.0042
       },
       {
-        "word": "biting",
+        "word": "magical",
+        "strength": 0.0039
+      },
+      {
+        "word": "positive vibes",
         "strength": 0.0038
       },
       {
@@ -10846,15 +10846,15 @@ const styleAssociationData = {
         "strength": 0.0038
       },
       {
-        "word": "positive vibes",
-        "strength": 0.0038
-      },
-      {
-        "word": "surreal",
+        "word": "biting",
         "strength": 0.0037
       },
       {
         "word": "poetic descriptives",
+        "strength": 0.0037
+      },
+      {
+        "word": "surreal",
         "strength": 0.0036
       },
       {
@@ -10874,24 +10874,24 @@ const styleAssociationData = {
         "strength": 0.0035
       },
       {
-        "word": "provocative",
-        "strength": 0.0034
-      },
-      {
         "word": "articulate",
         "strength": 0.0034
       },
       {
-        "word": "calm",
-        "strength": 0.0033
+        "word": "provocative",
+        "strength": 0.0034
       },
       {
         "word": "nostalgic",
         "strength": 0.0032
       },
       {
+        "word": "calm",
+        "strength": 0.0032
+      },
+      {
         "word": "earnest",
-        "strength": 0.0031
+        "strength": 0.0032
       },
       {
         "word": "philosophical",
@@ -10899,14 +10899,14 @@ const styleAssociationData = {
       },
       {
         "word": "human",
-        "strength": 0.003
-      },
-      {
-        "word": "action-oriented",
-        "strength": 0.0028
+        "strength": 0.0031
       },
       {
         "word": "intoxicating",
+        "strength": 0.0029
+      },
+      {
+        "word": "action-oriented",
         "strength": 0.0028
       },
       {
@@ -10915,10 +10915,6 @@ const styleAssociationData = {
       },
       {
         "word": "irreverent",
-        "strength": 0.0028
-      },
-      {
-        "word": "elegant",
         "strength": 0.0027
       },
       {
@@ -10926,12 +10922,12 @@ const styleAssociationData = {
         "strength": 0.0027
       },
       {
-        "word": "electric",
-        "strength": 0.0025
+        "word": "elegant",
+        "strength": 0.0027
       },
       {
-        "word": "meditative",
-        "strength": 0.0025
+        "word": "electric",
+        "strength": 0.0026
       },
       {
         "word": "dystopian",
@@ -10942,11 +10938,11 @@ const styleAssociationData = {
         "strength": 0.0025
       },
       {
-        "word": "creative",
+        "word": "meditative",
         "strength": 0.0024
       },
       {
-        "word": "visceral",
+        "word": "creative",
         "strength": 0.0024
       },
       {
@@ -10954,11 +10950,19 @@ const styleAssociationData = {
         "strength": 0.0024
       },
       {
+        "word": "visceral",
+        "strength": 0.0023
+      },
+      {
+        "word": "allegorical",
+        "strength": 0.0022
+      },
+      {
         "word": "tactile",
         "strength": 0.0022
       },
       {
-        "word": "allegorical",
+        "word": "baroque",
         "strength": 0.0022
       },
       {
@@ -10966,15 +10970,7 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
-        "word": "baroque",
-        "strength": 0.0021
-      },
-      {
         "word": "grounding",
-        "strength": 0.002
-      },
-      {
-        "word": "safe",
         "strength": 0.002
       },
       {
@@ -10982,19 +10978,23 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
-        "word": "cynical",
+        "word": "safe",
         "strength": 0.002
       },
       {
         "word": "hypnotic",
+        "strength": 0.002
+      },
+      {
+        "word": "lush",
+        "strength": 0.0019
+      },
+      {
+        "word": "cynical",
         "strength": 0.0019
       },
       {
         "word": "modern",
-        "strength": 0.0019
-      },
-      {
-        "word": "lush",
         "strength": 0.0019
       },
       {
@@ -11007,10 +11007,10 @@ const styleAssociationData = {
       },
       {
         "word": "minimalist",
-        "strength": 0.0016
+        "strength": 0.0015
       },
       {
-        "word": "intricate",
+        "word": "elaborate",
         "strength": 0.0015
       }
     ]
@@ -11022,11 +11022,11 @@ const styleAssociationData = {
         "strength": 0.0045
       },
       {
-        "word": "natural",
+        "word": "uplifting",
         "strength": 0.004
       },
       {
-        "word": "uplifting",
+        "word": "natural",
         "strength": 0.004
       },
       {
@@ -11039,7 +11039,7 @@ const styleAssociationData = {
       },
       {
         "word": "biting",
-        "strength": 0.0037
+        "strength": 0.0036
       },
       {
         "word": "magical",
@@ -11058,16 +11058,16 @@ const styleAssociationData = {
         "strength": 0.0035
       },
       {
-        "word": "calm",
-        "strength": 0.0034
-      },
-      {
         "word": "allegorical",
-        "strength": 0.0034
+        "strength": 0.0035
       },
       {
         "word": "atmospheric",
         "strength": 0.0034
+      },
+      {
+        "word": "calm",
+        "strength": 0.0033
       },
       {
         "word": "human",
@@ -11086,11 +11086,15 @@ const styleAssociationData = {
         "strength": 0.003
       },
       {
+        "word": "earnest",
+        "strength": 0.0027
+      },
+      {
         "word": "surreal",
         "strength": 0.0027
       },
       {
-        "word": "earnest",
+        "word": "engaging",
         "strength": 0.0026
       },
       {
@@ -11098,23 +11102,15 @@ const styleAssociationData = {
         "strength": 0.0026
       },
       {
-        "word": "engaging",
-        "strength": 0.0026
-      },
-      {
         "word": "hypnotic",
         "strength": 0.0025
       },
       {
-        "word": "visceral",
-        "strength": 0.0024
-      },
-      {
-        "word": "sharp",
+        "word": "intoxicating",
         "strength": 0.0023
       },
       {
-        "word": "intoxicating",
+        "word": "empathetic",
         "strength": 0.0023
       },
       {
@@ -11122,8 +11118,16 @@ const styleAssociationData = {
         "strength": 0.0023
       },
       {
-        "word": "empathetic",
+        "word": "visceral",
         "strength": 0.0023
+      },
+      {
+        "word": "sharp",
+        "strength": 0.0023
+      },
+      {
+        "word": "idealistic",
+        "strength": 0.0022
       },
       {
         "word": "crisp",
@@ -11135,10 +11139,6 @@ const styleAssociationData = {
       },
       {
         "word": "whimsical",
-        "strength": 0.0022
-      },
-      {
-        "word": "idealistic",
         "strength": 0.0022
       },
       {
@@ -11159,7 +11159,7 @@ const styleAssociationData = {
       },
       {
         "word": "elegant",
-        "strength": 0.0021
+        "strength": 0.002
       },
       {
         "word": "creative",
@@ -11174,27 +11174,15 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
-        "word": "functional",
-        "strength": 0.0018
-      },
-      {
         "word": "passive voice",
         "strength": 0.0018
       },
       {
-        "word": "virtue signaling",
+        "word": "functional",
         "strength": 0.0018
       },
       {
-        "word": "simple",
-        "strength": 0.0017
-      },
-      {
-        "word": "subversive",
-        "strength": 0.0017
-      },
-      {
-        "word": "meditative",
+        "word": "virtue signaling",
         "strength": 0.0017
       },
       {
@@ -11202,7 +11190,11 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "logical",
+        "word": "simple",
+        "strength": 0.0017
+      },
+      {
+        "word": "subversive",
         "strength": 0.0016
       },
       {
@@ -11210,11 +11202,19 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "provocative",
+        "word": "meditative",
+        "strength": 0.0016
+      },
+      {
+        "word": "logical",
         "strength": 0.0016
       },
       {
         "word": "tactile",
+        "strength": 0.0016
+      },
+      {
+        "word": "provocative",
         "strength": 0.0016
       }
     ]
@@ -11223,7 +11223,7 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "allegorical",
-        "strength": 0.0077
+        "strength": 0.0078
       },
       {
         "word": "dreamlike",
@@ -11259,7 +11259,7 @@ const styleAssociationData = {
       },
       {
         "word": "suspenseful",
-        "strength": 0.0048
+        "strength": 0.0049
       },
       {
         "word": "human",
@@ -11275,10 +11275,6 @@ const styleAssociationData = {
       },
       {
         "word": "friendly",
-        "strength": 0.004
-      },
-      {
-        "word": "sophisticated",
         "strength": 0.0039
       },
       {
@@ -11286,16 +11282,20 @@ const styleAssociationData = {
         "strength": 0.0039
       },
       {
+        "word": "sophisticated",
+        "strength": 0.0038
+      },
+      {
         "word": "crisp",
         "strength": 0.0037
       },
       {
-        "word": "irreverent",
+        "word": "conventional",
         "strength": 0.0035
       },
       {
-        "word": "conventional",
-        "strength": 0.0034
+        "word": "irreverent",
+        "strength": 0.0035
       },
       {
         "word": "metaphorical",
@@ -11303,11 +11303,11 @@ const styleAssociationData = {
       },
       {
         "word": "complex",
-        "strength": 0.0033
+        "strength": 0.0032
       },
       {
         "word": "meticulous",
-        "strength": 0.0033
+        "strength": 0.0032
       },
       {
         "word": "whimsical",
@@ -11343,7 +11343,7 @@ const styleAssociationData = {
       },
       {
         "word": "vibrant",
-        "strength": 0.0024
+        "strength": 0.0023
       },
       {
         "word": "sentimental",
@@ -11354,11 +11354,11 @@ const styleAssociationData = {
         "strength": 0.0023
       },
       {
-        "word": "dramatic",
-        "strength": 0.0022
+        "word": "magical",
+        "strength": 0.0023
       },
       {
-        "word": "magical",
+        "word": "dramatic",
         "strength": 0.0022
       },
       {
@@ -11371,31 +11371,27 @@ const styleAssociationData = {
       },
       {
         "word": "clarity",
-        "strength": 0.0021
+        "strength": 0.002
       },
       {
         "word": "deliberate",
-        "strength": 0.0021
+        "strength": 0.002
       },
       {
         "word": "intoxicating",
         "strength": 0.002
       },
       {
-        "word": "elegant",
+        "word": "moralising",
         "strength": 0.0019
       },
       {
-        "word": "moralising",
+        "word": "elegant",
         "strength": 0.0019
       },
       {
         "word": "sharp",
         "strength": 0.0019
-      },
-      {
-        "word": "female perspective",
-        "strength": 0.0018
       },
       {
         "word": "gentle",
@@ -11407,6 +11403,10 @@ const styleAssociationData = {
       },
       {
         "word": "lyrical",
+        "strength": 0.0018
+      },
+      {
+        "word": "female perspective",
         "strength": 0.0017
       },
       {
@@ -11414,11 +11414,11 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "cool",
+        "word": "uplifting",
         "strength": 0.0017
       },
       {
-        "word": "uplifting",
+        "word": "soft",
         "strength": 0.0017
       }
     ]
@@ -11430,12 +11430,12 @@ const styleAssociationData = {
         "strength": 0.0055
       },
       {
-        "word": "surreal",
+        "word": "theatrical",
         "strength": 0.0049
       },
       {
-        "word": "theatrical",
-        "strength": 0.0048
+        "word": "surreal",
+        "strength": 0.0049
       },
       {
         "word": "vivid",
@@ -11447,11 +11447,11 @@ const styleAssociationData = {
       },
       {
         "word": "economical",
-        "strength": 0.0045
+        "strength": 0.0044
       },
       {
         "word": "simple",
-        "strength": 0.0044
+        "strength": 0.0043
       },
       {
         "word": "funny",
@@ -11459,15 +11459,11 @@ const styleAssociationData = {
       },
       {
         "word": "friendly",
-        "strength": 0.0039
+        "strength": 0.0038
       },
       {
         "word": "meditative",
-        "strength": 0.0039
-      },
-      {
-        "word": "melancholic",
-        "strength": 0.0037
+        "strength": 0.0038
       },
       {
         "word": "experimental",
@@ -11478,12 +11474,16 @@ const styleAssociationData = {
         "strength": 0.0036
       },
       {
+        "word": "melancholic",
+        "strength": 0.0036
+      },
+      {
         "word": "plain",
-        "strength": 0.0035
+        "strength": 0.0034
       },
       {
         "word": "subversive",
-        "strength": 0.0035
+        "strength": 0.0034
       },
       {
         "word": "minimalist",
@@ -11491,14 +11491,14 @@ const styleAssociationData = {
       },
       {
         "word": "direct",
-        "strength": 0.0033
-      },
-      {
-        "word": "visceral",
         "strength": 0.0032
       },
       {
-        "word": "chaotic",
+        "word": "visceral",
+        "strength": 0.0031
+      },
+      {
+        "word": "articulate",
         "strength": 0.0031
       },
       {
@@ -11506,8 +11506,8 @@ const styleAssociationData = {
         "strength": 0.0031
       },
       {
-        "word": "articulate",
-        "strength": 0.0031
+        "word": "chaotic",
+        "strength": 0.003
       },
       {
         "word": "functional",
@@ -11518,11 +11518,11 @@ const styleAssociationData = {
         "strength": 0.0029
       },
       {
-        "word": "dry",
-        "strength": 0.0028
+        "word": "dialogue-driven",
+        "strength": 0.0029
       },
       {
-        "word": "dialogue-driven",
+        "word": "dry",
         "strength": 0.0028
       },
       {
@@ -11534,12 +11534,12 @@ const styleAssociationData = {
         "strength": 0.0027
       },
       {
-        "word": "matter-of-fact",
-        "strength": 0.0027
-      },
-      {
         "word": "moody",
         "strength": 0.0026
+      },
+      {
+        "word": "matter-of-fact",
+        "strength": 0.0025
       },
       {
         "word": "formal",
@@ -11547,7 +11547,7 @@ const styleAssociationData = {
       },
       {
         "word": "playful",
-        "strength": 0.0025
+        "strength": 0.0024
       },
       {
         "word": "grounding",
@@ -11558,6 +11558,10 @@ const styleAssociationData = {
         "strength": 0.0024
       },
       {
+        "word": "formulaic",
+        "strength": 0.0022
+      },
+      {
         "word": "virtue signaling",
         "strength": 0.0022
       },
@@ -11566,31 +11570,27 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
-        "word": "cold",
-        "strength": 0.0022
-      },
-      {
         "word": "technical",
-        "strength": 0.0022
-      },
-      {
-        "word": "formulaic",
-        "strength": 0.0022
-      },
-      {
-        "word": "restrained",
-        "strength": 0.0022
-      },
-      {
-        "word": "graceful",
         "strength": 0.0021
       },
       {
-        "word": "introspective",
+        "word": "restrained",
+        "strength": 0.0021
+      },
+      {
+        "word": "cold",
+        "strength": 0.0021
+      },
+      {
+        "word": "graceful",
         "strength": 0.002
       },
       {
         "word": "electric",
+        "strength": 0.002
+      },
+      {
+        "word": "introspective",
         "strength": 0.002
       },
       {
@@ -11610,20 +11610,20 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
+        "word": "vulgar",
+        "strength": 0.0019
+      },
+      {
         "word": "thought-provoking",
-        "strength": 0.0018
+        "strength": 0.0019
       },
       {
         "word": "witty",
         "strength": 0.0018
       },
       {
-        "word": "vulgar",
-        "strength": 0.0018
-      },
-      {
-        "word": "active voice",
-        "strength": 0.0018
+        "word": "logical",
+        "strength": 0.0017
       }
     ]
   },
@@ -11635,7 +11635,7 @@ const styleAssociationData = {
       },
       {
         "word": "theatrical",
-        "strength": 0.0049
+        "strength": 0.005
       },
       {
         "word": "surreal",
@@ -11647,15 +11647,15 @@ const styleAssociationData = {
       },
       {
         "word": "funny",
-        "strength": 0.0043
+        "strength": 0.0044
       },
       {
         "word": "simple",
-        "strength": 0.0042
+        "strength": 0.0041
       },
       {
         "word": "economical",
-        "strength": 0.0042
+        "strength": 0.0041
       },
       {
         "word": "friendly",
@@ -11675,10 +11675,6 @@ const styleAssociationData = {
       },
       {
         "word": "subversive",
-        "strength": 0.0035
-      },
-      {
-        "word": "plain",
         "strength": 0.0034
       },
       {
@@ -11686,19 +11682,19 @@ const styleAssociationData = {
         "strength": 0.0033
       },
       {
-        "word": "melancholic",
+        "word": "plain",
         "strength": 0.0033
       },
       {
-        "word": "visceral",
-        "strength": 0.0031
+        "word": "melancholic",
+        "strength": 0.0032
       },
       {
         "word": "minimalist",
-        "strength": 0.0031
+        "strength": 0.003
       },
       {
-        "word": "direct",
+        "word": "visceral",
         "strength": 0.003
       },
       {
@@ -11706,35 +11702,31 @@ const styleAssociationData = {
         "strength": 0.003
       },
       {
-        "word": "functional",
+        "word": "direct",
         "strength": 0.003
+      },
+      {
+        "word": "functional",
+        "strength": 0.0029
       },
       {
         "word": "chaotic",
-        "strength": 0.003
+        "strength": 0.0029
       },
       {
         "word": "dialogue-driven",
-        "strength": 0.0028
-      },
-      {
-        "word": "grounding",
-        "strength": 0.0027
+        "strength": 0.0029
       },
       {
         "word": "abstract",
         "strength": 0.0027
       },
       {
-        "word": "intricate",
+        "word": "grounding",
         "strength": 0.0027
       },
       {
-        "word": "moody",
-        "strength": 0.0026
-      },
-      {
-        "word": "matter-of-fact",
+        "word": "intricate",
         "strength": 0.0026
       },
       {
@@ -11742,7 +11734,7 @@ const styleAssociationData = {
         "strength": 0.0026
       },
       {
-        "word": "formal",
+        "word": "moody",
         "strength": 0.0026
       },
       {
@@ -11750,16 +11742,24 @@ const styleAssociationData = {
         "strength": 0.0025
       },
       {
+        "word": "formal",
+        "strength": 0.0025
+      },
+      {
+        "word": "matter-of-fact",
+        "strength": 0.0025
+      },
+      {
         "word": "dry",
         "strength": 0.0024
       },
       {
-        "word": "playful",
-        "strength": 0.0024
+        "word": "graceful",
+        "strength": 0.0023
       },
       {
-        "word": "graceful",
-        "strength": 0.0024
+        "word": "playful",
+        "strength": 0.0023
       },
       {
         "word": "descriptive",
@@ -11770,35 +11770,31 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
-        "word": "virtue signaling",
-        "strength": 0.0022
-      },
-      {
-        "word": "restrained",
-        "strength": 0.0022
-      },
-      {
         "word": "dramatic",
         "strength": 0.0021
       },
       {
-        "word": "cold",
+        "word": "restrained",
         "strength": 0.0021
+      },
+      {
+        "word": "virtue signaling",
+        "strength": 0.0021
+      },
+      {
+        "word": "cold",
+        "strength": 0.002
       },
       {
         "word": "engaging",
         "strength": 0.002
       },
       {
-        "word": "introspective",
+        "word": "electric",
         "strength": 0.002
       },
       {
-        "word": "electric",
-        "strength": 0.0019
-      },
-      {
-        "word": "safe",
+        "word": "introspective",
         "strength": 0.0019
       },
       {
@@ -11806,19 +11802,11 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
-        "word": "witty",
+        "word": "safe",
         "strength": 0.0019
       },
       {
-        "word": "engineered",
-        "strength": 0.0018
-      },
-      {
-        "word": "calm",
-        "strength": 0.0018
-      },
-      {
-        "word": "ethereal",
+        "word": "witty",
         "strength": 0.0018
       },
       {
@@ -11826,7 +11814,19 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "active voice",
+        "word": "formulaic",
+        "strength": 0.0018
+      },
+      {
+        "word": "ethereal",
+        "strength": 0.0018
+      },
+      {
+        "word": "engineered",
+        "strength": 0.0018
+      },
+      {
+        "word": "calm",
         "strength": 0.0017
       }
     ]
@@ -11843,14 +11843,10 @@ const styleAssociationData = {
       },
       {
         "word": "friendly",
-        "strength": 0.0027
+        "strength": 0.0026
       },
       {
         "word": "experimental",
-        "strength": 0.0025
-      },
-      {
-        "word": "female perspective",
         "strength": 0.0025
       },
       {
@@ -11858,8 +11854,12 @@ const styleAssociationData = {
         "strength": 0.0025
       },
       {
+        "word": "female perspective",
+        "strength": 0.0024
+      },
+      {
         "word": "allegorical",
-        "strength": 0.0023
+        "strength": 0.0024
       },
       {
         "word": "vivid",
@@ -11903,7 +11903,11 @@ const styleAssociationData = {
       },
       {
         "word": "simple",
-        "strength": 0.0014
+        "strength": 0.0013
+      },
+      {
+        "word": "dark humor",
+        "strength": 0.0013
       },
       {
         "word": "action-oriented",
@@ -11914,16 +11918,8 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "dark humor",
-        "strength": 0.0013
-      },
-      {
         "word": "descriptive",
         "strength": 0.0013
-      },
-      {
-        "word": "calm",
-        "strength": 0.0011
       },
       {
         "word": "formulaic",
@@ -11934,31 +11930,31 @@ const styleAssociationData = {
         "strength": 0.001
       },
       {
-        "word": "tactile",
-        "strength": 0.001
-      },
-      {
         "word": "positive vibes",
         "strength": 0.001
       },
       {
-        "word": "engaging",
-        "strength": 0.0009
+        "word": "lavish",
+        "strength": 0.001
       },
       {
-        "word": "lavish",
-        "strength": 0.0009
+        "word": "calm",
+        "strength": 0.001
+      },
+      {
+        "word": "tactile",
+        "strength": 0.001
+      },
+      {
+        "word": "frantic",
+        "strength": 0.001
       },
       {
         "word": "risky",
         "strength": 0.0009
       },
       {
-        "word": "transcendent",
-        "strength": 0.0009
-      },
-      {
-        "word": "frantic",
+        "word": "engaging",
         "strength": 0.0009
       },
       {
@@ -11966,15 +11962,15 @@ const styleAssociationData = {
         "strength": 0.0009
       },
       {
-        "word": "playful",
-        "strength": 0.0008
-      },
-      {
-        "word": "grounding",
+        "word": "transcendent",
         "strength": 0.0008
       },
       {
         "word": "rhythmic",
+        "strength": 0.0008
+      },
+      {
+        "word": "grounding",
         "strength": 0.0008
       },
       {
@@ -11986,23 +11982,11 @@ const styleAssociationData = {
         "strength": 0.0008
       },
       {
+        "word": "playful",
+        "strength": 0.0008
+      },
+      {
         "word": "irreverent",
-        "strength": 0.0007
-      },
-      {
-        "word": "feminist",
-        "strength": 0.0007
-      },
-      {
-        "word": "edgy",
-        "strength": 0.0007
-      },
-      {
-        "word": "engineered",
-        "strength": 0.0007
-      },
-      {
-        "word": "cliche",
         "strength": 0.0007
       },
       {
@@ -12010,15 +11994,15 @@ const styleAssociationData = {
         "strength": 0.0007
       },
       {
-        "word": "dry",
+        "word": "cliche",
         "strength": 0.0007
       },
       {
-        "word": "sensory",
+        "word": "edgy",
         "strength": 0.0007
       },
       {
-        "word": "mischievous",
+        "word": "feminist",
         "strength": 0.0007
       },
       {
@@ -12026,8 +12010,24 @@ const styleAssociationData = {
         "strength": 0.0007
       },
       {
+        "word": "engineered",
+        "strength": 0.0007
+      },
+      {
+        "word": "dry",
+        "strength": 0.0007
+      },
+      {
+        "word": "mischievous",
+        "strength": 0.0007
+      },
+      {
         "word": "eccentric",
-        "strength": 0.0006
+        "strength": 0.0007
+      },
+      {
+        "word": "sensory",
+        "strength": 0.0007
       },
       {
         "word": "male perspective",
@@ -12046,16 +12046,16 @@ const styleAssociationData = {
         "strength": 0.0035
       },
       {
+        "word": "immersive",
+        "strength": 0.0034
+      },
+      {
         "word": "stream-of-consciousness",
         "strength": 0.0034
       },
       {
-        "word": "immersive",
-        "strength": 0.0033
-      },
-      {
         "word": "lavish",
-        "strength": 0.0031
+        "strength": 0.0032
       },
       {
         "word": "hopeful",
@@ -12067,15 +12067,15 @@ const styleAssociationData = {
       },
       {
         "word": "dialogue-driven",
-        "strength": 0.0029
+        "strength": 0.003
       },
       {
         "word": "gritty",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "haunting",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "formulaic",
@@ -12091,23 +12091,23 @@ const styleAssociationData = {
       },
       {
         "word": "hyperbolic",
-        "strength": 0.0026
+        "strength": 0.0027
       },
       {
         "word": "distant",
-        "strength": 0.0026
+        "strength": 0.0027
       },
       {
         "word": "vulgar",
-        "strength": 0.0025
+        "strength": 0.0026
       },
       {
         "word": "excessive",
-        "strength": 0.0025
+        "strength": 0.0026
       },
       {
         "word": "frantic",
-        "strength": 0.0024
+        "strength": 0.0025
       },
       {
         "word": "detached",
@@ -12115,7 +12115,7 @@ const styleAssociationData = {
       },
       {
         "word": "sincere",
-        "strength": 0.0023
+        "strength": 0.0024
       },
       {
         "word": "social criticism",
@@ -12123,10 +12123,14 @@ const styleAssociationData = {
       },
       {
         "word": "wry",
-        "strength": 0.0022
+        "strength": 0.0023
       },
       {
         "word": "allegorical",
+        "strength": 0.0023
+      },
+      {
+        "word": "cozy",
         "strength": 0.0022
       },
       {
@@ -12134,12 +12138,8 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
-        "word": "cozy",
-        "strength": 0.0021
-      },
-      {
         "word": "convoluted",
-        "strength": 0.002
+        "strength": 0.0021
       },
       {
         "word": "bizarre",
@@ -12147,7 +12147,7 @@ const styleAssociationData = {
       },
       {
         "word": "suspenseful",
-        "strength": 0.0018
+        "strength": 0.0019
       },
       {
         "word": "decadent",
@@ -12159,6 +12159,10 @@ const styleAssociationData = {
       },
       {
         "word": "overwrought",
+        "strength": 0.0017
+      },
+      {
+        "word": "soft",
         "strength": 0.0016
       },
       {
@@ -12166,12 +12170,8 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "soft",
-        "strength": 0.0016
-      },
-      {
         "word": "amusing",
-        "strength": 0.0015
+        "strength": 0.0016
       },
       {
         "word": "flashy",
@@ -12182,11 +12182,19 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "absurdist",
+        "word": "systematic",
         "strength": 0.0014
       },
       {
-        "word": "systematic",
+        "word": "absurdist",
+        "strength": 0.0013
+      },
+      {
+        "word": "comforting",
+        "strength": 0.0013
+      },
+      {
+        "word": "deep",
         "strength": 0.0013
       },
       {
@@ -12194,31 +12202,23 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "deep",
-        "strength": 0.0012
-      },
-      {
-        "word": "comforting",
-        "strength": 0.0012
-      },
-      {
         "word": "vivid",
         "strength": 0.0011
-      },
-      {
-        "word": "meandering",
-        "strength": 0.001
       },
       {
         "word": "sardonic",
         "strength": 0.001
       },
       {
-        "word": "mischievous",
+        "word": "meandering",
+        "strength": 0.001
+      },
+      {
+        "word": "disturbing",
         "strength": 0.0009
       },
       {
-        "word": "precise",
+        "word": "mischievous",
         "strength": 0.0009
       },
       {
@@ -12226,12 +12226,12 @@ const styleAssociationData = {
         "strength": 0.0009
       },
       {
-        "word": "disturbing",
+        "word": "precise",
         "strength": 0.0009
       },
       {
         "word": "dark humor",
-        "strength": 0.0008
+        "strength": 0.0009
       },
       {
         "word": "funny",
@@ -12251,7 +12251,7 @@ const styleAssociationData = {
       },
       {
         "word": "gritty",
-        "strength": 0.0071
+        "strength": 0.0072
       },
       {
         "word": "cinematic",
@@ -12259,11 +12259,11 @@ const styleAssociationData = {
       },
       {
         "word": "formulaic",
-        "strength": 0.0059
+        "strength": 0.006
       },
       {
         "word": "detached",
-        "strength": 0.0058
+        "strength": 0.0059
       },
       {
         "word": "lavish",
@@ -12271,7 +12271,7 @@ const styleAssociationData = {
       },
       {
         "word": "dialogue-driven",
-        "strength": 0.0056
+        "strength": 0.0057
       },
       {
         "word": "symbolic",
@@ -12283,15 +12283,15 @@ const styleAssociationData = {
       },
       {
         "word": "imagistic",
-        "strength": 0.0052
+        "strength": 0.0053
       },
       {
         "word": "hopeful",
-        "strength": 0.0049
+        "strength": 0.005
       },
       {
         "word": "hyperbolic",
-        "strength": 0.0048
+        "strength": 0.0049
       },
       {
         "word": "grandiose",
@@ -12303,6 +12303,10 @@ const styleAssociationData = {
       },
       {
         "word": "immersive",
+        "strength": 0.0044
+      },
+      {
+        "word": "unfiltered",
         "strength": 0.0043
       },
       {
@@ -12310,19 +12314,15 @@ const styleAssociationData = {
         "strength": 0.0043
       },
       {
-        "word": "unfiltered",
-        "strength": 0.0042
+        "word": "distant",
+        "strength": 0.0037
       },
       {
-        "word": "distant",
+        "word": "cozy",
         "strength": 0.0036
       },
       {
         "word": "dark humor",
-        "strength": 0.0035
-      },
-      {
-        "word": "cozy",
         "strength": 0.0035
       },
       {
@@ -12331,11 +12331,15 @@ const styleAssociationData = {
       },
       {
         "word": "eccentric",
-        "strength": 0.0034
+        "strength": 0.0035
       },
       {
         "word": "vivid",
-        "strength": 0.003
+        "strength": 0.0029
+      },
+      {
+        "word": "decadent",
+        "strength": 0.0029
       },
       {
         "word": "abstract",
@@ -12346,11 +12350,11 @@ const styleAssociationData = {
         "strength": 0.0028
       },
       {
-        "word": "decadent",
+        "word": "frantic",
         "strength": 0.0028
       },
       {
-        "word": "frantic",
+        "word": "excessive",
         "strength": 0.0027
       },
       {
@@ -12358,28 +12362,28 @@ const styleAssociationData = {
         "strength": 0.0027
       },
       {
-        "word": "excessive",
+        "word": "soft",
         "strength": 0.0026
       },
       {
-        "word": "soft",
+        "word": "wry",
         "strength": 0.0025
       },
       {
-        "word": "wry",
-        "strength": 0.0024
+        "word": "comforting",
+        "strength": 0.0025
       },
       {
         "word": "measured",
-        "strength": 0.0024
-      },
-      {
-        "word": "comforting",
-        "strength": 0.0024
+        "strength": 0.0025
       },
       {
         "word": "dry humor",
         "strength": 0.0024
+      },
+      {
+        "word": "calculated",
+        "strength": 0.0023
       },
       {
         "word": "theatrical",
@@ -12390,16 +12394,12 @@ const styleAssociationData = {
         "strength": 0.0023
       },
       {
-        "word": "calculated",
-        "strength": 0.0023
-      },
-      {
         "word": "social criticism",
         "strength": 0.0023
       },
       {
         "word": "sensational",
-        "strength": 0.0022
+        "strength": 0.0023
       },
       {
         "word": "thought-provoking",
@@ -12407,11 +12407,11 @@ const styleAssociationData = {
       },
       {
         "word": "dry",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
         "word": "moody",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
         "word": "alliterative",
@@ -12427,7 +12427,7 @@ const styleAssociationData = {
       },
       {
         "word": "utopian",
-        "strength": 0.0019
+        "strength": 0.002
       },
       {
         "word": "overwrought",
@@ -12447,7 +12447,7 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "gritty",
-        "strength": 0.0052
+        "strength": 0.0053
       },
       {
         "word": "profane",
@@ -12459,7 +12459,7 @@ const styleAssociationData = {
       },
       {
         "word": "lavish",
-        "strength": 0.004
+        "strength": 0.0041
       },
       {
         "word": "formulaic",
@@ -12467,39 +12467,39 @@ const styleAssociationData = {
       },
       {
         "word": "hyperbolic",
-        "strength": 0.0037
+        "strength": 0.0038
       },
       {
         "word": "dialogue-driven",
-        "strength": 0.0036
+        "strength": 0.0037
       },
       {
         "word": "detached",
-        "strength": 0.0034
+        "strength": 0.0035
       },
       {
         "word": "immersive",
-        "strength": 0.0032
+        "strength": 0.0033
       },
       {
         "word": "hopeful",
-        "strength": 0.0031
+        "strength": 0.0032
+      },
+      {
+        "word": "haunting",
+        "strength": 0.0032
       },
       {
         "word": "imagistic",
         "strength": 0.0031
       },
       {
-        "word": "haunting",
-        "strength": 0.0031
-      },
-      {
         "word": "symbolic",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "cinematic",
-        "strength": 0.0027
+        "strength": 0.0028
       },
       {
         "word": "funny",
@@ -12511,11 +12511,11 @@ const styleAssociationData = {
       },
       {
         "word": "frantic",
-        "strength": 0.0024
+        "strength": 0.0025
       },
       {
         "word": "sensational",
-        "strength": 0.0024
+        "strength": 0.0025
       },
       {
         "word": "vulnerable",
@@ -12527,7 +12527,7 @@ const styleAssociationData = {
       },
       {
         "word": "grandiose",
-        "strength": 0.0023
+        "strength": 0.0024
       },
       {
         "word": "measured",
@@ -12546,6 +12546,10 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
+        "word": "distant",
+        "strength": 0.0019
+      },
+      {
         "word": "objective",
         "strength": 0.0019
       },
@@ -12558,10 +12562,6 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
-        "word": "distant",
-        "strength": 0.0019
-      },
-      {
         "word": "dark humor",
         "strength": 0.0017
       },
@@ -12570,19 +12570,15 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "alliterative",
-        "strength": 0.0016
-      },
-      {
         "word": "comforting",
-        "strength": 0.0016
+        "strength": 0.0017
       },
       {
-        "word": "moody",
-        "strength": 0.0016
+        "word": "alliterative",
+        "strength": 0.0017
       },
       {
-        "word": "social criticism",
+        "word": "excessive",
         "strength": 0.0016
       },
       {
@@ -12590,7 +12586,11 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "excessive",
+        "word": "social criticism",
+        "strength": 0.0016
+      },
+      {
+        "word": "moody",
         "strength": 0.0016
       },
       {
@@ -12606,19 +12606,11 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "serene",
-        "strength": 0.0015
-      },
-      {
-        "word": "cliche",
-        "strength": 0.0015
-      },
-      {
         "word": "internally focused",
         "strength": 0.0015
       },
       {
-        "word": "direct",
+        "word": "serene",
         "strength": 0.0015
       },
       {
@@ -12626,23 +12618,31 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
+        "word": "cliche",
+        "strength": 0.0015
+      },
+      {
+        "word": "disturbing",
+        "strength": 0.0015
+      },
+      {
+        "word": "direct",
+        "strength": 0.0014
+      },
+      {
         "word": "experimental",
         "strength": 0.0014
       },
       {
-        "word": "disturbing",
-        "strength": 0.0014
-      },
-      {
         "word": "propulsive",
-        "strength": 0.0013
+        "strength": 0.0014
       },
       {
         "word": "thought-provoking",
         "strength": 0.0013
       },
       {
-        "word": "creative",
+        "word": "cozy",
         "strength": 0.0013
       }
     ]
@@ -12651,7 +12651,7 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "gritty",
-        "strength": 0.0063
+        "strength": 0.0064
       },
       {
         "word": "vulgar",
@@ -12663,11 +12663,11 @@ const styleAssociationData = {
       },
       {
         "word": "detached",
-        "strength": 0.0055
+        "strength": 0.0056
       },
       {
         "word": "haunting",
-        "strength": 0.0052
+        "strength": 0.0053
       },
       {
         "word": "formulaic",
@@ -12683,11 +12683,11 @@ const styleAssociationData = {
       },
       {
         "word": "dialogue-driven",
-        "strength": 0.0047
+        "strength": 0.0048
       },
       {
         "word": "hopeful",
-        "strength": 0.0047
+        "strength": 0.0048
       },
       {
         "word": "immersive",
@@ -12695,11 +12695,11 @@ const styleAssociationData = {
       },
       {
         "word": "cinematic",
-        "strength": 0.004
+        "strength": 0.0041
       },
       {
         "word": "grandiose",
-        "strength": 0.0035
+        "strength": 0.0036
       },
       {
         "word": "unfiltered",
@@ -12707,7 +12707,7 @@ const styleAssociationData = {
       },
       {
         "word": "symbolic",
-        "strength": 0.0034
+        "strength": 0.0035
       },
       {
         "word": "imagistic",
@@ -12715,23 +12715,23 @@ const styleAssociationData = {
       },
       {
         "word": "cozy",
-        "strength": 0.0032
+        "strength": 0.0033
       },
       {
         "word": "decadent",
-        "strength": 0.0029
+        "strength": 0.003
       },
       {
         "word": "vulnerable",
-        "strength": 0.0029
+        "strength": 0.003
       },
       {
         "word": "frantic",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "excessive",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "distant",
@@ -12739,6 +12739,10 @@ const styleAssociationData = {
       },
       {
         "word": "disturbing",
+        "strength": 0.0028
+      },
+      {
+        "word": "wry",
         "strength": 0.0027
       },
       {
@@ -12746,12 +12750,8 @@ const styleAssociationData = {
         "strength": 0.0026
       },
       {
-        "word": "wry",
-        "strength": 0.0026
-      },
-      {
         "word": "comforting",
-        "strength": 0.0025
+        "strength": 0.0026
       },
       {
         "word": "funny",
@@ -12759,7 +12759,7 @@ const styleAssociationData = {
       },
       {
         "word": "sensational",
-        "strength": 0.0024
+        "strength": 0.0025
       },
       {
         "word": "flashy",
@@ -12767,14 +12767,14 @@ const styleAssociationData = {
       },
       {
         "word": "calculated",
-        "strength": 0.0023
-      },
-      {
-        "word": "absurdist",
-        "strength": 0.0023
+        "strength": 0.0024
       },
       {
         "word": "elaborate",
+        "strength": 0.0024
+      },
+      {
+        "word": "absurdist",
         "strength": 0.0023
       },
       {
@@ -12783,7 +12783,7 @@ const styleAssociationData = {
       },
       {
         "word": "amusing",
-        "strength": 0.0022
+        "strength": 0.0023
       },
       {
         "word": "sincere",
@@ -12794,11 +12794,11 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
-        "word": "theatrical",
+        "word": "measured",
         "strength": 0.0021
       },
       {
-        "word": "measured",
+        "word": "theatrical",
         "strength": 0.0021
       },
       {
@@ -12822,11 +12822,15 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
+        "word": "electric",
+        "strength": 0.0017
+      },
+      {
         "word": "alliterative",
         "strength": 0.0017
       },
       {
-        "word": "electric",
+        "word": "feverish",
         "strength": 0.0016
       },
       {
@@ -12834,19 +12838,15 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "feverish",
-        "strength": 0.0016
-      },
-      {
-        "word": "intricate",
+        "word": "atmospheric",
         "strength": 0.0016
       },
       {
         "word": "philosophical",
-        "strength": 0.0015
+        "strength": 0.0016
       },
       {
-        "word": "dry",
+        "word": "intricate",
         "strength": 0.0015
       }
     ]
@@ -12855,11 +12855,11 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "haunting",
-        "strength": 0.0145
+        "strength": 0.0146
       },
       {
         "word": "detached",
-        "strength": 0.0145
+        "strength": 0.0146
       },
       {
         "word": "vulgar",
@@ -12871,15 +12871,15 @@ const styleAssociationData = {
       },
       {
         "word": "lavish",
-        "strength": 0.0103
+        "strength": 0.0104
       },
       {
         "word": "grandiose",
-        "strength": 0.0101
+        "strength": 0.0102
       },
       {
         "word": "disturbing",
-        "strength": 0.0099
+        "strength": 0.01
       },
       {
         "word": "cozy",
@@ -12891,15 +12891,15 @@ const styleAssociationData = {
       },
       {
         "word": "hyperbolic",
-        "strength": 0.0095
+        "strength": 0.0096
       },
       {
         "word": "cinematic",
-        "strength": 0.0088
+        "strength": 0.0089
       },
       {
         "word": "overwrought",
-        "strength": 0.0087
+        "strength": 0.0088
       },
       {
         "word": "decadent",
@@ -12911,7 +12911,7 @@ const styleAssociationData = {
       },
       {
         "word": "formulaic",
-        "strength": 0.0083
+        "strength": 0.0084
       },
       {
         "word": "dry",
@@ -12923,7 +12923,7 @@ const styleAssociationData = {
       },
       {
         "word": "hopeful",
-        "strength": 0.0076
+        "strength": 0.0077
       },
       {
         "word": "dark humor",
@@ -12935,7 +12935,7 @@ const styleAssociationData = {
       },
       {
         "word": "gritty",
-        "strength": 0.0074
+        "strength": 0.0075
       },
       {
         "word": "wry",
@@ -12946,11 +12946,11 @@ const styleAssociationData = {
         "strength": 0.0064
       },
       {
-        "word": "opaque",
-        "strength": 0.0063
+        "word": "distant",
+        "strength": 0.0064
       },
       {
-        "word": "distant",
+        "word": "opaque",
         "strength": 0.0063
       },
       {
@@ -12975,27 +12975,27 @@ const styleAssociationData = {
       },
       {
         "word": "deep",
-        "strength": 0.0055
+        "strength": 0.0056
       },
       {
         "word": "flashy",
-        "strength": 0.0055
+        "strength": 0.0056
       },
       {
         "word": "eccentric",
         "strength": 0.0055
       },
       {
+        "word": "systematic",
+        "strength": 0.0052
+      },
+      {
         "word": "surgical",
         "strength": 0.0052
       },
       {
-        "word": "systematic",
-        "strength": 0.0051
-      },
-      {
         "word": "excessive",
-        "strength": 0.0049
+        "strength": 0.005
       },
       {
         "word": "languid",
@@ -13003,14 +13003,14 @@ const styleAssociationData = {
       },
       {
         "word": "vivid",
-        "strength": 0.0043
-      },
-      {
-        "word": "dialogue-driven",
-        "strength": 0.0041
+        "strength": 0.0042
       },
       {
         "word": "frantic",
+        "strength": 0.0041
+      },
+      {
+        "word": "dialogue-driven",
         "strength": 0.0041
       },
       {
@@ -13023,7 +13023,7 @@ const styleAssociationData = {
       },
       {
         "word": "objective",
-        "strength": 0.0038
+        "strength": 0.0037
       },
       {
         "word": "stylized",
@@ -13031,11 +13031,7 @@ const styleAssociationData = {
       },
       {
         "word": "soft",
-        "strength": 0.0031
-      },
-      {
-        "word": "cliche",
-        "strength": 0.0031
+        "strength": 0.0032
       },
       {
         "word": "dense",
@@ -13043,7 +13039,11 @@ const styleAssociationData = {
       },
       {
         "word": "atmospheric",
-        "strength": 0.003
+        "strength": 0.0031
+      },
+      {
+        "word": "cliche",
+        "strength": 0.0031
       },
       {
         "word": "verbose",
@@ -13059,15 +13059,15 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "natural",
-        "strength": 0.0036
+        "strength": 0.0035
       },
       {
         "word": "calm",
-        "strength": 0.0034
+        "strength": 0.0033
       },
       {
         "word": "biting",
-        "strength": 0.003
+        "strength": 0.0029
       },
       {
         "word": "sharp",
@@ -13075,15 +13075,15 @@ const styleAssociationData = {
       },
       {
         "word": "clarity",
-        "strength": 0.0028
+        "strength": 0.0027
       },
       {
         "word": "minimalist",
-        "strength": 0.0024
+        "strength": 0.0023
       },
       {
         "word": "crisp",
-        "strength": 0.0023
+        "strength": 0.0022
       },
       {
         "word": "sparse",
@@ -13094,11 +13094,11 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
-        "word": "aggressive",
+        "word": "deep",
         "strength": 0.0021
       },
       {
-        "word": "deep",
+        "word": "aggressive",
         "strength": 0.0021
       },
       {
@@ -13106,15 +13106,11 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
-        "word": "engineered",
+        "word": "soothing",
         "strength": 0.002
       },
       {
-        "word": "soothing",
-        "strength": 0.0019
-      },
-      {
-        "word": "dreamlike",
+        "word": "engineered",
         "strength": 0.0019
       },
       {
@@ -13122,23 +13118,23 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
-        "word": "matter-of-fact",
-        "strength": 0.0018
-      },
-      {
-        "word": "action-oriented",
-        "strength": 0.0018
+        "word": "dreamlike",
+        "strength": 0.0019
       },
       {
         "word": "gentle",
         "strength": 0.0018
       },
       {
+        "word": "action-oriented",
+        "strength": 0.0017
+      },
+      {
         "word": "clever",
         "strength": 0.0017
       },
       {
-        "word": "detailed",
+        "word": "matter-of-fact",
         "strength": 0.0017
       },
       {
@@ -13146,15 +13142,23 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
+        "word": "detailed",
+        "strength": 0.0016
+      },
+      {
         "word": "objective",
         "strength": 0.0016
       },
       {
-        "word": "playful",
-        "strength": 0.0016
+        "word": "human",
+        "strength": 0.0015
       },
       {
         "word": "ethereal",
+        "strength": 0.0015
+      },
+      {
+        "word": "playful",
         "strength": 0.0015
       },
       {
@@ -13162,20 +13166,24 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "cold",
-        "strength": 0.0015
-      },
-      {
-        "word": "human",
-        "strength": 0.0015
-      },
-      {
         "word": "quirky",
-        "strength": 0.0015
+        "strength": 0.0014
+      },
+      {
+        "word": "cold",
+        "strength": 0.0014
       },
       {
         "word": "dry",
-        "strength": 0.0015
+        "strength": 0.0014
+      },
+      {
+        "word": "dense",
+        "strength": 0.0014
+      },
+      {
+        "word": "introspective",
+        "strength": 0.0014
       },
       {
         "word": "subjective",
@@ -13186,35 +13194,7 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "meditative",
-        "strength": 0.0014
-      },
-      {
-        "word": "introspective",
-        "strength": 0.0014
-      },
-      {
-        "word": "visceral",
-        "strength": 0.0014
-      },
-      {
         "word": "whimsical",
-        "strength": 0.0014
-      },
-      {
-        "word": "dense",
-        "strength": 0.0014
-      },
-      {
-        "word": "grounding",
-        "strength": 0.0013
-      },
-      {
-        "word": "active voice",
-        "strength": 0.0013
-      },
-      {
-        "word": "deliberate",
         "strength": 0.0013
       },
       {
@@ -13222,11 +13202,31 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "simple",
-        "strength": 0.0012
+        "word": "meditative",
+        "strength": 0.0013
       },
       {
         "word": "suspenseful",
+        "strength": 0.0013
+      },
+      {
+        "word": "visceral",
+        "strength": 0.0013
+      },
+      {
+        "word": "grounding",
+        "strength": 0.0013
+      },
+      {
+        "word": "deliberate",
+        "strength": 0.0012
+      },
+      {
+        "word": "active voice",
+        "strength": 0.0012
+      },
+      {
+        "word": "simple",
         "strength": 0.0012
       },
       {
@@ -13234,16 +13234,12 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "chaotic",
-        "strength": 0.0011
-      },
-      {
-        "word": "formal",
-        "strength": 0.0011
-      },
-      {
         "word": "frantic",
-        "strength": 0.0011
+        "strength": 0.0012
+      },
+      {
+        "word": "chaotic",
+        "strength": 0.001
       },
       {
         "word": "disorienting",
@@ -13254,7 +13250,11 @@ const styleAssociationData = {
         "strength": 0.001
       },
       {
-        "word": "surreal",
+        "word": "convoluted",
+        "strength": 0.001
+      },
+      {
+        "word": "formal",
         "strength": 0.001
       }
     ]
@@ -13267,19 +13267,19 @@ const styleAssociationData = {
       },
       {
         "word": "haunting",
-        "strength": 0.0051
+        "strength": 0.0052
       },
       {
         "word": "gritty",
-        "strength": 0.0051
+        "strength": 0.0052
       },
       {
         "word": "profane",
-        "strength": 0.0047
+        "strength": 0.0048
       },
       {
         "word": "vulgar",
-        "strength": 0.0047
+        "strength": 0.0048
       },
       {
         "word": "risky",
@@ -13287,7 +13287,7 @@ const styleAssociationData = {
       },
       {
         "word": "immersive",
-        "strength": 0.0046
+        "strength": 0.0047
       },
       {
         "word": "detached",
@@ -13295,26 +13295,30 @@ const styleAssociationData = {
       },
       {
         "word": "wry",
-        "strength": 0.0045
+        "strength": 0.0046
       },
       {
         "word": "frantic",
-        "strength": 0.0043
+        "strength": 0.0044
       },
       {
         "word": "lavish",
         "strength": 0.0043
       },
       {
-        "word": "stream-of-consciousness",
-        "strength": 0.0042
+        "word": "distant",
+        "strength": 0.0043
       },
       {
-        "word": "distant",
-        "strength": 0.0042
+        "word": "stream-of-consciousness",
+        "strength": 0.0043
       },
       {
         "word": "amusing",
+        "strength": 0.0041
+      },
+      {
+        "word": "formulaic",
         "strength": 0.004
       },
       {
@@ -13322,40 +13326,36 @@ const styleAssociationData = {
         "strength": 0.004
       },
       {
-        "word": "formulaic",
-        "strength": 0.004
-      },
-      {
         "word": "hopeful",
-        "strength": 0.0038
-      },
-      {
-        "word": "imagistic",
-        "strength": 0.0036
+        "strength": 0.0039
       },
       {
         "word": "excessive",
-        "strength": 0.0036
+        "strength": 0.0037
+      },
+      {
+        "word": "imagistic",
+        "strength": 0.0037
       },
       {
         "word": "hyperbolic",
         "strength": 0.0036
       },
       {
+        "word": "comforting",
+        "strength": 0.0035
+      },
+      {
         "word": "cinematic",
         "strength": 0.0034
       },
       {
-        "word": "comforting",
+        "word": "unfiltered",
         "strength": 0.0034
       },
       {
-        "word": "unfiltered",
-        "strength": 0.0033
-      },
-      {
         "word": "overwrought",
-        "strength": 0.0032
+        "strength": 0.0033
       },
       {
         "word": "surgical",
@@ -13363,19 +13363,19 @@ const styleAssociationData = {
       },
       {
         "word": "sincere",
-        "strength": 0.0031
-      },
-      {
-        "word": "bizarre",
-        "strength": 0.003
+        "strength": 0.0032
       },
       {
         "word": "dialogue-driven",
         "strength": 0.003
       },
       {
+        "word": "bizarre",
+        "strength": 0.003
+      },
+      {
         "word": "disturbing",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "objective",
@@ -13383,11 +13383,11 @@ const styleAssociationData = {
       },
       {
         "word": "convoluted",
-        "strength": 0.0026
+        "strength": 0.0027
       },
       {
         "word": "systematic",
-        "strength": 0.0026
+        "strength": 0.0027
       },
       {
         "word": "grandiose",
@@ -13395,11 +13395,11 @@ const styleAssociationData = {
       },
       {
         "word": "cozy",
-        "strength": 0.0023
+        "strength": 0.0024
       },
       {
         "word": "suspenseful",
-        "strength": 0.0023
+        "strength": 0.0024
       },
       {
         "word": "opaque",
@@ -13410,15 +13410,15 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
-        "word": "dry",
-        "strength": 0.002
-      },
-      {
         "word": "deep",
         "strength": 0.002
       },
       {
         "word": "dark humor",
+        "strength": 0.002
+      },
+      {
+        "word": "dry",
         "strength": 0.002
       },
       {
@@ -13431,7 +13431,7 @@ const styleAssociationData = {
       },
       {
         "word": "decadent",
-        "strength": 0.0015
+        "strength": 0.0016
       },
       {
         "word": "eccentric",
@@ -13439,7 +13439,7 @@ const styleAssociationData = {
       },
       {
         "word": "precise",
-        "strength": 0.0014
+        "strength": 0.0015
       },
       {
         "word": "abstract",
@@ -13459,7 +13459,7 @@ const styleAssociationData = {
       },
       {
         "word": "dense",
-        "strength": 0.0012
+        "strength": 0.0013
       }
     ]
   },
@@ -13474,52 +13474,52 @@ const styleAssociationData = {
         "strength": 0.0041
       },
       {
-        "word": "detached",
-        "strength": 0.0035
-      },
-      {
         "word": "gritty",
-        "strength": 0.0035
+        "strength": 0.0036
       },
       {
-        "word": "dry",
-        "strength": 0.003
+        "word": "detached",
+        "strength": 0.0036
       },
       {
         "word": "disturbing",
+        "strength": 0.003
+      },
+      {
+        "word": "dry",
         "strength": 0.0029
       },
       {
         "word": "immersive",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "objective",
         "strength": 0.0028
       },
       {
-        "word": "wry",
-        "strength": 0.0026
+        "word": "excessive",
+        "strength": 0.0027
       },
       {
-        "word": "excessive",
-        "strength": 0.0026
+        "word": "wry",
+        "strength": 0.0027
       },
       {
         "word": "frantic",
-        "strength": 0.0025
-      },
-      {
-        "word": "introspective",
-        "strength": 0.0025
+        "strength": 0.0026
       },
       {
         "word": "vulgar",
         "strength": 0.0025
       },
       {
+        "word": "introspective",
+        "strength": 0.0024
+      },
+      {
         "word": "hopeful",
-        "strength": 0.0023
+        "strength": 0.0024
       },
       {
         "word": "atmospheric",
@@ -13527,6 +13527,10 @@ const styleAssociationData = {
       },
       {
         "word": "intricate",
+        "strength": 0.0021
+      },
+      {
+        "word": "overwrought",
         "strength": 0.0021
       },
       {
@@ -13538,23 +13542,11 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
-        "word": "minimalist",
-        "strength": 0.002
-      },
-      {
-        "word": "overwrought",
-        "strength": 0.002
-      },
-      {
         "word": "profane",
         "strength": 0.002
       },
       {
-        "word": "absurdist",
-        "strength": 0.0019
-      },
-      {
-        "word": "languid",
+        "word": "minimalist",
         "strength": 0.0019
       },
       {
@@ -13562,12 +13554,16 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
+        "word": "absurdist",
+        "strength": 0.0019
+      },
+      {
         "word": "internally focused",
         "strength": 0.0019
       },
       {
-        "word": "quirky",
-        "strength": 0.0017
+        "word": "languid",
+        "strength": 0.0019
       },
       {
         "word": "deep",
@@ -13575,6 +13571,10 @@ const styleAssociationData = {
       },
       {
         "word": "dense",
+        "strength": 0.0017
+      },
+      {
+        "word": "quirky",
         "strength": 0.0016
       },
       {
@@ -13583,11 +13583,11 @@ const styleAssociationData = {
       },
       {
         "word": "decadent",
-        "strength": 0.0015
+        "strength": 0.0016
       },
       {
         "word": "hyperbolic",
-        "strength": 0.0015
+        "strength": 0.0016
       },
       {
         "word": "grandiose",
@@ -13602,8 +13602,12 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
+        "word": "distant",
+        "strength": 0.0015
+      },
+      {
         "word": "gentle",
-        "strength": 0.0014
+        "strength": 0.0015
       },
       {
         "word": "clinical",
@@ -13614,16 +13618,12 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "distant",
-        "strength": 0.0014
-      },
-      {
         "word": "amusing",
         "strength": 0.0014
       },
       {
         "word": "stylized",
-        "strength": 0.0013
+        "strength": 0.0014
       },
       {
         "word": "bizarre",
@@ -13631,19 +13631,11 @@ const styleAssociationData = {
       },
       {
         "word": "lavish",
-        "strength": 0.0012
+        "strength": 0.0013
       },
       {
         "word": "philosophical",
         "strength": 0.0012
-      },
-      {
-        "word": "subjective",
-        "strength": 0.0011
-      },
-      {
-        "word": "engineered",
-        "strength": 0.0011
       },
       {
         "word": "intelligent",
@@ -13654,15 +13646,23 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "playful",
+        "word": "engineered",
+        "strength": 0.0011
+      },
+      {
+        "word": "subjective",
+        "strength": 0.0011
+      },
+      {
+        "word": "cinematic",
+        "strength": 0.001
+      },
+      {
+        "word": "symbolic",
         "strength": 0.001
       },
       {
         "word": "disorienting",
-        "strength": 0.001
-      },
-      {
-        "word": "cinematic",
         "strength": 0.001
       }
     ]
@@ -13671,7 +13671,7 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "edgy",
-        "strength": 0.0116
+        "strength": 0.0115
       },
       {
         "word": "male perspective",
@@ -13679,11 +13679,11 @@ const styleAssociationData = {
       },
       {
         "word": "immersive",
-        "strength": 0.0076
+        "strength": 0.0077
       },
       {
         "word": "playful",
-        "strength": 0.0075
+        "strength": 0.0074
       },
       {
         "word": "sparse",
@@ -13699,7 +13699,7 @@ const styleAssociationData = {
       },
       {
         "word": "gritty",
-        "strength": 0.006
+        "strength": 0.0061
       },
       {
         "word": "passive voice",
@@ -13711,7 +13711,7 @@ const styleAssociationData = {
       },
       {
         "word": "moody",
-        "strength": 0.0052
+        "strength": 0.0051
       },
       {
         "word": "meandering",
@@ -13723,11 +13723,11 @@ const styleAssociationData = {
       },
       {
         "word": "risky",
-        "strength": 0.0048
+        "strength": 0.0049
       },
       {
         "word": "haunting",
-        "strength": 0.0046
+        "strength": 0.0047
       },
       {
         "word": "technical",
@@ -13751,19 +13751,19 @@ const styleAssociationData = {
       },
       {
         "word": "economical",
-        "strength": 0.0041
+        "strength": 0.004
       },
       {
         "word": "opaque",
         "strength": 0.0039
       },
       {
-        "word": "meditative",
+        "word": "propulsive",
         "strength": 0.0038
       },
       {
-        "word": "propulsive",
-        "strength": 0.0037
+        "word": "meditative",
+        "strength": 0.0038
       },
       {
         "word": "meticulous",
@@ -13783,22 +13783,22 @@ const styleAssociationData = {
       },
       {
         "word": "measured",
-        "strength": 0.0033
-      },
-      {
-        "word": "clever",
-        "strength": 0.0032
-      },
-      {
-        "word": "virtue signaling",
-        "strength": 0.0032
+        "strength": 0.0034
       },
       {
         "word": "thought-provoking",
         "strength": 0.0032
       },
       {
-        "word": "subversive",
+        "word": "clever",
+        "strength": 0.0032
+      },
+      {
+        "word": "vulgar",
+        "strength": 0.0031
+      },
+      {
+        "word": "virtue signaling",
         "strength": 0.0031
       },
       {
@@ -13806,27 +13806,23 @@ const styleAssociationData = {
         "strength": 0.0031
       },
       {
-        "word": "vulgar",
+        "word": "subversive",
         "strength": 0.0031
-      },
-      {
-        "word": "minimalist",
-        "strength": 0.003
       },
       {
         "word": "idealistic",
         "strength": 0.003
       },
       {
-        "word": "detailed",
-        "strength": 0.0029
-      },
-      {
-        "word": "transcendent",
-        "strength": 0.0028
+        "word": "minimalist",
+        "strength": 0.003
       },
       {
         "word": "utopian",
+        "strength": 0.0028
+      },
+      {
+        "word": "detailed",
         "strength": 0.0028
       },
       {
@@ -13834,8 +13830,12 @@ const styleAssociationData = {
         "strength": 0.0028
       },
       {
+        "word": "transcendent",
+        "strength": 0.0028
+      },
+      {
         "word": "formulaic",
-        "strength": 0.0026
+        "strength": 0.0027
       },
       {
         "word": "clarity",
@@ -13843,18 +13843,6 @@ const styleAssociationData = {
       },
       {
         "word": "introspective",
-        "strength": 0.0024
-      },
-      {
-        "word": "dry",
-        "strength": 0.0024
-      },
-      {
-        "word": "deliberate",
-        "strength": 0.0024
-      },
-      {
-        "word": "old-fashioned",
         "strength": 0.0024
       },
       {
@@ -13866,7 +13854,19 @@ const styleAssociationData = {
         "strength": 0.0024
       },
       {
-        "word": "dreamlike",
+        "word": "dry",
+        "strength": 0.0024
+      },
+      {
+        "word": "grandiose",
+        "strength": 0.0023
+      },
+      {
+        "word": "unfiltered",
+        "strength": 0.0023
+      },
+      {
+        "word": "deliberate",
         "strength": 0.0023
       }
     ]
@@ -13875,15 +13875,15 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "matter-of-fact",
-        "strength": 0.0041
+        "strength": 0.004
       },
       {
         "word": "cold",
-        "strength": 0.0029
+        "strength": 0.0028
       },
       {
         "word": "subversive",
-        "strength": 0.0029
+        "strength": 0.0028
       },
       {
         "word": "precise",
@@ -13891,31 +13891,31 @@ const styleAssociationData = {
       },
       {
         "word": "formal",
-        "strength": 0.0027
-      },
-      {
-        "word": "active voice",
-        "strength": 0.0025
+        "strength": 0.0026
       },
       {
         "word": "friendly",
         "strength": 0.0025
       },
       {
-        "word": "plain",
+        "word": "active voice",
         "strength": 0.0025
+      },
+      {
+        "word": "plain",
+        "strength": 0.0024
       },
       {
         "word": "subjective",
-        "strength": 0.0025
+        "strength": 0.0024
       },
       {
         "word": "vibrant",
-        "strength": 0.0024
+        "strength": 0.0023
       },
       {
         "word": "clarity",
-        "strength": 0.0024
+        "strength": 0.0023
       },
       {
         "word": "surgical",
@@ -13923,14 +13923,14 @@ const styleAssociationData = {
       },
       {
         "word": "female perspective",
-        "strength": 0.0023
-      },
-      {
-        "word": "functional",
         "strength": 0.0022
       },
       {
         "word": "witty",
+        "strength": 0.0022
+      },
+      {
+        "word": "functional",
         "strength": 0.0022
       },
       {
@@ -13939,35 +13939,35 @@ const styleAssociationData = {
       },
       {
         "word": "direct",
-        "strength": 0.0021
-      },
-      {
-        "word": "verbose",
-        "strength": 0.0021
-      },
-      {
-        "word": "clever",
         "strength": 0.002
       },
       {
-        "word": "aggressive",
+        "word": "verbose",
+        "strength": 0.002
+      },
+      {
+        "word": "clever",
         "strength": 0.0019
+      },
+      {
+        "word": "aggressive",
+        "strength": 0.0018
       },
       {
         "word": "feminist",
-        "strength": 0.0019
+        "strength": 0.0018
       },
       {
         "word": "technical",
-        "strength": 0.0019
+        "strength": 0.0018
       },
       {
         "word": "virtue signaling",
-        "strength": 0.0018
+        "strength": 0.0017
       },
       {
         "word": "chaotic",
-        "strength": 0.0018
+        "strength": 0.0017
       },
       {
         "word": "odd",
@@ -13982,10 +13982,6 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "deliberate",
-        "strength": 0.0016
-      },
-      {
         "word": "bizarre",
         "strength": 0.0016
       },
@@ -13994,11 +13990,7 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "modern",
-        "strength": 0.0015
-      },
-      {
-        "word": "restrained",
+        "word": "deliberate",
         "strength": 0.0015
       },
       {
@@ -14006,8 +13998,16 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "visceral",
+        "word": "modern",
         "strength": 0.0015
+      },
+      {
+        "word": "restrained",
+        "strength": 0.0014
+      },
+      {
+        "word": "visceral",
+        "strength": 0.0014
       },
       {
         "word": "twisted",
@@ -14015,7 +14015,7 @@ const styleAssociationData = {
       },
       {
         "word": "moralising",
-        "strength": 0.0013
+        "strength": 0.0014
       },
       {
         "word": "simple",
@@ -14026,6 +14026,10 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
+        "word": "experimental",
+        "strength": 0.0012
+      },
+      {
         "word": "melancholic",
         "strength": 0.0012
       },
@@ -14034,39 +14038,35 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "experimental",
-        "strength": 0.0012
-      },
-      {
         "word": "cool",
         "strength": 0.0012
       },
       {
-        "word": "meditative",
-        "strength": 0.0012
-      },
-      {
-        "word": "meticulous",
-        "strength": 0.0012
-      },
-      {
         "word": "dry humor",
-        "strength": 0.0012
+        "strength": 0.0011
       },
       {
         "word": "moody",
         "strength": 0.0011
       },
       {
-        "word": "concrete",
+        "word": "meticulous",
         "strength": 0.0011
       },
       {
-        "word": "playful",
+        "word": "meditative",
+        "strength": 0.0011
+      },
+      {
+        "word": "concrete",
         "strength": 0.001
       },
       {
-        "word": "transcendent",
+        "word": "measured",
+        "strength": 0.001
+      },
+      {
+        "word": "flashy",
         "strength": 0.001
       },
       {
@@ -14091,11 +14091,11 @@ const styleAssociationData = {
       },
       {
         "word": "profane",
-        "strength": 0.0067
+        "strength": 0.0068
       },
       {
         "word": "dialogue-driven",
-        "strength": 0.0067
+        "strength": 0.0068
       },
       {
         "word": "experimental",
@@ -14115,22 +14115,22 @@ const styleAssociationData = {
       },
       {
         "word": "gritty",
-        "strength": 0.0046
-      },
-      {
-        "word": "direct",
-        "strength": 0.0045
+        "strength": 0.0047
       },
       {
         "word": "measured",
         "strength": 0.0045
       },
       {
-        "word": "functional",
-        "strength": 0.0044
+        "word": "direct",
+        "strength": 0.0045
       },
       {
         "word": "cinematic",
+        "strength": 0.0044
+      },
+      {
+        "word": "functional",
         "strength": 0.0044
       },
       {
@@ -14143,11 +14143,11 @@ const styleAssociationData = {
       },
       {
         "word": "verbose",
-        "strength": 0.0039
+        "strength": 0.0038
       },
       {
         "word": "bizarre",
-        "strength": 0.0038
+        "strength": 0.0037
       },
       {
         "word": "serene",
@@ -14167,15 +14167,11 @@ const styleAssociationData = {
       },
       {
         "word": "flashy",
-        "strength": 0.0034
+        "strength": 0.0035
       },
       {
         "word": "grounding",
         "strength": 0.0034
-      },
-      {
-        "word": "plain",
-        "strength": 0.0033
       },
       {
         "word": "edgy",
@@ -14183,6 +14179,10 @@ const styleAssociationData = {
       },
       {
         "word": "sincere",
+        "strength": 0.0032
+      },
+      {
+        "word": "plain",
         "strength": 0.0032
       },
       {
@@ -14198,11 +14198,11 @@ const styleAssociationData = {
         "strength": 0.0031
       },
       {
-        "word": "odd",
+        "word": "social criticism",
         "strength": 0.003
       },
       {
-        "word": "social criticism",
+        "word": "odd",
         "strength": 0.003
       },
       {
@@ -14238,31 +14238,31 @@ const styleAssociationData = {
         "strength": 0.0026
       },
       {
-        "word": "subversive",
-        "strength": 0.0024
-      },
-      {
         "word": "cliche",
         "strength": 0.0024
       },
       {
-        "word": "economical",
-        "strength": 0.0023
+        "word": "subversive",
+        "strength": 0.0024
       },
       {
         "word": "stylized",
         "strength": 0.0023
       },
       {
-        "word": "vibrant",
-        "strength": 0.0023
+        "word": "moralising",
+        "strength": 0.0022
+      },
+      {
+        "word": "economical",
+        "strength": 0.0022
       },
       {
         "word": "transcendent",
         "strength": 0.0022
       },
       {
-        "word": "moralising",
+        "word": "vibrant",
         "strength": 0.0022
       },
       {
@@ -14271,10 +14271,10 @@ const styleAssociationData = {
       },
       {
         "word": "formal",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
-        "word": "simple",
+        "word": "lavish",
         "strength": 0.0021
       }
     ]
@@ -14283,11 +14283,11 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "haunting",
-        "strength": 0.0037
+        "strength": 0.0038
       },
       {
         "word": "detached",
-        "strength": 0.0036
+        "strength": 0.0037
       },
       {
         "word": "absurdist",
@@ -14295,6 +14295,10 @@ const styleAssociationData = {
       },
       {
         "word": "disturbing",
+        "strength": 0.003
+      },
+      {
+        "word": "cozy",
         "strength": 0.0029
       },
       {
@@ -14302,63 +14306,55 @@ const styleAssociationData = {
         "strength": 0.0029
       },
       {
-        "word": "cozy",
-        "strength": 0.0029
-      },
-      {
         "word": "dry",
         "strength": 0.0028
+      },
+      {
+        "word": "gritty",
+        "strength": 0.0027
       },
       {
         "word": "introspective",
         "strength": 0.0027
       },
       {
-        "word": "gritty",
-        "strength": 0.0026
-      },
-      {
         "word": "profane",
-        "strength": 0.0024
-      },
-      {
-        "word": "plain",
-        "strength": 0.0024
-      },
-      {
-        "word": "minimalist",
-        "strength": 0.0024
+        "strength": 0.0025
       },
       {
         "word": "grandiose",
         "strength": 0.0024
       },
       {
-        "word": "playful",
+        "word": "minimalist",
         "strength": 0.0023
+      },
+      {
+        "word": "plain",
+        "strength": 0.0023
+      },
+      {
+        "word": "playful",
+        "strength": 0.0022
       },
       {
         "word": "bizarre",
         "strength": 0.0022
       },
       {
-        "word": "melancholic",
-        "strength": 0.002
-      },
-      {
         "word": "overwrought",
         "strength": 0.002
       },
       {
-        "word": "intelligent",
-        "strength": 0.0019
-      },
-      {
         "word": "comforting",
-        "strength": 0.0019
+        "strength": 0.002
       },
       {
-        "word": "intricate",
+        "word": "intelligent",
+        "strength": 0.002
+      },
+      {
+        "word": "melancholic",
         "strength": 0.0019
       },
       {
@@ -14370,7 +14366,11 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "quirky",
+        "word": "intricate",
+        "strength": 0.0018
+      },
+      {
+        "word": "cinematic",
         "strength": 0.0018
       },
       {
@@ -14378,27 +14378,23 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
+        "word": "quirky",
+        "strength": 0.0017
+      },
+      {
         "word": "patriarchal",
         "strength": 0.0017
       },
       {
-        "word": "cinematic",
+        "word": "hyperbolic",
         "strength": 0.0017
-      },
-      {
-        "word": "subjective",
-        "strength": 0.0017
-      },
-      {
-        "word": "cynical",
-        "strength": 0.0016
       },
       {
         "word": "imagistic",
-        "strength": 0.0016
+        "strength": 0.0017
       },
       {
-        "word": "hyperbolic",
+        "word": "utopian",
         "strength": 0.0016
       },
       {
@@ -14406,7 +14402,11 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "utopian",
+        "word": "subjective",
+        "strength": 0.0016
+      },
+      {
+        "word": "cynical",
         "strength": 0.0016
       },
       {
@@ -14414,11 +14414,11 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "symbolic",
+        "word": "formulaic",
         "strength": 0.0015
       },
       {
-        "word": "formulaic",
+        "word": "symbolic",
         "strength": 0.0015
       },
       {
@@ -14427,14 +14427,14 @@ const styleAssociationData = {
       },
       {
         "word": "wry",
-        "strength": 0.0013
-      },
-      {
-        "word": "logical",
-        "strength": 0.0013
+        "strength": 0.0014
       },
       {
         "word": "amusing",
+        "strength": 0.0013
+      },
+      {
+        "word": "hopeful",
         "strength": 0.0013
       },
       {
@@ -14443,14 +14443,14 @@ const styleAssociationData = {
       },
       {
         "word": "unfiltered",
-        "strength": 0.0012
+        "strength": 0.0013
       },
       {
-        "word": "hopeful",
-        "strength": 0.0012
+        "word": "logical",
+        "strength": 0.0013
       },
       {
-        "word": "clinical",
+        "word": "stylized",
         "strength": 0.0012
       },
       {
@@ -14458,15 +14458,15 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "stylized",
+        "word": "flashy",
         "strength": 0.0012
       },
       {
-        "word": "flashy",
-        "strength": 0.0011
+        "word": "clinical",
+        "strength": 0.0012
       },
       {
-        "word": "chaotic",
+        "word": "eccentric",
         "strength": 0.0011
       },
       {
@@ -14474,11 +14474,11 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "matter-of-fact",
+        "word": "gentle",
         "strength": 0.0011
       },
       {
-        "word": "eccentric",
+        "word": "chaotic",
         "strength": 0.0011
       }
     ]
@@ -14487,7 +14487,7 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "haunting",
-        "strength": 0.0064
+        "strength": 0.0065
       },
       {
         "word": "detached",
@@ -14495,23 +14495,23 @@ const styleAssociationData = {
       },
       {
         "word": "gritty",
-        "strength": 0.0051
+        "strength": 0.0052
       },
       {
         "word": "cozy",
-        "strength": 0.0048
+        "strength": 0.0049
       },
       {
         "word": "disturbing",
-        "strength": 0.0044
+        "strength": 0.0045
       },
       {
         "word": "immersive",
-        "strength": 0.0042
+        "strength": 0.0043
       },
       {
         "word": "vulgar",
-        "strength": 0.004
+        "strength": 0.0041
       },
       {
         "word": "objective",
@@ -14519,15 +14519,15 @@ const styleAssociationData = {
       },
       {
         "word": "frantic",
-        "strength": 0.0039
+        "strength": 0.004
+      },
+      {
+        "word": "excessive",
+        "strength": 0.0038
       },
       {
         "word": "dry",
         "strength": 0.0038
-      },
-      {
-        "word": "excessive",
-        "strength": 0.0037
       },
       {
         "word": "hopeful",
@@ -14535,39 +14535,39 @@ const styleAssociationData = {
       },
       {
         "word": "profane",
-        "strength": 0.0036
+        "strength": 0.0037
       },
       {
         "word": "formulaic",
+        "strength": 0.0034
+      },
+      {
+        "word": "wry",
+        "strength": 0.0033
+      },
+      {
+        "word": "hyperbolic",
         "strength": 0.0033
       },
       {
         "word": "opaque",
-        "strength": 0.0033
-      },
-      {
-        "word": "wry",
-        "strength": 0.0032
-      },
-      {
-        "word": "hyperbolic",
         "strength": 0.0032
       },
       {
         "word": "overwrought",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "introspective",
-        "strength": 0.0028
+        "strength": 0.0027
       },
       {
         "word": "internally focused",
-        "strength": 0.0026
+        "strength": 0.0027
       },
       {
         "word": "grandiose",
-        "strength": 0.0026
+        "strength": 0.0027
       },
       {
         "word": "atmospheric",
@@ -14586,15 +14586,11 @@ const styleAssociationData = {
         "strength": 0.0024
       },
       {
-        "word": "intricate",
-        "strength": 0.0024
-      },
-      {
-        "word": "absurdist",
+        "word": "comforting",
         "strength": 0.0023
       },
       {
-        "word": "comforting",
+        "word": "intricate",
         "strength": 0.0023
       },
       {
@@ -14602,20 +14598,28 @@ const styleAssociationData = {
         "strength": 0.0023
       },
       {
+        "word": "absurdist",
+        "strength": 0.0023
+      },
+      {
         "word": "distant",
-        "strength": 0.0021
+        "strength": 0.0022
       },
       {
         "word": "decadent",
-        "strength": 0.0021
+        "strength": 0.0022
       },
       {
         "word": "lavish",
-        "strength": 0.0021
+        "strength": 0.0022
       },
       {
         "word": "symbolic",
-        "strength": 0.002
+        "strength": 0.0021
+      },
+      {
+        "word": "propulsive",
+        "strength": 0.0019
       },
       {
         "word": "languid",
@@ -14626,31 +14630,27 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
-        "word": "propulsive",
-        "strength": 0.0019
-      },
-      {
         "word": "cinematic",
         "strength": 0.0017
       },
       {
-        "word": "surgical",
+        "word": "imagistic",
         "strength": 0.0017
       },
       {
-        "word": "imagistic",
+        "word": "surgical",
+        "strength": 0.0016
+      },
+      {
+        "word": "suspenseful",
         "strength": 0.0016
       },
       {
         "word": "unfiltered",
-        "strength": 0.0015
+        "strength": 0.0016
       },
       {
         "word": "philosophical",
-        "strength": 0.0015
-      },
-      {
-        "word": "suspenseful",
         "strength": 0.0015
       },
       {
@@ -14658,31 +14658,31 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "quirky",
-        "strength": 0.0014
+        "word": "stylized",
+        "strength": 0.0015
       },
       {
         "word": "vulnerable",
-        "strength": 0.0014
-      },
-      {
-        "word": "stylized",
-        "strength": 0.0014
+        "strength": 0.0015
       },
       {
         "word": "utopian",
         "strength": 0.0014
       },
       {
-        "word": "sparse",
-        "strength": 0.0013
+        "word": "quirky",
+        "strength": 0.0014
       },
       {
-        "word": "playful",
+        "word": "systematic",
         "strength": 0.0013
       },
       {
         "word": "electric",
+        "strength": 0.0013
+      },
+      {
+        "word": "sparse",
         "strength": 0.0013
       }
     ]
@@ -14699,7 +14699,7 @@ const styleAssociationData = {
       },
       {
         "word": "gritty",
-        "strength": 0.0064
+        "strength": 0.0065
       },
       {
         "word": "formulaic",
@@ -14711,27 +14711,27 @@ const styleAssociationData = {
       },
       {
         "word": "haunting",
-        "strength": 0.0056
+        "strength": 0.0057
       },
       {
         "word": "symbolic",
-        "strength": 0.0055
+        "strength": 0.0056
       },
       {
         "word": "cinematic",
-        "strength": 0.0052
+        "strength": 0.0053
       },
       {
         "word": "dialogue-driven",
-        "strength": 0.0051
+        "strength": 0.0052
       },
       {
         "word": "imagistic",
-        "strength": 0.005
+        "strength": 0.0051
       },
       {
         "word": "hyperbolic",
-        "strength": 0.0049
+        "strength": 0.005
       },
       {
         "word": "detached",
@@ -14742,6 +14742,10 @@ const styleAssociationData = {
         "strength": 0.0044
       },
       {
+        "word": "immersive",
+        "strength": 0.0039
+      },
+      {
         "word": "vivid",
         "strength": 0.0039
       },
@@ -14750,7 +14754,7 @@ const styleAssociationData = {
         "strength": 0.0039
       },
       {
-        "word": "immersive",
+        "word": "grandiose",
         "strength": 0.0038
       },
       {
@@ -14758,16 +14762,12 @@ const styleAssociationData = {
         "strength": 0.0038
       },
       {
-        "word": "grandiose",
-        "strength": 0.0037
-      },
-      {
         "word": "absurdist",
         "strength": 0.0037
       },
       {
         "word": "unfiltered",
-        "strength": 0.0033
+        "strength": 0.0034
       },
       {
         "word": "sincere",
@@ -14782,11 +14782,11 @@ const styleAssociationData = {
         "strength": 0.0031
       },
       {
-        "word": "direct",
+        "word": "hopeful",
         "strength": 0.0031
       },
       {
-        "word": "hopeful",
+        "word": "direct",
         "strength": 0.003
       },
       {
@@ -14795,7 +14795,7 @@ const styleAssociationData = {
       },
       {
         "word": "cozy",
-        "strength": 0.0027
+        "strength": 0.0028
       },
       {
         "word": "flashy",
@@ -14807,10 +14807,14 @@ const styleAssociationData = {
       },
       {
         "word": "distant",
-        "strength": 0.0025
+        "strength": 0.0026
       },
       {
         "word": "experimental",
+        "strength": 0.0024
+      },
+      {
+        "word": "frantic",
         "strength": 0.0024
       },
       {
@@ -14818,16 +14822,12 @@ const styleAssociationData = {
         "strength": 0.0024
       },
       {
-        "word": "frantic",
-        "strength": 0.0023
-      },
-      {
         "word": "moody",
         "strength": 0.0021
       },
       {
         "word": "soft",
-        "strength": 0.002
+        "strength": 0.0021
       },
       {
         "word": "measured",
@@ -14839,14 +14839,14 @@ const styleAssociationData = {
       },
       {
         "word": "melancholic",
-        "strength": 0.002
-      },
-      {
-        "word": "playful",
-        "strength": 0.0018
+        "strength": 0.0019
       },
       {
         "word": "social criticism",
+        "strength": 0.0018
+      },
+      {
+        "word": "playful",
         "strength": 0.0018
       },
       {
@@ -14854,7 +14854,7 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "chaotic",
+        "word": "wry",
         "strength": 0.0017
       },
       {
@@ -14862,11 +14862,19 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "wry",
-        "strength": 0.0017
+        "word": "excessive",
+        "strength": 0.0016
       },
       {
-        "word": "excessive",
+        "word": "chaotic",
+        "strength": 0.0016
+      },
+      {
+        "word": "sensational",
+        "strength": 0.0016
+      },
+      {
+        "word": "risky",
         "strength": 0.0016
       },
       {
@@ -14875,14 +14883,6 @@ const styleAssociationData = {
       },
       {
         "word": "internally focused",
-        "strength": 0.0015
-      },
-      {
-        "word": "sensational",
-        "strength": 0.0015
-      },
-      {
-        "word": "risky",
         "strength": 0.0015
       },
       {
@@ -14899,11 +14899,11 @@ const styleAssociationData = {
       },
       {
         "word": "plain",
-        "strength": 0.0033
+        "strength": 0.0032
       },
       {
         "word": "minimalist",
-        "strength": 0.0032
+        "strength": 0.0031
       },
       {
         "word": "playful",
@@ -14911,7 +14911,7 @@ const styleAssociationData = {
       },
       {
         "word": "dry",
-        "strength": 0.003
+        "strength": 0.0029
       },
       {
         "word": "intricate",
@@ -14919,7 +14919,7 @@ const styleAssociationData = {
       },
       {
         "word": "cozy",
-        "strength": 0.0025
+        "strength": 0.0026
       },
       {
         "word": "haunting",
@@ -14927,7 +14927,7 @@ const styleAssociationData = {
       },
       {
         "word": "detached",
-        "strength": 0.0023
+        "strength": 0.0024
       },
       {
         "word": "vulgar",
@@ -14938,23 +14938,19 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
+        "word": "disturbing",
+        "strength": 0.0021
+      },
+      {
+        "word": "gritty",
+        "strength": 0.0021
+      },
+      {
         "word": "objective",
         "strength": 0.0021
       },
       {
-        "word": "disturbing",
-        "strength": 0.002
-      },
-      {
-        "word": "gritty",
-        "strength": 0.002
-      },
-      {
         "word": "sincere",
-        "strength": 0.0019
-      },
-      {
-        "word": "biting",
         "strength": 0.0019
       },
       {
@@ -14962,7 +14958,7 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
-        "word": "cynical",
+        "word": "biting",
         "strength": 0.0018
       },
       {
@@ -14970,31 +14966,23 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "chaotic",
+        "word": "cynical",
         "strength": 0.0018
       },
       {
         "word": "direct",
-        "strength": 0.0018
+        "strength": 0.0017
       },
       {
-        "word": "quirky",
-        "strength": 0.0016
-      },
-      {
-        "word": "subjective",
-        "strength": 0.0016
+        "word": "chaotic",
+        "strength": 0.0017
       },
       {
         "word": "internally focused",
         "strength": 0.0016
       },
       {
-        "word": "safe",
-        "strength": 0.0016
-      },
-      {
-        "word": "matter-of-fact",
+        "word": "quirky",
         "strength": 0.0016
       },
       {
@@ -15002,11 +14990,11 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "simple",
-        "strength": 0.0015
+        "word": "safe",
+        "strength": 0.0016
       },
       {
-        "word": "meditative",
+        "word": "subjective",
         "strength": 0.0015
       },
       {
@@ -15018,16 +15006,24 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "elegant",
-        "strength": 0.0014
+        "word": "simple",
+        "strength": 0.0015
       },
       {
         "word": "profane",
         "strength": 0.0014
       },
       {
-        "word": "calm",
-        "strength": 0.0013
+        "word": "matter-of-fact",
+        "strength": 0.0014
+      },
+      {
+        "word": "meditative",
+        "strength": 0.0014
+      },
+      {
+        "word": "elegant",
+        "strength": 0.0014
       },
       {
         "word": "electric",
@@ -15038,11 +15034,11 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "languid",
+        "word": "vulnerable",
         "strength": 0.0013
       },
       {
-        "word": "gravitas",
+        "word": "languid",
         "strength": 0.0013
       },
       {
@@ -15050,7 +15046,7 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "vulnerable",
+        "word": "gravitas",
         "strength": 0.0013
       },
       {
@@ -15058,31 +15054,27 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "logical",
-        "strength": 0.0012
-      },
-      {
         "word": "formulaic",
         "strength": 0.0012
       },
       {
-        "word": "bizarre",
+        "word": "calm",
         "strength": 0.0012
       },
       {
-        "word": "economical",
+        "word": "logical",
         "strength": 0.0012
       },
       {
         "word": "stylized",
-        "strength": 0.0011
+        "strength": 0.0012
       },
       {
         "word": "decadent",
-        "strength": 0.0011
+        "strength": 0.0012
       },
       {
-        "word": "engineered",
+        "word": "bizarre",
         "strength": 0.0011
       },
       {
@@ -15090,8 +15082,16 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
+        "word": "economical",
+        "strength": 0.0011
+      },
+      {
+        "word": "engineered",
+        "strength": 0.001
+      },
+      {
         "word": "wry",
-        "strength": 0.0009
+        "strength": 0.001
       }
     ]
   },
@@ -15099,22 +15099,22 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "economical",
-        "strength": 0.0039
+        "strength": 0.0038
       },
       {
         "word": "vulgar",
-        "strength": 0.0036
+        "strength": 0.0037
       },
       {
         "word": "vivid",
         "strength": 0.0034
       },
       {
-        "word": "subversive",
-        "strength": 0.0034
+        "word": "friendly",
+        "strength": 0.0033
       },
       {
-        "word": "friendly",
+        "word": "subversive",
         "strength": 0.0033
       },
       {
@@ -15130,10 +15130,6 @@ const styleAssociationData = {
         "strength": 0.0029
       },
       {
-        "word": "plain",
-        "strength": 0.0027
-      },
-      {
         "word": "profane",
         "strength": 0.0027
       },
@@ -15142,19 +15138,19 @@ const styleAssociationData = {
         "strength": 0.0027
       },
       {
-        "word": "matter-of-fact",
-        "strength": 0.0026
-      },
-      {
-        "word": "witty",
+        "word": "plain",
         "strength": 0.0026
       },
       {
         "word": "serene",
-        "strength": 0.0026
+        "strength": 0.0025
       },
       {
-        "word": "chaotic",
+        "word": "witty",
+        "strength": 0.0025
+      },
+      {
+        "word": "matter-of-fact",
         "strength": 0.0025
       },
       {
@@ -15162,15 +15158,15 @@ const styleAssociationData = {
         "strength": 0.0025
       },
       {
-        "word": "minimalist",
-        "strength": 0.0025
-      },
-      {
         "word": "experimental",
         "strength": 0.0025
       },
       {
-        "word": "functional",
+        "word": "dialogue-driven",
+        "strength": 0.0025
+      },
+      {
+        "word": "chaotic",
         "strength": 0.0024
       },
       {
@@ -15178,23 +15174,19 @@ const styleAssociationData = {
         "strength": 0.0024
       },
       {
+        "word": "minimalist",
+        "strength": 0.0024
+      },
+      {
+        "word": "functional",
+        "strength": 0.0024
+      },
+      {
         "word": "melancholic",
         "strength": 0.0024
       },
       {
-        "word": "dialogue-driven",
-        "strength": 0.0024
-      },
-      {
         "word": "restrained",
-        "strength": 0.0024
-      },
-      {
-        "word": "subjective",
-        "strength": 0.0023
-      },
-      {
-        "word": "simple",
         "strength": 0.0023
       },
       {
@@ -15202,7 +15194,31 @@ const styleAssociationData = {
         "strength": 0.0023
       },
       {
+        "word": "subjective",
+        "strength": 0.0022
+      },
+      {
         "word": "technical",
+        "strength": 0.0022
+      },
+      {
+        "word": "grounding",
+        "strength": 0.0022
+      },
+      {
+        "word": "theatrical",
+        "strength": 0.0022
+      },
+      {
+        "word": "simple",
+        "strength": 0.0022
+      },
+      {
+        "word": "moody",
+        "strength": 0.0022
+      },
+      {
+        "word": "gritty",
         "strength": 0.0022
       },
       {
@@ -15211,34 +15227,10 @@ const styleAssociationData = {
       },
       {
         "word": "visceral",
-        "strength": 0.0022
-      },
-      {
-        "word": "grounding",
-        "strength": 0.0022
-      },
-      {
-        "word": "moody",
-        "strength": 0.0022
-      },
-      {
-        "word": "theatrical",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
         "word": "precise",
-        "strength": 0.0021
-      },
-      {
-        "word": "virtue signaling",
-        "strength": 0.0021
-      },
-      {
-        "word": "gritty",
-        "strength": 0.0021
-      },
-      {
-        "word": "cold",
         "strength": 0.0021
       },
       {
@@ -15247,10 +15239,18 @@ const styleAssociationData = {
       },
       {
         "word": "cinematic",
+        "strength": 0.0021
+      },
+      {
+        "word": "virtue signaling",
         "strength": 0.002
       },
       {
         "word": "descriptive",
+        "strength": 0.002
+      },
+      {
+        "word": "cold",
         "strength": 0.002
       },
       {
@@ -15262,20 +15262,20 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "surreal",
-        "strength": 0.0017
-      },
-      {
         "word": "dramatic",
         "strength": 0.0017
       },
       {
-        "word": "clarity",
+        "word": "surreal",
         "strength": 0.0017
       },
       {
+        "word": "clarity",
+        "strength": 0.0016
+      },
+      {
         "word": "engineered",
-        "strength": 0.0017
+        "strength": 0.0016
       },
       {
         "word": "modern",
@@ -15287,14 +15287,14 @@ const styleAssociationData = {
       },
       {
         "word": "active voice",
-        "strength": 0.0016
+        "strength": 0.0015
       },
       {
         "word": "dark humor",
         "strength": 0.0015
       },
       {
-        "word": "playful",
+        "word": "symbolic",
         "strength": 0.0015
       }
     ]
@@ -15303,18 +15303,18 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "moody",
-        "strength": 0.0037
+        "strength": 0.0036
       },
       {
         "word": "vulgar",
-        "strength": 0.0031
+        "strength": 0.0032
       },
       {
         "word": "melancholic",
         "strength": 0.0029
       },
       {
-        "word": "playful",
+        "word": "profane",
         "strength": 0.0028
       },
       {
@@ -15322,8 +15322,8 @@ const styleAssociationData = {
         "strength": 0.0028
       },
       {
-        "word": "profane",
-        "strength": 0.0027
+        "word": "playful",
+        "strength": 0.0028
       },
       {
         "word": "logical",
@@ -15331,19 +15331,19 @@ const styleAssociationData = {
       },
       {
         "word": "formulaic",
-        "strength": 0.0024
-      },
-      {
-        "word": "chaotic",
-        "strength": 0.0023
+        "strength": 0.0025
       },
       {
         "word": "technical",
         "strength": 0.0023
       },
       {
+        "word": "chaotic",
+        "strength": 0.0022
+      },
+      {
         "word": "virtue signaling",
-        "strength": 0.0023
+        "strength": 0.0022
       },
       {
         "word": "subjective",
@@ -15351,14 +15351,10 @@ const styleAssociationData = {
       },
       {
         "word": "plain",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
         "word": "active voice",
-        "strength": 0.0022
-      },
-      {
-        "word": "subversive",
         "strength": 0.0021
       },
       {
@@ -15366,23 +15362,15 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
-        "word": "witty",
-        "strength": 0.0021
-      },
-      {
         "word": "intricate",
-        "strength": 0.0021
+        "strength": 0.002
       },
       {
-        "word": "economical",
-        "strength": 0.0021
+        "word": "witty",
+        "strength": 0.002
       },
       {
-        "word": "functional",
-        "strength": 0.0021
-      },
-      {
-        "word": "formal",
+        "word": "subversive",
         "strength": 0.002
       },
       {
@@ -15390,8 +15378,24 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
+        "word": "economical",
+        "strength": 0.002
+      },
+      {
+        "word": "functional",
+        "strength": 0.002
+      },
+      {
+        "word": "formal",
+        "strength": 0.002
+      },
+      {
+        "word": "gritty",
+        "strength": 0.0018
+      },
+      {
         "word": "matter-of-fact",
-        "strength": 0.0019
+        "strength": 0.0018
       },
       {
         "word": "absurdist",
@@ -15402,19 +15406,11 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "gritty",
-        "strength": 0.0017
-      },
-      {
-        "word": "visceral",
-        "strength": 0.0017
-      },
-      {
         "word": "figurative",
         "strength": 0.0016
       },
       {
-        "word": "modern",
+        "word": "visceral",
         "strength": 0.0016
       },
       {
@@ -15422,15 +15418,15 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "minimalist",
-        "strength": 0.0016
+        "word": "modern",
+        "strength": 0.0015
       },
       {
         "word": "dark humor",
         "strength": 0.0015
       },
       {
-        "word": "transcendent",
+        "word": "minimalist",
         "strength": 0.0015
       },
       {
@@ -15442,12 +15438,12 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "safe",
+        "word": "transcendent",
         "strength": 0.0015
       },
       {
-        "word": "cold",
-        "strength": 0.0014
+        "word": "safe",
+        "strength": 0.0015
       },
       {
         "word": "patriarchal",
@@ -15458,12 +15454,20 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
+        "word": "cold",
+        "strength": 0.0014
+      },
+      {
+        "word": "thought-provoking",
+        "strength": 0.0014
+      },
+      {
         "word": "detailed",
         "strength": 0.0013
       },
       {
-        "word": "thought-provoking",
-        "strength": 0.0013
+        "word": "grandiose",
+        "strength": 0.0012
       },
       {
         "word": "bizarre",
@@ -15474,7 +15478,7 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "grandiose",
+        "word": "unfiltered",
         "strength": 0.0011
       },
       {
@@ -15482,23 +15486,19 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "unfiltered",
-        "strength": 0.0011
-      },
-      {
-        "word": "introspective",
-        "strength": 0.0011
-      },
-      {
         "word": "measured",
-        "strength": 0.001
+        "strength": 0.0011
       },
       {
-        "word": "simple",
-        "strength": 0.001
+        "word": "flashy",
+        "strength": 0.0011
       },
       {
         "word": "vulnerable",
+        "strength": 0.0011
+      },
+      {
+        "word": "hyperbolic",
         "strength": 0.001
       }
     ]
@@ -15507,19 +15507,19 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "gritty",
-        "strength": 0.0075
+        "strength": 0.0076
       },
       {
         "word": "vulgar",
-        "strength": 0.0069
+        "strength": 0.007
       },
       {
         "word": "haunting",
-        "strength": 0.0064
+        "strength": 0.0065
       },
       {
         "word": "detached",
-        "strength": 0.006
+        "strength": 0.0061
       },
       {
         "word": "profane",
@@ -15527,15 +15527,15 @@ const styleAssociationData = {
       },
       {
         "word": "immersive",
-        "strength": 0.0054
+        "strength": 0.0055
       },
       {
         "word": "dry",
-        "strength": 0.0053
+        "strength": 0.0052
       },
       {
         "word": "formulaic",
-        "strength": 0.0051
+        "strength": 0.0052
       },
       {
         "word": "objective",
@@ -15559,7 +15559,7 @@ const styleAssociationData = {
       },
       {
         "word": "lavish",
-        "strength": 0.0038
+        "strength": 0.0039
       },
       {
         "word": "absurdist",
@@ -15570,11 +15570,11 @@ const styleAssociationData = {
         "strength": 0.0036
       },
       {
-        "word": "moody",
+        "word": "grandiose",
         "strength": 0.0035
       },
       {
-        "word": "grandiose",
+        "word": "moody",
         "strength": 0.0035
       },
       {
@@ -15583,26 +15583,30 @@ const styleAssociationData = {
       },
       {
         "word": "playful",
-        "strength": 0.0034
+        "strength": 0.0033
       },
       {
         "word": "safe",
         "strength": 0.0031
       },
       {
-        "word": "hopeful",
-        "strength": 0.0029
+        "word": "frantic",
+        "strength": 0.003
       },
       {
-        "word": "frantic",
-        "strength": 0.0029
+        "word": "hopeful",
+        "strength": 0.003
       },
       {
         "word": "wry",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "surgical",
+        "strength": 0.0028
+      },
+      {
+        "word": "flashy",
         "strength": 0.0028
       },
       {
@@ -15610,12 +15614,8 @@ const styleAssociationData = {
         "strength": 0.0027
       },
       {
-        "word": "flashy",
-        "strength": 0.0027
-      },
-      {
         "word": "cinematic",
-        "strength": 0.0026
+        "strength": 0.0027
       },
       {
         "word": "melancholic",
@@ -15634,6 +15634,10 @@ const styleAssociationData = {
         "strength": 0.0024
       },
       {
+        "word": "excessive",
+        "strength": 0.0023
+      },
+      {
         "word": "sensational",
         "strength": 0.0023
       },
@@ -15642,16 +15646,12 @@ const styleAssociationData = {
         "strength": 0.0023
       },
       {
-        "word": "excessive",
-        "strength": 0.0023
-      },
-      {
         "word": "logical",
-        "strength": 0.0023
+        "strength": 0.0022
       },
       {
         "word": "comforting",
-        "strength": 0.0021
+        "strength": 0.0022
       },
       {
         "word": "symbolic",
@@ -15666,16 +15666,16 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
+        "word": "measured",
+        "strength": 0.0019
+      },
+      {
         "word": "engineered",
         "strength": 0.0019
       },
       {
         "word": "grounding",
-        "strength": 0.0019
-      },
-      {
-        "word": "measured",
-        "strength": 0.0019
+        "strength": 0.0018
       },
       {
         "word": "vivid",
@@ -15683,26 +15683,26 @@ const styleAssociationData = {
       },
       {
         "word": "internally focused",
-        "strength": 0.0017
-      },
-      {
-        "word": "patriarchal",
-        "strength": 0.0016
-      },
-      {
-        "word": "unfiltered",
-        "strength": 0.0016
+        "strength": 0.0018
       },
       {
         "word": "disturbing",
-        "strength": 0.0016
+        "strength": 0.0017
+      },
+      {
+        "word": "unfiltered",
+        "strength": 0.0017
       },
       {
         "word": "overwrought",
         "strength": 0.0016
       },
       {
-        "word": "transcendent",
+        "word": "patriarchal",
+        "strength": 0.0016
+      },
+      {
+        "word": "electric",
         "strength": 0.0016
       }
     ]
@@ -15711,15 +15711,15 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "gritty",
-        "strength": 0.0096
+        "strength": 0.0097
       },
       {
         "word": "vulgar",
-        "strength": 0.0094
+        "strength": 0.0095
       },
       {
         "word": "profane",
-        "strength": 0.0089
+        "strength": 0.009
       },
       {
         "word": "cozy",
@@ -15727,7 +15727,7 @@ const styleAssociationData = {
       },
       {
         "word": "hopeful",
-        "strength": 0.0071
+        "strength": 0.0072
       },
       {
         "word": "cinematic",
@@ -15743,7 +15743,7 @@ const styleAssociationData = {
       },
       {
         "word": "unfiltered",
-        "strength": 0.0058
+        "strength": 0.0059
       },
       {
         "word": "flashy",
@@ -15751,7 +15751,7 @@ const styleAssociationData = {
       },
       {
         "word": "immersive",
-        "strength": 0.0057
+        "strength": 0.0058
       },
       {
         "word": "excessive",
@@ -15759,15 +15759,15 @@ const styleAssociationData = {
       },
       {
         "word": "detached",
-        "strength": 0.0054
+        "strength": 0.0055
       },
       {
         "word": "hyperbolic",
-        "strength": 0.0054
+        "strength": 0.0055
       },
       {
         "word": "distant",
-        "strength": 0.0053
+        "strength": 0.0054
       },
       {
         "word": "propulsive",
@@ -15775,26 +15775,30 @@ const styleAssociationData = {
       },
       {
         "word": "lavish",
-        "strength": 0.0052
+        "strength": 0.0053
       },
       {
         "word": "calculated",
-        "strength": 0.0051
+        "strength": 0.0052
       },
       {
         "word": "formulaic",
-        "strength": 0.0051
+        "strength": 0.0052
       },
       {
         "word": "haunting",
-        "strength": 0.0048
+        "strength": 0.0049
       },
       {
         "word": "stylized",
-        "strength": 0.0047
+        "strength": 0.0048
       },
       {
         "word": "grandiose",
+        "strength": 0.0047
+      },
+      {
+        "word": "frantic",
         "strength": 0.0047
       },
       {
@@ -15802,20 +15806,16 @@ const styleAssociationData = {
         "strength": 0.0046
       },
       {
-        "word": "frantic",
-        "strength": 0.0046
-      },
-      {
         "word": "wry",
         "strength": 0.0045
       },
       {
-        "word": "alliterative",
-        "strength": 0.0043
+        "word": "measured",
+        "strength": 0.0044
       },
       {
-        "word": "measured",
-        "strength": 0.0043
+        "word": "alliterative",
+        "strength": 0.0044
       },
       {
         "word": "philosophical",
@@ -15823,7 +15823,7 @@ const styleAssociationData = {
       },
       {
         "word": "feverish",
-        "strength": 0.004
+        "strength": 0.0041
       },
       {
         "word": "lush",
@@ -15839,7 +15839,7 @@ const styleAssociationData = {
       },
       {
         "word": "elaborate",
-        "strength": 0.0034
+        "strength": 0.0035
       },
       {
         "word": "intimate",
@@ -15850,6 +15850,10 @@ const styleAssociationData = {
         "strength": 0.0034
       },
       {
+        "word": "eccentric",
+        "strength": 0.0033
+      },
+      {
         "word": "rhythmic",
         "strength": 0.0033
       },
@@ -15858,12 +15862,8 @@ const styleAssociationData = {
         "strength": 0.0033
       },
       {
-        "word": "eccentric",
-        "strength": 0.0033
-      },
-      {
         "word": "soft",
-        "strength": 0.0032
+        "strength": 0.0033
       },
       {
         "word": "intelligent",
@@ -15871,7 +15871,7 @@ const styleAssociationData = {
       },
       {
         "word": "conventional",
-        "strength": 0.0031
+        "strength": 0.0032
       },
       {
         "word": "panache",
@@ -15902,11 +15902,11 @@ const styleAssociationData = {
         "strength": 0.0028
       },
       {
-        "word": "funny",
+        "word": "theatrical",
         "strength": 0.0028
       },
       {
-        "word": "theatrical",
+        "word": "funny",
         "strength": 0.0028
       }
     ]
@@ -15931,7 +15931,7 @@ const styleAssociationData = {
       },
       {
         "word": "hopeful",
-        "strength": 0.0065
+        "strength": 0.0066
       },
       {
         "word": "cinematic",
@@ -15939,11 +15939,11 @@ const styleAssociationData = {
       },
       {
         "word": "dialogue-driven",
-        "strength": 0.006
+        "strength": 0.0061
       },
       {
         "word": "decadent",
-        "strength": 0.0057
+        "strength": 0.0058
       },
       {
         "word": "flashy",
@@ -15955,7 +15955,7 @@ const styleAssociationData = {
       },
       {
         "word": "distant",
-        "strength": 0.0053
+        "strength": 0.0054
       },
       {
         "word": "propulsive",
@@ -15963,7 +15963,7 @@ const styleAssociationData = {
       },
       {
         "word": "hyperbolic",
-        "strength": 0.0051
+        "strength": 0.0052
       },
       {
         "word": "immersive",
@@ -15975,15 +15975,15 @@ const styleAssociationData = {
       },
       {
         "word": "calculated",
-        "strength": 0.0049
+        "strength": 0.005
       },
       {
         "word": "lavish",
-        "strength": 0.0049
+        "strength": 0.005
       },
       {
         "word": "wry",
-        "strength": 0.0048
+        "strength": 0.0049
       },
       {
         "word": "excessive",
@@ -15999,7 +15999,7 @@ const styleAssociationData = {
       },
       {
         "word": "measured",
-        "strength": 0.0044
+        "strength": 0.0045
       },
       {
         "word": "sincere",
@@ -16019,18 +16019,18 @@ const styleAssociationData = {
       },
       {
         "word": "frantic",
-        "strength": 0.0039
+        "strength": 0.004
       },
       {
         "word": "haunting",
-        "strength": 0.0039
-      },
-      {
-        "word": "articulate",
-        "strength": 0.0037
+        "strength": 0.004
       },
       {
         "word": "feverish",
+        "strength": 0.0038
+      },
+      {
+        "word": "articulate",
         "strength": 0.0037
       },
       {
@@ -16042,15 +16042,15 @@ const styleAssociationData = {
         "strength": 0.0035
       },
       {
-        "word": "rhythmic",
-        "strength": 0.0034
-      },
-      {
         "word": "intoxicating",
         "strength": 0.0034
       },
       {
         "word": "intelligent",
+        "strength": 0.0034
+      },
+      {
+        "word": "rhythmic",
         "strength": 0.0034
       },
       {
@@ -16090,15 +16090,15 @@ const styleAssociationData = {
         "strength": 0.0029
       },
       {
-        "word": "funny",
-        "strength": 0.0026
-      },
-      {
         "word": "theatrical",
-        "strength": 0.0026
+        "strength": 0.0027
       },
       {
         "word": "electric",
+        "strength": 0.0026
+      },
+      {
+        "word": "funny",
         "strength": 0.0026
       },
       {
@@ -16106,11 +16106,11 @@ const styleAssociationData = {
         "strength": 0.0025
       },
       {
-        "word": "symbolic",
-        "strength": 0.0024
+        "word": "sensational",
+        "strength": 0.0025
       },
       {
-        "word": "sensational",
+        "word": "comforting",
         "strength": 0.0024
       }
     ]
@@ -16119,18 +16119,18 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "haunting",
-        "strength": 0.0072
+        "strength": 0.0073
       },
       {
         "word": "detached",
-        "strength": 0.0068
-      },
-      {
-        "word": "dry",
-        "strength": 0.0067
+        "strength": 0.0069
       },
       {
         "word": "objective",
+        "strength": 0.0066
+      },
+      {
+        "word": "dry",
         "strength": 0.0066
       },
       {
@@ -16139,11 +16139,11 @@ const styleAssociationData = {
       },
       {
         "word": "gritty",
-        "strength": 0.0057
+        "strength": 0.0058
       },
       {
         "word": "cozy",
-        "strength": 0.0052
+        "strength": 0.0053
       },
       {
         "word": "disturbing",
@@ -16151,22 +16151,22 @@ const styleAssociationData = {
       },
       {
         "word": "formulaic",
-        "strength": 0.0051
+        "strength": 0.0052
       },
       {
         "word": "amusing",
-        "strength": 0.005
+        "strength": 0.0051
       },
       {
         "word": "wry",
         "strength": 0.0048
       },
       {
-        "word": "opaque",
+        "word": "profane",
         "strength": 0.0047
       },
       {
-        "word": "profane",
+        "word": "opaque",
         "strength": 0.0047
       },
       {
@@ -16174,11 +16174,11 @@ const styleAssociationData = {
         "strength": 0.0043
       },
       {
-        "word": "sincere",
+        "word": "immersive",
         "strength": 0.0041
       },
       {
-        "word": "immersive",
+        "word": "sincere",
         "strength": 0.0041
       },
       {
@@ -16202,15 +16202,15 @@ const styleAssociationData = {
         "strength": 0.0033
       },
       {
-        "word": "playful",
+        "word": "symbolic",
         "strength": 0.0033
+      },
+      {
+        "word": "playful",
+        "strength": 0.0032
       },
       {
         "word": "minimalist",
-        "strength": 0.0033
-      },
-      {
-        "word": "symbolic",
         "strength": 0.0032
       },
       {
@@ -16223,23 +16223,31 @@ const styleAssociationData = {
       },
       {
         "word": "sparse",
-        "strength": 0.0028
-      },
-      {
-        "word": "safe",
-        "strength": 0.0025
+        "strength": 0.0027
       },
       {
         "word": "excessive",
-        "strength": 0.0025
+        "strength": 0.0026
       },
       {
         "word": "overwrought",
         "strength": 0.0025
       },
       {
+        "word": "safe",
+        "strength": 0.0025
+      },
+      {
         "word": "unfiltered",
+        "strength": 0.0025
+      },
+      {
+        "word": "grandiose",
         "strength": 0.0024
+      },
+      {
+        "word": "internally focused",
+        "strength": 0.0023
       },
       {
         "word": "tactile",
@@ -16247,14 +16255,6 @@ const styleAssociationData = {
       },
       {
         "word": "melancholic",
-        "strength": 0.0023
-      },
-      {
-        "word": "grandiose",
-        "strength": 0.0023
-      },
-      {
-        "word": "internally focused",
         "strength": 0.0023
       },
       {
@@ -16266,15 +16266,15 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
-        "word": "absurdist",
+        "word": "lavish",
         "strength": 0.0022
       },
       {
-        "word": "lavish",
+        "word": "electric",
         "strength": 0.0021
       },
       {
-        "word": "electric",
+        "word": "absurdist",
         "strength": 0.0021
       },
       {
@@ -16283,10 +16283,6 @@ const styleAssociationData = {
       },
       {
         "word": "direct",
-        "strength": 0.0021
-      },
-      {
-        "word": "plain",
         "strength": 0.002
       },
       {
@@ -16298,6 +16294,10 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
+        "word": "plain",
+        "strength": 0.002
+      },
+      {
         "word": "frantic",
         "strength": 0.0018
       },
@@ -16306,15 +16306,15 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "economical",
-        "strength": 0.0016
+        "word": "distant",
+        "strength": 0.0017
       },
       {
         "word": "cinematic",
         "strength": 0.0016
       },
       {
-        "word": "distant",
+        "word": "deep",
         "strength": 0.0016
       }
     ]
@@ -16323,7 +16323,7 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "matter-of-fact",
-        "strength": 0.0047
+        "strength": 0.0046
       },
       {
         "word": "female perspective",
@@ -16331,7 +16331,7 @@ const styleAssociationData = {
       },
       {
         "word": "playful",
-        "strength": 0.0034
+        "strength": 0.0033
       },
       {
         "word": "plain",
@@ -16339,15 +16339,15 @@ const styleAssociationData = {
       },
       {
         "word": "cold",
-        "strength": 0.003
+        "strength": 0.0029
       },
       {
         "word": "formal",
-        "strength": 0.0029
+        "strength": 0.0028
       },
       {
         "word": "active voice",
-        "strength": 0.0029
+        "strength": 0.0028
       },
       {
         "word": "absurdist",
@@ -16355,11 +16355,11 @@ const styleAssociationData = {
       },
       {
         "word": "chaotic",
-        "strength": 0.0026
+        "strength": 0.0025
       },
       {
         "word": "feminist",
-        "strength": 0.0025
+        "strength": 0.0024
       },
       {
         "word": "vibrant",
@@ -16371,7 +16371,7 @@ const styleAssociationData = {
       },
       {
         "word": "aggressive",
-        "strength": 0.0023
+        "strength": 0.0022
       },
       {
         "word": "subversive",
@@ -16382,6 +16382,10 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
+        "word": "surgical",
+        "strength": 0.0019
+      },
+      {
         "word": "verbose",
         "strength": 0.0019
       },
@@ -16390,31 +16394,19 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
-        "word": "surgical",
-        "strength": 0.0019
+        "word": "dark humor",
+        "strength": 0.0017
       },
       {
         "word": "virtue signaling",
         "strength": 0.0017
       },
       {
-        "word": "dark humor",
-        "strength": 0.0017
-      },
-      {
         "word": "functional",
-        "strength": 0.0017
-      },
-      {
-        "word": "subjective",
-        "strength": 0.0017
+        "strength": 0.0016
       },
       {
         "word": "odd",
-        "strength": 0.0017
-      },
-      {
-        "word": "witty",
         "strength": 0.0016
       },
       {
@@ -16422,20 +16414,28 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "meditative",
+        "word": "witty",
         "strength": 0.0016
+      },
+      {
+        "word": "subjective",
+        "strength": 0.0016
+      },
+      {
+        "word": "meditative",
+        "strength": 0.0015
       },
       {
         "word": "sparse",
-        "strength": 0.0016
-      },
-      {
-        "word": "minimalist",
-        "strength": 0.0016
+        "strength": 0.0015
       },
       {
         "word": "intricate",
-        "strength": 0.0016
+        "strength": 0.0015
+      },
+      {
+        "word": "minimalist",
+        "strength": 0.0015
       },
       {
         "word": "modern",
@@ -16446,15 +16446,11 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "clarity",
-        "strength": 0.0015
-      },
-      {
         "word": "moody",
         "strength": 0.0015
       },
       {
-        "word": "visceral",
+        "word": "clarity",
         "strength": 0.0014
       },
       {
@@ -16462,8 +16458,12 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
+        "word": "visceral",
+        "strength": 0.0013
+      },
+      {
         "word": "cool",
-        "strength": 0.0014
+        "strength": 0.0013
       },
       {
         "word": "crisp",
@@ -16487,7 +16487,11 @@ const styleAssociationData = {
       },
       {
         "word": "whimsical",
-        "strength": 0.0012
+        "strength": 0.0011
+      },
+      {
+        "word": "grandiose",
+        "strength": 0.0011
       },
       {
         "word": "clever",
@@ -16499,15 +16503,11 @@ const styleAssociationData = {
       },
       {
         "word": "economical",
-        "strength": 0.0011
-      },
-      {
-        "word": "grandiose",
-        "strength": 0.0011
+        "strength": 0.001
       },
       {
         "word": "edgy",
-        "strength": 0.0011
+        "strength": 0.001
       },
       {
         "word": "logical",
@@ -16543,26 +16543,30 @@ const styleAssociationData = {
       },
       {
         "word": "formulaic",
-        "strength": 0.0046
+        "strength": 0.0047
       },
       {
         "word": "haunting",
-        "strength": 0.0044
-      },
-      {
-        "word": "imagistic",
-        "strength": 0.0042
+        "strength": 0.0045
       },
       {
         "word": "lavish",
         "strength": 0.0042
       },
       {
+        "word": "imagistic",
+        "strength": 0.0042
+      },
+      {
         "word": "cinematic",
-        "strength": 0.004
+        "strength": 0.0041
       },
       {
         "word": "dry",
+        "strength": 0.0037
+      },
+      {
+        "word": "dialogue-driven",
         "strength": 0.0037
       },
       {
@@ -16570,12 +16574,8 @@ const styleAssociationData = {
         "strength": 0.0036
       },
       {
-        "word": "dialogue-driven",
-        "strength": 0.0036
-      },
-      {
         "word": "hyperbolic",
-        "strength": 0.0034
+        "strength": 0.0035
       },
       {
         "word": "dark humor",
@@ -16586,11 +16586,11 @@ const styleAssociationData = {
         "strength": 0.0033
       },
       {
-        "word": "vivid",
+        "word": "sincere",
         "strength": 0.003
       },
       {
-        "word": "sincere",
+        "word": "vivid",
         "strength": 0.003
       },
       {
@@ -16599,7 +16599,7 @@ const styleAssociationData = {
       },
       {
         "word": "immersive",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "grandiose",
@@ -16623,7 +16623,7 @@ const styleAssociationData = {
       },
       {
         "word": "flashy",
-        "strength": 0.0025
+        "strength": 0.0026
       },
       {
         "word": "unfiltered",
@@ -16639,7 +16639,7 @@ const styleAssociationData = {
       },
       {
         "word": "distant",
-        "strength": 0.0022
+        "strength": 0.0023
       },
       {
         "word": "hopeful",
@@ -16647,7 +16647,7 @@ const styleAssociationData = {
       },
       {
         "word": "chaotic",
-        "strength": 0.0021
+        "strength": 0.002
       },
       {
         "word": "social criticism",
@@ -16663,43 +16663,39 @@ const styleAssociationData = {
       },
       {
         "word": "cozy",
+        "strength": 0.0019
+      },
+      {
+        "word": "frantic",
         "strength": 0.0018
       },
       {
         "word": "melancholic",
-        "strength": 0.0018
-      },
-      {
-        "word": "playful",
-        "strength": 0.0018
+        "strength": 0.0017
       },
       {
         "word": "male perspective",
         "strength": 0.0017
       },
       {
-        "word": "frantic",
+        "word": "playful",
         "strength": 0.0017
-      },
-      {
-        "word": "plain",
-        "strength": 0.0017
-      },
-      {
-        "word": "serene",
-        "strength": 0.0016
       },
       {
         "word": "wry",
         "strength": 0.0016
       },
       {
-        "word": "measured",
+        "word": "serene",
         "strength": 0.0016
       },
       {
-        "word": "transcendent",
-        "strength": 0.0014
+        "word": "plain",
+        "strength": 0.0016
+      },
+      {
+        "word": "measured",
+        "strength": 0.0016
       },
       {
         "word": "comforting",
@@ -16710,11 +16706,15 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "opaque",
+        "word": "transcendent",
         "strength": 0.0014
       },
       {
         "word": "sensational",
+        "strength": 0.0013
+      },
+      {
+        "word": "opaque",
         "strength": 0.0013
       },
       {
@@ -16731,11 +16731,11 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "engineered",
-        "strength": 0.0053
+        "strength": 0.0052
       },
       {
         "word": "economical",
-        "strength": 0.0047
+        "strength": 0.0046
       },
       {
         "word": "grounding",
@@ -16747,22 +16747,22 @@ const styleAssociationData = {
       },
       {
         "word": "simple",
-        "strength": 0.0045
+        "strength": 0.0044
       },
       {
         "word": "matter-of-fact",
-        "strength": 0.0043
-      },
-      {
-        "word": "plain",
         "strength": 0.0041
       },
       {
-        "word": "subversive",
+        "word": "plain",
         "strength": 0.004
       },
       {
         "word": "direct",
+        "strength": 0.0039
+      },
+      {
+        "word": "subversive",
         "strength": 0.0039
       },
       {
@@ -16775,14 +16775,10 @@ const styleAssociationData = {
       },
       {
         "word": "cold",
-        "strength": 0.0038
-      },
-      {
-        "word": "provocative",
         "strength": 0.0037
       },
       {
-        "word": "formal",
+        "word": "provocative",
         "strength": 0.0036
       },
       {
@@ -16790,44 +16786,48 @@ const styleAssociationData = {
         "strength": 0.0036
       },
       {
+        "word": "formal",
+        "strength": 0.0035
+      },
+      {
         "word": "calm",
-        "strength": 0.0036
+        "strength": 0.0035
       },
       {
         "word": "meditative",
-        "strength": 0.0036
-      },
-      {
-        "word": "surreal",
-        "strength": 0.0033
+        "strength": 0.0035
       },
       {
         "word": "vivid",
         "strength": 0.0033
       },
       {
-        "word": "subjective",
-        "strength": 0.0032
+        "word": "surreal",
+        "strength": 0.0033
       },
       {
-        "word": "playful",
+        "word": "subjective",
         "strength": 0.0031
       },
       {
         "word": "functional",
-        "strength": 0.0031
+        "strength": 0.003
+      },
+      {
+        "word": "playful",
+        "strength": 0.003
       },
       {
         "word": "clarity",
-        "strength": 0.003
-      },
-      {
-        "word": "melancholic",
-        "strength": 0.003
+        "strength": 0.0029
       },
       {
         "word": "dry",
-        "strength": 0.003
+        "strength": 0.0029
+      },
+      {
+        "word": "melancholic",
+        "strength": 0.0029
       },
       {
         "word": "witty",
@@ -16835,10 +16835,6 @@ const styleAssociationData = {
       },
       {
         "word": "friendly",
-        "strength": 0.0029
-      },
-      {
-        "word": "technical",
         "strength": 0.0028
       },
       {
@@ -16846,12 +16842,12 @@ const styleAssociationData = {
         "strength": 0.0028
       },
       {
-        "word": "safe",
-        "strength": 0.0026
+        "word": "technical",
+        "strength": 0.0027
       },
       {
-        "word": "deliberate",
-        "strength": 0.0025
+        "word": "safe",
+        "strength": 0.0026
       },
       {
         "word": "introspective",
@@ -16863,6 +16859,10 @@ const styleAssociationData = {
       },
       {
         "word": "male perspective",
+        "strength": 0.0025
+      },
+      {
+        "word": "deliberate",
         "strength": 0.0025
       },
       {
@@ -16879,14 +16879,14 @@ const styleAssociationData = {
       },
       {
         "word": "intricate",
-        "strength": 0.0022
-      },
-      {
-        "word": "active voice",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
         "word": "twisted",
+        "strength": 0.0021
+      },
+      {
+        "word": "active voice",
         "strength": 0.0021
       },
       {
@@ -16898,10 +16898,6 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
-        "word": "logical",
-        "strength": 0.0018
-      },
-      {
         "word": "funny",
         "strength": 0.0018
       },
@@ -16910,11 +16906,11 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "abstract",
-        "strength": 0.0017
+        "word": "logical",
+        "strength": 0.0018
       },
       {
-        "word": "vibrant",
+        "word": "abstract",
         "strength": 0.0017
       },
       {
@@ -16922,12 +16918,16 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
+        "word": "vibrant",
+        "strength": 0.0016
+      },
+      {
         "word": "cynical",
-        "strength": 0.0017
+        "strength": 0.0016
       },
       {
         "word": "transcendent",
-        "strength": 0.0017
+        "strength": 0.0016
       }
     ]
   },
@@ -16935,15 +16935,15 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "minimalist",
-        "strength": 0.0031
+        "strength": 0.003
       },
       {
         "word": "playful",
-        "strength": 0.0029
+        "strength": 0.0028
       },
       {
         "word": "plain",
-        "strength": 0.0026
+        "strength": 0.0025
       },
       {
         "word": "dry",
@@ -16967,15 +16967,15 @@ const styleAssociationData = {
       },
       {
         "word": "cynical",
-        "strength": 0.0022
-      },
-      {
-        "word": "matter-of-fact",
-        "strength": 0.0018
+        "strength": 0.0021
       },
       {
         "word": "melancholic",
         "strength": 0.0017
+      },
+      {
+        "word": "matter-of-fact",
+        "strength": 0.0016
       },
       {
         "word": "subjective",
@@ -16983,6 +16983,10 @@ const styleAssociationData = {
       },
       {
         "word": "vulgar",
+        "strength": 0.0016
+      },
+      {
+        "word": "detached",
         "strength": 0.0015
       },
       {
@@ -16990,23 +16994,7 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "detached",
-        "strength": 0.0014
-      },
-      {
-        "word": "economical",
-        "strength": 0.0014
-      },
-      {
         "word": "empathetic",
-        "strength": 0.0014
-      },
-      {
-        "word": "chaotic",
-        "strength": 0.0014
-      },
-      {
-        "word": "patriarchal",
         "strength": 0.0014
       },
       {
@@ -17014,11 +17002,15 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "poetic descriptives",
+        "word": "patriarchal",
+        "strength": 0.0014
+      },
+      {
+        "word": "economical",
         "strength": 0.0013
       },
       {
-        "word": "bizarre",
+        "word": "poetic descriptives",
         "strength": 0.0013
       },
       {
@@ -17026,15 +17018,23 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "biting",
-        "strength": 0.0012
+        "word": "chaotic",
+        "strength": 0.0013
       },
       {
-        "word": "moody",
+        "word": "bizarre",
+        "strength": 0.0013
+      },
+      {
+        "word": "cozy",
         "strength": 0.0012
       },
       {
         "word": "profane",
+        "strength": 0.0012
+      },
+      {
+        "word": "moody",
         "strength": 0.0011
       },
       {
@@ -17042,7 +17042,11 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "cozy",
+        "word": "biting",
+        "strength": 0.0011
+      },
+      {
+        "word": "haunting",
         "strength": 0.0011
       },
       {
@@ -17050,39 +17054,11 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "elegant",
-        "strength": 0.0011
-      },
-      {
         "word": "soothing",
         "strength": 0.0011
       },
       {
-        "word": "subversive",
-        "strength": 0.001
-      },
-      {
-        "word": "haunting",
-        "strength": 0.001
-      },
-      {
-        "word": "opaque",
-        "strength": 0.001
-      },
-      {
-        "word": "engineered",
-        "strength": 0.001
-      },
-      {
-        "word": "sparse",
-        "strength": 0.001
-      },
-      {
-        "word": "active voice",
-        "strength": 0.001
-      },
-      {
-        "word": "baroque",
+        "word": "elegant",
         "strength": 0.001
       },
       {
@@ -17090,19 +17066,43 @@ const styleAssociationData = {
         "strength": 0.001
       },
       {
-        "word": "cold",
+        "word": "baroque",
         "strength": 0.001
       },
       {
-        "word": "quirky",
+        "word": "opaque",
         "strength": 0.001
       },
       {
         "word": "decadent",
+        "strength": 0.001
+      },
+      {
+        "word": "subversive",
+        "strength": 0.001
+      },
+      {
+        "word": "sparse",
+        "strength": 0.001
+      },
+      {
+        "word": "engineered",
+        "strength": 0.001
+      },
+      {
+        "word": "active voice",
         "strength": 0.0009
       },
       {
-        "word": "sophisticated",
+        "word": "quirky",
+        "strength": 0.0009
+      },
+      {
+        "word": "disturbing",
+        "strength": 0.0009
+      },
+      {
+        "word": "cold",
         "strength": 0.0009
       },
       {
@@ -17110,19 +17110,19 @@ const styleAssociationData = {
         "strength": 0.0009
       },
       {
-        "word": "visceral",
+        "word": "sophisticated",
         "strength": 0.0009
       },
       {
-        "word": "vibrant",
-        "strength": 0.0008
-      },
-      {
         "word": "vulnerable",
-        "strength": 0.0008
+        "strength": 0.0009
       },
       {
-        "word": "meticulous",
+        "word": "utopian",
+        "strength": 0.0009
+      },
+      {
+        "word": "cinematic",
         "strength": 0.0008
       },
       {
@@ -17130,7 +17130,7 @@ const styleAssociationData = {
         "strength": 0.0008
       },
       {
-        "word": "disturbing",
+        "word": "meticulous",
         "strength": 0.0008
       }
     ]
@@ -17147,7 +17147,7 @@ const styleAssociationData = {
       },
       {
         "word": "allegorical",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "positive vibes",
@@ -17170,11 +17170,11 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
-        "word": "action-oriented",
+        "word": "measured",
         "strength": 0.0021
       },
       {
-        "word": "measured",
+        "word": "action-oriented",
         "strength": 0.0021
       },
       {
@@ -17198,15 +17198,19 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "economical",
+        "word": "warm",
         "strength": 0.0016
       },
       {
-        "word": "warm",
+        "word": "transcendent",
         "strength": 0.0015
       },
       {
-        "word": "transcendent",
+        "word": "economical",
+        "strength": 0.0015
+      },
+      {
+        "word": "funny",
         "strength": 0.0015
       },
       {
@@ -17214,8 +17218,12 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "funny",
-        "strength": 0.0015
+        "word": "frantic",
+        "strength": 0.0014
+      },
+      {
+        "word": "intoxicating",
+        "strength": 0.0013
       },
       {
         "word": "poetic",
@@ -17226,19 +17234,7 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "intoxicating",
-        "strength": 0.0013
-      },
-      {
         "word": "concrete",
-        "strength": 0.0013
-      },
-      {
-        "word": "witty",
-        "strength": 0.0013
-      },
-      {
-        "word": "frantic",
         "strength": 0.0013
       },
       {
@@ -17246,11 +17242,11 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "ethereal",
+        "word": "witty",
         "strength": 0.0012
       },
       {
-        "word": "formal",
+        "word": "ethereal",
         "strength": 0.0012
       },
       {
@@ -17258,11 +17254,15 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "functional",
+        "word": "lush",
         "strength": 0.0011
       },
       {
-        "word": "lush",
+        "word": "formal",
+        "strength": 0.0011
+      },
+      {
+        "word": "functional",
         "strength": 0.0011
       },
       {
@@ -17274,15 +17274,15 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
+        "word": "vulnerable",
+        "strength": 0.0011
+      },
+      {
         "word": "creative",
         "strength": 0.001
       },
       {
-        "word": "simple",
-        "strength": 0.001
-      },
-      {
-        "word": "vulnerable",
+        "word": "calculated",
         "strength": 0.001
       },
       {
@@ -17290,11 +17290,11 @@ const styleAssociationData = {
         "strength": 0.001
       },
       {
-        "word": "direct",
+        "word": "simple",
         "strength": 0.001
       },
       {
-        "word": "calculated",
+        "word": "direct",
         "strength": 0.001
       },
       {
@@ -17306,7 +17306,7 @@ const styleAssociationData = {
         "strength": 0.0009
       },
       {
-        "word": "vibrant",
+        "word": "mischievous",
         "strength": 0.0009
       },
       {
@@ -17314,27 +17314,27 @@ const styleAssociationData = {
         "strength": 0.0009
       },
       {
-        "word": "mischievous",
+        "word": "dystopian",
         "strength": 0.0009
+      },
+      {
+        "word": "vibrant",
+        "strength": 0.0009
+      },
+      {
+        "word": "propulsive",
+        "strength": 0.0008
+      },
+      {
+        "word": "descriptive",
+        "strength": 0.0008
       },
       {
         "word": "virtue signaling",
-        "strength": 0.0009
-      },
-      {
-        "word": "calm",
-        "strength": 0.0009
-      },
-      {
-        "word": "dystopian",
         "strength": 0.0008
       },
       {
-        "word": "subversive",
-        "strength": 0.0008
-      },
-      {
-        "word": "graceful",
+        "word": "sensational",
         "strength": 0.0008
       }
     ]
@@ -17347,39 +17347,39 @@ const styleAssociationData = {
       },
       {
         "word": "profane",
-        "strength": 0.005
+        "strength": 0.0051
       },
       {
         "word": "formulaic",
-        "strength": 0.0046
+        "strength": 0.0047
       },
       {
         "word": "symbolic",
-        "strength": 0.0043
+        "strength": 0.0044
       },
       {
         "word": "gritty",
-        "strength": 0.0043
+        "strength": 0.0044
       },
       {
         "word": "haunting",
         "strength": 0.0041
       },
       {
-        "word": "imagistic",
-        "strength": 0.0039
-      },
-      {
         "word": "lavish",
-        "strength": 0.0039
+        "strength": 0.004
       },
       {
-        "word": "cinematic",
-        "strength": 0.0036
+        "word": "imagistic",
+        "strength": 0.004
       },
       {
         "word": "hyperbolic",
-        "strength": 0.0036
+        "strength": 0.0037
+      },
+      {
+        "word": "cinematic",
+        "strength": 0.0037
       },
       {
         "word": "dialogue-driven",
@@ -17403,7 +17403,7 @@ const styleAssociationData = {
       },
       {
         "word": "detached",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "sincere",
@@ -17415,19 +17415,19 @@ const styleAssociationData = {
       },
       {
         "word": "bizarre",
-        "strength": 0.0027
+        "strength": 0.0026
       },
       {
         "word": "objective",
         "strength": 0.0026
       },
       {
-        "word": "direct",
+        "word": "grandiose",
         "strength": 0.0025
       },
       {
-        "word": "grandiose",
-        "strength": 0.0024
+        "word": "direct",
+        "strength": 0.0025
       },
       {
         "word": "absurdist",
@@ -17435,22 +17435,22 @@ const styleAssociationData = {
       },
       {
         "word": "cozy",
-        "strength": 0.0022
+        "strength": 0.0023
+      },
+      {
+        "word": "immersive",
+        "strength": 0.0021
       },
       {
         "word": "languid",
         "strength": 0.0021
       },
       {
-        "word": "immersive",
+        "word": "unfiltered",
         "strength": 0.002
       },
       {
-        "word": "unfiltered",
-        "strength": 0.0019
-      },
-      {
-        "word": "chaotic",
+        "word": "flashy",
         "strength": 0.0019
       },
       {
@@ -17458,8 +17458,12 @@ const styleAssociationData = {
         "strength": 0.0019
       },
       {
-        "word": "flashy",
+        "word": "chaotic",
         "strength": 0.0019
+      },
+      {
+        "word": "distant",
+        "strength": 0.0018
       },
       {
         "word": "playful",
@@ -17470,7 +17474,7 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "distant",
+        "word": "hopeful",
         "strength": 0.0017
       },
       {
@@ -17478,15 +17482,11 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "hopeful",
-        "strength": 0.0016
-      },
-      {
         "word": "surgical",
         "strength": 0.0015
       },
       {
-        "word": "female perspective",
+        "word": "frantic",
         "strength": 0.0015
       },
       {
@@ -17494,31 +17494,27 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "frantic",
-        "strength": 0.0014
+        "word": "female perspective",
+        "strength": 0.0015
       },
       {
         "word": "soft",
         "strength": 0.0014
       },
       {
-        "word": "melancholic",
-        "strength": 0.0014
-      },
-      {
         "word": "transcendent",
-        "strength": 0.0014
+        "strength": 0.0013
       },
       {
-        "word": "tactile",
-        "strength": 0.0012
-      },
-      {
-        "word": "plain",
-        "strength": 0.0012
+        "word": "melancholic",
+        "strength": 0.0013
       },
       {
         "word": "social criticism",
+        "strength": 0.0012
+      },
+      {
+        "word": "tactile",
         "strength": 0.0012
       },
       {
@@ -17531,15 +17527,19 @@ const styleAssociationData = {
       },
       {
         "word": "wry",
+        "strength": 0.0012
+      },
+      {
+        "word": "plain",
         "strength": 0.0011
       },
       {
         "word": "sensational",
-        "strength": 0.001
+        "strength": 0.0011
       },
       {
-        "word": "eccentric",
-        "strength": 0.001
+        "word": "excessive",
+        "strength": 0.0011
       }
     ]
   },
@@ -17547,11 +17547,11 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "gritty",
-        "strength": 0.0065
+        "strength": 0.0066
       },
       {
         "word": "haunting",
-        "strength": 0.0053
+        "strength": 0.0054
       },
       {
         "word": "vulgar",
@@ -17559,7 +17559,7 @@ const styleAssociationData = {
       },
       {
         "word": "detached",
-        "strength": 0.0047
+        "strength": 0.0048
       },
       {
         "word": "formulaic",
@@ -17570,11 +17570,11 @@ const styleAssociationData = {
         "strength": 0.0046
       },
       {
-        "word": "objective",
-        "strength": 0.0045
+        "word": "immersive",
+        "strength": 0.0046
       },
       {
-        "word": "immersive",
+        "word": "objective",
         "strength": 0.0045
       },
       {
@@ -17591,22 +17591,26 @@ const styleAssociationData = {
       },
       {
         "word": "cozy",
-        "strength": 0.0034
+        "strength": 0.0035
       },
       {
         "word": "hyperbolic",
-        "strength": 0.0032
-      },
-      {
-        "word": "playful",
-        "strength": 0.0031
+        "strength": 0.0033
       },
       {
         "word": "male perspective",
         "strength": 0.0031
       },
       {
+        "word": "playful",
+        "strength": 0.003
+      },
+      {
         "word": "sincere",
+        "strength": 0.0029
+      },
+      {
+        "word": "frantic",
         "strength": 0.0028
       },
       {
@@ -17614,19 +17618,15 @@ const styleAssociationData = {
         "strength": 0.0028
       },
       {
-        "word": "frantic",
-        "strength": 0.0028
-      },
-      {
         "word": "lavish",
         "strength": 0.0027
       },
       {
-        "word": "absurdist",
-        "strength": 0.0025
+        "word": "wry",
+        "strength": 0.0026
       },
       {
-        "word": "wry",
+        "word": "absurdist",
         "strength": 0.0025
       },
       {
@@ -17635,18 +17635,18 @@ const styleAssociationData = {
       },
       {
         "word": "introspective",
-        "strength": 0.0025
+        "strength": 0.0024
       },
       {
         "word": "grandiose",
         "strength": 0.0024
       },
       {
-        "word": "chaotic",
+        "word": "vulnerable",
         "strength": 0.0024
       },
       {
-        "word": "vulnerable",
+        "word": "chaotic",
         "strength": 0.0023
       },
       {
@@ -17654,15 +17654,11 @@ const styleAssociationData = {
         "strength": 0.0023
       },
       {
-        "word": "flashy",
-        "strength": 0.0022
-      },
-      {
         "word": "excessive",
-        "strength": 0.0022
+        "strength": 0.0023
       },
       {
-        "word": "melancholic",
+        "word": "flashy",
         "strength": 0.0022
       },
       {
@@ -17671,11 +17667,15 @@ const styleAssociationData = {
       },
       {
         "word": "internally focused",
+        "strength": 0.0022
+      },
+      {
+        "word": "melancholic",
         "strength": 0.0021
       },
       {
         "word": "sensational",
-        "strength": 0.002
+        "strength": 0.0021
       },
       {
         "word": "tactile",
@@ -17683,10 +17683,14 @@ const styleAssociationData = {
       },
       {
         "word": "comforting",
-        "strength": 0.0018
+        "strength": 0.0019
       },
       {
         "word": "symbolic",
+        "strength": 0.0018
+      },
+      {
+        "word": "cinematic",
         "strength": 0.0018
       },
       {
@@ -17694,7 +17698,7 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "cinematic",
+        "word": "distant",
         "strength": 0.0017
       },
       {
@@ -17702,19 +17706,15 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "distant",
+        "word": "measured",
+        "strength": 0.0017
+      },
+      {
+        "word": "imagistic",
         "strength": 0.0016
       },
       {
         "word": "logical",
-        "strength": 0.0016
-      },
-      {
-        "word": "measured",
-        "strength": 0.0016
-      },
-      {
-        "word": "imagistic",
         "strength": 0.0016
       },
       {
@@ -17726,20 +17726,20 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
+        "word": "electric",
+        "strength": 0.0014
+      },
+      {
         "word": "plain",
-        "strength": 0.0015
+        "strength": 0.0014
       },
       {
         "word": "transcendent",
         "strength": 0.0014
       },
       {
-        "word": "electric",
-        "strength": 0.0014
-      },
-      {
         "word": "engineered",
-        "strength": 0.0014
+        "strength": 0.0013
       },
       {
         "word": "propulsive",
@@ -17763,31 +17763,31 @@ const styleAssociationData = {
       },
       {
         "word": "haunting",
-        "strength": 0.0058
+        "strength": 0.0059
       },
       {
         "word": "detached",
-        "strength": 0.0056
+        "strength": 0.0057
       },
       {
         "word": "vulgar",
-        "strength": 0.005
+        "strength": 0.0051
       },
       {
         "word": "immersive",
-        "strength": 0.0049
+        "strength": 0.005
+      },
+      {
+        "word": "formulaic",
+        "strength": 0.0046
       },
       {
         "word": "playful",
         "strength": 0.0045
       },
       {
-        "word": "formulaic",
-        "strength": 0.0045
-      },
-      {
         "word": "intricate",
-        "strength": 0.0044
+        "strength": 0.0043
       },
       {
         "word": "direct",
@@ -17799,22 +17799,22 @@ const styleAssociationData = {
       },
       {
         "word": "safe",
-        "strength": 0.0037
+        "strength": 0.0036
       },
       {
         "word": "hyperbolic",
-        "strength": 0.0035
+        "strength": 0.0036
       },
       {
-        "word": "chaotic",
+        "word": "frantic",
         "strength": 0.0034
       },
       {
         "word": "wry",
-        "strength": 0.0033
+        "strength": 0.0034
       },
       {
-        "word": "frantic",
+        "word": "chaotic",
         "strength": 0.0033
       },
       {
@@ -17831,15 +17831,15 @@ const styleAssociationData = {
       },
       {
         "word": "comforting",
-        "strength": 0.0029
+        "strength": 0.003
       },
       {
         "word": "cozy",
-        "strength": 0.0029
+        "strength": 0.003
       },
       {
         "word": "lavish",
-        "strength": 0.0028
+        "strength": 0.0029
       },
       {
         "word": "amusing",
@@ -17850,19 +17850,27 @@ const styleAssociationData = {
         "strength": 0.0027
       },
       {
+        "word": "excessive",
+        "strength": 0.0026
+      },
+      {
         "word": "introspective",
         "strength": 0.0026
       },
       {
-        "word": "excessive",
-        "strength": 0.0025
-      },
-      {
         "word": "grandiose",
-        "strength": 0.0025
+        "strength": 0.0026
       },
       {
         "word": "languid",
+        "strength": 0.0025
+      },
+      {
+        "word": "disturbing",
+        "strength": 0.0025
+      },
+      {
+        "word": "hopeful",
         "strength": 0.0025
       },
       {
@@ -17871,14 +17879,6 @@ const styleAssociationData = {
       },
       {
         "word": "engineered",
-        "strength": 0.0024
-      },
-      {
-        "word": "disturbing",
-        "strength": 0.0024
-      },
-      {
-        "word": "hopeful",
         "strength": 0.0024
       },
       {
@@ -17894,10 +17894,6 @@ const styleAssociationData = {
         "strength": 0.0022
       },
       {
-        "word": "plain",
-        "strength": 0.0022
-      },
-      {
         "word": "moody",
         "strength": 0.0021
       },
@@ -17910,6 +17906,10 @@ const styleAssociationData = {
         "strength": 0.0021
       },
       {
+        "word": "plain",
+        "strength": 0.0021
+      },
+      {
         "word": "internally focused",
         "strength": 0.002
       },
@@ -17919,7 +17919,7 @@ const styleAssociationData = {
       },
       {
         "word": "patriarchal",
-        "strength": 0.002
+        "strength": 0.0019
       },
       {
         "word": "logical",
@@ -17930,7 +17930,7 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "minimalist",
+        "word": "sensational",
         "strength": 0.0017
       },
       {
@@ -17938,11 +17938,11 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "sensational",
+        "word": "dense",
         "strength": 0.0017
       },
       {
-        "word": "dense",
+        "word": "minimalist",
         "strength": 0.0016
       },
       {
@@ -17955,15 +17955,15 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "matter-of-fact",
-        "strength": 0.0067
+        "strength": 0.0066
       },
       {
         "word": "plain",
-        "strength": 0.0056
+        "strength": 0.0055
       },
       {
         "word": "playful",
-        "strength": 0.0048
+        "strength": 0.0047
       },
       {
         "word": "formal",
@@ -17971,15 +17971,15 @@ const styleAssociationData = {
       },
       {
         "word": "melancholic",
-        "strength": 0.0044
+        "strength": 0.0043
       },
       {
         "word": "cold",
-        "strength": 0.0044
+        "strength": 0.0043
       },
       {
         "word": "subjective",
-        "strength": 0.0043
+        "strength": 0.0042
       },
       {
         "word": "intricate",
@@ -17991,19 +17991,19 @@ const styleAssociationData = {
       },
       {
         "word": "meditative",
-        "strength": 0.0038
+        "strength": 0.0037
       },
       {
         "word": "chaotic",
         "strength": 0.0037
       },
       {
-        "word": "visceral",
-        "strength": 0.0037
+        "word": "virtue signaling",
+        "strength": 0.0036
       },
       {
-        "word": "virtue signaling",
-        "strength": 0.0037
+        "word": "visceral",
+        "strength": 0.0036
       },
       {
         "word": "minimalist",
@@ -18011,15 +18011,15 @@ const styleAssociationData = {
       },
       {
         "word": "active voice",
-        "strength": 0.0036
+        "strength": 0.0035
       },
       {
         "word": "simple",
-        "strength": 0.0036
+        "strength": 0.0035
       },
       {
         "word": "direct",
-        "strength": 0.0034
+        "strength": 0.0033
       },
       {
         "word": "moody",
@@ -18027,7 +18027,7 @@ const styleAssociationData = {
       },
       {
         "word": "economical",
-        "strength": 0.0033
+        "strength": 0.0032
       },
       {
         "word": "functional",
@@ -18039,11 +18039,11 @@ const styleAssociationData = {
       },
       {
         "word": "witty",
-        "strength": 0.003
+        "strength": 0.0029
       },
       {
         "word": "cynical",
-        "strength": 0.0029
+        "strength": 0.0028
       },
       {
         "word": "vibrant",
@@ -18054,11 +18054,11 @@ const styleAssociationData = {
         "strength": 0.0026
       },
       {
-        "word": "detailed",
+        "word": "safe",
         "strength": 0.0025
       },
       {
-        "word": "safe",
+        "word": "detailed",
         "strength": 0.0025
       },
       {
@@ -18067,7 +18067,7 @@ const styleAssociationData = {
       },
       {
         "word": "odd",
-        "strength": 0.0024
+        "strength": 0.0023
       },
       {
         "word": "aggressive",
@@ -18075,7 +18075,7 @@ const styleAssociationData = {
       },
       {
         "word": "transcendent",
-        "strength": 0.0023
+        "strength": 0.0022
       },
       {
         "word": "female perspective",
@@ -18083,7 +18083,7 @@ const styleAssociationData = {
       },
       {
         "word": "clarity",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
         "word": "restrained",
@@ -18091,19 +18091,19 @@ const styleAssociationData = {
       },
       {
         "word": "poised",
-        "strength": 0.0021
+        "strength": 0.002
       },
       {
         "word": "technical",
-        "strength": 0.0021
-      },
-      {
-        "word": "calm",
-        "strength": 0.0021
+        "strength": 0.002
       },
       {
         "word": "tactile",
-        "strength": 0.0021
+        "strength": 0.002
+      },
+      {
+        "word": "calm",
+        "strength": 0.002
       },
       {
         "word": "grounding",
@@ -18114,20 +18114,20 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
+        "word": "introspective",
+        "strength": 0.0017
+      },
+      {
         "word": "engineered",
-        "strength": 0.0018
+        "strength": 0.0017
       },
       {
         "word": "sparse",
-        "strength": 0.0018
+        "strength": 0.0017
       },
       {
         "word": "modern",
-        "strength": 0.0018
-      },
-      {
-        "word": "introspective",
-        "strength": 0.0018
+        "strength": 0.0017
       },
       {
         "word": "absurdist",
@@ -18147,7 +18147,7 @@ const styleAssociationData = {
       },
       {
         "word": "gravitas",
-        "strength": 0.0015
+        "strength": 0.0014
       },
       {
         "word": "cool",
@@ -18159,27 +18159,27 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "matter-of-fact",
-        "strength": 0.0043
+        "strength": 0.0042
       },
       {
         "word": "playful",
-        "strength": 0.0031
+        "strength": 0.003
       },
       {
         "word": "cold",
-        "strength": 0.0029
-      },
-      {
-        "word": "plain",
-        "strength": 0.0029
+        "strength": 0.0028
       },
       {
         "word": "chaotic",
-        "strength": 0.0029
+        "strength": 0.0028
+      },
+      {
+        "word": "plain",
+        "strength": 0.0028
       },
       {
         "word": "formal",
-        "strength": 0.0027
+        "strength": 0.0026
       },
       {
         "word": "female perspective",
@@ -18187,11 +18187,11 @@ const styleAssociationData = {
       },
       {
         "word": "active voice",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
         "word": "subversive",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
         "word": "witty",
@@ -18206,19 +18206,19 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
-        "word": "vibrant",
-        "strength": 0.002
-      },
-      {
-        "word": "simple",
-        "strength": 0.002
-      },
-      {
         "word": "absurdist",
         "strength": 0.0019
       },
       {
-        "word": "odd",
+        "word": "vibrant",
+        "strength": 0.0019
+      },
+      {
+        "word": "simple",
+        "strength": 0.0019
+      },
+      {
+        "word": "crisp",
         "strength": 0.0018
       },
       {
@@ -18226,7 +18226,7 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "crisp",
+        "word": "odd",
         "strength": 0.0018
       },
       {
@@ -18238,23 +18238,27 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
+        "word": "verbose",
+        "strength": 0.0017
+      },
+      {
         "word": "functional",
         "strength": 0.0017
       },
       {
         "word": "virtue signaling",
-        "strength": 0.0017
-      },
-      {
-        "word": "verbose",
-        "strength": 0.0017
+        "strength": 0.0016
       },
       {
         "word": "economical",
-        "strength": 0.0017
+        "strength": 0.0016
       },
       {
         "word": "transcendent",
+        "strength": 0.0016
+      },
+      {
+        "word": "dry",
         "strength": 0.0016
       },
       {
@@ -18263,30 +18267,22 @@ const styleAssociationData = {
       },
       {
         "word": "old-fashioned",
-        "strength": 0.0016
-      },
-      {
-        "word": "dry",
-        "strength": 0.0016
+        "strength": 0.0015
       },
       {
         "word": "intricate",
-        "strength": 0.0016
-      },
-      {
-        "word": "clever",
         "strength": 0.0015
       },
       {
         "word": "surgical",
+        "strength": 0.0015
+      },
+      {
+        "word": "clever",
         "strength": 0.0014
       },
       {
         "word": "whimsical",
-        "strength": 0.0014
-      },
-      {
-        "word": "meditative",
         "strength": 0.0014
       },
       {
@@ -18302,7 +18298,7 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "visceral",
+        "word": "meditative",
         "strength": 0.0013
       },
       {
@@ -18311,18 +18307,10 @@ const styleAssociationData = {
       },
       {
         "word": "direct",
-        "strength": 0.0013
-      },
-      {
-        "word": "subjective",
         "strength": 0.0012
       },
       {
-        "word": "clarity",
-        "strength": 0.0012
-      },
-      {
-        "word": "minimalist",
+        "word": "visceral",
         "strength": 0.0012
       },
       {
@@ -18330,19 +18318,31 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
+        "word": "symbolic",
+        "strength": 0.0012
+      },
+      {
         "word": "moralising",
         "strength": 0.0012
       },
       {
-        "word": "deliberate",
+        "word": "clarity",
         "strength": 0.0012
       },
       {
-        "word": "symbolic",
-        "strength": 0.0011
+        "word": "subjective",
+        "strength": 0.0012
+      },
+      {
+        "word": "minimalist",
+        "strength": 0.0012
       },
       {
         "word": "bizarre",
+        "strength": 0.0011
+      },
+      {
+        "word": "deliberate",
         "strength": 0.0011
       },
       {
@@ -18350,11 +18350,11 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "friendly",
+        "word": "concrete",
         "strength": 0.0011
       },
       {
-        "word": "concrete",
+        "word": "cool",
         "strength": 0.0011
       }
     ]
@@ -18363,31 +18363,31 @@ const styleAssociationData = {
     "mostFavored": [
       {
         "word": "matter-of-fact",
-        "strength": 0.0048
+        "strength": 0.0047
       },
       {
         "word": "chaotic",
-        "strength": 0.0035
-      },
-      {
-        "word": "formal",
         "strength": 0.0034
       },
       {
-        "word": "plain",
+        "word": "formal",
         "strength": 0.0033
+      },
+      {
+        "word": "plain",
+        "strength": 0.0032
       },
       {
         "word": "cold",
-        "strength": 0.0033
+        "strength": 0.0032
       },
       {
         "word": "playful",
-        "strength": 0.0031
+        "strength": 0.003
       },
       {
         "word": "active voice",
-        "strength": 0.0027
+        "strength": 0.0026
       },
       {
         "word": "virtue signaling",
@@ -18395,15 +18395,15 @@ const styleAssociationData = {
       },
       {
         "word": "subversive",
-        "strength": 0.0024
+        "strength": 0.0023
       },
       {
         "word": "vibrant",
-        "strength": 0.0023
+        "strength": 0.0022
       },
       {
         "word": "simple",
-        "strength": 0.0023
+        "strength": 0.0022
       },
       {
         "word": "economical",
@@ -18415,15 +18415,11 @@ const styleAssociationData = {
       },
       {
         "word": "functional",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
         "word": "direct",
         "strength": 0.0021
-      },
-      {
-        "word": "visceral",
-        "strength": 0.002
       },
       {
         "word": "old-fashioned",
@@ -18434,27 +18430,31 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
-        "word": "subjective",
+        "word": "visceral",
         "strength": 0.002
+      },
+      {
+        "word": "subjective",
+        "strength": 0.0019
       },
       {
         "word": "meditative",
         "strength": 0.0019
       },
       {
-        "word": "odd",
-        "strength": 0.0019
-      },
-      {
         "word": "melancholic",
-        "strength": 0.0019
+        "strength": 0.0018
       },
       {
-        "word": "minimalist",
-        "strength": 0.0019
+        "word": "odd",
+        "strength": 0.0018
       },
       {
         "word": "dry",
+        "strength": 0.0018
+      },
+      {
+        "word": "minimalist",
         "strength": 0.0018
       },
       {
@@ -18462,19 +18462,15 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "detailed",
-        "strength": 0.0018
-      },
-      {
         "word": "transcendent",
-        "strength": 0.0018
-      },
-      {
-        "word": "sparse",
         "strength": 0.0017
       },
       {
-        "word": "aggressive",
+        "word": "detailed",
+        "strength": 0.0017
+      },
+      {
+        "word": "sparse",
         "strength": 0.0017
       },
       {
@@ -18482,8 +18478,12 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "clarity",
+        "word": "aggressive",
         "strength": 0.0016
+      },
+      {
+        "word": "clarity",
+        "strength": 0.0015
       },
       {
         "word": "deliberate",
@@ -18510,20 +18510,20 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "calm",
-        "strength": 0.0014
-      },
-      {
         "word": "surgical",
         "strength": 0.0013
       },
       {
-        "word": "engineered",
+        "word": "calm",
         "strength": 0.0013
       },
       {
         "word": "concrete",
-        "strength": 0.0013
+        "strength": 0.0012
+      },
+      {
+        "word": "engineered",
+        "strength": 0.0012
       },
       {
         "word": "feminist",
@@ -18534,23 +18534,23 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "quirky",
-        "strength": 0.0012
+        "word": "modern",
+        "strength": 0.0011
       },
       {
-        "word": "modern",
-        "strength": 0.0012
+        "word": "quirky",
+        "strength": 0.0011
       },
       {
         "word": "clever",
-        "strength": 0.0012
+        "strength": 0.0011
       },
       {
         "word": "technical",
         "strength": 0.0011
       },
       {
-        "word": "restrained",
+        "word": "male perspective",
         "strength": 0.001
       },
       {
@@ -18558,7 +18558,7 @@ const styleAssociationData = {
         "strength": 0.001
       },
       {
-        "word": "crisp",
+        "word": "restrained",
         "strength": 0.001
       }
     ]
@@ -18566,19 +18566,15 @@ const styleAssociationData = {
   "minimax/minimax-m2.5": {
     "mostFavored": [
       {
-        "word": "matter-of-fact",
-        "strength": 0.0031
+        "word": "simple",
+        "strength": 0.003
       },
       {
-        "word": "simple",
-        "strength": 0.0031
+        "word": "matter-of-fact",
+        "strength": 0.003
       },
       {
         "word": "plain",
-        "strength": 0.0028
-      },
-      {
-        "word": "calm",
         "strength": 0.0027
       },
       {
@@ -18586,23 +18582,27 @@ const styleAssociationData = {
         "strength": 0.0027
       },
       {
+        "word": "calm",
+        "strength": 0.0026
+      },
+      {
         "word": "chaotic",
-        "strength": 0.0027
+        "strength": 0.0026
       },
       {
         "word": "biting",
-        "strength": 0.0025
-      },
-      {
-        "word": "cold",
-        "strength": 0.0025
-      },
-      {
-        "word": "formal",
         "strength": 0.0024
       },
       {
         "word": "uplifting",
+        "strength": 0.0024
+      },
+      {
+        "word": "cold",
+        "strength": 0.0024
+      },
+      {
+        "word": "formal",
         "strength": 0.0024
       },
       {
@@ -18611,23 +18611,23 @@ const styleAssociationData = {
       },
       {
         "word": "playful",
-        "strength": 0.0022
+        "strength": 0.0021
       },
       {
         "word": "economical",
         "strength": 0.002
       },
       {
-        "word": "visceral",
-        "strength": 0.0019
-      },
-      {
         "word": "provocative",
         "strength": 0.0019
       },
       {
-        "word": "edgy",
+        "word": "visceral",
         "strength": 0.0019
+      },
+      {
+        "word": "edgy",
+        "strength": 0.0018
       },
       {
         "word": "action-oriented",
@@ -18639,15 +18639,15 @@ const styleAssociationData = {
       },
       {
         "word": "female perspective",
-        "strength": 0.0018
+        "strength": 0.0017
       },
       {
         "word": "sparse",
-        "strength": 0.0018
+        "strength": 0.0017
       },
       {
         "word": "natural",
-        "strength": 0.0018
+        "strength": 0.0017
       },
       {
         "word": "surreal",
@@ -18655,10 +18655,6 @@ const styleAssociationData = {
       },
       {
         "word": "old-fashioned",
-        "strength": 0.0017
-      },
-      {
-        "word": "clarity",
         "strength": 0.0016
       },
       {
@@ -18666,11 +18662,11 @@ const styleAssociationData = {
         "strength": 0.0016
       },
       {
-        "word": "engaging",
+        "word": "clarity",
         "strength": 0.0016
       },
       {
-        "word": "functional",
+        "word": "engaging",
         "strength": 0.0016
       },
       {
@@ -18678,7 +18674,11 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "subversive",
+        "word": "soothing",
+        "strength": 0.0015
+      },
+      {
+        "word": "functional",
         "strength": 0.0015
       },
       {
@@ -18690,7 +18690,7 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
-        "word": "soothing",
+        "word": "subversive",
         "strength": 0.0015
       },
       {
@@ -18710,15 +18710,7 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
-        "word": "cynical",
-        "strength": 0.0013
-      },
-      {
         "word": "dry",
-        "strength": 0.0013
-      },
-      {
-        "word": "crisp",
         "strength": 0.0012
       },
       {
@@ -18726,27 +18718,15 @@ const styleAssociationData = {
         "strength": 0.0012
       },
       {
-        "word": "vibrant",
+        "word": "cynical",
+        "strength": 0.0012
+      },
+      {
+        "word": "crisp",
         "strength": 0.0012
       },
       {
         "word": "concrete",
-        "strength": 0.0012
-      },
-      {
-        "word": "active voice",
-        "strength": 0.0012
-      },
-      {
-        "word": "introspective",
-        "strength": 0.0012
-      },
-      {
-        "word": "sharp",
-        "strength": 0.0011
-      },
-      {
-        "word": "safe",
         "strength": 0.0011
       },
       {
@@ -18754,16 +18734,36 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
-        "word": "engineered",
+        "word": "introspective",
         "strength": 0.0011
       },
       {
-        "word": "virtue signaling",
+        "word": "vibrant",
+        "strength": 0.0011
+      },
+      {
+        "word": "safe",
+        "strength": 0.0011
+      },
+      {
+        "word": "active voice",
+        "strength": 0.0011
+      },
+      {
+        "word": "sharp",
+        "strength": 0.0011
+      },
+      {
+        "word": "engineered",
         "strength": 0.001
       },
       {
         "word": "intricate",
-        "strength": 0.001
+        "strength": 0.0009
+      },
+      {
+        "word": "virtue signaling",
+        "strength": 0.0009
       }
     ]
   },
@@ -18791,10 +18791,6 @@ const styleAssociationData = {
       },
       {
         "word": "safe",
-        "strength": 0.0033
-      },
-      {
-        "word": "dry",
         "strength": 0.0032
       },
       {
@@ -18802,43 +18798,47 @@ const styleAssociationData = {
         "strength": 0.0032
       },
       {
+        "word": "dry",
+        "strength": 0.0031
+      },
+      {
         "word": "playful",
-        "strength": 0.003
+        "strength": 0.0029
       },
       {
         "word": "vulgar",
-        "strength": 0.0027
-      },
-      {
-        "word": "subjective",
-        "strength": 0.0027
+        "strength": 0.0028
       },
       {
         "word": "vulnerable",
         "strength": 0.0027
       },
       {
-        "word": "melancholic",
-        "strength": 0.0026
-      },
-      {
-        "word": "virtue signaling",
-        "strength": 0.0026
-      },
-      {
-        "word": "chaotic",
+        "word": "subjective",
         "strength": 0.0026
       },
       {
         "word": "gritty",
-        "strength": 0.0025
+        "strength": 0.0026
+      },
+      {
+        "word": "melancholic",
+        "strength": 0.0026
       },
       {
         "word": "detached",
-        "strength": 0.0025
+        "strength": 0.0026
       },
       {
         "word": "formulaic",
+        "strength": 0.0025
+      },
+      {
+        "word": "virtue signaling",
+        "strength": 0.0025
+      },
+      {
+        "word": "chaotic",
         "strength": 0.0025
       },
       {
@@ -18847,11 +18847,11 @@ const styleAssociationData = {
       },
       {
         "word": "witty",
-        "strength": 0.0024
+        "strength": 0.0023
       },
       {
         "word": "technical",
-        "strength": 0.0023
+        "strength": 0.0022
       },
       {
         "word": "detailed",
@@ -18863,14 +18863,18 @@ const styleAssociationData = {
       },
       {
         "word": "immersive",
-        "strength": 0.002
+        "strength": 0.0021
       },
       {
         "word": "profane",
-        "strength": 0.0019
+        "strength": 0.002
       },
       {
         "word": "patriarchal",
+        "strength": 0.0019
+      },
+      {
+        "word": "hyperbolic",
         "strength": 0.0019
       },
       {
@@ -18879,14 +18883,10 @@ const styleAssociationData = {
       },
       {
         "word": "visceral",
-        "strength": 0.0018
+        "strength": 0.0017
       },
       {
-        "word": "hyperbolic",
-        "strength": 0.0018
-      },
-      {
-        "word": "subversive",
+        "word": "cozy",
         "strength": 0.0016
       },
       {
@@ -18894,23 +18894,11 @@ const styleAssociationData = {
         "strength": 0.0015
       },
       {
+        "word": "subversive",
+        "strength": 0.0015
+      },
+      {
         "word": "grounding",
-        "strength": 0.0015
-      },
-      {
-        "word": "formal",
-        "strength": 0.0015
-      },
-      {
-        "word": "poised",
-        "strength": 0.0015
-      },
-      {
-        "word": "cozy",
-        "strength": 0.0015
-      },
-      {
-        "word": "active voice",
         "strength": 0.0015
       },
       {
@@ -18918,11 +18906,23 @@ const styleAssociationData = {
         "strength": 0.0014
       },
       {
-        "word": "transcendent",
+        "word": "poised",
+        "strength": 0.0014
+      },
+      {
+        "word": "formal",
+        "strength": 0.0014
+      },
+      {
+        "word": "active voice",
         "strength": 0.0014
       },
       {
         "word": "absurdist",
+        "strength": 0.0013
+      },
+      {
+        "word": "transcendent",
         "strength": 0.0013
       },
       {
@@ -18938,23 +18938,19 @@ const styleAssociationData = {
         "strength": 0.0013
       },
       {
+        "word": "measured",
+        "strength": 0.0013
+      },
+      {
         "word": "male perspective",
         "strength": 0.0013
       },
       {
-        "word": "measured",
+        "word": "haunting",
         "strength": 0.0012
       },
       {
         "word": "cynical",
-        "strength": 0.0012
-      },
-      {
-        "word": "engineered",
-        "strength": 0.0011
-      },
-      {
-        "word": "opaque",
         "strength": 0.0011
       },
       {
@@ -18962,11 +18958,15 @@ const styleAssociationData = {
         "strength": 0.0011
       },
       {
+        "word": "opaque",
+        "strength": 0.0011
+      },
+      {
         "word": "serene",
         "strength": 0.0011
       },
       {
-        "word": "haunting",
+        "word": "engineered",
         "strength": 0.0011
       }
     ]
@@ -18983,7 +18983,7 @@ const styleAssociationData = {
       },
       {
         "word": "playful",
-        "strength": 0.0058
+        "strength": 0.0057
       },
       {
         "word": "grounding",
@@ -18991,7 +18991,7 @@ const styleAssociationData = {
       },
       {
         "word": "chaotic",
-        "strength": 0.005
+        "strength": 0.0049
       },
       {
         "word": "safe",
@@ -19002,43 +19002,39 @@ const styleAssociationData = {
         "strength": 0.0048
       },
       {
-        "word": "minimalist",
-        "strength": 0.0045
+        "word": "intricate",
+        "strength": 0.0044
       },
       {
-        "word": "intricate",
-        "strength": 0.0045
+        "word": "minimalist",
+        "strength": 0.0044
       },
       {
         "word": "direct",
         "strength": 0.004
       },
       {
+        "word": "immersive",
+        "strength": 0.0033
+      },
+      {
         "word": "economical",
         "strength": 0.0033
-      },
-      {
-        "word": "cold",
-        "strength": 0.0033
-      },
-      {
-        "word": "immersive",
-        "strength": 0.0032
       },
       {
         "word": "moody",
         "strength": 0.0032
       },
       {
-        "word": "plain",
+        "word": "cold",
         "strength": 0.0032
       },
       {
-        "word": "subversive",
-        "strength": 0.003
+        "word": "plain",
+        "strength": 0.0031
       },
       {
-        "word": "calm",
+        "word": "gritty",
         "strength": 0.003
       },
       {
@@ -19047,15 +19043,15 @@ const styleAssociationData = {
       },
       {
         "word": "logical",
-        "strength": 0.003
-      },
-      {
-        "word": "gritty",
         "strength": 0.0029
       },
       {
-        "word": "matter-of-fact",
-        "strength": 0.0027
+        "word": "subversive",
+        "strength": 0.0029
+      },
+      {
+        "word": "calm",
+        "strength": 0.0029
       },
       {
         "word": "detailed",
@@ -19067,11 +19063,15 @@ const styleAssociationData = {
       },
       {
         "word": "formulaic",
+        "strength": 0.0027
+      },
+      {
+        "word": "matter-of-fact",
         "strength": 0.0026
       },
       {
         "word": "vulnerable",
-        "strength": 0.0025
+        "strength": 0.0026
       },
       {
         "word": "introspective",
@@ -19079,10 +19079,6 @@ const styleAssociationData = {
       },
       {
         "word": "melancholic",
-        "strength": 0.0024
-      },
-      {
-        "word": "simple",
         "strength": 0.0024
       },
       {
@@ -19094,19 +19090,19 @@ const styleAssociationData = {
         "strength": 0.0023
       },
       {
-        "word": "subjective",
-        "strength": 0.0022
-      },
-      {
-        "word": "visceral",
-        "strength": 0.0021
+        "word": "simple",
+        "strength": 0.0023
       },
       {
         "word": "detached",
+        "strength": 0.0022
+      },
+      {
+        "word": "subjective",
         "strength": 0.0021
       },
       {
-        "word": "poised",
+        "word": "visceral",
         "strength": 0.002
       },
       {
@@ -19114,15 +19110,19 @@ const styleAssociationData = {
         "strength": 0.002
       },
       {
-        "word": "functional",
+        "word": "poised",
         "strength": 0.002
       },
       {
-        "word": "edgy",
-        "strength": 0.002
+        "word": "functional",
+        "strength": 0.0019
       },
       {
         "word": "languid",
+        "strength": 0.0019
+      },
+      {
+        "word": "edgy",
         "strength": 0.0019
       },
       {
@@ -19130,15 +19130,15 @@ const styleAssociationData = {
         "strength": 0.0018
       },
       {
-        "word": "patriarchal",
-        "strength": 0.0018
-      },
-      {
         "word": "sincere",
         "strength": 0.0018
       },
       {
-        "word": "witty",
+        "word": "patriarchal",
+        "strength": 0.0018
+      },
+      {
+        "word": "amusing",
         "strength": 0.0017
       },
       {
@@ -19146,32 +19146,236 @@ const styleAssociationData = {
         "strength": 0.0017
       },
       {
-        "word": "amusing",
-        "strength": 0.0017
-      },
-      {
         "word": "vulgar",
         "strength": 0.0017
       },
       {
-        "word": "clarity",
+        "word": "witty",
         "strength": 0.0017
-      },
-      {
-        "word": "virtue signaling",
-        "strength": 0.0016
       },
       {
         "word": "technical",
         "strength": 0.0016
       },
       {
-        "word": "biting",
+        "word": "clarity",
         "strength": 0.0016
       },
       {
-        "word": "formal",
+        "word": "virtue signaling",
         "strength": 0.0016
+      },
+      {
+        "word": "biting",
+        "strength": 0.0015
+      },
+      {
+        "word": "formal",
+        "strength": 0.0015
+      }
+    ]
+  },
+  "claude-sonnet-4-6": {
+    "mostFavored": [
+      {
+        "word": "matter-of-fact",
+        "strength": 0.0116
+      },
+      {
+        "word": "cold",
+        "strength": 0.008
+      },
+      {
+        "word": "calm",
+        "strength": 0.0079
+      },
+      {
+        "word": "formal",
+        "strength": 0.0078
+      },
+      {
+        "word": "plain",
+        "strength": 0.0077
+      },
+      {
+        "word": "visceral",
+        "strength": 0.0073
+      },
+      {
+        "word": "biting",
+        "strength": 0.007
+      },
+      {
+        "word": "meditative",
+        "strength": 0.0068
+      },
+      {
+        "word": "simple",
+        "strength": 0.0067
+      },
+      {
+        "word": "subversive",
+        "strength": 0.0065
+      },
+      {
+        "word": "playful",
+        "strength": 0.0063
+      },
+      {
+        "word": "subjective",
+        "strength": 0.0061
+      },
+      {
+        "word": "chaotic",
+        "strength": 0.006
+      },
+      {
+        "word": "minimalist",
+        "strength": 0.0056
+      },
+      {
+        "word": "poised",
+        "strength": 0.0055
+      },
+      {
+        "word": "virtue signaling",
+        "strength": 0.0054
+      },
+      {
+        "word": "active voice",
+        "strength": 0.0053
+      },
+      {
+        "word": "economical",
+        "strength": 0.0053
+      },
+      {
+        "word": "clarity",
+        "strength": 0.0053
+      },
+      {
+        "word": "aggressive",
+        "strength": 0.005
+      },
+      {
+        "word": "cynical",
+        "strength": 0.005
+      },
+      {
+        "word": "vibrant",
+        "strength": 0.0048
+      },
+      {
+        "word": "female perspective",
+        "strength": 0.0047
+      },
+      {
+        "word": "engineered",
+        "strength": 0.0045
+      },
+      {
+        "word": "natural",
+        "strength": 0.0044
+      },
+      {
+        "word": "detailed",
+        "strength": 0.0044
+      },
+      {
+        "word": "functional",
+        "strength": 0.0043
+      },
+      {
+        "word": "quirky",
+        "strength": 0.004
+      },
+      {
+        "word": "odd",
+        "strength": 0.0039
+      },
+      {
+        "word": "sharp",
+        "strength": 0.0039
+      },
+      {
+        "word": "deliberate",
+        "strength": 0.0039
+      },
+      {
+        "word": "witty",
+        "strength": 0.0038
+      },
+      {
+        "word": "technical",
+        "strength": 0.0037
+      },
+      {
+        "word": "melancholic",
+        "strength": 0.0037
+      },
+      {
+        "word": "elegant",
+        "strength": 0.0035
+      },
+      {
+        "word": "clever",
+        "strength": 0.0035
+      },
+      {
+        "word": "friendly",
+        "strength": 0.0034
+      },
+      {
+        "word": "sophisticated",
+        "strength": 0.0033
+      },
+      {
+        "word": "feminist",
+        "strength": 0.0032
+      },
+      {
+        "word": "sparse",
+        "strength": 0.0032
+      },
+      {
+        "word": "restrained",
+        "strength": 0.0032
+      },
+      {
+        "word": "meticulous",
+        "strength": 0.0031
+      },
+      {
+        "word": "whimsical",
+        "strength": 0.0031
+      },
+      {
+        "word": "grounding",
+        "strength": 0.0031
+      },
+      {
+        "word": "intricate",
+        "strength": 0.003
+      },
+      {
+        "word": "action-oriented",
+        "strength": 0.003
+      },
+      {
+        "word": "surreal",
+        "strength": 0.0028
+      },
+      {
+        "word": "concrete",
+        "strength": 0.0027
+      },
+      {
+        "word": "old-fashioned",
+        "strength": 0.0027
+      },
+      {
+        "word": "crisp",
+        "strength": 0.0027
       }
     ]
   }
