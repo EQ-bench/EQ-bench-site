@@ -1,0 +1,1154 @@
+{
+    "judge_models": [
+        "qwen/qwen3.5-27b"
+    ],
+    "judge_model_name_for_charts": "qwen/qwen3.5-27b",
+    "ensemble_method": "average",
+    "book_club_mode": false,
+    "start_time": "2026-03-06T20:18:58.077653",
+    "status": "completed",
+    "samples_file": "data/judgemark_v3_samples_3_iter.json",
+    "prompts_file": "data/judge_prompts_v3_noref_nocot_noanchor_x96.json",
+    "scoring_range": {
+        "min": 0,
+        "max": 10
+    },
+    "errors": [
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "16",
+            "judge_model": "qwen/qwen3.5-27b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        }
+    ],
+    "end_time": "2026-03-06T21:10:38.309211",
+    "raw_score_distribution": {
+        "count": 1631,
+        "min": 1.0,
+        "max": 9.58,
+        "mean": 7.74,
+        "median": 8.04,
+        "stdev": 1.115,
+        "p10": 6.14,
+        "p25": 7.14,
+        "p75": 8.52,
+        "p90": 8.89
+    },
+    "calibration_config": {
+        "method": "piecewise_landmark",
+        "in_landmarks": [
+            1.0,
+            7.14,
+            8.04,
+            8.52,
+            9.58
+        ],
+        "out_landmarks": [
+            0,
+            3,
+            5,
+            7,
+            10
+        ]
+    },
+    "calibrated_score_distribution": {
+        "count": 1631,
+        "min": 0.0,
+        "max": 10.0,
+        "mean": 5.167,
+        "median": 5.0,
+        "stdev": 2.134,
+        "p10": 2.511,
+        "p25": 3.0,
+        "p75": 7.0,
+        "p90": 8.047
+    },
+    "raw_model_stats": {
+        "claude-3.5-sonnet": {
+            "count": 96,
+            "mean": 7.771979166666666,
+            "median": 8.015,
+            "stdev": 1.0243977638148045,
+            "ci95": 0.20492223155787506,
+            "min": 1.53,
+            "max": 9.21,
+            "length_correlation": 0.7255405181013024,
+            "length_correlation_p": 6.216392725147349e-17
+        },
+        "gemma-3-27b-it": {
+            "count": 96,
+            "mean": 7.7496875,
+            "median": 7.855,
+            "stdev": 0.6529261312696382,
+            "ci95": 0.13061242867610667,
+            "min": 4.97,
+            "max": 8.99,
+            "length_correlation": -0.010575513217103049,
+            "length_correlation_p": 0.9185471777161087
+        },
+        "gemma-3-4b-it": {
+            "count": 96,
+            "mean": 6.83,
+            "median": 6.72,
+            "stdev": 0.8157179595140003,
+            "ci95": 0.16317757661140803,
+            "min": 4.12,
+            "max": 8.25,
+            "length_correlation": 0.18880347926671326,
+            "length_correlation_p": 0.06543679557953455
+        },
+        "gemma-3-12b-it": {
+            "count": 96,
+            "mean": 7.294583333333334,
+            "median": 7.56,
+            "stdev": 0.7548187885239555,
+            "ci95": 0.1509952052122054,
+            "min": 5.34,
+            "max": 8.68,
+            "length_correlation": -0.23873327106943867,
+            "length_correlation_p": 0.019158324032329886
+        },
+        "chatgpt-4o-latest": {
+            "count": 96,
+            "mean": 8.429791666666667,
+            "median": 8.46,
+            "stdev": 0.4487924832062768,
+            "ci95": 0.08977719438057728,
+            "min": 7.09,
+            "max": 9.26,
+            "length_correlation": 0.12156857348284876,
+            "length_correlation_p": 0.23803886560857968
+        },
+        "reka-flash-3": {
+            "count": 96,
+            "mean": 6.818645833333333,
+            "median": 6.72,
+            "stdev": 1.0585686659891436,
+            "ci95": 0.21175783563205314,
+            "min": 4.18,
+            "max": 8.99,
+            "length_correlation": 0.17909749023596142,
+            "length_correlation_p": 0.0808197655198717
+        },
+        "quasar-alpha": {
+            "count": 96,
+            "mean": 8.205625,
+            "median": 8.225,
+            "stdev": 0.4715055673054137,
+            "ci95": 0.09432075748034825,
+            "min": 6.72,
+            "max": 9.05,
+            "length_correlation": 0.09991251516433838,
+            "length_correlation_p": 0.33277410221234266
+        },
+        "grok-3-beta": {
+            "count": 96,
+            "mean": 7.993854166666667,
+            "median": 8.04,
+            "stdev": 0.5147065996972741,
+            "ci95": 0.1029627638142712,
+            "min": 6.51,
+            "max": 8.99,
+            "length_correlation": 0.12604918351712108,
+            "length_correlation_p": 0.2210525241472612
+        },
+        "gpt-4.1": {
+            "count": 95,
+            "mean": 8.292736842105263,
+            "median": 8.41,
+            "stdev": 0.5456587705159567,
+            "ci95": 0.10972748089025541,
+            "min": 5.45,
+            "max": 9.1,
+            "length_correlation": -0.4111561345832133,
+            "length_correlation_p": 3.488302875437029e-05
+        },
+        "gpt-4.1-nano": {
+            "count": 96,
+            "mean": 5.90375,
+            "median": 6.03,
+            "stdev": 1.1390182753489724,
+            "ci95": 0.22785110922197463,
+            "min": 1.0,
+            "max": 7.99,
+            "length_correlation": 0.6743321519350378,
+            "length_correlation_p": 5.024054032216653e-14
+        },
+        "glm-4-32b": {
+            "count": 96,
+            "mean": 6.7238541666666665,
+            "median": 6.98,
+            "stdev": 1.2395121024794322,
+            "ci95": 0.24795406145478346,
+            "min": 2.91,
+            "max": 8.84,
+            "length_correlation": 0.08012491871630846,
+            "length_correlation_p": 0.4377338688418911
+        },
+        "qwen3-235b-a22b": {
+            "count": 96,
+            "mean": 8.056041666666667,
+            "median": 8.225,
+            "stdev": 0.8159817840674046,
+            "ci95": 0.16323035251363377,
+            "min": 4.49,
+            "max": 9.36,
+            "length_correlation": 0.5639917625355717,
+            "length_correlation_p": 2.1827296556197893e-09
+        },
+        "claude-sonnet-4": {
+            "count": 96,
+            "mean": 8.341666666666667,
+            "median": 8.36,
+            "stdev": 0.38987087381030927,
+            "ci95": 0.0779904176900085,
+            "min": 6.93,
+            "max": 9.05,
+            "length_correlation": -0.031808311886731985,
+            "length_correlation_p": 0.7583472640485869
+        },
+        "claude-opus-4": {
+            "count": 96,
+            "mean": 8.577916666666667,
+            "median": 8.68,
+            "stdev": 0.3827130756135909,
+            "ci95": 0.07655855984013367,
+            "min": 7.3,
+            "max": 9.36,
+            "length_correlation": 0.051318627825655425,
+            "length_correlation_p": 0.6195003968041889
+        },
+        "gemini-2.5-pro": {
+            "count": 96,
+            "mean": 8.684479166666666,
+            "median": 8.73,
+            "stdev": 0.37066901050786166,
+            "ci95": 0.07414924503520544,
+            "min": 7.35,
+            "max": 9.31,
+            "length_correlation": 0.0248559513079758,
+            "length_correlation_p": 0.8100321955561783
+        },
+        "mistral-small-3.2-24b": {
+            "count": 96,
+            "mean": 6.9002083333333335,
+            "median": 6.795,
+            "stdev": 0.7699145259007537,
+            "ci95": 0.15401498161111637,
+            "min": 5.39,
+            "max": 8.99,
+            "length_correlation": -0.008195286745310552,
+            "length_correlation_p": 0.936836519686125
+        },
+        "kimi-k2": {
+            "count": 96,
+            "mean": 9.008645833333333,
+            "median": 9.15,
+            "stdev": 0.4091264629907216,
+            "ci95": 0.08184233775874962,
+            "min": 7.56,
+            "max": 9.58,
+            "length_correlation": 0.15850094817572044,
+            "length_correlation_p": 0.12297395778634408
+        }
+    },
+    "calibrated_model_stats": {
+        "claude-3.5-sonnet": {
+            "count": 96,
+            "mean": 4.967735968560289,
+            "median": 4.9444444444444455,
+            "stdev": 1.7105983867074572,
+            "ci95": 0.34219094485134516,
+            "min": 0.25895765472312704,
+            "max": 8.952830188679247,
+            "length_correlation": 0.4672132752210322,
+            "length_correlation_p": 1.5957394905893993e-06
+        },
+        "gemma-3-27b-it": {
+            "count": 96,
+            "mean": 4.6694666931139714,
+            "median": 4.58888888888889,
+            "stdev": 1.4768951870932776,
+            "ci95": 0.29544056830931753,
+            "min": 1.9397394136807815,
+            "max": 8.330188679245284,
+            "length_correlation": 0.02845479156270474,
+            "length_correlation_p": 0.7831606852038836
+        },
+        "gemma-3-4b-it": {
+            "count": 96,
+            "mean": 3.209163688321873,
+            "median": 2.794788273615635,
+            "stdev": 0.9509862044804201,
+            "ci95": 0.1902368611945861,
+            "min": 1.52442996742671,
+            "max": 5.875000000000003,
+            "length_correlation": 0.16286140154193218,
+            "length_correlation_p": 0.11287303066454661
+        },
+        "gemma-3-12b-it": {
+            "count": 96,
+            "mean": 3.844083045386362,
+            "median": 3.9333333333333336,
+            "stdev": 1.1511920240596545,
+            "ci95": 0.23028636615081421,
+            "min": 2.1205211726384365,
+            "max": 7.452830188679245,
+            "length_correlation": -0.22137164738778103,
+            "length_correlation_p": 0.030193211636016765
+        },
+        "chatgpt-4o-latest": {
+            "count": 96,
+            "mean": 6.56312340377222,
+            "median": 6.750000000000005,
+            "stdev": 1.4291830646387533,
+            "ci95": 0.28589615602035107,
+            "min": 2.97557003257329,
+            "max": 9.09433962264151,
+            "length_correlation": 0.1359272774312893,
+            "length_correlation_p": 0.18666755312351033
+        },
+        "reka-flash-3": {
+            "count": 96,
+            "mean": 3.4549219726302427,
+            "median": 2.794788273615635,
+            "stdev": 1.5108513012813174,
+            "ci95": 0.30223320583766833,
+            "min": 1.5537459283387622,
+            "max": 8.330188679245284,
+            "length_correlation": 0.20926846789736597,
+            "length_correlation_p": 0.04073073549334647
+        },
+        "quasar-alpha": {
+            "count": 96,
+            "mean": 5.84826504658083,
+            "median": 5.770833333333335,
+            "stdev": 1.4169533920157722,
+            "ci95": 0.2834497119791314,
+            "min": 2.794788273615635,
+            "max": 8.500000000000004,
+            "length_correlation": 0.07891343878059362,
+            "length_correlation_p": 0.4447152130226631
+        },
+        "grok-3-beta": {
+            "count": 96,
+            "mean": 5.23894140115509,
+            "median": 5.0,
+            "stdev": 1.4629337746157551,
+            "ci95": 0.2926477041488769,
+            "min": 2.692182410423453,
+            "max": 8.330188679245284,
+            "length_correlation": 0.1689396979388661,
+            "length_correlation_p": 0.09988095899804084
+        },
+        "gpt-4.1": {
+            "count": 95,
+            "mean": 6.2131378684352505,
+            "median": 6.54166666666667,
+            "stdev": 1.4697070645805892,
+            "ci95": 0.2955459759045952,
+            "min": 2.174267100977199,
+            "max": 8.641509433962263,
+            "length_correlation": -0.177055589432336,
+            "length_correlation_p": 0.08607639341763738
+        },
+        "gpt-4.1-nano": {
+            "count": 96,
+            "mean": 2.4360590843286283,
+            "median": 2.457654723127036,
+            "stdev": 0.6429313061048013,
+            "ci95": 0.12861304723546205,
+            "min": 0.0,
+            "max": 4.888888888888891,
+            "length_correlation": 0.595829651880502,
+            "length_correlation_p": 1.513997626016928e-10
+        },
+        "glm-4-32b": {
+            "count": 96,
+            "mean": 3.379130867132959,
+            "median": 2.921824104234528,
+            "stdev": 1.5109581456479066,
+            "ci95": 0.3022545791623712,
+            "min": 0.9332247557003258,
+            "max": 7.90566037735849,
+            "length_correlation": 0.11997894378883908,
+            "length_correlation_p": 0.24427767549166732
+        },
+        "qwen3-235b-a22b": {
+            "count": 96,
+            "mean": 5.656506584368464,
+            "median": 5.770833333333335,
+            "stdev": 1.8348853092067978,
+            "ci95": 0.3670535074336566,
+            "min": 1.705211726384365,
+            "max": 9.377358490566037,
+            "length_correlation": 0.4560415052205813,
+            "length_correlation_p": 3.021088959204514e-06
+        },
+        "claude-sonnet-4": {
+            "count": 96,
+            "mean": 6.284317828512784,
+            "median": 6.333333333333333,
+            "stdev": 1.2293112144447689,
+            "ci95": 0.24591345885511479,
+            "min": 2.8973941368078178,
+            "max": 8.500000000000004,
+            "length_correlation": -0.026294670415460394,
+            "length_correlation_p": 0.799261339575414
+        },
+        "claude-opus-4": {
+            "count": 96,
+            "mean": 7.046909394654089,
+            "median": 7.452830188679245,
+            "stdev": 1.2269512822396198,
+            "ci95": 0.24544137409381706,
+            "min": 3.355555555555556,
+            "max": 9.377358490566037,
+            "length_correlation": 0.04562730655824404,
+            "length_correlation_p": 0.6589029564536416
+        },
+        "gemini-2.5-pro": {
+            "count": 96,
+            "mean": 7.3850858228511544,
+            "median": 7.594339622641511,
+            "stdev": 1.1704369669944161,
+            "ci95": 0.23413615652687786,
+            "min": 3.466666666666667,
+            "max": 9.235849056603776,
+            "length_correlation": 0.02133108926366012,
+            "length_correlation_p": 0.8365669036147807
+        },
+        "mistral-small-3.2-24b": {
+            "count": 96,
+            "mean": 3.2998018319487983,
+            "median": 2.831433224755701,
+            "stdev": 1.1105358256516542,
+            "ci95": 0.22215343263736964,
+            "min": 2.1449511400651464,
+            "max": 8.330188679245284,
+            "length_correlation": -0.050333208269389,
+            "length_correlation_p": 0.626250255135542
+        },
+        "kimi-k2": {
+            "count": 96,
+            "mean": 8.346653891509435,
+            "median": 8.783018867924529,
+            "stdev": 1.2466325578973023,
+            "ci95": 0.2493784491931016,
+            "min": 3.9333333333333336,
+            "max": 10.0,
+            "length_correlation": 0.1578858877406268,
+            "length_correlation_p": 0.12445294511374462
+        }
+    },
+    "length_correlation": {
+        "raw": {
+            "pearson_corr": 0.13491927075075044,
+            "pearson_p": 0.3271345083971104
+        },
+        "calibrated": {
+            "pearson_corr": 0.12783633054831006,
+            "pearson_p": 0.298471439642605
+        }
+    },
+    "raw_cross_model_stats": {
+        "anova_f": 125.52560927486213,
+        "anova_p": 3.4500658815875676e-269,
+        "kw_stat": 986.0240900247628,
+        "kw_p": 1.0999151712402137e-199,
+        "std_dev_across_models": 0.830102527841406,
+        "pearson_r": 0.8234414522920891,
+        "kendall_tau": 0.6666666666666665,
+        "normalized_components": {
+            "pearson_r": 1.0,
+            "kendall_tau": 0.8611111111111108,
+            "anova_f": 0.35864459792817754,
+            "kw_stat": 0.738353408353969,
+            "std_dev": 0.3192702030159254,
+            "ci99_overlap_magnitude_sum_norm": 0.958805979155839,
+            "ci99_overlap_magnitude_pct_norm": 1.0,
+            "raw_score_range_norm": 0.3104895833333333,
+            "kendall_tau_bootstrapped": 0.7205882352941175
+        }
+    },
+    "calibrated_cross_model_stats": {
+        "anova_f": 151.9882607160699,
+        "anova_p": 1.0970195664794759e-307,
+        "kw_stat": 986.0240900247628,
+        "kw_p": 1.0999151712402137e-199,
+        "std_dev_across_models": 1.6540089019673265,
+        "pearson_r": 0.805089828772058,
+        "kendall_tau": 0.6239316239316238,
+        "normalized_components": {
+            "pearson_r": 1.0,
+            "kendall_tau": 0.7898860398860397,
+            "anova_f": 0.4342521734744854,
+            "kw_stat": 0.738353408353969,
+            "std_dev": 0.6361572699874333,
+            "ci99_overlap_magnitude_sum_norm": 0.9482247499204229,
+            "ci99_overlap_magnitude_pct_norm": 1.0,
+            "calibrated_score_range_norm": 0.5910594807180807,
+            "kendall_tau_bootstrapped": 0.8359313725490194
+        }
+    },
+    "separability_metrics": {
+        "raw": {
+            "ci99_overlap_adjacent": {
+                "kimi-k2__gemini-2.5-pro": false,
+                "gemini-2.5-pro__claude-opus-4": false,
+                "claude-opus-4__chatgpt-4o-latest": false,
+                "chatgpt-4o-latest__claude-sonnet-4": true,
+                "claude-sonnet-4__gpt-4.1": true,
+                "gpt-4.1__quasar-alpha": true,
+                "quasar-alpha__qwen3-235b-a22b": false,
+                "qwen3-235b-a22b__grok-3-beta": true,
+                "grok-3-beta__claude-3.5-sonnet": false,
+                "claude-3.5-sonnet__gemma-3-27b-it": true,
+                "gemma-3-27b-it__gemma-3-12b-it": false,
+                "gemma-3-12b-it__mistral-small-3.2-24b": false,
+                "mistral-small-3.2-24b__gemma-3-4b-it": true,
+                "gemma-3-4b-it__reka-flash-3": true,
+                "reka-flash-3__glm-4-32b": true,
+                "glm-4-32b__gpt-4.1-nano": false
+            },
+            "adjacent_overlap_fraction": 0.5,
+            "ci99_overlap_magnitude_adjacent": {
+                "kimi-k2__gemini-2.5-pro": 0.0,
+                "gemini-2.5-pro__claude-opus-4": 0.0,
+                "claude-opus-4__chatgpt-4o-latest": 0.0,
+                "chatgpt-4o-latest__claude-sonnet-4": 0.0005892626661196942,
+                "claude-sonnet-4__gpt-4.1": 0.050334000894817876,
+                "gpt-4.1__quasar-alpha": 0.020787345300185223,
+                "quasar-alpha__qwen3-235b-a22b": 0.0,
+                "qwen3-235b-a22b__grok-3-beta": 0.07857343562022834,
+                "grok-3-beta__claude-3.5-sonnet": 0.0,
+                "claude-3.5-sonnet__gemma-3-27b-it": 0.1381337573089727,
+                "gemma-3-27b-it__gemma-3-12b-it": 0.0,
+                "gemma-3-12b-it__mistral-small-3.2-24b": 0.0,
+                "mistral-small-3.2-24b__gemma-3-4b-it": 0.0975207269935936,
+                "gemma-3-4b-it__reka-flash-3": 0.17257417226198335,
+                "reka-flash-3__glm-4-32b": 0.14830055766411476,
+                "glm-4-32b__gpt-4.1-nano": 0.0
+            },
+            "ci99_overlap_magnitude_sum": 0.7068132587100155,
+            "ci99_overlap_scale_factor": 1.0,
+            "ci99_overlap_percentage_adjacent": {
+                "kimi-k2__gemini-2.5-pro": 0.0,
+                "gemini-2.5-pro__claude-opus-4": 0.0,
+                "claude-opus-4__chatgpt-4o-latest": 0.0,
+                "chatgpt-4o-latest__claude-sonnet-4": 0.0066752027037595505,
+                "claude-sonnet-4__gpt-4.1": 0.5219935847235144,
+                "gpt-4.1__quasar-alpha": 0.19375988835173286,
+                "quasar-alpha__qwen3-235b-a22b": 0.0,
+                "qwen3-235b-a22b__grok-3-beta": 0.5883640621060029,
+                "grok-3-beta__claude-3.5-sonnet": 0.0,
+                "claude-3.5-sonnet__gemma-3-27b-it": 0.8186877960559857,
+                "gemma-3-27b-it__gemma-3-12b-it": 0.0,
+                "gemma-3-12b-it__mistral-small-3.2-24b": 0.0,
+                "mistral-small-3.2-24b__gemma-3-4b-it": 0.5819037511231007,
+                "gemma-3-4b-it__reka-flash-3": 0.8852928892202636,
+                "reka-flash-3__glm-4-32b": 0.6138644677811032,
+                "glm-4-32b__gpt-4.1-nano": 0.0
+            },
+            "ci99_overlap_percentage_adjacent_avg": 0.26315885262909144,
+            "average_cohens_d_adjacent": 0.289099024830826,
+            "cohens_d_norm": 0.7227475620770649,
+            "emd": {
+                "average": 1.0037424051857584,
+                "pairs": {
+                    "claude-3.5-sonnet__gemma-3-27b-it": 0.20895833333333336,
+                    "claude-3.5-sonnet__gemma-3-4b-it": 1.0246875,
+                    "claude-3.5-sonnet__gemma-3-12b-it": 0.6073958333333334,
+                    "claude-3.5-sonnet__chatgpt-4o-latest": 0.6578125,
+                    "claude-3.5-sonnet__reka-flash-3": 1.0195833333333333,
+                    "claude-3.5-sonnet__quasar-alpha": 0.4369791666666667,
+                    "claude-3.5-sonnet__grok-3-beta": 0.23937500000000003,
+                    "claude-3.5-sonnet__gpt-4.1": 0.5230493421052632,
+                    "claude-3.5-sonnet__gpt-4.1-nano": 1.8682291666666668,
+                    "claude-3.5-sonnet__glm-4-32b": 1.076875,
+                    "claude-3.5-sonnet__qwen3-235b-a22b": 0.2840625,
+                    "claude-3.5-sonnet__claude-sonnet-4": 0.5740624999999999,
+                    "claude-3.5-sonnet__claude-opus-4": 0.8059375,
+                    "claude-3.5-sonnet__gemini-2.5-pro": 0.9125000000000001,
+                    "claude-3.5-sonnet__mistral-small-3.2-24b": 0.9996875,
+                    "claude-3.5-sonnet__kimi-k2": 1.2366666666666666,
+                    "gemma-3-27b-it__gemma-3-4b-it": 0.9196874999999999,
+                    "gemma-3-27b-it__gemma-3-12b-it": 0.46281249999999996,
+                    "gemma-3-27b-it__chatgpt-4o-latest": 0.6801041666666667,
+                    "gemma-3-27b-it__reka-flash-3": 0.9310416666666668,
+                    "gemma-3-27b-it__quasar-alpha": 0.4559375000000001,
+                    "gemma-3-27b-it__grok-3-beta": 0.24729166666666674,
+                    "gemma-3-27b-it__gpt-4.1": 0.5432006578947369,
+                    "gemma-3-27b-it__gpt-4.1-nano": 1.8459375,
+                    "gemma-3-27b-it__glm-4-32b": 1.0258333333333332,
+                    "gemma-3-27b-it__qwen3-235b-a22b": 0.3538541666666667,
+                    "gemma-3-27b-it__claude-sonnet-4": 0.5919791666666667,
+                    "gemma-3-27b-it__claude-opus-4": 0.8282291666666668,
+                    "gemma-3-27b-it__gemini-2.5-pro": 0.9347916666666669,
+                    "gemma-3-27b-it__mistral-small-3.2-24b": 0.8582291666666666,
+                    "gemma-3-27b-it__kimi-k2": 1.2589583333333332,
+                    "gemma-3-4b-it__gemma-3-12b-it": 0.46458333333333335,
+                    "gemma-3-4b-it__chatgpt-4o-latest": 1.5997916666666665,
+                    "gemma-3-4b-it__reka-flash-3": 0.2205208333333333,
+                    "gemma-3-4b-it__quasar-alpha": 1.3756249999999999,
+                    "gemma-3-4b-it__grok-3-beta": 1.1638541666666666,
+                    "gemma-3-4b-it__gpt-4.1": 1.462736842105263,
+                    "gemma-3-4b-it__gpt-4.1-nano": 0.92625,
+                    "gemma-3-4b-it__glm-4-32b": 0.3544791666666666,
+                    "gemma-3-4b-it__qwen3-235b-a22b": 1.2260416666666667,
+                    "gemma-3-4b-it__claude-sonnet-4": 1.5116666666666667,
+                    "gemma-3-4b-it__claude-opus-4": 1.7479166666666668,
+                    "gemma-3-4b-it__gemini-2.5-pro": 1.8544791666666667,
+                    "gemma-3-4b-it__mistral-small-3.2-24b": 0.11062499999999995,
+                    "gemma-3-4b-it__kimi-k2": 2.1786458333333334,
+                    "gemma-3-12b-it__chatgpt-4o-latest": 1.1352083333333334,
+                    "gemma-3-12b-it__reka-flash-3": 0.5361458333333333,
+                    "gemma-3-12b-it__quasar-alpha": 0.9110416666666667,
+                    "gemma-3-12b-it__grok-3-beta": 0.6992708333333334,
+                    "gemma-3-12b-it__gpt-4.1": 0.9981644736842106,
+                    "gemma-3-12b-it__gpt-4.1-nano": 1.3908333333333334,
+                    "gemma-3-12b-it__glm-4-32b": 0.6173958333333331,
+                    "gemma-3-12b-it__qwen3-235b-a22b": 0.7835416666666667,
+                    "gemma-3-12b-it__claude-sonnet-4": 1.0470833333333331,
+                    "gemma-3-12b-it__claude-opus-4": 1.2833333333333334,
+                    "gemma-3-12b-it__gemini-2.5-pro": 1.3898958333333333,
+                    "gemma-3-12b-it__mistral-small-3.2-24b": 0.40312500000000007,
+                    "gemma-3-12b-it__kimi-k2": 1.7140625,
+                    "chatgpt-4o-latest__reka-flash-3": 1.6111458333333335,
+                    "chatgpt-4o-latest__quasar-alpha": 0.2241666666666666,
+                    "chatgpt-4o-latest__grok-3-beta": 0.4359375,
+                    "chatgpt-4o-latest__gpt-4.1": 0.13707675438596487,
+                    "chatgpt-4o-latest__gpt-4.1-nano": 2.5260416666666665,
+                    "chatgpt-4o-latest__glm-4-32b": 1.7059374999999999,
+                    "chatgpt-4o-latest__qwen3-235b-a22b": 0.3868749999999999,
+                    "chatgpt-4o-latest__claude-sonnet-4": 0.10499999999999994,
+                    "chatgpt-4o-latest__claude-opus-4": 0.148125,
+                    "chatgpt-4o-latest__gemini-2.5-pro": 0.2546875000000001,
+                    "chatgpt-4o-latest__mistral-small-3.2-24b": 1.5295833333333333,
+                    "chatgpt-4o-latest__kimi-k2": 0.5788541666666667,
+                    "reka-flash-3__quasar-alpha": 1.3869791666666669,
+                    "reka-flash-3__grok-3-beta": 1.1752083333333334,
+                    "reka-flash-3__gpt-4.1": 1.4740910087719297,
+                    "reka-flash-3__gpt-4.1-nano": 0.9148958333333334,
+                    "reka-flash-3__glm-4-32b": 0.21645833333333334,
+                    "reka-flash-3__qwen3-235b-a22b": 1.2373958333333333,
+                    "reka-flash-3__claude-sonnet-4": 1.5230208333333335,
+                    "reka-flash-3__claude-opus-4": 1.7592708333333333,
+                    "reka-flash-3__gemini-2.5-pro": 1.8658333333333332,
+                    "reka-flash-3__mistral-small-3.2-24b": 0.2551041666666667,
+                    "reka-flash-3__kimi-k2": 2.19,
+                    "quasar-alpha__grok-3-beta": 0.21177083333333335,
+                    "quasar-alpha__gpt-4.1": 0.1267675438596491,
+                    "quasar-alpha__gpt-4.1-nano": 2.3018750000000003,
+                    "quasar-alpha__glm-4-32b": 1.4817708333333333,
+                    "quasar-alpha__qwen3-235b-a22b": 0.20520833333333335,
+                    "quasar-alpha__claude-sonnet-4": 0.13916666666666663,
+                    "quasar-alpha__claude-opus-4": 0.3722916666666666,
+                    "quasar-alpha__gemini-2.5-pro": 0.4788541666666667,
+                    "quasar-alpha__mistral-small-3.2-24b": 1.3054166666666664,
+                    "quasar-alpha__kimi-k2": 0.8030208333333334,
+                    "grok-3-beta__gpt-4.1": 0.3213146929824562,
+                    "grok-3-beta__gpt-4.1-nano": 2.0901041666666664,
+                    "grok-3-beta__glm-4-32b": 1.27,
+                    "grok-3-beta__qwen3-235b-a22b": 0.2588541666666666,
+                    "grok-3-beta__claude-sonnet-4": 0.34781249999999997,
+                    "grok-3-beta__claude-opus-4": 0.5840624999999999,
+                    "grok-3-beta__gemini-2.5-pro": 0.6906250000000002,
+                    "grok-3-beta__mistral-small-3.2-24b": 1.0936458333333334,
+                    "grok-3-beta__kimi-k2": 1.0147916666666665,
+                    "gpt-4.1__gpt-4.1-nano": 2.388986842105263,
+                    "gpt-4.1__glm-4-32b": 1.5688826754385963,
+                    "gpt-4.1__qwen3-235b-a22b": 0.2681776315789474,
+                    "gpt-4.1__claude-sonnet-4": 0.09271052631578935,
+                    "gpt-4.1__claude-opus-4": 0.2851798245614035,
+                    "gpt-4.1__gemini-2.5-pro": 0.39174232456140357,
+                    "gpt-4.1__mistral-small-3.2-24b": 1.3925394736842107,
+                    "gpt-4.1__kimi-k2": 0.7159089912280703,
+                    "gpt-4.1-nano__glm-4-32b": 0.8396875,
+                    "gpt-4.1-nano__qwen3-235b-a22b": 2.1522916666666663,
+                    "gpt-4.1-nano__claude-sonnet-4": 2.4379166666666667,
+                    "gpt-4.1-nano__claude-opus-4": 2.6741666666666664,
+                    "gpt-4.1-nano__gemini-2.5-pro": 2.7807291666666667,
+                    "gpt-4.1-nano__mistral-small-3.2-24b": 0.9964583333333332,
+                    "gpt-4.1-nano__kimi-k2": 3.1048958333333334,
+                    "glm-4-32b__qwen3-235b-a22b": 1.3321874999999999,
+                    "glm-4-32b__claude-sonnet-4": 1.6178125,
+                    "glm-4-32b__claude-opus-4": 1.8540625,
+                    "glm-4-32b__gemini-2.5-pro": 1.960625,
+                    "glm-4-32b__mistral-small-3.2-24b": 0.37260416666666674,
+                    "glm-4-32b__kimi-k2": 2.2847916666666666,
+                    "qwen3-235b-a22b__claude-sonnet-4": 0.3308333333333334,
+                    "qwen3-235b-a22b__claude-opus-4": 0.5252083333333334,
+                    "qwen3-235b-a22b__gemini-2.5-pro": 0.6294791666666668,
+                    "qwen3-235b-a22b__mistral-small-3.2-24b": 1.1789583333333333,
+                    "qwen3-235b-a22b__kimi-k2": 0.9526041666666665,
+                    "claude-sonnet-4__claude-opus-4": 0.23625,
+                    "claude-sonnet-4__gemini-2.5-pro": 0.3428125000000001,
+                    "claude-sonnet-4__mistral-small-3.2-24b": 1.4414583333333333,
+                    "claude-sonnet-4__kimi-k2": 0.6669791666666667,
+                    "claude-opus-4__gemini-2.5-pro": 0.10760416666666674,
+                    "claude-opus-4__mistral-small-3.2-24b": 1.6777083333333334,
+                    "claude-opus-4__kimi-k2": 0.4307291666666667,
+                    "gemini-2.5-pro__mistral-small-3.2-24b": 1.7842708333333335,
+                    "gemini-2.5-pro__kimi-k2": 0.3241666666666666,
+                    "mistral-small-3.2-24b__kimi-k2": 2.1084375
+                }
+            },
+            "average_ci95": 0.1389320317282768,
+            "modulated_ci95": 0.8286174972826938
+        },
+        "calibrated": {
+            "ci99_overlap_adjacent": {
+                "kimi-k2__gemini-2.5-pro": false,
+                "gemini-2.5-pro__claude-opus-4": false,
+                "claude-opus-4__chatgpt-4o-latest": false,
+                "chatgpt-4o-latest__claude-sonnet-4": true,
+                "claude-sonnet-4__gpt-4.1": true,
+                "gpt-4.1__quasar-alpha": false,
+                "quasar-alpha__qwen3-235b-a22b": true,
+                "qwen3-235b-a22b__grok-3-beta": false,
+                "grok-3-beta__claude-3.5-sonnet": true,
+                "claude-3.5-sonnet__gemma-3-27b-it": true,
+                "gemma-3-27b-it__gemma-3-12b-it": false,
+                "gemma-3-12b-it__reka-flash-3": false,
+                "reka-flash-3__glm-4-32b": true,
+                "glm-4-32b__mistral-small-3.2-24b": true,
+                "mistral-small-3.2-24b__gemma-3-4b-it": true,
+                "gemma-3-4b-it__gpt-4.1-nano": false
+            },
+            "adjacent_overlap_fraction": 0.5,
+            "ci99_overlap_magnitude_adjacent": {
+                "kimi-k2__gemini-2.5-pro": 0.0,
+                "gemini-2.5-pro__claude-opus-4": 0.0,
+                "claude-opus-4__chatgpt-4o-latest": 0.0,
+                "chatgpt-4o-latest__claude-sonnet-4": 0.002411384797077254,
+                "claude-sonnet-4__gpt-4.1": 0.21513975280072994,
+                "gpt-4.1__quasar-alpha": 0.0,
+                "quasar-alpha__qwen3-235b-a22b": 0.15222279114101056,
+                "qwen3-235b-a22b__grok-3-beta": 0.0,
+                "grok-3-beta__claude-3.5-sonnet": 0.0644925126934437,
+                "claude-3.5-sonnet__gemma-3-27b-it": 0.038905515591008744,
+                "gemma-3-27b-it__gemma-3-12b-it": 0.0,
+                "gemma-3-12b-it__reka-flash-3": 0.0,
+                "reka-flash-3__glm-4-32b": 0.24385752915332093,
+                "glm-4-32b__mistral-small-3.2-24b": 0.19797401233997425,
+                "mistral-small-3.2-24b__gemma-3-4b-it": 0.1274307696539898,
+                "gemma-3-4b-it__gpt-4.1-nano": 0.0
+            },
+            "ci99_overlap_magnitude_sum": 1.0424342681705552,
+            "ci99_overlap_scale_factor": 1.0,
+            "ci99_overlap_percentage_adjacent": {
+                "kimi-k2__gemini-2.5-pro": 0.0,
+                "gemini-2.5-pro__claude-opus-4": 0.0,
+                "claude-opus-4__chatgpt-4o-latest": 0.0,
+                "chatgpt-4o-latest__claude-sonnet-4": 0.008623563651535784,
+                "claude-sonnet-4__gpt-4.1": 0.7577639258661203,
+                "gpt-4.1__quasar-alpha": 0.0,
+                "quasar-alpha__qwen3-235b-a22b": 0.44996467163294895,
+                "qwen3-235b-a22b__grok-3-beta": 0.0,
+                "grok-3-beta__claude-3.5-sonnet": 0.19329192294062902,
+                "claude-3.5-sonnet__gemma-3-27b-it": 0.11601041735819163,
+                "gemma-3-27b-it__gemma-3-12b-it": 0.0,
+                "gemma-3-12b-it__reka-flash-3": 0.0,
+                "reka-flash-3__glm-4-32b": 0.7628924482181366,
+                "glm-4-32b__mistral-small-3.2-24b": 0.7309813053979604,
+                "mistral-small-3.2-24b__gemma-3-4b-it": 0.5878814079656222,
+                "gemma-3-4b-it__gpt-4.1-nano": 0.0
+            },
+            "ci99_overlap_percentage_adjacent_avg": 0.22546310393944655,
+            "average_cohens_d_adjacent": 0.298050359380637,
+            "cohens_d_norm": 0.7451258984515925,
+            "emd": {
+                "average": 2.02608443652187,
+                "pairs": {
+                    "claude-3.5-sonnet__gemma-3-27b-it": 0.3930862014928857,
+                    "claude-3.5-sonnet__gemma-3-4b-it": 1.7989835180234326,
+                    "claude-3.5-sonnet__gemma-3-12b-it": 1.1871708384833735,
+                    "claude-3.5-sonnet__chatgpt-4o-latest": 1.595387435211931,
+                    "claude-3.5-sonnet__reka-flash-3": 1.5451837027704376,
+                    "claude-3.5-sonnet__quasar-alpha": 0.8899630402846921,
+                    "claude-3.5-sonnet__grok-3-beta": 0.32825142316083855,
+                    "claude-3.5-sonnet__gpt-4.1": 1.2518877489315656,
+                    "claude-3.5-sonnet__gpt-4.1-nano": 2.5316768842316613,
+                    "claude-3.5-sonnet__glm-4-32b": 1.6026523326976883,
+                    "claude-3.5-sonnet__qwen3-235b-a22b": 0.6887706158081748,
+                    "claude-3.5-sonnet__claude-sonnet-4": 1.3289639354241929,
+                    "claude-3.5-sonnet__claude-opus-4": 2.0791734260937997,
+                    "claude-3.5-sonnet__gemini-2.5-pro": 2.4173498542908654,
+                    "claude-3.5-sonnet__mistral-small-3.2-24b": 1.7304341366114913,
+                    "claude-3.5-sonnet__kimi-k2": 3.378917922949145,
+                    "gemma-3-27b-it__gemma-3-4b-it": 1.4603030047920986,
+                    "gemma-3-27b-it__gemma-3-12b-it": 0.8291499343725605,
+                    "gemma-3-27b-it__chatgpt-4o-latest": 1.8936567106582491,
+                    "gemma-3-27b-it__reka-flash-3": 1.2145447204837287,
+                    "gemma-3-27b-it__quasar-alpha": 1.1787983534668591,
+                    "gemma-3-27b-it__grok-3-beta": 0.5783190476637603,
+                    "gemma-3-27b-it__gpt-4.1": 1.5437451081174394,
+                    "gemma-3-27b-it__gpt-4.1-nano": 2.233407608785343,
+                    "gemma-3-27b-it__glm-4-32b": 1.2903358259810123,
+                    "gemma-3-27b-it__qwen3-235b-a22b": 1.0102483603098675,
+                    "gemma-3-27b-it__claude-sonnet-4": 1.6148511353988129,
+                    "gemma-3-27b-it__claude-opus-4": 2.377442701540118,
+                    "gemma-3-27b-it__gemini-2.5-pro": 2.715619129737183,
+                    "gemma-3-27b-it__mistral-small-3.2-24b": 1.3739401054648477,
+                    "gemma-3-27b-it__kimi-k2": 3.677187198395463,
+                    "gemma-3-4b-it__gemma-3-12b-it": 0.6349193570644891,
+                    "gemma-3-4b-it__chatgpt-4o-latest": 3.3539597154503475,
+                    "gemma-3-4b-it__reka-flash-3": 0.3590522582497377,
+                    "gemma-3-4b-it__quasar-alpha": 2.6391013582589578,
+                    "gemma-3-4b-it__grok-3-beta": 2.0297777128332175,
+                    "gemma-3-4b-it__gpt-4.1": 3.0039741801133775,
+                    "gemma-3-4b-it__gpt-4.1-nano": 0.7731046039932444,
+                    "gemma-3-4b-it__glm-4-32b": 0.39502825372965295,
+                    "gemma-3-4b-it__qwen3-235b-a22b": 2.4473428960465915,
+                    "gemma-3-4b-it__claude-sonnet-4": 3.075154140190911,
+                    "gemma-3-4b-it__claude-opus-4": 3.8377457063322167,
+                    "gemma-3-4b-it__gemini-2.5-pro": 4.175922134529282,
+                    "gemma-3-4b-it__mistral-small-3.2-24b": 0.16167204397678658,
+                    "gemma-3-4b-it__kimi-k2": 5.1374902031875616,
+                    "gemma-3-12b-it__chatgpt-4o-latest": 2.7190403583858584,
+                    "gemma-3-12b-it__reka-flash-3": 0.6088151608064338,
+                    "gemma-3-12b-it__quasar-alpha": 2.0041820011944687,
+                    "gemma-3-12b-it__grok-3-beta": 1.3948583557687282,
+                    "gemma-3-12b-it__gpt-4.1": 2.3690601804978857,
+                    "gemma-3-12b-it__gpt-4.1-nano": 1.4080239610577334,
+                    "gemma-3-12b-it__glm-4-32b": 0.6357298250039265,
+                    "gemma-3-12b-it__qwen3-235b-a22b": 1.8232134412622323,
+                    "gemma-3-12b-it__claude-sonnet-4": 2.4402347831264217,
+                    "gemma-3-12b-it__claude-opus-4": 3.202826349267727,
+                    "gemma-3-12b-it__gemini-2.5-pro": 3.541002777464792,
+                    "gemma-3-12b-it__mistral-small-3.2-24b": 0.5682768063124127,
+                    "gemma-3-12b-it__kimi-k2": 4.5025708461230725,
+                    "chatgpt-4o-latest__reka-flash-3": 3.108201431141978,
+                    "chatgpt-4o-latest__quasar-alpha": 0.7148583571913899,
+                    "chatgpt-4o-latest__grok-3-beta": 1.3241820026171303,
+                    "chatgpt-4o-latest__gpt-4.1": 0.3500476008781811,
+                    "chatgpt-4o-latest__gpt-4.1-nano": 4.127064319443592,
+                    "chatgpt-4o-latest__glm-4-32b": 3.183992536639261,
+                    "chatgpt-4o-latest__qwen3-235b-a22b": 0.9437630458188504,
+                    "chatgpt-4o-latest__claude-sonnet-4": 0.33818057525943634,
+                    "chatgpt-4o-latest__claude-opus-4": 0.48378599088186874,
+                    "chatgpt-4o-latest__gemini-2.5-pro": 0.8219624190789339,
+                    "chatgpt-4o-latest__mistral-small-3.2-24b": 3.2633215718234223,
+                    "chatgpt-4o-latest__kimi-k2": 1.7835304877372142,
+                    "reka-flash-3__quasar-alpha": 2.3933430739505877,
+                    "reka-flash-3__grok-3-beta": 1.7840194285248474,
+                    "reka-flash-3__gpt-4.1": 2.7582158958050083,
+                    "reka-flash-3__gpt-4.1-nano": 1.0188628883016142,
+                    "reka-flash-3__glm-4-32b": 0.22174570306009114,
+                    "reka-flash-3__qwen3-235b-a22b": 2.2015846117382214,
+                    "reka-flash-3__claude-sonnet-4": 2.8293958558825407,
+                    "reka-flash-3__claude-opus-4": 3.5919874220238466,
+                    "reka-flash-3__gemini-2.5-pro": 3.9301638502209117,
+                    "reka-flash-3__mistral-small-3.2-24b": 0.33514562626474753,
+                    "reka-flash-3__kimi-k2": 4.8917319188791915,
+                    "quasar-alpha__grok-3-beta": 0.6093236454257405,
+                    "quasar-alpha__gpt-4.1": 0.3988817176008439,
+                    "quasar-alpha__gpt-4.1-nano": 3.412205962252202,
+                    "quasar-alpha__glm-4-32b": 2.469134179447871,
+                    "quasar-alpha__qwen3-235b-a22b": 0.3522504695498925,
+                    "quasar-alpha__claude-sonnet-4": 0.444897121554595,
+                    "quasar-alpha__claude-opus-4": 1.1986443480732585,
+                    "quasar-alpha__gemini-2.5-pro": 1.5368207762703237,
+                    "quasar-alpha__mistral-small-3.2-24b": 2.548463214632032,
+                    "quasar-alpha__kimi-k2": 2.498388844928604,
+                    "grok-3-beta__gpt-4.1": 0.9851567364383985,
+                    "grok-3-beta__gpt-4.1-nano": 2.8028823168264614,
+                    "grok-3-beta__glm-4-32b": 1.8598105340221311,
+                    "grok-3-beta__qwen3-235b-a22b": 0.6035880749976665,
+                    "grok-3-beta__claude-sonnet-4": 1.045376427357694,
+                    "grok-3-beta__claude-opus-4": 1.8079679934989992,
+                    "grok-3-beta__gemini-2.5-pro": 2.1461444216960643,
+                    "grok-3-beta__mistral-small-3.2-24b": 1.939139569206292,
+                    "grok-3-beta__kimi-k2": 3.1077124903543445,
+                    "gpt-4.1__gpt-4.1-nano": 3.7770787841066227,
+                    "gpt-4.1__glm-4-32b": 2.8340070013022918,
+                    "gpt-4.1__qwen3-235b-a22b": 0.6457325750300439,
+                    "gpt-4.1__claude-sonnet-4": 0.21931713181978124,
+                    "gpt-4.1__claude-opus-4": 0.8337715262188383,
+                    "gpt-4.1__gemini-2.5-pro": 1.1719479544159035,
+                    "gpt-4.1__mistral-small-3.2-24b": 2.9133413939354496,
+                    "gpt-4.1__kimi-k2": 2.1335160230741836,
+                    "gpt-4.1-nano__glm-4-32b": 0.9526401867131257,
+                    "gpt-4.1-nano__qwen3-235b-a22b": 3.2204475000398363,
+                    "gpt-4.1-nano__claude-sonnet-4": 3.848258744184156,
+                    "gpt-4.1-nano__claude-opus-4": 4.610850310325461,
+                    "gpt-4.1-nano__gemini-2.5-pro": 4.949026738522525,
+                    "gpt-4.1-nano__mistral-small-3.2-24b": 0.8637427476201698,
+                    "gpt-4.1-nano__kimi-k2": 5.910594807180805,
+                    "glm-4-32b__qwen3-235b-a22b": 2.277375717235505,
+                    "glm-4-32b__claude-sonnet-4": 2.905186961379825,
+                    "glm-4-32b__claude-opus-4": 3.66777852752113,
+                    "glm-4-32b__gemini-2.5-pro": 4.005954955718195,
+                    "glm-4-32b__mistral-small-3.2-24b": 0.354867185881721,
+                    "glm-4-32b__kimi-k2": 4.967523024376476,
+                    "qwen3-235b-a22b__claude-sonnet-4": 0.7557593573518671,
+                    "qwen3-235b-a22b__claude-opus-4": 1.3998367725497758,
+                    "qwen3-235b-a22b__gemini-2.5-pro": 1.7315273516902372,
+                    "qwen3-235b-a22b__mistral-small-3.2-24b": 2.3680036123545194,
+                    "qwen3-235b-a22b__kimi-k2": 2.6901473071409705,
+                    "claude-sonnet-4__claude-opus-4": 0.7625915661413051,
+                    "claude-sonnet-4__gemini-2.5-pro": 1.1007679943383701,
+                    "claude-sonnet-4__mistral-small-3.2-24b": 2.9845159965639856,
+                    "claude-sonnet-4__kimi-k2": 2.0623360629966507,
+                    "claude-opus-4__gemini-2.5-pro": 0.3411245414046121,
+                    "claude-opus-4__mistral-small-3.2-24b": 3.7471075627052914,
+                    "claude-opus-4__kimi-k2": 1.2997444968553453,
+                    "gemini-2.5-pro__mistral-small-3.2-24b": 4.085283990902355,
+                    "gemini-2.5-pro__kimi-k2": 0.9615680686582804,
+                    "mistral-small-3.2-24b__kimi-k2": 5.046852059560637
+                }
+            },
+            "average_ci95": 0.2654630293843798,
+            "modulated_ci95": 0.492679025782005
+        }
+    },
+    "iteration_stability": {
+        "raw": {
+            "scoring_stability": {
+                "claude-3.5-sonnet": {
+                    "mean_iter_score": 7.771979166666666,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.06022761369495622
+                },
+                "gemma-3-27b-it": {
+                    "mean_iter_score": 7.7496875,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.04777129215508674
+                },
+                "gemma-3-4b-it": {
+                    "mean_iter_score": 6.83,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.05686870386395924
+                },
+                "gemma-3-12b-it": {
+                    "mean_iter_score": 7.294583333333334,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.11941707737193835
+                },
+                "chatgpt-4o-latest": {
+                    "mean_iter_score": 8.429791666666667,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.0842094569445081
+                },
+                "reka-flash-3": {
+                    "mean_iter_score": 6.818645833333333,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.14666969989761205
+                },
+                "quasar-alpha": {
+                    "mean_iter_score": 8.205625,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.07897331102446359
+                },
+                "grok-3-beta": {
+                    "mean_iter_score": 7.993854166666666,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.0403317406710338
+                },
+                "gpt-4.1": {
+                    "mean_iter_score": 8.291948924731182,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.06414189455200857
+                },
+                "gpt-4.1-nano": {
+                    "mean_iter_score": 5.9037500000000005,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.06829441854329421
+                },
+                "glm-4-32b": {
+                    "mean_iter_score": 6.7238541666666665,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.06842552850646365
+                },
+                "qwen3-235b-a22b": {
+                    "mean_iter_score": 8.056041666666667,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.1646384401414874
+                },
+                "claude-sonnet-4": {
+                    "mean_iter_score": 8.341666666666667,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.03670541276690529
+                },
+                "claude-opus-4": {
+                    "mean_iter_score": 8.577916666666667,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.035474217946121114
+                },
+                "gemini-2.5-pro": {
+                    "mean_iter_score": 8.684479166666666,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.07014880636705259
+                },
+                "mistral-small-3.2-24b": {
+                    "mean_iter_score": 6.9002083333333335,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.020478223528638644
+                },
+                "kimi-k2": {
+                    "mean_iter_score": 9.008645833333333,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.05975227360853209
+                }
+            },
+            "ranking_stability": {
+                "pairwise_correlation": {
+                    "1__vs__2": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8676470588235293,
+                        "p_value": 9.575975226992579e-09
+                    },
+                    "1__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.9117647058823529,
+                        "p_value": 3.8599058936360526e-10
+                    },
+                    "2__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.926470588235294,
+                        "p_value": 1.080161877119549e-10
+                    }
+                },
+                "average_kendall_tau": 0.9019607843137254
+            },
+            "randomized_average_kendall_tau_by_item": 0.9161764705882353
+        },
+        "calibrated": {
+            "scoring_stability": {
+                "claude-3.5-sonnet": {
+                    "mean_iter_score": 4.967735968560289,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.05995439444417104
+                },
+                "gemma-3-27b-it": {
+                    "mean_iter_score": 4.6694666931139714,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.08613420996674745
+                },
+                "gemma-3-4b-it": {
+                    "mean_iter_score": 3.209163688321873,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.04232750883324176
+                },
+                "gemma-3-12b-it": {
+                    "mean_iter_score": 3.844083045386362,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.14922854238834027
+                },
+                "chatgpt-4o-latest": {
+                    "mean_iter_score": 6.56312340377222,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.287645028342714
+                },
+                "reka-flash-3": {
+                    "mean_iter_score": 3.4549219726302427,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.267615438581465
+                },
+                "quasar-alpha": {
+                    "mean_iter_score": 5.84826504658083,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.18656769127809514
+                },
+                "grok-3-beta": {
+                    "mean_iter_score": 5.23894140115509,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.068780804966619
+                },
+                "gpt-4.1": {
+                    "mean_iter_score": 6.211402307319219,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.14661836397824474
+                },
+                "gpt-4.1-nano": {
+                    "mean_iter_score": 2.4360590843286283,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.05162982925341496
+                },
+                "glm-4-32b": {
+                    "mean_iter_score": 3.379130867132959,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.1523482925985975
+                },
+                "qwen3-235b-a22b": {
+                    "mean_iter_score": 5.656506584368464,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.37413183659067356
+                },
+                "claude-sonnet-4": {
+                    "mean_iter_score": 6.284317828512784,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.12020298629568994
+                },
+                "claude-opus-4": {
+                    "mean_iter_score": 7.046909394654089,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.10140764390998448
+                },
+                "gemini-2.5-pro": {
+                    "mean_iter_score": 7.3850858228511544,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.24068956446659592
+                },
+                "mistral-small-3.2-24b": {
+                    "mean_iter_score": 3.2998018319487983,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.08245872415701903
+                },
+                "kimi-k2": {
+                    "mean_iter_score": 8.346653891509435,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.17493550778688707
+                }
+            },
+            "ranking_stability": {
+                "pairwise_correlation": {
+                    "1__vs__2": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8088235294117646,
+                        "p_value": 2.674946328840178e-07
+                    },
+                    "1__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8676470588235293,
+                        "p_value": 9.575975226992579e-09
+                    },
+                    "2__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.9117647058823529,
+                        "p_value": 3.8599058936360526e-10
+                    }
+                },
+                "average_kendall_tau": 0.8627450980392156
+            },
+            "randomized_average_kendall_tau_by_item": 0.9343725490196078
+        }
+    },
+    "raw_score_range": 3.104895833333333,
+    "final_judgemark_score_elements_raw": {
+        "norm_stability_between_iterations": 0.7205882352941175,
+        "norm_correlation_with_lmsys_arena": 0.8611111111111108,
+        "norm_std_dev_between_models": 0.3192702030159254,
+        "norm_kruskall_wallis": 0.738353408353969,
+        "norm_ci99_adjacent_overlap": 1.0,
+        "norm_score_range": 0.3104895833333333,
+        "norm_intra_model_ci95": 0.8286174972826938,
+        "norm_earth_movers_distance": 0.2509356012964396
+    },
+    "final_judgemark_score_raw": 0.8430676938521944,
+    "calibrated_score_range": 5.910594807180807,
+    "final_judgemark_score_elements_calibrated": {
+        "norm_stability_between_iterations": 0.8359313725490194,
+        "norm_correlation_with_lmsys_arena": 0.7898860398860397,
+        "norm_std_dev_between_models": 0.6361572699874333,
+        "norm_kruskall_wallis": 0.738353408353969,
+        "norm_ci99_adjacent_overlap": 1.0,
+        "norm_score_range": 0.5910594807180807,
+        "norm_intra_model_ci95": 0.492679025782005,
+        "norm_earth_movers_distance": 0.5065211091304676
+    },
+    "final_judgemark_score": 0.8504207048571661
+}
