@@ -97,7 +97,6 @@ openai/gpt-oss-20b,781.7,7.87,8675,34.44,29.88,5.82
 meta-llama/llama-3.2-3b-instruct,701.7,8.18,4759,37.38,57.45,14.83
 openai/gpt-3.5-turbo-0613,504.3,8.22,3400,42.88,53.15,13.90
 meta-llama/llama-3.2-1b-instruct,200.0,6.49,5290,38.32,61.12,19.07
-__metadata__,N/A,N/A,0,N/A,N/A,0.00
 `
 
 
