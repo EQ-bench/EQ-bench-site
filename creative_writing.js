@@ -1,8 +1,7 @@
 // creative_writing_v3.js
 
 
-let leaderboardDataCreativeWritingV3 = `
-model_name,elo_score,creative_writing_score,avg_length,vocab_complexity,slop_score,repetition_score
+let leaderboardDataCreativeWritingV3 = `model_name,elo_score,creative_writing_score,avg_length,vocab_complexity,slop_score,repetition_score
 *gpt-5.4,2005.3,16.89,10488,36.35,12.20,2.71
 claude-sonnet-4-6,1929.9,16.50,5876,37.46,9.90,4.06
 claude-opus-4-6,1908.3,16.53,6055,33.13,12.12,4.02
