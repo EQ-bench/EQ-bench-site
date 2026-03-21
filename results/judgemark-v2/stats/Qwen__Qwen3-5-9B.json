@@ -1,0 +1,2922 @@
+{
+    "judge_models": [
+        "qwen/qwen3.5-9b"
+    ],
+    "judge_model_name_for_charts": "qwen/qwen3.5-9b",
+    "ensemble_method": "average",
+    "book_club_mode": false,
+    "start_time": "2026-03-21T16:56:26.510608",
+    "status": "completed",
+    "samples_file": "data/judgemark_v3_samples_3_iter.json",
+    "prompts_file": "data/judge_prompts_v3_noref_nocot_noanchor_x96.json",
+    "scoring_range": {
+        "min": 0,
+        "max": 10
+    },
+    "errors": [
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "21",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "6",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "2",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "reka-flash-3",
+            "iteration": "1",
+            "item_id": "7",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "31",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "29",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "9",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "1",
+            "item_id": "17",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "17",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "5",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "20",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "1",
+            "item_id": "33",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "1",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "5",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "9",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "1",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "4",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "1",
+            "item_id": "8",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "17",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "18",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "6",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "1",
+            "item_id": "14",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "8",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "3",
+            "item_id": "20",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "1",
+            "item_id": "14",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "18",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "13",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "2",
+            "item_id": "33",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "21",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "29",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "1",
+            "item_id": "18",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "19",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "5",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "13",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "8",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "23",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "11",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "2",
+            "item_id": "5",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "reka-flash-3",
+            "iteration": "1",
+            "item_id": "14",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "8",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "1",
+            "item_id": "28",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "2",
+            "item_id": "11",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "6",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "1",
+            "item_id": "15",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "2",
+            "item_id": "12",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "1",
+            "item_id": "12",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "15",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "reka-flash-3",
+            "iteration": "1",
+            "item_id": "2",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "7",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "14",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "1",
+            "item_id": "8",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "13",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "3",
+            "item_id": "32",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "3",
+            "item_id": "16",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "3",
+            "item_id": "33",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "2",
+            "item_id": "30",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "3",
+            "item_id": "30",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "23",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "12",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "1",
+            "item_id": "28",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "reka-flash-3",
+            "iteration": "1",
+            "item_id": "12",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "33",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "15",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "31",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "24",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "28",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "3",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "32",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "23",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "18",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "1",
+            "item_id": "20",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "3",
+            "item_id": "8",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "16",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "28",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "32",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "1",
+            "item_id": "17",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "32",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "1",
+            "item_id": "23",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "1",
+            "item_id": "13",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "25",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "4",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "2",
+            "item_id": "12",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "3",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "1",
+            "item_id": "7",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "2",
+            "item_id": "21",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "1",
+            "item_id": "18",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "29",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "2",
+            "item_id": "28",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "1",
+            "item_id": "2",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "1",
+            "item_id": "16",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "17",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "10",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "33",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "12",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "5",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "25",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "31",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "33",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "2",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "30",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "2",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "reka-flash-3",
+            "iteration": "1",
+            "item_id": "9",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "2",
+            "item_id": "10",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "1",
+            "item_id": "13",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "6",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "3",
+            "item_id": "23",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "3",
+            "item_id": "13",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "12",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "20",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "13",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "31",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "15",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "1",
+            "item_id": "22",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "1",
+            "item_id": "1",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "30",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "17",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "10",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "reka-flash-3",
+            "iteration": "1",
+            "item_id": "15",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "15",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "18",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "reka-flash-3",
+            "iteration": "1",
+            "item_id": "10",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "31",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "1",
+            "item_id": "24",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "2",
+            "item_id": "16",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "3",
+            "item_id": "7",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "33",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "3",
+            "item_id": "28",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "8",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "1",
+            "item_id": "10",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "6",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "28",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "1",
+            "item_id": "23",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "3",
+            "item_id": "10",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "16",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "1",
+            "item_id": "26",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "31",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "3",
+            "item_id": "17",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "2",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "9",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "1",
+            "item_id": "13",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "30",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "15",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "24",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "2",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "1",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "23",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "1",
+            "item_id": "2",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "1",
+            "item_id": "25",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "6",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "2",
+            "item_id": "24",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "17",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "reka-flash-3",
+            "iteration": "1",
+            "item_id": "3",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "22",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "14",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "4",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "1",
+            "item_id": "2",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "17",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "8",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "3",
+            "item_id": "14",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "20",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "2",
+            "item_id": "10",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "10",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "17",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "2",
+            "item_id": "9",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "11",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "33",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "2",
+            "item_id": "31",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "7",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "18",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "11",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "3",
+            "item_id": "3",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "28",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "1",
+            "item_id": "16",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "reka-flash-3",
+            "iteration": "1",
+            "item_id": "20",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "2",
+            "item_id": "23",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "13",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "3",
+            "item_id": "32",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "3",
+            "item_id": "13",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "3",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "reka-flash-3",
+            "iteration": "1",
+            "item_id": "19",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "2",
+            "item_id": "14",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "22",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "24",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "19",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "reka-flash-3",
+            "iteration": "1",
+            "item_id": "16",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "5",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "1",
+            "item_id": "18",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "reka-flash-3",
+            "iteration": "1",
+            "item_id": "8",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "2",
+            "item_id": "13",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "2",
+            "item_id": "3",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "1",
+            "item_id": "33",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "3",
+            "item_id": "1",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "1",
+            "item_id": "6",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "13",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "2",
+            "item_id": "10",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "26",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "2",
+            "item_id": "18",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "2",
+            "item_id": "23",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "1",
+            "item_id": "17",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "18",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "3",
+            "item_id": "1",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "3",
+            "item_id": "22",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "28",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "26",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "14",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "2",
+            "item_id": "19",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-12b-it",
+            "iteration": "1",
+            "item_id": "31",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "2",
+            "item_id": "8",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "1",
+            "item_id": "12",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "16",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "33",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "chatgpt-4o-latest",
+            "iteration": "1",
+            "item_id": "8",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "reka-flash-3",
+            "iteration": "1",
+            "item_id": "17",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "19",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "20",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "1",
+            "item_id": "26",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "2",
+            "item_id": "6",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "3",
+            "item_id": "14",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "3",
+            "item_id": "20",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "iteration": "3",
+            "item_id": "4",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "gemma-3-4b-it",
+            "iteration": "1",
+            "item_id": "29",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        },
+        {
+            "model": "claude-3.5-sonnet",
+            "iteration": "2",
+            "item_id": "19",
+            "judge_model": "qwen/qwen3.5-9b",
+            "judge_index": 0,
+            "error": "'KeyError' object has no attribute 'response'"
+        }
+    ],
+    "end_time": "2026-03-21T21:34:47.399694",
+    "raw_score_distribution": {
+        "count": 1632,
+        "min": 1.0,
+        "max": 9.74,
+        "mean": 7.717,
+        "median": 7.83,
+        "stdev": 1.015,
+        "p10": 6.61,
+        "p25": 7.51,
+        "p75": 8.322,
+        "p90": 8.68
+    },
+    "calibration_config": {
+        "method": "piecewise_landmark",
+        "in_landmarks": [
+            1.0,
+            7.51,
+            7.83,
+            8.3225,
+            9.74
+        ],
+        "out_landmarks": [
+            0,
+            3,
+            5,
+            7,
+            10
+        ]
+    },
+    "calibrated_score_distribution": {
+        "count": 1632,
+        "min": 0.0,
+        "max": 10.0,
+        "mean": 5.062,
+        "median": 5.0,
+        "stdev": 2.066,
+        "p10": 2.585,
+        "p25": 3.0,
+        "p75": 6.982,
+        "p90": 7.757
+    },
+    "raw_model_stats": {
+        "claude-3.5-sonnet": {
+            "count": 96,
+            "mean": 7.426666666666667,
+            "median": 7.72,
+            "stdev": 1.2908770308483801,
+            "ci95": 0.25822918711103016,
+            "min": 1.0,
+            "max": 8.99,
+            "length_correlation": 0.6938038445266472,
+            "length_correlation_p": 4.642916861857775e-15
+        },
+        "gemma-3-27b-it": {
+            "count": 96,
+            "mean": 7.794479166666667,
+            "median": 7.78,
+            "stdev": 0.5807270756590472,
+            "ci95": 0.1161696095733034,
+            "min": 5.45,
+            "max": 8.94,
+            "length_correlation": 0.13060868767184297,
+            "length_correlation_p": 0.20466366349848703
+        },
+        "gemma-3-4b-it": {
+            "count": 96,
+            "mean": 7.4584375,
+            "median": 7.62,
+            "stdev": 0.6986683998111958,
+            "ci95": 0.1397627881137813,
+            "min": 4.76,
+            "max": 8.59,
+            "length_correlation": 0.12052976324195805,
+            "length_correlation_p": 0.24210321423719922
+        },
+        "gemma-3-12b-it": {
+            "count": 96,
+            "mean": 7.245625,
+            "median": 7.535,
+            "stdev": 0.8528303496376978,
+            "ci95": 0.17060160082469147,
+            "min": 4.97,
+            "max": 8.57,
+            "length_correlation": -0.19238435033206983,
+            "length_correlation_p": 0.060399744694734726
+        },
+        "chatgpt-4o-latest": {
+            "count": 96,
+            "mean": 8.216145833333334,
+            "median": 8.225,
+            "stdev": 0.44155078337405945,
+            "ci95": 0.08832855270806525,
+            "min": 7.35,
+            "max": 9.26,
+            "length_correlation": 0.22134903615687057,
+            "length_correlation_p": 0.030210508546474852
+        },
+        "reka-flash-3": {
+            "count": 96,
+            "mean": 7.436145833333334,
+            "median": 7.67,
+            "stdev": 0.9968480534498058,
+            "ci95": 0.19941114169982527,
+            "min": 4.39,
+            "max": 8.89,
+            "length_correlation": 0.17369827948310484,
+            "length_correlation_p": 0.09055332261888245
+        },
+        "quasar-alpha": {
+            "count": 96,
+            "mean": 7.985729166666666,
+            "median": 7.94,
+            "stdev": 0.45303826907405303,
+            "ci95": 0.09062652844345298,
+            "min": 6.66,
+            "max": 8.84,
+            "length_correlation": -0.042050114763986596,
+            "length_correlation_p": 0.6841635245583113
+        },
+        "grok-3-beta": {
+            "count": 96,
+            "mean": 7.887395833333334,
+            "median": 7.78,
+            "stdev": 0.43476126489849615,
+            "ci95": 0.0869703661458117,
+            "min": 6.72,
+            "max": 8.99,
+            "length_correlation": 0.1378726529182347,
+            "length_correlation_p": 0.18038128583171614
+        },
+        "gpt-4.1": {
+            "count": 96,
+            "mean": 7.99875,
+            "median": 8.09,
+            "stdev": 0.659416408652378,
+            "ci95": 0.1319107545527152,
+            "min": 2.96,
+            "max": 8.71,
+            "length_correlation": -0.7093279359308449,
+            "length_correlation_p": 6.050090927878898e-16
+        },
+        "gpt-4.1-nano": {
+            "count": 96,
+            "mean": 6.4071875,
+            "median": 6.744999999999999,
+            "stdev": 1.3285391289327022,
+            "ci95": 0.26576317581855147,
+            "min": 1.0,
+            "max": 7.83,
+            "length_correlation": 0.7248704890852167,
+            "length_correlation_p": 6.851206294484483e-17
+        },
+        "glm-4-32b": {
+            "count": 96,
+            "mean": 6.7578125,
+            "median": 7.25,
+            "stdev": 1.350233666424952,
+            "ci95": 0.2701029871619228,
+            "min": 1.69,
+            "max": 8.57,
+            "length_correlation": 0.03699161387013232,
+            "length_correlation_p": 0.7204802637890345
+        },
+        "qwen3-235b-a22b": {
+            "count": 96,
+            "mean": 7.851875,
+            "median": 8.09,
+            "stdev": 1.0173984496072115,
+            "ci95": 0.2035220771086371,
+            "min": 2.59,
+            "max": 8.99,
+            "length_correlation": 0.5688600100011474,
+            "length_correlation_p": 1.4782035043959978e-09
+        },
+        "claude-sonnet-4": {
+            "count": 96,
+            "mean": 8.081145833333334,
+            "median": 8.175,
+            "stdev": 0.4327947606251275,
+            "ci95": 0.0865769833619933,
+            "min": 6.61,
+            "max": 8.99,
+            "length_correlation": -0.08917596088538962,
+            "length_correlation_p": 0.3875769311228165
+        },
+        "claude-opus-4": {
+            "count": 96,
+            "mean": 8.282604166666667,
+            "median": 8.36,
+            "stdev": 0.476056707793397,
+            "ci95": 0.09523117518904946,
+            "min": 6.56,
+            "max": 9.15,
+            "length_correlation": 0.140610064914716,
+            "length_correlation_p": 0.1717997062210459
+        },
+        "gemini-2.5-pro": {
+            "count": 96,
+            "mean": 8.519479166666667,
+            "median": 8.52,
+            "stdev": 0.3950546125915056,
+            "ci95": 0.07902738141286947,
+            "min": 7.46,
+            "max": 9.52,
+            "length_correlation": 0.07139744671187176,
+            "length_correlation_p": 0.4893968615698651
+        },
+        "mistral-small-3.2-24b": {
+            "count": 96,
+            "mean": 7.074166666666667,
+            "median": 7.46,
+            "stdev": 0.9673356426877049,
+            "ci95": 0.19350742999168874,
+            "min": 3.59,
+            "max": 8.52,
+            "length_correlation": 0.09254993018497087,
+            "length_correlation_p": 0.3697996821161299
+        },
+        "kimi-k2": {
+            "count": 96,
+            "mean": 8.7596875,
+            "median": 8.78,
+            "stdev": 0.3545893195322101,
+            "ci95": 0.07093263692272693,
+            "min": 7.78,
+            "max": 9.74,
+            "length_correlation": 0.09778472312437105,
+            "length_correlation_p": 0.3432240900860396
+        }
+    },
+    "calibrated_model_stats": {
+        "claude-3.5-sonnet": {
+            "count": 96,
+            "mean": 4.473279711221315,
+            "median": 4.312499999999998,
+            "stdev": 1.886499908610692,
+            "ci95": 0.3773785776987689,
+            "min": 0.0,
+            "max": 8.412698412698413,
+            "length_correlation": 0.33473301505006353,
+            "length_correlation_p": 0.0008577689243756913
+        },
+        "gemma-3-27b-it": {
+            "count": 96,
+            "mean": 4.908111130392661,
+            "median": 4.687500000000002,
+            "stdev": 1.6837605709904468,
+            "ci95": 0.33682226358208084,
+            "min": 2.0506912442396317,
+            "max": 8.306878306878305,
+            "length_correlation": 0.04857137309828791,
+            "length_correlation_p": 0.638395176398259
+        },
+        "gemma-3-4b-it": {
+            "count": 96,
+            "mean": 3.939101691904785,
+            "median": 3.6875000000000013,
+            "stdev": 1.2544821019906454,
+            "ci95": 0.2509486850420453,
+            "min": 1.7327188940092166,
+            "max": 7.5661375661375665,
+            "length_correlation": 0.14091061428772828,
+            "length_correlation_p": 0.1708761434052462
+        },
+        "gemma-3-12b-it": {
+            "count": 96,
+            "mean": 3.651290479545006,
+            "median": 3.156249999999999,
+            "stdev": 1.3439733892784538,
+            "ci95": 0.26885067091490783,
+            "min": 1.8294930875576036,
+            "max": 7.523809523809525,
+            "length_correlation": -0.04664772333361619,
+            "length_correlation_p": 0.6517653233051308
+        },
+        "chatgpt-4o-latest": {
+            "count": 96,
+            "mean": 6.21584549093037,
+            "median": 6.604060913705583,
+            "stdev": 1.6248230891495863,
+            "ci95": 0.32503231174125047,
+            "min": 2.9262672811059907,
+            "max": 8.984126984126984,
+            "length_correlation": 0.20505798267322584,
+            "length_correlation_p": 0.04505054633254197
+        },
+        "reka-flash-3": {
+            "count": 96,
+            "mean": 4.333792527978418,
+            "median": 4.0,
+            "stdev": 1.8294777158676259,
+            "ci95": 0.3659717634728987,
+            "min": 1.5622119815668203,
+            "max": 8.201058201058203,
+            "length_correlation": 0.11923603511298014,
+            "length_correlation_p": 0.24723175966844443
+        },
+        "quasar-alpha": {
+            "count": 96,
+            "mean": 5.36861719556143,
+            "median": 5.4467005076142145,
+            "stdev": 1.737268094438288,
+            "ci95": 0.34752599751960356,
+            "min": 2.6082949308755765,
+            "max": 8.095238095238095,
+            "length_correlation": -0.038566031988800445,
+            "length_correlation_p": 0.7091057631157617
+        },
+        "grok-3-beta": {
+            "count": 96,
+            "mean": 5.01602124532586,
+            "median": 4.687500000000002,
+            "stdev": 1.6843358564186792,
+            "ci95": 0.33693734463545716,
+            "min": 2.6359447004608296,
+            "max": 8.412698412698413,
+            "length_correlation": 0.1413564938314581,
+            "length_correlation_p": 0.16951274136476355
+        },
+        "gpt-4.1": {
+            "count": 96,
+            "mean": 5.649107054977858,
+            "median": 6.055837563451776,
+            "stdev": 1.64490412210325,
+            "ci95": 0.3290493549545505,
+            "min": 0.903225806451613,
+            "max": 7.820105820105822,
+            "length_correlation": -0.3036174113068781,
+            "length_correlation_p": 0.002636752886244011
+        },
+        "gpt-4.1-nano": {
+            "count": 96,
+            "mean": 2.573201684907834,
+            "median": 2.6474654377880187,
+            "stdev": 0.7529043990728778,
+            "ci95": 0.15061224756407,
+            "min": 0.0,
+            "max": 5.0,
+            "length_correlation": 0.6148192022027628,
+            "length_correlation_p": 2.669188911786818e-11
+        },
+        "glm-4-32b": {
+            "count": 96,
+            "mean": 3.3684037814517143,
+            "median": 2.880184331797235,
+            "stdev": 1.6389898213238996,
+            "ci95": 0.3278662483951456,
+            "min": 0.31797235023041476,
+            "max": 7.523809523809525,
+            "length_correlation": 0.17590534397034902,
+            "length_correlation_p": 0.08646795131068945
+        },
+        "qwen3-235b-a22b": {
+            "count": 96,
+            "mean": 5.561479865901491,
+            "median": 6.055837563451776,
+            "stdev": 1.7921349192618428,
+            "ci95": 0.35850164836392784,
+            "min": 0.7327188940092166,
+            "max": 8.412698412698413,
+            "length_correlation": 0.4176981868984253,
+            "length_correlation_p": 2.2933502073528533e-05
+        },
+        "claude-sonnet-4": {
+            "count": 96,
+            "mean": 5.882138183296072,
+            "median": 6.401015228426395,
+            "stdev": 1.572262419266344,
+            "ci95": 0.3145179879647706,
+            "min": 2.5852534562211984,
+            "max": 8.412698412698413,
+            "length_correlation": -0.06808621678809243,
+            "length_correlation_p": 0.509810560571068
+        },
+        "claude-opus-4": {
+            "count": 96,
+            "mean": 6.510454862004569,
+            "median": 7.079365079365078,
+            "stdev": 1.5726269797306864,
+            "ci95": 0.31459091524607646,
+            "min": 2.5622119815668203,
+            "max": 8.751322751322752,
+            "length_correlation": 0.13321704405068013,
+            "length_correlation_p": 0.1956886878425581
+        },
+        "gemini-2.5-pro": {
+            "count": 96,
+            "mean": 7.241891932860353,
+            "median": 7.417989417989418,
+            "stdev": 1.1833416545753377,
+            "ci95": 0.23671763168237975,
+            "min": 2.9769585253456223,
+            "max": 9.534391534391533,
+            "length_correlation": 0.056519250432861254,
+            "length_correlation_p": 0.5844085154168797
+        },
+        "mistral-small-3.2-24b": {
+            "count": 96,
+            "mean": 3.4787137769936285,
+            "median": 2.9769585253456223,
+            "stdev": 1.3739306121617376,
+            "ci95": 0.27484336357918915,
+            "min": 1.193548387096774,
+            "max": 7.417989417989418,
+            "length_correlation": -0.13150064301265046,
+            "length_correlation_p": 0.2015620247518882
+        },
+        "kimi-k2": {
+            "count": 96,
+            "mean": 7.885537999305052,
+            "median": 7.968253968253967,
+            "stdev": 0.8413113692416792,
+            "ci95": 0.1682973248379564,
+            "min": 4.687500000000002,
+            "max": 10.0,
+            "length_correlation": 0.08817396583394115,
+            "length_correlation_p": 0.3929534945463691
+        }
+    },
+    "length_correlation": {
+        "raw": {
+            "pearson_corr": 0.12811695176345844,
+            "pearson_p": 0.23380898825699684
+        },
+        "calibrated": {
+            "pearson_corr": 0.1110459106478074,
+            "pearson_p": 0.2709615378452344
+        }
+    },
+    "raw_cross_model_stats": {
+        "anova_f": 54.48811940833028,
+        "anova_p": 1.2617232989783618e-138,
+        "kw_stat": 769.2550281834788,
+        "kw_p": 2.2866540031776822e-153,
+        "std_dev_across_models": 0.6009188077442884,
+        "pearson_r": 0.6840797448408705,
+        "kendall_tau": 0.5726495726495725,
+        "normalized_components": {
+            "pearson_r": 0.9710540815288556,
+            "kendall_tau": 0.7044159544159542,
+            "anova_f": 0.15568034116665794,
+            "kw_stat": 0.5577125234862323,
+            "std_dev": 0.23112261836318784,
+            "ci99_overlap_magnitude_sum_norm": 0.9349579088762207,
+            "ci99_overlap_magnitude_pct_norm": 1.0,
+            "raw_score_range_norm": 0.23525000000000001,
+            "kendall_tau_bootstrapped": 0.6793464052287581
+        }
+    },
+    "calibrated_cross_model_stats": {
+        "anova_f": 85.33635552282477,
+        "anova_p": 2.6223220973194115e-201,
+        "kw_stat": 769.2550281834788,
+        "kw_p": 2.2866540031776822e-153,
+        "std_dev_across_models": 1.3982625266191475,
+        "pearson_r": 0.6976211920626492,
+        "kendall_tau": 0.5470085470085468,
+        "normalized_components": {
+            "pearson_r": 0.9956748946593622,
+            "kendall_tau": 0.6616809116809114,
+            "anova_f": 0.24381815863664222,
+            "kw_stat": 0.5577125234862323,
+            "std_dev": 0.5377932794689029,
+            "ci99_overlap_magnitude_sum_norm": 0.9141510413764153,
+            "ci99_overlap_magnitude_pct_norm": 1.0,
+            "calibrated_score_range_norm": 0.5312336314397218,
+            "kendall_tau_bootstrapped": 0.805563725490196
+        }
+    },
+    "separability_metrics": {
+        "raw": {
+            "ci99_overlap_adjacent": {
+                "kimi-k2__gemini-2.5-pro": false,
+                "gemini-2.5-pro__claude-opus-4": false,
+                "claude-opus-4__chatgpt-4o-latest": true,
+                "chatgpt-4o-latest__claude-sonnet-4": false,
+                "claude-sonnet-4__gpt-4.1": true,
+                "gpt-4.1__quasar-alpha": true,
+                "quasar-alpha__grok-3-beta": false,
+                "grok-3-beta__qwen3-235b-a22b": true,
+                "qwen3-235b-a22b__gemma-3-27b-it": true,
+                "gemma-3-27b-it__gemma-3-4b-it": false,
+                "gemma-3-4b-it__reka-flash-3": true,
+                "reka-flash-3__claude-3.5-sonnet": true,
+                "claude-3.5-sonnet__gemma-3-12b-it": true,
+                "gemma-3-12b-it__mistral-small-3.2-24b": true,
+                "mistral-small-3.2-24b__glm-4-32b": false,
+                "glm-4-32b__gpt-4.1-nano": false
+            },
+            "adjacent_overlap_fraction": 0.5625,
+            "ci99_overlap_magnitude_adjacent": {
+                "kimi-k2__gemini-2.5-pro": 0.0,
+                "gemini-2.5-pro__claude-opus-4": 0.0,
+                "claude-opus-4__chatgpt-4o-latest": 0.030606682462057222,
+                "chatgpt-4o-latest__claude-sonnet-4": 0.0,
+                "claude-sonnet-4__gpt-4.1": 0.03313885379410131,
+                "gpt-4.1__quasar-alpha": 0.09584526535990179,
+                "quasar-alpha__grok-3-beta": 0.0,
+                "grok-3-beta__qwen3-235b-a22b": 0.09197856262246873,
+                "qwen3-235b-a22b__gemma-3-27b-it": 0.11165474749358051,
+                "gemma-3-27b-it__gemma-3-4b-it": 0.0,
+                "gemma-3-4b-it__reka-flash-3": 0.1478110410304776,
+                "reka-flash-3__claude-3.5-sonnet": 0.21089425050487343,
+                "claude-3.5-sonnet__gemma-3-12b-it": 0.04572085734328901,
+                "gemma-3-12b-it__mistral-small-3.2-24b": 0.021079807969890396,
+                "mistral-small-3.2-24b__glm-4-32b": 0.0,
+                "glm-4-32b__gpt-4.1-nano": 0.0
+            },
+            "ci99_overlap_magnitude_sum": 0.78873006858064,
+            "ci99_overlap_scale_factor": 1.0,
+            "ci99_overlap_percentage_adjacent": {
+                "kimi-k2__gemini-2.5-pro": 0.0,
+                "gemini-2.5-pro__claude-opus-4": 0.0,
+                "claude-opus-4__chatgpt-4o-latest": 0.3157679802780897,
+                "chatgpt-4o-latest__claude-sonnet-4": 0.0,
+                "claude-sonnet-4__gpt-4.1": 0.2997343948664779,
+                "gpt-4.1__quasar-alpha": 0.84351455554458,
+                "quasar-alpha__grok-3-beta": 0.0,
+                "grok-3-beta__qwen3-235b-a22b": 0.7136632236201779,
+                "qwen3-235b-a22b__gemma-3-27b-it": 0.7137714372721438,
+                "gemma-3-27b-it__gemma-3-4b-it": 0.0,
+                "gemma-3-4b-it__reka-flash-3": 0.8504387641593433,
+                "reka-flash-3__claude-3.5-sonnet": 0.886112708502786,
+                "claude-3.5-sonnet__gemma-3-12b-it": 0.2104100975911237,
+                "gemma-3-12b-it__mistral-small-3.2-24b": 0.10991881512887772,
+                "mistral-small-3.2-24b__glm-4-32b": 0.0,
+                "glm-4-32b__gpt-4.1-nano": 0.0
+            },
+            "ci99_overlap_percentage_adjacent_avg": 0.308958248560225,
+            "average_cohens_d_adjacent": 0.22515947181731613,
+            "cohens_d_norm": 0.5628986795432903,
+            "emd": {
+                "average": 0.7397242647058826,
+                "pairs": {
+                    "claude-3.5-sonnet__gemma-3-27b-it": 0.3751041666666667,
+                    "claude-3.5-sonnet__gemma-3-4b-it": 0.33906250000000004,
+                    "claude-3.5-sonnet__gemma-3-12b-it": 0.4241666666666667,
+                    "claude-3.5-sonnet__chatgpt-4o-latest": 0.7894791666666665,
+                    "claude-3.5-sonnet__reka-flash-3": 0.1726041666666666,
+                    "claude-3.5-sonnet__quasar-alpha": 0.5621875000000001,
+                    "claude-3.5-sonnet__grok-3-beta": 0.4665625,
+                    "claude-3.5-sonnet__gpt-4.1": 0.5829166666666665,
+                    "claude-3.5-sonnet__gpt-4.1-nano": 1.0194791666666667,
+                    "claude-3.5-sonnet__glm-4-32b": 0.7142708333333332,
+                    "claude-3.5-sonnet__qwen3-235b-a22b": 0.4252083333333333,
+                    "claude-3.5-sonnet__claude-sonnet-4": 0.6557291666666667,
+                    "claude-3.5-sonnet__claude-opus-4": 0.8559375,
+                    "claude-3.5-sonnet__gemini-2.5-pro": 1.0928125,
+                    "claude-3.5-sonnet__mistral-small-3.2-24b": 0.526875,
+                    "claude-3.5-sonnet__kimi-k2": 1.3330208333333333,
+                    "gemma-3-27b-it__gemma-3-4b-it": 0.3360416666666667,
+                    "gemma-3-27b-it__gemma-3-12b-it": 0.5488541666666666,
+                    "gemma-3-27b-it__chatgpt-4o-latest": 0.4216666666666664,
+                    "gemma-3-27b-it__reka-flash-3": 0.35833333333333334,
+                    "gemma-3-27b-it__quasar-alpha": 0.1933333333333333,
+                    "gemma-3-27b-it__grok-3-beta": 0.101875,
+                    "gemma-3-27b-it__gpt-4.1": 0.26510416666666653,
+                    "gemma-3-27b-it__gpt-4.1-nano": 1.3872916666666666,
+                    "gemma-3-27b-it__glm-4-32b": 1.0366666666666666,
+                    "gemma-3-27b-it__qwen3-235b-a22b": 0.2911458333333333,
+                    "gemma-3-27b-it__claude-sonnet-4": 0.28770833333333334,
+                    "gemma-3-27b-it__claude-opus-4": 0.48812500000000003,
+                    "gemma-3-27b-it__gemini-2.5-pro": 0.7250000000000001,
+                    "gemma-3-27b-it__mistral-small-3.2-24b": 0.7203125000000001,
+                    "gemma-3-27b-it__kimi-k2": 0.9652083333333334,
+                    "gemma-3-4b-it__gemma-3-12b-it": 0.23510416666666667,
+                    "gemma-3-4b-it__chatgpt-4o-latest": 0.7577083333333332,
+                    "gemma-3-4b-it__reka-flash-3": 0.2533333333333333,
+                    "gemma-3-4b-it__quasar-alpha": 0.5272916666666667,
+                    "gemma-3-4b-it__grok-3-beta": 0.42895833333333333,
+                    "gemma-3-4b-it__gpt-4.1": 0.5778125,
+                    "gemma-3-4b-it__gpt-4.1-nano": 1.05125,
+                    "gemma-3-4b-it__glm-4-32b": 0.74125,
+                    "gemma-3-4b-it__qwen3-235b-a22b": 0.49593750000000003,
+                    "gemma-3-4b-it__claude-sonnet-4": 0.6227083333333334,
+                    "gemma-3-4b-it__claude-opus-4": 0.8241666666666667,
+                    "gemma-3-4b-it__gemini-2.5-pro": 1.0610416666666667,
+                    "gemma-3-4b-it__mistral-small-3.2-24b": 0.4019791666666667,
+                    "gemma-3-4b-it__kimi-k2": 1.30125,
+                    "gemma-3-12b-it__chatgpt-4o-latest": 0.9705208333333332,
+                    "gemma-3-12b-it__reka-flash-3": 0.2734375,
+                    "gemma-3-12b-it__quasar-alpha": 0.7401041666666666,
+                    "gemma-3-12b-it__grok-3-beta": 0.6417708333333333,
+                    "gemma-3-12b-it__gpt-4.1": 0.7949999999999999,
+                    "gemma-3-12b-it__gpt-4.1-nano": 0.8384375000000002,
+                    "gemma-3-12b-it__glm-4-32b": 0.5192708333333332,
+                    "gemma-3-12b-it__qwen3-235b-a22b": 0.7133333333333333,
+                    "gemma-3-12b-it__claude-sonnet-4": 0.8355208333333333,
+                    "gemma-3-12b-it__claude-opus-4": 1.0369791666666666,
+                    "gemma-3-12b-it__gemini-2.5-pro": 1.2738541666666667,
+                    "gemma-3-12b-it__mistral-small-3.2-24b": 0.19645833333333335,
+                    "gemma-3-12b-it__kimi-k2": 1.5140625,
+                    "chatgpt-4o-latest__reka-flash-3": 0.7799999999999999,
+                    "chatgpt-4o-latest__quasar-alpha": 0.23041666666666655,
+                    "chatgpt-4o-latest__grok-3-beta": 0.3287499999999999,
+                    "chatgpt-4o-latest__gpt-4.1": 0.2173958333333333,
+                    "chatgpt-4o-latest__gpt-4.1-nano": 1.808958333333333,
+                    "chatgpt-4o-latest__glm-4-32b": 1.4583333333333333,
+                    "chatgpt-4o-latest__qwen3-235b-a22b": 0.3642708333333332,
+                    "chatgpt-4o-latest__claude-sonnet-4": 0.13812499999999983,
+                    "chatgpt-4o-latest__claude-opus-4": 0.11145833333333346,
+                    "chatgpt-4o-latest__gemini-2.5-pro": 0.30333333333333357,
+                    "chatgpt-4o-latest__mistral-small-3.2-24b": 1.1419791666666665,
+                    "chatgpt-4o-latest__kimi-k2": 0.5435416666666668,
+                    "reka-flash-3__quasar-alpha": 0.550625,
+                    "reka-flash-3__grok-3-beta": 0.45125000000000004,
+                    "reka-flash-3__gpt-4.1": 0.5967708333333333,
+                    "reka-flash-3__gpt-4.1-nano": 1.0289583333333334,
+                    "reka-flash-3__glm-4-32b": 0.6783333333333332,
+                    "reka-flash-3__qwen3-235b-a22b": 0.4830208333333333,
+                    "reka-flash-3__claude-sonnet-4": 0.645,
+                    "reka-flash-3__claude-opus-4": 0.8464583333333332,
+                    "reka-flash-3__gemini-2.5-pro": 1.0833333333333335,
+                    "reka-flash-3__mistral-small-3.2-24b": 0.3951041666666667,
+                    "reka-flash-3__kimi-k2": 1.3235416666666666,
+                    "quasar-alpha__grok-3-beta": 0.10833333333333334,
+                    "quasar-alpha__gpt-4.1": 0.12364583333333334,
+                    "quasar-alpha__gpt-4.1-nano": 1.5785416666666667,
+                    "quasar-alpha__glm-4-32b": 1.2279166666666668,
+                    "quasar-alpha__qwen3-235b-a22b": 0.26781250000000006,
+                    "quasar-alpha__claude-sonnet-4": 0.135,
+                    "quasar-alpha__claude-opus-4": 0.3022916666666666,
+                    "quasar-alpha__gemini-2.5-pro": 0.5337500000000001,
+                    "quasar-alpha__mistral-small-3.2-24b": 0.9115625,
+                    "quasar-alpha__kimi-k2": 0.7739583333333334,
+                    "grok-3-beta__gpt-4.1": 0.2076041666666666,
+                    "grok-3-beta__gpt-4.1-nano": 1.4802083333333336,
+                    "grok-3-beta__glm-4-32b": 1.1295833333333332,
+                    "grok-3-beta__qwen3-235b-a22b": 0.32510416666666664,
+                    "grok-3-beta__claude-sonnet-4": 0.20833333333333337,
+                    "grok-3-beta__claude-opus-4": 0.40520833333333334,
+                    "grok-3-beta__gemini-2.5-pro": 0.6320833333333334,
+                    "grok-3-beta__mistral-small-3.2-24b": 0.8132291666666667,
+                    "grok-3-beta__kimi-k2": 0.8722916666666667,
+                    "gpt-4.1__gpt-4.1-nano": 1.5915625000000002,
+                    "gpt-4.1__glm-4-32b": 1.2409374999999998,
+                    "gpt-4.1__qwen3-235b-a22b": 0.18895833333333334,
+                    "gpt-4.1__claude-sonnet-4": 0.10906249999999995,
+                    "gpt-4.1__claude-opus-4": 0.28489583333333346,
+                    "gpt-4.1__gemini-2.5-pro": 0.5207291666666668,
+                    "gpt-4.1__mistral-small-3.2-24b": 0.9377083333333334,
+                    "gpt-4.1__kimi-k2": 0.7609375,
+                    "gpt-4.1-nano__glm-4-32b": 0.41604166666666664,
+                    "gpt-4.1-nano__qwen3-235b-a22b": 1.4446875,
+                    "gpt-4.1-nano__claude-sonnet-4": 1.6739583333333332,
+                    "gpt-4.1-nano__claude-opus-4": 1.8754166666666665,
+                    "gpt-4.1-nano__gemini-2.5-pro": 2.1122916666666667,
+                    "gpt-4.1-nano__mistral-small-3.2-24b": 0.6669791666666667,
+                    "gpt-4.1-nano__kimi-k2": 2.3525,
+                    "glm-4-32b__qwen3-235b-a22b": 1.0940625,
+                    "glm-4-32b__claude-sonnet-4": 1.3233333333333333,
+                    "glm-4-32b__claude-opus-4": 1.5247916666666668,
+                    "glm-4-32b__gemini-2.5-pro": 1.7616666666666665,
+                    "glm-4-32b__mistral-small-3.2-24b": 0.3603125,
+                    "glm-4-32b__kimi-k2": 2.001875,
+                    "qwen3-235b-a22b__claude-sonnet-4": 0.2596875,
+                    "qwen3-235b-a22b__claude-opus-4": 0.4307291666666667,
+                    "qwen3-235b-a22b__gemini-2.5-pro": 0.6676041666666668,
+                    "qwen3-235b-a22b__mistral-small-3.2-24b": 0.8360416666666668,
+                    "qwen3-235b-a22b__kimi-k2": 0.9078125,
+                    "claude-sonnet-4__claude-opus-4": 0.20458333333333328,
+                    "claude-sonnet-4__gemini-2.5-pro": 0.43833333333333335,
+                    "claude-sonnet-4__mistral-small-3.2-24b": 1.0069791666666668,
+                    "claude-sonnet-4__kimi-k2": 0.6785416666666668,
+                    "claude-opus-4__gemini-2.5-pro": 0.23687500000000003,
+                    "claude-opus-4__mistral-small-3.2-24b": 1.2084375,
+                    "claude-opus-4__kimi-k2": 0.4770833333333334,
+                    "gemini-2.5-pro__mistral-small-3.2-24b": 1.4453125,
+                    "gemini-2.5-pro__kimi-k2": 0.24020833333333336,
+                    "mistral-small-3.2-24b__kimi-k2": 1.6855208333333334
+                }
+            },
+            "average_ci95": 0.14980437506706565,
+            "modulated_ci95": 0.782299981169831
+        },
+        "calibrated": {
+            "ci99_overlap_adjacent": {
+                "kimi-k2__gemini-2.5-pro": false,
+                "gemini-2.5-pro__claude-opus-4": false,
+                "claude-opus-4__chatgpt-4o-latest": true,
+                "chatgpt-4o-latest__claude-sonnet-4": true,
+                "claude-sonnet-4__gpt-4.1": true,
+                "gpt-4.1__qwen3-235b-a22b": true,
+                "qwen3-235b-a22b__quasar-alpha": true,
+                "quasar-alpha__grok-3-beta": true,
+                "grok-3-beta__gemma-3-27b-it": true,
+                "gemma-3-27b-it__claude-3.5-sonnet": false,
+                "claude-3.5-sonnet__reka-flash-3": true,
+                "reka-flash-3__gemma-3-4b-it": false,
+                "gemma-3-4b-it__gemma-3-12b-it": false,
+                "gemma-3-12b-it__mistral-small-3.2-24b": true,
+                "mistral-small-3.2-24b__glm-4-32b": true,
+                "glm-4-32b__gpt-4.1-nano": false
+            },
+            "adjacent_overlap_fraction": 0.625,
+            "ci99_overlap_magnitude_adjacent": {
+                "kimi-k2__gemini-2.5-pro": 0.0,
+                "gemini-2.5-pro__claude-opus-4": 0.0,
+                "claude-opus-4__chatgpt-4o-latest": 0.04361862338775513,
+                "chatgpt-4o-latest__claude-sonnet-4": 0.004482123424926598,
+                "claude-sonnet-4__gpt-4.1": 0.10728248524779804,
+                "gpt-4.1__qwen3-235b-a22b": 0.2759446562395649,
+                "qwen3-235b-a22b__quasar-alpha": 0.1804794858330956,
+                "quasar-alpha__grok-3-beta": 0.009343162873622468,
+                "grok-3-beta__gemma-3-27b-it": 0.2483689434591021,
+                "gemma-3-27b-it__claude-3.5-sonnet": 0.0,
+                "claude-3.5-sonnet__reka-flash-3": 0.25359093598256965,
+                "reka-flash-3__gemma-3-4b-it": 0.0,
+                "gemma-3-4b-it__gemma-3-12b-it": 0.0,
+                "gemma-3-12b-it__mistral-small-3.2-24b": 0.11492465000896468,
+                "mistral-small-3.2-24b__glm-4-32b": 0.20839835446780341,
+                "glm-4-32b__gpt-4.1-nano": 0.0
+            },
+            "ci99_overlap_magnitude_sum": 1.4464334209252026,
+            "ci99_overlap_scale_factor": 1.0,
+            "ci99_overlap_percentage_adjacent": {
+                "kimi-k2__gemini-2.5-pro": 0.0,
+                "gemini-2.5-pro__claude-opus-4": 0.0,
+                "claude-opus-4__chatgpt-4o-latest": 0.12899656681600086,
+                "chatgpt-4o-latest__claude-sonnet-4": 0.01325687548826277,
+                "claude-sonnet-4__gpt-4.1": 0.3154067443751174,
+                "gpt-4.1__qwen3-235b-a22b": 0.7603777359089037,
+                "qwen3-235b-a22b__quasar-alpha": 0.48353262364600974,
+                "quasar-alpha__grok-3-beta": 0.02582036338887908,
+                "grok-3-beta__gemma-3-27b-it": 0.6971191397715157,
+                "gemma-3-27b-it__claude-3.5-sonnet": 0.0,
+                "claude-3.5-sonnet__reka-flash-3": 0.6452932675012879,
+                "reka-flash-3__gemma-3-4b-it": 0.0,
+                "gemma-3-4b-it__gemma-3-12b-it": 0.0,
+                "gemma-3-12b-it__mistral-small-3.2-24b": 0.3997846016920403,
+                "mistral-small-3.2-24b__glm-4-32b": 0.6589843809911904,
+                "glm-4-32b__gpt-4.1-nano": 0.0
+            },
+            "ci99_overlap_percentage_adjacent_avg": 0.2580357687237005,
+            "average_cohens_d_adjacent": 0.23468857035658025,
+            "cohens_d_norm": 0.5867214258914506,
+            "emd": {
+                "average": 1.71114084561755,
+                "pairs": {
+                    "claude-3.5-sonnet__gemma-3-27b-it": 0.4502635179367779,
+                    "claude-3.5-sonnet__gemma-3-4b-it": 0.7050689563364998,
+                    "claude-3.5-sonnet__gemma-3-12b-it": 0.9340284021832224,
+                    "claude-3.5-sonnet__chatgpt-4o-latest": 1.7425657797090548,
+                    "claude-3.5-sonnet__reka-flash-3": 0.2541472727576617,
+                    "claude-3.5-sonnet__quasar-alpha": 0.901951240953871,
+                    "claude-3.5-sonnet__grok-3-beta": 0.5550872131168902,
+                    "claude-3.5-sonnet__gpt-4.1": 1.198755033350899,
+                    "claude-3.5-sonnet__gpt-4.1-nano": 1.9000780263134815,
+                    "claude-3.5-sonnet__glm-4-32b": 1.1258052692473277,
+                    "claude-3.5-sonnet__qwen3-235b-a22b": 1.0882001546801758,
+                    "claude-3.5-sonnet__claude-sonnet-4": 1.4115039747202591,
+                    "claude-3.5-sonnet__claude-opus-4": 2.037175150783254,
+                    "claude-3.5-sonnet__gemini-2.5-pro": 2.768612221639038,
+                    "claude-3.5-sonnet__mistral-small-3.2-24b": 1.07492307708483,
+                    "claude-3.5-sonnet__kimi-k2": 3.4122582880837373,
+                    "gemma-3-27b-it__gemma-3-4b-it": 0.9690094384878761,
+                    "gemma-3-27b-it__gemma-3-12b-it": 1.2568206508476554,
+                    "gemma-3-27b-it__chatgpt-4o-latest": 1.307734360537709,
+                    "gemma-3-27b-it__reka-flash-3": 0.5743186024142433,
+                    "gemma-3-27b-it__quasar-alpha": 0.46491523624460634,
+                    "gemma-3-27b-it__grok-3-beta": 0.15027137991766604,
+                    "gemma-3-27b-it__gpt-4.1": 0.7838608901652161,
+                    "gemma-3-27b-it__gpt-4.1-nano": 2.334909445484827,
+                    "gemma-3-27b-it__glm-4-32b": 1.539707348940947,
+                    "gemma-3-27b-it__qwen3-235b-a22b": 0.7610876295180464,
+                    "gemma-3-27b-it__claude-sonnet-4": 0.9762316384413294,
+                    "gemma-3-27b-it__claude-opus-4": 1.6023437316119082,
+                    "gemma-3-27b-it__gemini-2.5-pro": 2.333780802467692,
+                    "gemma-3-27b-it__mistral-small-3.2-24b": 1.429397353399033,
+                    "gemma-3-27b-it__kimi-k2": 2.977426868912391,
+                    "gemma-3-4b-it__gemma-3-12b-it": 0.3285584293187207,
+                    "gemma-3-4b-it__chatgpt-4o-latest": 2.276743799025585,
+                    "gemma-3-4b-it__reka-flash-3": 0.5458285088846927,
+                    "gemma-3-4b-it__quasar-alpha": 1.4295155036566447,
+                    "gemma-3-4b-it__grok-3-beta": 1.076919553421075,
+                    "gemma-3-4b-it__gpt-4.1": 1.7272864690638565,
+                    "gemma-3-4b-it__gpt-4.1-nano": 1.365900006996951,
+                    "gemma-3-4b-it__glm-4-32b": 0.7129865612019586,
+                    "gemma-3-4b-it__qwen3-235b-a22b": 1.669613197038181,
+                    "gemma-3-4b-it__claude-sonnet-4": 1.9430364913912872,
+                    "gemma-3-4b-it__claude-opus-4": 2.5713531700997847,
+                    "gemma-3-4b-it__gemini-2.5-pro": 3.3027902409555683,
+                    "gemma-3-4b-it__mistral-small-3.2-24b": 0.5242990734712155,
+                    "gemma-3-4b-it__kimi-k2": 3.9464363074002673,
+                    "gemma-3-12b-it__chatgpt-4o-latest": 2.564555011385364,
+                    "gemma-3-12b-it__reka-flash-3": 0.7207124939019222,
+                    "gemma-3-12b-it__quasar-alpha": 1.7173267160164238,
+                    "gemma-3-12b-it__grok-3-beta": 1.364730765780854,
+                    "gemma-3-12b-it__gpt-4.1": 2.0171138104558937,
+                    "gemma-3-12b-it__gpt-4.1-nano": 1.0780887946371716,
+                    "gemma-3-12b-it__glm-4-32b": 0.39797669442271244,
+                    "gemma-3-12b-it__qwen3-235b-a22b": 1.9595365445746116,
+                    "gemma-3-12b-it__claude-sonnet-4": 2.230847703751066,
+                    "gemma-3-12b-it__claude-opus-4": 2.8591643824595643,
+                    "gemma-3-12b-it__gemini-2.5-pro": 3.5906014533153474,
+                    "gemma-3-12b-it__mistral-small-3.2-24b": 0.22234833463633816,
+                    "gemma-3-12b-it__kimi-k2": 4.234247519760046,
+                    "chatgpt-4o-latest__reka-flash-3": 1.8820529629519525,
+                    "chatgpt-4o-latest__quasar-alpha": 0.8472282953689405,
+                    "chatgpt-4o-latest__grok-3-beta": 1.19982424560451,
+                    "chatgpt-4o-latest__gpt-4.1": 0.5667384359525122,
+                    "chatgpt-4o-latest__gpt-4.1-nano": 3.642643806022536,
+                    "chatgpt-4o-latest__glm-4-32b": 2.847441709478656,
+                    "chatgpt-4o-latest__qwen3-235b-a22b": 0.6543656250288792,
+                    "chatgpt-4o-latest__claude-sonnet-4": 0.3463976629642477,
+                    "chatgpt-4o-latest__claude-opus-4": 0.3358633446618422,
+                    "chatgpt-4o-latest__gemini-2.5-pro": 1.0260464419299828,
+                    "chatgpt-4o-latest__mistral-small-3.2-24b": 2.737131713936742,
+                    "chatgpt-4o-latest__kimi-k2": 1.6696925083746819,
+                    "reka-flash-3__quasar-alpha": 1.0370292531209309,
+                    "reka-flash-3__grok-3-beta": 0.682228717347442,
+                    "reka-flash-3__gpt-4.1": 1.338302664906933,
+                    "reka-flash-3__gpt-4.1-nano": 1.7605908430705839,
+                    "reka-flash-3__glm-4-32b": 0.9653887465267038,
+                    "reka-flash-3__qwen3-235b-a22b": 1.25869732256209,
+                    "reka-flash-3__claude-sonnet-4": 1.548345655317654,
+                    "reka-flash-3__claude-opus-4": 2.1766623340261515,
+                    "reka-flash-3__gemini-2.5-pro": 2.908099404881935,
+                    "reka-flash-3__mistral-small-3.2-24b": 0.8703437279433152,
+                    "reka-flash-3__kimi-k2": 3.5517454713266345,
+                    "quasar-alpha__grok-3-beta": 0.3623779096143034,
+                    "quasar-alpha__gpt-4.1": 0.3704440609297697,
+                    "quasar-alpha__gpt-4.1-nano": 2.795415510653595,
+                    "quasar-alpha__glm-4-32b": 2.000213414109716,
+                    "quasar-alpha__qwen3-235b-a22b": 0.4424620220251345,
+                    "quasar-alpha__claude-sonnet-4": 0.5679778063043638,
+                    "quasar-alpha__claude-opus-4": 1.144333826197364,
+                    "quasar-alpha__gemini-2.5-pro": 1.8732747372989234,
+                    "quasar-alpha__mistral-small-3.2-24b": 1.8899034185678016,
+                    "quasar-alpha__kimi-k2": 2.5169208037436226,
+                    "grok-3-beta__gpt-4.1": 0.692616730742059,
+                    "grok-3-beta__gpt-4.1-nano": 2.442819560418026,
+                    "grok-3-beta__glm-4-32b": 1.6476174638741456,
+                    "grok-3-beta__qwen3-235b-a22b": 0.7116452565203315,
+                    "grok-3-beta__claude-sonnet-4": 0.8728373680777387,
+                    "grok-3-beta__claude-opus-4": 1.4990419116095848,
+                    "grok-3-beta__gemini-2.5-pro": 2.2258706875344934,
+                    "grok-3-beta__mistral-small-3.2-24b": 1.5373074683322316,
+                    "grok-3-beta__kimi-k2": 2.8695167539791924,
+                    "gpt-4.1__gpt-4.1-nano": 3.075905370070024,
+                    "gpt-4.1__glm-4-32b": 2.280703273526144,
+                    "gpt-4.1__qwen3-235b-a22b": 0.1958878312374429,
+                    "gpt-4.1__claude-sonnet-4": 0.28754941275068446,
+                    "gpt-4.1__claude-opus-4": 0.8618278377486775,
+                    "gpt-4.1__gemini-2.5-pro": 1.5927848778824947,
+                    "gpt-4.1__mistral-small-3.2-24b": 2.176441665081004,
+                    "gpt-4.1__kimi-k2": 2.236430944327194,
+                    "gpt-4.1-nano__glm-4-32b": 0.8253480258833576,
+                    "gpt-4.1-nano__qwen3-235b-a22b": 2.9882781809936567,
+                    "gpt-4.1-nano__claude-sonnet-4": 3.308936498388237,
+                    "gpt-4.1-nano__claude-opus-4": 3.937253177096735,
+                    "gpt-4.1-nano__gemini-2.5-pro": 4.668690247952519,
+                    "gpt-4.1-nano__mistral-small-3.2-24b": 0.905512092085794,
+                    "gpt-4.1-nano__kimi-k2": 5.312336314397218,
+                    "glm-4-32b__qwen3-235b-a22b": 2.193076084449777,
+                    "glm-4-32b__claude-sonnet-4": 2.513734401844358,
+                    "glm-4-32b__claude-opus-4": 3.1420510805528554,
+                    "glm-4-32b__gemini-2.5-pro": 3.8734881514086394,
+                    "glm-4-32b__mistral-small-3.2-24b": 0.30403452250724083,
+                    "glm-4-32b__kimi-k2": 4.5171342178533385,
+                    "qwen3-235b-a22b__claude-sonnet-4": 0.3901992124563092,
+                    "qwen3-235b-a22b__claude-opus-4": 0.9489749961030784,
+                    "qwen3-235b-a22b__gemini-2.5-pro": 1.680412066958862,
+                    "qwen3-235b-a22b__mistral-small-3.2-24b": 2.1096478093379707,
+                    "qwen3-235b-a22b__kimi-k2": 2.324058133403561,
+                    "claude-sonnet-4__claude-opus-4": 0.6297567708743963,
+                    "claude-sonnet-4__gemini-2.5-pro": 1.359753749564281,
+                    "claude-sonnet-4__mistral-small-3.2-24b": 2.403424406302444,
+                    "claude-sonnet-4__kimi-k2": 2.0033998160089803,
+                    "claude-opus-4__gemini-2.5-pro": 0.7314370708557836,
+                    "claude-opus-4__mistral-small-3.2-24b": 3.031741085010941,
+                    "claude-opus-4__kimi-k2": 1.3750831373004826,
+                    "gemini-2.5-pro__mistral-small-3.2-24b": 3.7631781558667248,
+                    "gemini-2.5-pro__kimi-k2": 0.6436460664446992,
+                    "mistral-small-3.2-24b__kimi-k2": 4.406824222311425
+                }
+            },
+            "average_ci95": 0.2990861374820635,
+            "modulated_ci95": 0.39482453405303275
+        }
+    },
+    "iteration_stability": {
+        "raw": {
+            "scoring_stability": {
+                "claude-3.5-sonnet": {
+                    "mean_iter_score": 7.426666666666667,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.1570588094251818
+                },
+                "gemma-3-27b-it": {
+                    "mean_iter_score": 7.794479166666666,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.0846751349111545
+                },
+                "gemma-3-4b-it": {
+                    "mean_iter_score": 7.4584375,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.0696396042433231
+                },
+                "gemma-3-12b-it": {
+                    "mean_iter_score": 7.2456249999999995,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.10307416676435821
+                },
+                "chatgpt-4o-latest": {
+                    "mean_iter_score": 8.216145833333334,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.05117139127209811
+                },
+                "reka-flash-3": {
+                    "mean_iter_score": 7.436145833333334,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.007527438235474746
+                },
+                "quasar-alpha": {
+                    "mean_iter_score": 7.985729166666666,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.029209789550004528
+                },
+                "grok-3-beta": {
+                    "mean_iter_score": 7.887395833333334,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.056172013840424855
+                },
+                "gpt-4.1": {
+                    "mean_iter_score": 7.99875,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.04639967335553113
+                },
+                "gpt-4.1-nano": {
+                    "mean_iter_score": 6.4071875,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.14912046828822664
+                },
+                "glm-4-32b": {
+                    "mean_iter_score": 6.7578125,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.10829045625846588
+                },
+                "qwen3-235b-a22b": {
+                    "mean_iter_score": 7.851875,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.08992509904081283
+                },
+                "claude-sonnet-4": {
+                    "mean_iter_score": 8.081145833333334,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.005293060839963156
+                },
+                "claude-opus-4": {
+                    "mean_iter_score": 8.282604166666667,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.023353785679318687
+                },
+                "gemini-2.5-pro": {
+                    "mean_iter_score": 8.519479166666667,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.049174390283176855
+                },
+                "mistral-small-3.2-24b": {
+                    "mean_iter_score": 7.074166666666667,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.11588774576311145
+                },
+                "kimi-k2": {
+                    "mean_iter_score": 8.7596875,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.00822455039298012
+                }
+            },
+            "ranking_stability": {
+                "pairwise_correlation": {
+                    "1__vs__2": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8823529411764705,
+                        "p_value": 3.5743855407137387e-09
+                    },
+                    "1__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8970588235294118,
+                        "p_value": 1.2313901628307946e-09
+                    },
+                    "2__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.8970588235294118,
+                        "p_value": 1.2313901628307946e-09
+                    }
+                },
+                "average_kendall_tau": 0.892156862745098
+            },
+            "randomized_average_kendall_tau_by_item": 0.9038039215686274
+        },
+        "calibrated": {
+            "scoring_stability": {
+                "claude-3.5-sonnet": {
+                    "mean_iter_score": 4.473279711221315,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.2016422735738181
+                },
+                "gemma-3-27b-it": {
+                    "mean_iter_score": 4.908111130392661,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.2310445298571995
+                },
+                "gemma-3-4b-it": {
+                    "mean_iter_score": 3.939101691904785,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.14982549193600084
+                },
+                "gemma-3-12b-it": {
+                    "mean_iter_score": 3.651290479545006,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.2098253237406933
+                },
+                "chatgpt-4o-latest": {
+                    "mean_iter_score": 6.215845490930371,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.22385231759978227
+                },
+                "reka-flash-3": {
+                    "mean_iter_score": 4.333792527978418,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.09875201056638275
+                },
+                "quasar-alpha": {
+                    "mean_iter_score": 5.36861719556143,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.11054010298755443
+                },
+                "grok-3-beta": {
+                    "mean_iter_score": 5.01602124532586,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.17406376883714722
+                },
+                "gpt-4.1": {
+                    "mean_iter_score": 5.649107054977858,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.0415692971107479
+                },
+                "gpt-4.1-nano": {
+                    "mean_iter_score": 2.573201684907834,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.11670606280422384
+                },
+                "glm-4-32b": {
+                    "mean_iter_score": 3.3684037814517143,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.046156219822485474
+                },
+                "qwen3-235b-a22b": {
+                    "mean_iter_score": 5.561479865901491,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.16175226305036755
+                },
+                "claude-sonnet-4": {
+                    "mean_iter_score": 5.882138183296072,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.054631910134906564
+                },
+                "claude-opus-4": {
+                    "mean_iter_score": 6.510454862004569,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.04610963441358523
+                },
+                "gemini-2.5-pro": {
+                    "mean_iter_score": 7.241891932860353,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.15830565955807976
+                },
+                "mistral-small-3.2-24b": {
+                    "mean_iter_score": 3.478713776993628,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.13104697934418363
+                },
+                "kimi-k2": {
+                    "mean_iter_score": 7.885537999305052,
+                    "iteration_count": 3,
+                    "stdev_across_iters": 0.010069328771183909
+                }
+            },
+            "ranking_stability": {
+                "pairwise_correlation": {
+                    "1__vs__2": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.926470588235294,
+                        "p_value": 1.080161877119549e-10
+                    },
+                    "1__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.9558823529411764,
+                        "p_value": 5.347391697765181e-12
+                    },
+                    "2__vs__3": {
+                        "common_model_count": 17,
+                        "kendall_tau": 0.9117647058823529,
+                        "p_value": 3.8599058936360526e-10
+                    }
+                },
+                "average_kendall_tau": 0.9313725490196078
+            },
+            "randomized_average_kendall_tau_by_item": 0.9222254901960784
+        }
+    },
+    "raw_score_range": 2.3525,
+    "final_judgemark_score_elements_raw": {
+        "norm_stability_between_iterations": 0.6793464052287581,
+        "norm_correlation_with_lmsys_arena": 0.7044159544159542,
+        "norm_std_dev_between_models": 0.23112261836318784,
+        "norm_kruskall_wallis": 0.5577125234862323,
+        "norm_ci99_adjacent_overlap": 1.0,
+        "norm_score_range": 0.23525000000000001,
+        "norm_intra_model_ci95": 0.782299981169831,
+        "norm_earth_movers_distance": 0.18493106617647065
+    },
+    "final_judgemark_score_raw": 0.7498645677695294,
+    "calibrated_score_range": 5.312336314397218,
+    "final_judgemark_score_elements_calibrated": {
+        "norm_stability_between_iterations": 0.805563725490196,
+        "norm_correlation_with_lmsys_arena": 0.6616809116809114,
+        "norm_std_dev_between_models": 0.5377932794689029,
+        "norm_kruskall_wallis": 0.5577125234862323,
+        "norm_ci99_adjacent_overlap": 1.0,
+        "norm_score_range": 0.5312336314397218,
+        "norm_intra_model_ci95": 0.39482453405303275,
+        "norm_earth_movers_distance": 0.4277852114043875
+    },
+    "final_judgemark_score": 0.7637782806905954
+}
