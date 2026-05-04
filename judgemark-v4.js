@@ -433,9 +433,9 @@ function loadJudgemarkV4() {
     const pct = Math.max(4, Math.min(100, (row.score / axisMax) * 100));
     const score100 = (row.score * 100).toFixed(2);
     const hasCi = Number.isFinite(ciLow) && Number.isFinite(ciHigh);
-    const ciLeftPct = hasCi ? Math.max(0, Math.min(100, (ciLow / axisMax) * 100)) : 0;
-    const ciRightPct = hasCi ? Math.max(0, Math.min(100, (ciHigh / axisMax) * 100)) : 0;
-    const ciWidthPct = Math.max(0, ciRightPct - ciLeftPct);
+    const ciWidthPct = hasCi ? Math.max(0, ((ciHigh - ciLow) / axisMax) * 100) : 0;
+    const scorePct = Math.max(0, Math.min(100, (row.score / axisMax) * 100));
+    const ciLeftPct = hasCi ? Math.max(0, Math.min(100 - ciWidthPct, scorePct - (ciWidthPct / 2))) : 0;
     const ciTitle = hasCi
       ? `Judgemark score ${score100}; 95% CI ${(ciLow * 100).toFixed(2)} - ${(ciHigh * 100).toFixed(2)}`
       : `Judgemark score ${score100}`;
