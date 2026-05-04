@@ -107,6 +107,53 @@
       white-space: nowrap;
       font-weight: 600;
     }
+    .jm4-view-switch {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+    .jm4-view-link {
+      border: 1px solid rgba(80, 70, 60, 0.22);
+      border-radius: 6px;
+      color: inherit;
+      padding: 0.35rem 0.7rem;
+      text-decoration: none;
+    }
+    .jm4-view-link:hover {
+      text-decoration: none;
+    }
+    .jm4-view-link.active {
+      background: #5f7f52;
+      border-color: #5f7f52;
+      color: #fff;
+      font-weight: 600;
+    }
+    body.dark-mode .jm4-view-link {
+      border-color: rgba(255,255,255,0.18);
+    }
+    body.dark-mode .jm4-view-link.active {
+      background: #86a071;
+      border-color: #86a071;
+      color: #111;
+    }
+    .jm4-view[hidden] {
+      display: none !important;
+    }
+    .jm4-pareto-shell {
+      border: 1px solid rgba(80, 70, 60, 0.16);
+      border-radius: 8px;
+      min-height: 620px;
+      padding: 0.5rem;
+    }
+    body.dark-mode .jm4-pareto-shell {
+      border-color: rgba(255,255,255,0.12);
+    }
+    #jm4ParetoPlot {
+      height: 660px;
+      width: 100%;
+    }
     .jm4-modal {
       align-items: stretch;
       background: rgba(0, 0, 0, 0.78);
@@ -209,6 +256,13 @@
       .jm4-modal-viewport {
         padding: 0.5rem;
       }
+      .jm4-pareto-shell {
+        min-height: 520px;
+        padding: 0.25rem;
+      }
+      #jm4ParetoPlot {
+        height: 560px;
+      }
     }
   </style>
 </head>
@@ -266,30 +320,56 @@
     <div class="jm4-panel">
       <p class="jm4-summary mb-0">
         Judgemark v4 rates LLM judges on how discriminative they are at scoring creative writing. The score is based on separability metrics.
+        <a href="about.html#judgemark">Read more</a>.
       </p>
     </div>
 
-    <div class="table-responsive">
-      <table id="judgemark-leaderboard-v4" class="table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th>Model</th>
-            <th>Judgemark Score / 95% CI</th>
-            <th>Cost</th>
-            <th>Chart</th>
-          </tr>
-        </thead>
-        <tbody id="leaderboardBodyV4">
-          <tr><td colspan="4" class="text-center">Loading...</td></tr>
-        </tbody>
-      </table>
+    <div class="jm4-view-switch" aria-label="Judgemark v4 result view">
+      <a href="#leaderboard" class="jm4-view-link active" id="jm4LeaderboardLink">Leaderboard</a>
+      <a href="#pareto" class="jm4-view-link" id="jm4ParetoLink">Pareto Plot</a>
+    </div>
+
+    <div class="jm4-view" id="jm4LeaderboardView">
+      <div class="table-responsive">
+        <table id="judgemark-leaderboard-v4" class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Judgemark Score / 95% CI</th>
+              <th>Cost</th>
+              <th>Chart</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboardBodyV4">
+            <tr><td colspan="4" class="text-center">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="jm4-view" id="jm4ParetoView" hidden>
+      <div class="jm4-pareto-shell">
+        <div id="jm4ParetoPlot" role="img" aria-label="Judgemark v4 score versus benchmark cost Pareto plot"></div>
+      </div>
     </div>
 
     <div class="section mt-4">
-      <p><b>How to read this page</b></p>
+      <p><b>What is Judgemark?</b></p>
+      <p>
+        Judgemark v4 is a meta-evaluation of LLM judging ability. The model being tested is the judge, not the writer. It is asked to score fixed creative-writing samples, and the benchmark measures whether those scores meaningfully separate stronger writing from weaker writing.
+      </p>
+      <p>
+        Each test item contains the original writing prompt, a lower-anchor response scored as 2, an upper-anchor response scored as 9, and one unlabeled response to be judged. The judge responds with a reasoning section and a numeric score for the test response. Across the benchmark, those blind test responses come from writer models of different abilities. A good judge should assign score distributions that are meaningfully separated by writer model, rather than compressing everything into the same narrow band.
+      </p>
+      <p>
+        The principle is similar to testing a sommelier's ability to distinguish wines in a blind tasting: If the judge can reliably pin a score to a range of unlabeled samples, we consider them a discriminative judge. This is easier said than done, and the evaluation encodes some deep abilities!
+      </p>
       <ul>
-        <li><b>Judgemark Score / 95% CI</b>: final v4 score multiplied by 100, with the prompt-bootstrap interval shown as a whisker on the same bar.</li>
-        <li><b>Chart</b>: the generated multichart for the run, including raw means, score distribution heatmap, and overall score-use histogram.</li>
+        <li><b>Scoring math</b>: Judgemark computes <code>combined_sep = 0.5 * omega_squared + 0.5 * mean_abs_paired_cliff_delta</code>, then reports <code>combined_sep / 0.75</code> on a 0-100 leaderboard scale.</li>
+        <li><b>Omega-squared</b>: estimates how much score variance is explained by writer-model identity.</li>
+        <li><b>Mean absolute paired Cliff's delta</b>: measures how strongly each pair of writer-model score distributions is separated.</li>
+        <li><b>95% CI</b>: the line on each score bar is a prompt-bootstrap confidence interval.</li>
+        <li><b>Chart</b>: run diagnostics, including raw mean scores, score distribution by writing model, and overall score-use histogram.</li>
       </ul>
     </div>
   </div>
@@ -312,7 +392,8 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-  <script src="judgemark-v4.js?v=1.0"></script>
+  <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+  <script src="judgemark-v4.js?v=1.1"></script>
   <script src="utils.js"></script>
   <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1600fe1d3da743c1b311f4e5fee86767"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

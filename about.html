@@ -1218,19 +1218,27 @@
 			<h3>⚖️ Judgemark v4</h3>
 
 			<p>
-			  <strong>Judgemark v4</strong> is a benchmark for measuring how well language models act as judges of creative writing. Rather than asking a model to generate fiction, it asks the model to score fixed writing samples against anchor responses, then measures whether those scores meaningfully separate stronger and weaker writer models.
+			  <strong>Judgemark v4</strong> is a meta-evaluation of LLM judging ability. The model being tested is the judge, not the writer. Judging creative writing is difficult even for humans, and general-purpose LLMs vary widely in whether they can assign useful scores without collapsing into vague praise, over-generous scoring, or narrow score-band usage. Judgemark tests the judge directly: can it assign scores that meaningfully separate stronger writing from weaker writing?
 			</p>
 
 			<p>
-			  Each item presents the judge with the original writing prompt, a lower-anchor response scored as 2, an upper-anchor response scored as 9, and one test response. The judge returns a JSON score, optionally with brief reasoning. The samples are middle-truncated so the task focuses on comparative judgement over a consistent amount of text.
+			  Each item presents the judge with the original writing prompt, a lower-anchor response scored as 2, an upper-anchor response scored as 9, and one blind test response. The judge returns a JSON score, optionally with brief reasoning. Across the run, the blind test responses come from writer models of different abilities. The judge is evaluated not by whether any single score has a ground-truth label, but by whether its score distributions separate the writer models in a stable and meaningful way.
 			</p>
 
 			<p>
-			  <strong>Final Judgemark Score</strong>: v4 uses a separability-only score. It combines two complementary measures:
+			  The principle is similar to testing a sommelier's ability to distinguish wines in a blind tasting.
+			</p>
+
+			<p>
+			  <strong>Separability</strong> is the core metric. If a judge is useful, writing from stronger writer models should receive higher score distributions than writing from weaker writer models, with less overlap between neighbouring groups. Judgemark v4 intentionally focuses the headline score on this discriminative power rather than mixing in separate stability or human-correlation components.
+			</p>
+
+			<p>
+			  <strong>Judgemark Score</strong>: v4 combines two complementary separability measures:
 			</p>
 			<ul>
-			  <li><em>Omega-squared across writer models</em>: how much of the variance in judge scores is explained by which writer model produced the sample.</li>
-			  <li><em>Mean absolute paired Cliff's delta</em>: how strongly the judge separates each pair of writer models by score distribution.</li>
+			  <li><em>Omega-squared across writer models</em>: an effect-size estimate of how much score variance is explained by writer-model identity.</li>
+			  <li><em>Mean absolute paired Cliff's delta</em>: the average non-parametric separation between every pair of writer-model score distributions.</li>
 			</ul>
 			<pre class="code-block"><code>combined_sep =
   0.5 * omega_squared_all_models
@@ -1239,11 +1247,11 @@
 judgemark_score = combined_sep / 0.75</code></pre>
 
 			<p>
-			  The leaderboard displays the Judgemark score on a 0-100 scale, with prompt-bootstrap 95% confidence intervals shown directly on the score bar. The multichart for each model shows raw score means, the score distribution heatmap by writer model, and overall score-use behaviour.
+			  The leaderboard displays this score on a 0-100 scale, with prompt-bootstrap 95% confidence intervals shown directly on the score bar. The chart for each model shows raw mean scores, the score distribution heatmap by writer model, and overall score-use behaviour. These diagnostics are important: two judges can have similar headline scores while using the rating scale very differently.
 			</p>
 
 			<p>
-			  Compared with Judgemark v2.1, v4 intentionally omits separate stability and human-correlation columns. This makes the headline result more direct: does the judge assign scores that separate writing quality in the expected direction?
+			  Compared with Judgemark v2.1, v4 omits separate stability and human-correlation columns from the public leaderboard. This makes the result more direct: does the judge assign scores that separate writing quality in the expected direction?
 			</p>
 
 			<p>

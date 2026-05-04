@@ -2,20 +2,33 @@
 
 const leaderboardDataJudgemarkV4 = `
 model,score,ci_low,ci_high,cost,chart
+claude-opus-4-6,0.907256,0.867410,0.967750,$39.37,results/judgemark-v4/charts/multichart_claude-opus-4-6_seed_temp0_prompt_reasoning_trial_01__claude-opus-4-6.png
+gpt-5.5,0.878134,0.853332,0.924747,$30.44,results/judgemark-v4/charts/multichart_openai__gpt-5_5_seed_temp0_prompt_reasoning_trial_01__openai_gpt-5_5.png
 claude-opus-4-7,0.839612,0.804731,0.894923,$48.75,results/judgemark-v4/charts/multichart_claude-opus-4-7_seed_temp0_prompt_reasoning_trial_01__claude-opus-4-7.png
 claude-sonnet-4-6,0.821468,0.782343,0.882974,$23.36,results/judgemark-v4/charts/multichart_claude-sonnet-4-6_seed_temp0_prompt_reasoning_trial_01__claude-sonnet-4-6.png
 gemini-3.1-pro-preview,0.786853,0.738905,0.851353,$23.07,results/judgemark-v4/charts/multichart_google__gemini-3_1-pro-preview_seed_temp0_prompt_reasoning_trial_01__google_gemini-3_1-pro-preview.png
+google/gemma-4-31B-it,0.723051,0.680818,0.793728,$0.82,results/judgemark-v4/charts/multichart_google__gemma-4-31b-it_seed_temp0_prompt_reasoning_trial_01__google_gemma-4-31b-it.png
 gpt-5.4,0.720762,0.684801,0.781918,$15.24,results/judgemark-v4/charts/multichart_gpt-5_4_seed_temp0_prompt_reasoning_trial_01__openai_gpt-5_4.png
+zai-org/GLM-5.1,0.672081,0.623536,0.740827,$8.06,results/judgemark-v4/charts/multichart_z-ai__glm-5_1_seed_temp0_prompt_reasoning_trial_01__z-ai_glm-5_1.png
 Qwen/Qwen3.5-27B,0.605331,0.567596,0.680937,$1.76,results/judgemark-v4/charts/multichart_Qwen__Qwen3_5-27B_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_5-27b.png
+gemini-3.1-flash-lite-preview,0.588214,0.550091,0.658023,$1.54,results/judgemark-v4/charts/multichart_gemini-3_1-flash-lite-preview_seed_temp0_prompt_reasoning_trial_01__google_gemini-3_1-flash-lite-preview.png
+XiaomiMiMo/MiMo-V2.5-Pro,0.579018,0.539689,0.650709,$5.79,results/judgemark-v4/charts/multichart_xiaomi__mimo-v2_5-pro_seed_temp0_prompt_reasoning_trial_01__xiaomi_mimo-v2_5-pro.png
 moonshotai/Kimi-K2.6,0.572626,0.547558,0.633247,$6.51,results/judgemark-v4/charts/multichart_kimi-k2_6_seed_temp0_prompt_reasoning_trial_01__kimi-k2_6.png
 Qwen/Qwen3.5-397B-A17B,0.542445,0.485310,0.620456,$3.20,results/judgemark-v4/charts/multichart_Qwen__Qwen3_5-397B-A17B_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_5-397b-a17b.png
 Qwen/Qwen3.6-27B,0.533686,0.512794,0.593391,$3.56,results/judgemark-v4/charts/multichart_qwen__qwen3_6-27b_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_6-27b.png
+google/gemma-4-26B-A4B-it,0.530234,0.484937,0.608299,$0.61,results/judgemark-v4/charts/multichart_google__gemma-4-26b-a4b-it_seed_temp0_prompt_reasoning_trial_01__google_gemma-4-26b-a4b-it.png
+grok-4.3,0.495693,0.457153,0.573230,$9.71,results/judgemark-v4/charts/multichart_x-ai__grok-4_3_seed_temp0_prompt_reasoning_trial_01__x-ai_grok-4_3.png
 deepseek-ai/DeepSeek-V4-Pro,0.471182,0.416774,0.563053,$2.94,results/judgemark-v4/charts/multichart_deepseek__deepseek-v4-pro_seed_temp0_prompt_reasoning_trial_01__deepseek_deepseek-v4-pro.png
 gemini-3-flash-preview,0.461171,0.424996,0.536712,$3.14,results/judgemark-v4/charts/multichart_gemini-3-flash-preview_seed_temp0_prompt_reasoning_trial_01__google_gemini-3-flash-preview.png
 qwen3.6-max-preview,0.450786,0.403048,0.542877,$7.36,results/judgemark-v4/charts/multichart_qwen__qwen3_6-max-preview_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_6-max-preview.png
+Qwen/Qwen3.5-35B-A3B,0.405004,0.370493,0.477875,$1.38,results/judgemark-v4/charts/multichart_Qwen__Qwen3_5-35B-A3B_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_5-35b-a3b.png
+deepseek-ai/DeepSeek-V4-Flash,0.367862,0.340758,0.450511,$0.78,results/judgemark-v4/charts/multichart_deepseek__deepseek-v4-flash_seed_temp0_prompt_reasoning_trial_01__deepseek_deepseek-v4-flash.png
 Qwen/Qwen3.6-35B-A3B,0.326547,0.305251,0.403566,$1.89,results/judgemark-v4/charts/multichart_qwen__qwen3_6-35b-a3b_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_6-35b-a3b.png
 Qwen/Qwen3.5-9B,0.324392,0.288405,0.415527,$0.56,results/judgemark-v4/charts/multichart_Qwen__Qwen3_5-9B_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_5-9b.png
 qwen3.6-flash,0.311761,0.276205,0.400733,$1.74,results/judgemark-v4/charts/multichart_qwen__qwen3_6-flash_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_6-flash.png
+gpt-5.4-nano,0.275388,0.247464,0.363286,$1.25,results/judgemark-v4/charts/multichart_gpt-5_4-nano_seed_temp0_prompt_reasoning_trial_01__openai_gpt-5_4-nano.png
+gpt-5.4-mini,0.273221,0.248656,0.357704,$4.56,results/judgemark-v4/charts/multichart_gpt-5_4-mini_seed_temp0_prompt_reasoning_trial_01__openai_gpt-5_4-mini.png
+mistralai/Mistral-Small-4-119B-2603,0.164969,0.150587,0.255205,$0.92,results/judgemark-v4/charts/multichart_mistralai__Mistral-Small-4-119B-2603_seed_temp0_prompt_reasoning_trial_01__mistralai_mistral-small-2603.png
 gpt-oss-120b,0.154748,0.145411,0.232810,$0.62,results/judgemark-v4/charts/multichart_openai__gpt-oss-120b_seed_temp0_prompt_reasoning_trial_01__openai_gpt-oss-120b.png
 `
 
@@ -32,6 +45,7 @@ function setupDarkModeToggle() {
     document.body.classList.toggle('dark-mode', this.checked);
     label.textContent = this.checked ? 'Dark' : 'Light';
     localStorage.setItem('darkModeEnabled', this.checked);
+    if (jm4ParetoRendered) renderJm4ParetoPlot();
   });
 }
 
@@ -92,6 +106,8 @@ function modelLink(model) {
   return model;
 }
 
+let jm4Rows = [];
+let jm4ParetoRendered = false;
 let jm4Zoom = 1;
 
 function setJm4Zoom(nextZoom) {
@@ -173,16 +189,13 @@ function setupJm4Modal() {
   });
 }
 
-function loadJudgemarkV4() {
+function parseJm4Rows() {
   const lines = leaderboardDataJudgemarkV4.trim().split('\n').filter(Boolean);
-  if (lines.length <= 1) {
-    document.getElementById('leaderboardBodyV4').innerHTML =
-      '<tr><td colspan="4" class="text-center">No Judgemark v4 results yet.</td></tr>';
-    return;
-  }
+  if (lines.length <= 1) return [];
 
-  const rows = lines.slice(1).map(line => {
+  return lines.slice(1).map(line => {
     const [model, score, ciLow, ciHigh, cost, chart] = parseCsvLine(line);
+    const parsedCost = parseFloat(String(cost || '').replace(/[^0-9.]/g, ''));
     return {
       model,
       score: parseFloat(score),
@@ -190,19 +203,231 @@ function loadJudgemarkV4() {
       ciLow,
       ciHigh,
       cost,
+      costValue: parsedCost,
       chart
     };
   }).filter(row => !Number.isNaN(row.score));
+}
+
+function computeJm4ParetoRows(rows) {
+  const candidates = rows.filter(row => Number.isFinite(row.costValue) && row.costValue > 0);
+  return candidates.map(row => {
+    const dominated = candidates.some(other =>
+      other !== row &&
+      other.score >= row.score &&
+      other.costValue <= row.costValue &&
+      (other.score > row.score || other.costValue < row.costValue)
+    );
+    return { ...row, isFrontier: !dominated };
+  });
+}
+
+function formatJm4Cost(value) {
+  if (!Number.isFinite(value)) return '';
+  return `$${value.toFixed(value < 1 ? 2 : 2)}`;
+}
+
+function plotTheme() {
+  const dark = document.body.classList.contains('dark-mode');
+  return {
+    dark,
+    paper: dark ? '#191919' : '#f8f4ee',
+    plot: dark ? '#141414' : '#fffaf3',
+    text: dark ? '#f3eee8' : '#332b25',
+    grid: dark ? 'rgba(255,255,255,0.13)' : 'rgba(80,70,60,0.16)',
+    other: dark ? 'rgba(129, 184, 210, 0.76)' : 'rgba(72, 132, 158, 0.72)',
+    otherText: dark ? 'rgba(243, 238, 232, 0.48)' : 'rgba(51, 43, 37, 0.50)',
+    frontier: dark ? 'rgba(240, 143, 101, 1)' : 'rgba(188, 83, 51, 1)',
+    frontierLine: dark ? 'rgba(240, 143, 101, 0.78)' : 'rgba(188, 83, 51, 0.72)'
+  };
+}
+
+function renderJm4ParetoPlot() {
+  const plot = document.getElementById('jm4ParetoPlot');
+  if (!plot || typeof Plotly === 'undefined') return;
+
+  const rows = computeJm4ParetoRows(jm4Rows);
+  const frontier = rows.filter(row => row.isFrontier).sort((a, b) => a.costValue - b.costValue);
+  const others = rows.filter(row => !row.isFrontier);
+  const theme = plotTheme();
+
+  if (!rows.length) {
+    plot.innerHTML = '<div class="text-center p-4">No cost-bearing Judgemark v4 results yet.</div>';
+    return;
+  }
+
+  const costs = rows.map(row => row.costValue);
+  const minCost = Math.min(...costs);
+  const maxCost = Math.max(...costs);
+  const mobile = window.innerWidth < 700;
+  const frontierTextPositions = frontier.map((row, index) => {
+    if (row.costValue <= minCost * 1.8) return 'middle right';
+    if (row.costValue >= maxCost / 2.5) return index % 2 ? 'bottom left' : 'top left';
+    return 'top center';
+  });
+  const otherTextPositions = others.map(row => {
+    if (row.costValue <= minCost * 1.8) return 'middle right';
+    if (row.costValue >= maxCost / 2.5) return 'middle left';
+    return 'top center';
+  });
+  const hoverTemplate = '<b>%{text}</b><br>Cost: $%{x:.2f}<br>Score: %{y:.2f}<extra></extra>';
+  const traces = [
+    {
+      x: others.map(row => row.costValue),
+      y: others.map(row => row.score * 100),
+      text: others.map(row => row.model),
+      customdata: others.map(row => row.chart),
+      type: 'scatter',
+      mode: 'markers',
+      name: 'Other Models',
+      marker: {
+        color: theme.other,
+        size: 9,
+        line: { color: theme.dark ? '#283442' : '#ffffff', width: 1 }
+      },
+      hovertemplate: hoverTemplate
+    },
+    {
+      x: frontier.map(row => row.costValue),
+      y: frontier.map(row => row.score * 100),
+      type: 'scatter',
+      mode: 'lines',
+      name: 'Frontier Line',
+      line: { color: theme.frontierLine, width: 2, dash: 'dash' },
+      hoverinfo: 'skip'
+    },
+    {
+      x: frontier.map(row => row.costValue),
+      y: frontier.map(row => row.score * 100),
+      text: frontier.map(row => row.model),
+      customdata: frontier.map(row => row.chart),
+      type: 'scatter',
+      mode: 'markers+text',
+      name: 'Pareto Frontier',
+      textposition: frontierTextPositions,
+      textfont: { color: theme.text, size: 11 },
+      marker: {
+        symbol: 'diamond',
+        size: 13,
+        color: theme.frontier,
+        line: { color: theme.dark ? '#f5eadf' : '#fff8ef', width: 1 }
+      },
+      hovertemplate: hoverTemplate
+    }
+  ];
+  if (!mobile) {
+    traces.push({
+      x: others.map(row => row.costValue),
+      y: others.map(row => row.score * 100),
+      text: others.map(row => row.model),
+      type: 'scatter',
+      mode: 'text',
+      name: 'Other Model Labels',
+      showlegend: false,
+      textposition: otherTextPositions,
+      textfont: { color: theme.otherText, size: 10 },
+      hoverinfo: 'skip'
+    });
+  }
+
+  const tickVals = [0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100]
+    .filter(value => value >= minCost * 0.75 && value <= maxCost * 1.35);
+
+  const layout = {
+    title: {
+      text: mobile ? '' : 'Judgemark v4 Score vs Cost',
+      font: { color: theme.text, size: mobile ? 17 : 22 }
+    },
+    paper_bgcolor: theme.paper,
+    plot_bgcolor: theme.plot,
+    font: { color: theme.text },
+    hovermode: 'closest',
+    legend: {
+      orientation: 'h',
+      yanchor: 'bottom',
+      y: 1.02,
+      xanchor: 'right',
+      x: 1
+    },
+    margin: mobile ? { l: 48, r: 18, t: 48, b: 58 } : { l: 62, r: 30, t: 82, b: 66 },
+    xaxis: {
+      title: { text: 'Benchmark Cost (USD)' },
+      type: 'log',
+      gridcolor: theme.grid,
+      zerolinecolor: theme.grid,
+      showexponent: 'none',
+      tickvals: tickVals,
+      ticktext: tickVals.map(formatJm4Cost)
+    },
+    yaxis: {
+      title: { text: 'Judgemark Score' },
+      gridcolor: theme.grid,
+      zerolinecolor: theme.grid,
+      rangemode: 'tozero',
+      ticksuffix: ''
+    }
+  };
+
+  Plotly.react(plot, traces, layout, {
+    responsive: true,
+    displaylogo: false,
+    modeBarButtonsToRemove: ['lasso2d', 'select2d']
+  });
+  jm4ParetoRendered = true;
+}
+
+function setupJm4ViewSwitch() {
+  const leaderboardLink = document.getElementById('jm4LeaderboardLink');
+  const paretoLink = document.getElementById('jm4ParetoLink');
+  const leaderboardView = document.getElementById('jm4LeaderboardView');
+  const paretoView = document.getElementById('jm4ParetoView');
+  if (!leaderboardLink || !paretoLink || !leaderboardView || !paretoView) return;
+
+  function showView(view) {
+    const showPareto = view === 'pareto';
+    leaderboardView.hidden = showPareto;
+    paretoView.hidden = !showPareto;
+    leaderboardLink.classList.toggle('active', !showPareto);
+    paretoLink.classList.toggle('active', showPareto);
+    if (showPareto) {
+      window.requestAnimationFrame(renderJm4ParetoPlot);
+    }
+  }
+
+  leaderboardLink.addEventListener('click', event => {
+    event.preventDefault();
+    history.replaceState(null, '', '#leaderboard');
+    showView('leaderboard');
+  });
+  paretoLink.addEventListener('click', event => {
+    event.preventDefault();
+    history.replaceState(null, '', '#pareto');
+    showView('pareto');
+  });
+
+  window.addEventListener('hashchange', () => {
+    showView(location.hash === '#pareto' ? 'pareto' : 'leaderboard');
+  });
+  showView(location.hash === '#pareto' ? 'pareto' : 'leaderboard');
+}
+
+function loadJudgemarkV4() {
+  jm4Rows = parseJm4Rows();
+  if (jm4Rows.length === 0) {
+    document.getElementById('leaderboardBodyV4').innerHTML =
+      '<tr><td colspan="4" class="text-center">No Judgemark v4 results yet.</td></tr>';
+    return;
+  }
 
   const axisMax = Math.max(
-    ...rows.flatMap(row => [
+    ...jm4Rows.flatMap(row => [
       row.score,
       parseFloat(row.ciHigh),
       parseFloat(row.ciLow)
     ]).filter(Number.isFinite),
     1
   );
-  const html = rows.map(row => {
+  const html = jm4Rows.map(row => {
     const ciLow = parseFloat(row.ciLow);
     const ciHigh = parseFloat(row.ciHigh);
     const pct = Math.max(4, Math.min(100, (row.score / axisMax) * 100));
@@ -215,7 +440,7 @@ function loadJudgemarkV4() {
       ? `Judgemark score ${score100}; 95% CI ${(ciLow * 100).toFixed(2)} - ${(ciHigh * 100).toFixed(2)}`
       : `Judgemark score ${score100}`;
     const chartLink = row.chart
-      ? `<button type="button" class="btn btn-link chart-link p-0" data-chart="${row.chart}" data-chart-title="${row.model}">Multichart</button>`
+      ? `<button type="button" class="btn btn-link chart-link p-0" data-chart="${row.chart}" data-chart-title="${row.model}">Chart</button>`
       : '-';
     return `
       <tr>
@@ -249,6 +474,7 @@ function loadJudgemarkV4() {
       { targets: [3], orderable: false }
     ]
   });
+  setupJm4ViewSwitch();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
