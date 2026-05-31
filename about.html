@@ -73,7 +73,7 @@
 				  
 				 <li><a href="#eq-bench">EQ-Bench</a></li>
 				 <li><a href="#magi-hard">MAGI-Hard</a></li>
-				 <li><a href="#creative-writing">Creative Writing</a></li>
+				 <li><a href="#creative-writing-v3">Creative Writing</a></li>
 				 <li><a href="#judgemark">Judgemark</a></li>
 				 <li><a href="#buzzbench">BuzzBench</a></li>
 				 <li><a href="#diplobench">DiploBench</a></li>
@@ -987,14 +987,14 @@
 		<div id="creative-writing-v3" class="section">
 			<h3>🎨 Creative Writing v3</h3>
 
-			<p><strong>News 29/5:</strong> The creative writing leaderboard is being updated to use Claude Sonnet 4 as judge (previously used Sonnet-3.7). The top models have already been updated; the remainder are a work in progress.</p> 			
-			
+			<p><strong>News 2026-03-01:</strong> The creative writing leaderboard has been updated to use Claude Sonnet 4.6 as judge for ELO scoring (previously used Sonnet-4). Rubric scoring continues to use anthropic/claude-sonnet-4 via openrouter.</p> 
+	
 			<p><strong>How the benchmark works:</strong></p>
 			<ol>
 			  <li>Run the 32 writing prompts for 3 iterations (96 items total) @ temp 0.7, min_p 0.1.</li>
-			  <li>Grade the outputs with a comprehensive scoring rubric using Claude 3.7 Sonnet.</li>
+			  <li>Grade the outputs with a comprehensive scoring rubric using Claude 4 Sonnet.</li>
 			  <li>Use this score to infer an initial Elo rating for the evaluated model.</li>
-			  <li>Perform pairwise matchups with neighboring models on the leaderboard (sparse sampling). Items are scored on several criteria, with the winner on each criteria given up to 5 +'s.</li>
+			  <li>Perform pairwise matchups with neighboring models on the leaderboard (sparse sampling) using Sonnet 4.6 as judge. Items are scored on several criteria, with the winner on each criteria given up to 5 +'s.</li>
 			  <li>Calculate Elo scores using the <a href="https://en.wikipedia.org/wiki/Glicko_rating_system">Glicko rating system</a> (modified to weight the win margin in '+' count). Loop until stable positions are found.</li>
 			  <li>Perform comprehensive matchups with final neighbors and compute the definitive leaderboard Elo.</li>
 			</ol>
@@ -1152,7 +1152,7 @@
 				<li>Not a roleplay eval. Models tuned for RP tend to score poorly because they output more casual conversational prose. We aren't assessing multi-turn or typical RP usage</li>
 				<li>It doesn't represent your taste. The judge has its own taste & biases. There's no substitute for your own eyeballs (so we encourage you to read the sample outputs).</li>
 				<li>Not objective. It's a creative writing eval and there are no right or wrong answers.</li>
-				<li>Not an expert. Sonnet 3.7 (the judge) is generally *pretty good* at literary criticism, but can fall short on vibe checks or other things humans pick up on.</li>
+				<li>Not an expert. Sonnet 4.6 (the judge) is generally *pretty good* at literary criticism, but can fall short on vibe checks or other things humans pick up on.</li>
 				<li>Multilingual. It only tests writing in English.Though it could be translated easily enough!</li>
 			</ul>
 
