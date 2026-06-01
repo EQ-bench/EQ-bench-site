@@ -7,6 +7,7 @@ gpt-5.5,0.878134,0.853332,0.924747,$30.44,results/judgemark-v4/charts/multichart
 claude-opus-4-7,0.839612,0.804731,0.894923,$48.75,results/judgemark-v4/charts/multichart_claude-opus-4-7_seed_temp0_prompt_reasoning_trial_01__claude-opus-4-7.png
 claude-sonnet-4-6,0.821468,0.782343,0.882974,$23.36,results/judgemark-v4/charts/multichart_claude-sonnet-4-6_seed_temp0_prompt_reasoning_trial_01__claude-sonnet-4-6.png
 gemini-3.1-pro-preview,0.786853,0.738905,0.851353,$23.07,results/judgemark-v4/charts/multichart_google__gemini-3_1-pro-preview_seed_temp0_prompt_reasoning_trial_01__google_gemini-3_1-pro-preview.png
+claude-opus-4-8,0.779576,0.743971,0.838340,$50.42,results/judgemark-v4/charts/multichart_claude-opus-4-8_seed_temp0_prompt_reasoning_trial_01__claude-opus-4-8.png
 google/gemma-4-31B-it,0.723051,0.680818,0.793728,$0.82,results/judgemark-v4/charts/multichart_google__gemma-4-31b-it_seed_temp0_prompt_reasoning_trial_01__google_gemma-4-31b-it.png
 gpt-5.4,0.720762,0.684801,0.781918,$15.24,results/judgemark-v4/charts/multichart_gpt-5_4_seed_temp0_prompt_reasoning_trial_01__openai_gpt-5_4.png
 zai-org/GLM-5.1,0.672081,0.623536,0.740827,$8.06,results/judgemark-v4/charts/multichart_z-ai__glm-5_1_seed_temp0_prompt_reasoning_trial_01__z-ai_glm-5_1.png
@@ -26,6 +27,7 @@ deepseek-ai/DeepSeek-V4-Flash,0.367862,0.340758,0.450511,$0.78,results/judgemark
 Qwen/Qwen3.6-35B-A3B,0.326547,0.305251,0.403566,$1.89,results/judgemark-v4/charts/multichart_qwen__qwen3_6-35b-a3b_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_6-35b-a3b.png
 Qwen/Qwen3.5-9B,0.324392,0.288405,0.415527,$0.56,results/judgemark-v4/charts/multichart_Qwen__Qwen3_5-9B_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_5-9b.png
 qwen3.6-flash,0.311761,0.276205,0.400733,$1.74,results/judgemark-v4/charts/multichart_qwen__qwen3_6-flash_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_6-flash.png
+stepfun-ai/Step-3.7-Flash,0.280475,0.262261,0.365120,$3.03,results/judgemark-v4/charts/multichart_stepfun__step-3_7-flash_seed_temp0_prompt_reasoning_trial_01__stepfun_step-3_7-flash.png
 gpt-5.4-nano,0.275388,0.247464,0.363286,$1.25,results/judgemark-v4/charts/multichart_gpt-5_4-nano_seed_temp0_prompt_reasoning_trial_01__openai_gpt-5_4-nano.png
 gpt-5.4-mini,0.273221,0.248656,0.357704,$4.56,results/judgemark-v4/charts/multichart_gpt-5_4-mini_seed_temp0_prompt_reasoning_trial_01__openai_gpt-5_4-mini.png
 mistralai/Mistral-Small-4-119B-2603,0.164969,0.150587,0.255205,$0.92,results/judgemark-v4/charts/multichart_mistralai__Mistral-Small-4-119B-2603_seed_temp0_prompt_reasoning_trial_01__mistralai_mistral-small-2603.png
