@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EQ-Bench 4 Leaderboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <style>
+    /* ===== EQ-Bench 4: indigo + amber theme ===== */
+    body.eqbench4-page {
+      background:
+        radial-gradient(circle at 14% 6%, rgba(85, 96, 176, 0.20), transparent 28rem),
+        radial-gradient(circle at 90% 0%, rgba(216, 164, 62, 0.18), transparent 26rem),
+        #e0e0e6;
+    }
+    body.dark-mode.eqbench4-page {
+      background:
+        radial-gradient(circle at 14% 6%, rgba(99, 110, 196, 0.20), transparent 28rem),
+        radial-gradient(circle at 90% 0%, rgba(216, 164, 62, 0.14), transparent 26rem),
+        #17171c;
+    }
+    body.eqbench4-page .container {
+      max-width: 1360px;
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem 2rem;
+      box-shadow: 0 18px 60px rgba(30, 30, 50, 0.14);
+    }
+    body.dark-mode.eqbench4-page .container {
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.30);
+    }
+    .eq4-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      font-size: 0.8rem;
+      color: #5560b0;
+      margin-bottom: 0.2rem;
+    }
+    body.dark-mode .eq4-kicker { color: #aab0e8; }
+
+    .eq4-panel {
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(85, 80, 110, 0.16);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.45);
+      margin-bottom: 1rem;
+    }
+    body.dark-mode .eq4-panel {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+    .eq4-summary { max-width: 880px; font-size: 1.02rem; line-height: 1.55; }
+
+    /* view switch (Leaderboard | Personas) */
+    .eq4-view-switch { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 1rem 0; }
+    .eq4-view-link {
+      border: 1px solid rgba(85, 80, 110, 0.22);
+      border-radius: 6px; color: inherit; padding: 0.35rem 0.8rem;
+      text-decoration: none; cursor: pointer; background: none; font-size: 0.95rem;
+    }
+    .eq4-view-link:hover { text-decoration: none; }
+    .eq4-view-link.active { background: #5560b0; border-color: #5560b0; color: #fff; font-weight: 600; }
+    body.dark-mode .eq4-view-link { border-color: rgba(255,255,255,0.18); }
+    body.dark-mode .eq4-view-link.active { background: #7a83c8; border-color: #7a83c8; color: #14141a; }
+    .eq4-view[hidden] { display: none !important; }
+
+    /* leaderboard table */
+    #eqbench4-leaderboard { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    #eqbench4-leaderboard th, #eqbench4-leaderboard td {
+      padding: 0.4rem 0.5rem; border-bottom: 1px solid rgba(120, 115, 140, 0.16); vertical-align: middle;
+    }
+    #eqbench4-leaderboard tbody tr:hover { background: rgba(85, 96, 176, 0.07); }
+    body.dark-mode #eqbench4-leaderboard tbody tr:hover { background: rgba(122, 131, 200, 0.12); }
+    #eqbench4-leaderboard th.sortable { cursor: pointer; user-select: none; white-space: nowrap; }
+    #eqbench4-leaderboard th.sortable:hover { color: #5560b0; }
+    body.dark-mode #eqbench4-leaderboard th.sortable:hover { color: #aab0e8; }
+    #eqbench4-leaderboard th .arrow { opacity: 0.45; font-size: 0.75em; margin-left: 2px; }
+    #eqbench4-leaderboard th.sorted .arrow { opacity: 1; color: #5560b0; }
+    body.dark-mode #eqbench4-leaderboard th.sorted .arrow { color: #aab0e8; }
+
+    .eq4-rank { text-align: center; color: var(--subheader-color, #777); font-variant-numeric: tabular-nums; width: 2.2rem; }
+    .eq4-model-cell { min-width: 10rem; max-width: 15rem; }
+    .eq4-model {
+      font-weight: 600; line-height: 1.25; overflow-wrap: anywhere; padding-bottom: 1px;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .eq4-model .prov { color: #8a85a0; font-weight: 400; font-size: 0.82em; }
+    /* fixed, compact row height; content vertically centred; tight padding so 2 lines still fit */
+    #eqbench4-leaderboard tbody tr.eq4-mainrow td { height: 35px; padding-top: 1px; padding-bottom: 1px; }
+    body.dark-mode .eq4-model .prov { color: #9a95b0; }
+
+    /* ELO score bar (borrowed from Judgemark v4 structure) */
+    .eq4-score-cell {
+      display: grid; grid-template-columns: 3.4rem minmax(8rem, 1fr);
+      gap: 0.45rem; align-items: center; height: 24px; min-width: 11rem;
+    }
+    .eq4-score-text { font-variant-numeric: tabular-nums; font-weight: 600; text-align: right; line-height: 24px; }
+    .eq4-score-track { position: relative; height: 20px; width: 100%; }
+    body.eqbench4-page .judgemark-score-bar {
+      display: block; background: linear-gradient(to right, #8189cc, #5560b0);
+    }
+    body.dark-mode.eqbench4-page .judgemark-score-bar {
+      background: linear-gradient(to right, #6b74c0, #3f48a0);
+    }
+    .eq4-score-cell .error-bar { display: block; height: 2px; background-color: rgba(45, 40, 70, 0.6); }
+    .eq4-score-cell .error-bar::before, .eq4-score-cell .error-bar::after { content: none; } /* no end whiskers */
+    body.dark-mode .eq4-score-cell .error-bar { background-color: rgba(255, 255, 255, 0.66); }
+
+    /* dimension heatmap */
+    th.eq4-dim { padding: 0.3rem 0.2rem; text-align: center; }
+    th.eq4-dim .dimlabel {
+      writing-mode: vertical-rl; transform: rotate(180deg);
+      white-space: nowrap; margin: 0 auto; font-weight: 600; font-size: 0.82rem; line-height: 1;
+    }
+    td.eq4-dim-cell {
+      text-align: center; font-variant-numeric: tabular-nums; font-size: 0.85rem;
+      width: 2.5rem; padding: 0.3rem 0.15rem; color: #2a2833;
+    }
+    body.dark-mode td.eq4-dim-cell { color: #fff; text-shadow: 0 1px 1.5px rgba(0,0,0,0.45); }
+    .eq4-dim-sep { border-left: 2px solid rgba(120, 115, 140, 0.28) !important; }
+
+    /* Traits / Abilities grouping label — sits below the rotated column labels */
+    #eqbench4-leaderboard thead th { vertical-align: bottom; }
+    th.eq4-grouphdr { padding: 0; }
+    .eq4-group { position: relative; height: 15px; margin: 1px 6px 2px; }
+    .eq4-group::before {
+      content: ""; position: absolute; left: 0; right: 0; top: 0; height: 5px;
+      border: 1.5px solid var(--eq4-muted); border-bottom: none; opacity: 0.5;
+    }
+    .eq4-group span {
+      position: absolute; left: 0; right: 0; top: 4px; text-align: center;
+      font-size: 0.64rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--eq4-muted);
+    }
+    .eq4-gloss-grp { grid-column: 1 / -1; font-weight: 800; margin-top: 0.7rem; }
+
+    .eq4-transcript-btn {
+      border: 1px solid rgba(85, 80, 110, 0.3); border-radius: 6px; background: none;
+      color: inherit; padding: 0.2rem 0.5rem; cursor: pointer; white-space: nowrap; font-size: 0.72rem;
+    }
+    .eq4-transcript-btn:hover { background: #5560b0; border-color: #5560b0; color: #fff; }
+    .eq4-transcript-btn[disabled] { opacity: 0.4; cursor: default; }
+
+    /* row-expand toggle + per-model profile (mobile only) */
+    th.eq4-toggle-head, .eq4-toggle-cell { display: none; width: 1.9rem; text-align: center; vertical-align: middle; padding-left: 0.2rem; padding-right: 0.2rem; }
+    .eq4-toggle {
+      position: relative; vertical-align: middle; padding: 0;
+      border: 1px solid var(--eq4-muted); background: none; color: inherit; width: 1.4rem; height: 1.4rem;
+      border-radius: 5px; cursor: pointer;
+    }
+    .eq4-toggle::before, .eq4-toggle::after {
+      content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      background: currentColor; border-radius: 1px;
+    }
+    .eq4-toggle::before { width: 10px; height: 2px; }   /* horizontal bar */
+    .eq4-toggle::after  { width: 2px; height: 10px; }    /* vertical bar (makes the +) */
+    .eq4-toggle.open::after { display: none; }           /* becomes a − when expanded */
+    .eq4-toggle:hover { background: #5560b0; color: #fff; border-color: #5560b0; }
+    #eqbench4-leaderboard tr.eq4-mainrow { cursor: default; }
+    .eq4-mrow { display: none; }
+    .eq4-mrow-cell { padding: 0 0.7rem 0.7rem 2.4rem; background: var(--eq4-inset); }
+    .eq4-mgrp { font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--eq4-muted); margin: 0.55rem 0 0.3rem; }
+    .eq4-mchips { display: flex; flex-wrap: wrap; gap: 5px; }
+    .eq4-mchip { font-size: 0.74rem; color: #2a2833; padding: 2px 8px; border-radius: 999px; }
+    body.dark-mode .eq4-mchip { color: #fff; text-shadow: 0 1px 1px rgba(0,0,0,0.45); }
+    .eq4-mchip b { font-variant-numeric: tabular-nums; }
+    .eq4-mtranscript { margin-top: 0.7rem; }
+
+    /* info icon + explainer modal */
+    .eq4-info {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 13px; height: 13px; margin-left: 4px; padding: 0; vertical-align: middle;
+      border: 1px solid currentColor; border-radius: 50%; background: none; color: inherit;
+      font-size: 9px; font-weight: 800; font-style: italic; line-height: 1; cursor: pointer; opacity: 0.75;
+    }
+    .eq4-info:hover { opacity: 1; background: #5560b0; color: #fff; border-color: #5560b0; }
+    .eq4-imodal { display: none; position: fixed; inset: 0; z-index: 3400; background: rgba(30,28,40,0.55); padding: 24px; overflow-y: auto; }
+    .eq4-imodal.open { display: flex; align-items: flex-start; justify-content: center; }
+    .eq4-imodal-shell { background: var(--eq4-surface); width: 100%; max-width: 620px; margin: 32px auto; border-radius: 14px; box-shadow: 0 26px 70px rgba(0,0,0,0.4); overflow: hidden; }
+    .eq4-imodal-head { display: flex; align-items: center; padding: 16px 20px; border-bottom: 1px solid rgba(120,115,140,0.22); }
+    .eq4-imodal-title { flex: 1; font-weight: 800; font-size: 1.1rem; }
+    .eq4-imodal-close { border: 1px solid rgba(120,115,140,0.4); background: none; color: inherit; border-radius: 8px; width: 32px; height: 32px; cursor: pointer; }
+    .eq4-imodal-close:hover { background: #5560b0; color: #fff; border-color: #5560b0; }
+    .eq4-imodal-body { padding: 18px 20px 22px; }
+    .eq4-inote { background: var(--eq4-inset); border-radius: 9px; padding: 11px 13px; margin-bottom: 10px; line-height: 1.5; font-size: 0.94rem; }
+    .eq4-imodal-body h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--eq4-muted); margin: 1.1rem 0 0.5rem; }
+    .eq4-idl { display: grid; grid-template-columns: 11rem 1fr; gap: 0.4rem 1rem; margin: 0; }
+    .eq4-idl dt { font-weight: 700; }
+    .eq4-idl dd { margin: 0; color: var(--eq4-muted); font-size: 0.92rem; line-height: 1.5; }
+    @media (max-width: 760px) {
+      .eq4-imodal { padding: 0; }
+      .eq4-imodal-shell { margin: 0; border-radius: 0; min-height: 100vh; max-width: 100vw; }
+      .eq4-idl { grid-template-columns: 1fr; gap: 0.1rem 0; }
+      .eq4-idl dd { margin-bottom: 0.5rem; }
+    }
+
+    /* heatmap legend */
+    .eq4-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-top: 0.6rem; font-size: 0.85rem; }
+    .eq4-legend .grad {
+      width: 160px; height: 12px; border-radius: 3px;
+      background: linear-gradient(to right,
+        rgb(10,15,60) 0%, rgb(0,140,220) 50%, rgb(138,43,226) 80%, rgb(255,20,180) 100%);
+    }
+    body:not(.dark-mode) .eq4-legend .grad {  /* match the faded light-mode cells */
+      background: linear-gradient(to right,
+        rgb(120,123,148) 0%, rgb(115,192,236) 50%, rgb(191,138,239) 80%, rgb(255,126,214) 100%);
+    }
+    .eq4-legend .muted { color: var(--subheader-color, #777); }
+
+    /* dimension glossary */
+    .eq4-gloss { margin-top: 1rem; }
+    .eq4-gloss summary { cursor: pointer; font-weight: 600; }
+    .eq4-gloss dl { margin: 0.8rem 0 0; display: grid; grid-template-columns: 11rem 1fr; gap: 0.4rem 1rem; }
+    .eq4-gloss dt { font-weight: 600; }
+    .eq4-gloss dd { margin: 0; color: var(--subheader-color, #555); }
+    body.dark-mode .eq4-gloss dd { color: #b8b3c6; }
+
+    /* theme vars used by the transcript browser */
+    body.eqbench4-page { --eq4-surface: #ffffff; --eq4-inset: rgba(0,0,0,0.035); --eq4-muted: #777284; }
+    body.dark-mode.eqbench4-page { --eq4-surface: #15151a; --eq4-inset: rgba(255,255,255,0.05); --eq4-muted: #9a95aa; }
+
+    /* native personas container (styled by eqbench4_personas.js) */
+    .eq4-personas { min-height: 40vh; }
+
+    /* ===== transcript browser (master–detail modal) ===== */
+    .eq4-tmodal {
+      display: none; position: fixed; inset: 0; z-index: 3000;
+      background: rgba(34, 31, 48, 0.68);
+      --eq4-t-surface: #fbf9ff;
+      --eq4-t-panel: #ffffff;
+      --eq4-t-inset: #f1eff9;
+      --eq4-t-line: rgba(92, 83, 128, 0.18);
+    }
+    body.dark-mode .eq4-tmodal {
+      background: rgba(8, 8, 14, 0.78);
+      --eq4-t-surface: #191821;
+      --eq4-t-panel: #211f2c;
+      --eq4-t-inset: #292639;
+      --eq4-t-line: rgba(188, 181, 225, 0.16);
+    }
+    .eq4-tmodal.is-open { display: flex; }
+    .eq4-tmodal-shell {
+      margin: auto; width: min(1240px, 96vw); height: min(900px, 92vh);
+      display: flex; flex-direction: column; background: var(--eq4-t-surface); color: inherit;
+      border-radius: 10px; overflow: hidden; box-shadow: 0 24px 70px rgba(0,0,0,0.42);
+    }
+    .eq4-tmodal-head {
+      display: flex; align-items: center; gap: 0.6rem; padding: 0.6rem 0.8rem;
+      border-bottom: 1px solid var(--eq4-t-line); flex: 0 0 auto;
+      background: linear-gradient(90deg, rgba(85,96,176,0.09), rgba(216,164,62,0.08));
+    }
+    .eq4-tmodal-title { flex: 1; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .eq4-back, .eq4-tmodal-close {
+      border: 1px solid rgba(120,115,140,0.4); border-radius: 6px; background: none; color: inherit;
+      cursor: pointer; font-size: 0.9rem; padding: 0.3rem 0.7rem;
+    }
+    .eq4-tmodal-close { font-size: 1.05rem; line-height: 1; min-width: 2.4rem; font-weight: 700; }
+    .eq4-back:hover, .eq4-tmodal-close:hover { background: #5560b0; border-color: #5560b0; color: #fff; }
+    .eq4-tmodal-body { flex: 1; min-height: 0; display: flex; background: var(--eq4-t-surface); }
+    .eq4-tlist { flex: 0 0 322px; border-right: 1px solid var(--eq4-t-line); display: flex; flex-direction: column; min-height: 0; background: var(--eq4-t-panel); }
+    .eq4-tlist-controls { padding: 0.6rem; border-bottom: 1px solid var(--eq4-t-line); display: flex; flex-direction: column; gap: 0.4rem; }
+    .eq4-tlist-controls input, .eq4-tlist-controls select {
+      width: 100%; padding: 0.4rem 0.6rem; border-radius: 6px; font: inherit;
+      border: 1px solid rgba(120,115,140,0.35); background: var(--eq4-t-inset); color: inherit;
+    }
+    .eq4-tlist-rows { overflow-y: auto; flex: 1; }
+    .eq4-trow { display: flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--eq4-t-line); cursor: pointer; }
+    .eq4-trow:hover { background: rgba(85,96,176,0.08); }
+    .eq4-trow.active { background: rgba(85,96,176,0.14); box-shadow: inset 3px 0 0 #5560b0; }
+    .eq4-trow .t-main { flex: 1; min-width: 0; }
+    .eq4-trow .t-title { font-weight: 600; font-size: 0.9rem; }
+    .eq4-trow .t-meta { font-size: 0.78rem; color: var(--eq4-muted); margin-top: 1px; }
+    .eq4-ability-badge {
+      flex: 0 0 auto; min-width: 3rem; text-align: center; font-size: 0.76rem; font-weight: 800;
+      font-variant-numeric: tabular-nums; border-radius: 999px; padding: 0.15rem 0.5rem;
+      border: 1px solid rgba(120,115,140,0.18);
+    }
+    .eq4-ability-badge.pos { background: rgba(255,20,180,0.13); color: #7e2369; }
+    .eq4-ability-badge.neg { background: rgba(0,140,220,0.13); color: #1c5f87; }
+    body.dark-mode .eq4-ability-badge.pos { color: #ffd3f3; background: rgba(255,20,180,0.22); }
+    body.dark-mode .eq4-ability-badge.neg { color: #cbeeff; background: rgba(0,140,220,0.22); }
+    .eq4-treader { flex: 1; overflow-y: auto; padding: 1rem 1.2rem; min-height: 0; background: var(--eq4-t-surface); }
+    .eq4-treader .placeholder { color: var(--eq4-muted); text-align: center; margin-top: 4rem; }
+    .eq4-tr-h { font-size: 1.2rem; font-weight: 800; margin: 0 0 0.2rem; }
+    .eq4-tr-sub { color: var(--eq4-muted); font-size: 0.86rem; margin-bottom: 0.7rem; }
+    .eq4-tr-chips { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.7rem; }
+    .eq4-tr-chip { font-size: 0.72rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 999px; background: rgba(120,115,140,0.15); }
+    .eq4-sec { margin: 0 0 1rem; }
+    .eq4-sec > h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--eq4-muted); margin: 0 0 0.5rem; }
+    details.eq4-fold { border: 1px solid var(--eq4-t-line); border-radius: 8px; margin-bottom: 0.7rem; background: var(--eq4-t-panel); }
+    details.eq4-fold > summary { cursor: pointer; padding: 0.5rem 0.7rem; font-weight: 600; font-size: 0.9rem; }
+    details.eq4-fold > .fold-body { padding: 0.2rem 0.8rem 0.7rem; }
+    .eq4-thinking { margin: 0.35rem 0 0.6rem; }
+    .eq4-thinking-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; color: #66558a; margin-bottom: 0.25rem; }
+    body.dark-mode .eq4-thinking-label { color: #c9b8ef; }
+    .eq4-msg { border-radius: 8px; padding: 0.6rem 0.8rem; margin-bottom: 0.6rem; }
+    .eq4-msg .who { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; margin-bottom: 0.25rem; color: var(--eq4-muted); }
+    .eq4-msg .body { white-space: pre-wrap; line-height: 1.5; }
+    .eq4-msg.assistant { background: rgba(85,96,176,0.105); border: 1px solid rgba(85,96,176,0.11); }
+    .eq4-msg.user { background: rgba(216,164,62,0.13); border: 1px solid rgba(216,164,62,0.13); }
+    .eq4-msg.starter { background: rgba(138,111,176,0.09); border: 1px solid rgba(138,111,176,0.12); font-style: italic; }
+    body.dark-mode .eq4-msg.assistant { background: rgba(122,131,200,0.16); border-color: rgba(122,131,200,0.18); }
+    body.dark-mode .eq4-msg.user { background: rgba(216,164,62,0.16); border-color: rgba(216,164,62,0.18); }
+    .eq4-mono { margin: 0.4rem 0; border-left: 3px solid #8a6fb0; background: rgba(138,111,176,0.09); border-radius: 4px; padding: 0.55rem 0.7rem; font-size: 0.9rem; line-height: 1.55; color: var(--eq4-muted); white-space: pre-wrap; }
+    .eq4-dimbars { display: grid; grid-template-columns: 9rem 1fr 2rem; gap: 0.28rem 0.6rem; align-items: center; font-size: 0.82rem; }
+    .eq4-dimbars .n { text-align: right; color: var(--eq4-muted); }
+    .eq4-dimbars .track { height: 8px; background: rgba(120,115,140,0.2); border-radius: 4px; overflow: hidden; }
+    .eq4-dimbars .fill { display: block; height: 100%; border-radius: 4px; }
+    .eq4-ability-note, .eq4-ability-samples { color: var(--eq4-muted); font-size: 0.84rem; line-height: 1.45; margin-bottom: 0.65rem; }
+    .eq4-ability-samples { margin: 0.55rem 0 0; font-size: 0.78rem; }
+    .eq4-abars { display: grid; gap: 0.38rem; }
+    .eq4-abar-row { display: grid; grid-template-columns: 8rem minmax(6rem, 1fr) 2.8rem; gap: 0.55rem; align-items: center; font-size: 0.82rem; }
+    .eq4-abar-name { color: var(--eq4-muted); text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .eq4-abar-track { position: relative; height: 10px; border-radius: 999px; overflow: hidden; background: rgba(120,115,140,0.18); }
+    .eq4-abar-track .zero { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(80,75,100,0.4); z-index: 1; }
+    body.dark-mode .eq4-abar-track .zero { background: rgba(255,255,255,0.34); }
+    .eq4-abar-track .fill { position: absolute; top: 0; bottom: 0; border-radius: 999px; }
+    .eq4-abar-val { font-weight: 800; font-variant-numeric: tabular-nums; text-align: right; }
+
+    @media (max-width: 760px) {
+      body.eqbench4-page .container { padding-left: 0.7rem; padding-right: 0.7rem; }
+      #eqbench4-leaderboard { font-size: 0.85rem; }
+      .eq4-gloss dl { grid-template-columns: 1fr; gap: 0.1rem 0; }
+      .eq4-gloss dd { margin-bottom: 0.5rem; }
+      /* hide the inline heatmap; reveal it per-model via the + toggle */
+      #eqbench4-leaderboard th.eq4-dim, #eqbench4-leaderboard th.eq4-grouphdr,
+      #eqbench4-leaderboard td.eq4-dim-cell, #eqbench4-leaderboard td.eq4-transcript-cell,
+      #eqbench4-leaderboard th.eq4-transcript-head { display: none; }
+      th.eq4-toggle-head, .eq4-toggle-cell { display: table-cell; }
+      .eq4-mrow.open { display: table-row; }
+      #eqbench4-leaderboard tr.eq4-mainrow { cursor: pointer; }
+      /* fixed name column so the ELO column (and its bar) fills the rest */
+      .eq4-model-cell { min-width: 10rem; max-width: 10rem; }
+      .eq4-elo-cell { width: 100%; }
+      .eq4-score-cell { min-width: 6.5rem; grid-template-columns: 2.6rem 1fr; gap: 0.3rem; }
+      /* transcript modal: full-bleed, header (with big close) always visible */
+      .eq4-tmodal-shell { width: 100vw; max-width: 100vw; height: 100vh; height: 100dvh; border-radius: 0; }
+      .eq4-tmodal-close { font-size: 1.25rem; padding: 0.45rem 0.95rem; }
+      .eq4-tlist { flex-basis: 100%; border-right: none; }
+      .eq4-tmodal-body .eq4-treader { display: none; }
+      .eq4-tmodal-shell.reading .eq4-tlist { display: none; }
+      .eq4-tmodal-shell.reading .eq4-treader { display: block; flex: 1; }
+      .eq4-dimbars { grid-template-columns: 7rem 1fr 2rem; }
+      .eq4-abar-row { grid-template-columns: 6.5rem minmax(5rem, 1fr) 2.6rem; gap: 0.4rem; }
+    }
+
+    /* extra-small: drop the ELO bar, show the score as a badge */
+    @media (max-width: 390px) {
+      .eq4-score-cell { display: block; min-width: auto; height: auto; }
+      .eq4-score-track { display: none; }
+      .eq4-score-text {
+        display: inline-block; text-align: center; line-height: 1.5;
+        background: var(--eq4-inset); border-radius: 999px; padding: 1px 10px; font-size: 0.82rem;
+      }
+    }
+  </style>
+</head>
+<body class="eqbench4-page">
+  <div class="container mt-4">
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" id="darkModeToggle">
+      <label class="form-check-label" for="darkModeToggle" id="toggleLabel">Light</label>
+    </div>
+
+    <div class="header">
+      <a href="../"><img src="../images/eqbench_logo_sml.png" alt="EQ-bench Logo" class="logo"/></a>
+      <div class="header-text">
+        <div class="eq4-kicker">Emotional Intelligence</div>
+        <h1>EQ-Bench 4</h1>
+      </div>
+    </div>
+
+    <p>
+      <a href="https://github.com/EQ-bench" target="_blank">Github</a> |
+      <a href="https://arxiv.org/abs/2312.06281" target="_blank">Paper</a> |
+      <span id="email"></span> |
+      <a href="https://twitter.com/sam_paech" target="_blank">Twitter</a> |
+      <a href="../about.html">About</a>
+    </p>
+
+    <p>
+      <b>💜EQ-Bench 4</b>
+      <span class="nav-separator">|</span>
+      <a href='../spiral-bench.html'>🌀Spiral-Bench v1.2</a>
+      <span class="nav-separator">|</span>
+      <a href='../creative_writing_longform.html'>✍️Longform Writing</a>
+      <span class="nav-separator">|</span>
+      <a href='../creative_writing.html'>🎨Creative Writing v3</a>
+      <span class="nav-separator">|</span>
+      <a href='../slop-score.html'>☢️Slop Score</a>
+      <span class="nav-separator">|</span>
+      <a href='../judgemark-v4.html'>⚖️Judgemark v4</a>
+      <span class="nav-separator">|</span>
+      <a href='../buzzbench.html'>🎤BuzzBench</a>
+      <span class="nav-separator">|</span>
+      <a href='../diplobench.html'>🌍DiploBench</a>
+      <span class="nav-separator">|</span>
+      <span class="nav-dropdown">
+        <button class="nav-dropdown-toggle" id="legacyDropdownToggle">📚Legacy Leaderboards</button>
+        <span class="nav-dropdown-menu" id="legacyDropdownMenu">
+          <a href="../eqbench3.html" class="nav-dropdown-item">💠EQ-Bench 3</a>
+          <a href="../spiral-bench_v1.0.html" class="nav-dropdown-item">🌀Spiral-Bench v1.0</a>
+          <a href="../creative_writing_v2.html" class="nav-dropdown-item">🎨Creative Writing v2</a>
+          <a href="../eqbench-v2.html" class="nav-dropdown-item">💗EQ-Bench v2</a>
+          <a href="../judgemark-v2.html" class="nav-dropdown-item">⚖️Judgemark v2.1</a>
+        </span>
+      </span>
+    </p>
+
+    <div class="eq4-panel">
+      <p class="eq4-summary mb-0">
+        EQ-Bench 4 measures emotional, social and personal intelligence abilities in multiturn conversations.
+        <a href="../about.html">Read more</a>.
+      </p>
+      <div class="eq4-legend">
+        <span class="muted">Lower</span>
+        <span class="grad" aria-hidden="true"></span>
+        <span class="muted">Higher</span>
+      </div>
+    </div>
+
+    <div class="eq4-view-switch" aria-label="EQ-Bench 4 view">
+      <button class="eq4-view-link active" id="eq4LeaderboardLink">Leaderboard</button>
+      <button class="eq4-view-link" id="eq4PersonasLink">Personas</button>
+    </div>
+
+    <div class="eq4-view" id="eq4LeaderboardView">
+      <div class="table-responsive">
+        <table id="eqbench4-leaderboard">
+          <thead id="eq4Head"></thead>
+          <tbody id="eq4Body"><tr><td>Loading…</td></tr></tbody>
+        </table>
+      </div>
+      <details class="eq4-gloss" id="eq4Gloss">
+        <summary>What the dimensions mean</summary>
+        <dl id="eq4GlossList"></dl>
+      </details>
+    </div>
+
+    <div class="eq4-view" id="eq4PersonasView" hidden>
+      <div id="eq4Personas" class="eq4-personas"></div>
+    </div>
+
+    <div class="section mt-4">
+      <p><b>What is EQ-Bench 4?</b></p>
+      <p>
+        EQ-Bench 4 measures the emotional and social intelligence of language models, demonstrated over
+        multi-turn conversation. We don't think a good chatbot reduces to a single ideal personality, because
+        there's no single kind of user — what helps one person lands badly with the next. The skill is reading
+        the individual in front of you. Three ideas drive the benchmark:
+      </p>
+      <ul>
+        <li><strong>Users are all different.</strong> Optimising for one homogeneous "ideal" chatbot is the wrong target.</li>
+        <li><strong>Chat is a relationship, not a transaction.</strong> Real use spans many conversations, so it rewards building trust and preserving the relationship — exactly what a model that only optimises the current reply tends to miss.</li>
+        <li><strong>Good EQ is situational.</strong> It means meeting a person's explicit and implicit needs while navigating preferences and sensitivities you were never told about.</li>
+      </ul>
+      <p>
+        Frontier models are surprisingly bad at this. They misjudge the moment for a lot of reasons — safety
+        training, sycophancy, over-corrections against sycophancy, myopia about the longer relationship, and
+        plain social-emotional blind spots — and even the strongest models still misread people in ways you can
+        watch happen in the transcripts.
+      </p>
+
+      <p><b>How it works</b></p>
+      <p>
+        A model is dropped into a multi-turn conversation with a simulated person — a persona played by another
+        model, working from a rich hidden profile (traits, sensitivities, backstory, and a private emotional
+        state) that the assessed model never sees. It has to infer all of that from the conversation, the way a
+        person would. The personas and scenarios are sampled to be adversarial, so that no single approach gets
+        an easy win: some lose trust the moment they sense sycophancy, others shut down at any pushback, and
+        others hold power, distort reality, or are quietly in the wrong.
+      </p>
+      <p>
+        Every conversation is judged blind and head-to-head by a jury of frontier models, and the results are
+        aggregated into an <strong>ELO</strong> rating — the leaderboard ranking, shown with a 95% confidence
+        interval. We separately profile each model on a set of behavioural <strong>traits and tendencies</strong>
+        (how warm, how challenging, how readily it adopts the user's frame, and so on). Abilities tell you
+        <em>how good</em> a model is; traits tell you <em>what kind</em> of model it is.
+      </p>
+      <p>
+        Open the <strong>Personas</strong> tab to meet the cast of scenarios, or any model's
+        <strong>Transcripts</strong> to read its conversations turn by turn.
+      </p>
+
+      <details class="eq4-fold mt-3">
+        <summary>Tell me more</summary>
+        <div class="fold-body">
+          <p><b>Why multi-turn?</b></p>
+          <p>
+            EQ isn't a single good reply. It shows up over time — building trust, recovering from a misread,
+            holding a thread across turns, and resisting the pull to say whatever is easiest in the moment. A
+            one-shot test can't see any of that, so every scenario runs for several turns.
+          </p>
+
+          <p><b>Two kinds of conversation</b></p>
+          <p>
+            Around half the scenarios cast the model as a chatbot the persona is talking to — the realistic,
+            in-distribution deployment case. The rest cast it in a human role: a friend, partner, parent,
+            therapist, colleague. These are more out-of-distribution and stop a model from coasting on assistant
+            habits — it has to bring EQ the way a person would. You can see the role for each scenario in the
+            Personas tab.
+          </p>
+
+          <p><b>An exam, not a quiz</b></p>
+          <p>
+            The closest analogue is an OSCE — the Objective Structured Clinical Examination, where medical
+            trainees are assessed across standardised encounters with simulated patients. Like an OSCE, EQ-Bench
+            4 uses controlled, repeatable scenarios built to probe specific competencies, and scores performance
+            <em>in the encounter</em> rather than answers on a quiz. Traits are sampled so that one-note
+            strategies — relentless validation, reflexive challenge, generic empathy — reliably fail somewhere.
+          </p>
+
+          <p><b>Two scores, two questions</b></p>
+          <ul>
+            <li>
+              <strong>Abilities (head-to-head &rarr; ELO).</strong> Conversations are compared against each
+              other on the dimensions that matter for the task: bond and rapport, authenticity, attunement,
+              meeting preferences and needs, emotion sensemaking, and emotion management. Comparing two
+              transcripts is far more reliable than asking a judge for an absolute score, and the resulting ELO
+              carries confidence intervals so genuine ties stay visible.
+            </li>
+            <li>
+              <strong>Traits (behavioural profiling).</strong> Separately, each model is rated on neutral
+              behavioural tendencies. These aren't better-or-worse — they're a fingerprint of how a model
+              characteristically engages, and two strong models can have very different profiles.
+            </li>
+          </ul>
+
+          <p><b>What we mean by "EI"</b></p>
+          <p>
+            There's no settled definition of emotional intelligence. The literature splits it into ability
+            models (EI as a measurable skill — perceiving, understanding, and managing emotion) and trait models
+            (EI as personality and self-perception). Most existing LLM EQ tests lean on recognition: pick the
+            emotionally intelligent answer to a vignette. That's clean to score, but it measures knowing the
+            right move, not doing it under pressure. Our stance is to measure EI as a set of <em>abilities
+            enacted on a realistic task</em>, and to separately profile the EI-adjacent traits that measurably
+            differ between models.
+          </p>
+
+          <p><b>What it is, and isn't</b></p>
+          <p>
+            This is a deliberately deep-not-broad test. It buys high fidelity to how EQ actually gets used in
+            chat, at the cost of not systematically covering every competency in the EI taxonomy. A high ELO
+            means a model navigates these conversations well; it isn't a complete certificate of emotional
+            intelligence, and the scores are only as good as the judges and the scenario set behind them. We'd
+            rather measure the real thing narrowly than a proxy broadly.
+          </p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- heatmap explainer modal -->
+  <div class="eq4-imodal" id="eq4InfoModal" role="dialog" aria-modal="true" aria-labelledby="eq4InfoTitle">
+    <div class="eq4-imodal-shell">
+      <div class="eq4-imodal-head">
+        <div class="eq4-imodal-title" id="eq4InfoTitle">Traits and Abilities</div>
+        <button class="eq4-imodal-close" id="eq4InfoClose" aria-label="Close">✕</button>
+      </div>
+      <div class="eq4-imodal-body" id="eq4InfoBody"></div>
+    </div>
+  </div>
+
+  <!-- transcript browser (master–detail modal) -->
+  <div class="eq4-tmodal" id="eq4Tmodal" role="dialog" aria-modal="true" aria-labelledby="eq4TmodalTitle">
+    <div class="eq4-tmodal-shell" id="eq4TmodalShell">
+      <div class="eq4-tmodal-head">
+        <button class="eq4-back" id="eq4TmodalBack" hidden>← List</button>
+        <div class="eq4-tmodal-title" id="eq4TmodalTitle">Transcripts</div>
+        <button class="eq4-tmodal-close" id="eq4TmodalClose" aria-label="Close transcripts">✕ Close</button>
+      </div>
+      <div class="eq4-tmodal-body">
+        <div class="eq4-tlist" id="eq4Tlist"></div>
+        <div class="eq4-treader" id="eq4Treader"><div class="placeholder">Select a conversation to read.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="eqbench4_data.js"></script>
+  <script src="eqbench4.js?v=2.0"></script>
+  <script src="eqbench4_personas.js?v=1.0"></script>
+  <script src="../utils.js"></script>
+  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1600fe1d3da743c1b311f4e5fee86767"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

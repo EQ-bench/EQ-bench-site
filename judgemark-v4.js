@@ -18,6 +18,7 @@ moonshotai/Kimi-K2.6,0.572626,0.547558,0.633247,$6.51,results/judgemark-v4/chart
 Qwen/Qwen3.5-397B-A17B,0.542445,0.485310,0.620456,$3.20,results/judgemark-v4/charts/multichart_Qwen__Qwen3_5-397B-A17B_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_5-397b-a17b.png
 Qwen/Qwen3.6-27B,0.533686,0.512794,0.593391,$3.56,results/judgemark-v4/charts/multichart_qwen__qwen3_6-27b_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_6-27b.png
 google/gemma-4-26B-A4B-it,0.530234,0.484937,0.608299,$0.61,results/judgemark-v4/charts/multichart_google__gemma-4-26b-a4b-it_seed_temp0_prompt_reasoning_trial_01__google_gemma-4-26b-a4b-it.png
+nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4,0.529064,0.499723,0.592820,$3.30,results/judgemark-v4/charts/multichart_nvidia__nemotron-3-ultra-550b-a55b_seed_temp0_prompt_reasoning_trial_01__nvidia_nemotron-3-ultra-550b-a55b.png
 grok-4.3,0.495693,0.457153,0.573230,$9.71,results/judgemark-v4/charts/multichart_x-ai__grok-4_3_seed_temp0_prompt_reasoning_trial_01__x-ai_grok-4_3.png
 deepseek-ai/DeepSeek-V4-Pro,0.471182,0.416774,0.563053,$2.94,results/judgemark-v4/charts/multichart_deepseek__deepseek-v4-pro_seed_temp0_prompt_reasoning_trial_01__deepseek_deepseek-v4-pro.png
 gemini-3-flash-preview,0.461171,0.424996,0.536712,$3.14,results/judgemark-v4/charts/multichart_gemini-3-flash-preview_seed_temp0_prompt_reasoning_trial_01__google_gemini-3-flash-preview.png
