@@ -507,20 +507,39 @@
       <p><b>What is EQ-Bench 4?</b></p>
       <p>
         EQ-Bench 4 measures the emotional and social intelligence of language models, demonstrated over
-        multi-turn conversation. We don't think a good chatbot reduces to a single ideal personality, because
-        there's no single kind of user — what helps one person lands badly with the next. The skill is reading
-        the individual in front of you. Three ideas drive the benchmark:
+        multi-turn conversation. It is judged by <strong>Gemini 3.1 Pro Preview</strong>,
+        <strong>GPT-5.5</strong>, and <strong>Claude Opus 4.6</strong>.
       </p>
+
+      <p><b>Why?</b></p>
+      <p>Benchmarks suffer from two big flaws:</p>
       <ul>
-        <li><strong>Users are all different.</strong> Optimising for one homogeneous "ideal" chatbot is the wrong target.</li>
-        <li><strong>Chat is a relationship, not a transaction.</strong> Real use spans many conversations, so it rewards building trust and preserving the relationship — exactly what a model that only optimises the current reply tends to miss.</li>
-        <li><strong>Good EQ is situational.</strong> It means meeting a person's explicit and implicit needs while navigating preferences and sensitivities you were never told about.</li>
+        <li>They are too far removed from the average user experience of using the model.</li>
+        <li>They are reward-hackable by optimising for a narrow policy that exploits the benchmark mechanics: benchmaxxing and Goodharting.</li>
       </ul>
       <p>
-        Frontier models are surprisingly bad at this. They misjudge the moment for a lot of reasons — safety
-        training, sycophancy, over-corrections against sycophancy, myopia about the longer relationship, and
-        plain social-emotional blind spots — and even the strongest models still misread people in ways you can
-        watch happen in the transcripts.
+        Real human-AI interactions are more complicated. Every user is different, with different preferences,
+        needs, situations, sensitivities, and communication styles. The chatbot typically goes into these
+        situations blind.
+      </p>
+      <p>
+        The role of EQ in organic chats is to rapidly get a sense of the user's personality, emotional affect,
+        communication style, what they're saying and not saying - to read the room - and adapt the model's
+        situational policy to this. This is the interaction EQ-Bench intends to recreate and assess.
+      </p>
+      <p>
+        The target is: figure out the user in a short 8-turn chat; give them something useful; avoid turning
+        the user off or causing relationship rupture, because we can't meet the user's needs if they don't like
+        interacting with the chatbot and stop using it. That means balancing validation and challenge, intuiting
+        the user's communication style, and intelligently guessing how they want to be communicated with.
+      </p>
+      <p>
+        No benchmark survives reward hacking on its first iteration. We expect EQ-Bench 4 will be no exception.
+        An elegant mechanism for adjusting to this is built in: Sample at a higher frequency the persona traits
+        that are adversarial to the reward-hacked behaviour. This is much simpler than re-generating the whole
+        dataset, and is similar in dynamic to the userbase collectively growing tired of the reward-hacked behavioural quirk.
+        This also avoids the need to add extra judge notes to punish the behaviour, which can create broad unwanted
+        biasing effects.
       </p>
 
       <p><b>How it works</b></p>
@@ -545,7 +564,7 @@
       </p>
 
       <details class="eq4-fold mt-3">
-        <summary>Tell me more</summary>
+        <summary>Read more</summary>
         <div class="fold-body">
           <p><b>Why multi-turn?</b></p>
           <p>

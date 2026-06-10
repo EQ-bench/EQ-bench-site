@@ -9,7 +9,7 @@
   const DIMS = DATA.dimensions || [];          // neutral behavioural traits
   const ABILITIES = DATA.abilities || [];      // pairwise abilities
   const ABILITY_MODES = DATA.ability_modes || {};
-  const PUBLIC_ABILITY_MODE = "absolute_fingerprint_blend";
+  const PUBLIC_ABILITY_MODE = "elo_anchored_fingerprint";
   let activeAbilityMode = ABILITY_MODES[PUBLIC_ABILITY_MODE] ? PUBLIC_ABILITY_MODE : (DATA.default_ability_mode || "absolute");
   let abilityScale = DATA.ability_scale || "neighbour-relative";
   const blendWeights = {
@@ -17,7 +17,7 @@
     absolute_fingerprint_blend: 0.25,
   };
   const lambdaValues = {
-    elo_anchored_fingerprint: 100,
+    elo_anchored_fingerprint: 35,
     elo_anchored_neighbour: 50,
   };
   const MODE_VALUE_RANGES = {};
@@ -754,8 +754,8 @@
       `<p style="margin-top:0;line-height:1.55">Models are ranked by an <b>ELO</b> rating from blind, head-to-head judgements. The trait and ability scores are shown in two groups:</p>
        <div class="eq4-inote"><b>Judges:</b> pairwise comparisons are judged by <b>Gemini 3.1 Pro Preview</b>, <b>GPT-5.5</b>, and <b>Claude Opus 4.6</b>. Pointwise trait scores are judged by <b>Claude Opus 4.8</b>.</div>
        <div class="eq4-inote"><b>Traits</b> are behavioural tendencies, scored <b>0–10 by an LLM judge</b>. They're <b>neutral</b> — a high number just means "more of this tendency", not better or worse.</div>
-       <div class="eq4-inote"><b>Abilities</b> are shown as a <b>75% / 25%</b> blend of two pairwise signals. The first is a per-ability TrueSkill score, normalized to <b>0–10</b> within each ability. The second is a halo-reduced fingerprint score that highlights which abilities stand out for a model relative to its own average.</div>
-       <div class="eq4-inote">We combine them because raw per-ability scores carry a strong overall-ability halo, so they often preserve nearly the same ranking in every ability. The mean-normalized fingerprint is useful for showing strengths and weaknesses, but by itself removes the overall ability signal. The blend keeps the overall-strength signal while making each model's relative strengths and weaknesses easier to see.</div>
+       <div class="eq4-inote"><b>Abilities</b> are shown with an <b>ELO-anchored fingerprint</b>. We start from each model's overall ELO, then add a small halo-reduced fingerprint adjustment for each ability (<b>lambda 35</b>). Before the final display normalization, each model's average across abilities is anchored back to its overall ELO.</div>
+       <div class="eq4-inote">We display abilities this way because raw per-ability scores carry a strong overall-ability halo, so they often preserve nearly the same ranking in every ability. Mean-normalized fingerprint scores are good for illustrating a model's strengths and weaknesses, but by themselves remove the overall ability signal. ELO anchoring keeps the overall-strength signal while letting the heatmap show meaningful relative strengths and weaknesses.</div>
        <div class="eq4-inote">Within each trait or ability, colours run from the lowest model value (blue) to the highest (pink).</div>
        <h4>Traits</h4><dl class="eq4-idl">${gloss(DIMS)}</dl>
        ${ABILITIES.length ? `<h4>Abilities</h4><dl class="eq4-idl">${gloss(ABILITIES)}</dl>` : ""}`;
@@ -791,6 +791,6 @@
     computeModeValueRanges();
     applyAbilityMode(activeAbilityMode);
     computeRanges();
-    buildHead(); buildBody(); buildGlossary(); setupViews(); setupAbilityModeSwitch(); setupInfoModal();
+    buildHead(); buildBody(); buildGlossary(); setupViews(); setupInfoModal();
   });
 })();
