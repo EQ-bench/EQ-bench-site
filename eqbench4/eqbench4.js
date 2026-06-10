@@ -146,7 +146,8 @@
     return heatColorT(t);
   }
   function abilityIs0To10() {
-    return String(abilityScale || "").includes("minmax-0-10");
+    return String(abilityScale || "").includes("minmax-0-10")
+      || String(abilityScale || "").includes("minmax-1-10");
   }
   function abilityModeMeta() {
     return ABILITY_MODES[activeAbilityMode] || { label: "Abilities", description: "" };
@@ -159,7 +160,7 @@
           const modeData = m.ability_modes && m.ability_modes[mode];
           return modeData && modeData.values ? modeData.values[a.key] : null;
         }).filter(v => v != null && !isNaN(v));
-        MODE_VALUE_RANGES[mode][a.key] = vals.length ? { min: Math.min(...vals), max: Math.max(...vals) } : { min: 0, max: 10 };
+        MODE_VALUE_RANGES[mode][a.key] = vals.length ? { min: Math.min(...vals), max: Math.max(...vals) } : { min: 1, max: 10 };
       });
     });
   }
@@ -171,10 +172,10 @@
     const raw = modeValueFor(model, mode, abilityKey);
     if (raw == null || isNaN(raw)) return null;
     const scale = (ABILITY_MODES[mode] && ABILITY_MODES[mode].scale) || "";
-    if (String(scale).includes("minmax-0-10")) return raw;
+    if (String(scale).includes("minmax-0-10") || String(scale).includes("minmax-1-10")) return raw;
     const r = MODE_VALUE_RANGES[mode] && MODE_VALUE_RANGES[mode][abilityKey];
-    if (!r || r.max <= r.min) return 5.0;
-    return (raw - r.min) / (r.max - r.min) * 10.0;
+    if (!r || r.max <= r.min) return 5.5;
+    return 1.0 + (raw - r.min) / (r.max - r.min) * 9.0;
   }
   function blendModeValues(model, meta, weight) {
     const parts = meta.blend || [];
@@ -213,15 +214,15 @@
     ABILITIES.forEach(a => {
       const vals = MODELS.map(m => rawByModel[m.model] && rawByModel[m.model][a.key])
         .filter(v => v != null && !isNaN(v));
-      const lo = vals.length ? Math.min(...vals) : 0;
+      const lo = vals.length ? Math.min(...vals) : 1;
       const hi = vals.length ? Math.max(...vals) : 10;
       MODELS.forEach(m => {
         const raw = rawByModel[m.model] && rawByModel[m.model][a.key];
         if (raw == null || isNaN(raw)) return;
         if (!out[m.model]) out[m.model] = {};
         out[m.model][a.key] = hi > lo
-          ? Math.round(((raw - lo) / (hi - lo) * 10.0) * 100) / 100
-          : 5.0;
+          ? Math.round((1.0 + (raw - lo) / (hi - lo) * 9.0) * 100) / 100
+          : 5.5;
       });
     });
     return out;
@@ -250,10 +251,10 @@
     });
   }
   function abilityScaleNote() {
-    if (String(abilityScale).includes("elo-anchored")) return " (Elo-anchored modifier, normalized 0-10)";
-    if (String(abilityScale).includes("blend")) return " (ability/fingerprint blend, normalized 0-10)";
-    if (String(abilityScale).includes("halo-centered")) return " (halo-centered per-dimension TrueSkill, normalized 0-10)";
-    if (abilityIs0To10()) return " (per-dimension TrueSkill, normalized 0-10)";
+    if (String(abilityScale).includes("elo-anchored")) return " (Elo-anchored modifier, normalized 1-10)";
+    if (String(abilityScale).includes("blend")) return " (ability/fingerprint blend, normalized 1-10)";
+    if (String(abilityScale).includes("halo-centered")) return " (halo-centered per-dimension TrueSkill, normalized 1-10)";
+    if (abilityIs0To10()) return " (per-dimension TrueSkill, normalized 1-10)";
     return " (relative to neighbours)";
   }
   function refreshAbilityModeSwitch() {
@@ -507,12 +508,12 @@
     if (ABILITIES.length) {
       const label = abilityIs0To10()
         ? (String(abilityScale).includes("elo-anchored")
-            ? "Abilities — Elo-anchored modifier scores, normalized 0-10 within each column"
+            ? "Abilities — Elo-anchored modifier scores, normalized 1-10 within each column"
             : String(abilityScale).includes("blend")
-            ? "Abilities — 75% per-ability strength + 25% fingerprint, normalized 0-10 within each column"
+            ? "Abilities — 75% per-ability strength + 25% fingerprint, normalized 1-10 within each column"
             : String(abilityScale).includes("halo-centered")
-            ? "Abilities — halo-centered per-dimension pairwise TrueSkill scores, normalized 0-10 within each column"
-            : "Abilities — per-dimension pairwise TrueSkill scores, normalized 0-10 within each column")
+            ? "Abilities — halo-centered per-dimension pairwise TrueSkill scores, normalized 1-10 within each column"
+            : "Abilities — per-dimension pairwise TrueSkill scores, normalized 1-10 within each column")
         : "Abilities — pairwise skill, shown relative to nearest-ranked neighbours";
       html += `<dt class="eq4-gloss-grp">${label}</dt>` + glossList(ABILITIES);
     }
@@ -754,7 +755,7 @@
       `<p style="margin-top:0;line-height:1.55">Models are ranked by an <b>ELO</b> rating from blind, head-to-head judgements. The trait and ability scores are shown in two groups:</p>
        <div class="eq4-inote"><b>Judges:</b> pairwise comparisons are judged by <b>Gemini 3.1 Pro Preview</b>, <b>GPT-5.5</b>, and <b>Claude Opus 4.6</b>. Pointwise trait scores are judged by <b>Claude Opus 4.8</b>.</div>
        <div class="eq4-inote"><b>Traits</b> are behavioural tendencies, scored <b>0–10 by an LLM judge</b>. They're <b>neutral</b> — a high number just means "more of this tendency", not better or worse.</div>
-       <div class="eq4-inote"><b>Abilities</b> are shown with an <b>ELO-anchored fingerprint</b>. We start from each model's overall ELO, then add a small halo-reduced fingerprint adjustment for each ability (<b>lambda 35</b>). Before the final display normalization, each model's average across abilities is anchored back to its overall ELO.</div>
+       <div class="eq4-inote"><b>Abilities</b> are shown with an <b>ELO-anchored fingerprint</b>. We start from each model's overall ELO, then add an adjustment to each dimension centred on the model's mean, to emphasise its strengths and weaknesses. Before the final <b>1-10</b> display normalization, each model's average across abilities is anchored back to its overall ELO.</div>
        <div class="eq4-inote">We display abilities this way because raw per-ability scores carry a strong overall-ability halo, so they often preserve nearly the same ranking in every ability. Mean-normalized fingerprint scores are good for illustrating a model's strengths and weaknesses, but by themselves remove the overall ability signal. ELO anchoring keeps the overall-strength signal while letting the heatmap show meaningful relative strengths and weaknesses.</div>
        <div class="eq4-inote">Within each trait or ability, colours run from the lowest model value (blue) to the highest (pink).</div>
        <h4>Traits</h4><dl class="eq4-idl">${gloss(DIMS)}</dl>
