@@ -66,6 +66,55 @@
     body.dark-mode .eq4-view-link { border-color: rgba(255,255,255,0.18); }
     body.dark-mode .eq4-view-link.active { background: #7a83c8; border-color: #7a83c8; color: #14141a; }
     .eq4-view[hidden] { display: none !important; }
+    .eq4-ability-mode {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem;
+      margin: 0 0 0.85rem; padding: 0.55rem 0.65rem;
+      border: 1px solid rgba(85, 80, 110, 0.18); border-radius: 8px;
+      background: rgba(85, 96, 176, 0.055);
+    }
+    .eq4-ability-mode[hidden] { display: none !important; }
+    .eq4-ability-mode-label {
+      font-size: 0.72rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--eq4-muted);
+    }
+    .eq4-ability-mode-buttons { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .eq4-ability-mode-btn {
+      min-height: 30px; border: 1px solid rgba(85, 80, 110, 0.22);
+      border-radius: 6px; color: inherit; padding: 0.25rem 0.65rem;
+      background: rgba(255, 255, 255, 0.46); cursor: pointer; font-size: 0.86rem;
+    }
+    .eq4-ability-mode-btn:hover { border-color: rgba(85, 96, 176, 0.55); }
+    .eq4-ability-mode-btn.active {
+      background: #5560b0; border-color: #5560b0; color: #fff; font-weight: 700;
+    }
+    .eq4-ability-blend {
+      display: grid; grid-template-columns: auto minmax(10rem, 16rem) auto auto;
+      align-items: center; gap: 0.5rem; width: 100%;
+      padding-top: 0.1rem;
+    }
+    .eq4-ability-blend[hidden] { display: none !important; }
+    .eq4-ability-blend-end { font-size: 0.78rem; color: var(--eq4-muted); white-space: nowrap; }
+    .eq4-ability-blend-value {
+      min-width: 2.4rem; font-size: 0.8rem; font-weight: 800; color: #5560b0;
+      font-variant-numeric: tabular-nums;
+    }
+    .eq4-ability-blend input[type="range"] { width: 100%; accent-color: #5560b0; }
+    .eq4-ability-mode-desc { flex-basis: 100%; font-size: 0.82rem; color: var(--eq4-muted); line-height: 1.35; }
+    body.dark-mode .eq4-ability-mode {
+      background: rgba(122, 131, 200, 0.11); border-color: rgba(255, 255, 255, 0.12);
+    }
+    body.dark-mode .eq4-ability-mode-btn {
+      background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.18);
+    }
+    body.dark-mode .eq4-ability-mode-btn.active {
+      background: #7a83c8; border-color: #7a83c8; color: #14141a;
+    }
+    body.dark-mode .eq4-ability-blend-value { color: #aab0e8; }
+    @media (max-width: 640px) {
+      .eq4-ability-blend { grid-template-columns: 1fr auto 1fr; }
+      .eq4-ability-blend input[type="range"] { grid-column: 1 / -1; order: 2; }
+      .eq4-ability-blend-value { text-align: center; }
+    }
 
     /* leaderboard table */
     #eqbench4-leaderboard { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
@@ -427,6 +476,17 @@
     </div>
 
     <div class="eq4-view" id="eq4LeaderboardView">
+      <div class="eq4-ability-mode" id="eq4AbilityModeShell" aria-label="Ability score method" hidden>
+        <span class="eq4-ability-mode-label">Ability method</span>
+        <span class="eq4-ability-mode-buttons" id="eq4AbilityModeSwitch"></span>
+        <span class="eq4-ability-blend" id="eq4AbilityBlendShell" hidden>
+          <span class="eq4-ability-blend-end" id="eq4AbilityBlendLeft"></span>
+          <input id="eq4AbilityBlendSlider" type="range" min="0" max="100" step="1" value="50" aria-label="Blend amount">
+          <span class="eq4-ability-blend-end" id="eq4AbilityBlendRight"></span>
+          <span class="eq4-ability-blend-value" id="eq4AbilityBlendValue">50%</span>
+        </span>
+        <span class="eq4-ability-mode-desc" id="eq4AbilityModeDesc"></span>
+      </div>
       <div class="table-responsive">
         <table id="eqbench4-leaderboard">
           <thead id="eq4Head"></thead>

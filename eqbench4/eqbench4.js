@@ -7,7 +7,20 @@
 
   const DATA = (typeof EQBENCH4_DATA !== "undefined") ? EQBENCH4_DATA : { dimensions: [], abilities: [], models: [] };
   const DIMS = DATA.dimensions || [];          // neutral behavioural traits
-  const ABILITIES = DATA.abilities || [];      // pairwise abilities (neighbour-relative)
+  const ABILITIES = DATA.abilities || [];      // pairwise abilities
+  const ABILITY_MODES = DATA.ability_modes || {};
+  const PUBLIC_ABILITY_MODE = "absolute_fingerprint_blend";
+  let activeAbilityMode = ABILITY_MODES[PUBLIC_ABILITY_MODE] ? PUBLIC_ABILITY_MODE : (DATA.default_ability_mode || "absolute");
+  let abilityScale = DATA.ability_scale || "neighbour-relative";
+  const blendWeights = {
+    fingerprint_neighbour_blend: 0.5,
+    absolute_fingerprint_blend: 0.25,
+  };
+  const lambdaValues = {
+    elo_anchored_fingerprint: 100,
+    elo_anchored_neighbour: 50,
+  };
+  const MODE_VALUE_RANGES = {};
   const MODELS = DATA.models || [];
   const DOCS_BASE = "eqbench4_docs/";
 
@@ -132,6 +145,214 @@
     const t = Math.max(0, Math.min(1, (v + 2) / 4));
     return heatColorT(t);
   }
+  function abilityIs0To10() {
+    return String(abilityScale || "").includes("minmax-0-10");
+  }
+  function abilityModeMeta() {
+    return ABILITY_MODES[activeAbilityMode] || { label: "Abilities", description: "" };
+  }
+  function computeModeValueRanges() {
+    Object.keys(ABILITY_MODES).forEach(mode => {
+      MODE_VALUE_RANGES[mode] = {};
+      ABILITIES.forEach(a => {
+        const vals = MODELS.map(m => {
+          const modeData = m.ability_modes && m.ability_modes[mode];
+          return modeData && modeData.values ? modeData.values[a.key] : null;
+        }).filter(v => v != null && !isNaN(v));
+        MODE_VALUE_RANGES[mode][a.key] = vals.length ? { min: Math.min(...vals), max: Math.max(...vals) } : { min: 0, max: 10 };
+      });
+    });
+  }
+  function modeValueFor(model, mode, abilityKey) {
+    const modeData = model.ability_modes && model.ability_modes[mode];
+    return modeData && modeData.values ? modeData.values[abilityKey] : null;
+  }
+  function normalizedModeValueFor(model, mode, abilityKey) {
+    const raw = modeValueFor(model, mode, abilityKey);
+    if (raw == null || isNaN(raw)) return null;
+    const scale = (ABILITY_MODES[mode] && ABILITY_MODES[mode].scale) || "";
+    if (String(scale).includes("minmax-0-10")) return raw;
+    const r = MODE_VALUE_RANGES[mode] && MODE_VALUE_RANGES[mode][abilityKey];
+    if (!r || r.max <= r.min) return 5.0;
+    return (raw - r.min) / (r.max - r.min) * 10.0;
+  }
+  function blendModeValues(model, meta, weight) {
+    const parts = meta.blend || [];
+    const left = parts[0], right = parts[1];
+    const vals = {};
+    ABILITIES.forEach(a => {
+      const va = normalizedModeValueFor(model, left, a.key);
+      const vb = normalizedModeValueFor(model, right, a.key);
+      if (va == null && vb == null) return;
+      const aVal = va == null ? vb : va;
+      const bVal = vb == null ? va : vb;
+      vals[a.key] = Math.round((aVal * (1 - weight) + bVal * weight) * 100) / 100;
+    });
+    return vals;
+  }
+  function eloAnchoredValues(meta) {
+    const sourceMode = meta.anchored_source || "fingerprint";
+    const lambda = lambdaValues[activeAbilityMode] == null
+      ? Number(meta.lambda_default == null ? 100 : meta.lambda_default)
+      : lambdaValues[activeAbilityMode];
+    const rawByModel = {};
+    MODELS.forEach(m => {
+      const sourceVals = ABILITIES.map(a => normalizedModeValueFor(m, sourceMode, a.key))
+        .filter(v => v != null && !isNaN(v));
+      if (!sourceVals.length || !Number.isFinite(m.elo)) return;
+      const sourceMean = sourceVals.reduce((sum, v) => sum + v, 0) / sourceVals.length;
+      rawByModel[m.model] = {};
+      ABILITIES.forEach(a => {
+        const sourceValue = normalizedModeValueFor(m, sourceMode, a.key);
+        if (sourceValue == null || isNaN(sourceValue)) return;
+        rawByModel[m.model][a.key] = m.elo + lambda * (sourceValue - sourceMean);
+      });
+    });
+
+    const out = {};
+    ABILITIES.forEach(a => {
+      const vals = MODELS.map(m => rawByModel[m.model] && rawByModel[m.model][a.key])
+        .filter(v => v != null && !isNaN(v));
+      const lo = vals.length ? Math.min(...vals) : 0;
+      const hi = vals.length ? Math.max(...vals) : 10;
+      MODELS.forEach(m => {
+        const raw = rawByModel[m.model] && rawByModel[m.model][a.key];
+        if (raw == null || isNaN(raw)) return;
+        if (!out[m.model]) out[m.model] = {};
+        out[m.model][a.key] = hi > lo
+          ? Math.round(((raw - lo) / (hi - lo) * 10.0) * 100) / 100
+          : 5.0;
+      });
+    });
+    return out;
+  }
+  function applyAbilityMode(mode) {
+    if (!ABILITY_MODES[mode]) mode = Object.keys(ABILITY_MODES)[0] || mode;
+    activeAbilityMode = mode;
+    const meta = ABILITY_MODES[mode] || {};
+    abilityScale = meta.scale || DATA.ability_scale || "neighbour-relative";
+    const anchoredValues = meta.anchored_source ? eloAnchoredValues(meta) : null;
+    MODELS.forEach(m => {
+      const modeData = m.ability_modes && m.ability_modes[mode];
+      if (anchoredValues) {
+        m.abilities = anchoredValues[m.model] || {};
+        m.ability_elos = {};
+        m.ability_ranks = {};
+      } else if (meta.blend && meta.blend.length === 2) {
+        m.abilities = blendModeValues(m, meta, blendWeights[mode] == null ? 0.5 : blendWeights[mode]);
+        m.ability_elos = {};
+        m.ability_ranks = {};
+      } else if (modeData && modeData.values) {
+        m.abilities = modeData.values;
+        m.ability_elos = modeData.elos || {};
+        m.ability_ranks = modeData.ranks || {};
+      }
+    });
+  }
+  function abilityScaleNote() {
+    if (String(abilityScale).includes("elo-anchored")) return " (Elo-anchored modifier, normalized 0-10)";
+    if (String(abilityScale).includes("blend")) return " (ability/fingerprint blend, normalized 0-10)";
+    if (String(abilityScale).includes("halo-centered")) return " (halo-centered per-dimension TrueSkill, normalized 0-10)";
+    if (abilityIs0To10()) return " (per-dimension TrueSkill, normalized 0-10)";
+    return " (relative to neighbours)";
+  }
+  function refreshAbilityModeSwitch() {
+    const shell = document.getElementById("eq4AbilityModeShell");
+    const desc = document.getElementById("eq4AbilityModeDesc");
+    const sliderShell = document.getElementById("eq4AbilityBlendShell");
+    const slider = document.getElementById("eq4AbilityBlendSlider");
+    const value = document.getElementById("eq4AbilityBlendValue");
+    const left = document.getElementById("eq4AbilityBlendLeft");
+    const right = document.getElementById("eq4AbilityBlendRight");
+    if (!shell) return;
+    const keys = Object.keys(ABILITY_MODES);
+    const meta = abilityModeMeta();
+    shell.hidden = keys.length < 2;
+    shell.querySelectorAll("[data-ability-mode]").forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.abilityMode === activeAbilityMode);
+    });
+    if (desc) desc.textContent = meta.description || "";
+    if (sliderShell) {
+      const blend = meta.blend && meta.blend.length === 2;
+      const anchored = !!meta.anchored_source;
+      sliderShell.hidden = !blend && !anchored;
+      if (blend) {
+        const labels = meta.blend_labels || meta.blend;
+        const pct = Math.round((blendWeights[activeAbilityMode] == null ? 0.5 : blendWeights[activeAbilityMode]) * 100);
+        if (slider) {
+          slider.min = "0";
+          slider.max = "100";
+          slider.step = "1";
+          slider.value = String(pct);
+          slider.setAttribute("aria-label", "Blend amount");
+        }
+        if (value) value.textContent = `${pct}%`;
+        if (left) left.textContent = labels[0] || "Left";
+        if (right) right.textContent = labels[1] || "Right";
+      } else if (anchored) {
+        const lambda = lambdaValues[activeAbilityMode] == null
+          ? Number(meta.lambda_default == null ? 100 : meta.lambda_default)
+          : lambdaValues[activeAbilityMode];
+        if (slider) {
+          slider.min = String(meta.lambda_min == null ? 0 : meta.lambda_min);
+          slider.max = String(meta.lambda_max == null ? 250 : meta.lambda_max);
+          slider.step = String(meta.lambda_step == null ? 5 : meta.lambda_step);
+          slider.value = String(lambda);
+          slider.setAttribute("aria-label", "Anchored modifier lambda");
+        }
+        if (value) value.textContent = `lambda ${lambda}`;
+        if (left) left.textContent = "Elo only";
+        if (right) right.textContent = `More ${meta.anchored_source_label || titleize(meta.anchored_source)}`;
+      }
+    }
+  }
+  function setupAbilityModeSwitch() {
+    const el = document.getElementById("eq4AbilityModeSwitch");
+    const shell = document.getElementById("eq4AbilityModeShell");
+    if (!el || !shell) return;
+    const preferred = ["absolute", "fingerprint", "neighbour", "fingerprint_neighbour_blend", "absolute_fingerprint_blend", "elo_anchored_fingerprint", "elo_anchored_neighbour"];
+    const keys = preferred.filter(k => ABILITY_MODES[k]).concat(
+      Object.keys(ABILITY_MODES).filter(k => !preferred.includes(k))
+    );
+    if (keys.length < 2) {
+      shell.hidden = true;
+      return;
+    }
+    el.innerHTML = keys.map(key => {
+      const meta = ABILITY_MODES[key] || {};
+      return `<button class="eq4-ability-mode-btn" data-ability-mode="${esc(key)}">${esc(meta.label || titleize(key))}</button>`;
+    }).join("");
+    el.querySelectorAll("[data-ability-mode]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        applyAbilityMode(btn.dataset.abilityMode);
+        computeRanges();
+        buildHead();
+        buildBody();
+        buildGlossary();
+        buildInfoModal();
+        refreshAbilityModeSwitch();
+      });
+    });
+    const slider = document.getElementById("eq4AbilityBlendSlider");
+    if (slider) {
+      slider.addEventListener("input", () => {
+        const meta = abilityModeMeta();
+        if (meta.anchored_source) {
+          lambdaValues[activeAbilityMode] = Number(slider.value);
+        } else {
+          blendWeights[activeAbilityMode] = Number(slider.value) / 100;
+        }
+        applyAbilityMode(activeAbilityMode);
+        computeRanges();
+        buildHead();
+        buildBody();
+        buildGlossary();
+        buildInfoModal();
+        refreshAbilityModeSwitch();
+      });
+    }
+    refreshAbilityModeSwitch();
+  }
 
   // ---- ELO axis ----------------------------------------------------------
   function eloAxis() {
@@ -215,8 +436,10 @@
   function cellFor(obj, d, sep, ability) {
     const v = obj ? obj[d.key] : undefined;
     const na = v == null || isNaN(v);
-    const txt = na ? "" : (ability ? (v >= 0 ? "+" : "") + v.toFixed(1) : v.toFixed(1));
-    const title = `${d.label}: ${na ? "n/a" : v.toFixed(2)}${ability ? " (relative to neighbours)" : ""}`;
+    const is0To10 = ability && abilityIs0To10();
+    const txt = na ? "" : (ability && !is0To10 ? signed(v) : v.toFixed(1));
+    const abilityNote = ability ? abilityScaleNote() : "";
+    const title = `${d.label}: ${na ? "n/a" : v.toFixed(2)}${abilityNote}`;
     return `<td class="eq4-dim-cell${sep ? " eq4-dim-sep" : ""}" data-v="${na ? "" : v}" style="background-color:${heatColor(v, d.key)}" title="${esc(title)}">${txt}</td>`;
   }
   function transcriptBtn(m) {
@@ -230,7 +453,7 @@
       return items.map(d => {
         const v = (m[src] || {})[d.key];
         if (v == null || isNaN(v)) return "";
-        const txt = ability ? (v >= 0 ? "+" : "") + v.toFixed(1) : v.toFixed(1);
+        const txt = ability && !abilityIs0To10() ? signed(v) : v.toFixed(1);
         return `<span class="eq4-mchip" style="background:${heatColor(v, d.key)}"><b>${txt}</b> ${esc(d.short)}</span>`;
       }).join("");
     }
@@ -282,7 +505,16 @@
     if (!dl) return;
     let html = `<dt class="eq4-gloss-grp">Traits — neutral behavioural tendencies</dt>` + glossList(DIMS);
     if (ABILITIES.length) {
-      html += `<dt class="eq4-gloss-grp">Abilities — pairwise skill, shown relative to nearest-ranked neighbours</dt>` + glossList(ABILITIES);
+      const label = abilityIs0To10()
+        ? (String(abilityScale).includes("elo-anchored")
+            ? "Abilities — Elo-anchored modifier scores, normalized 0-10 within each column"
+            : String(abilityScale).includes("blend")
+            ? "Abilities — 75% per-ability strength + 25% fingerprint, normalized 0-10 within each column"
+            : String(abilityScale).includes("halo-centered")
+            ? "Abilities — halo-centered per-dimension pairwise TrueSkill scores, normalized 0-10 within each column"
+            : "Abilities — per-dimension pairwise TrueSkill scores, normalized 0-10 within each column")
+        : "Abilities — pairwise skill, shown relative to nearest-ranked neighbours";
+      html += `<dt class="eq4-gloss-grp">${label}</dt>` + glossList(ABILITIES);
     }
     dl.innerHTML = html;
   }
@@ -520,8 +752,10 @@
     const gloss = items => items.map(d => `<dt>${esc(d.label)}</dt><dd>${esc(d.description)}</dd>`).join("");
     body.innerHTML =
       `<p style="margin-top:0;line-height:1.55">Models are ranked by an <b>ELO</b> rating from blind, head-to-head judgements. The trait and ability scores are shown in two groups:</p>
+       <div class="eq4-inote"><b>Judges:</b> pairwise comparisons are judged by <b>Gemini 3.1 Pro Preview</b>, <b>GPT-5.5</b>, and <b>Claude Opus 4.6</b>. Pointwise trait scores are judged by <b>Claude Opus 4.8</b>.</div>
        <div class="eq4-inote"><b>Traits</b> are behavioural tendencies, scored <b>0–10 by an LLM judge</b>. They're <b>neutral</b> — a high number just means "more of this tendency", not better or worse.</div>
-       <div class="eq4-inote"><b>Abilities</b> are skills scored in <b>head-to-head pairwise comparisons</b> between models. The number shown is each model's <b>relative strength vs similarly ranked models</b> (the 4 nearest-ranked models on each side): <b>+</b> = stronger than nearby models, <b>−</b> = weaker, <b>0</b> ≈ in line with them.</div>
+       <div class="eq4-inote"><b>Abilities</b> are shown as a <b>75% / 25%</b> blend of two pairwise signals. The first is a per-ability TrueSkill score, normalized to <b>0–10</b> within each ability. The second is a halo-reduced fingerprint score that highlights which abilities stand out for a model relative to its own average.</div>
+       <div class="eq4-inote">We combine them because raw per-ability scores carry a strong overall-ability halo, so they often preserve nearly the same ranking in every ability. The mean-normalized fingerprint is useful for showing strengths and weaknesses, but by itself removes the overall ability signal. The blend keeps the overall-strength signal while making each model's relative strengths and weaknesses easier to see.</div>
        <div class="eq4-inote">Within each trait or ability, colours run from the lowest model value (blue) to the highest (pink).</div>
        <h4>Traits</h4><dl class="eq4-idl">${gloss(DIMS)}</dl>
        ${ABILITIES.length ? `<h4>Abilities</h4><dl class="eq4-idl">${gloss(ABILITIES)}</dl>` : ""}`;
@@ -554,7 +788,9 @@
         `<tr><td>No data found. Run <code>export_to_site.py</code> to generate <code>eqbench4_data.js</code>.</td></tr>`;
       return;
     }
+    computeModeValueRanges();
+    applyAbilityMode(activeAbilityMode);
     computeRanges();
-    buildHead(); buildBody(); buildGlossary(); setupViews(); setupInfoModal();
+    buildHead(); buildBody(); buildGlossary(); setupViews(); setupAbilityModeSwitch(); setupInfoModal();
   });
 })();
