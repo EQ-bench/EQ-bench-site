@@ -506,50 +506,41 @@
     <div class="section mt-4">
       <p><b>What is EQ-Bench 4?</b></p>
       <p>
-        EQ-Bench 4 measures the emotional and social intelligence of language models, demonstrated over
-        multi-turn conversation. It is judged by <strong>Gemini 3.1 Pro Preview</strong>,
+        EQ-Bench 4 measures the emotional and social intelligence of language models, over multi-turn conversations
+        with diverse simulated user personas. It is judged by <strong>Gemini 3.1 Pro Preview</strong>,
         <strong>GPT-5.5</strong>, and <strong>Claude Opus 4.6</strong>.
       </p>
 
       <p><b>Design Motivation</b></p>
-      <p>Benchmarks suffer from two big flaws:</p>
+      <p>Benchmarks often suffer from two big flaws:</p>
       <ul>
         <li>They are too far removed from the average user experience of using the model.</li>
-        <li>They are reward-hackable by optimising for a narrow policy that exploits the benchmark mechanics: benchmaxxing and Goodharting.</li>
+        <li>They are reward-hackable by optimising for a narrow strategy that exploits the benchmark mechanics (see: <a target="_blank" href="https://en.wikipedia.org/wiki/Goodhart%27s_law">Goodharting</a>).</li>
       </ul>
       <p>
-        Real human-AI interactions are more complicated. Every user is different, with different preferences,
-        needs, situations, sensitivities, and communication styles. The chatbot typically goes into these
+        Real human-AI interactions are more complicated than a benchmark task. Every user is different, with different preferences,
+        needs, sensitivities, and communication styles. The chatbot typically goes into these
         situations blind.
       </p>
       <p>
-        The role of EQ in organic chats is to rapidly get a sense of the user's personality, emotional affect,
-        communication style, what they're saying and not saying - to read the room - and adapt the model's
-        situational policy to this. This is the interaction EQ-Bench intends to recreate and assess.
+        One role of EQ in organic chats is to rapidly get a sense of the user's personality, emotional affect,
+        communication style - to read the room - and adapt the model's
+        strategy to this. This is the interaction EQ-Bench intends to recreate and assess.
       </p>
       <p>
-        The target is: figure out the user in a short 8-turn chat; give them something useful; avoid turning
-        the user off or causing relationship rupture, because we can't meet the user's needs if they don't like
-        interacting with the chatbot and stop using it. That means balancing validation and challenge, intuiting
-        the user's communication style, and intelligently guessing how they want to be communicated with.
-      </p>
-      <p>
-        No benchmark survives reward hacking on its first iteration. We expect EQ-Bench 4 will be no exception.
-        An elegant mechanism for adjusting to this is built in: Sample at a higher frequency the persona traits
-        that are adversarial to the reward-hacked behaviour. This is much simpler than re-generating the whole
-        dataset, and is similar in dynamic to the userbase collectively growing tired of the reward-hacked behavioural quirk.
-        This also avoids the need to add extra judge notes to punish the behaviour, which can create broad unwanted
-        biasing effects.
+        The target is: figure out the user in a short 8-turn chat; build trust; give them something useful; avoid turning
+        the user off or causing relationship rupture. That means balancing validation and challenge, intuiting
+        the user's communication style, and intelligently adapting.
       </p>
 
       <p><b>How it works</b></p>
       <p>
-        A model is dropped into a multi-turn conversation with a simulated person — a persona played by another
+        The assessed model is dropped into a multi-turn conversation with a simulated user: a persona played by another
         model, working from a rich hidden profile (traits, sensitivities, backstory, and a private emotional
         state) that the assessed model never sees. It has to infer all of that from the conversation, the way a
         person would. The personas and scenarios are sampled to be adversarial, so that no single approach gets
         an easy win: some lose trust the moment they sense sycophancy, others shut down at any pushback, and
-        others hold power, distort reality, or are quietly in the wrong.
+        others hold power, distort reality, or are overtly in the wrong.
       </p>
       <p>
         Every conversation is judged blind and head-to-head by a jury of frontier models, and the results are
@@ -589,6 +580,16 @@
             4 uses controlled, repeatable scenarios built to probe specific competencies, and scores performance
             <em>in the encounter</em> rather than answers on a quiz. Traits are sampled so that one-note
             strategies — relentless validation, reflexive challenge, generic empathy — reliably fail somewhere.
+          </p>
+
+          <p><b>Adapting to reward hacking</b></p>
+          <p>
+            No benchmark survives reward hacking on its first iteration. We expect EQ-Bench 4 will be no exception.
+            An elegant mechanism for adjusting to this is built in: sample at a higher frequency the persona traits
+            that are adversarial to the reward-hacked behaviour. This is much simpler than re-generating the whole
+            dataset, and is similar in dynamic to the userbase collectively growing tired of the reward-hacked
+            behavioural quirk. It also avoids the need to add extra judge notes to punish the behaviour, which can
+            create broad unwanted biasing effects.
           </p>
 
           <p><b>Two scores, two questions</b></p>
