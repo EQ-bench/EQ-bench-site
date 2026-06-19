@@ -192,6 +192,24 @@
     .eq4-transcript-btn:hover { background: #5560b0; border-color: #5560b0; color: #fff; }
     .eq4-transcript-btn[disabled] { opacity: 0.4; cursor: default; }
 
+    /* unified Details button (text on wide, icon on narrow) */
+    .eq4-details-cell, .eq4-details-head { width: 5.6rem; text-align: center; }
+    .eq4-details-btn {
+      display: inline-flex; align-items: center; gap: 0.35rem; white-space: nowrap;
+      border: 1px solid rgba(85, 80, 110, 0.3); border-radius: 6px; background: none;
+      color: inherit; padding: 0.22rem 0.6rem; cursor: pointer; font-size: 0.74rem; font: inherit;
+    }
+    .eq4-details-btn { font-size: 0.74rem; }
+    .eq4-details-btn:hover { background: #5560b0; border-color: #5560b0; color: #fff; }
+    .eq4-details-btn[disabled] { opacity: 0.4; cursor: default; }
+    .eq4-details-ic { width: 0.95rem; height: 0.95rem; flex: 0 0 auto; display: inline-block; }
+    /* on narrow viewports collapse to icon-only */
+    @media (max-width: 760px) {
+      .eq4-details-cell, .eq4-details-head { width: 2.6rem; }
+      .eq4-details-btn .eq4-details-lbl { display: none; }
+      .eq4-details-btn { padding: 0.22rem 0.45rem; }
+    }
+
     /* row-expand toggle + per-model profile (mobile only) */
     th.eq4-toggle-head, .eq4-toggle-cell { display: none; width: 1.9rem; text-align: center; vertical-align: middle; padding-left: 0.2rem; padding-right: 0.2rem; }
     .eq4-toggle {
@@ -225,6 +243,13 @@
       font-size: 9px; font-weight: 800; font-style: italic; line-height: 1; cursor: pointer; opacity: 0.75;
     }
     .eq4-info:hover { opacity: 1; background: #5560b0; color: #fff; border-color: #5560b0; }
+    .eq4-profile-cell, .eq4-profile-head { width: 2.4rem; text-align: center; }
+    .eq4-profile-btn {
+      width: 28px; height: 28px; border: 1px solid rgba(85, 80, 110, 0.22);
+      border-radius: 6px; background: var(--eq4-inset); color: inherit; cursor: pointer;
+      font-size: 1rem; line-height: 1; font-weight: 800;
+    }
+    .eq4-profile-btn:hover { background: #5560b0; border-color: #5560b0; color: #fff; }
     .eq4-imodal { display: none; position: fixed; inset: 0; z-index: 3400; background: rgba(30,28,40,0.55); padding: 24px; overflow-y: auto; }
     .eq4-imodal.open { display: flex; align-items: flex-start; justify-content: center; }
     .eq4-imodal-shell { background: var(--eq4-surface); width: 100%; max-width: 620px; margin: 32px auto; border-radius: 14px; box-shadow: 0 26px 70px rgba(0,0,0,0.4); overflow: hidden; }
@@ -238,11 +263,47 @@
     .eq4-idl { display: grid; grid-template-columns: 11rem 1fr; gap: 0.4rem 1rem; margin: 0; }
     .eq4-idl dt { font-weight: 700; }
     .eq4-idl dd { margin: 0; color: var(--eq4-muted); font-size: 0.92rem; line-height: 1.5; }
+    .eq4-profile-modal .eq4-imodal-shell { max-width: 1060px; }
+    .eq4-tabs { display: flex; gap: 6px; margin: 4px 0 14px; border-bottom: 1px solid rgba(120,115,140,.2); }
+    .eq4-tab { background: none; border: none; border-bottom: 2px solid transparent; padding: 7px 14px; font: inherit; font-size: .9rem; font-weight: 600; color: var(--eq4-muted); cursor: pointer; }
+    .eq4-tab:hover { color: var(--eq4-text, inherit); }
+    .eq4-tab.active { color: #5560b0; border-bottom-color: #5560b0; }
+    body.dark-mode .eq4-tab.active { color: #9aa6ee; border-bottom-color: #9aa6ee; }
+    .eq4-profile-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 14px; }
+    .eq4-profile-panel, .eq4-profile-summary { background: var(--eq4-inset); border: 1px solid rgba(120,115,140,0.16); border-radius: 8px; padding: 12px; margin-bottom: 14px; }
+    .eq4-profile-panel h4, .eq4-profile-summary h4, .eq4-report-grid h4 { margin: 0 0 10px; font-size: .78rem; text-transform: uppercase; letter-spacing: .07em; color: var(--eq4-muted); }
+    .eq4-radar { width: 100%; max-width: 300px; display: block; margin: 0 auto 12px; }
+    .eq4-radar circle, .eq4-radar line { fill: none; stroke: rgba(120,115,140,.28); stroke-width: 1; }
+    .eq4-radar polygon { fill: rgba(85,96,176,.28); stroke: #5560b0; stroke-width: 2; }
+    .eq4-radar text { font-size: 8px; fill: var(--eq4-muted); text-anchor: middle; dominant-baseline: middle; }
+    .eq4-profile-lists { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .eq4-profile-lists ul { margin: 0; padding-left: 1.1rem; }
+    .eq4-profile-lists li { font-size: .86rem; margin-bottom: 4px; }
+    .eq4-profile-lists span { color: var(--eq4-muted); font-variant-numeric: tabular-nums; }
+    .eq4-profile-note { margin: -2px 0 10px; color: var(--eq4-muted); font-size: .82rem; line-height: 1.4; }
+    .eq4-point-row { display: grid; grid-template-columns: 6.8rem 1fr 3rem; gap: 8px; align-items: center; margin-bottom: 10px; }
+    .eq4-point-name { font-size: .82rem; color: var(--eq4-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .eq4-point-track { position: relative; height: 24px; border-radius: 999px; background: rgba(120,115,140,.12); border: 1px solid rgba(120,115,140,.16); overflow: hidden; }
+    .eq4-point-track::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(120,115,140,.32); }
+    .eq4-point-track .dot { position: absolute; top: 50%; width: 6px; height: 6px; margin-left: -3px; margin-top: -3px; border-radius: 50%; background: rgba(85,96,176,.38); }
+    .eq4-point-track .mean { position: absolute; top: 2px; bottom: 2px; width: 2px; margin-left: -1px; border-radius: 2px; background: #cf9445; box-shadow: 0 0 0 1px rgba(255,255,255,.6); }
+    .eq4-point-val { font-size: .78rem; font-weight: 800; color: var(--eq4-muted); font-variant-numeric: tabular-nums; }
+    .eq4-report-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 14px; }
+    .eq4-report-grid table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .eq4-report-grid th, .eq4-report-grid td { text-align: left; border-bottom: 1px solid rgba(120,115,140,.18); padding: 5px 6px; }
+    .eq4-jb-note { color: var(--eq4-muted); font-size: .82rem; line-height: 1.45; margin: .4rem 0 0; }
+    .eq4-jb-h { margin: 1.1rem 0 .5rem; font-size: .78rem; text-transform: uppercase; letter-spacing: .07em; color: var(--eq4-muted); }
+    .eq4-jb-pos { color: #c0652f; }
+    body.dark-mode .eq4-jb-pos { color: #e8975a; }
+    table.eq4-jb-wide { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    table.eq4-jb-wide th, table.eq4-jb-wide td { text-align: left; border-bottom: 1px solid rgba(120,115,140,.18); padding: 5px 6px; }
     @media (max-width: 760px) {
       .eq4-imodal { padding: 0; }
       .eq4-imodal-shell { margin: 0; border-radius: 0; min-height: 100vh; max-width: 100vw; }
       .eq4-idl { grid-template-columns: 1fr; gap: 0.1rem 0; }
       .eq4-idl dd { margin-bottom: 0.5rem; }
+      .eq4-profile-lists { grid-template-columns: 1fr; }
+      .eq4-point-row { grid-template-columns: 5.8rem 1fr 2.6rem; }
     }
 
     /* heatmap legend */
@@ -307,7 +368,18 @@
     }
     .eq4-tmodal-close { font-size: 1.05rem; line-height: 1; min-width: 2.4rem; font-weight: 700; }
     .eq4-back:hover, .eq4-tmodal-close:hover { background: #5560b0; border-color: #5560b0; color: #fff; }
-    .eq4-tmodal-body { flex: 1; min-height: 0; display: flex; background: var(--eq4-t-surface); }
+    .eq4-tmodal-body { flex: 1; min-height: 0; background: var(--eq4-t-surface); }
+    /* details tab bar */
+    .eq4-dtabs { flex: 0 0 auto; display: flex; gap: 2px; padding: 0 0.6rem; border-bottom: 1px solid var(--eq4-t-line); background: var(--eq4-t-panel); }
+    .eq4-dtab { background: none; border: none; border-bottom: 2px solid transparent; padding: 0.55rem 0.95rem; font: inherit; font-size: 0.9rem; font-weight: 600; color: var(--eq4-muted); cursor: pointer; }
+    .eq4-dtab:hover { color: inherit; }
+    .eq4-dtab.active { color: #5560b0; border-bottom-color: #5560b0; }
+    body.dark-mode .eq4-dtab.active { color: #9aa6ee; border-bottom-color: #9aa6ee; }
+    /* tab panels: each fills the body; only one visible at a time */
+    .eq4-dpanel { height: 100%; }
+    .eq4-dpanel[hidden] { display: none; }
+    .eq4-dpanel-scroll { overflow-y: auto; padding: 1rem 1.1rem 1.6rem; }
+    .eq4-dpanel-transcripts { display: flex; min-height: 0; }
     .eq4-tlist { flex: 0 0 322px; border-right: 1px solid var(--eq4-t-line); display: flex; flex-direction: column; min-height: 0; background: var(--eq4-t-panel); }
     .eq4-tlist-controls { padding: 0.6rem; border-bottom: 1px solid var(--eq4-t-line); display: flex; flex-direction: column; gap: 0.4rem; }
     .eq4-tlist-controls input, .eq4-tlist-controls select {
@@ -336,6 +408,28 @@
     .eq4-tr-sub { color: var(--eq4-muted); font-size: 0.86rem; margin-bottom: 0.7rem; }
     .eq4-tr-chips { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.7rem; }
     .eq4-tr-chip { font-size: 0.72rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 999px; background: rgba(120,115,140,0.15); }
+    /* model tendency summary reader */
+    .eq4-summary-doc { line-height: 1.6; font-size: 0.95rem; margin-bottom: 1rem; }
+    .eq4-sw { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin: 0.4rem 0 1rem; }
+    @media (max-width: 640px) { .eq4-sw { grid-template-columns: 1fr; } }
+    .eq4-sw-col { background: var(--eq4-t-panel); border: 1px solid var(--eq4-t-line); border-radius: 8px; padding: 0.5rem 0.8rem 0.6rem; }
+    .eq4-sw-h { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0.2rem 0 0.4rem; }
+    .eq4-sw-h.pos { color: #2e8b6f; }
+    .eq4-sw-h.neg { color: #c0652f; }
+    body.dark-mode .eq4-sw-h.pos { color: #5fd0aa; }
+    body.dark-mode .eq4-sw-h.neg { color: #e8975a; }
+    .eq4-sw-col ul { margin: 0; padding-left: 1.05rem; }
+    .eq4-sw-col li { font-size: 0.86rem; line-height: 1.45; margin-bottom: 0.22rem; }
+    .eq4-evidence-h { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--eq4-muted); margin: 0.4rem 0 0.5rem; }
+    .eq4-cite-hint { text-transform: none; letter-spacing: 0; font-weight: 400; font-size: 0.74rem; }
+    .eq4-strats { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+    .eq4-strats > li { border-left: 3px solid #8a6fb0; background: rgba(138,111,176,0.07); border-radius: 4px; padding: 0.5rem 0.7rem; }
+    .eq4-strat-claim { font-size: 0.9rem; line-height: 1.45; margin-bottom: 0.35rem; }
+    .eq4-cites { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .eq4-cite { font-size: 0.74rem; font-weight: 600; padding: 0.12rem 0.5rem; border-radius: 999px; border: 1px solid rgba(85,96,176,0.3); background: rgba(85,96,176,0.1); color: inherit; cursor: pointer; font-family: inherit; }
+    .eq4-cite:hover { background: rgba(85,96,176,0.22); }
+    .eq4-cite-missing { cursor: default; opacity: 0.55; border-style: dashed; }
+    body.dark-mode .eq4-cite { border-color: rgba(122,131,200,0.4); background: rgba(122,131,200,0.16); }
     .eq4-sec { margin: 0 0 1rem; }
     .eq4-sec > h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--eq4-muted); margin: 0 0 0.5rem; }
     details.eq4-fold { border: 1px solid var(--eq4-t-line); border-radius: 8px; margin-bottom: 0.7rem; background: var(--eq4-t-panel); }
@@ -543,6 +637,20 @@
         others hold power, distort reality, or are overtly in the wrong.
       </p>
       <p>
+        Personas are acted by <strong>Gemini 3.1 Pro Preview</strong>. We auditioned several frontier models
+        for the persona role; most were too quick to repair conflict, ignored adversarial coaching, or colluded
+        with the evaluated model to “win” the interaction. Gemini 3.1 Pro Preview was the most reliable at
+        staying in character as a realistic, challenging foil.
+      </p>
+      <p>
+        Part of the hidden profile is <strong>guarded</strong>: sensitive details the persona will only reveal
+        once it feels safe, each tagged with how sensitive it is. Surfacing them isn't a scavenger hunt — a good
+        conversation earns disclosure by building trust, a clumsy one never gets there. The judge sees the full
+        hidden profile, on purpose: it's how the judge can tell whether a model actually reached the level of
+        trust a disclosure implies, rather than rewarding models that simply interrogate. This is a core mechanic,
+        not leakage.
+      </p>
+      <p>
         Every conversation is judged blind and head-to-head by a jury of frontier models, and the results are
         aggregated into an <strong>ELO</strong> rating — the leaderboard ranking, shown with a 95% confidence
         interval. We separately profile each model on a set of behavioural <strong>traits and tendencies</strong>
@@ -592,6 +700,47 @@
             create broad unwanted biasing effects.
           </p>
 
+          <p><b>Why mostly difficult conversations?</b></p>
+          <p>
+            Positive conversations about positive events tend not to separate frontier models very much: judges
+            rate most of them similarly highly. The ability gradient shows up more clearly in difficult emotional
+            territory, adversarial users, ambiguous conflict, and situations where trust can be built or ruptured.
+          </p>
+
+          <p><b>How the dataset is built</b></p>
+          <p>
+            Each benchmark item is assembled from sampled <em>definition cards</em>: a persona card (core traits,
+            backstory, communication style, emotional state, guarded sensitivities) and a scenario card
+            (presenting issue, the deeper core issue underneath it, the relationship the model is cast in, and
+            modifiers). Sampling from these cards lets us cover a wide space of users and situations while keeping
+            each item controlled and repeatable.
+          </p>
+          <p>
+            The card distributions aren't set once and forgotten. The dataset is refined over rounds:
+            generate a candidate set &rarr; evaluate a panel of models &rarr; run statistical analysis to find
+            traits and scenario types that are weakly discriminative, redundant, or unbalanced &rarr; rework the
+            traits and sampling distributions &rarr; resample. The aim is a set where the scores spread models out
+            for real reasons, and where no single strategy quietly wins. The same lever doubles as the reward-hacking
+            response above: up-weight the persona traits a hacked behaviour is most vulnerable to.
+          </p>
+
+          <p><b>Limitations &amp; future work</b></p>
+          <p>
+            The persona actor doesn't have to be perfect. As in an OSCE with simulated patients, it only needs to
+            be a realistic-enough foil to elicit a signal; that signal can be noisy on any single conversation and
+            still be reliable once aggregated over many items. Per-conversation results should be read as
+            illustrative, not definitive — the leaderboard is the aggregate. The pointwise trait analysis on each
+            transcript is the judgement of a single judge for that item, so individual trait readings are noisier
+            than the head-to-head ability ranking, which pools many comparisons.
+          </p>
+          <p>
+            Open threads we'd like to close: validating that the numeric persona parameters (emotional state,
+            sensitivity ratings) measurably steer persona behaviour as intended, rather than acting as
+            under-specified flavour; broader human spot-checks of persona-acting fidelity; and wider coverage of
+            valence and competencies. See the <strong>Judge robustness</strong> section below for how much the
+            ranking depends on the choice of judge.
+          </p>
+
           <p><b>Two scores, two questions</b></p>
           <ul>
             <li>
@@ -629,6 +778,11 @@
           </p>
         </div>
       </details>
+
+      <details class="eq4-fold mt-3">
+        <summary>Judge robustness</summary>
+        <div class="fold-body" id="eq4JudgeReport"></div>
+      </details>
     </div>
   </div>
 
@@ -643,17 +797,28 @@
     </div>
   </div>
 
-  <!-- transcript browser (master–detail modal) -->
+  <!-- unified model details modal (Summary | Transcripts | Abilities | Traits) -->
   <div class="eq4-tmodal" id="eq4Tmodal" role="dialog" aria-modal="true" aria-labelledby="eq4TmodalTitle">
     <div class="eq4-tmodal-shell" id="eq4TmodalShell">
       <div class="eq4-tmodal-head">
         <button class="eq4-back" id="eq4TmodalBack" hidden>← List</button>
-        <div class="eq4-tmodal-title" id="eq4TmodalTitle">Transcripts</div>
-        <button class="eq4-tmodal-close" id="eq4TmodalClose" aria-label="Close transcripts">✕ Close</button>
+        <div class="eq4-tmodal-title" id="eq4TmodalTitle">Details</div>
+        <button class="eq4-tmodal-close" id="eq4TmodalClose" aria-label="Close">✕ Close</button>
+      </div>
+      <div class="eq4-dtabs" id="eq4Dtabs" role="tablist">
+        <button class="eq4-dtab active" data-dtab="summary" role="tab">Summary</button>
+        <button class="eq4-dtab" data-dtab="transcripts" role="tab">Transcripts</button>
+        <button class="eq4-dtab" data-dtab="abilities" role="tab">Abilities</button>
+        <button class="eq4-dtab" data-dtab="traits" role="tab">Traits</button>
       </div>
       <div class="eq4-tmodal-body">
-        <div class="eq4-tlist" id="eq4Tlist"></div>
-        <div class="eq4-treader" id="eq4Treader"><div class="placeholder">Select a conversation to read.</div></div>
+        <div class="eq4-dpanel eq4-dpanel-scroll" data-dpanel="summary" id="eq4PanelSummary"></div>
+        <div class="eq4-dpanel eq4-dpanel-transcripts" data-dpanel="transcripts" hidden>
+          <div class="eq4-tlist" id="eq4Tlist"></div>
+          <div class="eq4-treader" id="eq4Treader"><div class="placeholder">Select a conversation to read.</div></div>
+        </div>
+        <div class="eq4-dpanel eq4-dpanel-scroll" data-dpanel="abilities" id="eq4PanelAbilities" hidden></div>
+        <div class="eq4-dpanel eq4-dpanel-scroll" data-dpanel="traits" id="eq4PanelTraits" hidden></div>
       </div>
     </div>
   </div>

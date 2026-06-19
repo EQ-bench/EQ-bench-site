@@ -50,10 +50,6 @@
   .eqp { color:var(--tx); }
   body.dark-mode .eqp, body.dark-mode .eqp-overlay { --tx:#ece9f2; --bd: rgba(255,255,255,.12); }
   .eqp-intro { color: var(--mut); max-width: 760px; margin: .2rem 0 1rem; }
-  .eqp-stats { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1rem; }
-  .eqp-stat { background:var(--s); border:1px solid var(--bd); border-radius:10px; padding:.5rem .9rem; min-width:84px; }
-  .eqp-stat .n { font-size:1.3rem; font-weight:800; }
-  .eqp-stat .l { font-size:.68rem; text-transform:uppercase; letter-spacing:.06em; color:var(--mut); font-weight:700; }
   .eqp-toolbar { display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; margin-bottom:1rem; }
   .eqp-toolbar select { font:inherit; font-size:.88rem; color:inherit; background:var(--s2);
     border:1px solid var(--bd); border-radius:999px; padding:.35rem .8rem; cursor:pointer; }
@@ -148,7 +144,7 @@
   .eqp-emorow{ display:flex; align-items:center; gap:10px; margin-bottom:5px; }
   .eqp-emorow .nm{ width:96px; flex-shrink:0; text-align:right; font-size:.82rem; color:var(--mut); }
   .eqp-emorow .tk{ flex:1; height:9px; background:var(--s2); border-radius:999px; overflow:hidden; }
-  .eqp-emorow .fl{ height:100%; border-radius:999px; }
+  .eqp-emorow .fl{ display:block; height:100%; border-radius:999px; }
   .eqp-emorow .vl{ width:26px; font-size:.78rem; font-weight:700; color:var(--mut); }
   .eqp-charts{ display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); }
   .eqp-chart{ background:var(--s); border:1px solid var(--bd); border-radius:12px; padding:16px; }
@@ -371,7 +367,7 @@
 
     const vs = verbal.map(([l, v]) => `<div class="it"><div class="n">${v}</div><div class="l">${esc(l)}</div></div>`).join("");
 
-    return `<div class="eqp-ds-lead">EQ-Bench 4 pairs broad, randomly generated everyday problems with curated scenario types that each stress a different failure mode — validation that becomes collusion, challenge that damages trust, practical help that enables a harmful frame, and apparent progress that may be partial, guarded, or tactical.</div>
+    return `<div class="eqp-ds-lead">Each benchmark item is one persona in one scenario, with a relationship role, severity level, hidden profile, presenting issue, and conversation task. EQ-Bench 4 pairs broad, randomly generated everyday problems with curated scenario types that each stress a different failure mode — validation that becomes collusion, challenge that damages trust, practical help that enables a harmful frame, and apparent progress that may be partial, guarded, or tactical.</div>
       <div class="eqp-h">How the set is built</div>${flow}
       <div class="eqp-h">Scenario families</div><div class="eqp-fams">${famCards}</div>
       <div class="eqp-h">Persona expressiveness</div><div class="eqp-vs">${vs}</div>`;
@@ -385,13 +381,7 @@
     const relOpts = rels.map(r => `<option value="${esc(r)}">${esc(titleize(r))}</option>`).join("");
 
     container.innerHTML = `<div class="eqp">
-      <p class="eqp-intro">A cast of ${n} inner worlds — each a person showing up with a feeling on the surface and something harder underneath. These are the personas the models converse with.</p>
-      <div class="eqp-stats">
-        <div class="eqp-stat"><div class="n">${n}</div><div class="l">Personas</div></div>
-        <div class="eqp-stat"><div class="n">${ng}</div><div class="l">Generated</div></div>
-        <div class="eqp-stat"><div class="n">${nh}</div><div class="l">Targeted</div></div>
-        <div class="eqp-stat"><div class="n">${rels.length}</div><div class="l">Relationships</div></div>
-      </div>
+      <p class="eqp-intro">A cast of ${n} inner worlds — each a person showing up with a feeling on the surface and something harder underneath. Each card represents one benchmark item: a persona, a scenario, a relationship role, and a severity level. Open the Dataset tab for the category breakdown.</p>
       <div class="eqp-toolbar">
         <select id="eqpSource"><option value="">All sources</option><option value="generated">Generated</option><option value="hand_authored">Targeted</option></select>
         <select id="eqpRel"><option value="">All relationships</option>${relOpts}</select>
