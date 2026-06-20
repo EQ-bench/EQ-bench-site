@@ -435,6 +435,29 @@
     details.eq4-fold { border: 1px solid var(--eq4-t-line); border-radius: 8px; margin-bottom: 0.7rem; background: var(--eq4-t-panel); }
     details.eq4-fold > summary { cursor: pointer; padding: 0.5rem 0.7rem; font-weight: 600; font-size: 0.9rem; }
     details.eq4-fold > .fold-body { padding: 0.2rem 0.8rem 0.7rem; }
+    .eq4-about { max-width: 880px; line-height: 1.6; }
+    .eq4-about-lede { font-size: 1.06rem; line-height: 1.6; margin: 0 0 1.4rem; }
+    .eq4-about-toc { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; list-style: none; margin: 0 0 1.6rem; padding: 0.7rem 1rem; border: 1px solid rgba(120,115,140,0.16); border-radius: 8px; background: var(--eq4-inset); font-size: 0.84rem; }
+    .eq4-about-toc a { color: inherit; text-decoration: none; opacity: 0.8; }
+    .eq4-about-toc a:hover { text-decoration: underline; opacity: 1; }
+    .eq4-about h2 { font-size: 1.3rem; font-weight: 700; margin: 0 0 0.8rem; padding-top: 1.7rem; border-top: 1px solid rgba(120,115,140,0.16); }
+    .eq4-about h2:first-of-type { padding-top: 0; border-top: none; }
+    .eq4-about h3 { font-size: 1.08rem; font-weight: 700; margin: 1.4rem 0 0.6rem; }
+    .eq4-about h4 { font-size: 0.95rem; font-weight: 700; margin: 1.2rem 0 0.4rem; }
+    .eq4-about p { margin: 0 0 0.8rem; }
+    .eq4-about ul, .eq4-about ol { margin: 0 0 0.8rem; padding-left: 1.4rem; }
+    .eq4-about li { margin-bottom: 0.4rem; }
+    .eq4-about li > p { margin: 0; }
+    .eq4-about .eq4-example { border-left: 3px solid #8a6fb0; background: rgba(138,111,176,0.07); border-radius: 4px; padding: 0.6rem 0.9rem; margin: 0 0 0.8rem; }
+    .eq4-about .eq4-example-label { display: block; font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--eq4-muted); margin-bottom: 0.25rem; }
+    .eq4-about .eq4-adversarial { list-style: none; margin: 0 0 0.8rem; padding: 0; display: grid; gap: 0.55rem; }
+    .eq4-about .eq4-adversarial > li { border-left: 3px solid #5560b0; background: rgba(85,96,176,0.07); border-radius: 4px; padding: 0.55rem 0.8rem; margin: 0; }
+    body.dark-mode .eq4-about .eq4-adversarial > li { background: rgba(122,131,200,0.14); border-left-color: #7a83c8; }
+    .eq4-about .eq4-subcats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin: 0 0 0.8rem; }
+    .eq4-about .eq4-subcat { border: 1px solid rgba(120,115,140,0.16); border-radius: 8px; padding: 0.8rem 0.9rem; background: var(--eq4-inset); }
+    .eq4-about .eq4-subcat h4 { margin: 0 0 0.4rem; }
+    .eq4-about .eq4-subcat p { margin: 0; font-size: 0.92rem; }
+    @media (max-width: 640px) { .eq4-about .eq4-subcats { grid-template-columns: 1fr; } }
     .eq4-thinking { margin: 0.35rem 0 0.6rem; }
     .eq4-thinking-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; color: #66558a; margin-bottom: 0.25rem; }
     body.dark-mode .eq4-thinking-label { color: #c9b8ef; }
@@ -598,187 +621,130 @@
     </div>
 
     <div class="section mt-4">
-      <p><b>What is EQ-Bench 4?</b></p>
-      <p>
-        EQ-Bench 4 measures the emotional and social intelligence of language models, over multi-turn conversations
-        with diverse simulated user personas. It is judged by <strong>Gemini 3.1 Pro Preview</strong>,
-        <strong>GPT-5.5</strong>, and <strong>Claude Opus 4.6</strong>.
-      </p>
+      <div class="eq4-about">
+        <p class="eq4-about-lede">
+          EQ-Bench 4 assesses active emotional and social intelligence abilities in multi-turn roleplay chats with a simulated "persona". The persona is played by Gemini 3.1 Pro Preview. The chat transcripts are assessed by three judges: Gemini 3.1 Pro Preview, GPT-5.5, and Claude Opus 4.6 to produce a ranked Elo score.
+        </p>
 
-      <p><b>Design Motivation</b></p>
-      <p>Benchmarks often suffer from two big flaws:</p>
-      <ul>
-        <li>They are too far removed from the average user experience of using the model.</li>
-        <li>They are reward-hackable by optimising for a narrow strategy that exploits the benchmark mechanics (see: <a target="_blank" href="https://en.wikipedia.org/wiki/Goodhart%27s_law">Goodharting</a>).</li>
-      </ul>
-      <p>
-        Real human-AI interactions are more complicated than a benchmark task. Every user is different, with different preferences,
-        needs, sensitivities, and communication styles. The chatbot typically goes into these
-        situations blind.
-      </p>
-      <p>
-        One role of EQ in organic chats is to rapidly get a sense of the user's personality, emotional affect,
-        communication style - to read the room - and adapt the model's
-        strategy to this. This is the interaction EQ-Bench intends to recreate and assess.
-      </p>
-      <p>
-        The target is: figure out the user in a short 8-turn chat; build trust; give them something useful; avoid turning
-        the user off or causing relationship rupture. That means balancing validation and challenge, intuiting
-        the user's communication style, and intelligently adapting.
-      </p>
+        <ul class="eq4-about-toc">
+          <li><a href="#eq4AboutHowItWorks">How it works</a></li>
+          <li><a href="#eq4AboutDesignPrinciples">Design Principles</a></li>
+          <li><a href="#eq4AboutFailureModes">Targeting failure modes</a></li>
+          <li><a href="#eq4AboutDatasetDesign">Dataset Design</a></li>
+          <li><a href="#eq4AboutLimitations">Limitations and Future Work</a></li>
+        </ul>
 
-      <p><b>How it works</b></p>
-      <p>
-        The assessed model is dropped into a multi-turn conversation with a simulated user: a persona played by another
-        model, working from a rich hidden profile (traits, sensitivities, backstory, and a private emotional
-        state) that the assessed model never sees. It has to infer all of that from the conversation, the way a
-        person would. The personas and scenarios are sampled to be adversarial, so that no single approach gets
-        an easy win: some lose trust the moment they sense sycophancy, others shut down at any pushback, and
-        others hold power, distort reality, or are overtly in the wrong.
-      </p>
-      <p>
-        Personas are acted by <strong>Gemini 3.1 Pro Preview</strong>. We auditioned several frontier models
-        for the persona role; most were too quick to repair conflict, ignored adversarial coaching, or colluded
-        with the evaluated model to “win” the interaction. Gemini 3.1 Pro Preview was the most reliable at
-        staying in character as a realistic, challenging foil.
-      </p>
-      <p>
-        Part of the hidden profile is <strong>guarded</strong>: sensitive details the persona will only reveal
-        once it feels safe, each tagged with how sensitive it is. Surfacing them isn't a scavenger hunt — a good
-        conversation earns disclosure by building trust, a clumsy one never gets there. The judge sees the full
-        hidden profile, on purpose: it's how the judge can tell whether a model actually reached the level of
-        trust a disclosure implies, rather than rewarding models that simply interrogate. This is a core mechanic,
-        not leakage.
-      </p>
-      <p>
-        Every conversation is judged blind and head-to-head by a jury of frontier models, and the results are
-        aggregated into an <strong>ELO</strong> rating — the leaderboard ranking, shown with a 95% confidence
-        interval. We separately profile each model on a set of behavioural <strong>traits and tendencies</strong>
-        (how warm, how challenging, how readily it adopts the user's frame, and so on). Abilities tell you
-        <em>how good</em> a model is; traits tell you <em>what kind</em> of model it is.
-      </p>
-      <p>
-        Open the <strong>Personas</strong> tab to meet the cast of scenarios, or any model's
-        <strong>Transcripts</strong> to read its conversations turn by turn.
-      </p>
+        <h2 id="eq4AboutHowItWorks">How it works</h2>
+        <p>
+          Each persona is assigned a different set of traits: demographics, personality, preferences, sensitivities, a "core issue." Many of the traits are adversarial, to increase difficulty and expose model shortcomings. These character details are not shown to the assessed model; they are shown to the persona to inform its behaviour in the role. The persona may choose what it reveals over the course of the chat. In half of the scenarios, the assigned roles are chatbot/user (with the simulated persona playing the user role); for the other half, the roles are scenario-specific (friend, partner, therapist, etc).
+        </p>
+        <p>
+          Personas are acted by Gemini 3.1 Pro Preview. We auditioned several frontier models for the persona roles; most were too eager to repair conflict, ignored adversarial coaching, or colluded with the evaluated model to "win" the interaction. Gemini 3.1 Pro Preview was the most reliable at staying in character as a realistic, challenging foil.
+        </p>
+        <p>
+          The assessed task in EQ-Bench 4 is to build trust with the persona over eight conversational turns, learning about them and helping them. "Helping them" might involve building them up and supporting them, but also calling them out when there is utility to doing so. Additionally, the model must avoid causing a relationship rupture that might make the persona avoid subsequent chats. These are difficult lines to walk for a chatbot!
+        </p>
 
-      <details class="eq4-fold mt-3">
-        <summary>Read more</summary>
-        <div class="fold-body">
-          <p><b>Why multi-turn?</b></p>
-          <p>
-            EQ isn't a single good reply. It shows up over time — building trust, recovering from a misread,
-            holding a thread across turns, and resisting the pull to say whatever is easiest in the moment. A
-            one-shot test can't see any of that, so every scenario runs for several turns.
-          </p>
+        <h3>Scoring</h3>
+        <p>The transcripts are scored two different ways:</p>
+        <ul>
+          <li>Firstly, scored 0-10 on a set of <strong>behavioural traits</strong> by Claude Opus 4.8. These scores do not factor into the final EQ-Bench score, but are reported in the "traits" heatmap on the leaderboard.</li>
+          <li>Secondly, the transcripts are scored on several <strong>ability dimensions</strong> in head-to-head comparisons between models. In this pairwise scoring step, the three judges are rotated so that each scenario is only scored by one judge. The transcripts are scored blind (the model is not revealed to the judge), and in both directions to eliminate position bias. Each model is compared against other models on the leaderboard in a tournament fashion, and the final Elo scores computed with <code>Trueskill</code>.</li>
+        </ul>
 
-          <p><b>Two kinds of conversation</b></p>
-          <p>
-            Around half the scenarios cast the model as a chatbot the persona is talking to — the realistic,
-            in-distribution deployment case. The rest cast it in a human role: a friend, partner, parent,
-            therapist, colleague. These are more out-of-distribution and stop a model from coasting on assistant
-            habits — it has to bring EQ the way a person would. You can see the role for each scenario in the
-            Personas tab.
-          </p>
+        <h2 id="eq4AboutDesignPrinciples">Design Principles</h2>
+        <p>
+          In real AI-user interactions every user is different, with different preferences, needs, sensitivities, and communication styles. The AI model typically goes into these situations blind.
+        </p>
+        <p>
+          One role of EQ in organic chats is to rapidly get a sense of the user's personality, emotional affect, communication style &mdash; to read the room &mdash; and adapt the model's strategy to this. This is the interaction EQ-Bench intends to recreate and assess.
+        </p>
+        <p>
+          A difficulty in training language models is that they tend to collapse on one narrow behavioural policy that the reward favours more than others. This behaviour might emerge from the lowest common denominator of user preference data (consequence: the model becomes overly sycophantic). Or the training dynamics might overshoot in the other direction if an anti-sycophancy reward component was added, resulting in a model that alienates the user and turns them off the product.
+        </p>
+        <p>
+          This is not trivially solved, but one approach is to model training reward on a diverse set of <strong>competing preferences</strong>. This means that collapsing on any single strategy is punished; the highest reward is only accessible by being adaptive and intuiting the individual user's preferences correctly.
+        </p>
+        <p>
+          The benchmark is built on this same principle, incorporating a distribution of competing preferences, so that no single policy can win.
+        </p>
 
-          <p><b>An exam, not a quiz</b></p>
-          <p>
-            The closest analogue is an OSCE — the Objective Structured Clinical Examination, where medical
-            trainees are assessed across standardised encounters with simulated patients. Like an OSCE, EQ-Bench
-            4 uses controlled, repeatable scenarios built to probe specific competencies, and scores performance
-            <em>in the encounter</em> rather than answers on a quiz. Traits are sampled so that one-note
-            strategies — relentless validation, reflexive challenge, generic empathy — reliably fail somewhere.
-          </p>
+        <h2 id="eq4AboutFailureModes">Targeting failure modes</h2>
+        <p>
+          It's hard to get strong signal on emotional intelligence differences between frontier-level models. They are great at picking the right answer in multiple-choice EQ tests; they are good at analysing the emotional landscape and even performing empathy. If the user is collaborating with the chatbot, the trajectory will almost always be positive from a grader's perspective, giving little signal to tell models apart. For this reason, EQ-Bench 4 leans into adversarial user traits, difficult scenarios and tricky power dynamics. When the chat is going sideways or the chatbot is in a moral bind, we get the best visibility on EQ-informed decision making.
+        </p>
+        <p>Some ways we put the assessed model into adversarial situations in EQ-Bench 4:</p>
+        <ul class="eq4-adversarial">
+          <li><strong>Competing preferences.</strong> Some personas need warmth and validation; others lose trust when they sense sycophancy, generic reassurance, scripted empathy, or premature challenge. Some prefer structured, pragmatic help and others just want to be seen and heard. These preferences are typically not announced at the outset.</li>
+          <li><strong>Users who are unreliable narrators.</strong> Many personas are defensive, ashamed, angry, testing the model, seeking absolution, seeking ammunition, or trying to prove they are not wrong.</li>
+          <li><strong>Distorted or self-serving narratives.</strong> Some users have real pain or real grievances, but are using them to support a harmful conclusion. Validation can entrench the frame; blunt correction can make them dig in; practical help can become enablement.</li>
+          <li><strong>Power and status pressure.</strong> The model may be cast in the role of a tenant, student or junior employee speaking to someone with leverage. Direct confrontation may be costly; appeasement may concede too much.</li>
+          <li><strong>Adversarial coaching.</strong> For real people, defensive structures don't give way to revelatory insight the moment a truth is exposed. The persona is coached to engage with their defenses and not to collude with the assessed model on "winning" the task.</li>
+        </ul>
 
-          <p><b>Adapting to reward hacking</b></p>
-          <p>
-            No benchmark survives reward hacking on its first iteration. We expect EQ-Bench 4 will be no exception.
-            An elegant mechanism for adjusting to this is built in: sample at a higher frequency the persona traits
-            that are adversarial to the reward-hacked behaviour. This is much simpler than re-generating the whole
-            dataset, and is similar in dynamic to the userbase collectively growing tired of the reward-hacked
-            behavioural quirk. It also avoids the need to add extra judge notes to punish the behaviour, which can
-            create broad unwanted biasing effects.
-          </p>
+        <h2 id="eq4AboutDatasetDesign">Dataset Design</h2>
+        <p>
+          The dataset is designed around the principle that diverse user traits &amp; preferences dictate ideal model behaviour.
+        </p>
+        <p>
+          Grounding eval performance in persona traits provides a simple mechanism for adjusting to reward hacking or judge biases. An example: In an early prototype, judges had unexpectedly high praise for models that were highly assertive in every situation and challenged the user at every step. To address this, we heavily sampled persona traits that diverge on this axis: Some respected backbone or "real talk"; others took challenge as an affront. Diversifying the persona traits in this way makes the task unsolvable by a single dominant strategy.
+        </p>
 
-          <p><b>Why mostly difficult conversations?</b></p>
-          <p>
-            Positive conversations about positive events tend not to separate frontier models very much: judges
-            rate most of them similarly highly. The ability gradient shows up more clearly in difficult emotional
-            territory, adversarial users, ambiguous conflict, and situations where trust can be built or ruptured.
-          </p>
-
-          <p><b>How the dataset is built</b></p>
-          <p>
-            Each benchmark item is assembled from sampled <em>definition cards</em>: a persona card (core traits,
-            backstory, communication style, emotional state, guarded sensitivities) and a scenario card
-            (presenting issue, the deeper core issue underneath it, the relationship the model is cast in, and
-            modifiers). Sampling from these cards lets us cover a wide space of users and situations while keeping
-            each item controlled and repeatable.
-          </p>
-          <p>
-            The card distributions aren't set once and forgotten. The dataset is refined over rounds:
-            generate a candidate set &rarr; evaluate a panel of models &rarr; run statistical analysis to find
-            traits and scenario types that are weakly discriminative, redundant, or unbalanced &rarr; rework the
-            traits and sampling distributions &rarr; resample. The aim is a set where the scores spread models out
-            for real reasons, and where no single strategy quietly wins. The same lever doubles as the reward-hacking
-            response above: up-weight the persona traits a hacked behaviour is most vulnerable to.
-          </p>
-
-          <p><b>Limitations &amp; future work</b></p>
-          <p>
-            The persona actor doesn't have to be perfect. As in an OSCE with simulated patients, it only needs to
-            be a realistic-enough foil to elicit a signal; that signal can be noisy on any single conversation and
-            still be reliable once aggregated over many items. Per-conversation results should be read as
-            illustrative, not definitive — the leaderboard is the aggregate. The pointwise trait analysis on each
-            transcript is the judgement of a single judge for that item, so individual trait readings are noisier
-            than the head-to-head ability ranking, which pools many comparisons.
-          </p>
-          <p>
-            Open threads we'd like to close: validating that the numeric persona parameters (emotional state,
-            sensitivity ratings) measurably steer persona behaviour as intended, rather than acting as
-            under-specified flavour; broader human spot-checks of persona-acting fidelity; and wider coverage of
-            valence and competencies. See the <strong>Judge robustness</strong> section below for how much the
-            ranking depends on the choice of judge.
-          </p>
-
-          <p><b>Two scores, two questions</b></p>
-          <ul>
-            <li>
-              <strong>Abilities (head-to-head &rarr; ELO).</strong> Conversations are compared against each
-              other on the dimensions that matter for the task: bond and rapport, authenticity, attunement,
-              meeting preferences and needs, emotion sensemaking, and emotion management. Comparing two
-              transcripts is far more reliable than asking a judge for an absolute score, and the resulting ELO
-              carries confidence intervals so genuine ties stay visible.
-            </li>
-            <li>
-              <strong>Traits (behavioural profiling).</strong> Separately, each model is rated on neutral
-              behavioural tendencies. These aren't better-or-worse — they're a fingerprint of how a model
-              characteristically engages, and two strong models can have very different profiles.
-            </li>
-          </ul>
-
-          <p><b>What we mean by "EI"</b></p>
-          <p>
-            There's no settled definition of emotional intelligence. The literature splits it into ability
-            models (EI as a measurable skill — perceiving, understanding, and managing emotion) and trait models
-            (EI as personality and self-perception). Most existing LLM EQ tests lean on recognition: pick the
-            emotionally intelligent answer to a vignette. That's clean to score, but it measures knowing the
-            right move, not doing it under pressure. Our stance is to measure EI as a set of <em>abilities
-            enacted on a realistic task</em>, and to separately profile the EI-adjacent traits that measurably
-            differ between models.
-          </p>
-
-          <p><b>What it is, and isn't</b></p>
-          <p>
-            This is a deliberately deep-not-broad test. It buys high fidelity to how EQ actually gets used in
-            chat, at the cost of not systematically covering every competency in the EI taxonomy. A high ELO
-            means a model navigates these conversations well; it isn't a complete certificate of emotional
-            intelligence, and the scores are only as good as the judges and the scenario set behind them. We'd
-            rather measure the real thing narrowly than a proxy broadly.
-          </p>
+        <h3>Generative subset</h3>
+        <p>Half of the persona character cards are produced by randomly sampling from a large set of character traits:</p>
+        <ul>
+          <li>Core issue (what the chat will be about), plus adjacent sensitive details that are trust-gated</li>
+          <li>Defense style (deflecting, redirecting, rationalising...)</li>
+          <li>Help-seeking stance (wants a quick fix, seeking criticism, just venting)</li>
+          <li>Age, background, gender, sexuality</li>
+          <li>Personality traits (pragmatic, self-critical, independent...)</li>
+          <li>Sensitivities (to being patronised, challenged, rushed, managed...)</li>
+          <li>Trust styles (trusts assertiveness, hates performative warmth, resents being interrogated...)</li>
+        </ul>
+        <p>The database of traits intentionally includes traits that are in opposition. Example:</p>
+        <div class="eq4-example">
+          <span class="eq4-example-label">Example</span>
+          One subset of personas has the "trusts expertise" trait, and another subset has the "distrusts institutional language" trait. A model that is authoritative all the time, or plainly spoken all the time, will fail with half of these personas if it can't make adjustments.
         </div>
-      </details>
 
+        <h3>Curated subset</h3>
+        <p>
+          The other half of the persona character cards are not drawn from the random traits pool, and instead are written for specific roles in one of four adversarial sub-categories. These sub-categories target specific EQ challenges that language models find difficult.
+        </p>
+
+        <div class="eq4-subcats">
+          <div class="eq4-subcat">
+            <h4>Ego-Threat / Self-Image Navigation</h4>
+            <p>
+              These scenarios test conversations where the persona's self-image, status, shame, grievance, or defensiveness are entangled with problematic behavior. The persona may be protecting dignity, recruiting agreement, avoiding responsibility, or preserving an image of competence or innocence. Good performance requires staying useful without either colluding with the person's self-protective frame or humiliating them into withdrawal.
+            </p>
+          </div>
+
+          <div class="eq4-subcat">
+            <h4>Power-Imbalanced Navigation</h4>
+            <p>
+              These scenarios place the evaluated model in a lower-power position with a simulated persona who controls access, money, status, housing, work, reputation, or future options. The interaction is not a clean assertiveness puzzle; it involves leverage, saving face, retaliation risk, documentation, timing, and constrained agency.
+            </p>
+          </div>
+
+          <div class="eq4-subcat">
+            <h4>Reality Distortions</h4>
+            <p>
+              These scenarios involve a persona invested in a narrative or interpretation that distorts contact with reality because it provides control, dignity, moral clarity, attachment, or protection from shame, grief, helplessness, vulnerability, or accountability. Simple validation can strengthen suspicion, grievance, coercion, avoidance, or harmful certainty; premature correction can feel humiliating, disloyal, clinical, or unsafe.
+            </p>
+          </div>
+
+          <div class="eq4-subcat">
+            <h4>Social Exclusion / Ambiguous Rejection</h4>
+            <p>
+              These scenarios test ambiguous rejection, social exclusion, conditional belonging, and status games. Think: navigating the subtext and subtleties of <a href="https://www.imdb.com/title/tt0377092/">Mean Girls</a> social dynamics.
+            </p>
+          </div>
+        </div>
+
+        <h2 id="eq4AboutLimitations">Limitations and Future Work</h2>
+        <p>...</p>
+      </div>
       <details class="eq4-fold mt-3">
         <summary>Judge robustness</summary>
         <div class="fold-body" id="eq4JudgeReport"></div>
