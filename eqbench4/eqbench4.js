@@ -1010,13 +1010,50 @@
     if (!el) return;
     const jb = JUDGE_BIAS;
     if (!jb || !jb.judges) {
-      el.innerHTML = `<p>Judge robustness report not available. Run <code>experiments/judge_bias_analysis.py</code> and re-export.</p>`;
+      el.innerHTML = `<p>Judge robustness report not available. Re-run <code>export_to_site.py</code> to regenerate it.</p>`;
       return;
     }
     const pct = v => (v == null ? "n/a" : (v >= 0 ? "+" : "") + v.toFixed(2));
+    const rho = v => v == null ? "n/a" : Number(v).toFixed(3);
+    const shortJudge = label => label === "pooled" ? "Pooled" : stripProv(label).replace(/(\d)-(\d+)$/, "$1.$2").replace(/-/g, " ");
+    const matrixOrder = (jb.judges || []).filter(j => j !== "pooled");
+    const matrix = jb.rank_agreement_matrix || {};
+    const matrixVals = [];
+    matrixOrder.forEach(row => matrixOrder.forEach(col => {
+      const val = matrix[row] && matrix[row][col];
+      if (row !== col && Number.isFinite(Number(val))) matrixVals.push(Number(val));
+    }));
+    const minAgree = matrixVals.length ? Math.min(...matrixVals) : 0;
+    const maxAgree = matrixVals.length ? Math.max(...matrixVals) : 1;
+    const mix = (a, b, t) => Math.round(a + (b - a) * t);
+    const agreeBg = v => {
+      if (v == null) return "rgba(120,115,140,.10)";
+      if (maxAgree === minAgree) return "rgba(46,139,111,.22)";
+      const t = Math.max(0, Math.min(1, (Number(v) - minAgree) / (maxAgree - minAgree)));
+      const r = mix(154, 46, t);
+      const g = mix(139, 139, t);
+      const b = mix(70, 111, t);
+      const a = 0.13 + 0.16 * t;
+      return `rgba(${r},${g},${b},${a.toFixed(3)})`;
+    };
 
-    const spearman = Object.entries(jb.spearman_vs_pooled || {})
-      .map(([j, s]) => `<tr><td>${esc(j)}</td><td>${s == null ? "n/a" : s.toFixed(3)}</td></tr>`).join("");
+    const agreementMatrix = matrixOrder.length ? `
+      <div class="eq4-agree-wrap">
+        <table class="eq4-agree">
+          <thead><tr><th></th>${matrixOrder.map(col => `<th>${esc(shortJudge(col))}</th>`).join("")}</tr></thead>
+          <tbody>
+            ${matrixOrder.map(row => `<tr>
+              <th>${esc(shortJudge(row))}</th>
+              ${matrixOrder.map(col => {
+                const val = matrix[row] && matrix[row][col];
+                const cls = row === col ? " class=\"self\"" : "";
+                const style = row === col ? "" : ` style="background:${agreeBg(val)}"`;
+                return `<td${cls}${style}>${rho(val)}</td>`;
+              }).join("")}
+            </tr>`).join("")}
+          </tbody>
+        </table>
+      </div>` : "";
 
     const selfBias = (jb.self_bias || []).map(s =>
       `<tr><td>${esc(s.judge)}</td><td>${pct(s.self_score)}</td><td>${pct(s.others_score_for_it)}</td>
@@ -1034,30 +1071,29 @@
     el.innerHTML = `
       <p>The pairwise ability ranking is judged round-robin by three models
         (${(jb.judges || []).map(esc).join(", ")}), across ${jb.n_judge_verdicts || 0}
-        verdicts. The checks below ask whether the ranking depends on which judge you trust.
-        ${esc(jb.metric || "")}</p>
+        verdicts. To check judge robustness, we rerun the ELO calculation once for each
+        judge, using only that judge's verdicts. We then compare each judge-only ranking
+        with the pooled ranking from all judge verdicts. Each ELO calculation averages
+        ${jb.elo_solver_trials || 30} shuffled solver runs for stability.</p>
 
-      <div class="eq4-report-grid">
-        <div>
-          <h4>Ranking agreement (Spearman vs pooled)</h4>
-          <table><thead><tr><th>Judge</th><th>ρ vs pooled</th></tr></thead>
-            <tbody>${spearman || "<tr><td colspan='2'>n/a</td></tr>"}</tbody></table>
-          <p class="eq4-jb-note">1.0 = identical ordering. The three judges broadly agree on rank order.</p>
-        </div>
-        <div>
+      <div class="eq4-report-stack">
+        <div class="eq4-report-block">
           <h4>Self-preference</h4>
           <table><thead><tr><th>Judge</th><th>Rates self</th><th>Peers rate it</th><th>Gap</th></tr></thead>
             <tbody>${selfBias || "<tr><td colspan='4'>n/a</td></tr>"}</tbody></table>
           <p class="eq4-jb-note">${esc(jb.self_bias_note || "")}</p>
         </div>
-      </div>
-
-      <h4 class="eq4-jb-h">Where the judges disagree most (rank by judge)</h4>
-      <table class="eq4-jb-wide"><thead><tr><th>Model</th>${judgeCols}<th>Spread</th></tr></thead>
-        <tbody>${disagree || "<tr><td>n/a</td></tr>"}</tbody></table>
-
-      <p class="eq4-jb-note">${esc(jb.pairwise_agreement_note || "")}</p>
-      <p class="eq4-jb-note">${esc(jb.pointwise_caveat || "")}</p>`;
+        <div class="eq4-report-block">
+          <h4>Ranking agreement</h4>
+          ${agreementMatrix || "<p class='eq4-jb-note'>n/a</p>"}
+          <p class="eq4-jb-note">Spearman rank correlation between judge-only ELO rankings. 1.0 means identical ordering.</p>
+        </div>
+        <div class="eq4-report-block">
+          <h4>Where the judges disagree most (ELO rank by judge)</h4>
+          <table class="eq4-jb-wide"><thead><tr><th>Model</th>${judgeCols}<th>Spread</th></tr></thead>
+            <tbody>${disagree || "<tr><td>n/a</td></tr>"}</tbody></table>
+        </div>
+      </div>`;
   }
 
   // expose the heatmap colorer for the personas module to reuse the palette

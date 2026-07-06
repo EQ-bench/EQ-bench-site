@@ -291,6 +291,18 @@
     .eq4-report-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 14px; }
     .eq4-report-grid table { width: 100%; border-collapse: collapse; font-size: .88rem; }
     .eq4-report-grid th, .eq4-report-grid td { text-align: left; border-bottom: 1px solid rgba(120,115,140,.18); padding: 5px 6px; }
+    .eq4-report-stack { display: grid; gap: 16px; }
+    .eq4-report-block table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .eq4-report-block th, .eq4-report-block td { text-align: left; border-bottom: 1px solid rgba(120,115,140,.18); padding: 5px 6px; }
+    .eq4-report-block h4 { margin: 0 0 10px; font-size: .78rem; text-transform: uppercase; letter-spacing: .07em; color: var(--eq4-muted); }
+    .eq4-agree-wrap { overflow-x: auto; }
+    table.eq4-agree { width: max-content; min-width: 0; table-layout: fixed; border-collapse: separate; border-spacing: 3px; font-size: .86rem; }
+    table.eq4-agree th { border: 0; color: var(--eq4-muted); font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; text-align: center; padding: 5px 6px; }
+    table.eq4-agree th:first-child { width: 150px; text-align: left; }
+    table.eq4-agree th:not(:first-child) { width: 50px; }
+    table.eq4-agree td { box-sizing: border-box; border: 0; border-radius: 6px; width: 50px; min-width: 50px; max-width: 50px; height: 30px; min-height: 30px; max-height: 30px; padding: 0; text-align: center; font-variant-numeric: tabular-nums; font-weight: 750; }
+    table.eq4-agree td.self { color: var(--eq4-muted); background: rgba(120,115,140,.12); }
+    table.eq4-agree td .sub { display: block; font-size: .66rem; font-weight: 650; opacity: .68; margin-top: 1px; }
     .eq4-jb-note { color: var(--eq4-muted); font-size: .82rem; line-height: 1.45; margin: .4rem 0 0; }
     .eq4-jb-h { margin: 1.1rem 0 .5rem; font-size: .78rem; text-transform: uppercase; letter-spacing: .07em; color: var(--eq4-muted); }
     .eq4-jb-pos { color: #c0652f; }
@@ -578,7 +590,7 @@
     <div class="eq4-panel">
       <p class="eq4-summary mb-0">
         EQ-Bench 4 measures emotional, social and personal intelligence abilities in multiturn conversations.
-        <a href="../about.html">Read more</a>.
+        <a href="#eq4About">Read more</a>.
       </p>
       <div class="eq4-legend">
         <span class="muted">Lower</span>
@@ -621,9 +633,9 @@
     </div>
 
     <div class="section mt-4">
-      <div class="eq4-about">
+      <div class="eq4-about" id="eq4About">
         <p class="eq4-about-lede">
-          EQ-Bench 4 assesses active emotional and social intelligence abilities in multi-turn roleplay chats with a simulated "persona". The persona is played by Gemini 3.1 Pro Preview. The chat transcripts are assessed by three judges: Gemini 3.1 Pro Preview, GPT-5.5, and Claude Opus 4.6 to produce a ranked Elo score.
+          EQ-Bench 4 assesses active emotional and social intelligence abilities in multi-turn roleplay chats with a simulated "persona" user. The persona is played by Gemini 3.1 Pro Preview. The chat transcripts are assessed by three judges: Gemini 3.1 Pro Preview, GPT-5.5, and Claude Opus 4.6 to produce a ranked Elo score.
         </p>
 
         <ul class="eq4-about-toc">
@@ -631,6 +643,7 @@
           <li><a href="#eq4AboutDesignPrinciples">Design Principles</a></li>
           <li><a href="#eq4AboutFailureModes">Targeting failure modes</a></li>
           <li><a href="#eq4AboutDatasetDesign">Dataset Design</a></li>
+          <li><a href="#eq4AboutJudgeRobustness">Judge Robustness</a></li>
           <li><a href="#eq4AboutLimitations">Limitations and Future Work</a></li>
         </ul>
 
@@ -650,6 +663,66 @@
         <ul>
           <li>Firstly, scored 0-10 on a set of <strong>behavioural traits</strong> by Claude Opus 4.8. These scores do not factor into the final EQ-Bench score, but are reported in the "traits" heatmap on the leaderboard.</li>
           <li>Secondly, the transcripts are scored on several <strong>ability dimensions</strong> in head-to-head comparisons between models. In this pairwise scoring step, the three judges are rotated so that each scenario is only scored by one judge. The transcripts are scored blind (the model is not revealed to the judge), and in both directions to eliminate position bias. Each model is compared against other models on the leaderboard in a tournament fashion, and the final Elo scores computed with <code>Trueskill</code>.</li>
+        </ul>
+
+        <h2 id="eq4AboutWhatIsEI">What is emotional intelligence (in humans)?</h2>
+        <p>
+          Emotional intelligence, abbreviated EI in the literature, or EQ colloquially, was proposed as a distinct form of intelligence in 1990 by Peter Salovey and John D. Mayer, and later developed with David Caruso into a four-branch <em>ability model</em>:
+        </p>
+        <ol>
+          <li>Perceiving emotions</li>
+          <li>Using emotion to facilitate thought</li>
+          <li>Understanding emotion</li>
+          <li>Managing emotion</li>
+        </ol>
+        <p>
+          A competing model was popularised by Daniel Goleman, incorporating abilities and traits in a <em>mixed model</em> that included self-awareness, self-regulation, motivation, empathy and social skill. There has since been wide interest in understanding EI-associated traits and abilities, and how they impact relationships and workplace outcomes.
+        </p>
+        <p>
+          Today, models for EI are separated as <em>trait</em>, <em>ability</em> or <em>mixed</em>, though in practice it is difficult to draw clean lines between these, because each dimension can represent a complex mix of underlying skills and propensities. Empathy, for instance, is something we can generally <em>perform better</em> at when trying our hardest, suggesting it's an ability; though some people cannot switch off their empathy, which points towards it having a trait-like component.
+        </p>
+        <p>
+          The reality appears to be that empathy is a complex set of abilities, traits and behaviours. Many dimensions in established EI models may similarly incorporate a muddled underlying complexity, owing to the psychological concepts they map to, and the linguistic history of the terms.
+        </p>
+        <p>
+          The academic EI models also don't necessarily overlap with how the average person perceives emotional intelligence (e.g. a nurturing propensity or ability). When assessing AI models, it's useful to measure behavioural traits &amp; tendencies that users are interested in, even if they don't map cleanly to an existing EI model in the literature. We interact with chatbots differently than we interact with humans, and they have distinct failure modes.
+        </p>
+
+        <h2 id="eq4AboutMeasuringHumans">How do we measure emotional intelligence (in humans)?</h2>
+        <p>
+          Emotional intelligence tests for humans are typically multiple-choice, testing things like emotion recognition from images, emotional response prediction, or judging the most effective response to a social scenario. Answer options typically include one <em>correct</em> answer and several wrong answers. The difficulty is often encoded by including answers that might seem superficially correct, but under deeper consideration are clearly <em>less correct</em>. Some tests are instead <em>self-rated</em>, e.g. &ldquo;How much empathy would you feel for&hellip;&rdquo;
+        </p>
+        <p>
+          A psychometric test is typically not measuring an established psychological concept precisely or in-total; instead, it measures a behaviour or narrow ability on a particular set of tasks, under the test constraints. We then interpret this as measuring <em>something about</em> the psychological concept in question. But often in the literature, this distinction gets blurred, so that stronger claims can be made about how the data maps to more abstract concepts.
+        </p>
+        <p>
+          One way of supporting the claim that a test measures what it purports to is by consulting domain experts: the expert panel is shown the question and its responses, and judges whether it is meaningfully measuring the dimension as the researchers have defined it. Although this assurance is ultimately derived through the lens of expert or consensus opinion about often fundamentally fuzzy concepts.
+        </p>
+        <p>There are then several layers of interpretive fuzziness that we need to acknowledge:</p>
+        <ul>
+          <li>Whether the test is measuring the thing it claims to;</li>
+          <li>How narrowly or broadly the tasks cover that thing; and,</li>
+          <li>What the thing actually means as a psychological/behavioural construct.</li>
+        </ul>
+        <p>
+          These sources of uncertainty don't kill the concept of measuring emotional intelligence; they just require some additional interpretive nuance beyond, say, a mathematical proof that can be defined and verified objectively. Arguably, these challenges of measuring human behaviour are one thing that makes the endeavour compelling.
+        </p>
+
+        <h2 id="eq4AboutMeasuringAI">How do we measure emotional intelligence (in AI models)?</h2>
+        <p>
+          Some concepts from human EI tests map cleanly to AI testing (e.g. emotion recognition from images). Others, like self-rating, are entirely unreliable.
+        </p>
+        <p>
+          Frontier models are very good at answering multiple-choice quizzes, so they tend to saturate EI tests designed for humans. It is not trivial to make a multiple-choice test harder in such a way that the increased difficulty is still primarily assessing EI.
+        </p>
+        <p>
+          One approach is to sidestep the problem of creating difficult multiple-choice tasks, and instead define an open-ended task that exposes the strengths and weaknesses of the respondent. Instead of using our panel of judges to rate the quality &amp; difficulty of quiz items, we instead have them rate the test-taker's behaviour directly. This would often be a cost-prohibitive approach with human assessors, but with a panel of LLM judges we can assess hundreds of free-form responses (even long chat transcripts). This affords more freedom in task design, allowing for complex interactions to be observed, and avoids funnelling the assessable signal through predefined answers. It is still, however, ultimately grounded in the judge's subjective interpretation and use of the scoring rubric.
+        </p>
+        <p>An LLM-judged open-ended task trades off these things:</p>
+        <ul class="eq4-adversarial">
+          <li><strong>Difficulty ceiling.</strong> Open-ended tasks can be more complex, providing more signal to distinguish top-ability respondents.</li>
+          <li><strong>Interpretability.</strong> Multiple-choice quiz items have narrower constraints in what they assess, making the result easier to interpret.</li>
+          <li><strong>Coverage.</strong> Multiple-choice can be designed for controlled coverage over target domains, but is limited by the format; open-ended tasks provide less control over ability coverage, but allow assessment of more expressive or active skills.</li>
         </ul>
 
         <h2 id="eq4AboutDesignPrinciples">Design Principles</h2>
@@ -716,21 +789,21 @@
           <div class="eq4-subcat">
             <h4>Ego-Threat / Self-Image Navigation</h4>
             <p>
-              These scenarios test conversations where the persona's self-image, status, shame, grievance, or defensiveness are entangled with problematic behavior. The persona may be protecting dignity, recruiting agreement, avoiding responsibility, or preserving an image of competence or innocence. Good performance requires staying useful without either colluding with the person's self-protective frame or humiliating them into withdrawal.
+              These scenarios test conversations where the persona's self-image, status, shame, grievance, or defensiveness are entangled with problematic behavior. Good performance requires staying useful without either colluding with the person's self-protective frame or humiliating them into withdrawal.
             </p>
           </div>
 
           <div class="eq4-subcat">
             <h4>Power-Imbalanced Navigation</h4>
             <p>
-              These scenarios place the evaluated model in a lower-power position with a simulated persona who controls access, money, status, housing, work, reputation, or future options. The interaction is not a clean assertiveness puzzle; it involves leverage, saving face, retaliation risk, documentation, timing, and constrained agency.
+              These scenarios place the evaluated model in a lower-power position with a simulated persona who controls access, money, status, housing, work, reputation, or future options. The scenarios are constructed so that simply being assertive is not an easy win, due to retaliation risk and the power dynamics at play.
             </p>
           </div>
 
           <div class="eq4-subcat">
             <h4>Reality Distortions</h4>
             <p>
-              These scenarios involve a persona invested in a narrative or interpretation that distorts contact with reality because it provides control, dignity, moral clarity, attachment, or protection from shame, grief, helplessness, vulnerability, or accountability. Simple validation can strengthen suspicion, grievance, coercion, avoidance, or harmful certainty; premature correction can feel humiliating, disloyal, clinical, or unsafe.
+              These scenarios involve a persona invested in a narrative or interpretation that distorts contact with reality because it provides control, comfort, self-righteousness, attachment, or self-protection. Simple validation can reinforce delusions; premature correction can feel humiliating, disloyal or unsafe.
             </p>
           </div>
 
@@ -742,13 +815,51 @@
           </div>
         </div>
 
+        <h2 id="eq4AboutJudgeRobustness">Judge Robustness</h2>
+        <div id="eq4JudgeReport"></div>
+
         <h2 id="eq4AboutLimitations">Limitations and Future Work</h2>
-        <p>...</p>
+
+        <h3>Judge validity</h3>
+        <p>
+          The scores are ultimately a subjective interpretation of a rubric by LLM judges. There is no external anchor: no target-reported ground truth, no downstream outcome measure. In human EI testing, expert judgment is frozen into an answer key at design time, where it can be audited and contested. Here, the judgment happens at scoring time, inside a model. Our mitigations (blind pairwise scoring, judge rotation, bidirectional comparison, diversified persona traits) reduce noise and known biases, but they can't establish that the judges' notion of good EQ tracks what actually works with real humans. We haven't validated the judges against human expert raters, owing to resource constraints.
+        </p>
+
+        <h3>What EQ-Bench 4 is *not*</h3>
+        <p>
+          EQ-Bench 4 is not a measure of Mayer-Salovey ability EI, and it's not a safety evaluation. A high score means the model has emotional and social skills that were effective in the task of building trust and helping the other participant in contrived roleplay scenarios. EQ-Bench does not present a new model or construct for emotional intelligence, nor provide comprehensive coverage of an existing one. The score is also not evidence of anything like *felt* empathy.
+        </p>
+
+        <h3>Judge &amp; persona family effects</h3>
+        <p>
+          Gemini 3.1 Pro plays the personas and also sits on the judging panel, and each judge scores transcripts from models in its own family. LLM judges are known to prefer outputs stylistically similar to their own. Using an ensemble of three judges from different families somewhat mitigates this self-preference bias, but doesn't eliminate it.
+        </p>
+
+        <h3>Persona realism</h3>
+        <p>
+          The benchmark measures skill at handling a language model's <em>simulation</em> of a defensive, ambivalent human. Where the simulation differs systematically from real people, models can score well by being good at persuading a language model rather than a person. This is the same gap as posed vs. spontaneous expressions in human emotion-recognition tests. As with the judges, we didn't validate persona realism with human experts; it was assessed by eye by the benchmark creators, alongside iterative refinement of the persona coaching prompts.
+        </p>
+
+        <h3>Elicited ability vs. deployed behaviour</h3>
+        <p>
+          The assessed model is given a task framing (build trust over eight turns), so the benchmark measures what a model <em>can</em> do under that framing, not necessarily how it behaves by default in organic chats. Ability and propensity can diverge, and post-training moves them somewhat independently. The scenario coverage also over-represents adversarial and highly emotionally charged interactions relative to typical usage.
+        </p>
+
+        <h3>Goodhart susceptibility</h3>
+        <p>
+          The rubric dimensions and persona-trait taxonomy are public, so models can be tuned against the benchmark. The competing-preferences design raises the cost of gaming from "adopt the favoured style" to "actually infer the persona", but the judges likely have exploitable preferences we haven't found yet. We will continue iterating the persona pool and traits as new hacks surface.
+        </p>
+
+        <h3>Scope</h3>
+        <p>
+          The benchmark is English-only and text-only. There's no prosody, face or timing, and a large share of human EI is nonverbal and untested here. Chats are limited to eight turns, so long-horizon relationship dynamics and memory go unassessed. Both the personas and judges likely encode broadly Western norms.
+        </p>
+
+        <h3>Future work</h3>
+        <p>
+          Productive avenues for future work include: validating judge rankings against human raters on a subset of transcripts; validating persona behaviour against real-user distributions; longer-horizon and memory-dependent scenarios; multilingual and cross-cultural personas; a default-propensity variant (same scenarios, no task framing); and periodic refreshes of the persona pool as an anti-contamination measure.
+        </p>
       </div>
-      <details class="eq4-fold mt-3">
-        <summary>Judge robustness</summary>
-        <div class="fold-body" id="eq4JudgeReport"></div>
-      </details>
     </div>
   </div>
 
