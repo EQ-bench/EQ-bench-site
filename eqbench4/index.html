@@ -449,9 +449,83 @@
     details.eq4-fold > .fold-body { padding: 0.2rem 0.8rem 0.7rem; }
     .eq4-about { max-width: 880px; line-height: 1.6; }
     .eq4-about-lede { font-size: 1.06rem; line-height: 1.6; margin: 0 0 1.4rem; }
-    .eq4-about-toc { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; list-style: none; margin: 0 0 1.6rem; padding: 0.7rem 1rem; border: 1px solid rgba(120,115,140,0.16); border-radius: 8px; background: var(--eq4-inset); font-size: 0.84rem; }
-    .eq4-about-toc a { color: inherit; text-decoration: none; opacity: 0.8; }
-    .eq4-about-toc a:hover { text-decoration: underline; opacity: 1; }
+    /* section table of contents */
+    .eq4-toc {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.1rem;
+      margin: 0 0 1.6rem;
+      padding: 1rem 1.2rem 1.1rem;
+      border: 1px solid rgba(85, 80, 110, 0.16);
+      border-radius: 10px;
+      background:
+        linear-gradient(135deg, rgba(85, 96, 176, 0.05), rgba(216, 164, 62, 0.045)),
+        var(--eq4-surface);
+    }
+    body.dark-mode .eq4-toc {
+      border-color: rgba(255, 255, 255, 0.12);
+      background:
+        linear-gradient(135deg, rgba(122, 131, 200, 0.09), rgba(216, 164, 62, 0.05)),
+        var(--eq4-surface);
+    }
+    .eq4-toc-label {
+      font-size: 0.66rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #5560b0;
+      margin-bottom: 0.45rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid rgba(85, 96, 176, 0.22);
+    }
+    body.dark-mode .eq4-toc-label {
+      color: #aab0e8;
+      border-bottom-color: rgba(170, 176, 232, 0.25);
+    }
+    .eq4-toc-list {
+      list-style: none;
+      counter-reset: toc;
+      margin: 0;
+      padding: 0;
+    }
+    .eq4-toc-list[start="5"] { counter-reset: toc 4; }
+    .eq4-toc-list[start="8"] { counter-reset: toc 7; }
+    .eq4-toc-list li {
+      counter-increment: toc;
+      margin: 0;
+    }
+    .eq4-toc-list a {
+      display: flex;
+      align-items: baseline;
+      gap: 0.55rem;
+      padding: 0.28rem 0.4rem;
+      margin-left: -0.4rem;
+      border-radius: 6px;
+      color: inherit;
+      text-decoration: none;
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+    .eq4-toc-list a::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 0.68rem;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      color: #cf9445;
+      flex: 0 0 auto;
+    }
+    .eq4-toc-list a:hover {
+      background: rgba(85, 96, 176, 0.09);
+      color: #5560b0;
+      text-decoration: none;
+    }
+    body.dark-mode .eq4-toc-list a:hover {
+      background: rgba(122, 131, 200, 0.14);
+      color: #aab0e8;
+    }
+    @media (max-width: 700px) {
+      .eq4-toc { grid-template-columns: 1fr; gap: 0.9rem; padding: 0.9rem 1rem 1rem; }
+    }
     .eq4-about h2 { font-size: 1.3rem; font-weight: 700; margin: 0 0 0.8rem; padding-top: 1.7rem; border-top: 1px solid rgba(120,115,140,0.16); }
     .eq4-about h2:first-of-type { padding-top: 0; border-top: none; }
     .eq4-about h3 { font-size: 1.08rem; font-weight: 700; margin: 1.4rem 0 0.6rem; }
@@ -638,32 +712,53 @@
           EQ-Bench 4 assesses active emotional and social intelligence abilities in multi-turn roleplay chats with a simulated "persona" user. The persona is played by Gemini 3.1 Pro Preview. The chat transcripts are assessed by three judges: Gemini 3.1 Pro Preview, GPT-5.5, and Claude Opus 4.6 to produce a ranked Elo score.
         </p>
 
-        <ul class="eq4-about-toc">
-          <li><a href="#eq4AboutHowItWorks">How it works</a></li>
-          <li><a href="#eq4AboutDesignPrinciples">Design Principles</a></li>
-          <li><a href="#eq4AboutFailureModes">Targeting failure modes</a></li>
-          <li><a href="#eq4AboutDatasetDesign">Dataset Design</a></li>
-          <li><a href="#eq4AboutJudgeRobustness">Judge Robustness</a></li>
-          <li><a href="#eq4AboutLimitations">Limitations and Future Work</a></li>
-        </ul>
+        <nav class="eq4-toc" aria-label="Section contents">
+          <div class="eq4-toc-group">
+            <div class="eq4-toc-label">Overview</div>
+            <ol class="eq4-toc-list">
+              <li><a href="#eq4AboutHowItWorks">How it works</a></li>
+              <li><a href="#eq4AboutWhatIsEI">What is emotional intelligence?</a></li>
+              <li><a href="#eq4AboutMeasuringHumans">Measuring EI in humans</a></li>
+              <li><a href="#eq4AboutMeasuringAI">Measuring EI in AI models</a></li>
+            </ol>
+          </div>
+          <div class="eq4-toc-group">
+            <div class="eq4-toc-label">Method</div>
+            <ol class="eq4-toc-list" start="5">
+              <li><a href="#eq4AboutDesignPrinciples">Design principles</a></li>
+              <li><a href="#eq4AboutFailureModes">Targeting failure modes</a></li>
+              <li><a href="#eq4AboutDatasetDesign">Dataset design</a></li>
+            </ol>
+          </div>
+          <div class="eq4-toc-group">
+            <div class="eq4-toc-label">Evaluation</div>
+            <ol class="eq4-toc-list" start="8">
+              <li><a href="#eq4AboutJudgeRobustness">Judge robustness</a></li>
+              <li><a href="#eq4AboutLimitations">Limitations &amp; future work</a></li>
+            </ol>
+          </div>
+        </nav>
 
         <h2 id="eq4AboutHowItWorks">How it works</h2>
         <p>
-          Each persona is assigned a different set of traits: demographics, personality, preferences, sensitivities, a "core issue." Many of the traits are adversarial, to increase difficulty and expose model shortcomings. These character details are not shown to the assessed model; they are shown to the persona to inform its behaviour in the role. The persona may choose what it reveals over the course of the chat. In half of the scenarios, the assigned roles are chatbot/user (with the simulated persona playing the user role); for the other half, the roles are scenario-specific (friend, partner, therapist, etc).
+          Each of the 120 personas is assigned a different set of traits: demographics, personality, preferences, sensitivities, a "core issue." Many of the traits are adversarial, to increase difficulty and expose model shortcomings. These character details are not shown to the assessed model; they are shown to the persona to inform its behaviour in the role. The persona may choose what it reveals over the course of the chat, depending on its trust level. Alongside each spoken reply, the persona also records private internal reasoning and a numeric emotional state (trust, anger, shame, hope, etc.); neither is visible to the assessed model, though both appear in the published transcripts. In half of the scenarios, the assigned roles are chatbot/user (with the simulated persona playing the user role); for the other half, the roles are scenario-specific (friend, partner, therapist, etc).
         </p>
         <p>
           Personas are acted by Gemini 3.1 Pro Preview. We auditioned several frontier models for the persona roles; most were too eager to repair conflict, ignored adversarial coaching, or colluded with the evaluated model to "win" the interaction. Gemini 3.1 Pro Preview was the most reliable at staying in character as a realistic, challenging foil.
         </p>
         <p>
-          The assessed task in EQ-Bench 4 is to build trust with the persona over eight conversational turns, learning about them and helping them. "Helping them" might involve building them up and supporting them, but also calling them out when there is utility to doing so. Additionally, the model must avoid causing a relationship rupture that might make the persona avoid subsequent chats. These are difficult lines to walk for a chatbot!
+          The assessed model is told up front that it is participating in a roleplay as part of an EQ evaluation. Its task is to build trust with the persona over eight conversational turns, learning about them and helping them. "Helping them" might involve building them up and supporting them, but also calling them out when there is utility to doing so. Additionally, the model must avoid causing a relationship rupture that might make the persona avoid subsequent chats. These are difficult lines to walk for a chatbot!
         </p>
 
         <h3>Scoring</h3>
         <p>The transcripts are scored two different ways:</p>
         <ul>
-          <li>Firstly, scored 0-10 on a set of <strong>behavioural traits</strong> by Claude Opus 4.8. These scores do not factor into the final EQ-Bench score, but are reported in the "traits" heatmap on the leaderboard.</li>
-          <li>Secondly, the transcripts are scored on several <strong>ability dimensions</strong> in head-to-head comparisons between models. In this pairwise scoring step, the three judges are rotated so that each scenario is only scored by one judge. The transcripts are scored blind (the model is not revealed to the judge), and in both directions to eliminate position bias. Each model is compared against other models on the leaderboard in a tournament fashion, and the final Elo scores computed with <code>Trueskill</code>.</li>
+          <li>Firstly, scored 0-10 on a set of <strong>behavioural traits</strong> by Claude Opus 4.8. These scores do not factor into the final EQ-Bench score, but are reported informationally in the "traits" heatmap on the leaderboard.</li>
+          <li>Secondly, the transcripts are scored on several <strong>ability dimensions</strong> in head-to-head comparisons between models, with each matchup comparing the two models' transcripts for the same scenario. In this pairwise scoring step, the three judges are rotated so that each scenario is only scored by one judge. The transcripts are scored blind (the model is not revealed to the judge), and in both directions to eliminate position bias. The judge does see the persona's hidden profile, internal monologue and self-reported emotional state, and is instructed to treat these as evidence about how the persona reacted rather than ground truth. On each dimension, the judge picks a winner and a margin; the per-dimension margins are aggregated into a weighted outcome for the matchup. Each model is compared against other models on the leaderboard in a tournament fashion (weighted towards near-ranked neighbours), and the final Elo scores computed with <code>TrueSkill</code> from these margin-weighted outcomes. Scores are normalized against fixed anchor models, and the 95% confidence intervals are estimated by bootstrapping over the pairwise comparisons.</li>
         </ul>
+        <p>
+          The per-ability columns on the leaderboard are derived from this same pairwise data: each model's overall Elo plus a per-dimension residual (a "fingerprint" of its relative strengths and weaknesses), normalized 1&ndash;10 within each column.
+        </p>
 
         <h2 id="eq4AboutWhatIsEI">What is emotional intelligence (in humans)?</h2>
         <p>
@@ -762,6 +857,9 @@
         <p>
           Grounding eval performance in persona traits provides a simple mechanism for adjusting to reward hacking or judge biases. An example: In an early prototype, judges had unexpectedly high praise for models that were highly assertive in every situation and challenged the user at every step. To address this, we heavily sampled persona traits that diverge on this axis: Some respected backbone or "real talk"; others took challenge as an affront. Diversifying the persona traits in this way makes the task unsolvable by a single dominant strategy.
         </p>
+        <p>
+          Personas are also assigned varying levels of verbal sophistication: some articulate their situation fluently, while others are vague, scattered or inarticulate under stress, so the model must read the emotional subtext either way.
+        </p>
 
         <h3>Generative subset</h3>
         <p>Half of the persona character cards are produced by randomly sampling from a large set of character traits:</p>
@@ -782,7 +880,7 @@
 
         <h3>Curated subset</h3>
         <p>
-          The other half of the persona character cards are not drawn from the random traits pool, and instead are written for specific roles in one of four adversarial sub-categories. These sub-categories target specific EQ challenges that language models find difficult.
+          The other half of the persona character cards are not drawn from the random traits pool, and instead are written for specific roles in one of four adversarial sub-categories (15 scenarios each). These sub-categories target specific EQ challenges that language models find difficult.
         </p>
 
         <div class="eq4-subcats">
