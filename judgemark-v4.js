@@ -8,10 +8,12 @@ claude-opus-4-7,0.839612,0.804731,0.894923,$48.75,results/judgemark-v4/charts/mu
 claude-sonnet-4-6,0.821468,0.782343,0.882974,$23.36,results/judgemark-v4/charts/multichart_claude-sonnet-4-6_seed_temp0_prompt_reasoning_trial_01__claude-sonnet-4-6.png
 gemini-3.1-pro-preview,0.786853,0.738905,0.851353,$23.07,results/judgemark-v4/charts/multichart_google__gemini-3_1-pro-preview_seed_temp0_prompt_reasoning_trial_01__google_gemini-3_1-pro-preview.png
 claude-opus-4-8,0.779576,0.743971,0.838340,$50.42,results/judgemark-v4/charts/multichart_claude-opus-4-8_seed_temp0_prompt_reasoning_trial_01__claude-opus-4-8.png
+grok-4.5,0.770730,0.726449,0.833985,$17.11,results/judgemark-v4/charts/multichart_x-ai__grok-4_5_seed_temp0_prompt_reasoning_trial_01__x-ai_grok-4_5.png
 zai-org/GLM-5.2,0.731905,0.679917,0.805355,$8.28,results/judgemark-v4/charts/multichart_z-ai__glm-5_2_seed_temp0_prompt_reasoning_trial_01__z-ai_glm-5_2.png
 google/gemma-4-31B-it,0.723051,0.680818,0.793728,$0.82,results/judgemark-v4/charts/multichart_google__gemma-4-31b-it_seed_temp0_prompt_reasoning_trial_01__google_gemma-4-31b-it.png
 gpt-5.4,0.720762,0.684801,0.781918,$15.24,results/judgemark-v4/charts/multichart_gpt-5_4_seed_temp0_prompt_reasoning_trial_01__openai_gpt-5_4.png
 claude-sonnet-5,0.708864,0.670097,0.777549,$29.19,results/judgemark-v4/charts/multichart_claude-sonnet-5_seed_temp0_prompt_reasoning_trial_01__claude-sonnet-5.png
+gemini-3.5-flash,0.687515,0.644952,0.750334,$13.89,results/judgemark-v4/charts/multichart_google__gemini-3_5-flash_seed_temp0_prompt_reasoning_trial_01__google_gemini-3_5-flash.png
 zai-org/GLM-5.1,0.672081,0.623536,0.740827,$8.06,results/judgemark-v4/charts/multichart_z-ai__glm-5_1_seed_temp0_prompt_reasoning_trial_01__z-ai_glm-5_1.png
 Qwen/Qwen3.5-27B,0.605331,0.567596,0.680937,$1.76,results/judgemark-v4/charts/multichart_Qwen__Qwen3_5-27B_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_5-27b.png
 gemini-3.1-flash-lite-preview,0.588214,0.550091,0.658023,$1.54,results/judgemark-v4/charts/multichart_gemini-3_1-flash-lite-preview_seed_temp0_prompt_reasoning_trial_01__google_gemini-3_1-flash-lite-preview.png
