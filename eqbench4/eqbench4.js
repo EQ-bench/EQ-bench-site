@@ -12,7 +12,8 @@
   const MODEL_SUMMARIES = DATA.model_summaries || {};
   const JUDGE_REPORT = DATA.judge_report || {};
   const JUDGE_BIAS = DATA.judge_bias || {};
-  const PUBLIC_ABILITY_MODE = "elo_anchored_fingerprint";
+  const ITEM_ABILITY_LIMIT = 5;
+  const PUBLIC_ABILITY_MODE = "absolute";
   let activeAbilityMode = ABILITY_MODES[PUBLIC_ABILITY_MODE] ? PUBLIC_ABILITY_MODE : (DATA.default_ability_mode || "absolute");
   let abilityScale = DATA.ability_scale || "neighbour-relative";
   const blendWeights = {
@@ -150,7 +151,7 @@
   }
   function abilityTone(v) {
     if (v == null || isNaN(v)) return "transparent";
-    const t = Math.max(0, Math.min(1, (v + 2) / 4));
+    const t = Math.max(0, Math.min(1, (v + ITEM_ABILITY_LIMIT) / (ITEM_ABILITY_LIMIT * 2)));
     return heatColorT(t);
   }
   function abilityIs0To10() {
@@ -261,8 +262,8 @@
   function abilityScaleNote() {
     if (String(abilityScale).includes("elo-anchored")) return " (Elo-anchored modifier, normalized 1-10)";
     if (String(abilityScale).includes("blend")) return " (ability/fingerprint blend, normalized 1-10)";
-    if (String(abilityScale).includes("halo-centered")) return " (halo-centered per-dimension TrueSkill, normalized 1-10)";
-    if (abilityIs0To10()) return " (per-dimension TrueSkill, normalized 1-10)";
+    if (String(abilityScale).includes("halo-centered")) return " (halo-centered per-dimension soft Bradley-Terry, normalized 1-10)";
+    if (abilityIs0To10()) return " (per-dimension soft Bradley-Terry, normalized 1-10)";
     return " (relative to neighbours)";
   }
   function refreshAbilityModeSwitch() {
@@ -525,8 +526,8 @@
             : String(abilityScale).includes("blend")
             ? "Abilities — 75% per-ability strength + 25% fingerprint, normalized 1-10 within each column"
             : String(abilityScale).includes("halo-centered")
-            ? "Abilities — halo-centered per-dimension pairwise TrueSkill scores, normalized 1-10 within each column"
-            : "Abilities — per-dimension pairwise TrueSkill scores, normalized 1-10 within each column")
+            ? "Abilities — halo-centered per-dimension soft Bradley-Terry ratings, normalized 1-10 within each column"
+            : "Abilities — independent per-dimension soft Bradley-Terry ratings, normalized 1-10 within each column")
         : "Abilities — pairwise skill, shown relative to nearest-ranked neighbours";
       html += `<dt class="eq4-gloss-grp">${label}</dt>` + glossList(ABILITIES);
     }
@@ -634,7 +635,7 @@
   function profileTabPanel(model, kind) {
     if (kind === "abilities") {
       return `<div class="eq4-profile-grid">
-          <div class="eq4-profile-panel"><h4>Ability radar</h4>${radarSvg(ABILITIES, model, "abilities", 1, 10)}<p class="eq4-profile-note">Abilities are scored on a 1–10 scale anchored to the pairwise ELO ranking.</p></div>
+          <div class="eq4-profile-panel"><h4>Ability radar</h4>${radarSvg(ABILITIES, model, "abilities", 1, 10)}<p class="eq4-profile-note">Each ability is fit independently from its pairwise margin outcomes, then normalized 1–10 within that ability column.</p></div>
           <div class="eq4-profile-panel"><h4>Relative strengths</h4>${strengthList(model, ABILITIES, "abilities")}</div>
         </div>
         <div class="eq4-profile-panel"><h4>Per-item ability evidence</h4><p class="eq4-profile-note">Each dot is this model's neighbour-relative ability evidence on one benchmark item (signed win-margin). The amber mark is the mean.</p>${pointRows(model, ABILITIES, "abilities")}</div>`;
@@ -931,8 +932,8 @@
       const abilityRows = ABILITIES.map(a => {
         const v = c.abilities[a.key];
         if (v == null || isNaN(v)) return "";
-        const left = v < 0 ? Math.min(50, Math.abs(v) / 2 * 50) : 0;
-        const right = v > 0 ? Math.min(50, v / 2 * 50) : 0;
+        const left = v < 0 ? Math.min(50, Math.abs(v) / ITEM_ABILITY_LIMIT * 50) : 0;
+        const right = v > 0 ? Math.min(50, v / ITEM_ABILITY_LIMIT * 50) : 0;
         const style = v < 0
           ? `left:${(50 - left).toFixed(1)}%;width:${left.toFixed(1)}%;background:${abilityTone(v)}`
           : `left:50%;width:${right.toFixed(1)}%;background:${abilityTone(v)}`;
@@ -945,7 +946,7 @@
       abilityFold = `<details class="eq4-fold eq4-ability-fold">
         <summary>Abilities${Number.isFinite(score) ? ` <span class="eq4-ability-badge ${score >= 0 ? "pos" : "neg"}">${signed(score)}</span>` : ""}</summary>
         <div class="fold-body">
-          <div class="eq4-ability-note">Pairwise ability margins for this item, shown relative to nearby Elo neighbours. Positive means this response was judged stronger on that ability; values are sparse and should be read as local evidence, not a standalone item Elo.</div>
+          <div class="eq4-ability-note">Pairwise ability margins for this item on a −5 to +5 scale, shown relative to nearby Elo neighbours.</div>
           <div class="eq4-abars">${abilityRows}</div>
           ${sampleTotal ? `<div class="eq4-ability-samples">${sampleTotal} judge-direction dimension samples used after neighbour balancing.</div>` : ""}
         </div>
@@ -985,8 +986,8 @@
       `<p style="margin-top:0;line-height:1.55">Models are ranked by an <b>ELO</b> rating from blind, head-to-head judgements. The trait and ability scores are shown in two groups:</p>
        <div class="eq4-inote"><b>Evaluation models:</b> personas are acted by <b>Gemini 3.1 Pro Preview</b>. Pairwise comparisons are judged by <b>Gemini 3.1 Pro Preview</b>, <b>GPT-5.5</b>, and <b>Claude Opus 4.6</b>. Pointwise trait scores are judged by <b>Claude Opus 4.8</b>.</div>
        <div class="eq4-inote"><b>Traits</b> are behavioural tendencies, scored <b>0–10 by an LLM judge</b>. They're <b>neutral</b> — a high number just means "more of this tendency", not better or worse.</div>
-       <div class="eq4-inote"><b>Abilities</b> are shown with an <b>ELO-anchored fingerprint</b>. We start from each model's overall ELO, then add an adjustment to each dimension centred on the model's mean, to emphasise its strengths and weaknesses. Before the final <b>1-10</b> display normalization, each model's average across abilities is anchored back to its overall ELO.</div>
-       <div class="eq4-inote">We display abilities this way because raw per-ability scores carry a strong overall-ability halo, so they often preserve nearly the same ranking in every ability. Mean-normalized fingerprint scores are good for illustrating a model's strengths and weaknesses, but by themselves remove the overall ability signal. ELO anchoring keeps the overall-strength signal while letting the heatmap show meaningful relative strengths and weaknesses.</div>
+       <div class="eq4-inote"><b>Abilities</b> are independent per-dimension <b>soft Bradley–Terry ratings</b>, fit directly from the blind pairwise margin outcomes for that ability. They are not blended with or anchored to overall ELO.</div>
+       <div class="eq4-inote">For display, each ability column is normalized separately to <b>1–10</b> across the current models. This preserves the ordering within an ability and makes differences easy to see; values should be compared within a column, not as a shared absolute scale across different abilities.</div>
        <div class="eq4-inote">Within each trait or ability, colours run from the lowest model value (blue) to the highest (pink).</div>
        <h4>Traits</h4><dl class="eq4-idl">${gloss(DIMS)}</dl>
        ${ABILITIES.length ? `<h4>Abilities</h4><dl class="eq4-idl">${gloss(ABILITIES)}</dl>` : ""}`;
@@ -1073,8 +1074,8 @@
         (${(jb.judges || []).map(esc).join(", ")}), across ${jb.n_judge_verdicts || 0}
         verdicts. To check judge robustness, we rerun the ELO calculation once for each
         judge, using only that judge's verdicts. We then compare each judge-only ranking
-        with the pooled ranking from all judge verdicts. Each ELO calculation averages
-        ${jb.elo_solver_trials || 30} shuffled solver runs for stability.</p>
+        with the pooled ranking from all judge verdicts. Each calculation is a deterministic
+        soft Bradley-Terry fit over the fractional pairwise outcomes.</p>
 
       <div class="eq4-report-stack">
         <div class="eq4-report-block">
@@ -1112,6 +1113,7 @@
     }
     computeModeValueRanges();
     applyAbilityMode(activeAbilityMode);
+    setupAbilityModeSwitch();
     computeRanges();
     buildHead(); buildBody(); buildGlossary(); setupViews(); setupInfoModal(); buildJudgeReport();
   });

@@ -663,7 +663,7 @@
 
     <div class="eq4-panel">
       <p class="eq4-summary mb-0">
-        EQ-Bench 4 measures emotional, social and personal intelligence abilities in multiturn conversations.
+        EQ-Bench 4 measures active emotional & social intelligence abilities in multiturn conversations.
         <a href="#eq4About">Read more</a>.
       </p>
       <div class="eq4-legend">
@@ -708,8 +708,18 @@
 
     <div class="section mt-4">
       <div class="eq4-about" id="eq4About">
+        <b>TL;DR</b>
         <p class="eq4-about-lede">
-          EQ-Bench 4 assesses active emotional and social intelligence abilities in multi-turn roleplay chats with a simulated "persona" user. The persona is played by Gemini 3.1 Pro Preview. The chat transcripts are assessed by three judges: Gemini 3.1 Pro Preview, GPT-5.5, and Claude Opus 4.6 to produce a ranked Elo score.
+          EQ-Bench 4 assesses active emotional and social intelligence abilities in multi-turn roleplay chats with a simulated "persona" user.
+        </p>
+        <p class="eq4-about-lede">
+          <strong>The core idea:</strong> it requires strong EQ to navigate chats with real users, who each have their own personality, preferences and sensitivities. One user might like to be challenged; another might need to be validated and comforted; another might hate to be interrogated about their preferences.
+        </p>
+        <p class="eq4-about-lede">
+          We sample a distribution of persona traits that are <em>in competition</em> so that optimising for one trait actively harms eval performance for the competing traits. The intent is that the global optimal strategy is to intuit or solicit each user's preferences and needs, while being agile and adaptable to user responses -- while also providing help and insight.
+        </p>
+        <p class="eq4-about-lede">
+          The persona is played by Gemini 3.1 Pro Preview. The chat transcripts are assessed by three judges: Gemini 3.1 Pro Preview, GPT-5.5, and Claude Opus 4.6 to produce a ranked Elo score.
         </p>
 
         <nav class="eq4-toc" aria-label="Section contents">
@@ -741,23 +751,38 @@
 
         <h2 id="eq4AboutHowItWorks">How it works</h2>
         <p>
-          Each of the 120 personas is assigned a different set of traits: demographics, personality, preferences, sensitivities, a "core issue." Many of the traits are adversarial, to increase difficulty and expose model shortcomings. These character details are not shown to the assessed model; they are shown to the persona to inform its behaviour in the role. The persona may choose what it reveals over the course of the chat, depending on its trust level. Alongside each spoken reply, the persona also records private internal reasoning and a numeric emotional state (trust, anger, shame, hope, etc.); neither is visible to the assessed model, though both appear in the published transcripts. In half of the scenarios, the assigned roles are chatbot/user (with the simulated persona playing the user role); for the other half, the roles are scenario-specific (friend, partner, therapist, etc).
+          Each of the 120 personas is assigned a different set of traits: demographics, personality, preferences, sensitivities, a "core issue." Many of the traits are adversarial, to increase difficulty and expose model shortcomings. In half of the scenarios, the assigned roles are chatbot/user (with the simulated persona playing the user role); for the other half, the roles are scenario-specific (friend, partner, therapist, etc).
+        </p>
+        <p>
+          The persona's character details are not shown to the assessed model; they are shown to the persona to inform its behaviour in the role. The persona may choose what it reveals over the course of the chat, depending on its trust level. Alongside each spoken reply, the persona also records private internal reasoning and a numeric emotional state (trust, anger, shame, etc.); neither is visible to the assessed model, though both appear in the published transcripts.
         </p>
         <p>
           Personas are acted by Gemini 3.1 Pro Preview. We auditioned several frontier models for the persona roles; most were too eager to repair conflict, ignored adversarial coaching, or colluded with the evaluated model to "win" the interaction. Gemini 3.1 Pro Preview was the most reliable at staying in character as a realistic, challenging foil.
         </p>
         <p>
-          The assessed model is told up front that it is participating in a roleplay as part of an EQ evaluation. Its task is to build trust with the persona over eight conversational turns, learning about them and helping them. "Helping them" might involve building them up and supporting them, but also calling them out when there is utility to doing so. Additionally, the model must avoid causing a relationship rupture that might make the persona avoid subsequent chats. These are difficult lines to walk for a chatbot!
+          The assessed model is told up front that it is participating in a roleplay as part of an EQ evaluation. Its task is to build trust with the persona over eight conversational turns, learning about them and helping them. In chatbot-role scenarios, it is additionally reminded that the user may or may not choose to return, so the interaction should be handled with the longer-term relationship in mind. In practice, "helping" might mean building the persona up and supporting them &mdash; or challenging their frame when validation would do harm &mdash; without causing a rupture. These are difficult lines to walk for a chatbot!
         </p>
 
         <h3>Scoring</h3>
-        <p>The transcripts are scored two different ways:</p>
-        <ul>
-          <li>Firstly, scored 0-10 on a set of <strong>behavioural traits</strong> by Claude Opus 4.8. These scores do not factor into the final EQ-Bench score, but are reported informationally in the "traits" heatmap on the leaderboard.</li>
-          <li>Secondly, the transcripts are scored on several <strong>ability dimensions</strong> in head-to-head comparisons between models, with each matchup comparing the two models' transcripts for the same scenario. In this pairwise scoring step, the three judges are rotated so that each scenario is only scored by one judge. The transcripts are scored blind (the model is not revealed to the judge), and in both directions to eliminate position bias. The judge does see the persona's hidden profile, internal monologue and self-reported emotional state, and is instructed to treat these as evidence about how the persona reacted rather than ground truth. On each dimension, the judge picks a winner and a margin; the per-dimension margins are aggregated into a weighted outcome for the matchup. Each model is compared against other models on the leaderboard in a tournament fashion (weighted towards near-ranked neighbours), and the final Elo scores computed with <code>TrueSkill</code> from these margin-weighted outcomes. Scores are normalized against fixed anchor models, and the 95% confidence intervals are estimated by bootstrapping over the pairwise comparisons.</li>
-        </ul>
+        <p>The transcripts are scored two different ways.</p>
+
+        <h4>Behavioural traits</h4>
         <p>
-          The per-ability columns on the leaderboard are derived from this same pairwise data: each model's overall Elo plus a per-dimension residual (a "fingerprint" of its relative strengths and weaknesses), normalized 1&ndash;10 within each column.
+          Each transcript is scored 0&ndash;10 on a set of <strong>behavioural traits</strong> by Claude Opus 4.8 (a separate judge from the Elo panel). These scores do not factor into the final EQ-Bench score, but are reported informationally in the "traits" heatmap on the leaderboard.
+        </p>
+
+        <h4>Pairwise Elo</h4>
+        <p>
+          The transcripts are also scored on six <strong>ability dimensions</strong> &mdash; bond &amp; rapport, authenticity, attunement, meeting preferences &amp; needs, emotion sensemaking, and emotion management &mdash; in head-to-head comparisons between models, with each matchup comparing the two models' transcripts for the same scenario. Each matchup is scored by a single judge from the three-judge panel, with judges rotated across matchups. The transcripts are scored blind (the model is not revealed to the judge), and in both directions to eliminate position bias.
+        </p>
+        <p>
+          The judge does see the persona's hidden profile, internal monologue and self-reported emotional state, and is instructed to treat these as evidence about how the persona reacted rather than ground truth. On each dimension, the judge picks a winner and a margin; the per-dimension margins are aggregated into a weighted outcome for the matchup.
+        </p>
+        <p>
+          Each model is compared against other models on the leaderboard in a tournament fashion (weighted towards near-ranked neighbours), and the final Elo scores are computed with a soft Bradley&ndash;Terry fit over the fractional margin outcomes. Scores are normalised against fixed anchor models, and the 95% confidence intervals are estimated by bootstrapping over the pairwise comparisons.
+        </p>
+        <p>
+          Each ability column on the leaderboard is solved independently from that dimension's pairwise margin outcomes using the same soft Bradley&ndash;Terry method. The resulting ratings are normalised 1&ndash;10 within each ability column for display. They are not blended with overall Elo, so the values are best compared between models within a column rather than across different abilities.
         </p>
 
         <h2 id="eq4AboutWhatIsEI">What is emotional intelligence (in humans)?</h2>
@@ -908,7 +933,7 @@
           <div class="eq4-subcat">
             <h4>Social Exclusion / Ambiguous Rejection</h4>
             <p>
-              These scenarios test ambiguous rejection, social exclusion, conditional belonging, and status games. Think: navigating the subtext and subtleties of <a href="https://www.imdb.com/title/tt0377092/">Mean Girls</a> social dynamics.
+              These scenarios test ambiguous rejection, social exclusion, conditional belonging, and status games. Think: navigating the subtext and subtleties of <a href="https://www.imdb.com/title/tt0377092/" target="_blank">Mean Girls</a> social dynamics.
             </p>
           </div>
         </div>
@@ -998,8 +1023,8 @@
     </div>
   </div>
 
-  <script src="eqbench4_data.js"></script>
-  <script src="eqbench4.js?v=2.0"></script>
+  <script src="eqbench4_data.js?v=20260716-ability"></script>
+  <script src="eqbench4.js?v=2.3"></script>
   <script src="eqbench4_personas.js?v=1.0"></script>
   <script src="../utils.js"></script>
   <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1600fe1d3da743c1b311f4e5fee86767"}'></script><!-- End Cloudflare Web Analytics -->
