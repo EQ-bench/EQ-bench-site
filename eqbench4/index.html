@@ -449,39 +449,63 @@
     details.eq4-fold > .fold-body { padding: 0.2rem 0.8rem 0.7rem; }
     .eq4-about { max-width: 880px; line-height: 1.6; }
     .eq4-about-lede { font-size: 1.06rem; line-height: 1.6; margin: 0 0 1.4rem; }
+    .eq4-hl { font-weight: 700; color: #5560b0; }
+    body.dark-mode .eq4-hl { color: #aab0e8; }
     /* section table of contents */
     .eq4-toc {
+      position: relative;
+      overflow: hidden;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.1rem;
-      margin: 0 0 1.6rem;
-      padding: 1rem 1.2rem 1.1rem;
-      border: 1px solid rgba(85, 80, 110, 0.16);
-      border-radius: 10px;
+      gap: 0 1.5rem;
+      margin: 0.2rem 0 1.8rem;
+      padding: 1.15rem 1.4rem 1.2rem;
+      border: 1px solid rgba(85, 96, 176, 0.14);
+      border-radius: 12px;
       background:
-        linear-gradient(135deg, rgba(85, 96, 176, 0.05), rgba(216, 164, 62, 0.045)),
+        linear-gradient(180deg, rgba(85, 96, 176, 0.05), rgba(85, 96, 176, 0) 60%),
         var(--eq4-surface);
+    }
+    .eq4-toc::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #5560b0, #8a6fb0 55%, #d8a43e);
     }
     body.dark-mode .eq4-toc {
-      border-color: rgba(255, 255, 255, 0.12);
+      border-color: rgba(122, 131, 200, 0.28);
       background:
-        linear-gradient(135deg, rgba(122, 131, 200, 0.09), rgba(216, 164, 62, 0.05)),
+        linear-gradient(180deg, rgba(122, 131, 200, 0.09), rgba(122, 131, 200, 0) 60%),
         var(--eq4-surface);
     }
+    .eq4-toc-group { min-width: 0; }
+    .eq4-toc-group + .eq4-toc-group {
+      border-left: 1px solid rgba(85, 80, 110, 0.12);
+      padding-left: 1.5rem;
+    }
+    body.dark-mode .eq4-toc-group + .eq4-toc-group { border-left-color: rgba(255, 255, 255, 0.09); }
     .eq4-toc-label {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
       font-size: 0.66rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       color: #5560b0;
-      margin-bottom: 0.45rem;
-      padding-bottom: 0.35rem;
-      border-bottom: 1px solid rgba(85, 96, 176, 0.22);
+      margin-bottom: 0.55rem;
+    }
+    .eq4-toc-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(85, 96, 176, 0.18);
     }
     body.dark-mode .eq4-toc-label {
       color: #aab0e8;
-      border-bottom-color: rgba(170, 176, 232, 0.25);
     }
+    body.dark-mode .eq4-toc-label::after { background: rgba(170, 176, 232, 0.22); }
     .eq4-toc-list {
       list-style: none;
       counter-reset: toc;
@@ -497,14 +521,15 @@
     .eq4-toc-list a {
       display: flex;
       align-items: baseline;
-      gap: 0.55rem;
-      padding: 0.28rem 0.4rem;
-      margin-left: -0.4rem;
+      gap: 0.6rem;
+      padding: 0.3rem 0.5rem;
+      margin-left: -0.5rem;
       border-radius: 6px;
       color: inherit;
       text-decoration: none;
       font-size: 0.88rem;
       line-height: 1.35;
+      transition: background 0.12s ease, color 0.12s ease;
     }
     .eq4-toc-list a::before {
       content: counter(toc, decimal-leading-zero);
@@ -524,7 +549,14 @@
       color: #aab0e8;
     }
     @media (max-width: 700px) {
-      .eq4-toc { grid-template-columns: 1fr; gap: 0.9rem; padding: 0.9rem 1rem 1rem; }
+      .eq4-toc { grid-template-columns: 1fr; gap: 1rem; padding: 1rem 1.1rem 1.1rem; }
+      .eq4-toc-group + .eq4-toc-group {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid rgba(85, 80, 110, 0.12);
+        padding-top: 1rem;
+      }
+      body.dark-mode .eq4-toc-group + .eq4-toc-group { border-top-color: rgba(255, 255, 255, 0.09); }
     }
     .eq4-about h2 { font-size: 1.3rem; font-weight: 700; margin: 0 0 0.8rem; padding-top: 1.7rem; border-top: 1px solid rgba(120,115,140,0.16); }
     .eq4-about h2:first-of-type { padding-top: 0; border-top: none; }
@@ -708,18 +740,18 @@
 
     <div class="section mt-4">
       <div class="eq4-about" id="eq4About">
-        <b>TL;DR</b>
+        <b>What is EQ-Bench 4?</b>
         <p class="eq4-about-lede">
-          EQ-Bench 4 assesses active emotional and social intelligence abilities in multi-turn roleplay chats with a simulated "persona" user.
+          EQ-Bench 4 assesses <span class="eq4-hl">active emotional and social intelligence abilities</span> in multi-turn roleplay chats with a simulated "persona" user.
         </p>
         <p class="eq4-about-lede">
-          <strong>The core idea:</strong> it requires strong EQ to navigate chats with real users, who each have their own personality, preferences and sensitivities. One user might like to be challenged; another might need to be validated and comforted; another might hate to be interrogated about their preferences.
+          <strong>The core idea:</strong> it requires strong EQ to <span class="eq4-hl">navigate chats with real users</span>, who each have their own personality, preferences and sensitivities. One user might like to be challenged; another might need to be validated and comforted; another might hate to be interrogated about their preferences.
         </p>
         <p class="eq4-about-lede">
-          We sample a distribution of persona traits that are <em>in competition</em> so that optimising for one trait actively harms eval performance for the competing traits. The intent is that the global optimal strategy is to intuit or solicit each user's preferences and needs, while being agile and adaptable to user responses -- while also providing help and insight.
+          We sample a distribution of <span class="eq4-hl">persona traits that are <em>in competition</em></span> so that optimising for one trait actively harms eval performance for the competing traits. The intent is that the global optimal strategy is to <span class="eq4-hl">intuit or solicit each user's preferences and needs</span>, while being agile and adaptable to user responses -- while also providing help and insight.
         </p>
         <p class="eq4-about-lede">
-          The persona is played by Gemini 3.1 Pro Preview. The chat transcripts are assessed by three judges: Gemini 3.1 Pro Preview, GPT-5.5, and Claude Opus 4.6 to produce a ranked Elo score.
+          The persona is played by Gemini 3.1 Pro Preview. The chat transcripts are assessed by three judges: Gemini 3.1 Pro Preview, GPT-5.5, and Claude Opus 4.6 to produce a <span class="eq4-hl">ranked Elo score</span>.
         </p>
 
         <nav class="eq4-toc" aria-label="Section contents">
@@ -760,7 +792,7 @@
           Personas are acted by Gemini 3.1 Pro Preview. We auditioned several frontier models for the persona roles; most were too eager to repair conflict, ignored adversarial coaching, or colluded with the evaluated model to "win" the interaction. Gemini 3.1 Pro Preview was the most reliable at staying in character as a realistic, challenging foil.
         </p>
         <p>
-          The assessed model is told up front that it is participating in a roleplay as part of an EQ evaluation. Its task is to build trust with the persona over eight conversational turns, learning about them and helping them. In chatbot-role scenarios, it is additionally reminded that the user may or may not choose to return, so the interaction should be handled with the longer-term relationship in mind. In practice, "helping" might mean building the persona up and supporting them &mdash; or challenging their frame when validation would do harm &mdash; without causing a rupture. These are difficult lines to walk for a chatbot!
+          The assessed model is told up front that it is participating in a roleplay as part of an EQ evaluation. Its task is to build trust with the persona over 16 conversational turns, learning about them and helping them. In chatbot-role scenarios, it is additionally reminded that the user may or may not choose to return, so the interaction should be handled with the longer-term relationship in mind. In practice, "helping" might mean building the persona up and supporting them &mdash; or challenging their frame when validation would do harm &mdash; without causing a rupture. These are difficult lines to walk for a chatbot!
         </p>
 
         <h3>Scoring</h3>
@@ -965,7 +997,7 @@
 
         <h3>Elicited ability vs. deployed behaviour</h3>
         <p>
-          The assessed model is given a task framing (build trust over eight turns), so the benchmark measures what a model <em>can</em> do under that framing, not necessarily how it behaves by default in organic chats. Ability and propensity can diverge, and post-training moves them somewhat independently. The scenario coverage also over-represents adversarial and highly emotionally charged interactions relative to typical usage.
+          The assessed model is given a task framing (build trust over 16 turns), so the benchmark measures what a model <em>can</em> do under that framing, not necessarily how it behaves by default in organic chats. Ability and propensity can diverge, and post-training moves them somewhat independently. The scenario coverage also over-represents adversarial and highly emotionally charged interactions relative to typical usage.
         </p>
 
         <h3>Goodhart susceptibility</h3>
@@ -975,7 +1007,7 @@
 
         <h3>Scope</h3>
         <p>
-          The benchmark is English-only and text-only. There's no prosody, face or timing, and a large share of human EI is nonverbal and untested here. Chats are limited to eight turns, so long-horizon relationship dynamics and memory go unassessed. Both the personas and judges likely encode broadly Western norms.
+          The benchmark is English-only and text-only. There's no prosody, face or timing, and a large share of human EI is nonverbal and untested here. Chats are limited to 16 turns, so long-horizon relationship dynamics and memory go unassessed. Both the personas and judges likely encode broadly Western norms.
         </p>
 
         <h3>Future work</h3>
