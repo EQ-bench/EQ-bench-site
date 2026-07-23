@@ -26,7 +26,10 @@
   };
   const MODE_VALUE_RANGES = {};
   const MODELS = DATA.models || [];
-  const DOCS_BASE = "eqbench4_docs/";
+  // Resolve payloads from this script rather than the page URL so this also
+  // works when the site is served from a nested preview/deployment path.
+  const SCRIPT_BASE = new URL(".", document.currentScript ? document.currentScript.src : document.baseURI);
+  const DOCS_BASE = new URL("eqbench4_docs/", SCRIPT_BASE).href;
 
   // DEV: dummy long model names to preview wrapping (set false or delete to hide)
   const DEV_DUMMY_NAMES = false;

@@ -7,6 +7,11 @@
 (function () {
   "use strict";
 
+  // Resolve payloads from this script rather than the page URL so this also
+  // works when the site is served from a nested preview/deployment path.
+  const SCRIPT_BASE = new URL(".", document.currentScript ? document.currentScript.src : document.baseURI);
+  const PERSONAS_URL = new URL("eqbench4_docs/personas.json", SCRIPT_BASE).href;
+
   const CLUSTER_COLORS = {
     connection: "#5560b0", // indigo
     distress: "#5b86b8",   // blue
@@ -450,7 +455,7 @@
       inited = true;
       injectCss();
       container.innerHTML = '<p style="padding:2rem;color:#888">Loading personas…</p>';
-      fetch("eqbench4_docs/personas.json")
+      fetch(PERSONAS_URL)
         .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
         .then(data => { DATA = data; render(container); })
         .catch(err => {
