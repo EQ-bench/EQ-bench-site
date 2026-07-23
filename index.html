@@ -563,6 +563,9 @@
     .eq4-about h3 { font-size: 1.08rem; font-weight: 700; margin: 1.4rem 0 0.6rem; }
     .eq4-about h4 { font-size: 0.95rem; font-weight: 700; margin: 1.2rem 0 0.4rem; }
     .eq4-about p { margin: 0 0 0.8rem; }
+    details.eq4-stats { margin-top: 1.7rem; padding-top: 1.7rem; border-top: 1px solid rgba(120,115,140,0.16); }
+    details.eq4-stats > summary { cursor: pointer; font-size: 1.3rem; font-weight: 700; }
+    details.eq4-stats[open] > summary { margin-bottom: 0.8rem; }
     .eq4-about ul, .eq4-about ol { margin: 0 0 0.8rem; padding-left: 1.4rem; }
     .eq4-about li { margin-bottom: 0.4rem; }
     .eq4-about li > p { margin: 0; }
@@ -780,7 +783,7 @@
             <ol class="eq4-toc-list" start="8">
               <li><a href="#eq4AboutJudgeRobustness">Judge robustness</a></li>
               <li><a href="#eq4AboutLimitations">Limitations &amp; future work</a></li>
-              <li><a href="#eq4AboutStatistics">Statistical notes</a></li>
+              <li><a href="#eq4AboutStatistics">Further statistical analysis</a></li>
             </ol>
           </div>
         </nav>
@@ -1019,12 +1022,14 @@
           Productive avenues for future work include: validating judge rankings against human raters on a subset of transcripts; validating persona behaviour against real-user distributions; longer-horizon and memory-dependent scenarios; multilingual and cross-cultural personas; a default-propensity variant (same scenarios, no task framing); and periodic refreshes of the persona pool as an anti-contamination measure.
         </p>
 
-        <h2 id="eq4AboutStatistics">Statistical Notes</h2>
-        <p>
-          We ran some additional statistical analysis on the pairwise judgment data, separate from the production scoring pipeline, to check how the rubric and judges are actually behaving. Notes below.
-        </p>
+        <details class="eq4-stats">
+          <summary id="eq4AboutStatistics">Further Statistical Analysis</summary>
+          <div class="eq4-stats-body">
+            <p>
+              We ran some additional statistical analysis on the pairwise judgment data, separate from the production scoring pipeline, to check how the rubric and judges are actually behaving. Notes below.
+            </p>
 
-        <div class="eq4-inote"><b>Independent check on the ranking.</b> We fit a separate hierarchical Bayesian model to the same pairwise judgments &mdash; different code, different assumptions, run outside the production Elo solver. Its model ranking matched the live leaderboard almost exactly (Spearman rank correlation 0.996 across all 25 models, with only a few adjacent models swapping places).</div>
+            <div class="eq4-inote"><b>Independent check on the ranking.</b> We fit a separate hierarchical Bayesian model to the same pairwise judgments &mdash; different code, different assumptions, run outside the production Elo solver. Its model ranking matched the live leaderboard almost exactly (Spearman rank correlation 0.996 across all 25 models, with only a few adjacent models swapping places).</div>
 
         <h3>The halo effect</h3>
         <p>
@@ -1102,9 +1107,11 @@
           <span class="n">Emotion Sensemaking</span><span class="track"><span class="fill" style="width:72.8%;background:var(--eq4-accent)"></span></span><span>73%</span>
           <span class="n">Emotion Management</span><span class="track"><span class="fill" style="width:91.7%;background:var(--eq4-accent)"></span></span><span>92%</span>
         </div>
-        <p>
-          Attunement is the most redundant dimension at the judgment level (91%) but the least redundant at the model-profile level (14%): individual judgments don't discriminate it well, but which models are actually strong on it is comparatively distinct information. Emotion Management runs the other way &mdash; less redundant per-judgment (86%) but the most redundant across model profiles (92%).
-        </p>
+            <p>
+              Attunement is the most redundant dimension at the judgment level (91%) but the least redundant at the model-profile level (14%): individual judgments don't discriminate it well, but which models are actually strong on it is comparatively distinct information. Emotion Management runs the other way &mdash; less redundant per-judgment (86%) but the most redundant across model profiles (92%).
+            </p>
+          </div>
+        </details>
       </div>
     </div>
   </div>
