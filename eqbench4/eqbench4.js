@@ -13,8 +13,8 @@
   const JUDGE_REPORT = DATA.judge_report || {};
   const JUDGE_BIAS = DATA.judge_bias || {};
   const ITEM_ABILITY_LIMIT = 5;
-  const PUBLIC_ABILITY_MODE = "absolute";
-  let activeAbilityMode = ABILITY_MODES[PUBLIC_ABILITY_MODE] ? PUBLIC_ABILITY_MODE : (DATA.default_ability_mode || "absolute");
+  const PUBLIC_ABILITY_MODE = "neighbour";
+  let activeAbilityMode = ABILITY_MODES[PUBLIC_ABILITY_MODE] ? PUBLIC_ABILITY_MODE : (DATA.default_ability_mode || "neighbour");
   let abilityScale = DATA.ability_scale || "neighbour-relative";
   const blendWeights = {
     fingerprint_neighbour_blend: 0.5,
@@ -267,7 +267,7 @@
     if (String(abilityScale).includes("blend")) return " (ability/fingerprint blend, normalized 1-10)";
     if (String(abilityScale).includes("halo-centered")) return " (halo-centered per-dimension soft Bradley-Terry, normalized 1-10)";
     if (abilityIs0To10()) return " (per-dimension soft Bradley-Terry, normalized 1-10)";
-    return " (relative to neighbours)";
+    return " (signed margin relative to nearby Elo neighbours)";
   }
   function refreshAbilityModeSwitch() {
     const shell = document.getElementById("eq4AbilityModeShell");
@@ -531,7 +531,7 @@
             : String(abilityScale).includes("halo-centered")
             ? "Abilities — halo-centered per-dimension soft Bradley-Terry ratings, normalized 1-10 within each column"
             : "Abilities — independent per-dimension soft Bradley-Terry ratings, normalized 1-10 within each column")
-        : "Abilities — pairwise skill, shown relative to nearest-ranked neighbours";
+        : "Abilities — signed pairwise margins relative to nearby Elo neighbours";
       html += `<dt class="eq4-gloss-grp">${label}</dt>` + glossList(ABILITIES);
     }
     dl.innerHTML = html;
@@ -637,8 +637,9 @@
   }
   function profileTabPanel(model, kind) {
     if (kind === "abilities") {
+      const [abilityMin, abilityMax] = abilityIs0To10() ? [1, 10] : pointDomain("abilities");
       return `<div class="eq4-profile-grid">
-          <div class="eq4-profile-panel"><h4>Ability radar</h4>${radarSvg(ABILITIES, model, "abilities", 1, 10)}<p class="eq4-profile-note">Each ability is fit independently from its pairwise margin outcomes, then normalized 1–10 within that ability column.</p></div>
+          <div class="eq4-profile-panel"><h4>Ability radar</h4>${radarSvg(ABILITIES, model, "abilities", abilityMin, abilityMax)}<p class="eq4-profile-note">Signed pairwise margins against nearby Elo neighbours. Positive means stronger than the neighbouring models on that ability; negative means weaker.</p></div>
           <div class="eq4-profile-panel"><h4>Relative strengths</h4>${strengthList(model, ABILITIES, "abilities")}</div>
         </div>
         <div class="eq4-profile-panel"><h4>Per-item ability evidence</h4><p class="eq4-profile-note">Each dot is this model's neighbour-relative ability evidence on one benchmark item (signed win-margin). The amber mark is the mean.</p>${pointRows(model, ABILITIES, "abilities")}</div>`;
@@ -989,9 +990,10 @@
       `<p style="margin-top:0;line-height:1.55">Models are ranked by an <b>ELO</b> rating from blind, head-to-head judgements. The trait and ability scores are shown in two groups:</p>
        <div class="eq4-inote"><b>Evaluation models:</b> personas are acted by <b>Gemini 3.1 Pro Preview</b>. Pairwise comparisons are judged by <b>Gemini 3.1 Pro Preview</b>, <b>GPT-5.5</b>, and <b>Claude Opus 4.6</b>. Pointwise trait scores are judged by <b>Claude Opus 4.8</b>.</div>
        <div class="eq4-inote"><b>Traits</b> are behavioural tendencies, scored <b>0–10 by an LLM judge</b>. They're <b>neutral</b> — a high number just means "more of this tendency", not better or worse.</div>
-       <div class="eq4-inote"><b>Abilities</b> are independent per-dimension <b>soft Bradley–Terry ratings</b>, fit directly from the blind pairwise margin outcomes for that ability. They are not blended with or anchored to overall ELO.</div>
-       <div class="eq4-inote">For display, each ability column is normalized separately to <b>1–10</b> across the current models. This preserves the ordering within an ability and makes differences easy to see; values should be compared within a column, not as a shared absolute scale across different abilities.</div>
-       <div class="eq4-inote">Within each trait or ability, colours run from the lowest model value (blue) to the highest (pink).</div>
+       <div class="eq4-inote"><b>Abilities</b> are signed pairwise margins against nearby models in the overall Elo ranking. <b>Positive</b> means the model outperformed its neighbours on that ability, <b>negative</b> means it underperformed them, and a value near zero means it performed about evenly.</div>
+       <div class="eq4-inote">Comparisons are grouped by Elo-rank distance, up to four places away. At each distance, evidence from the higher- and lower-ranked neighbour is balanced to equal sample counts before the two sides are averaged. Distance blocks are then combined using a reliability weight; the window shrinks near the top and bottom of the leaderboard to limit one-sided comparisons.</div>
+       <div class="eq4-inote">These are <b>local, relative scores</b>, not global ratings or a shared absolute scale. Within each ability, colours run from the lowest neighbour-relative value (blue) to the highest (pink).</div>
+       <div class="eq4-inote">Trait colours likewise run from the lowest model value (blue) to the highest (pink).</div>
        <h4>Traits</h4><dl class="eq4-idl">${gloss(DIMS)}</dl>
        ${ABILITIES.length ? `<h4>Abilities</h4><dl class="eq4-idl">${gloss(ABILITIES)}</dl>` : ""}`;
   }
@@ -1116,7 +1118,8 @@
     }
     computeModeValueRanges();
     applyAbilityMode(activeAbilityMode);
-    setupAbilityModeSwitch();
+    // Keep alternate mode data available internally, but lock the public
+    // leaderboard to the neighbour-relative view and leave the picker hidden.
     computeRanges();
     buildHead(); buildBody(); buildGlossary(); setupViews(); setupInfoModal(); buildJudgeReport();
   });

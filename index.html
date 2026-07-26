@@ -821,7 +821,10 @@
           Each model is compared against other models on the leaderboard in a tournament fashion (weighted towards near-ranked neighbours), and the final Elo scores are computed with a soft Bradley&ndash;Terry fit over the fractional margin outcomes. Scores are normalised against fixed anchor models, and the 95% confidence intervals are estimated by bootstrapping over the pairwise comparisons.
         </p>
         <p>
-          Each ability column on the leaderboard is solved independently from that dimension's pairwise margin outcomes using the same soft Bradley&ndash;Terry method. The resulting ratings are normalised 1&ndash;10 within each ability column for display. They are not blended with overall Elo, so the values are best compared between models within a column rather than across different abilities.
+          The ability heatmap shows each model's performance relative to nearby models in the overall Elo ranking. For each ability, direct signed margins are grouped by rank distance, up to four places away. At each distance, comparisons against the higher- and lower-ranked neighbour are balanced to equal sample counts before the two sides are averaged; the distance blocks are then combined using a reliability weight. Near the top and bottom of the leaderboard, the window shrinks to limit one-sided comparisons.
+        </p>
+        <p>
+          A positive ability value means the model outperformed its Elo neighbours on that dimension, a negative value means it underperformed them, and a value near zero means it performed about evenly. These are local relative scores rather than global ratings, so they are best read as a model's distinctive strengths and weaknesses compared with similarly ranked models.
         </p>
 
         <h2 id="eq4AboutWhatIsEI">What is emotional intelligence (in humans)?</h2>
@@ -1153,8 +1156,8 @@
     </div>
   </div>
 
-  <script src="eqbench4/eqbench4_data.js?v=20260716-ability"></script>
-  <script src="eqbench4/eqbench4.js?v=2.3"></script>
+  <script src="eqbench4/eqbench4_data.js?v=20260725-neighbours"></script>
+  <script src="eqbench4/eqbench4.js?v=2.5"></script>
   <script src="eqbench4/eqbench4_personas.js?v=1.0"></script>
   <script src="utils.js"></script>
   <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1600fe1d3da743c1b311f4e5fee86767"}'></script><!-- End Cloudflare Web Analytics -->
