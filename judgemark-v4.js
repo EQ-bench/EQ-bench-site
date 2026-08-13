@@ -33,6 +33,7 @@ deepseek-ai/DeepSeek-V4-Flash,0.367862,0.340758,0.450511,$0.78,results/judgemark
 Qwen/Qwen3.6-35B-A3B,0.326547,0.305251,0.403566,$1.89,results/judgemark-v4/charts/multichart_qwen__qwen3_6-35b-a3b_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_6-35b-a3b.png
 Qwen/Qwen3.5-9B,0.324392,0.288405,0.415527,$0.56,results/judgemark-v4/charts/multichart_Qwen__Qwen3_5-9B_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_5-9b.png
 qwen3.6-flash,0.311761,0.276205,0.400733,$1.74,results/judgemark-v4/charts/multichart_qwen__qwen3_6-flash_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_6-flash.png
+deepseek-ai/DeepSeek-V4-Flash-0731,0.307474,0.280182,0.380837,$0.72,results/judgemark-v4/charts/multichart_deepseek__deepseek-v4-flash-0731_seed_temp0_prompt_reasoning_trial_01__deepseek_deepseek-v4-flash-0731.png
 stepfun-ai/Step-3.7-Flash,0.280475,0.262261,0.365120,$3.03,results/judgemark-v4/charts/multichart_stepfun__step-3_7-flash_seed_temp0_prompt_reasoning_trial_01__stepfun_step-3_7-flash.png
 gpt-5.4-nano,0.275388,0.247464,0.363286,$1.25,results/judgemark-v4/charts/multichart_gpt-5_4-nano_seed_temp0_prompt_reasoning_trial_01__openai_gpt-5_4-nano.png
 gpt-5.4-mini,0.273221,0.248656,0.357704,$4.56,results/judgemark-v4/charts/multichart_gpt-5_4-mini_seed_temp0_prompt_reasoning_trial_01__openai_gpt-5_4-mini.png
