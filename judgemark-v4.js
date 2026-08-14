@@ -5,6 +5,7 @@ model,score,ci_low,ci_high,cost,chart
 claude-opus-4-6,0.907256,0.867410,0.967750,$39.37,results/judgemark-v4/charts/multichart_claude-opus-4-6_seed_temp0_prompt_reasoning_trial_01__claude-opus-4-6.png
 gpt-5.5,0.878134,0.853332,0.924747,$30.44,results/judgemark-v4/charts/multichart_openai__gpt-5_5_seed_temp0_prompt_reasoning_trial_01__openai_gpt-5_5.png
 claude-opus-4-7,0.839612,0.804731,0.894923,$48.75,results/judgemark-v4/charts/multichart_claude-opus-4-7_seed_temp0_prompt_reasoning_trial_01__claude-opus-4-7.png
+gemini-3.7-flash,0.833928,0.800731,0.891773,$3.05,results/judgemark-v4/charts/multichart_google__gemini-3_7-flash_seed_temp0_prompt_reasoning_trial_01__google_gemini-3_7-flash.png
 claude-sonnet-4-6,0.821468,0.782343,0.882974,$23.36,results/judgemark-v4/charts/multichart_claude-sonnet-4-6_seed_temp0_prompt_reasoning_trial_01__claude-sonnet-4-6.png
 claude-opus-5,0.788124,0.740303,0.857485,$52.60,results/judgemark-v4/charts/multichart_claude-opus-5_seed_temp0_prompt_reasoning_trial_01__claude-opus-5.png
 gemini-3.1-pro-preview,0.786853,0.738905,0.851353,$23.07,results/judgemark-v4/charts/multichart_google__gemini-3_1-pro-preview_seed_temp0_prompt_reasoning_trial_01__google_gemini-3_1-pro-preview.png
