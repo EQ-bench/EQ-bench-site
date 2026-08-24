@@ -7,15 +7,18 @@ gpt-5.5,0.878134,0.853332,0.924747,$30.44,results/judgemark-v4/charts/multichart
 claude-opus-4-7,0.839612,0.804731,0.894923,$48.75,results/judgemark-v4/charts/multichart_claude-opus-4-7_seed_temp0_prompt_reasoning_trial_01__claude-opus-4-7.png
 gemini-3.7-flash,0.833928,0.800731,0.891773,$3.05,results/judgemark-v4/charts/multichart_google__gemini-3_7-flash_seed_temp0_prompt_reasoning_trial_01__google_gemini-3_7-flash.png
 claude-sonnet-4-6,0.821468,0.782343,0.882974,$23.36,results/judgemark-v4/charts/multichart_claude-sonnet-4-6_seed_temp0_prompt_reasoning_trial_01__claude-sonnet-4-6.png
+muse-spark-1.2,0.793954,0.761632,0.854907,$13.07,results/judgemark-v4/charts/multichart_meta__muse-spark-1_2_seed_temp0_prompt_reasoning_trial_01__meta_muse-spark-1_2.png
 claude-opus-5,0.788124,0.740303,0.857485,$52.60,results/judgemark-v4/charts/multichart_claude-opus-5_seed_temp0_prompt_reasoning_trial_01__claude-opus-5.png
 gemini-3.1-pro-preview,0.786853,0.738905,0.851353,$23.07,results/judgemark-v4/charts/multichart_google__gemini-3_1-pro-preview_seed_temp0_prompt_reasoning_trial_01__google_gemini-3_1-pro-preview.png
 claude-opus-4-8,0.779576,0.743971,0.838340,$50.42,results/judgemark-v4/charts/multichart_claude-opus-4-8_seed_temp0_prompt_reasoning_trial_01__claude-opus-4-8.png
 grok-4.5,0.770730,0.726449,0.833985,$17.11,results/judgemark-v4/charts/multichart_x-ai__grok-4_5_seed_temp0_prompt_reasoning_trial_01__x-ai_grok-4_5.png
 zai-org/GLM-5.2,0.731905,0.679917,0.805355,$8.28,results/judgemark-v4/charts/multichart_z-ai__glm-5_2_seed_temp0_prompt_reasoning_trial_01__z-ai_glm-5_2.png
+GLM-5.3,0.725912,0.689246,0.793638,$18.06,results/judgemark-v4/charts/multichart_z-ai__glm-5_3_seed_temp0_prompt_reasoning_trial_01__z-ai_glm-5_3.png
 google/gemma-4-31B-it,0.723051,0.680818,0.793728,$0.82,results/judgemark-v4/charts/multichart_google__gemma-4-31b-it_seed_temp0_prompt_reasoning_trial_01__google_gemma-4-31b-it.png
 gpt-5.4,0.720762,0.684801,0.781918,$15.24,results/judgemark-v4/charts/multichart_gpt-5_4_seed_temp0_prompt_reasoning_trial_01__openai_gpt-5_4.png
 claude-sonnet-5,0.708864,0.670097,0.777549,$29.19,results/judgemark-v4/charts/multichart_claude-sonnet-5_seed_temp0_prompt_reasoning_trial_01__claude-sonnet-5.png
 gemini-3.5-flash,0.687515,0.644952,0.750334,$13.89,results/judgemark-v4/charts/multichart_google__gemini-3_5-flash_seed_temp0_prompt_reasoning_trial_01__google_gemini-3_5-flash.png
+Qwen/Qwen3.8-27B,0.674391,0.642116,0.736775,$3.09,results/judgemark-v4/charts/multichart_qwen__qwen3_8-27b_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_8-27b.png
 zai-org/GLM-5.1,0.672081,0.623536,0.740827,$8.06,results/judgemark-v4/charts/multichart_z-ai__glm-5_1_seed_temp0_prompt_reasoning_trial_01__z-ai_glm-5_1.png
 Qwen/Qwen3.5-27B,0.605331,0.567596,0.680937,$1.76,results/judgemark-v4/charts/multichart_Qwen__Qwen3_5-27B_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_5-27b.png
 gemini-3.1-flash-lite-preview,0.588214,0.550091,0.658023,$1.54,results/judgemark-v4/charts/multichart_gemini-3_1-flash-lite-preview_seed_temp0_prompt_reasoning_trial_01__google_gemini-3_1-flash-lite-preview.png
@@ -29,6 +32,7 @@ grok-4.3,0.495693,0.457153,0.573230,$9.71,results/judgemark-v4/charts/multichart
 deepseek-ai/DeepSeek-V4-Pro,0.471182,0.416774,0.563053,$2.94,results/judgemark-v4/charts/multichart_deepseek__deepseek-v4-pro_seed_temp0_prompt_reasoning_trial_01__deepseek_deepseek-v4-pro.png
 gemini-3-flash-preview,0.461171,0.424996,0.536712,$3.14,results/judgemark-v4/charts/multichart_gemini-3-flash-preview_seed_temp0_prompt_reasoning_trial_01__google_gemini-3-flash-preview.png
 qwen3.6-max-preview,0.450786,0.403048,0.542877,$7.36,results/judgemark-v4/charts/multichart_qwen__qwen3_6-max-preview_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_6-max-preview.png
+meta-models/Muse-Glimmer-30B,0.406704,0.381874,0.471343,$2.51,results/judgemark-v4/charts/multichart_meta__muse-glimmer-30b_seed_temp0_prompt_reasoning_trial_01__meta_muse-glimmer-30b.png
 Qwen/Qwen3.5-35B-A3B,0.405004,0.370493,0.477875,$1.38,results/judgemark-v4/charts/multichart_Qwen__Qwen3_5-35B-A3B_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_5-35b-a3b.png
 deepseek-ai/DeepSeek-V4-Flash,0.367862,0.340758,0.450511,$0.78,results/judgemark-v4/charts/multichart_deepseek__deepseek-v4-flash_seed_temp0_prompt_reasoning_trial_01__deepseek_deepseek-v4-flash.png
 Qwen/Qwen3.6-35B-A3B,0.326547,0.305251,0.403566,$1.89,results/judgemark-v4/charts/multichart_qwen__qwen3_6-35b-a3b_seed_temp0_prompt_reasoning_trial_01__qwen_qwen3_6-35b-a3b.png
@@ -204,10 +208,13 @@ function parseJm4Rows() {
   if (lines.length <= 1) return [];
 
   return lines.slice(1).map(line => {
-    const [model, score, ciLow, ciHigh, cost, chart] = parseCsvLine(line);
+    const [modelRaw, score, ciLow, ciHigh, cost, chart] = parseCsvLine(line);
+    const isNewModel = modelRaw.startsWith('*');
+    const model = modelRaw.replace(/^\*/, '');
     const parsedCost = parseFloat(String(cost || '').replace(/[^0-9.]/g, ''));
     return {
       model,
+      isNewModel,
       score: parseFloat(score),
       scoreText: score,
       ciLow,
@@ -454,7 +461,7 @@ function loadJudgemarkV4() {
       : '-';
     return `
       <tr>
-        <td>${modelLink(row.model)}</td>
+        <td>${row.isNewModel ? '🆕 ' : ''}${modelLink(row.model)}</td>
         <td data-order="${row.score}">
           <div class="score-bar-container jm4-score-cell" title="${ciTitle}" aria-label="${ciTitle}">
             <span class="jm4-score-text">${score100}</span>
