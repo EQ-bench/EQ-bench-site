@@ -1,0 +1,683 @@
+{
+  "generated_at": 1792764298.707596,
+  "judges": {
+    "sonnet": {
+      "model": "claude-sonnet-5-5",
+      "provider": "anthropic",
+      "credential_id": 2
+    },
+    "argon": {
+      "model": "google/gemini-4-argon",
+      "provider": "openrouter",
+      "credential_id": 8
+    },
+    "sol": {
+      "model": "openai/gpt-6.1-sol",
+      "provider": "openrouter",
+      "credential_id": 8
+    }
+  },
+  "protocol": {
+    "reasoning": "low",
+    "max_output_tokens": 8000,
+    "prompts": "Original unmodified rubric prompt, existing written rationale field and all criteria; same stripping of # and * as original benchmark.",
+    "aggregation": "Equal scenario weight; average available judge scores within each scenario; refusals excluded, never zero.",
+    "no_generation": true,
+    "no_elo": true
+  },
+  "updated_models": [
+    {
+      "model": "gemini-2.5-pro-preview-06-05",
+      "run_key": "1_gemini-2.5-pro-preview-06-05",
+      "source_run_key": "1_gemini-2.5-pro-preview-06-05",
+      "scenario_count": 45,
+      "score_0_100": 59.75308641975309,
+      "native_rounded_score_0_100": 59.75
+    },
+    {
+      "model": "Nanbeige/Nanbeige4-3B-Thinking-2511",
+      "run_key": "1_Nanbeige_Nanbeige4-3B-Thinking-2511",
+      "source_run_key": "1_Nanbeige_Nanbeige4-3B-Thinking-2511",
+      "scenario_count": 45,
+      "score_0_100": 21.90432098765432,
+      "native_rounded_score_0_100": 21.9
+    },
+    {
+      "model": "Qwen/Qwen3-235B-A22B",
+      "run_key": "1_Qwen_Qwen3-235B-A22B",
+      "source_run_key": "1_Qwen_Qwen3-235B-A22B",
+      "scenario_count": 45,
+      "score_0_100": 46.47222222222222,
+      "native_rounded_score_0_100": 46.449999999999996
+    },
+    {
+      "model": "Qwen/Qwen3-30B-A3B",
+      "run_key": "1_Qwen_Qwen3-30B-A3B",
+      "source_run_key": "1_Qwen_Qwen3-30B-A3B",
+      "scenario_count": 45,
+      "score_0_100": 32.1820987654321,
+      "native_rounded_score_0_100": 32.2
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "run_key": "1_Qwen_Qwen3-32B",
+      "source_run_key": "1_Qwen_Qwen3-32B",
+      "scenario_count": 45,
+      "score_0_100": 38.68518518518518,
+      "native_rounded_score_0_100": 38.7
+    },
+    {
+      "model": "Qwen/Qwen3-8B",
+      "run_key": "1_Qwen_Qwen3-8B",
+      "source_run_key": "1_Qwen_Qwen3-8B",
+      "scenario_count": 45,
+      "score_0_100": 32.14506172839506,
+      "native_rounded_score_0_100": 32.15
+    },
+    {
+      "model": "claude-3-5-sonnet-20241022",
+      "run_key": "1_anthropic_claude-3.5-sonnet",
+      "source_run_key": "1_anthropic_claude-3.5-sonnet",
+      "scenario_count": 45,
+      "score_0_100": 50.95679012345679,
+      "native_rounded_score_0_100": 50.949999999999996
+    },
+    {
+      "model": "claude-3-7-sonnet-20250219",
+      "run_key": "1_anthropic_claude-3.7-sonnet",
+      "source_run_key": "1_anthropic_claude-3.7-sonnet",
+      "scenario_count": 45,
+      "score_0_100": 53.04938271604939,
+      "native_rounded_score_0_100": 53.05
+    },
+    {
+      "model": "claude-opus-4",
+      "run_key": "1_anthropic_claude-opus-4",
+      "source_run_key": "1_anthropic_claude-opus-4",
+      "scenario_count": 45,
+      "score_0_100": 58.6820987654321,
+      "native_rounded_score_0_100": 58.7
+    },
+    {
+      "model": "chatgpt-4o-latest-2025-04-25",
+      "run_key": "1_chatgpt-4o-latest",
+      "source_run_key": "1_chatgpt-4o-latest",
+      "scenario_count": 45,
+      "score_0_100": 57.28703703703704,
+      "native_rounded_score_0_100": 57.300000000000004
+    },
+    {
+      "model": "claude-opus-4-5-20251101",
+      "run_key": "1_claude-opus-4-5-20251101",
+      "source_run_key": "1_claude-opus-4-5-20251101",
+      "scenario_count": 45,
+      "score_0_100": 68.92901234567901,
+      "native_rounded_score_0_100": 68.94999999999999
+    },
+    {
+      "model": "claude-opus-4-6",
+      "run_key": "1_claude-opus-4-6",
+      "source_run_key": "1_claude-opus-4-6",
+      "scenario_count": 45,
+      "score_0_100": 70.31481481481481,
+      "native_rounded_score_0_100": 70.3
+    },
+    {
+      "model": "claude-sonnet-4",
+      "run_key": "1_anthropic_claude-sonnet-4",
+      "source_run_key": "1_anthropic_claude-sonnet-4",
+      "scenario_count": 45,
+      "score_0_100": 56.925925925925924,
+      "native_rounded_score_0_100": 56.95
+    },
+    {
+      "model": "claude-sonnet-4.5",
+      "run_key": "1_claude-sonnet-4.5",
+      "source_run_key": "1_claude-sonnet-4.5",
+      "scenario_count": 45,
+      "score_0_100": 62.21604938271605,
+      "native_rounded_score_0_100": 62.199999999999996
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V3-0324",
+      "run_key": "1_deepseek_deepseek-chat-v3-0324",
+      "source_run_key": "1_deepseek_deepseek-chat-v3-0324",
+      "scenario_count": 45,
+      "score_0_100": 49.49382716049383,
+      "native_rounded_score_0_100": 49.5
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-R1",
+      "run_key": "1_deepseek_deepseek-r1",
+      "source_run_key": "1_deepseek_deepseek-r1",
+      "scenario_count": 45,
+      "score_0_100": 52.10185185185185,
+      "native_rounded_score_0_100": 52.1
+    },
+    {
+      "model": "gemini-2.5-pro-preview-2025-05-07",
+      "run_key": "1_gemini-2.5-pro-preview-2025-05-07",
+      "source_run_key": "1_gemini-2.5-pro-preview-2025-05-07",
+      "scenario_count": 45,
+      "score_0_100": 57.614197530864196,
+      "native_rounded_score_0_100": 57.599999999999994
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "run_key": "1_gemini-3-pro-preview",
+      "source_run_key": "1_gemini-3-pro-preview",
+      "scenario_count": 45,
+      "score_0_100": 62.3179012345679,
+      "native_rounded_score_0_100": 62.300000000000004
+    },
+    {
+      "model": "gemini-2.0-flash-001",
+      "run_key": "1_google_gemini-2.0-flash-001",
+      "source_run_key": "1_google_gemini-2.0-flash-001",
+      "scenario_count": 45,
+      "score_0_100": 41.98148148148148,
+      "native_rounded_score_0_100": 42.0
+    },
+    {
+      "model": "gemini-2.5-flash-preview",
+      "run_key": "1_google_gemini-2.5-flash-preview",
+      "source_run_key": "1_google_gemini-2.5-flash-preview",
+      "scenario_count": 45,
+      "score_0_100": 47.85493827160494,
+      "native_rounded_score_0_100": 47.85
+    },
+    {
+      "model": "gemini-2.5-pro-preview-03-25",
+      "run_key": "1_google_gemini-2.5-pro-preview-03-25",
+      "source_run_key": "1_google_gemini-2.5-pro-preview-03-25",
+      "scenario_count": 45,
+      "score_0_100": 59.9537037037037,
+      "native_rounded_score_0_100": 59.95
+    },
+    {
+      "model": "google/gemma-2-9b-it",
+      "run_key": "1_google_gemma-2-9b-it",
+      "source_run_key": "1_google_gemma-2-9b-it",
+      "scenario_count": 45,
+      "score_0_100": 23.938271604938272,
+      "native_rounded_score_0_100": 23.95
+    },
+    {
+      "model": "google/gemma-3-27b-it",
+      "run_key": "1_google_gemma-3-27b-it",
+      "source_run_key": "1_google_gemma-3-27b-it",
+      "scenario_count": 45,
+      "score_0_100": 44.19753086419753,
+      "native_rounded_score_0_100": 44.2
+    },
+    {
+      "model": "google/gemma-3-4b-it",
+      "run_key": "1_google_gemma-3-4b-it",
+      "source_run_key": "1_google_gemma-3-4b-it",
+      "scenario_count": 45,
+      "score_0_100": 31.095679012345677,
+      "native_rounded_score_0_100": 31.099999999999998
+    },
+    {
+      "model": "gpt-4-0314",
+      "run_key": "1_gpt-4-0314",
+      "source_run_key": "1_gpt-4-0314",
+      "scenario_count": 45,
+      "score_0_100": 30.641975308641975,
+      "native_rounded_score_0_100": 30.65
+    },
+    {
+      "model": "gpt-4.1-nano",
+      "run_key": "1_gpt-4.1-nano",
+      "source_run_key": "1_gpt-4.1-nano",
+      "scenario_count": 45,
+      "score_0_100": 33.79938271604938,
+      "native_rounded_score_0_100": 33.8
+    },
+    {
+      "model": "gpt-4.5-preview-2025-02-27",
+      "run_key": "1_gpt-4.5-preview-2025-02-27",
+      "source_run_key": "1_gpt-4.5-preview-2025-02-27",
+      "scenario_count": 45,
+      "score_0_100": 53.175925925925924,
+      "native_rounded_score_0_100": 53.2
+    },
+    {
+      "model": "gpt-5-chat-latest-2025-08-07",
+      "run_key": "1_gpt-5-chat-latest-2025-08-07",
+      "source_run_key": "1_gpt-5-chat-latest-2025-08-07",
+      "scenario_count": 45,
+      "score_0_100": 62.83024691358025,
+      "native_rounded_score_0_100": 62.85
+    },
+    {
+      "model": "gpt-5.1-2025-11-13",
+      "run_key": "1_gpt-5.1-2025-11-13",
+      "source_run_key": "1_gpt-5.1-2025-11-13",
+      "scenario_count": 45,
+      "score_0_100": 69.79012345679013,
+      "native_rounded_score_0_100": 69.80000000000001
+    },
+    {
+      "model": "gpt-5.2",
+      "run_key": "1_gpt-5.2",
+      "source_run_key": "1_gpt-5.2",
+      "scenario_count": 45,
+      "score_0_100": 72.21296296296296,
+      "native_rounded_score_0_100": 72.2
+    },
+    {
+      "model": "grok-3-mini-beta",
+      "run_key": "1_grok-3-mini-beta",
+      "source_run_key": "1_grok-3-mini-beta",
+      "scenario_count": 45,
+      "score_0_100": 42.46913580246913,
+      "native_rounded_score_0_100": 42.45
+    },
+    {
+      "model": "grok-4",
+      "run_key": "1_grok-4",
+      "source_run_key": "1_grok-4",
+      "scenario_count": 44,
+      "score_0_100": 51.48358585858586,
+      "native_rounded_score_0_100": 51.5
+    },
+    {
+      "model": "grok-4.1-fast",
+      "run_key": "1_grok-4.1-fast",
+      "source_run_key": "1_grok-4.1-fast",
+      "scenario_count": 45,
+      "score_0_100": 49.351851851851855,
+      "native_rounded_score_0_100": 49.349999999999994
+    },
+    {
+      "model": "NousResearch/Hermes-4-405B",
+      "run_key": "1_hermes-4",
+      "source_run_key": "1_hermes-4",
+      "scenario_count": 45,
+      "score_0_100": 52.80246913580247,
+      "native_rounded_score_0_100": 52.800000000000004
+    },
+    {
+      "model": "meta-llama/Llama-3.1-405B-Instruct",
+      "run_key": "1_meta-llama_Llama-3.1-405B-Instruct",
+      "source_run_key": "1_meta-llama_Llama-3.1-405B-Instruct",
+      "scenario_count": 45,
+      "score_0_100": 32.1820987654321,
+      "native_rounded_score_0_100": 32.2
+    },
+    {
+      "model": "meta-llama/llama-3.2-1b-instruct",
+      "run_key": "1_meta-llama_llama-3.2-1b-instruct",
+      "source_run_key": "1_meta-llama_llama-3.2-1b-instruct",
+      "scenario_count": 45,
+      "score_0_100": 11.987654320987655,
+      "native_rounded_score_0_100": 12.0
+    },
+    {
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+      "run_key": "1_meta-llama_llama-4-maverick",
+      "source_run_key": "1_meta-llama_llama-4-maverick",
+      "scenario_count": 45,
+      "score_0_100": 32.30246913580247,
+      "native_rounded_score_0_100": 32.3
+    },
+    {
+      "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "run_key": "1_meta-llama_llama-4-scout",
+      "source_run_key": "1_meta-llama_llama-4-scout",
+      "scenario_count": 45,
+      "score_0_100": 28.512345679012345,
+      "native_rounded_score_0_100": 28.5
+    },
+    {
+      "model": "mistralai/Mistral-Large-Instruct-2411",
+      "run_key": "1_mistralai_Mistral-Large-Instruct-2411",
+      "source_run_key": "1_mistralai_Mistral-Large-Instruct-2411",
+      "scenario_count": 45,
+      "score_0_100": 32.82098765432099,
+      "native_rounded_score_0_100": 32.8
+    },
+    {
+      "model": "mistralai/Mistral-Small-24B-Instruct-2501",
+      "run_key": "1_mistralai_mistral-small-24b-instruct-2501",
+      "source_run_key": "1_mistralai_mistral-small-24b-instruct-2501",
+      "scenario_count": 45,
+      "score_0_100": 29.27777777777778,
+      "native_rounded_score_0_100": 29.3
+    },
+    {
+      "model": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+      "run_key": "1_mistralai_mistral-small-3.1-24b-instruct",
+      "source_run_key": "1_mistralai_mistral-small-3.1-24b-instruct",
+      "scenario_count": 45,
+      "score_0_100": 27.873456790123456,
+      "native_rounded_score_0_100": 27.85
+    },
+    {
+      "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "run_key": "1_mistralai_mistral-small-3.2-24b-instruct",
+      "source_run_key": "1_mistralai_mistral-small-3.2-24b-instruct",
+      "scenario_count": 45,
+      "score_0_100": 41.7962962962963,
+      "native_rounded_score_0_100": 41.8
+    },
+    {
+      "model": "moonshotai/Kimi-K2-Instruct",
+      "run_key": "1_moonshotai_Kimi-K2-Instruct",
+      "source_run_key": "1_moonshotai_Kimi-K2-Instruct",
+      "scenario_count": 45,
+      "score_0_100": 56.373456790123456,
+      "native_rounded_score_0_100": 56.349999999999994
+    },
+    {
+      "model": "nvidia/llama-3.1-nemotron-ultra-253b-v1:free",
+      "run_key": "1_nvidia_llama-3.1-nemotron-ultra-253b-v1_free",
+      "source_run_key": "1_nvidia_llama-3.1-nemotron-ultra-253b-v1_free",
+      "scenario_count": 45,
+      "score_0_100": 39.48765432098765,
+      "native_rounded_score_0_100": 39.5
+    },
+    {
+      "model": "o3",
+      "run_key": "1_o3",
+      "source_run_key": "1_o3",
+      "scenario_count": 45,
+      "score_0_100": 63.20679012345679,
+      "native_rounded_score_0_100": 63.2
+    },
+    {
+      "model": "o4-mini",
+      "run_key": "20cd4a70_o4-mini",
+      "source_run_key": "20cd4a70_o4-mini",
+      "scenario_count": 45,
+      "score_0_100": 45.21913580246913,
+      "native_rounded_score_0_100": 45.199999999999996
+    },
+    {
+      "model": "chatgpt-4o-latest-2025-03-27",
+      "run_key": "1_openai_chatgpt-4o-latest",
+      "source_run_key": "1_openai_chatgpt-4o-latest",
+      "scenario_count": 45,
+      "score_0_100": 58.28086419753086,
+      "native_rounded_score_0_100": 58.3
+    },
+    {
+      "model": "gpt-4.1",
+      "run_key": "1_openai_gpt-4.1",
+      "source_run_key": "1_openai_gpt-4.1",
+      "scenario_count": 45,
+      "score_0_100": 56.83641975308642,
+      "native_rounded_score_0_100": 56.849999999999994
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "run_key": "1_openai_gpt-4.1-mini",
+      "source_run_key": "1_openai_gpt-4.1-mini",
+      "scenario_count": 45,
+      "score_0_100": 46.35493827160494,
+      "native_rounded_score_0_100": 46.349999999999994
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "run_key": "1_openai_gpt-oss-120b",
+      "source_run_key": "1_openai_gpt-oss-120b",
+      "scenario_count": 45,
+      "score_0_100": 39.623456790123456,
+      "native_rounded_score_0_100": 39.6
+    },
+    {
+      "model": "openai/gpt-oss-20b",
+      "run_key": "1_openai_gpt-oss-20b",
+      "source_run_key": "1_openai_gpt-oss-20b",
+      "scenario_count": 45,
+      "score_0_100": 30.830246913580247,
+      "native_rounded_score_0_100": 30.85
+    },
+    {
+      "model": "openrouter/horizon-alpha",
+      "run_key": "1_openrouter_horizon-alpha",
+      "source_run_key": "1_openrouter_horizon-alpha",
+      "scenario_count": 45,
+      "score_0_100": 63.78395061728395,
+      "native_rounded_score_0_100": 63.8
+    },
+    {
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "run_key": "1_qwen_qwen-2.5-72b-instruct",
+      "source_run_key": "1_qwen_qwen-2.5-72b-instruct",
+      "scenario_count": 45,
+      "score_0_100": 31.25617283950617,
+      "native_rounded_score_0_100": 31.25
+    },
+    {
+      "model": "qwen/qwq-32b",
+      "run_key": "1_qwen_qwq-32b",
+      "source_run_key": "1_qwen_qwq-32b",
+      "scenario_count": 45,
+      "score_0_100": 42.54320987654321,
+      "native_rounded_score_0_100": 42.55
+    },
+    {
+      "model": "grok-3-beta",
+      "run_key": "1_x-ai_grok-3-beta",
+      "source_run_key": "1_x-ai_grok-3-beta",
+      "scenario_count": 45,
+      "score_0_100": 50.5,
+      "native_rounded_score_0_100": 50.5
+    },
+    {
+      "model": "zai-org/GLM-4.5",
+      "run_key": "1_zai-org_GLM-4.5",
+      "source_run_key": "1_zai-org_GLM-4.5",
+      "scenario_count": 45,
+      "score_0_100": 52.86111111111111,
+      "native_rounded_score_0_100": 52.85
+    },
+    {
+      "model": "zai-org/GLM-4.7",
+      "run_key": "1_zai-org_GLM-4.7",
+      "source_run_key": "1_zai-org_GLM-4.7",
+      "scenario_count": 45,
+      "score_0_100": 56.29320987654321,
+      "native_rounded_score_0_100": 56.3
+    },
+    {
+      "model": "zai-org/GLM-4.7-Flash",
+      "run_key": "1_zai-org_GLM-4.7-Flash",
+      "source_run_key": "1_zai-org_GLM-4.7-Flash",
+      "scenario_count": 44,
+      "score_0_100": 32.90719696969697,
+      "native_rounded_score_0_100": 32.9
+    },
+    {
+      "model": "claude-sonnet-4-6",
+      "run_key": "run1_claude-sonnet-4-6",
+      "source_run_key": "run1_claude-sonnet-4-6",
+      "scenario_count": 45,
+      "score_0_100": 68.40123456790123,
+      "native_rounded_score_0_100": 68.4
+    },
+    {
+      "model": "Qwen/Qwen3.5-397B-A17B",
+      "run_key": "run1_qwen_qwen3.5-397b-a17b",
+      "source_run_key": "run1_qwen_qwen3.5-397b-a17b",
+      "scenario_count": 45,
+      "score_0_100": 58.06481481481482,
+      "native_rounded_score_0_100": 58.05
+    },
+    {
+      "model": "zai-org/GLM-5",
+      "run_key": "run1_z-ai_glm-5",
+      "source_run_key": "run1_z-ai_glm-5",
+      "scenario_count": 45,
+      "score_0_100": 63.46913580246913,
+      "native_rounded_score_0_100": 63.449999999999996
+    },
+    {
+      "model": "moonshotai/Kimi-K2.5",
+      "run_key": "run1_moonshotai_kimi-k2.5",
+      "source_run_key": "run1_moonshotai_kimi-k2.5",
+      "scenario_count": 45,
+      "score_0_100": 55.18827160493827,
+      "native_rounded_score_0_100": 55.199999999999996
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "run_key": "run1_google_gemini-3.1-pro-preview",
+      "source_run_key": "run1_google_gemini-3.1-pro-preview",
+      "scenario_count": 45,
+      "score_0_100": 64.6574074074074,
+      "native_rounded_score_0_100": 64.65
+    },
+    {
+      "model": "gpt-5.3-chat",
+      "run_key": "run1_openai_gpt-5.3-chat",
+      "source_run_key": "run1_openai_gpt-5.3-chat",
+      "scenario_count": 45,
+      "score_0_100": 61.51851851851852,
+      "native_rounded_score_0_100": 61.5
+    },
+    {
+      "model": "gpt-5.4",
+      "run_key": "run1_openai_gpt-5.4",
+      "source_run_key": "run1_openai_gpt-5.4",
+      "scenario_count": 45,
+      "score_0_100": 75.5925925925926,
+      "native_rounded_score_0_100": 75.6
+    },
+    {
+      "model": "grok-4.20-beta",
+      "run_key": "run1_x-ai_grok-4.20-beta",
+      "source_run_key": "run1_x-ai_grok-4.20-beta",
+      "scenario_count": 45,
+      "score_0_100": 45.626543209876544,
+      "native_rounded_score_0_100": 45.650000000000006
+    },
+    {
+      "model": "google/gemma-4-31B-it",
+      "run_key": "run1_google_gemma-4-31b-it",
+      "source_run_key": "run1_google_gemma-4-31b-it",
+      "scenario_count": 45,
+      "score_0_100": 57.45987654320988,
+      "native_rounded_score_0_100": 57.45
+    },
+    {
+      "model": "google/gemma-4-26B-A4B-it",
+      "run_key": "run1_google_gemma-4-26b-a4b-it",
+      "source_run_key": "run1_google_gemma-4-26b-a4b-it",
+      "scenario_count": 45,
+      "score_0_100": 56.373456790123456,
+      "native_rounded_score_0_100": 56.349999999999994
+    },
+    {
+      "model": "zai-org/GLM-5.1",
+      "run_key": "run1_z-ai_glm-5.1",
+      "source_run_key": "run1_z-ai_glm-5.1",
+      "scenario_count": 45,
+      "score_0_100": 64.51851851851852,
+      "native_rounded_score_0_100": 64.5
+    },
+    {
+      "model": "claude-opus-4-7",
+      "run_key": "run1_claude-opus-4-7",
+      "source_run_key": "run1_claude-opus-4-7",
+      "scenario_count": 45,
+      "score_0_100": 73.41666666666667,
+      "native_rounded_score_0_100": 73.4
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V4-Flash",
+      "run_key": "run1_deepseek_deepseek-v4-flash",
+      "source_run_key": "run1_deepseek_deepseek-v4-flash",
+      "scenario_count": 45,
+      "score_0_100": 59.54012345679013,
+      "native_rounded_score_0_100": 59.55
+    },
+    {
+      "model": "gpt-5.5",
+      "run_key": "run1_openai_gpt-5.5",
+      "source_run_key": "run1_openai_gpt-5.5",
+      "scenario_count": 45,
+      "score_0_100": 77.39814814814815,
+      "native_rounded_score_0_100": 77.4
+    },
+    {
+      "model": "moonshotai/Kimi-K2.6",
+      "run_key": "run1_moonshotai_kimi-k2.6",
+      "source_run_key": "run1_moonshotai_kimi-k2.6",
+      "scenario_count": 45,
+      "score_0_100": 63.50308641975309,
+      "native_rounded_score_0_100": 63.5
+    },
+    {
+      "model": "HiveLabsAI/hivemind-32b-preview",
+      "run_key": "run1_HiveLabsAI_hivemind-32b-preview",
+      "source_run_key": "run1_HiveLabsAI_hivemind-32b-preview",
+      "scenario_count": 45,
+      "score_0_100": 65.16358024691358,
+      "native_rounded_score_0_100": 65.14999999999999
+    },
+    {
+      "model": "claude-opus-4-8",
+      "run_key": "run1_claude-opus-4-8",
+      "source_run_key": "run1_claude-opus-4-8",
+      "scenario_count": 45,
+      "score_0_100": 74.13271604938272,
+      "native_rounded_score_0_100": 74.15
+    },
+    {
+      "model": "claude-fable-5",
+      "run_key": "run1_claude-fable-5",
+      "source_run_key": "run1_claude-fable-5",
+      "scenario_count": 45,
+      "score_0_100": 76.85185185185185,
+      "native_rounded_score_0_100": 76.85
+    },
+    {
+      "model": "zai-org/GLM-5.2",
+      "run_key": "run1_z-ai_glm-5.2",
+      "source_run_key": "run1_z-ai_glm-5.2",
+      "scenario_count": 45,
+      "score_0_100": 67.32098765432099,
+      "native_rounded_score_0_100": 67.30000000000001
+    },
+    {
+      "model": "google/gemma-4-12B-it",
+      "run_key": "run1_google_gemma-4-12B-it",
+      "source_run_key": "run1_google_gemma-4-12B-it",
+      "scenario_count": 45,
+      "score_0_100": 51.324074074074076,
+      "native_rounded_score_0_100": 51.3
+    },
+    {
+      "model": "google/gemma-4-E4B-it",
+      "run_key": "run1_google_gemma-4-E4B-it_thinking-off_",
+      "source_run_key": "ensemble-depth5-gemma-thinking-off",
+      "scenario_count": 225,
+      "score_0_100": 41.480246913580245,
+      "native_rounded_score_0_100": 41.5
+    },
+    {
+      "model": "Qwen/Qwen3.5-4B",
+      "run_key": "run1_Qwen_Qwen3.5-4B_thinking-off_",
+      "source_run_key": "run1_Qwen_Qwen3.5-4B_thinking-off_",
+      "scenario_count": 45,
+      "score_0_100": 32.57098765432099,
+      "native_rounded_score_0_100": 32.55
+    },
+    {
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB-BF16",
+      "run_key": "run1_nvidia_NVIDIA-Nemotron-3.5-Bolt-E4B-4GB-BF16_thinking-off_",
+      "source_run_key": "run1_nvidia_NVIDIA-Nemotron-3.5-Bolt-E4B-4GB-BF16_thinking-off_5x_",
+      "scenario_count": 225,
+      "score_0_100": 39.97283950617284,
+      "native_rounded_score_0_100": 39.95
+    }
+  ],
+  "pending_models": [
+    "deepseek-ai/DeepSeek-V4-Pro",
+    "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16"
+  ],
+  "backup_manifest": "/home/sam/.local/state/autobench/eqbench3-ensemble-full-batch/backups/pre-ensemble-20261022T223342Z/manifest.json"
+}

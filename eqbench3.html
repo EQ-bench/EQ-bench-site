@@ -15,6 +15,30 @@
     /* == EQ-Bench 3 Page Specific Styles == */
     /* ======================================= */
 
+    .leaderboard-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 0.75rem 0;
+    }
+    .model-size-controls {
+      position: static;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0;
+      flex-shrink: 0;
+    }
+    .model-size-controls .form-check-input { margin-top: 0; cursor: pointer; }
+    .model-size-controls label { margin: 0; white-space: nowrap; cursor: pointer; }
+    .leaderboard-controls .heatmap-legend { min-width: 100px; }
+    body.eqbench3-page .leaderboard-controls .legend-bar {
+      width: clamp(40px, 18vw, 250px);
+      flex: 1 1 250px;
+      min-width: 40px;
+    }
+
     /* Make sure body has position relative for pseudo-elements */
     body.eqbench3-page {
       position: relative;
@@ -746,11 +770,19 @@ body.eqbench3-page #leaderboard th.feature-header {
         Expand Details
     </button>
 
-    <!-- Heat‑map legend -->
-    <div id="heatmapLegend" class="heatmap-legend"> <!-- Flex alignment handled by CSS -->
-      <span class="legend-label">Low</span>
-      <div class="legend-bar"></div>
-      <span class="legend-label">High</span>
+    <p id="rubric-ensemble-status">Heatmap and ability scores: Sonnet 5.5, Gemini 4 Argon and GPT-6.1 Sol ensemble (low reasoning; refusals excluded). 81/83 models updated. Remaining models retain their original rubric scores until their batches finish: deepseek-ai/DeepSeek-V4-Pro, nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16. Elo scores are unchanged. <a href="eqbench3_ensemble_provenance.json">Score provenance</a>.</p>
+
+    <div class="leaderboard-controls">
+      <div class="model-size-controls form-check form-switch">
+        <input id="modelSizeFilter" class="form-check-input" type="checkbox" role="switch"
+               title="Show models with at most 120B total parameters, including all MoE experts.">
+        <label class="form-check-label" for="modelSizeFilter">Small models (≤120B)</label>
+      </div>
+      <div id="heatmapLegend" class="heatmap-legend">
+        <span class="legend-label">Low</span>
+        <div class="legend-bar"></div>
+        <span class="legend-label">High</span>
+      </div>
     </div>
 
     <div class="table-responsive">
@@ -803,6 +835,8 @@ body.eqbench3-page #leaderboard th.feature-header {
     </div>
     <br>
     <hr>
+
+    
 
     <p>For more details about the benchmark, see the <a href="./about.html#long">About</a> section.</p>
 
@@ -864,9 +898,9 @@ body.eqbench3-page #leaderboard th.feature-header {
   <script src="https://cdn.jsdelivr.net/npm/wordcloud@1.2.2/src/wordcloud2.min.js"></script>
 
   <!-- Main script (UPDATED NAMES & VERSION) -->
-  <script defer src="eqbench3_chartdata.js?v=1.0.4"></script>
+  <script defer src="eqbench3_chartdata.js?v=ensemble-1792764427"></script>
   <script defer src="eqbench3_chartdata_style.js?v=1.0.4"></script>
-  <script defer src="eqbench3.js?v=1.0.4"></script> <!-- Version Bumped -->
+  <script defer src="eqbench3.js?v=ensemble-1792764427"></script> <!-- Version Bumped -->
   <!-- Dropdown functionality -->
   <script src="utils.js"></script>
 

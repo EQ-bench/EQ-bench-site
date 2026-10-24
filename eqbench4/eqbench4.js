@@ -443,7 +443,8 @@
       </div>`;
   }
   function modelCell(m) {
-    return `<span class="eq4-model">${esc(m.display || (m.model || "").split("/").pop())}</span>`;
+    const name = esc(m.display || (m.model || "").split("/").pop());
+    return `<span class="eq4-model">${m.is_new ? "🆕 " : ""}${name}</span>`;
   }
   function detailsBtn(m) {
     const icon = `<svg class="eq4-details-ic" viewBox="0 0 16 16" aria-hidden="true">`

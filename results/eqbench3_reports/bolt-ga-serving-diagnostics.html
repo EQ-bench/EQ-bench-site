@@ -1,0 +1,129 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nemotron Bolt GA evaluation diagnostics</title><style>body{font:16px/1.6 system-ui;max-width:1120px;margin:36px auto;padding:0 18px;color:#172b3a}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbd5e1;padding:9px;text-align:left;vertical-align:top}.scroll{overflow:auto}h1{font-size:28px}h2{font-size:22px;margin-top:34px}code{overflow-wrap:anywhere}iframe{width:100%;border:0}a{color:#1964b1}.note{background:#f0f5fa;padding:14px;border-radius:7px}</style></head><body>
+<h1>Nemotron Bolt GA evaluation diagnostics</h1>
+<p>None of the three full serving comparisons recovered NVIDIA’s 62.20. The evidence argues against a large vLLM-version, A6000/H100 or CUDA-stack effect as the sole cause. The exact cause remains unproven; checkpoint-specific behavior and internal evaluation differences remain to reconcile.</p>
+<p>Model: <b>nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB-BF16</b>, GA checkpoint 1.1.0. EQBench v3 rubric on a 0–100 scale. Claude Opus 4.6 judge; Elo skipped for every new diagnostic condition.</p>
+<h2>Completed full benchmark comparisons</h2><div class="scroll"><table><tr><th>Condition</th><th>Rubric</th><th>Depth</th><th>Difference from NVIDIA off</th></tr>
+<tr><td>GA · A6000 · vLLM 0.31 · thinking OFF</td><td>56.61</td><td>Five-run mean; range 55.90–57.05</td><td>−5.59</td></tr><tr><td>GA · A6000 · vLLM 0.31 · thinking ON</td><td>53.22</td><td>Five-run mean; range 51.75–54.05</td><td>No matching thinking-on reference</td></tr>
+<tr><td>Thinking OFF · vLLM 0.26 stack · A6000</td><td>57.40</td><td>One run · 45/45 scenarios · #251</td><td>-4.80</td></tr>
+<tr><td>Thinking OFF · official vLLM 0.26 image · H100</td><td>57.50</td><td>One run · 45/45 scenarios · #254</td><td>-4.70</td></tr>
+<tr><td>Thinking OFF · Transformers 5.17 reference · A6000</td><td>57.80</td><td>One run · 45/45 scenarios · #253</td><td>-4.40</td></tr>
+<tr><td>NVIDIA chart · thinking OFF</td><td>62.20</td><td>Internal reference supplied by NVIDIA</td><td>—</td></tr></table></div><p>Each new condition was tested once. Single-run changes near a point do not establish an improvement. The baseline distributions retain the original completed answers and judgments.</p>
+<p>Conversation sampling was held at temperature 0.7, min_p 0.1, top_p 0.95 and top_k 64, with a 12,000-token output limit; debrief temperature stayed at 0.5. The H100 used the model-card launch limits: 65,536 context, 64 maximum sequences, 65,536 batched tokens and 0.85 GPU memory utilization, with FlashAttention 4 and the image’s default FlashInfer sampler. A6000 vLLM conditions used 32,768 context, eight maximum sequences and 0.90 utilization with Triton attention. These are serving-stack comparisons, not isolated changes to one package. The Transformers reference uses two benchmark threads and one serial GPU worker.</p>
+<h2>All measured model conditions</h2>
+<iframe title="Rubric scores by model and condition" height="2150" srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;&lt;style&gt;
+*{box-sizing:border-box}body{margin:0;background:white;color:#172b3a;font:14px/1.45 system-ui,sans-serif;padding:12px 2px}.legend{display:flex;gap:13px 20px;flex-wrap:wrap;font-size:12px;color:#425466;margin:0 0 14px}.key{display:inline-block;vertical-align:middle;margin-right:6px;width:18px;height:10px;border-radius:2px}.off{background:#7db3ec}.on{background:#ebbb76}.dotkey{width:8px;height:8px;border-radius:50%;background:#172b3a}.refkey{width:1px;height:15px;border-left:2px dashed #546675;border-radius:0}.controls{font-size:12px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:10px}.units{color:#526473;font-size:12px}.axis{display:flex;justify-content:space-between;color:#526473;font-size:11px;margin:0 4px 6px}.condition{padding:14px 4px 5px;border-top:1px solid #e4ebf0}.heading{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.model{font-size:14px;font-weight:650}.setting{font-weight:600;font-size:12px;margin-top:2px}.value{font-size:18px;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}.sub{font-size:11px;color:#637381;margin-top:3px}.plot{display:block;width:100%;height:62px;overflow:visible}.scores{font-size:11px;color:#506170;margin:-2px 0 9px;font-variant-numeric:tabular-nums}.reftext{color:#526473;font-size:11px;margin-left:8px}svg circle:focus{outline:none;stroke:#f00080;stroke-width:3}.tip{display:none;position:fixed;background:#132b3b;color:white;padding:8px 11px;border-radius:6px;font-size:12px;pointer-events:none;z-index:10;max-width:260px;box-shadow:0 3px 15px #0002}input:focus-visible{outline:2px solid #2563eb;outline-offset:3px}@media(max-width:430px){.model{font-size:13px}.legend{gap:8px 13px}.value{font-size:17px}.condition{padding-top:13px}.sub{max-width:285px}}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;
+&lt;div class=&quot;legend&quot;&gt;&lt;span&gt;&lt;i class=&quot;key off&quot;&gt;&lt;/i&gt;Thinking off&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;key on&quot;&gt;&lt;/i&gt;Thinking on&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;key dotkey&quot;&gt;&lt;/i&gt;Individual run&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;key refkey&quot;&gt;&lt;/i&gt;NVIDIA reference&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;controls&quot;&gt;&lt;label&gt;&lt;input id=&quot;refs&quot; type=&quot;checkbox&quot; checked&gt; Show NVIDIA references&lt;/label&gt;&lt;span class=&quot;units&quot;&gt;EQBench v3 rubric · 0–100 · Bar = mean · Dots = individual scores&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;axis&quot; aria-hidden=&quot;true&quot;&gt;&lt;span&gt;0&lt;/span&gt;&lt;span&gt;25&lt;/span&gt;&lt;span&gt;50&lt;/span&gt;&lt;span&gt;75&lt;/span&gt;&lt;span&gt;100&lt;/span&gt;&lt;/div&gt;
+&lt;div id=&quot;chart&quot;&gt;&lt;/div&gt;&lt;div class=&quot;tip&quot; id=&quot;tip&quot; role=&quot;tooltip&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+const data=[{&quot;id&quot;:&quot;gemma&quot;,&quot;name&quot;:&quot;Gemma 4 E4B Instruct&quot;,&quot;condition&quot;:&quot;Thinking OFF&quot;,&quot;checkpoint&quot;:&quot;BF16 \u00b7 CUDA 12.9&quot;,&quot;scores&quot;:[60],&quot;thinking&quot;:false,&quot;reference&quot;:61.27,&quot;runs&quot;:[&quot;#240&quot;],&quot;scenarios&quot;:45},{&quot;id&quot;:&quot;ea-old&quot;,&quot;name&quot;:&quot;Bolt / Gemma Nemotron EA 1.0.0&quot;,&quot;condition&quot;:&quot;Thinking ON \u00b7 historical environment&quot;,&quot;checkpoint&quot;:&quot;BF16 \u00b7 CUDA 13 \u00b7 42 of 45 scenarios scored&quot;,&quot;scores&quot;:[58],&quot;thinking&quot;:true,&quot;reference&quot;:null,&quot;runs&quot;:[&quot;#232 \u00b7 historical score&quot;],&quot;scenarios&quot;:42},{&quot;id&quot;:&quot;ea-new&quot;,&quot;name&quot;:&quot;Bolt / Gemma Nemotron EA 1.0.0&quot;,&quot;condition&quot;:&quot;Thinking ON \u00b7 current environment&quot;,&quot;checkpoint&quot;:&quot;BF16 \u00b7 CUDA 12.9&quot;,&quot;scores&quot;:[57.35],&quot;thinking&quot;:true,&quot;reference&quot;:null,&quot;runs&quot;:[&quot;#241&quot;],&quot;scenarios&quot;:45},{&quot;id&quot;:&quot;bolt-off&quot;,&quot;name&quot;:&quot;Nemotron 3.5 Bolt E4B 4GB \u00b7 GA 1.1.0&quot;,&quot;condition&quot;:&quot;Thinking OFF \u00b7 vLLM 0.31 \u00b7 A6000&quot;,&quot;checkpoint&quot;:&quot;BF16 \u00b7 CUDA 12.9&quot;,&quot;scores&quot;:[55.9,57.05,56.5,56.85,56.75],&quot;thinking&quot;:false,&quot;reference&quot;:62.2,&quot;runs&quot;:[&quot;#238&quot;,&quot;#244 \u00b7 repeat 2&quot;,&quot;#244 \u00b7 repeat 3&quot;,&quot;#244 \u00b7 repeat 4&quot;,&quot;#244 \u00b7 repeat 5&quot;],&quot;scenarios&quot;:45},{&quot;id&quot;:&quot;bolt-on&quot;,&quot;name&quot;:&quot;Nemotron 3.5 Bolt E4B 4GB \u00b7 GA 1.1.0&quot;,&quot;condition&quot;:&quot;Thinking ON \u00b7 vLLM 0.31 \u00b7 A6000&quot;,&quot;checkpoint&quot;:&quot;BF16 \u00b7 CUDA 12.9&quot;,&quot;scores&quot;:[51.75,52.7,54.05,53.8,53.8],&quot;thinking&quot;:true,&quot;reference&quot;:null,&quot;runs&quot;:[&quot;#237&quot;,&quot;#239&quot;,&quot;#245 \u00b7 repeat 3&quot;,&quot;#245 \u00b7 repeat 4&quot;,&quot;#245 \u00b7 repeat 5&quot;],&quot;scenarios&quot;:45},{&quot;id&quot;:&quot;v026-baseline&quot;,&quot;name&quot;:&quot;Nemotron 3.5 Bolt E4B 4GB \u00b7 GA 1.1.0&quot;,&quot;condition&quot;:&quot;Thinking OFF \u00b7 vLLM 0.26 stack \u00b7 A6000&quot;,&quot;checkpoint&quot;:&quot;BF16 \u00b7 CUDA 12.9&quot;,&quot;scores&quot;:[57.4],&quot;thinking&quot;:false,&quot;reference&quot;:62.2,&quot;runs&quot;:[&quot;#251&quot;],&quot;scenarios&quot;:45},{&quot;id&quot;:&quot;h100-official&quot;,&quot;name&quot;:&quot;Nemotron 3.5 Bolt E4B 4GB \u00b7 GA 1.1.0&quot;,&quot;condition&quot;:&quot;Thinking OFF \u00b7 official vLLM 0.26 image \u00b7 H100&quot;,&quot;checkpoint&quot;:&quot;BF16 \u00b7 CUDA 13 \u00b7 model-card serving configuration&quot;,&quot;scores&quot;:[57.5],&quot;thinking&quot;:false,&quot;reference&quot;:62.2,&quot;runs&quot;:[&quot;#254&quot;],&quot;scenarios&quot;:45},{&quot;id&quot;:&quot;hf-reference&quot;,&quot;name&quot;:&quot;Nemotron 3.5 Bolt E4B 4GB \u00b7 GA 1.1.0&quot;,&quot;condition&quot;:&quot;Thinking OFF \u00b7 Transformers 5.17 reference \u00b7 A6000&quot;,&quot;checkpoint&quot;:&quot;BF16 \u00b7 CUDA 12.9&quot;,&quot;scores&quot;:[57.8],&quot;thinking&quot;:false,&quot;reference&quot;:62.2,&quot;runs&quot;:[&quot;#253&quot;],&quot;scenarios&quot;:45},{&quot;id&quot;:&quot;qwen&quot;,&quot;name&quot;:&quot;Qwen3.5 4B&quot;,&quot;condition&quot;:&quot;Thinking OFF&quot;,&quot;checkpoint&quot;:&quot;BF16 \u00b7 CUDA 12.9&quot;,&quot;scores&quot;:[48.85],&quot;thinking&quot;:false,&quot;reference&quot;:52.49,&quot;runs&quot;:[&quot;#242&quot;],&quot;scenarios&quot;:45},{&quot;id&quot;:&quot;nano&quot;,&quot;name&quot;:&quot;Nemotron 3 Nano 4B&quot;,&quot;condition&quot;:&quot;Thinking OFF&quot;,&quot;checkpoint&quot;:&quot;BF16 \u00b7 CUDA 12.9 \u00b7 repetitive output retained&quot;,&quot;scores&quot;:[32.2],&quot;thinking&quot;:false,&quot;reference&quot;:32,&quot;runs&quot;:[&quot;#243&quot;],&quot;scenarios&quot;:45}];const NS=&#x27;http://www.w3.org/2000/svg&#x27;;const chart=document.getElementById(&#x27;chart&#x27;),tip=document.getElementById(&#x27;tip&#x27;),check=document.getElementById(&#x27;refs&#x27;);
+function el(tag,attrs){const e=document.createElementNS(NS,tag);Object.entries(attrs||{}).forEach(([k,v])=&gt;e.setAttribute(k,v));return e}
+function showTip(event,text){tip.textContent=text;tip.style.display=&#x27;block&#x27;;const target=event.target.getBoundingClientRect();tip.style.left=Math.min(window.innerWidth-270,Math.max(4,event.clientX||target.x))+&#x27;px&#x27;;tip.style.top=Math.max(3,(event.clientY||target.y)-58)+&#x27;px&#x27;}
+function refsOn(){return window.openai?.widgetState?.showNvidiaReferences!==false}
+let showRefs=refsOn();let observers=[];function render(){observers.forEach(o=&gt;o.disconnect());observers=[];check.checked=showRefs;chart.replaceChildren();data.forEach(d=&gt;{const mean=d.scores.reduce((a,b)=&gt;a+b,0)/d.scores.length;const section=document.createElement(&#x27;section&#x27;);section.className=&#x27;condition&#x27;;const heading=document.createElement(&#x27;div&#x27;);heading.className=&#x27;heading&#x27;;const left=document.createElement(&#x27;div&#x27;);const name=document.createElement(&#x27;div&#x27;);name.className=&#x27;model&#x27;;name.textContent=d.name;const setting=document.createElement(&#x27;div&#x27;);setting.className=&#x27;setting&#x27;;setting.textContent=d.condition;const sub=document.createElement(&#x27;div&#x27;);sub.className=&#x27;sub&#x27;;sub.textContent=d.checkpoint+&#x27; · &#x27;+d.scores.length+(d.scores.length===1?&#x27; run&#x27;:&#x27; runs&#x27;);left.append(name,setting,sub);const value=document.createElement(&#x27;div&#x27;);value.className=&#x27;value&#x27;;value.textContent=mean.toFixed(2);heading.append(left,value);section.append(heading);
+const svg=el(&#x27;svg&#x27;,{class:&#x27;plot&#x27;,role:&#x27;img&#x27;,&#x27;aria-label&#x27;:d.name+&#x27;, &#x27;+d.condition+&#x27;. Mean &#x27;+mean.toFixed(2)+&#x27;. Individual scores: &#x27;+d.scores.map(v=&gt;v.toFixed(2)).join(&#x27;, &#x27;)});section.append(svg);const scores=document.createElement(&#x27;div&#x27;);scores.className=&#x27;scores&#x27;;scores.textContent=(d.scores.length&gt;1?&#x27;Run scores: &#x27;:&#x27;Score: &#x27;)+d.scores.map(v=&gt;v.toFixed(2)).join(&#x27; · &#x27;);if(d.reference!==null&amp;&amp;showRefs){const ref=document.createElement(&#x27;span&#x27;);ref.className=&#x27;reftext&#x27;;ref.textContent=&#x27;NVIDIA &#x27;+d.reference.toFixed(2);scores.append(ref)}section.append(scores);chart.append(section);
+function draw(){svg.replaceChildren();const width=Math.max(200,svg.getBoundingClientRect().width),height=62;svg.setAttribute(&#x27;viewBox&#x27;,&#x27;0 0 &#x27;+width+&#x27; &#x27;+height);const x=v=&gt;2+v/100*(width-4);for(let t=0;t&lt;=100;t+=25)svg.append(el(&#x27;line&#x27;,{x1:x(t),x2:x(t),y1:3,y2:59,stroke:&#x27;#e6edf3&#x27;,&#x27;stroke-width&#x27;:1}));svg.append(el(&#x27;rect&#x27;,{x:x(0),y:21,width:x(mean)-x(0),height:20,rx:3,fill:d.thinking?&#x27;#ebbb76&#x27;:&#x27;#7db3ec&#x27;}));
+if(d.reference!==null&amp;&amp;showRefs){const line=el(&#x27;line&#x27;,{x1:x(d.reference),x2:x(d.reference),y1:5,y2:57,stroke:&#x27;#536776&#x27;,&#x27;stroke-width&#x27;:2,&#x27;stroke-dasharray&#x27;:&#x27;4 3&#x27;});const title=el(&#x27;title&#x27;);title.textContent=&#x27;NVIDIA reference: &#x27;+d.reference.toFixed(2)+&#x27; (thinking off)&#x27;;line.append(title);svg.append(line)}
+const offsets=[];const placed=[];d.scores.forEach((v,i)=&gt;{let chosen=0;for(const offset of [0,-11,11,-22,22]){if(placed.every(p=&gt;Math.hypot(x(v)-p.x,offset-p.y)&gt;=10)){chosen=offset;break}}placed.push({x:x(v),y:chosen});offsets.push(chosen);const circle=el(&#x27;circle&#x27;,{cx:x(v),cy:31+chosen,r:4.4,fill:&#x27;#172b3a&#x27;,stroke:&#x27;white&#x27;,&#x27;stroke-width&#x27;:1.3,tabindex:0});const title=d.name+&#x27; · &#x27;+d.condition+&#x27; · &#x27;+d.runs[i]+&#x27;: &#x27;+v.toFixed(2);circle.setAttribute(&#x27;aria-label&#x27;,title);const native=el(&#x27;title&#x27;);native.textContent=title;circle.append(native);circle.addEventListener(&#x27;pointermove&#x27;,event=&gt;showTip(event,title));circle.addEventListener(&#x27;pointerleave&#x27;,()=&gt;tip.style.display=&#x27;none&#x27;);circle.addEventListener(&#x27;focus&#x27;,event=&gt;showTip(event,title));circle.addEventListener(&#x27;blur&#x27;,()=&gt;tip.style.display=&#x27;none&#x27;);svg.append(circle)})}
+const observer=new ResizeObserver(draw);observer.observe(svg);observers.push(observer);draw()})}
+render();check.addEventListener(&#x27;change&#x27;,()=&gt;{showRefs=check.checked;window.openai?.setWidgetState?.({...window.openai.widgetState,showNvidiaReferences:showRefs});render()});window.addEventListener(&#x27;openai:set_globals&#x27;,()=&gt;{showRefs=refsOn();render()});
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<h2>What the diagnostics establish</h2><ul>
+<li>All 10 GA files and 12 EA files match the NGC SHA-256 manifests. The language weights contain no nonfinite or zeroed tensors, have unchanged shapes, and show no obvious conversion-scale anomaly.</li>
+<li>Actual API prompt token IDs match the checkpoint template in all eight checked prompts, including multi-turn and thinking-on/off cases.</li>
+<li>An independent eager Transformers forward pass agrees with vLLM’s greedy next-token choices at 192/192 checked positions. This limited probe is distinct from the new full Transformers benchmark.</li>
+<li>On the H100 official vLLM 0.26 CUDA 13 image, teacher-forced next-token choices also agree with the A6000 reference at 192/192 checked positions. Maximum absolute chosen-token log-probability difference is 0.107. Full benchmark results above provide the broader test.</li>
+<li>The parser preserves final-answer text when replaying the same raw output in four checked cases. All 730 structured GA turns in the five-repeat studies retain their required sections; no major transcript loss was found.</li>
+<li>All 355 audited thinking-on calls in the new repeat study contain reasoning. No capped or empty completions were found in the seven new GA repeats, and no extra thinking budget was supplied.</li>
+<li>EA on the current CUDA 12.9 stack scores 57.35. On the 42 historical shared scenarios, EA scores 57.98 on CUDA 13 and 58.19 on CUDA 12.9. The driver change alone does not explain the EA-to-GA regression.</li></ul>
+<h2>The old template is not an equivalent thinking-off condition</h2>
+<p>The EA template with GA weights was stopped before judging. Of 57 returned calls, 44 contained reasoning and 15 had empty final content despite requesting thinking off. These are response attempts, not scenario counts. This condition has no valid reported rubric score. It does not invalidate the clean GA-template baseline.</p>
+<h2>Where the behavioral regression appears</h2>
+<p>The largest EA-to-GA thinking-on loss is in the 19 analysis scenarios. GA’s five-run mean is 47.82 for that group, versus 54.96 for the single current-stack EA run. Roleplay means are 57.83 and 59.50 respectively. This localizes an observed difference; it does not identify its training cause.</p>
+<p>In scenario 406, GA repeatedly praises therapeutic boundary-setting in a conversation where the participant misreads exaggerated venting and alienates a friend. The saved EA answer identifies that misattunement. On the same prompt, GA thinking on averages 36.50 across five runs, GA thinking off 41.33, and EA thinking on scores 62.50 once. The H100 official-image run repeats the same interpretive failure and scores 37.50 on that scenario.</p>
+<h2>Sampling checks</h2>
+<p>Exploratory eight-scenario checks did not show a clear rescue: the existing five baseline subset scores average 55.78, with a 54.25–58.45 range. Removing min_p scored 56.75; temperature 1.0 without min_p scored 56.65. Those subset scores are not comparable to NVIDIA’s full benchmark score. Two subsequently started sampling runs were cancelled after changing the diagnostic plan, and count against the six-run allowance.</p>
+<p>Offline sensitivity checks using analysis-only, nonanalysis-only, equal group weights, extra safety/boundary metrics, or all recorded style traits do not reproduce NVIDIA’s four-model pattern. These are diagnostic calculations, not replacement benchmark scores.</p>
+<h2>Reproduction details to reconcile with NVIDIA</h2><ul><li>Exact checkpoint revision and hashes behind 62.20, and whether that score used BF16 or Q4KM.</li><li>Benchmark revision, scenario set, rubric aggregation, master and debrief prompts.</li><li>Judge model and version, judge parameters, and whether hidden reasoning was included.</li><li>Serving-image digest, sampling parameters and chat-template kwargs.</li></ul>
+<h2>Saved artifacts and shutdown</h2>
+<p>GA checkpoint backup: completed at <code>/mnt/q/ml/models/nvidia/gemma-nemotron-4b-bf16-ga-1.1.0</code>. The final backup is verified against all ten NGC hashes. Result JSON, request audits, runtime manifests and full scenario reports are saved locally.</p>
+<pre>{
+  &quot;status&quot;: &quot;stopped_verified&quot;,
+  &quot;started_at_utc&quot;: &quot;2026-10-19T11:27:46.264892+00:00&quot;,
+  &quot;ga_checkpoint_backup&quot;: &quot;/mnt/q/ml/models/nvidia/gemma-nemotron-4b-bf16-ga-1.1.0&quot;,
+  &quot;ga_checkpoint_verified_files&quot;: 10,
+  &quot;remote_evidence_archive_sha256&quot;: &quot;c8bb0749d1c7d2901e4e6570bbd99338250469c8b34ae0381fedaab7dde6e30a&quot;,
+  &quot;benchmark_runs&quot;: [
+    {
+      &quot;id&quot;: 249,
+      &quot;status&quot;: &quot;cancelled&quot;,
+      &quot;model_id&quot;: &quot;bolt-ga-validation-no-minp&quot;,
+      &quot;api_credential_id&quot;: 50
+    },
+    {
+      &quot;id&quot;: 250,
+      &quot;status&quot;: &quot;cancelled&quot;,
+      &quot;model_id&quot;: &quot;bolt-ga-validation-checkpoint-sampling&quot;,
+      &quot;api_credential_id&quot;: 51
+    },
+    {
+      &quot;id&quot;: 251,
+      &quot;status&quot;: &quot;completed&quot;,
+      &quot;model_id&quot;: &quot;bolt-ga-validation-v026-baseline&quot;,
+      &quot;api_credential_id&quot;: 52
+    },
+    {
+      &quot;id&quot;: 252,
+      &quot;status&quot;: &quot;cancelled&quot;,
+      &quot;model_id&quot;: &quot;bolt-ga-validation-ea-template&quot;,
+      &quot;api_credential_id&quot;: 53
+    },
+    {
+      &quot;id&quot;: 253,
+      &quot;status&quot;: &quot;completed&quot;,
+      &quot;model_id&quot;: &quot;bolt-ga-validation-hf-reference&quot;,
+      &quot;api_credential_id&quot;: 54
+    },
+    {
+      &quot;id&quot;: 254,
+      &quot;status&quot;: &quot;completed&quot;,
+      &quot;model_id&quot;: &quot;bolt-ga-validation-h100-v026-official&quot;,
+      &quot;api_credential_id&quot;: 55
+    }
+  ],
+  &quot;pods&quot;: [
+    {
+      &quot;id&quot;: &quot;zctagya8kn9n46&quot;,
+      &quot;name&quot;: &quot;bolt-h100-official-v026-diagnostic&quot;,
+      &quot;desiredStatus&quot;: &quot;EXITED&quot;,
+      &quot;checked_at_utc&quot;: &quot;2026-10-19T11:27:47.507558+00:00&quot;
+    },
+    {
+      &quot;id&quot;: &quot;ezxm2y4o0gnv66&quot;,
+      &quot;name&quot;: &quot;gemma-nemotron-4b-ga-500gb&quot;,
+      &quot;desiredStatus&quot;: &quot;EXITED&quot;,
+      &quot;checked_at_utc&quot;: &quot;2026-10-19T11:27:49.497702+00:00&quot;
+    }
+  ],
+  &quot;related_pod_inventory&quot;: [
+    {
+      &quot;id&quot;: &quot;zctagya8kn9n46&quot;,
+      &quot;name&quot;: &quot;bolt-h100-official-v026-diagnostic&quot;,
+      &quot;desiredStatus&quot;: &quot;EXITED&quot;,
+      &quot;volumeInGb&quot;: 0,
+      &quot;containerDiskInGb&quot;: 500
+    },
+    {
+      &quot;id&quot;: &quot;ezxm2y4o0gnv66&quot;,
+      &quot;name&quot;: &quot;gemma-nemotron-4b-ga-500gb&quot;,
+      &quot;desiredStatus&quot;: &quot;EXITED&quot;,
+      &quot;volumeInGb&quot;: 0,
+      &quot;containerDiskInGb&quot;: 500
+    }
+  ],
+  &quot;public_endpoint_status&quot;: 502,
+  &quot;completed_at_utc&quot;: &quot;2026-10-19T11:27:50.690081+00:00&quot;
+}</pre>
+</body></html>
